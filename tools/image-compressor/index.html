@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Compressor Online - Compress Up to 50 Images | Working Tools Box</title>
+<meta name="description" content="Compress up to 50 JPG, JPEG, PNG and WebP images at once. Adjust quality, preview results and download compressed images directly in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-compressor/">
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+:root{--ink:#111827;--muted:#667085;--line:#e7eaf0;--blue:#2563eb;--indigo:#4f46e5;--soft:#f7f9fc;--success:#087443}
+.tool-page{max-width:1080px;margin:auto;padding:48px 18px 80px}
+.hero{text-align:center;max-width:760px;margin:auto auto 32px}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border:1px solid #dce6ff;background:#f5f8ff;border-radius:999px;color:#3158c9;font-size:12px;font-weight:800}
+.hero h1{margin:14px 0 10px;font-size:clamp(32px,5vw,50px);line-height:1.08;letter-spacing:-1.8px;color:var(--ink)}
+.hero p{margin:0;color:var(--muted);line-height:1.7;font-size:15px}
+.tool-shell{background:#fff;border:1px solid var(--line);border-radius:24px;padding:22px;box-shadow:0 20px 55px rgba(15,23,42,.08)}
+.upload{display:block;text-align:center;padding:45px 20px;border:2px dashed #cfd7e6;border-radius:18px;background:linear-gradient(180deg,#fff 0%,#fafbff 100%);cursor:pointer;transition:.2s}
+.upload:hover,.upload.drag{border-color:#6681f3;background:#f7f8ff;box-shadow:inset 0 0 0 1px #eef1ff}
+.upload input{display:none}
+.upload-icon{width:58px;height:58px;margin:0 auto 14px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(135deg,#eff4ff,#f0edff);color:#4f46e5;font-size:27px;font-weight:800}
+.upload strong{display:block;color:var(--ink);font-size:17px}.upload small{display:block;color:var(--muted);margin-top:7px;font-size:13px}
+.limit{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:7px;background:#f2f4f7;color:#475467;font-size:12px;font-weight:700}
+.toolbar{display:grid;grid-template-columns:1fr 210px;gap:16px;margin-top:18px}
+.setting{border:1px solid var(--line);border-radius:15px;padding:15px;background:#fcfdff}
+.setting label{display:flex;justify-content:space-between;color:var(--ink);font-size:13px;font-weight:800;margin-bottom:11px}
+.setting select{width:100%;height:42px;border:1px solid #d8dee9;border-radius:10px;padding:0 10px;background:#fff;color:var(--ink)}
+.setting input[type=range]{width:100%;accent-color:var(--blue)}
+.q{color:var(--blue)}
+.queue{display:none;margin-top:22px}
+.queue-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:12px}
+.queue-title{font-weight:800;color:var(--ink)}.count{color:var(--muted);font-size:13px}
+.file-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-height:440px;overflow:auto;padding-right:2px}
+.file-item{display:grid;grid-template-columns:54px 1fr auto;align-items:center;gap:11px;padding:10px;border:1px solid var(--line);border-radius:13px;background:#fff}
+.thumb{width:54px;height:54px;border-radius:9px;object-fit:cover;background:var(--soft)}
+.file-name{font-size:13px;font-weight:700;color:#344054;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.file-meta{font-size:11px;color:#98a2b3;margin-top:3px}
+.remove{width:30px;height:30px;min-height:30px;padding:0;border:1px solid #e4e7ec;background:#fff;color:#667085;border-radius:8px;font-size:18px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+button{min-height:44px;padding:0 18px;border-radius:11px;border:1px solid transparent;font-weight:800;font-size:13px;cursor:pointer;transition:.18s}
+.primary{color:#fff;background:linear-gradient(135deg,var(--blue),var(--indigo));box-shadow:0 8px 20px rgba(37,99,235,.2)}
+.primary:hover{transform:translateY(-1px);box-shadow:0 11px 25px rgba(37,99,235,.25)}
+.secondary{background:#fff;color:#344054;border-color:#dfe3ea}.secondary:hover{background:#f8fafc}
+button:disabled{opacity:.48;cursor:not-allowed;transform:none}
+.status{min-height:22px;margin-top:13px;color:var(--muted);font-size:13px}
+.results{display:none;margin-top:24px;border-top:1px solid var(--line);padding-top:22px}
+.results-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px}
+.results h2{font-size:19px;margin:0;color:var(--ink)}
+.result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.result-card{border:1px solid var(--line);border-radius:14px;padding:12px;background:#fff}
+.result-card img{width:100%;height:180px;object-fit:contain;border-radius:10px;background:var(--soft)}
+.result-name{font-weight:700;font-size:13px;color:#344054;margin-top:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.result-meta{font-size:12px;color:#667085;margin-top:4px}
+.content{max-width:850px;margin:50px auto 0}.content h2{font-size:25px;color:var(--ink);margin:32px 0 10px}.content p,.content li{color:#596579;line-height:1.75}.faq{border-top:1px solid var(--line);padding:17px 0}.faq h3{font-size:16px;margin:0 0 6px;color:var(--ink)}.faq p{margin:0}
+@media(max-width:700px){.tool-page{padding:30px 13px 60px}.tool-shell{padding:14px;border-radius:20px}.toolbar,.file-list,.result-grid{grid-template-columns:1fr}.file-list{max-height:500px}.actions button{width:100%}.upload{padding:35px 14px}}
+</style>
+</head>
+<body>
+<div id="site-header"></div>
+<main class="tool-page">
+<section class="hero">
+<span class="badge">● Free &amp; Private</span>
+<h1>Image Compressor</h1>
+<p>Compress up to 50 images at once with adjustable quality. Fast browser-based processing with no server upload.</p>
+</section>
+
+<section class="tool-shell">
+<label class="upload" id="uploadArea" for="imageInput">
+<input id="imageInput" type="file" accept="image/jpeg,image/png,image/webp" multiple>
+<div class="upload-icon" aria-hidden="true">↑</div>
+<strong>Choose images to compress</strong>
+<small>Click to browse or drag and drop your images here</small>
+<span class="limit">Up to 50 images per batch</span>
+</label>
+
+<div class="toolbar">
+<div class="setting">
+<label for="quality">Compression quality <span class="q" id="qualityValue">80%</span></label>
+<input id="quality" type="range" min="10" max="100" value="80">
+</div>
+<div class="setting">
+<label for="format">Output format</label>
+<select id="format"><option value="image/jpeg">JPG</option><option value="image/webp">WebP</option><option value="image/png">PNG</option></select>
+</div>
+</div>
+
+<div class="queue" id="queue">
+<div class="queue-head"><span class="queue-title">Selected Images</span><span class="count" id="count">0 / 50</span></div>
+<div class="file-list" id="fileList"></div>
+<div class="actions">
+<button class="primary" id="compressBtn" type="button">Compress All Images</button>
+<button class="secondary" id="clearBtn" type="button">Clear All</button>
+</div>
+<div class="status" id="status" role="status" aria-live="polite"></div>
+</div>
+
+<section class="results" id="results">
+<div class="results-head"><h2>Compressed Results</h2><button class="primary" id="downloadAll" type="button">Download All (ZIP)</button></div>
+<div class="result-grid" id="resultGrid"></div>
+</section>
+</section>
+
+<section class="content">
+<h2>Free Online Image Compressor</h2>
+<p>Compress JPG, JPEG, PNG and WebP images in one simple tool. Select up to 50 images in a batch, choose your quality and output format, then download your compressed files. Processing takes place in your browser.</p>
+<h2>How to Compress Multiple Images</h2>
+<ol><li>Select up to 50 JPG, JPEG, PNG or WebP images.</li><li>Adjust the compression quality and choose an output format.</li><li>Click <strong>Compress All Images</strong>.</li><li>Preview the results and download individual files or the complete batch.</li></ol>
+<h2>Why Use This Image Compressor?</h2>
+<ul><li>Supports batch compression for up to 50 images.</li><li>Runs directly in your browser.</li><li>Lets you control compression quality.</li><li>Shows the original and compressed file sizes.</li></ul>
+<h2>Frequently Asked Questions</h2>
+<div class="faq"><h3>How many images can I compress at once?</h3><p>You can select up to 50 images in one batch.</p></div>
+<div class="faq"><h3>Are my images uploaded to a server?</h3><p>No. The compression process runs locally in your browser.</p></div>
+<div class="faq"><h3>Which image formats are supported?</h3><p>JPG, JPEG, PNG and WebP are supported as input formats.</p></div>
+</section>
+</main>
+<div id="site-footer"></div>
+<script src="/assets/js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+const $=id=>document.getElementById(id),input=$("imageInput"),area=$("uploadArea"),quality=$("quality"),qv=$("qualityValue"),format=$("format"),queue=$("queue"),list=$("fileList"),count=$("count"),compressBtn=$("compressBtn"),clearBtn=$("clearBtn"),status=$("status"),results=$("results"),grid=$("resultGrid"),downloadAll=$("downloadAll");
+let files=[],outputs=[];
+quality.oninput=()=>qv.textContent=quality.value+"%";
+input.onchange=e=>addFiles([...e.target.files]);
+["dragenter","dragover"].forEach(x=>area.addEventListener(x,e=>{e.preventDefault();area.classList.add("drag")}));
+["dragleave","drop"].forEach(x=>area.addEventListener(x,e=>{e.preventDefault();area.classList.remove("drag")}));
+area.addEventListener("drop",e=>addFiles([...e.dataTransfer.files]));
+function addFiles(newFiles){const valid=newFiles.filter(f=>["image/jpeg","image/png","image/webp"].includes(f.type));if(valid.length<newFiles.length)status.textContent="Some unsupported files were skipped.";for(const f of valid){if(files.length>=50)break;if(!files.some(x=>x.name===f.name&&x.size===f.size))files.push(f)}if(newFiles.length&&files.length>=50)status.textContent="Maximum 50 images selected.";renderFiles()}
+function renderFiles(){list.innerHTML="";count.textContent=files.length+" / 50";queue.style.display=files.length?"block":"none";files.forEach((f,i)=>{const item=document.createElement("div");item.className="file-item";const img=document.createElement("img");img.className="thumb";img.alt="Preview of "+f.name;img.src=URL.createObjectURL(f);const info=document.createElement("div");info.innerHTML='<div class="file-name"></div><div class="file-meta">'+bytes(f.size)+'</div>';info.firstChild.textContent=f.name;const rm=document.createElement("button");rm.className="remove";rm.type="button";rm.textContent="×";rm.title="Remove image";rm.onclick=()=>{files.splice(i,1);renderFiles()};item.append(img,info,rm);list.appendChild(item)})}
+compressBtn.onclick=async()=>{if(!files.length)return;compressBtn.disabled=true;outputs=[];grid.innerHTML="";results.style.display="none";for(let i=0;i<files.length;i++){status.textContent="Compressing "+(i+1)+" of "+files.length+"...";try{const out=await compress(files[i]);outputs.push(out);addResult(out)}catch(e){status.textContent="Could not process "+files[i].name+"."}}results.style.display=outputs.length?"block":"none";status.textContent=outputs.length+" image"+(outputs.length===1?"":"s")+" compressed successfully.";compressBtn.disabled=false};
+async function compress(file){const url=URL.createObjectURL(file),img=new Image();img.src=url;await new Promise((ok,no)=>{img.onload=ok;img.onerror=no});const c=document.createElement("canvas");c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext("2d").drawImage(img,0,0);const blob=await new Promise(ok=>c.toBlob(ok,format.value,Number(quality.value)/100));URL.revokeObjectURL(url);if(!blob)throw Error();const ext=format.value==="image/png"?"png":format.value==="image/webp"?"webp":"jpg";const outputName=file.name.replace(/\.[^/.]+$/,"-compressed."+ext);return{name:outputName,original:file.size,blob,url:URL.createObjectURL(blob)}}
+function addResult(o){const card=document.createElement("div");card.className="result-card";const img=document.createElement("img");img.src=o.url;img.alt="Compressed preview of "+o.name;const name=document.createElement("div");name.className="result-name";name.textContent=o.name;const meta=document.createElement("div");meta.className="result-meta";const d=o.original-o.blob.size;meta.textContent="Original "+bytes(o.original)+" → "+bytes(o.blob.size)+(d>0?" • Saved "+Math.round(d/o.original*100)+"%":"");card.append(img,name,meta);grid.appendChild(card)}
+downloadAll.onclick=async()=>{
+  if(!outputs.length)return;
+  if(typeof JSZip==="undefined"){status.textContent="Download library could not load. Please refresh the page.";return;}
+  downloadAll.disabled=true;
+  status.textContent="Creating ZIP file...";
+  try{
+    const zip=new JSZip();
+    outputs.forEach(o=>zip.file(o.name,o.blob));
+    const zipBlob=await zip.generateAsync({type:"blob",compression:"DEFLATE",compressionOptions:{level:6}});
+    const url=URL.createObjectURL(zipBlob);
+    const a=document.createElement("a");
+    a.href=url;
+    a.download="compressed-images.zip";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(()=>URL.revokeObjectURL(url),1000);
+    status.textContent="ZIP download started for "+outputs.length+" images.";
+  }catch(e){
+    status.textContent="Could not create the ZIP file.";
+  }finally{
+    downloadAll.disabled=false;
+  }
+};
+clearBtn.onclick=()=>{files=[];outputs.forEach(o=>URL.revokeObjectURL(o.url));outputs=[];input.value="";list.innerHTML="";grid.innerHTML="";queue.style.display="none";results.style.display="none";status.textContent=""};
+function bytes(n){if(!n)return"0 B";const u=["B","KB","MB","GB"],i=Math.min(Math.floor(Math.log(n)/Math.log(1024)),3);return(n/1024**i).toFixed(i?2:0)+" "+u[i]}
+</script>
+</body>
+</html>
