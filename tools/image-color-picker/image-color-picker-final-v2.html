@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Color Picker - Pick Colors From Images Online | Working Tools Box</title>
+  <meta name="description" content="Free image color picker to upload an image, pick colors from any pixel, extract a color palette, and copy HEX, RGB, HSL and CMYK values.">
+  <meta name="keywords" content="image color picker, color picker from image, pick color from image, image color extractor, color palette extractor, HEX picker, RGB picker, color picker online">
+  <link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-color-picker/">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebApplication",
+    "name":"Image Color Picker",
+    "url":"https://workingtoolsbox.vercel.app/tools/image-color-picker/",
+    "applicationCategory":"DesignApplication",
+    "operatingSystem":"Any",
+    "description":"Pick colors from an uploaded image and extract HEX, RGB, HSL and CMYK values.",
+    "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  }
+  </script>
+  <style>
+    .icp-page{max-width:1120px;margin:0 auto;padding:38px 18px 70px}
+    .icp-hero{text-align:center;margin-bottom:28px}
+    .icp-badge{display:inline-flex;align-items:center;padding:7px 12px;border:1px solid #e5e7eb;border-radius:999px;background:#fff;font-size:13px;font-weight:700;color:#4b5563}
+    .icp-hero h1{margin:14px 0 9px;font-size:clamp(30px,5vw,46px);letter-spacing:-1.2px}
+    .icp-hero p{max-width:760px;margin:0 auto;color:#64748b;line-height:1.7}
+
+    .icp-card{background:#fff;border:1px solid #e5e7eb;border-radius:20px;padding:22px;box-shadow:0 12px 35px rgba(15,23,42,.07)}
+    .icp-upload{border:1.5px dashed #cbd5e1;border-radius:15px;background:#f8fafc;padding:24px 18px;text-align:center}
+    .icp-upload h2{margin:0 0 7px;font-size:19px}
+    .icp-upload p{margin:0 0 15px;color:#64748b;font-size:13px}
+    .icp-upload.dragover{border-color:#2563eb;background:#eff6ff}
+    .icp-hidden-file{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
+    .icp-upload-btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:9px;padding:11px 18px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-weight:800;cursor:pointer}
+    .icp-upload-btn:hover{opacity:.93}
+    .icp-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:13px}
+    .icp-secondary{border:1px solid #dbe1ea;border-radius:9px;padding:10px 16px;background:#fff;color:#334155;font-weight:800;cursor:pointer}
+    .icp-secondary:hover{background:#f8fafc}
+    .icp-secondary:disabled{opacity:.5;cursor:not-allowed}
+
+    .icp-workspace{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(330px,.75fr);gap:22px;margin-top:18px}
+    .icp-image-panel,.icp-info-panel{border:1px solid #e5e7eb;border-radius:16px;background:#fff;padding:14px}
+    .icp-image-panel{min-width:0}
+    .icp-image-title{font-size:13px;color:#64748b;text-align:center;margin:0 0 10px}
+    .icp-canvas-box{position:relative;width:100%;min-height:280px;display:flex;align-items:center;justify-content:center;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;overflow:hidden}
+    .icp-canvas-box.empty{min-height:280px}
+    #imageCanvas{display:block;max-width:100%;max-height:620px;width:auto;height:auto;cursor:crosshair}
+    .icp-empty{padding:50px 20px;text-align:center;color:#94a3b8;font-size:14px}
+    .icp-magnifier{position:absolute;width:92px;height:92px;border-radius:50%;border:3px solid #fff;box-shadow:0 4px 18px rgba(15,23,42,.25);pointer-events:none;display:none;background-repeat:no-repeat;z-index:4}
+    .icp-selected{border-radius:13px;overflow:hidden;border:1px solid #e5e7eb;margin-bottom:13px}
+    .icp-selected-color{height:118px;background:#2563eb;position:relative}
+    .icp-selected-hex{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.68);color:#fff;padding:7px 10px;border-radius:8px;font:700 13px ui-monospace,SFMono-Regular,Menlo,monospace}
+    .icp-values{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .icp-value{border:1px solid #e5e7eb;border-radius:11px;padding:11px;background:#fafbfc}
+    .icp-value-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:7px}
+    .icp-value-head label{font-size:11px;font-weight:800;color:#475569;letter-spacing:.4px}
+    .icp-copy{border:1px solid #dbe1ea;background:#fff;border-radius:7px;padding:5px 8px;font-size:11px;font-weight:700;cursor:pointer}
+    .icp-copy:hover{background:#f1f5f9}
+    .icp-value-input{width:100%;box-sizing:border-box;border:0;outline:0;background:transparent;font:700 14px ui-monospace,SFMono-Regular,Menlo,monospace;color:#111827}
+    .icp-value-input[readonly]{cursor:text}
+    .icp-copy-all{width:100%;margin-top:11px;border:0;border-radius:9px;padding:11px 15px;background:linear-gradient(135deg,#2563eb,#7c3aed);color:#fff;font-weight:800;cursor:pointer}
+    .icp-copy-all:hover{opacity:.93}
+
+    .icp-color-section{margin-top:18px;border-top:1px solid #eef2f7;padding-top:16px}
+    .icp-color-section h3{margin:0 0 5px;font-size:16px}
+    .icp-color-section>p{margin:0;color:#64748b;font-size:12px;line-height:1.55}
+    .icp-swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:11px}
+    .icp-swatch{min-width:0;height:58px;border:1px solid #dbe1ea;border-radius:9px;position:relative;overflow:hidden;cursor:pointer;background:#fff}
+    .icp-swatch span{position:absolute;left:4px;right:4px;bottom:4px;padding:4px 3px;border-radius:5px;background:rgba(255,255,255,.9);font:700 9px ui-monospace,SFMono-Regular,Menlo,monospace;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .icp-no-colors{color:#94a3b8;font-size:12px;padding:12px 0}
+
+    .icp-section{margin-top:24px}
+    .icp-section h2{font-size:22px;margin-bottom:8px}
+    .icp-section p{color:#64748b;line-height:1.75}
+    .icp-faq details{border:1px solid #e5e7eb;border-radius:10px;padding:13px 15px;margin:9px 0;background:#fff}
+    .icp-faq summary{font-weight:700;cursor:pointer}
+    .icp-faq p{margin:9px 0 2px}
+    .icp-toast{position:fixed;right:18px;bottom:18px;background:#111827;color:#fff;padding:11px 15px;border-radius:9px;font-size:13px;opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s;z-index:99}
+    .icp-toast.show{opacity:1;transform:translateY(0)}
+
+    @media(max-width:820px){
+      .icp-workspace{grid-template-columns:1fr}
+      .icp-image-panel{order:1}.icp-info-panel{order:2}
+    }
+    @media(max-width:560px){
+      .icp-page{padding:28px 12px 55px}
+      .icp-card{padding:12px}
+      .icp-upload{padding:20px 12px}
+      .icp-canvas-box,.icp-canvas-box.empty{min-height:230px}
+      .icp-values{grid-template-columns:1fr}
+      .icp-swatches{grid-template-columns:repeat(4,1fr)}
+      .icp-swatch{height:54px}
+    }
+  </style>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="icp-page">
+    <section class="icp-hero">
+      <div class="icp-badge">Free &amp; Private · Works in Your Browser</div>
+      <h1>Image Color Picker</h1>
+      <p>Upload an image, click any pixel to pick its color, and get HEX, RGB, HSL and CMYK values instantly.</p>
+    </section>
+
+    <section class="icp-card" aria-label="Image color picker tool">
+      <div class="icp-upload" id="uploadArea">
+        <input class="icp-hidden-file" id="fileInput" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+        <h2>Select an Image</h2>
+        <p>Choose an image from your device or drag and drop it here.</p>
+        <button class="icp-upload-btn" id="selectImageBtn" type="button">Select Image</button>
+      </div>
+
+      <div class="icp-actions">
+        <button class="icp-secondary" id="clearBtn" type="button" disabled>Clear Image</button>
+      </div>
+
+      <div class="icp-workspace">
+        <div class="icp-image-panel">
+          <p class="icp-image-title"><strong>Click anywhere on the image</strong> to pick a color.</p>
+          <div class="icp-canvas-box empty" id="canvasBox">
+            <div class="icp-empty" id="emptyState">Your uploaded image will appear here.</div>
+            <canvas id="imageCanvas" aria-label="Uploaded image for color picking"></canvas>
+            <div class="icp-magnifier" id="magnifier"></div>
+          </div>
+        </div>
+
+        <div class="icp-info-panel">
+          <div class="icp-selected">
+            <div class="icp-selected-color" id="selectedColor">
+              <div class="icp-selected-hex" id="selectedHex">#2563EB</div>
+            </div>
+          </div>
+
+          <div class="icp-values">
+            <div class="icp-value">
+              <div class="icp-value-head"><label for="hexValue">HEX</label><button class="icp-copy" data-copy="hexValue" type="button">Copy</button></div>
+              <input class="icp-value-input" id="hexValue" readonly value="#2563EB" aria-label="HEX color value">
+            </div>
+            <div class="icp-value">
+              <div class="icp-value-head"><label for="rgbValue">RGB</label><button class="icp-copy" data-copy="rgbValue" type="button">Copy</button></div>
+              <input class="icp-value-input" id="rgbValue" readonly value="rgb(37, 99, 235)" aria-label="RGB color value">
+            </div>
+            <div class="icp-value">
+              <div class="icp-value-head"><label for="hslValue">HSL</label><button class="icp-copy" data-copy="hslValue" type="button">Copy</button></div>
+              <input class="icp-value-input" id="hslValue" readonly value="hsl(217, 83%, 53%)" aria-label="HSL color value">
+            </div>
+            <div class="icp-value">
+              <div class="icp-value-head"><label for="cmykValue">CMYK</label><button class="icp-copy" data-copy="cmykValue" type="button">Copy</button></div>
+              <input class="icp-value-input" id="cmykValue" readonly value="cmyk(84%, 58%, 0%, 8%)" aria-label="CMYK color value">
+            </div>
+          </div>
+          <button class="icp-copy-all" id="copyAll" type="button">Copy All Color Codes</button>
+
+          <div class="icp-color-section">
+            <h3>Image Color Palette</h3>
+            <p>Common colors detected automatically from the uploaded image.</p>
+            <div class="icp-swatches" id="paletteSwatches">
+              <div class="icp-no-colors">Upload an image to generate its palette.</div>
+            </div>
+          </div>
+
+          <div class="icp-color-section">
+            <h3>Picked Colors</h3>
+            <p>Every color you click on the image is saved here.</p>
+            <div class="icp-swatches" id="pickedSwatches">
+              <div class="icp-no-colors">Click the image to add picked colors.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="icp-section">
+      <h2>Pick a Color From an Image</h2>
+      <p>Image Color Picker lets you upload photos, screenshots, graphics, logos and other images, then click directly on the image to identify colors. The tool shows HEX, RGB, HSL and CMYK values and also creates a quick palette of common image colors. Everything runs locally in your browser.</p>
+    </section>
+
+    <section class="icp-section icp-faq">
+      <h2>Frequently Asked Questions</h2>
+      <details><summary>How do I pick a color from an image?</summary><p>Select an image, then click any point on the displayed image. The selected color and its HEX, RGB, HSL and CMYK values will update instantly.</p></details>
+      <details><summary>What is the Image Color Palette?</summary><p>It is a quick set of common colors detected from your uploaded image. You can click a palette color to view and copy its color codes.</p></details>
+      <details><summary>Where are my picked colors saved?</summary><p>Picked colors are kept only in the current page session in your browser. They are not uploaded to a server.</p></details>
+      <details><summary>Are my images uploaded anywhere?</summary><p>No. Image processing and color picking happen locally in your browser. Your image does not need to be sent to a server.</p></details>
+    </section>
+  </main>
+
+  <div class="icp-toast" id="toast" role="status" aria-live="polite"></div>
+  <div id="site-footer"></div>
+
+  <script src="/assets/js/main.js"></script>
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const selectImageBtn = document.getElementById('selectImageBtn');
+    const uploadArea = document.getElementById('uploadArea');
+    const clearBtn = document.getElementById('clearBtn');
+    const canvas = document.getElementById('imageCanvas');
+    const ctx = canvas.getContext('2d', {willReadFrequently:true});
+    const canvasBox = document.getElementById('canvasBox');
+    const emptyState = document.getElementById('emptyState');
+    const magnifier = document.getElementById('magnifier');
+    const selectedColor = document.getElementById('selectedColor');
+    const selectedHex = document.getElementById('selectedHex');
+    const hexValue = document.getElementById('hexValue');
+    const rgbValue = document.getElementById('rgbValue');
+    const hslValue = document.getElementById('hslValue');
+    const cmykValue = document.getElementById('cmykValue');
+    const paletteSwatches = document.getElementById('paletteSwatches');
+    const pickedSwatches = document.getElementById('pickedSwatches');
+    const toast = document.getElementById('toast');
+
+    let loadedImage = null;
+    let pickedColors = [];
+    let currentObjectUrl = null;
+
+    function showToast(message){
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.icpToastTimer);
+      window.icpToastTimer = setTimeout(() => toast.classList.remove('show'), 1800);
+    }
+
+    function clamp(n,min,max){ return Math.max(min, Math.min(max,n)); }
+
+    function rgbToHex(r,g,b){
+      return '#' + [r,g,b].map(v => Math.round(v).toString(16).padStart(2,'0')).join('').toUpperCase();
+    }
+
+    function rgbToHsl(r,g,b){
+      r/=255; g/=255; b/=255;
+      const max=Math.max(r,g,b), min=Math.min(r,g,b);
+      let h=0, s=0, l=(max+min)/2;
+      if(max!==min){
+        const d=max-min;
+        s=l>.5 ? d/(2-max-min) : d/(max+min);
+        switch(max){
+          case r: h=(g-b)/d+(g<b?6:0); break;
+          case g: h=(b-r)/d+2; break;
+          default: h=(r-g)/d+4;
+        }
+        h/=6;
+      }
+      return {h:Math.round(h*360),s:Math.round(s*100),l:Math.round(l*100)};
+    }
+
+    function rgbToCmyk(r,g,b){
+      const R=r/255, G=g/255, B=b/255;
+      const k=1-Math.max(R,G,B);
+      if(k>=0.9999) return {c:0,m:0,y:0,k:100};
+      return {
+        c:Math.round((1-R-k)/(1-k)*100),
+        m:Math.round((1-G-k)/(1-k)*100),
+        y:Math.round((1-B-k)/(1-k)*100),
+        k:Math.round(k*100)
+      };
+    }
+
+    function setSelectedColor(r,g,b, addToHistory=false){
+      const hex=rgbToHex(r,g,b);
+      const hsl=rgbToHsl(r,g,b);
+      const cmyk=rgbToCmyk(r,g,b);
+      selectedColor.style.background=hex;
+      selectedHex.textContent=hex;
+      hexValue.value=hex;
+      rgbValue.value=`rgb(${r}, ${g}, ${b})`;
+      hslValue.value=`hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+      cmykValue.value=`cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
+
+      if(addToHistory){
+        pickedColors = [hex, ...pickedColors.filter(x => x !== hex)].slice(0, 18);
+        renderSwatches(pickedSwatches, pickedColors, 'Click the image to add picked colors.');
+      }
+    }
+
+    function renderSwatches(container, colors, emptyText){
+      container.innerHTML='';
+      if(!colors.length){
+        const el=document.createElement('div');
+        el.className='icp-no-colors';
+        el.textContent=emptyText;
+        container.appendChild(el);
+        return;
+      }
+      colors.forEach(hex=>{
+        const swatch=document.createElement('button');
+        swatch.type='button';
+        swatch.className='icp-swatch';
+        swatch.style.background=hex;
+        swatch.title=`Use ${hex}`;
+        swatch.setAttribute('aria-label',`Use color ${hex}`);
+        const label=document.createElement('span');
+        label.textContent=hex;
+        swatch.appendChild(label);
+        swatch.addEventListener('click',()=>selectHex(hex));
+        container.appendChild(swatch);
+      });
+    }
+
+    function hexToRgb(hex){
+      const clean=hex.replace('#','').trim();
+      if(!/^[0-9a-fA-F]{6}$/.test(clean)) return null;
+      return {
+        r:parseInt(clean.slice(0,2),16),
+        g:parseInt(clean.slice(2,4),16),
+        b:parseInt(clean.slice(4,6),16)
+      };
+    }
+
+    function selectHex(hex){
+      const rgb=hexToRgb(hex);
+      if(rgb) setSelectedColor(rgb.r,rgb.g,rgb.b,false);
+    }
+
+    function buildPalette(image){
+      const sample=document.createElement('canvas');
+      const sw=160;
+      const ratio=image.naturalWidth/image.naturalHeight || 1;
+      const sh=Math.max(1,Math.round(sw/ratio));
+      sample.width=sw; sample.height=sh;
+      const sctx=sample.getContext('2d',{willReadFrequently:true});
+      sctx.drawImage(image,0,0,sw,sh);
+      const data=sctx.getImageData(0,0,sw,sh).data;
+      const buckets=new Map();
+
+      for(let i=0;i<data.length;i+=16){
+        const a=data[i+3];
+        if(a<180) continue;
+        const r=Math.round(data[i]/32)*32;
+        const g=Math.round(data[i+1]/32)*32;
+        const b=Math.round(data[i+2]/32)*32;
+        const key=`${clamp(r,0,255)},${clamp(g,0,255)},${clamp(b,0,255)}`;
+        buckets.set(key,(buckets.get(key)||0)+1);
+      }
+
+      const candidates=[...buckets.entries()]
+        .sort((a,b)=>b[1]-a[1])
+        .map(([key])=>key.split(',').map(Number))
+        .map(([r,g,b])=>rgbToHex(r,g,b));
+
+      const result=[];
+      for(const hex of candidates){
+        const rgb=hexToRgb(hex);
+        if(!rgb) continue;
+        const tooClose=result.some(existing=>{
+          const c=hexToRgb(existing);
+          return Math.abs(c.r-rgb.r)+Math.abs(c.g-rgb.g)+Math.abs(c.b-rgb.b)<55;
+        });
+        if(!tooClose) result.push(hex);
+        if(result.length>=12) break;
+      }
+      renderSwatches(paletteSwatches,result,'No common colors found.');
+    }
+
+    function prepareCanvas(image){
+      const maxDimension=2400;
+      const scale=Math.min(1,maxDimension/Math.max(image.naturalWidth,image.naturalHeight));
+      canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));
+      canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.drawImage(image,0,0,canvas.width,canvas.height);
+      emptyState.style.display='none';
+      canvas.style.display='block';
+      canvasBox.classList.remove('empty');
+      clearBtn.disabled=false;
+      buildPalette(image);
+    }
+
+    function loadImage(file){
+      if(!file || !file.type.startsWith('image/')){
+        showToast('Please select a valid image file.');
+        return;
+      }
+      if(currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+      currentObjectUrl=URL.createObjectURL(file);
+      const img=new Image();
+      img.onload=()=>{
+        loadedImage=img;
+        pickedColors=[];
+        renderSwatches(pickedSwatches,pickedColors,'Click the image to add picked colors.');
+        prepareCanvas(img);
+        setSelectedColor(37,99,235,false);
+        showToast('Image loaded. Click the image to pick colors.');
+      };
+      img.onerror=()=>{
+        showToast('This image could not be loaded.');
+        URL.revokeObjectURL(currentObjectUrl);
+        currentObjectUrl=null;
+      };
+      img.src=currentObjectUrl;
+    }
+
+    selectImageBtn.addEventListener('click',()=>fileInput.click());
+    fileInput.addEventListener('change',()=>{
+      const file=fileInput.files && fileInput.files[0];
+      if(file) loadImage(file);
+    });
+
+    ['dragenter','dragover'].forEach(type=>{
+      uploadArea.addEventListener(type,e=>{
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+      });
+    });
+    ['dragleave','drop'].forEach(type=>{
+      uploadArea.addEventListener(type,e=>{
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+      });
+    });
+    uploadArea.addEventListener('drop',e=>{
+      const file=e.dataTransfer.files && e.dataTransfer.files[0];
+      if(file) loadImage(file);
+    });
+
+    function getCanvasPoint(event){
+      const rect=canvas.getBoundingClientRect();
+      const x=clamp(Math.floor((event.clientX-rect.left)*canvas.width/rect.width),0,canvas.width-1);
+      const y=clamp(Math.floor((event.clientY-rect.top)*canvas.height/rect.height),0,canvas.height-1);
+      return {x,y};
+    }
+
+    canvas.addEventListener('click',event=>{
+      if(!loadedImage || !canvas.width) return;
+      const {x,y}=getCanvasPoint(event);
+      const pixel=ctx.getImageData(x,y,1,1).data;
+      setSelectedColor(pixel[0],pixel[1],pixel[2],true);
+      showToast(`${rgbToHex(pixel[0],pixel[1],pixel[2])} picked`);
+    });
+
+    canvas.addEventListener('mousemove',event=>{
+      if(!loadedImage) return;
+      const {x,y}=getCanvasPoint(event);
+      const size=30;
+      const sx=clamp(x-size/2,0,canvas.width-size);
+      const sy=clamp(y-size/2,0,canvas.height-size);
+      const zoom=3;
+      const rect=canvas.getBoundingClientRect();
+      const left=event.clientX-rect.left;
+      const top=event.clientY-rect.top;
+      magnifier.style.display='block';
+      magnifier.style.left=`${clamp(left+16,4,rect.width-96)}px`;
+      magnifier.style.top=`${clamp(top+16,4,rect.height-96)}px`;
+      magnifier.style.backgroundImage=`url(${canvas.toDataURL('image/png')})`;
+      magnifier.style.backgroundSize=`${canvas.width*zoom}px ${canvas.height*zoom}px`;
+      magnifier.style.backgroundPosition=`-${sx*zoom-43}px -${sy*zoom-43}px`;
+    });
+    canvas.addEventListener('mouseleave',()=>magnifier.style.display='none');
+
+    clearBtn.addEventListener('click',()=>{
+      if(currentObjectUrl) URL.revokeObjectURL(currentObjectUrl);
+      currentObjectUrl=null;
+      loadedImage=null;
+      fileInput.value='';
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      canvas.width=0; canvas.height=0;
+      canvas.style.display='none';
+      emptyState.style.display='block';
+      canvasBox.classList.add('empty');
+      clearBtn.disabled=true;
+      pickedColors=[];
+      renderSwatches(pickedSwatches,pickedColors,'Click the image to add picked colors.');
+      renderSwatches(paletteSwatches,[],'Upload an image to generate its palette.');
+      magnifier.style.display='none';
+      setSelectedColor(37,99,235,false);
+      showToast('Image cleared');
+    });
+
+    async function copyText(text){
+      try{
+        await navigator.clipboard.writeText(text);
+        showToast('Copied');
+      }catch{
+        showToast('Copy failed. Please copy manually.');
+      }
+    }
+
+    document.querySelectorAll('[data-copy]').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        copyText(document.getElementById(btn.dataset.copy).value);
+      });
+    });
+
+    document.getElementById('copyAll').addEventListener('click',()=>{
+      const text=`HEX: ${hexValue.value}\nRGB: ${rgbValue.value}\nHSL: ${hslValue.value}\nCMYK: ${cmykValue.value}`;
+      copyText(text);
+    });
+
+    setSelectedColor(37,99,235,false);
+    canvas.style.display='none';
+  </script>
+</body>
+</html>
