@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Video Trimmer &amp; Cutter Online | Working Tools Box</title>
+<meta name="description" content="Trim and cut your videos online for free, right in your browser. Select a start and end point and download the clipped result, with no upload and no sign-up.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/video-trimmer/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Video Trimmer & Cutter Online | Working Tools Box">
+<meta property="og:description" content="Trim and cut your videos online for free, entirely in your browser. No upload, no sign-up.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/video-trimmer/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Video Trimmer & Cutter Online | Working Tools Box">
+<meta name="twitter:description" content="Trim and cut your videos online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Video Trimmer & Cutter",
+  "url":"https://workingtoolsbox.vercel.app/tools/video-trimmer/",
+  "applicationCategory":"MultimediaApplication",
+  "operatingSystem":"Any",
+  "description":"Trims a video to a chosen start and end point directly in the browser and produces a downloadable clipped video.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my video uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The video is played and re-recorded locally in your browser using the MediaRecorder API, and is never uploaded anywhere."}},
+    {"@type":"Question","name":"What format is the trimmed video saved as?","acceptedAnswer":{"@type":"Answer","text":"The downloaded clip is saved as a WebM file. Browsers cannot cut most video formats without re-encoding, so the output format is WebM regardless of what you uploaded."}},
+    {"@type":"Question","name":"Why does my browser say trimming is not supported?","acceptedAnswer":{"@type":"Answer","text":"This tool relies on browser features (captureStream and MediaRecorder) that are best supported in Chrome, Edge and other Chromium-based browsers. Older browsers or some versions of Safari may not support it."}},
+    {"@type":"Question","name":"Will the trimmed video lose quality?","acceptedAnswer":{"@type":"Answer","text":"Because the browser re-encodes the selected section rather than cutting the file directly, there can be a small quality or file-size difference from the original."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--success:#0f9d58;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+  .notice.warn{background:#fff7ed;border-color:#fcd9a8;color:#92400e}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+  .status.success{color:var(--success);font-weight:600}
+
+  video{width:100%;border-radius:14px;background:#111827;max-height:480px}
+
+  .trim-panel{border:1px solid var(--border);border-radius:14px;padding:16px;margin-top:18px;background:#fbf9ff}
+  .time-row{display:flex;justify-content:space-between;font-size:13px;font-weight:700;margin-bottom:6px}
+  .range-track{position:relative;height:36px}
+  .range-track input[type=range]{position:absolute;top:8px;left:0;width:100%;pointer-events:none;-webkit-appearance:none;background:transparent}
+  .range-track input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:18px;height:18px;border-radius:50%;background:var(--purple);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:pointer;margin-top:-2px}
+  .range-track input[type=range]::-webkit-slider-runnable-track{height:4px;background:var(--border);border-radius:2px}
+  .duration-readout{font-size:13px;color:var(--muted);margin-top:10px}
+
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
+  .faq h3{font-size:1rem;margin:14px 0 6px}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Video Trimmer &amp; Cutter</h1>
+    <p>Select a start and end point and download just the part of the video you need &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Your video is processed locally in your browser and never leaves your device.
+  </div>
+  <div class="notice warn hidden" id="unsupportedNotice">
+    <b>Heads up:</b> your browser does not support in-browser video trimming (it needs the MediaRecorder and captureStream APIs). Please try the latest version of Chrome or Edge.
+  </div>
+
+  <section class="tool" aria-label="Video Trimmer Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M15 10l4.55-2.276A1 1 0 0 1 21 8.618v6.764a1 1 0 0 1-1.45.894L15 14M5 18h8a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your video here, or</p>
+        <input type="file" id="fileInput" accept="video/mp4,video/webm,video/quicktime,video/*">
+        <button type="button" class="button primary" id="selectBtn">Select Video</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px">MP4, WebM or MOV. Works best under ~2 minutes long.</p>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div id="editorView" class="hidden">
+      <video id="previewVideo" controls muted playsinline></video>
+
+      <div class="trim-panel">
+        <div class="time-row">
+          <span>Start: <span id="startLabel">0:00</span></span>
+          <span>End: <span id="endLabel">0:00</span></span>
+        </div>
+        <div class="range-track">
+          <input type="range" id="startRange" min="0" max="100" value="0" step="0.1" aria-label="Trim start">
+          <input type="range" id="endRange" min="0" max="100" value="100" step="0.1" aria-label="Trim end">
+        </div>
+        <div class="duration-readout">Selected clip length: <span id="clipLength">0:00</span></div>
+        <div class="actions">
+          <button type="button" class="button secondary" id="previewClipBtn">Preview Selection</button>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="button primary" id="cutBtn">Cut Video</button>
+        <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Video</button>
+      </div>
+      <div id="cutStatus" class="status"></div>
+    </div>
+
+    <div id="resultView" class="hidden">
+      <p style="font-weight:700;margin:0 0 10px">Trimmed Result</p>
+      <video id="resultVideo" controls playsinline></video>
+      <div class="actions">
+        <button type="button" class="button primary" id="downloadBtn">Download Trimmed Video</button>
+        <button type="button" class="button secondary" id="startOverBtn">Trim Another Video</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Trim and Cut Videos Free, in Your Browser</h2>
+    <p>This free video trimmer lets you select a start and end point on a video and save just that section, without uploading the file anywhere. It works as a browser-based video cutter and clip maker, using your browser's own recording features to capture the selected range and save it as a new file, so long uploads and processing queues are not needed for short clips.</p>
+    <p>Use it to cut a highlight from a longer recording, shorten a video for social media, remove the start or end of a clip, or trim a screen recording down to the useful part before sharing it.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>video trimmer online free</span>
+      <span>free video cutter</span>
+      <span>trim video online no upload</span>
+      <span>cut video online free</span>
+      <span>online video clipper</span>
+      <span>shorten video online</span>
+      <span>video trimmer no watermark</span>
+      <span>cut video clip online</span>
+      <span>browser video trimmer</span>
+      <span>free online video editor trim</span>
+      <span>video cutter no sign up</span>
+      <span>trim mp4 online free</span>
+      <span>cut webm video online</span>
+      <span>make video clip online</span>
+      <span>video trim start and end</span>
+      <span>remove part of video online</span>
+      <span>quick video trimmer free</span>
+      <span>trim video for social media</span>
+      <span>video cutter for reels</span>
+      <span>online mov video trimmer</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <div class="faq"><h3>Is my video uploaded to a server?</h3><p>No. The video is played and re-recorded locally in your browser using the MediaRecorder API, and is never uploaded anywhere.</p></div>
+    <div class="faq"><h3>What format is the trimmed video saved as?</h3><p>The downloaded clip is saved as a WebM file. Browsers cannot cut most video formats without re-encoding, so the output format is WebM regardless of what you uploaded.</p></div>
+    <div class="faq"><h3>Why does my browser say trimming is not supported?</h3><p>This tool relies on browser features (captureStream and MediaRecorder) that are best supported in Chrome, Edge and other Chromium-based browsers. Older browsers or some versions of Safari may not support it.</p></div>
+    <div class="faq"><h3>Will the trimmed video lose quality?</h3><p>Because the browser re-encodes the selected section rather than cutting the file directly, there can be a small quality or file-size difference from the original.</p></div>
+    <div class="faq"><h3>Is this free to use?</h3><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var uploadView = document.getElementById("uploadView");
+  var editorView = document.getElementById("editorView");
+  var resultView = document.getElementById("resultView");
+  var unsupportedNotice = document.getElementById("unsupportedNotice");
+
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var previewVideo = document.getElementById("previewVideo");
+  var startRange = document.getElementById("startRange");
+  var endRange = document.getElementById("endRange");
+  var startLabel = document.getElementById("startLabel");
+  var endLabel = document.getElementById("endLabel");
+  var clipLength = document.getElementById("clipLength");
+  var previewClipBtn = document.getElementById("previewClipBtn");
+  var cutBtn = document.getElementById("cutBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+  var cutStatus = document.getElementById("cutStatus");
+
+  var resultVideo = document.getElementById("resultVideo");
+  var downloadBtn = document.getElementById("downloadBtn");
+  var startOverBtn = document.getElementById("startOverBtn");
+
+  var sourceObjectUrl = null;
+  var resultObjectUrl = null;
+  var duration = 0;
+  var previewingRange = false;
+
+  function fmt(sec){
+    sec = Math.max(0, sec || 0);
+    var m = Math.floor(sec / 60);
+    var s = Math.floor(sec % 60);
+    return m + ":" + (s < 10 ? "0" : "") + s;
+  }
+
+  function supportsTrimming(){
+    return !!(HTMLVideoElement.prototype.captureStream && window.MediaRecorder);
+  }
+  if(!supportsTrimming()){
+    unsupportedNotice.classList.remove("hidden");
+    selectBtn.disabled = true;
+  }
+
+  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file){
+    if(file.type.indexOf("video/") !== 0){
+      uploadStatus.textContent = "Please choose a video file.";
+      uploadStatus.className = "status error";
+      return;
+    }
+    revoke(sourceObjectUrl);
+    sourceObjectUrl = URL.createObjectURL(file);
+    previewVideo.src = sourceObjectUrl;
+    previewVideo.onloadedmetadata = function(){
+      duration = previewVideo.duration;
+      startRange.min = 0; startRange.max = duration; startRange.value = 0;
+      endRange.min = 0; endRange.max = duration; endRange.value = duration;
+      updateLabels();
+      uploadView.classList.add("hidden");
+      editorView.classList.remove("hidden");
+    };
+    previewVideo.onerror = function(){
+      uploadStatus.textContent = "Could not load that video. Please try another file.";
+      uploadStatus.className = "status error";
+    };
+  }
+
+  function updateLabels(){
+    var s = parseFloat(startRange.value);
+    var e = parseFloat(endRange.value);
+    if(e <= s) e = Math.min(duration, s + 0.5);
+    startLabel.textContent = fmt(s);
+    endLabel.textContent = fmt(e);
+    clipLength.textContent = fmt(e - s);
+  }
+  startRange.addEventListener("input", function(){
+    if(parseFloat(startRange.value) >= parseFloat(endRange.value)){
+      startRange.value = Math.max(0, parseFloat(endRange.value) - 0.5);
+    }
+    previewVideo.currentTime = parseFloat(startRange.value);
+    updateLabels();
+  });
+  endRange.addEventListener("input", function(){
+    if(parseFloat(endRange.value) <= parseFloat(startRange.value)){
+      endRange.value = Math.min(duration, parseFloat(startRange.value) + 0.5);
+    }
+    updateLabels();
+  });
+
+  previewClipBtn.addEventListener("click", function(){
+    previewingRange = true;
+    previewVideo.currentTime = parseFloat(startRange.value);
+    previewVideo.play();
+  });
+  previewVideo.addEventListener("timeupdate", function(){
+    if(previewingRange && previewVideo.currentTime >= parseFloat(endRange.value)){
+      previewVideo.pause();
+      previewingRange = false;
+    }
+  });
+
+  chooseAnotherBtn.addEventListener("click", resetToUpload);
+  function resetToUpload(){
+    revoke(sourceObjectUrl); sourceObjectUrl = null;
+    fileInput.value = "";
+    editorView.classList.add("hidden");
+    resultView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  }
+
+  function pickMimeType(){
+    var candidates = [
+      "video/webm;codecs=vp9,opus",
+      "video/webm;codecs=vp8,opus",
+      "video/webm"
+    ];
+    for(var i = 0; i < candidates.length; i++){
+      if(MediaRecorder.isTypeSupported(candidates[i])) return candidates[i];
+    }
+    return "";
+  }
+
+  cutBtn.addEventListener("click", function(){
+    if(!supportsTrimming()){
+      cutStatus.textContent = "Video trimming is not supported in this browser.";
+      cutStatus.className = "status error";
+      return;
+    }
+    var mimeType = pickMimeType();
+    if(!mimeType){
+      cutStatus.textContent = "This browser does not support any compatible video recording format.";
+      cutStatus.className = "status error";
+      return;
+    }
+
+    var start = parseFloat(startRange.value);
+    var end = parseFloat(endRange.value);
+    if(end - start < 0.3){
+      cutStatus.textContent = "Please select a clip longer than half a second.";
+      cutStatus.className = "status error";
+      return;
+    }
+
+    cutBtn.disabled = true;
+    chooseAnotherBtn.disabled = true;
+    cutStatus.textContent = "Cutting your video\u2026";
+    cutStatus.className = "status";
+
+    var stream;
+    try{
+      stream = previewVideo.captureStream ? previewVideo.captureStream() : previewVideo.mozCaptureStream();
+    }catch(err){
+      cutStatus.textContent = "Could not access the video stream in this browser.";
+      cutStatus.className = "status error";
+      cutBtn.disabled = false;
+      chooseAnotherBtn.disabled = false;
+      return;
+    }
+
+    var recorder = new MediaRecorder(stream, { mimeType: mimeType });
+    var chunks = [];
+    var finished = false;
+
+    recorder.ondataavailable = function(e){ if(e.data && e.data.size > 0) chunks.push(e.data); };
+
+    recorder.onstop = function(){
+      if(finished) return;
+      finished = true;
+      previewVideo.removeEventListener("timeupdate", onTimeUpdate);
+      var blob = new Blob(chunks, { type: "video/webm" });
+      revoke(resultObjectUrl);
+      resultObjectUrl = URL.createObjectURL(blob);
+      resultVideo.src = resultObjectUrl;
+      cutBtn.disabled = false;
+      chooseAnotherBtn.disabled = false;
+      editorView.classList.add("hidden");
+      resultView.classList.remove("hidden");
+    };
+
+    recorder.onerror = function(){
+      cutStatus.textContent = "Something went wrong while cutting the video. Please try again.";
+      cutStatus.className = "status error";
+      cutBtn.disabled = false;
+      chooseAnotherBtn.disabled = false;
+    };
+
+    function onTimeUpdate(){
+      if(previewVideo.currentTime >= end){
+        previewVideo.pause();
+        if(recorder.state === "recording") recorder.stop();
+      }
+    }
+
+    previewVideo.muted = false;
+    previewVideo.addEventListener("timeupdate", onTimeUpdate);
+
+    // Seek to the start point, then begin recording. We do NOT rely on the
+    // "seeked" event firing here: some browsers don't fire it when the
+    // requested time is the same as (or very close to) the current time
+    // (most commonly when start = 0), which would otherwise leave the
+    // recorder stuck waiting forever. Starting immediately after issuing
+    // the seek is a safe, simple fix - worst case the first fraction of a
+    // second of the clip is captured a few milliseconds early, which is
+    // negligible next to the timeupdate-based stop precision anyway.
+    previewVideo.currentTime = start;
+    recorder.start();
+    previewVideo.play();
+
+    // safety timeout in case timeupdate doesn't fire precisely enough
+    setTimeout(function(){
+      if(!finished && recorder.state === "recording"){
+        previewVideo.pause();
+        recorder.stop();
+      }
+    }, (end - start) * 1000 + 2500);
+  });
+
+  downloadBtn.addEventListener("click", function(){
+    if(!resultObjectUrl) return;
+    var a = document.createElement("a");
+    a.href = resultObjectUrl;
+    a.download = "trimmed-video.webm";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  });
+
+  startOverBtn.addEventListener("click", function(){
+    revoke(resultObjectUrl); resultObjectUrl = null;
+    resetToUpload();
+  });
+})();
+</script>
+</body>
+</html>

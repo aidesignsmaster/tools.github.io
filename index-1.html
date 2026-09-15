@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Watermark Adder Online | Working Tools Box</title>
+<meta name="description" content="Add a text or logo watermark to your photos online for free. Control position, size, opacity, rotation and tiling, entirely in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-watermark-adder/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image Watermark Adder Online | Working Tools Box">
+<meta property="og:description" content="Add a text or logo watermark to your photos online for free, with full control over position, size, opacity and tiling.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-watermark-adder/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image Watermark Adder Online | Working Tools Box">
+<meta name="twitter:description" content="Add a text or logo watermark to your photos online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Image Watermark Adder",
+  "url":"https://workingtoolsbox.vercel.app/tools/image-watermark-adder/",
+  "applicationCategory":"PhotoApplication",
+  "operatingSystem":"Any",
+  "description":"Adds a text or logo watermark to photos directly in the browser, with control over position, opacity, size, rotation and tiling.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The watermark is drawn onto your image locally in your browser using the Canvas API, and nothing is uploaded anywhere."}},
+    {"@type":"Question","name":"Can I use my own logo as the watermark?","acceptedAnswer":{"@type":"Answer","text":"Yes. Switch to the Logo tab and upload a PNG or WebP image, ideally with a transparent background, to use as your watermark."}},
+    {"@type":"Question","name":"Can I repeat the watermark across the whole image?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn on the Tile Across Image option to repeat the watermark in a protective pattern across the entire photo, similar to stock photo previews."}},
+    {"@type":"Question","name":"What image formats are supported?","acceptedAnswer":{"@type":"Answer","text":"You can upload JPG, PNG or WebP images, and download the watermarked result as a PNG."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 22px;font-weight:700;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible,input:focus-visible,.pos-btn:focus-visible,.tab-btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .editor{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:start}
+  .canvas-wrap{background:#111827;border-radius:14px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px}
+  #previewCanvas{max-width:100%;max-height:560px;display:block}
+
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .tabs{display:flex;gap:8px;margin-bottom:16px}
+  .tab-btn{flex:1;border:1.5px solid var(--border);background:#fff;border-radius:10px;padding:9px;font-weight:700;font-size:13px;cursor:pointer;color:var(--muted)}
+  .tab-btn.active{border-color:var(--purple);color:var(--purple);background:#f8f6ff}
+
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-of-type{margin-top:0}
+  input[type=text],select{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px}
+  input[type=range]{width:100%}
+  input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px}
+
+  .pos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+  .pos-btn{aspect-ratio:1;border:1.5px solid var(--border);background:#fbf9ff;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .pos-btn.active{border-color:var(--purple);background:#f0eafd}
+  .pos-btn span{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+  .pos-btn.active span{background:var(--purple)}
+
+  .checkbox-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:16px 0 0}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
+  .faq h3{font-size:1rem;margin:14px 0 6px}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:800px){.editor{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Image Watermark Adder</h1>
+    <p>Add a text or logo watermark to your photos, with full control over position, size, opacity and tiling &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Your photo and any logo you use are processed locally in your browser and never leave your device.
+  </div>
+
+  <section class="tool" aria-label="Image Watermark Adder Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Photo</button>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div id="editorView" class="hidden">
+      <div class="editor">
+        <div class="canvas-wrap"><canvas id="previewCanvas"></canvas></div>
+
+        <div class="panel">
+          <div class="tabs">
+            <button type="button" class="tab-btn active" id="textTabBtn">Text</button>
+            <button type="button" class="tab-btn" id="logoTabBtn">Logo</button>
+          </div>
+
+          <div id="textControls">
+            <label for="wmText">Watermark text</label>
+            <input type="text" id="wmText" value="Working Tools Box" maxlength="60">
+
+            <label for="wmColor">Color</label>
+            <input type="color" id="wmColor" value="#ffffff">
+
+            <label for="wmFontSize">Text size: <span id="wmFontSizeVal">36</span>px</label>
+            <input type="range" id="wmFontSize" min="12" max="120" value="36">
+          </div>
+
+          <div id="logoControls" class="hidden">
+            <label for="logoInput">Logo image (PNG recommended)</label>
+            <input type="file" id="logoInput" accept="image/png,image/webp,image/jpeg">
+            <button type="button" class="button secondary" id="logoSelectBtn" style="width:100%;justify-content:center;margin-top:8px">Choose Logo File</button>
+            <div id="logoStatus" class="status"></div>
+
+            <label for="logoScale">Logo size: <span id="logoScaleVal">20</span>%</label>
+            <input type="range" id="logoScale" min="5" max="60" value="20">
+          </div>
+
+          <label for="wmOpacity">Opacity: <span id="wmOpacityVal">60</span>%</label>
+          <input type="range" id="wmOpacity" min="5" max="100" value="60">
+
+          <label for="wmRotation">Rotation: <span id="wmRotationVal">-30</span>&deg;</label>
+          <input type="range" id="wmRotation" min="-90" max="90" value="-30">
+
+          <label class="checkbox-row" style="margin-top:16px">
+            <input type="checkbox" id="wmTile" style="width:16px;height:16px">
+            Tile across whole image
+          </label>
+
+          <div id="positionBlock">
+            <label>Position</label>
+            <div class="pos-grid" role="group" aria-label="Watermark position">
+              <button class="pos-btn" data-pos="top-left" type="button" aria-label="Top left"><span></span></button>
+              <button class="pos-btn" data-pos="top-center" type="button" aria-label="Top center"><span></span></button>
+              <button class="pos-btn" data-pos="top-right" type="button" aria-label="Top right"><span></span></button>
+              <button class="pos-btn" data-pos="middle-left" type="button" aria-label="Middle left"><span></span></button>
+              <button class="pos-btn active" data-pos="middle-center" type="button" aria-label="Center"><span></span></button>
+              <button class="pos-btn" data-pos="middle-right" type="button" aria-label="Middle right"><span></span></button>
+              <button class="pos-btn" data-pos="bottom-left" type="button" aria-label="Bottom left"><span></span></button>
+              <button class="pos-btn" data-pos="bottom-center" type="button" aria-label="Bottom center"><span></span></button>
+              <button class="pos-btn" data-pos="bottom-right" type="button" aria-label="Bottom right"><span></span></button>
+            </div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
+            <button type="button" class="button primary" id="downloadBtn" style="justify-content:center">Download Watermarked Image</button>
+            <button type="button" class="button secondary" id="chooseAnotherBtn" style="justify-content:center">Choose Different Photo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Add a Watermark to Your Photos for Free</h2>
+    <p>This free image watermark adder lets you stamp your own text or logo onto your photos to protect and brand them before sharing online. Choose a text watermark with your name, brand or copyright notice, or upload your own logo image, then adjust size, opacity, rotation and position. Turn on the tile option to repeat the watermark diagonally across the whole photo, similar to how stock photo sites protect their previews, which makes it harder for anyone to crop the mark out.</p>
+    <p>Use it to watermark photography portfolios, protect social media images, brand product photos for an online store, or add a copyright notice to artwork before posting it publicly. Everything runs locally in your browser using the Canvas API, so your original photo and logo are never uploaded anywhere.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>image watermark adder online</span>
+      <span>free watermark tool</span>
+      <span>add text watermark to photo</span>
+      <span>add logo watermark online</span>
+      <span>watermark photos online free</span>
+      <span>protect photos with watermark</span>
+      <span>photo watermark maker</span>
+      <span>copyright watermark tool</span>
+      <span>tile watermark across image</span>
+      <span>add watermark no upload</span>
+      <span>brand photos with logo watermark</span>
+      <span>online photo watermarking tool</span>
+      <span>watermark maker free</span>
+      <span>stamp logo on photo online</span>
+      <span>add copyright notice to photo</span>
+      <span>watermark image for instagram</span>
+      <span>protect stock photos with watermark</span>
+      <span>free logo watermark maker</span>
+      <span>watermark photography portfolio</span>
+      <span>add signature watermark to image</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <div class="faq"><h3>Is my photo uploaded to a server?</h3><p>No. The watermark is drawn onto your image locally in your browser using the Canvas API, and nothing is uploaded anywhere.</p></div>
+    <div class="faq"><h3>Can I use my own logo as the watermark?</h3><p>Yes. Switch to the Logo tab and upload a PNG or WebP image, ideally with a transparent background, to use as your watermark.</p></div>
+    <div class="faq"><h3>Can I repeat the watermark across the whole image?</h3><p>Yes. Turn on the Tile Across Image option to repeat the watermark in a protective pattern across the entire photo, similar to stock photo previews.</p></div>
+    <div class="faq"><h3>What image formats are supported?</h3><p>You can upload JPG, PNG or WebP images, and download the watermarked result as a PNG.</p></div>
+    <div class="faq"><h3>Is this free to use?</h3><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var uploadView = document.getElementById("uploadView");
+  var editorView = document.getElementById("editorView");
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var canvas = document.getElementById("previewCanvas");
+  var ctx = canvas.getContext("2d");
+
+  var textTabBtn = document.getElementById("textTabBtn");
+  var logoTabBtn = document.getElementById("logoTabBtn");
+  var textControls = document.getElementById("textControls");
+  var logoControls = document.getElementById("logoControls");
+
+  var wmText = document.getElementById("wmText");
+  var wmColor = document.getElementById("wmColor");
+  var wmFontSize = document.getElementById("wmFontSize");
+  var wmFontSizeVal = document.getElementById("wmFontSizeVal");
+  var wmOpacity = document.getElementById("wmOpacity");
+  var wmOpacityVal = document.getElementById("wmOpacityVal");
+  var wmRotation = document.getElementById("wmRotation");
+  var wmRotationVal = document.getElementById("wmRotationVal");
+  var wmTile = document.getElementById("wmTile");
+  var positionBlock = document.getElementById("positionBlock");
+  var posButtons = document.querySelectorAll(".pos-btn");
+
+  var logoInput = document.getElementById("logoInput");
+  var logoSelectBtn = document.getElementById("logoSelectBtn");
+  var logoStatus = document.getElementById("logoStatus");
+  var logoScale = document.getElementById("logoScale");
+  var logoScaleVal = document.getElementById("logoScaleVal");
+
+  var downloadBtn = document.getElementById("downloadBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+
+  var baseImage = null;
+  var logoImage = null;
+  var baseObjectUrl = null;
+  var logoObjectUrl = null;
+  var resultObjectUrl = null;
+  var mode = "text"; // "text" | "logo"
+  var position = "middle-center";
+
+  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleBaseFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleBaseFile(fileInput.files[0]);
+  });
+
+  function handleBaseFile(file){
+    var allowed = ["image/jpeg","image/png","image/webp"];
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
+      uploadStatus.className = "status error";
+      return;
+    }
+    revoke(baseObjectUrl);
+    baseObjectUrl = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      baseImage = img;
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      render();
+      uploadView.classList.add("hidden");
+      editorView.classList.remove("hidden");
+    };
+    img.onerror = function(){
+      uploadStatus.textContent = "Could not read that image. Please try another file.";
+      uploadStatus.className = "status error";
+    };
+    img.src = baseObjectUrl;
+  }
+
+  chooseAnotherBtn.addEventListener("click", function(){
+    baseImage = null;
+    logoImage = null;
+    fileInput.value = "";
+    logoInput.value = "";
+    revoke(baseObjectUrl); baseObjectUrl = null;
+    revoke(logoObjectUrl); logoObjectUrl = null;
+    editorView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
+
+  // tabs
+  textTabBtn.addEventListener("click", function(){ setMode("text"); });
+  logoTabBtn.addEventListener("click", function(){ setMode("logo"); });
+  function setMode(m){
+    mode = m;
+    textTabBtn.classList.toggle("active", m === "text");
+    logoTabBtn.classList.toggle("active", m === "logo");
+    textControls.classList.toggle("hidden", m !== "text");
+    logoControls.classList.toggle("hidden", m !== "logo");
+    render();
+  }
+
+  // logo upload
+  logoSelectBtn.addEventListener("click", function(){ logoInput.click(); });
+  logoInput.addEventListener("change", function(){
+    var file = logoInput.files && logoInput.files[0];
+    if(!file) return;
+    var allowed = ["image/png","image/webp","image/jpeg"];
+    if(allowed.indexOf(file.type) === -1){
+      logoStatus.textContent = "Please choose a PNG, WebP or JPG logo.";
+      logoStatus.className = "status error";
+      return;
+    }
+    revoke(logoObjectUrl);
+    logoObjectUrl = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      logoImage = img;
+      logoStatus.textContent = "Logo loaded.";
+      logoStatus.className = "status";
+      render();
+    };
+    img.onerror = function(){
+      logoStatus.textContent = "Could not read that logo file.";
+      logoStatus.className = "status error";
+    };
+    img.src = logoObjectUrl;
+  });
+
+  // position grid
+  posButtons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      posButtons.forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active");
+      position = btn.getAttribute("data-pos");
+      render();
+    });
+  });
+
+  // live-update controls
+  [wmText, wmColor, wmFontSize, wmOpacity, wmRotation, logoScale].forEach(function(el){
+    el.addEventListener("input", function(){
+      wmFontSizeVal.textContent = wmFontSize.value;
+      wmOpacityVal.textContent = wmOpacity.value;
+      wmRotationVal.textContent = wmRotation.value;
+      logoScaleVal.textContent = logoScale.value;
+      render();
+    });
+  });
+  wmTile.addEventListener("change", function(){
+    positionBlock.style.opacity = wmTile.checked ? "0.4" : "1";
+    positionBlock.style.pointerEvents = wmTile.checked ? "none" : "auto";
+    render();
+  });
+
+  function getAnchorXY(w, h, itemW, itemH, pad){
+    var x, y;
+    if(position.indexOf("left") !== -1) x = pad + itemW / 2;
+    else if(position.indexOf("right") !== -1) x = w - pad - itemW / 2;
+    else x = w / 2;
+
+    if(position.indexOf("top") !== -1) y = pad + itemH / 2;
+    else if(position.indexOf("bottom") !== -1) y = h - pad - itemH / 2;
+    else y = h / 2;
+
+    return { x: x, y: y };
+  }
+
+  function drawTextStamp(x, y, rotDeg, opacity, text, color, fontSize){
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rotDeg * Math.PI / 180);
+    ctx.globalAlpha = opacity;
+    ctx.font = "bold " + fontSize + "px -apple-system, Arial, sans-serif";
+    ctx.fillStyle = color;
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(text, 0, 0);
+    ctx.restore();
+  }
+
+  function drawLogoStamp(x, y, rotDeg, opacity, drawW, drawH){
+    if(!logoImage) return;
+    ctx.save();
+    ctx.translate(x, y);
+    ctx.rotate(rotDeg * Math.PI / 180);
+    ctx.globalAlpha = opacity;
+    ctx.drawImage(logoImage, -drawW / 2, -drawH / 2, drawW, drawH);
+    ctx.restore();
+  }
+
+  function render(){
+    if(!baseImage) return;
+    var w = canvas.width, h = canvas.height;
+    ctx.clearRect(0, 0, w, h);
+    ctx.drawImage(baseImage, 0, 0, w, h);
+
+    var opacity = parseInt(wmOpacity.value, 10) / 100;
+    var rot = parseInt(wmRotation.value, 10);
+    var tile = wmTile.checked;
+
+    if(mode === "text"){
+      var text = wmText.value || "Watermark";
+      var fontSize = parseInt(wmFontSize.value, 10);
+      var color = wmColor.value;
+
+      if(tile){
+        ctx.font = "bold " + fontSize + "px -apple-system, Arial, sans-serif";
+        var textW = ctx.measureText(text).width;
+        var stepX = textW + fontSize * 2.4;
+        var stepY = fontSize * 3.2;
+        for(var ty = -stepY; ty < h + stepY; ty += stepY){
+          for(var tx = -stepX; tx < w + stepX; tx += stepX){
+            drawTextStamp(tx, ty, rot, opacity, text, color, fontSize);
+          }
+        }
+      } else {
+        ctx.font = "bold " + fontSize + "px -apple-system, Arial, sans-serif";
+        var tw = ctx.measureText(text).width;
+        var pad = Math.max(16, fontSize * 0.6);
+        var anchor = getAnchorXY(w, h, tw, fontSize, pad);
+        drawTextStamp(anchor.x, anchor.y, rot, opacity, text, color, fontSize);
+      }
+    } else {
+      if(!logoImage) return;
+      var scalePct = parseInt(logoScale.value, 10) / 100;
+      var drawW = w * scalePct;
+      var drawH = drawW * (logoImage.naturalHeight / logoImage.naturalWidth);
+
+      if(tile){
+        var lStepX = drawW * 1.8;
+        var lStepY = drawH * 1.8;
+        for(var ly = -lStepY; ly < h + lStepY; ly += lStepY){
+          for(var lx = -lStepX; lx < w + lStepX; lx += lStepX){
+            drawLogoStamp(lx, ly, rot, opacity, drawW, drawH);
+          }
+        }
+      } else {
+        var pad2 = Math.max(16, drawW * 0.15);
+        var anchor2 = getAnchorXY(w, h, drawW, drawH, pad2);
+        drawLogoStamp(anchor2.x, anchor2.y, rot, opacity, drawW, drawH);
+      }
+    }
+  }
+
+  downloadBtn.addEventListener("click", function(){
+    canvas.toBlob(function(blob){
+      if(!blob) return;
+      revoke(resultObjectUrl);
+      resultObjectUrl = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = resultObjectUrl;
+      a.download = "watermarked-image.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){ revoke(resultObjectUrl); resultObjectUrl = null; }, 4000);
+    }, "image/png");
+  });
+})();
+</script>
+</body>
+</html>

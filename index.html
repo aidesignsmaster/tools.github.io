@@ -1,273 +1,482 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Working Tools Box - Free Online Image Tools</title>
-  <meta name="description" content="Working Tools Box offers fast, free browser-based tools to compress, resize, crop, convert and pick colors from your images. No uploads to a server required.">
-  <link rel="canonical" href="https://workingtoolsbox.vercel.app/">
-  <link rel="stylesheet" href="/assets/css/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Sharpener &amp; Upscaler Online | Working Tools Box</title>
+<meta name="description" content="Sharpen and upscale your photos online for free, right in your browser. Increase resolution and enhance clarity with no upload, no sign-up, and no cost.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-sharpener-upscaler/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image Sharpener & Upscaler Online | Working Tools Box">
+<meta property="og:description" content="Sharpen and upscale your photos online for free, entirely in your browser. No upload, no sign-up, no cost.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-sharpener-upscaler/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image Sharpener & Upscaler Online | Working Tools Box">
+<meta name="twitter:description" content="Sharpen and upscale your photos online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Image Sharpener & Upscaler",
+  "url":"https://workingtoolsbox.vercel.app/tools/image-sharpener-upscaler/",
+  "applicationCategory":"PhotoApplication",
+  "operatingSystem":"Any",
+  "description":"Upscales and sharpens photos directly in the browser using smooth resampling and an unsharp-mask sharpening filter. No file leaves the device.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is this a real AI tool?","acceptedAnswer":{"@type":"Answer","text":"No. This tool uses classic image-processing techniques, smooth resampling for upscaling and an unsharp-mask filter for sharpening, not a neural network. It runs instantly and for free because of that."}},
+    {"@type":"Question","name":"Is my photo uploaded anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Every step happens locally in your browser using the Canvas API. Your photo never leaves your device."}},
+    {"@type":"Question","name":"Why does my image look pixelated even after upscaling?","acceptedAnswer":{"@type":"Answer","text":"Upscaling makes an image bigger and smoother, but it cannot invent detail that was never captured in the original photo. Very low-resolution or heavily compressed images will still show some softness."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up, no watermark, and no limit, since all processing happens on your own device."}},
+    {"@type":"Question","name":"What is the maximum image size supported?","acceptedAnswer":{"@type":"Answer","text":"Very large images can be slow to process in the browser, so this tool works best with photos up to about 12 megapixels before upscaling."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--success:#0f9d58;--error:#c0392b;--focus:#4338ca;
+    --radius:16px;--shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+  .tool h2{margin:0 0 8px;font-size:1.3rem;font-weight:800}
+  .tool p.sub{color:var(--muted);margin:0 0 20px}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:1fr 260px;gap:22px;align-items:start}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-child{margin-top:0}
+  select{width:100%;padding:10px;border:1px solid #d1d5db;border-radius:8px;background:#fff;font-size:14px}
+  .hint{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .ba-wrap{position:relative;width:100%;aspect-ratio:4/3;max-height:560px;overflow:hidden;border-radius:14px;background:#111827;touch-action:none;user-select:none}
+  .ba-wrap img,.ba-wrap canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#111827}
+  .ba-after-clip{position:absolute;inset:0;overflow:hidden}
+  .ba-divider{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.15);cursor:ew-resize}
+  .ba-handle{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.25);cursor:ew-resize}
+  .ba-tag{position:absolute;top:10px;padding:4px 10px;font-size:12px;font-weight:700;border-radius:999px;background:rgba(17,24,39,.75);color:#fff}
+
+  .spinner{width:30px;height:30px;border-radius:50%;border:3px solid #e6e0f7;border-top-color:var(--purple);animation:spin .8s linear infinite;margin:0 auto}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
+  .faq h3{font-size:1rem;margin:14px 0 6px}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+</style>
 </head>
 <body>
-  <div id="site-header"></div>
 
-  <main>
-    <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow">WORKING TOOLS BOX</p>
-        <h1>Free Online Tools for <span class="text-gradient">Everyday Work</span></h1>
-        <p class="hero-text">Fast, simple browser-based tools for images, files, and everyday tasks. Save time and get things done — all in one place.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#tools">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Explore All Tools</span>
-          </a>
-          <a class="button button-secondary" href="#image-tools">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/></svg>
-            <span>View Categories</span>
-          </a>
-        </div>
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Image Sharpener &amp; Upscaler</h1>
+    <p>Increase resolution and sharpen detail in your photos, instantly, for free, entirely in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no card, no sign-up:</b> This tool uses smooth resampling and a sharpening filter that run entirely on your own device. Nothing is uploaded anywhere.
+  </div>
+
+  <section class="tool" aria-label="Image Sharpener and Upscaler Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Photo</button>
+        <p class="hint" style="margin-top:14px">JPG, PNG or WebP. Works best under ~12 megapixels.</p>
       </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
 
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 520 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="chipGrad1" x1="0" y1="0" x2="1" y2="1">
-              <stop stop-color="#3b82f6"/><stop offset="1" stop-color="#2563eb"/>
-            </linearGradient>
-            <linearGradient id="chipGrad2" x1="0" y1="0" x2="1" y2="1">
-              <stop stop-color="#a855f7"/><stop offset="1" stop-color="#7c3aed"/>
-            </linearGradient>
-            <linearGradient id="chipGrad3" x1="0" y1="0" x2="1" y2="1">
-              <stop stop-color="#ec4899"/><stop offset="1" stop-color="#db2777"/>
-            </linearGradient>
-            <linearGradient id="screenGrad" x1="0" y1="0" x2="1" y2="1">
-              <stop stop-color="#eef2ff"/><stop offset="1" stop-color="#fdf2f8"/>
-            </linearGradient>
-          </defs>
-
-          <rect x="90" y="60" width="330" height="210" rx="14" fill="#111827"/>
-          <rect x="102" y="72" width="306" height="186" rx="6" fill="url(#screenGrad)"/>
-          <rect x="60" y="270" width="400" height="16" rx="8" fill="#d1d5db"/>
-          <rect x="150" y="286" width="220" height="10" rx="5" fill="#e5e7eb"/>
-
-          <rect x="120" y="92" width="42" height="42" rx="10" fill="url(#chipGrad1)"/>
-          <path d="M132 118l6-8 5 6 4-5 7 9h-24z" fill="#fff" opacity=".9"/>
-          <circle cx="153" cy="102" r="3" fill="#fff" opacity=".9"/>
-
-          <rect x="172" y="92" width="42" height="42" rx="10" fill="url(#chipGrad2)"/>
-          <path d="M186 122c0-9 7-16 16-16" stroke="#fff" stroke-width="3" stroke-linecap="round" fill="none"/>
-          <circle cx="193" cy="106" r="4" fill="#fff"/>
-
-          <rect x="224" y="92" width="42" height="42" rx="10" fill="url(#chipGrad3)"/>
-          <circle cx="245" cy="113" r="10" fill="none" stroke="#fff" stroke-width="3"/>
-          <circle cx="245" cy="113" r="3" fill="#fff"/>
-
-          <rect x="120" y="146" width="284" height="30" rx="8" fill="#fff" opacity=".8"/>
-          <circle cx="136" cy="161" r="6" fill="#c7d2fe"/>
-          <rect x="150" y="156" width="160" height="10" rx="5" fill="#e0e7ff"/>
-
-          <rect x="120" y="188" width="80" height="46" rx="10" fill="#fff" opacity=".9" stroke="#e5e7eb"/>
-          <rect x="210" y="188" width="80" height="46" rx="10" fill="#fff" opacity=".9" stroke="#e5e7eb"/>
-          <rect x="300" y="188" width="80" height="46" rx="10" fill="#fff" opacity=".9" stroke="#e5e7eb"/>
-
-          <g class="float-chip float-chip-a">
-            <rect x="30" y="150" width="52" height="52" rx="14" fill="url(#chipGrad1)"/>
-            <rect x="46" y="166" width="20" height="16" rx="2" fill="#fff"/>
-            <circle cx="52" cy="171" r="2.4" fill="url(#chipGrad1)"/>
-          </g>
-
-          <g class="float-chip float-chip-b">
-            <rect x="428" y="70" width="52" height="52" rx="14" fill="url(#chipGrad3)"/>
-            <circle cx="454" cy="96" r="12" fill="none" stroke="#fff" stroke-width="3"/>
-            <circle cx="454" cy="96" r="3.5" fill="#fff"/>
-          </g>
-
-          <g class="float-chip float-chip-c">
-            <rect x="420" y="200" width="46" height="46" rx="12" fill="#fff" stroke="#e5e7eb"/>
-            <rect x="433" y="212" width="20" height="22" rx="2" fill="none" stroke="url(#chipGrad2)" stroke-width="2"/>
-          </g>
-        </svg>
-      </div>
-    </section>
-
-    <section id="tools" class="section container">
-      <div class="section-heading">
+    <div id="optionsView" class="hidden">
+      <div class="grid2">
         <div>
-          <p class="eyebrow">TOOLS</p>
-          <h2>Tool <span class="text-gradient">Collection</span></h2>
-          <p class="section-subtext">Powerful browser-based tools to help you work faster and smarter.</p>
+          <p style="font-weight:700;margin:0 0 8px">Original</p>
+          <img id="originalPreview" style="width:100%;border-radius:12px;border:1px solid var(--border)" alt="Original uploaded photo">
         </div>
-        <span class="tool-count">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 3 7l9 5 9-5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          6 Tools
-        </span>
+        <div class="panel">
+          <label for="scaleSelect">Upscale factor</label>
+          <select id="scaleSelect">
+            <option value="1">No upscale (sharpen only)</option>
+            <option value="1.5">1.5x</option>
+            <option value="2" selected>2x</option>
+            <option value="3">3x</option>
+          </select>
+
+          <label for="sharpenSelect">Sharpening strength</label>
+          <select id="sharpenSelect">
+            <option value="0">Off</option>
+            <option value="0.4">Light</option>
+            <option value="0.8" selected>Medium</option>
+            <option value="1.3">Strong</option>
+          </select>
+
+          <div style="margin-top:18px;display:flex;flex-direction:column;gap:10px">
+            <button type="button" class="button primary" id="processBtn">Sharpen &amp; Upscale</button>
+            <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Photo</button>
+          </div>
+          <div id="processStatus" class="status"></div>
+        </div>
       </div>
+    </div>
 
-      <h3 id="image-tools" class="category-heading">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.8"/><circle cx="9" cy="9" r="1.8" fill="#fff"/><path d="M21 15l-5.5-5.5L6 19" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Image Tools
-      </h3>
+    <div id="processingView" class="hidden" style="text-align:center;padding:30px">
+      <div class="spinner" role="status" aria-label="Processing image"></div>
+      <p style="color:var(--muted);margin-top:12px">Processing your photo&hellip;</p>
+    </div>
 
-      <div class="tool-grid">
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-blue" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 16l4.5-6 3.5 4 2.5-3L20 16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="2.5" stroke="#fff" stroke-width="1.8"/><path d="M9 20V4" stroke="#fff" stroke-width="1.4" stroke-dasharray="1 3" opacity=".6"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Compressor</h4>
-                <span class="badge badge-green">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  Popular
-                </span>
-              </div>
-              <p>Compress JPG, PNG and WebP images in your browser while reducing file size.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Fast</li>
-              </ul>
-            </div>
+    <div id="resultView" class="hidden">
+      <p style="font-weight:700;margin:0 0 8px">Drag the slider to compare</p>
+      <div class="ba-wrap" id="baWrap">
+        <img id="baBefore" alt="Before">
+        <div class="ba-after-clip" id="baAfterClip">
+          <canvas id="baAfterCanvas"></canvas>
+        </div>
+        <div class="ba-tag" style="left:10px">Before</div>
+        <div class="ba-tag" style="right:10px">After</div>
+        <div class="ba-divider" id="baDivider" style="left:50%">
+          <div class="ba-handle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M8 5l-6 7 6 7M16 5l6 7-6 7"/></svg>
           </div>
-          <a class="button button-open" href="/tools/image-compressor/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-pink" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M19 3a3.5 3.5 0 0 1 0 5l-9.5 9.5-5 1.5 1.5-5L15.5 4A3.5 3.5 0 0 1 19 3z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 6.5l4 4" stroke="#fff" stroke-width="1.8"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Color Picker</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Trending
-                </span>
-              </div>
-              <p>Upload an image and pick colors from any point to get accurate color values.</p>
-              <ul class="tag-list">
-                <li>HEX</li><li>RGB</li><li>HSL</li><li>Picker</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-color-picker/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-green" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3v14a2 2 0 0 0 2 2h11M3 7h14a2 2 0 0 1 2 2v11" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Resizer</h4>
-                <span class="badge badge-purple">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" fill="currentColor"/></svg>
-                  Best For You
-                </span>
-              </div>
-              <p>Resize images to custom dimensions or common preset sizes directly in your browser.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Custom</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-resizer/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-orange" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 2v14a2 2 0 0 0 2 2h14M18 22V8a2 2 0 0 0-2-2H2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Cropper</h4>
-                <span class="badge badge-gray">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
-                  Handy
-                </span>
-              </div>
-              <p>Crop images to a precise area directly in your browser before downloading the result.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Crop</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-cropper/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-indigo" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Converter</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Trending
-                </span>
-              </div>
-              <p>Convert images between JPG, PNG and WebP formats directly in your browser.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Convert</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-converter/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-red" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 15h6M9 18h4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image to PDF Converter</h4>
-                <span class="badge badge-green">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  Popular
-                </span>
-              </div>
-              <p>Combine one or more images into a single downloadable PDF file in your browser.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>PDF</li><li>Merge</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-to-pdf/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
+        </div>
       </div>
-    </section>
-  </main>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:18px">
+        <button type="button" class="button primary" id="downloadBtn">Download Result</button>
+        <button type="button" class="button secondary" id="startOverBtn">Process Another Photo</button>
+      </div>
+    </div>
 
-  <div id="site-footer"></div>
-  <script src="/assets/js/main.js" defer></script>
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Sharpen and Upscale Photos Free, in Your Browser</h2>
+    <p>This free image sharpener and photo upscaler increases the size of a picture with smooth resampling, then applies an unsharp-mask sharpening filter to bring out edges and fine detail. It works as a browser-based photo enhancer, an online image upscaler, and a picture sharpener in one, with no upload, no sign-up, and no watermark, because every pixel is processed locally on your own device using the Canvas API.</p>
+    <p>Use it to sharpen a slightly blurry photo, upscale a small image before printing, boost clarity on a product photo, or clean up a screenshot. This tool uses classic image-processing filters rather than a neural network, so it is instant and completely free, though it enhances existing detail rather than inventing new detail the way a heavier AI model might.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>image sharpener online free</span>
+      <span>free photo upscaler</span>
+      <span>sharpen blurry photo online</span>
+      <span>increase image resolution online</span>
+      <span>upscale image online free</span>
+      <span>enhance photo clarity online</span>
+      <span>photo sharpening tool free</span>
+      <span>online picture upscaler</span>
+      <span>image quality improver online</span>
+      <span>sharpen image no upload</span>
+      <span>free image enhancer browser</span>
+      <span>increase photo size online</span>
+      <span>fix blurry image online</span>
+      <span>photo clarity enhancer free</span>
+      <span>image upscaler no sign up</span>
+      <span>sharpen photo for printing</span>
+      <span>enhance low resolution image</span>
+      <span>browser based photo sharpener</span>
+      <span>free online photo enhancer</span>
+      <span>2x image upscaler</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <div class="faq"><h3>Is this a real AI tool?</h3><p>No. This tool uses classic image-processing techniques &mdash; smooth resampling for upscaling and an unsharp-mask filter for sharpening &mdash; not a neural network. It runs instantly and for free because of that.</p></div>
+    <div class="faq"><h3>Is my photo uploaded anywhere?</h3><p>No. Every step happens locally in your browser using the Canvas API. Your photo never leaves your device.</p></div>
+    <div class="faq"><h3>Why does my image look pixelated even after upscaling?</h3><p>Upscaling makes an image bigger and smoother, but it cannot invent detail that was never captured in the original photo. Very low-resolution or heavily compressed images will still show some softness.</p></div>
+    <div class="faq"><h3>Is this free to use?</h3><p>Yes, completely free with no sign-up, no watermark, and no limit, since all processing happens on your own device.</p></div>
+    <div class="faq"><h3>What is the maximum image size supported?</h3><p>Very large images can be slow to process in the browser, so this tool works best with photos up to about 12 megapixels before upscaling.</p></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var MAX_INPUT_MEGAPIXELS = 20;      // hard safety cap on the original photo
+  var MAX_OUTPUT_DIMENSION = 6000;    // cap the upscaled canvas so the browser doesn't choke
+
+  var uploadView = document.getElementById("uploadView");
+  var optionsView = document.getElementById("optionsView");
+  var processingView = document.getElementById("processingView");
+  var resultView = document.getElementById("resultView");
+
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var originalPreview = document.getElementById("originalPreview");
+  var scaleSelect = document.getElementById("scaleSelect");
+  var sharpenSelect = document.getElementById("sharpenSelect");
+  var processBtn = document.getElementById("processBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+  var processStatus = document.getElementById("processStatus");
+
+  var baWrap = document.getElementById("baWrap");
+  var baBefore = document.getElementById("baBefore");
+  var baAfterClip = document.getElementById("baAfterClip");
+  var baAfterCanvas = document.getElementById("baAfterCanvas");
+  var baDivider = document.getElementById("baDivider");
+
+  var downloadBtn = document.getElementById("downloadBtn");
+  var startOverBtn = document.getElementById("startOverBtn");
+
+  var sourceImage = null;      // HTMLImageElement of the original
+  var sourceObjectUrl = null;
+  var resultObjectUrl = null;
+
+  function showView(view){
+    [uploadView, optionsView, processingView, resultView].forEach(function(v){ v.classList.add("hidden"); });
+    view.classList.remove("hidden");
+  }
+
+  function revokeUrls(){
+    if(sourceObjectUrl){ URL.revokeObjectURL(sourceObjectUrl); sourceObjectUrl = null; }
+    if(resultObjectUrl){ URL.revokeObjectURL(resultObjectUrl); resultObjectUrl = null; }
+  }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.tagName === "svg" || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file){
+    uploadStatus.textContent = "";
+    uploadStatus.className = "status";
+    var allowed = ["image/jpeg","image/png","image/webp"];
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
+      uploadStatus.className = "status error";
+      return;
+    }
+
+    revokeUrls();
+    sourceObjectUrl = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      var megapixels = (img.naturalWidth * img.naturalHeight) / 1000000;
+      if(megapixels > MAX_INPUT_MEGAPIXELS){
+        uploadStatus.textContent = "This image is too large to process smoothly in the browser (" + megapixels.toFixed(1) + " MP). Please use a smaller photo.";
+        uploadStatus.className = "status error";
+        URL.revokeObjectURL(sourceObjectUrl);
+        sourceObjectUrl = null;
+        return;
+      }
+      sourceImage = img;
+      originalPreview.src = sourceObjectUrl;
+      showView(optionsView);
+    };
+    img.onerror = function(){
+      uploadStatus.textContent = "Could not read that image. Please try another file.";
+      uploadStatus.className = "status error";
+    };
+    img.src = sourceObjectUrl;
+  }
+
+  chooseAnotherBtn.addEventListener("click", function(){
+    sourceImage = null;
+    fileInput.value = "";
+    showView(uploadView);
+  });
+
+  // --- unsharp mask sharpening (3x3 kernel), amount 0..~1.5 ---
+  function sharpen(ctx, width, height, amount){
+    if(amount <= 0) return;
+    var srcData = ctx.getImageData(0, 0, width, height);
+    var src = srcData.data;
+    var out = ctx.createImageData(width, height);
+    var dst = out.data;
+    var w = width;
+
+    // center weight scales with "amount"; neighbors stay at -amount/4 each
+    var center = 1 + 4 * amount;
+    var side = -amount;
+
+    for(var y = 0; y < height; y++){
+      for(var x = 0; x < w; x++){
+        var i = (y * w + x) * 4;
+        for(var c = 0; c < 3; c++){ // R,G,B - leave alpha untouched
+          var sum = src[i + c] * center;
+          sum += getPixel(src, x - 1, y, c, w, height) * side;
+          sum += getPixel(src, x + 1, y, c, w, height) * side;
+          sum += getPixel(src, x, y - 1, c, w, height) * side;
+          sum += getPixel(src, x, y + 1, c, w, height) * side;
+          dst[i + c] = clamp8(sum);
+        }
+        dst[i + 3] = src[i + 3];
+      }
+    }
+    ctx.putImageData(out, 0, 0);
+  }
+  function getPixel(data, x, y, c, w, h){
+    if(x < 0) x = 0; if(x >= w) x = w - 1;
+    if(y < 0) y = 0; if(y >= h) y = h - 1;
+    return data[(y * w + x) * 4 + c];
+  }
+  function clamp8(v){ return v < 0 ? 0 : (v > 255 ? 255 : v); }
+
+  processBtn.addEventListener("click", function(){
+    if(!sourceImage) return;
+    showView(processingView);
+
+    // let the spinner paint before the (possibly heavy) work starts
+    setTimeout(function(){
+      try{
+        var scale = parseFloat(scaleSelect.value);
+        var sharpenAmount = parseFloat(sharpenSelect.value);
+
+        var targetW = Math.round(sourceImage.naturalWidth * scale);
+        var targetH = Math.round(sourceImage.naturalHeight * scale);
+        if(targetW > MAX_OUTPUT_DIMENSION || targetH > MAX_OUTPUT_DIMENSION){
+          var ratio = MAX_OUTPUT_DIMENSION / Math.max(targetW, targetH);
+          targetW = Math.round(targetW * ratio);
+          targetH = Math.round(targetH * ratio);
+        }
+
+        baAfterCanvas.width = targetW;
+        baAfterCanvas.height = targetH;
+        var ctx = baAfterCanvas.getContext("2d");
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(sourceImage, 0, 0, targetW, targetH);
+
+        sharpen(ctx, targetW, targetH, sharpenAmount);
+
+        baBefore.src = sourceObjectUrl;
+        baDivider.style.left = "50%";
+        baAfterClip.style.clipPath = "inset(0 50% 0 0)";
+        showView(resultView);
+
+      }catch(err){
+        processStatus.textContent = "Something went wrong while processing this image. Please try a smaller photo.";
+        processStatus.className = "status error";
+        showView(optionsView);
+      }
+    }, 30);
+  });
+
+  // --- before/after slider drag ---
+  var dragging = false;
+  function setSlider(clientX){
+    var rect = baWrap.getBoundingClientRect();
+    var pct = Math.min(100, Math.max(0, ((clientX - rect.left) / rect.width) * 100));
+    baDivider.style.left = pct + "%";
+    baAfterClip.style.clipPath = "inset(0 " + (100 - pct) + "% 0 0)";
+  }
+  baDivider.addEventListener("pointerdown", function(){ dragging = true; });
+  window.addEventListener("pointerup", function(){ dragging = false; });
+  window.addEventListener("pointermove", function(e){ if(dragging) setSlider(e.clientX); });
+  baWrap.addEventListener("click", function(e){ setSlider(e.clientX); });
+
+  // --- download (single click, no auto multi-download) ---
+  downloadBtn.addEventListener("click", function(){
+    baAfterCanvas.toBlob(function(blob){
+      if(!blob) return;
+      if(resultObjectUrl) URL.revokeObjectURL(resultObjectUrl);
+      resultObjectUrl = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = resultObjectUrl;
+      a.download = "sharpened-upscaled-image.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){
+        if(resultObjectUrl){ URL.revokeObjectURL(resultObjectUrl); resultObjectUrl = null; }
+      }, 4000);
+    }, "image/png");
+  });
+
+  startOverBtn.addEventListener("click", function(){
+    revokeUrls();
+    sourceImage = null;
+    fileInput.value = "";
+    showView(uploadView);
+  });
+})();
+</script>
 </body>
 </html>
