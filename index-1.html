@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Background Remover Online | Working Tools Box</title>
+<meta name="description" content="Remove image backgrounds online and create transparent PNGs directly in your browser with Working Tools Box.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-background-remover/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image Background Remover Online | Working Tools Box">
+<meta property="og:description" content="Remove image backgrounds online and create transparent PNGs directly in your browser with Working Tools Box.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-background-remover/">
+
+<link rel="stylesheet" href="/shared/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is an image background remover?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An image background remover is a tool that automatically detects the main subject in a photo and removes everything behind it, leaving a transparent background you can use on its own or place over a new backdrop."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which image formats are supported?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can upload JPG, JPEG, PNG and WebP files up to 25 MB. The result is always downloaded as a transparent PNG."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this image background remover free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, this tool is completely free to use with no sign-up or watermark required."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your image is processed locally in your own browser using on-device machine learning, so the photo itself is never sent to our servers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download the result as a transparent PNG?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Once processing finishes, click Download PNG to save a transparent PNG of your result to your device."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root{
+    --ink:#0f1222;
+    --muted:#5b6172;
+    --line:#e7e8f0;
+    --card:#ffffff;
+    --bg:#f8f9fc;
+    --blue:#3b6cf6;
+    --purple:#8b5cf6;
+    --pink:#ec4899;
+    --gradient:linear-gradient(135deg,var(--blue),var(--purple) 55%,var(--pink));
+    --radius:16px;
+    --shadow:0 10px 30px rgba(20,20,60,0.08);
+    --shadow-sm:0 4px 14px rgba(20,20,60,0.06);
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--bg);
+    line-height:1.55;
+  }
+
+  .wtb-tool-wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:48px 20px 80px;
+  }
+
+  header.wtb-tool-hero{
+    text-align:center;
+    margin-bottom:36px;
+  }
+
+  .wtb-site-header{border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:10}
+  .wtb-site-header-inner{max-width:1120px;margin:auto;padding:0 20px;height:64px;display:flex;align-items:center;justify-content:space-between}
+  .wtb-brand{font-weight:800;font-size:19px;text-decoration:none;background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .wtb-site-header-inner nav{display:flex;gap:20px}
+  .wtb-site-header-inner nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
+  .wtb-site-header-inner nav a:hover{color:var(--purple)}
+  .wtb-site-footer{border-top:1px solid var(--line);padding:28px 20px;margin-top:20px}
+  .wtb-site-footer-inner{max-width:1120px;margin:auto;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .wtb-site-footer-inner nav{display:flex;gap:20px}
+  .wtb-site-footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:14px}
+  .wtb-site-footer-inner nav a:hover{color:var(--purple)}
+  .wtb-copyright{color:var(--muted);font-size:13px;margin:0}
+  h1{
+    font-size:clamp(28px,4vw,40px);
+    margin:0 0 12px;
+    letter-spacing:-0.02em;
+    background:linear-gradient(90deg,var(--purple),var(--pink));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    display:inline-block;
+  }
+
+  .wtb-tool-hero p{
+    color:var(--muted);
+    font-size:18px;
+    max-width:640px;
+    margin:0 auto;
+  }
+
+  h2{
+    font-size:clamp(21px,3vw,26px);
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+    background:linear-gradient(90deg,var(--purple),var(--pink));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    display:inline-block;
+  }
+  .wtb-keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .wtb-keyword-tags span{display:inline-block;background:var(--bg);border:1px solid var(--line);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;}
+
+  section{
+    margin-top:52px;
+  }
+
+  .wtb-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:28px;
+  }
+
+  /* Upload zone */
+  .wtb-dropzone{
+    border:2px dashed #c9cced;
+    border-radius:var(--radius);
+    padding:40px 20px;
+    text-align:center;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+    background:#fbfbfe;
+  }
+
+  .wtb-dropzone:hover,
+  .wtb-dropzone:focus-visible{
+    border-color:var(--purple);
+    background:#f6f4ff;
+  }
+
+  .wtb-dropzone:focus-visible{
+    outline:3px solid var(--purple);
+    outline-offset:3px;
+  }
+
+  .wtb-dropzone.is-dragover{
+    border-color:var(--blue);
+    background:#eef3ff;
+  }
+
+  .wtb-dropzone p{
+    margin:6px 0;
+    color:var(--muted);
+  }
+
+  .wtb-dropzone .wtb-drop-hint{
+    font-size:14px;
+    color:#8b8fa3;
+  }
+
+  input[type="file"]{
+    display:none;
+  }
+
+  .wtb-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    border:none;
+    border-radius:12px;
+    padding:13px 26px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:transform .1s ease, box-shadow .15s ease, opacity .15s ease;
+  }
+
+  .wtb-btn:disabled{
+    cursor:not-allowed;
+    opacity:.5;
+  }
+
+  .wtb-btn-primary{
+    color:#fff;
+    background:var(--gradient);
+    box-shadow:var(--shadow-sm);
+  }
+
+  .wtb-btn-primary:not(:disabled):hover{
+    transform:translateY(-1px);
+    box-shadow:0 10px 22px rgba(80,60,220,0.22);
+  }
+
+  .wtb-btn-blue{
+    color:#fff;
+    background:var(--blue);
+    box-shadow:var(--shadow-sm);
+  }
+
+  .wtb-btn-blue:not(:disabled):hover{
+    transform:translateY(-1px);
+  }
+
+  .wtb-btn-secondary{
+    color:#5b21b6;
+    background:#fff;
+    border:1.5px solid #cabdf7;
+  }
+
+  .wtb-btn-secondary:not(:disabled):hover{
+    background:#f8f6ff;
+    border-color:var(--purple);
+  }
+
+  .wtb-bg-options{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 18px}
+  .wtb-bg-options-label{font-size:13px;font-weight:700;color:var(--muted)}
+  .wtb-bg-swatch{width:30px;height:30px;border-radius:8px;border:2px solid var(--line);cursor:pointer;padding:0;background-image:linear-gradient(45deg,#d1d5db 25%,transparent 25%),linear-gradient(-45deg,#d1d5db 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#d1d5db 75%),linear-gradient(-45deg,transparent 75%,#d1d5db 75%);background-size:10px 10px;background-position:0 0,0 5px,5px -5px,-5px 0}
+  .wtb-bg-swatch[data-bg="blur"]{background:linear-gradient(135deg,#a78bfa,#f9a8d4);filter:blur(0.3px)}
+  .wtb-bg-swatch.active{border-color:var(--purple);box-shadow:0 0 0 2px #ede9fe}
+  .wtb-bg-swatch:focus-visible{outline:3px solid var(--purple);outline-offset:2px}
+  .wtb-bg-color{width:30px;height:30px;border-radius:8px;border:2px solid var(--line);padding:2px;cursor:pointer;background:#fff}
+
+  .wtb-btn:focus-visible{
+    outline:3px solid var(--purple);
+    outline-offset:2px;
+  }
+
+  .wtb-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+    margin-top:24px;
+  }
+
+  /* Previews */
+  .wtb-previews{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    margin-top:28px;
+  }
+
+  @media (max-width:640px){
+    .wtb-previews{grid-template-columns:1fr;}
+  }
+
+  .wtb-preview-box{
+    border:1px solid var(--line);
+    border-radius:12px;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  .wtb-preview-label{
+    font-size:13px;
+    font-weight:600;
+    color:var(--muted);
+    padding:10px 14px;
+    border-bottom:1px solid var(--line);
+  }
+
+  .wtb-preview-frame{
+    min-height:220px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px;
+  }
+
+  .wtb-preview-frame img{
+    max-width:100%;
+    max-height:320px;
+    display:block;
+    border-radius:6px;
+  }
+
+  .wtb-preview-frame.wtb-transparent{
+    background-image:
+      linear-gradient(45deg,#e5e6ee 25%,transparent 25%),
+      linear-gradient(-45deg,#e5e6ee 25%,transparent 25%),
+      linear-gradient(45deg,transparent 75%,#e5e6ee 75%),
+      linear-gradient(-45deg,transparent 75%,#e5e6ee 75%);
+    background-size:20px 20px;
+    background-position:0 0,0 10px,10px -10px,-10px 0px;
+    background-color:#fafafe;
+  }
+
+  .wtb-preview-empty{
+    color:#a6a9bc;
+    font-size:14px;
+  }
+
+  /* Status + errors */
+  .wtb-status{
+    margin-top:20px;
+    text-align:center;
+    font-weight:600;
+    min-height:24px;
+  }
+
+  .wtb-status.is-processing{
+    color:var(--blue);
+  }
+
+  .wtb-status.is-success{
+    color:#1a9c5c;
+  }
+
+  .wtb-error{
+    margin-top:16px;
+    background:#fff2f2;
+    border:1px solid #ffd4d4;
+    color:#b3261e;
+    border-radius:10px;
+    padding:12px 16px;
+    font-size:14px;
+    text-align:left;
+  }
+
+  .wtb-error:empty{
+    display:none;
+  }
+
+  .wtb-file-meta{
+    text-align:center;
+    color:var(--muted);
+    font-size:14px;
+    margin-top:14px;
+  }
+
+  .wtb-explainer p{
+    color:var(--muted);
+  }
+
+  ol.wtb-steps{
+    list-style:none;
+    counter-reset:step;
+    padding:0;
+    margin:0;
+    display:grid;
+    gap:16px;
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  @media (max-width:720px){
+    ol.wtb-steps{grid-template-columns:1fr;}
+  }
+
+  ol.wtb-steps li{
+    counter-increment:step;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px;
+    position:relative;
+  }
+
+  ol.wtb-steps li::before{
+    content:counter(step);
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:28px;
+    height:28px;
+    border-radius:50%;
+    background:var(--gradient);
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+
+  .wtb-faq details{
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:12px;
+    background:#fff;
+  }
+
+  .wtb-faq summary{
+    cursor:pointer;
+    font-weight:600;
+    list-style:none;
+  }
+
+  .wtb-faq summary::-webkit-details-marker{
+    display:none;
+  }
+
+  .wtb-faq summary::after{
+    content:"+";
+    float:right;
+    color:var(--purple);
+    font-weight:700;
+  }
+
+  .wtb-faq details[open] summary::after{
+    content:"\2212";
+  }
+
+  .wtb-faq p{
+    margin:10px 0 0;
+    color:var(--muted);
+  }
+
+  .wtb-sr-only{
+    position:absolute;
+    width:1px;height:1px;
+    padding:0;margin:-1px;
+    overflow:hidden;
+    clip:rect(0,0,0,0);
+    white-space:nowrap;
+    border:0;
+  }
+</style>
+</head>
+<body>
+
+<div id="wtb-shared-header">
+  <header class="wtb-site-header">
+    <div class="wtb-site-header-inner">
+      <a href="/" class="wtb-brand">Working Tools Box</a>
+      <nav aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/tools/">Tools</a>
+        <a href="/tools/">Explore Tools</a>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<main class="wtb-tool-wrap">
+
+  <header class="wtb-tool-hero">
+    <h1>Image Background Remover</h1>
+    <p>Remove backgrounds from images quickly and create transparent PNGs directly in your browser.</p>
+  </header>
+
+  <section aria-labelledby="wtb-tool-heading">
+    <h2 id="wtb-tool-heading" class="wtb-sr-only">Background remover tool</h2>
+    <div class="wtb-card">
+
+      <div id="wtb-dropzone" class="wtb-dropzone" role="button" tabindex="0"
+           aria-label="Upload an image by clicking, dragging a file here, or pressing Enter">
+        <p><strong>Drag and drop an image here</strong></p>
+        <p class="wtb-drop-hint">or</p>
+        <button type="button" id="wtb-select-btn" class="wtb-btn wtb-btn-blue">Select Image</button>
+        <p class="wtb-drop-hint">Supports JPG, JPEG, PNG and WebP &middot; Max 25 MB</p>
+        <input type="file" id="wtb-file-input" accept=".jpg,.jpeg,.png,.webp,image/jpeg,image/png,image/webp" aria-label="Choose an image file">
+      </div>
+
+      <p id="wtb-file-meta" class="wtb-file-meta" hidden></p>
+
+      <div id="wtb-error" class="wtb-error" role="alert"></div>
+
+      <div id="wtb-previews" class="wtb-previews" hidden>
+        <div class="wtb-preview-box">
+          <div class="wtb-preview-label">Original image</div>
+          <div class="wtb-preview-frame" id="wtb-original-frame">
+            <span class="wtb-preview-empty">No image yet</span>
+          </div>
+        </div>
+        <div class="wtb-preview-box">
+          <div class="wtb-preview-label">Background removed</div>
+          <div class="wtb-preview-frame wtb-transparent" id="wtb-result-frame">
+            <span class="wtb-preview-empty">Result will appear here</span>
+          </div>
+        </div>
+      </div>
+
+      <p id="wtb-status" class="wtb-status" role="status" aria-live="polite"></p>
+
+      <div id="wtb-bg-options" class="wtb-bg-options" hidden>
+        <span class="wtb-bg-options-label">Background:</span>
+        <button type="button" class="wtb-bg-swatch active" data-bg="transparent" aria-label="Transparent background" title="Transparent"></button>
+        <button type="button" class="wtb-bg-swatch" data-bg="white" style="background:#fff" aria-label="White background" title="White"></button>
+        <button type="button" class="wtb-bg-swatch" data-bg="black" style="background:#111827" aria-label="Black background" title="Black"></button>
+        <button type="button" class="wtb-bg-swatch" data-bg="blur" aria-label="Blurred original background" title="Blur original"></button>
+        <input type="color" id="wtb-bg-color" class="wtb-bg-color" value="#7c3aed" aria-label="Custom background color" title="Custom color">
+      </div>
+
+      <div class="wtb-actions">
+        <button type="button" id="wtb-remove-btn" class="wtb-btn wtb-btn-primary" disabled>Remove Background</button>
+        <button type="button" id="wtb-download-btn" class="wtb-btn wtb-btn-blue" disabled>Download PNG</button>
+        <button type="button" id="wtb-reset-btn" class="wtb-btn wtb-btn-secondary" hidden>Start Over</button>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="wtb-explainer" aria-labelledby="wtb-about-heading">
+    <h2 id="wtb-about-heading">Free Image Background Remover</h2>
+    <p>
+      This tool detects the main subject in your photo and cuts away everything behind it, giving you a clean
+      transparent PNG in seconds. It works well for product photos, portraits, logos and any image where you need
+      to isolate the subject from its surroundings. Whenever your browser supports it, the entire process runs
+      on your own device using on-device machine learning, so your photo is analyzed locally rather than being
+      processed on an external server.
+    </p>
+  </section>
+
+  <section aria-labelledby="wtb-steps-heading">
+    <h2 id="wtb-steps-heading">How to Remove an Image Background</h2>
+    <ol class="wtb-steps">
+      <li>Upload an Image</li>
+      <li>Remove the Background</li>
+      <li>Download the Result</li>
+    </ol>
+  </section>
+
+  <section aria-label="Related searches">
+    <h2>Popular Searches</h2>
+    <div class="wtb-keyword-tags">
+      <span>background remover online</span>
+      <span>free background remover</span>
+      <span>remove background from image</span>
+      <span>transparent background maker</span>
+      <span>remove image background free</span>
+      <span>photo background remover</span>
+      <span>picture background remover</span>
+      <span>ai background remover</span>
+      <span>remove bg online</span>
+      <span>png background remover</span>
+      <span>product photo background remover</span>
+      <span>portrait background remover</span>
+      <span>make background transparent</span>
+      <span>remove white background online</span>
+      <span>background eraser online</span>
+      <span>cut out image background</span>
+      <span>background remover no upload</span>
+      <span>online image background remover</span>
+      <span>remove background from photo free</span>
+      <span>transparent png maker</span>
+    </div>
+  </section>
+
+  <section class="wtb-faq" aria-labelledby="wtb-faq-heading">
+    <h2 id="wtb-faq-heading">Frequently Asked Questions</h2>
+
+    <details>
+      <summary>What is an image background remover?</summary>
+      <p>An image background remover is a tool that automatically detects the main subject in a photo and removes everything behind it, leaving a transparent background you can use on its own or place over a new backdrop.</p>
+    </details>
+
+    <details>
+      <summary>Can I use this to remove backgrounds for product photos?</summary>
+      <p>Yes. It works well for product photos, portraits, logos and any image where you need a clean, isolated subject on a transparent background.</p>
+    </details>
+
+    <details>
+      <summary>Do I need to install any software?</summary>
+      <p>No. This is a browser-based background remover, so there is nothing to install and no account is required.</p>
+    </details>
+
+    <details>
+      <summary>Which image formats are supported?</summary>
+      <p>You can upload JPG, JPEG, PNG and WebP files up to 25 MB. The result is always downloaded as a transparent PNG.</p>
+    </details>
+
+    <details>
+      <summary>Is this image background remover free?</summary>
+      <p>Yes, this tool is completely free to use with no sign-up or watermark required.</p>
+    </details>
+
+    <details>
+      <summary>Is my image uploaded to a server?</summary>
+      <p>No. Your image is processed locally in your own browser using on-device machine learning, so the photo itself is never sent to our servers.</p>
+    </details>
+
+    <details>
+      <summary>Can I download the result as a transparent PNG?</summary>
+      <p>Yes. Once processing finishes, click Download PNG to save a transparent PNG of your result to your device.</p>
+    </details>
+
+  </section>
+
+</main>
+
+<div id="wtb-shared-footer">
+  <footer class="wtb-site-footer">
+    <div class="wtb-site-footer-inner">
+      <a href="/" class="wtb-brand">Working Tools Box</a>
+      <nav aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/tools/">All Tools</a>
+      </nav>
+      <p class="wtb-copyright">&copy; 2026 Working Tools Box. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.0/dist/ort.min.js"></script>
+<script type="module">
+  // ---------------------------------------------------------------------
+  // Background removal engine: U^2-Net (portable/"p" variant), Apache-2.0
+  // licensed weights. We run this ourselves via onnxruntime-web (MIT)
+  // instead of using @imgly/background-removal, because that package is
+  // AGPL-3.0 licensed - using it in a commercial web app without buying
+  // a commercial license from IMG.LY would legally require this entire
+  // site's source to be published under AGPL too. U^2-Net has no such
+  // restriction. Model source: https://github.com/danielgatis/rembg
+  // (weights mirrored for browser fetch at the URL below).
+  // ---------------------------------------------------------------------
+  const MODEL_URL = 'https://huggingface.co/edgetools/u2netp/resolve/main/u2netp.onnx';
+  const MODEL_INPUT_SIZE = 320;
+  const NORM_MEAN = [0.485, 0.456, 0.406];
+  const NORM_STD = [0.229, 0.224, 0.225];
+
+  ort.env.wasm.wasmPaths = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.0/dist/';
+
+  let sessionPromise = null;
+  function getSession(onProgress){
+    if(!sessionPromise){
+      sessionPromise = (async () => {
+        if(onProgress) onProgress('Downloading AI model (first time only)\u2026');
+        const session = await ort.InferenceSession.create(MODEL_URL, {
+          executionProviders: ['wasm']
+        });
+        return session;
+      })();
+    }
+    return sessionPromise;
+  }
+
+  async function loadImageBitmap(file){
+    return await createImageBitmap(file);
+  }
+
+  // Preprocess: squash-resize to 320x320, scale to [0,1], normalize with
+  // ImageNet mean/std, arrange as NCHW float32.
+  function preprocess(bitmap){
+    const c = document.createElement('canvas');
+    c.width = MODEL_INPUT_SIZE;
+    c.height = MODEL_INPUT_SIZE;
+    const cx = c.getContext('2d');
+    cx.drawImage(bitmap, 0, 0, MODEL_INPUT_SIZE, MODEL_INPUT_SIZE);
+    const { data } = cx.getImageData(0, 0, MODEL_INPUT_SIZE, MODEL_INPUT_SIZE);
+
+    const size = MODEL_INPUT_SIZE * MODEL_INPUT_SIZE;
+    const float = new Float32Array(3 * size);
+    for(let i = 0; i < size; i++){
+      const r = data[i * 4] / 255;
+      const g = data[i * 4 + 1] / 255;
+      const b = data[i * 4 + 2] / 255;
+      float[i] = (r - NORM_MEAN[0]) / NORM_STD[0];
+      float[size + i] = (g - NORM_MEAN[1]) / NORM_STD[1];
+      float[size * 2 + i] = (b - NORM_MEAN[2]) / NORM_STD[2];
+    }
+    return new ort.Tensor('float32', float, [1, 3, MODEL_INPUT_SIZE, MODEL_INPUT_SIZE]);
+  }
+
+  // Run the model and return a 320x320 Uint8ClampedArray alpha mask (0-255).
+  async function runModel(session, tensor){
+    const inputName = session.inputNames[0];
+    const outputName = session.outputNames[0];
+    const results = await session.run({ [inputName]: tensor });
+    const out = results[outputName].data; // Float32Array, length 320*320
+
+    let min = Infinity, max = -Infinity;
+    for(let i = 0; i < out.length; i++){
+      if(out[i] < min) min = out[i];
+      if(out[i] > max) max = out[i];
+    }
+    const range = (max - min) || 1;
+    const mask = new Uint8ClampedArray(out.length);
+    for(let i = 0; i < out.length; i++){
+      mask[i] = Math.round(((out[i] - min) / range) * 255);
+    }
+    return mask;
+  }
+
+  // Slight box blur on the small mask before upscaling - softens jagged
+  // edges from the 320x320 model output into a cleaner, more natural cutout.
+  function featherMask(mask, size){
+    const out = new Uint8ClampedArray(mask.length);
+    for(let y = 0; y < size; y++){
+      for(let x = 0; x < size; x++){
+        let sum = 0, count = 0;
+        for(let dy = -1; dy <= 1; dy++){
+          for(let dx = -1; dx <= 1; dx++){
+            const ny = y + dy, nx = x + dx;
+            if(ny >= 0 && ny < size && nx >= 0 && nx < size){
+              sum += mask[ny * size + nx];
+              count++;
+            }
+          }
+        }
+        out[y * size + x] = sum / count;
+      }
+    }
+    return out;
+  }
+
+  // Resize the 320x320 mask up to the original image dimensions using the
+  // browser's own smooth image scaling (acts as a bilinear-ish upscale).
+  function resizeMaskToCanvas(mask, srcSize, targetW, targetH){
+    const small = document.createElement('canvas');
+    small.width = srcSize; small.height = srcSize;
+    const sctx = small.getContext('2d');
+    const imgData = sctx.createImageData(srcSize, srcSize);
+    for(let i = 0; i < mask.length; i++){
+      imgData.data[i * 4] = 255;
+      imgData.data[i * 4 + 1] = 255;
+      imgData.data[i * 4 + 2] = 255;
+      imgData.data[i * 4 + 3] = mask[i];
+    }
+    sctx.putImageData(imgData, 0, 0);
+
+    const big = document.createElement('canvas');
+    big.width = targetW; big.height = targetH;
+    const bctx = big.getContext('2d');
+    bctx.imageSmoothingEnabled = true;
+    bctx.imageSmoothingQuality = 'high';
+    bctx.drawImage(small, 0, 0, targetW, targetH);
+    return bctx.getImageData(0, 0, targetW, targetH).data; // RGBA, alpha at [i*4+3]
+  }
+
+  // Full pipeline: file -> transparent-PNG cutout blob, plus the alpha
+  // mask + original bitmap kept around so the background option can be
+  // changed instantly afterwards without re-running the model.
+  async function removeBackgroundLocally(file, onProgress){
+    const bitmap = await loadImageBitmap(file);
+    const session = await getSession(onProgress);
+
+    if(onProgress) onProgress('Analyzing image\u2026');
+    const tensor = preprocess(bitmap);
+    let mask320 = await runModel(session, tensor);
+    mask320 = featherMask(mask320, MODEL_INPUT_SIZE);
+
+    if(onProgress) onProgress('Finishing up\u2026');
+    const alphaData = resizeMaskToCanvas(mask320, MODEL_INPUT_SIZE, bitmap.width, bitmap.height);
+
+    return { bitmap, alphaData };
+  }
+
+  // Composite the cutout onto a chosen background style.
+  function compositeResult(bitmap, alphaData, bgMode, bgColor){
+    const w = bitmap.width, h = bitmap.height;
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+
+    if(bgMode === 'blur'){
+      ctx.filter = 'blur(14px)';
+      ctx.drawImage(bitmap, -10, -10, w + 20, h + 20);
+      ctx.filter = 'none';
+    } else if(bgMode === 'white' || bgMode === 'black' || bgMode === 'color'){
+      ctx.fillStyle = bgMode === 'white' ? '#ffffff' : (bgMode === 'black' ? '#111827' : bgColor);
+      ctx.fillRect(0, 0, w, h);
+    }
+    // 'transparent' mode: leave canvas empty (transparent) before compositing subject
+
+    // Draw the subject with the computed alpha mask.
+    const subjectCanvas = document.createElement('canvas');
+    subjectCanvas.width = w; subjectCanvas.height = h;
+    const sctx = subjectCanvas.getContext('2d');
+    sctx.drawImage(bitmap, 0, 0, w, h);
+    const subjectData = sctx.getImageData(0, 0, w, h);
+    for(let i = 0; i < subjectData.data.length; i += 4){
+      subjectData.data[i + 3] = alphaData[i + 3];
+    }
+    sctx.putImageData(subjectData, 0, 0);
+
+    ctx.drawImage(subjectCanvas, 0, 0);
+    return canvas;
+  }
+
+
+  const MAX_SIZE = 25 * 1024 * 1024; // 25 MB
+  const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+  const ALLOWED_EXT = ['.jpg', '.jpeg', '.png', '.webp'];
+
+  const dropzone = document.getElementById('wtb-dropzone');
+  const selectBtn = document.getElementById('wtb-select-btn');
+  const fileInput = document.getElementById('wtb-file-input');
+  const fileMeta = document.getElementById('wtb-file-meta');
+  const errorBox = document.getElementById('wtb-error');
+  const previews = document.getElementById('wtb-previews');
+  const originalFrame = document.getElementById('wtb-original-frame');
+  const resultFrame = document.getElementById('wtb-result-frame');
+  const statusEl = document.getElementById('wtb-status');
+  const removeBtn = document.getElementById('wtb-remove-btn');
+  const downloadBtn = document.getElementById('wtb-download-btn');
+  const resetBtn = document.getElementById('wtb-reset-btn');
+  const bgOptions = document.getElementById('wtb-bg-options');
+  const bgSwatches = document.querySelectorAll('.wtb-bg-swatch');
+  const bgColorInput = document.getElementById('wtb-bg-color');
+
+  let currentFile = null;
+  let originalObjectUrl = null;
+  let resultObjectUrl = null;
+  let resultBlob = null;
+  let isProcessing = false;
+  let currentBitmap = null;
+  let currentAlphaData = null;
+  let currentBgMode = 'transparent';
+
+  function clearError(){
+    errorBox.textContent = '';
+  }
+
+  function showError(message){
+    errorBox.textContent = message;
+  }
+
+  function setStatus(message, kind){
+    statusEl.textContent = message || '';
+    statusEl.classList.remove('is-processing', 'is-success');
+    if(kind) statusEl.classList.add(kind);
+  }
+
+  function formatSize(bytes){
+    if(bytes < 1024 * 1024) return Math.round(bytes / 1024) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+
+  function validateFile(file){
+    const nameLower = file.name.toLowerCase();
+    const hasValidExt = ALLOWED_EXT.some(ext => nameLower.endsWith(ext));
+    const hasValidType = ALLOWED_TYPES.includes(file.type) || file.type === '';
+
+    if(!hasValidExt || (!hasValidType && file.type !== '')){
+      return 'Unsupported file format. Please upload a JPG, JPEG, PNG or WebP image.';
+    }
+    if(file.size > MAX_SIZE){
+      return 'This file is too large. Please upload an image up to 25 MB.';
+    }
+    return null;
+  }
+
+  function renderResult(){
+    if(!currentBitmap || !currentAlphaData) return;
+    const bgColor = bgColorInput.value;
+    const canvas = compositeResult(currentBitmap, currentAlphaData, currentBgMode, bgColor);
+
+    canvas.toBlob(function(blob){
+      if(!blob) return;
+      resultBlob = blob;
+      if(resultObjectUrl) URL.revokeObjectURL(resultObjectUrl);
+      resultObjectUrl = URL.createObjectURL(blob);
+
+      resultFrame.innerHTML = '';
+      const resultImg = document.createElement('img');
+      resultImg.src = resultObjectUrl;
+      resultImg.alt = 'Processed image with background removed';
+      resultFrame.appendChild(resultImg);
+    }, 'image/png');
+  }
+
+  bgSwatches.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      currentBgMode = btn.getAttribute('data-bg');
+      bgSwatches.forEach(function(b){ b.classList.toggle('active', b === btn); });
+      renderResult();
+    });
+  });
+
+  bgColorInput.addEventListener('input', function(){
+    currentBgMode = 'color';
+    bgSwatches.forEach(function(b){ b.classList.remove('active'); });
+    renderResult();
+  });
+
+  function resetPreviewFrames(){
+    originalFrame.innerHTML = '<span class="wtb-preview-empty">No image yet</span>';
+    resultFrame.innerHTML = '<span class="wtb-preview-empty">Result will appear here</span>';
+  }
+
+  function handleFile(file){
+    clearError();
+
+    const validationError = validateFile(file);
+    if(validationError){
+      showError(validationError);
+      return;
+    }
+
+    currentFile = file;
+    resultBlob = null;
+    currentBitmap = null;
+    currentAlphaData = null;
+    currentBgMode = 'transparent';
+    bgOptions.hidden = true;
+
+    if(originalObjectUrl) URL.revokeObjectURL(originalObjectUrl);
+    if(resultObjectUrl) URL.revokeObjectURL(resultObjectUrl);
+    resultObjectUrl = null;
+
+    originalObjectUrl = URL.createObjectURL(file);
+
+    originalFrame.innerHTML = '';
+    const img = document.createElement('img');
+    img.src = originalObjectUrl;
+    img.alt = 'Preview of the uploaded image before background removal';
+    originalFrame.appendChild(img);
+
+    resultFrame.innerHTML = '<span class="wtb-preview-empty">Result will appear here</span>';
+
+    previews.hidden = false;
+    fileMeta.hidden = false;
+    fileMeta.textContent = file.name + ' \u2014 ' + formatSize(file.size);
+
+    removeBtn.disabled = false;
+    downloadBtn.disabled = true;
+    resetBtn.hidden = false;
+    setStatus('');
+  }
+
+  selectBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    fileInput.click();
+  });
+
+  dropzone.addEventListener('click', function(){
+    if(!isProcessing) fileInput.click();
+  });
+
+  dropzone.addEventListener('keydown', function(e){
+    if(e.key === 'Enter' || e.key === ' '){
+      e.preventDefault();
+      if(!isProcessing) fileInput.click();
+    }
+  });
+
+  fileInput.addEventListener('change', function(){
+    if(fileInput.files && fileInput.files[0]){
+      handleFile(fileInput.files[0]);
+    }
+  });
+
+  ;['dragenter', 'dragover'].forEach(function(evt){
+    dropzone.addEventListener(evt, function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      if(!isProcessing) dropzone.classList.add('is-dragover');
+    });
+  });
+
+  ;['dragleave', 'drop'].forEach(function(evt){
+    dropzone.addEventListener(evt, function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      dropzone.classList.remove('is-dragover');
+    });
+  });
+
+  dropzone.addEventListener('drop', function(e){
+    if(isProcessing) return;
+    const files = e.dataTransfer && e.dataTransfer.files;
+    if(files && files[0]){
+      handleFile(files[0]);
+    }
+  });
+
+  removeBtn.addEventListener('click', async function(){
+    if(!currentFile || isProcessing) return;
+
+    clearError();
+    isProcessing = true;
+    removeBtn.disabled = true;
+    selectBtn.disabled = true;
+    resetBtn.disabled = true;
+    downloadBtn.disabled = true;
+    bgOptions.hidden = true;
+    setStatus('Starting\u2026', 'is-processing');
+
+    try{
+      const { bitmap, alphaData } = await removeBackgroundLocally(currentFile, function(msg){
+        setStatus(msg, 'is-processing');
+      });
+
+      currentBitmap = bitmap;
+      currentAlphaData = alphaData;
+      currentBgMode = 'transparent';
+      bgSwatches.forEach(function(btn){ btn.classList.toggle('active', btn.getAttribute('data-bg') === 'transparent'); });
+
+      renderResult();
+      bgOptions.hidden = false;
+      downloadBtn.disabled = false;
+      setStatus('Background removed successfully.', 'is-success');
+    }catch(err){
+      console.error(err);
+      showError('Something went wrong while removing the background. Please try again with a different image.');
+      setStatus('');
+    }finally{
+      isProcessing = false;
+      removeBtn.disabled = false;
+      selectBtn.disabled = false;
+      resetBtn.disabled = false;
+    }
+  });
+
+  downloadBtn.addEventListener('click', function(){
+    if(!resultBlob) return;
+    const link = document.createElement('a');
+    const url = URL.createObjectURL(resultBlob);
+    const baseName = currentFile ? currentFile.name.replace(/\.[^.]+$/, '') : 'image';
+    link.href = url;
+    link.download = baseName + '-no-background.png';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+  });
+
+  resetBtn.addEventListener('click', function(){
+    currentFile = null;
+    resultBlob = null;
+    currentBitmap = null;
+    currentAlphaData = null;
+    currentBgMode = 'transparent';
+    bgOptions.hidden = true;
+    if(originalObjectUrl) URL.revokeObjectURL(originalObjectUrl);
+    if(resultObjectUrl) URL.revokeObjectURL(resultObjectUrl);
+    originalObjectUrl = null;
+    resultObjectUrl = null;
+
+    fileInput.value = '';
+    fileMeta.hidden = true;
+    previews.hidden = true;
+    resetPreviewFrames();
+    clearError();
+    setStatus('');
+
+    removeBtn.disabled = true;
+    downloadBtn.disabled = true;
+    resetBtn.hidden = true;
+  });
+</script>
+
+</body>
+</html>
