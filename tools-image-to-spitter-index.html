@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Grid Splitter Online | Working Tools Box</title>
+<meta name="description" content="Split a photo into 3, 6, 9, 12, 15, 18 or 21 equal grid pieces online for free, perfect for Instagram grid posts. Runs entirely in your browser, no upload.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-grid-splitter/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image Grid Splitter Online | Working Tools Box">
+<meta property="og:description" content="Split a photo into equal grid pieces online for free, perfect for Instagram grid posts. Entirely in your browser.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-grid-splitter/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image Grid Splitter Online | Working Tools Box">
+<meta name="twitter:description" content="Split a photo into equal grid pieces online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Image Grid Splitter",
+  "url":"https://workingtoolsbox.vercel.app/tools/image-grid-splitter/",
+  "applicationCategory":"PhotoApplication",
+  "operatingSystem":"Any",
+  "description":"Splits a photo into an even grid of 3 to 21 pieces for Instagram-style grid posts, entirely in the browser.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The image is split locally in your browser using the Canvas API, and nothing is uploaded anywhere."}},
+    {"@type":"Question","name":"How does the Instagram grid layout work?","acceptedAnswer":{"@type":"Answer","text":"Each option splits the photo into 3 equal columns and a number of rows (for example, 9 pieces is a 3x3 grid). Posting the pieces to Instagram in the matching order recreates the full photo across your grid."}},
+    {"@type":"Question","name":"In what order should I post the pieces?","acceptedAnswer":{"@type":"Answer","text":"Pieces are numbered left-to-right, top-to-bottom. Post the highest-numbered piece first and the lowest-numbered piece last, since new posts push older ones down on a profile grid."}},
+    {"@type":"Question","name":"Can I download all the pieces at once?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the Download All as ZIP button to get every piece in a single file, or download individual pieces one at a time."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--success:#0f9d58;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:1fr 260px;gap:22px;align-items:start}
+  .canvas-wrap{background:#111827;border-radius:14px;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px;position:relative}
+  #previewCanvas{max-width:100%;max-height:520px;display:block}
+  .grid-lines{position:absolute;pointer-events:none;box-shadow:inset 0 0 0 1px transparent}
+
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-of-type{margin-top:0}
+  select{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px}
+  .layout-hint{font-size:12px;color:var(--muted);margin-top:6px}
+
+  .piece-grid{display:grid;gap:10px;margin-top:20px}
+  .piece-card{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+  .piece-card img{width:100%;display:block;background:#f1eefb}
+  .piece-card .piece-foot{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;font-size:12px}
+  .piece-card .piece-foot button{border:1px solid var(--border);background:#fff;border-radius:6px;padding:5px 9px;font-weight:700;cursor:pointer;font-size:11px;color:#4c1d95}
+  .piece-card .piece-foot button:hover{background:#f8f6ff}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}.piece-grid{grid-template-columns:repeat(3,1fr)!important}}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Image Grid Splitter</h1>
+    <p>Split a photo into an even grid of pieces &mdash; perfect for Instagram grid posts &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Your photo is split locally in your browser and never leaves your device.
+  </div>
+
+  <section class="tool" aria-label="Image Grid Splitter Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Photo</button>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div id="editorView" class="hidden">
+      <div class="grid2">
+        <div class="canvas-wrap">
+          <canvas id="previewCanvas"></canvas>
+          <div id="gridOverlay" style="position:absolute;inset:10px;pointer-events:none"></div>
+        </div>
+
+        <div class="panel">
+          <label for="pieceSelect">Number of pieces</label>
+          <select id="pieceSelect">
+            <option value="3">3 pieces (3&times;1)</option>
+            <option value="6">6 pieces (3&times;2)</option>
+            <option value="9" selected>9 pieces (3&times;3)</option>
+            <option value="12">12 pieces (3&times;4)</option>
+            <option value="15">15 pieces (3&times;5)</option>
+            <option value="18">18 pieces (3&times;6)</option>
+            <option value="21">21 pieces (3&times;7)</option>
+          </select>
+          <p class="layout-hint">Grid is always 3 columns wide, matching an Instagram profile grid.</p>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
+            <button type="button" class="button primary" id="splitBtn">Split Image</button>
+            <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Photo</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="resultView" class="hidden">
+      <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px">
+        <p style="font-weight:700;margin:0">Your Grid Pieces</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button type="button" class="button primary" id="downloadZipBtn">Download All as ZIP</button>
+          <button type="button" class="button secondary" id="startOverBtn">Split Another Photo</button>
+        </div>
+      </div>
+      <p class="layout-hint">Pieces are numbered left-to-right, top-to-bottom. Post the highest number first.</p>
+      <div id="pieceGrid" class="piece-grid"></div>
+      <div id="zipStatus" class="status"></div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Split a Photo Into an Instagram Grid, Free</h2>
+    <p>This free image grid splitter divides a single photo into 3, 6, 9, 12, 15, 18 or 21 equal pieces arranged in a 3-column layout, matching the standard Instagram profile grid. It works as an Instagram grid maker, a puzzle feed splitter, and a photo divider in one, so you can post one large image across several grid slots and have it appear as a single seamless picture on your profile.</p>
+    <p>Use it to create a panoramic-style grid post, split a group photo across multiple posts, or design a themed 3x3 or 3x6 feed layout. Every piece is generated locally in your browser using the Canvas API, then bundled into a ZIP file for a single, easy download.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>image grid splitter online</span>
+      <span>instagram grid maker free</span>
+      <span>photo grid divider online</span>
+      <span>split image into pieces</span>
+      <span>instagram puzzle feed maker</span>
+      <span>3x3 grid splitter</span>
+      <span>photo splitter for instagram</span>
+      <span>grid post maker online</span>
+      <span>panorama grid splitter</span>
+      <span>free instagram grid tool</span>
+      <span>split photo into 9 pieces</span>
+      <span>split photo into 6 pieces</span>
+      <span>image slicer online free</span>
+      <span>instagram feed grid layout maker</span>
+      <span>photo cutter for social media</span>
+      <span>divide picture into grid online</span>
+      <span>grid layout image splitter</span>
+      <span>online photo grid cutter</span>
+      <span>split image no upload</span>
+      <span>instagram profile grid splitter</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <details class="faq"><summary>Is my photo uploaded to a server?</summary><p>No. The image is split locally in your browser using the Canvas API, and nothing is uploaded anywhere.</p></details>
+    <details class="faq"><summary>How does the Instagram grid layout work?</summary><p>Each option splits the photo into 3 equal columns and a number of rows (for example, 9 pieces is a 3x3 grid). Posting the pieces to Instagram in the matching order recreates the full photo across your grid.</p></details>
+    <details class="faq"><summary>In what order should I post the pieces?</summary><p>Pieces are numbered left-to-right, top-to-bottom. Post the highest-numbered piece first and the lowest-numbered piece last, since new posts push older ones down on a profile grid.</p></details>
+    <details class="faq"><summary>Can I download all the pieces at once?</summary><p>Yes. Use the Download All as ZIP button to get every piece in a single file, or download individual pieces one at a time.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var uploadView = document.getElementById("uploadView");
+  var editorView = document.getElementById("editorView");
+  var resultView = document.getElementById("resultView");
+
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var canvas = document.getElementById("previewCanvas");
+  var ctx = canvas.getContext("2d");
+  var gridOverlay = document.getElementById("gridOverlay");
+  var pieceSelect = document.getElementById("pieceSelect");
+  var splitBtn = document.getElementById("splitBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+
+  var pieceGrid = document.getElementById("pieceGrid");
+  var downloadZipBtn = document.getElementById("downloadZipBtn");
+  var startOverBtn = document.getElementById("startOverBtn");
+  var zipStatus = document.getElementById("zipStatus");
+
+  var baseImage = null;
+  var baseObjectUrl = null;
+  var pieceBlobs = []; // {blob, url}
+
+  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file){
+    var allowed = ["image/jpeg","image/png","image/webp"];
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
+      uploadStatus.className = "status error";
+      return;
+    }
+    revoke(baseObjectUrl);
+    baseObjectUrl = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      baseImage = img;
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      ctx.drawImage(img, 0, 0);
+      drawGridLines();
+      uploadView.classList.add("hidden");
+      editorView.classList.remove("hidden");
+    };
+    img.onerror = function(){
+      uploadStatus.textContent = "Could not read that image. Please try another file.";
+      uploadStatus.className = "status error";
+    };
+    img.src = baseObjectUrl;
+  }
+
+  function getLayout(){
+    var count = parseInt(pieceSelect.value, 10);
+    var cols = 3;
+    var rows = count / cols;
+    return { cols: cols, rows: rows, count: count };
+  }
+
+  function drawGridLines(){
+    gridOverlay.innerHTML = "";
+    var layout = getLayout();
+    for(var c = 1; c < layout.cols; c++){
+      var vLine = document.createElement("div");
+      vLine.style.cssText = "position:absolute;top:0;bottom:0;left:" + (c * 100 / layout.cols) + "%;width:2px;background:rgba(255,255,255,0.85)";
+      gridOverlay.appendChild(vLine);
+    }
+    for(var r = 1; r < layout.rows; r++){
+      var hLine = document.createElement("div");
+      hLine.style.cssText = "position:absolute;left:0;right:0;top:" + (r * 100 / layout.rows) + "%;height:2px;background:rgba(255,255,255,0.85)";
+      gridOverlay.appendChild(hLine);
+    }
+  }
+  pieceSelect.addEventListener("change", drawGridLines);
+
+  chooseAnotherBtn.addEventListener("click", function(){
+    baseImage = null;
+    fileInput.value = "";
+    editorView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
+
+  splitBtn.addEventListener("click", function(){
+    if(!baseImage) return;
+    var layout = getLayout();
+    var pieceW = Math.floor(baseImage.naturalWidth / layout.cols);
+    var pieceH = Math.floor(baseImage.naturalHeight / layout.rows);
+
+    pieceBlobs.forEach(function(p){ revoke(p.url); });
+    pieceBlobs = [];
+    pieceGrid.innerHTML = "";
+    pieceGrid.style.gridTemplateColumns = "repeat(" + layout.cols + ", 1fr)";
+
+    var pending = layout.cols * layout.rows;
+    var index = 0;
+
+    for(var r = 0; r < layout.rows; r++){
+      for(var c = 0; c < layout.cols; c++){
+        index++;
+        (function(row, col, num){
+          var pc = document.createElement("canvas");
+          pc.width = pieceW;
+          pc.height = pieceH;
+          var pctx = pc.getContext("2d");
+          pctx.drawImage(baseImage, col * pieceW, row * pieceH, pieceW, pieceH, 0, 0, pieceW, pieceH);
+
+          pc.toBlob(function(blob){
+            var url = URL.createObjectURL(blob);
+            pieceBlobs[num - 1] = { blob: blob, url: url };
+
+            var card = document.createElement("div");
+            card.className = "piece-card";
+            var img = document.createElement("img");
+            img.src = url;
+            img.alt = "Grid piece " + num;
+            card.appendChild(img);
+
+            var foot = document.createElement("div");
+            foot.className = "piece-foot";
+            var label = document.createElement("span");
+            label.textContent = "#" + num;
+            foot.appendChild(label);
+            var dlBtn = document.createElement("button");
+            dlBtn.type = "button";
+            dlBtn.textContent = "Download";
+            dlBtn.addEventListener("click", function(){
+              var a = document.createElement("a");
+              a.href = url;
+              a.download = "grid-piece-" + num + ".png";
+              document.body.appendChild(a);
+              a.click();
+              a.remove();
+            });
+            foot.appendChild(dlBtn);
+            card.appendChild(foot);
+            pieceGrid.appendChild(card);
+
+            pending--;
+            if(pending === 0){
+              editorView.classList.add("hidden");
+              resultView.classList.remove("hidden");
+            }
+          }, "image/png");
+        })(r, c, index);
+      }
+    }
+  });
+
+  downloadZipBtn.addEventListener("click", function(){
+    if(!pieceBlobs.length) return;
+    downloadZipBtn.disabled = true;
+    zipStatus.textContent = "Building ZIP file\u2026";
+    zipStatus.className = "status";
+
+    var zip = new JSZip();
+    pieceBlobs.forEach(function(p, i){
+      zip.file("grid-piece-" + (i + 1) + ".png", p.blob);
+    });
+
+    zip.generateAsync({ type: "blob" }).then(function(zipBlob){
+      var url = URL.createObjectURL(zipBlob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "image-grid-pieces.zip";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+      zipStatus.textContent = "";
+      downloadZipBtn.disabled = false;
+    }).catch(function(){
+      zipStatus.textContent = "Could not build the ZIP file. Please try downloading pieces individually.";
+      zipStatus.className = "status error";
+      downloadZipBtn.disabled = false;
+    });
+  });
+
+  startOverBtn.addEventListener("click", function(){
+    pieceBlobs.forEach(function(p){ revoke(p.url); });
+    pieceBlobs = [];
+    revoke(baseObjectUrl); baseObjectUrl = null;
+    baseImage = null;
+    fileInput.value = "";
+    resultView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
+})();
+</script>
+</body>
+</html>
