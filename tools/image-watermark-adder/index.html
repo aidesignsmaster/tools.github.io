@@ -115,7 +115,11 @@
   .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
-  .faq h3{font-size:1rem;margin:14px 0 6px}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
 
   .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
   .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
@@ -260,11 +264,11 @@
     </div>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <div class="faq"><h3>Is my photo uploaded to a server?</h3><p>No. The watermark is drawn onto your image locally in your browser using the Canvas API, and nothing is uploaded anywhere.</p></div>
-    <div class="faq"><h3>Can I use my own logo as the watermark?</h3><p>Yes. Switch to the Logo tab and upload a PNG or WebP image, ideally with a transparent background, to use as your watermark.</p></div>
-    <div class="faq"><h3>Can I repeat the watermark across the whole image?</h3><p>Yes. Turn on the Tile Across Image option to repeat the watermark in a protective pattern across the entire photo, similar to stock photo previews.</p></div>
-    <div class="faq"><h3>What image formats are supported?</h3><p>You can upload JPG, PNG or WebP images, and download the watermarked result as a PNG.</p></div>
-    <div class="faq"><h3>Is this free to use?</h3><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></div>
+    <details class="faq"><summary>Is my photo uploaded to a server?</summary><p>No. The watermark is drawn onto your image locally in your browser using the Canvas API, and nothing is uploaded anywhere.</p></details>
+    <details class="faq"><summary>Can I use my own logo as the watermark?</summary><p>Yes. Switch to the Logo tab and upload a PNG or WebP image, ideally with a transparent background, to use as your watermark.</p></details>
+    <details class="faq"><summary>Can I repeat the watermark across the whole image?</summary><p>Yes. Turn on the Tile Across Image option to repeat the watermark in a protective pattern across the entire photo, similar to stock photo previews.</p></details>
+    <details class="faq"><summary>What image formats are supported?</summary><p>You can upload JPG, PNG or WebP images, and download the watermarked result as a PNG.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
   </section>
 </main>
 
