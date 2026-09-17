@@ -111,7 +111,11 @@
   .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
-  .faq h3{font-size:1rem;margin:14px 0 6px}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
 
   .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
   .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
@@ -250,11 +254,11 @@
     </div>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <div class="faq"><h3>Is this a real AI tool?</h3><p>No. This tool uses classic image-processing techniques &mdash; smooth resampling for upscaling and an unsharp-mask filter for sharpening &mdash; not a neural network. It runs instantly and for free because of that.</p></div>
-    <div class="faq"><h3>Is my photo uploaded anywhere?</h3><p>No. Every step happens locally in your browser using the Canvas API. Your photo never leaves your device.</p></div>
-    <div class="faq"><h3>Why does my image look pixelated even after upscaling?</h3><p>Upscaling makes an image bigger and smoother, but it cannot invent detail that was never captured in the original photo. Very low-resolution or heavily compressed images will still show some softness.</p></div>
-    <div class="faq"><h3>Is this free to use?</h3><p>Yes, completely free with no sign-up, no watermark, and no limit, since all processing happens on your own device.</p></div>
-    <div class="faq"><h3>What is the maximum image size supported?</h3><p>Very large images can be slow to process in the browser, so this tool works best with photos up to about 12 megapixels before upscaling.</p></div>
+    <details class="faq"><summary>Is this a real AI tool?</summary><p>No. This tool uses classic image-processing techniques &mdash; smooth resampling for upscaling and an unsharp-mask filter for sharpening &mdash; not a neural network. It runs instantly and for free because of that.</p></details>
+    <details class="faq"><summary>Is my photo uploaded anywhere?</summary><p>No. Every step happens locally in your browser using the Canvas API. Your photo never leaves your device.</p></details>
+    <details class="faq"><summary>Why does my image look pixelated even after upscaling?</summary><p>Upscaling makes an image bigger and smoother, but it cannot invent detail that was never captured in the original photo. Very low-resolution or heavily compressed images will still show some softness.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up, no watermark, and no limit, since all processing happens on your own device.</p></details>
+    <details class="faq"><summary>What is the maximum image size supported?</summary><p>Very large images can be slow to process in the browser, so this tool works best with photos up to about 12 megapixels before upscaling.</p></details>
   </section>
 </main>
 
