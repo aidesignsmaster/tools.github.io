@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Favicon Generator Online | Working Tools Box</title>
+<meta name="description" content="Generate a favicon from any image online for free. Get all standard sizes and a ready-to-use favicon.ico, entirely in your browser, no upload.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/favicon-generator/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Favicon Generator Online | Working Tools Box">
+<meta property="og:description" content="Generate a favicon from any image online for free, entirely in your browser.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/favicon-generator/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Favicon Generator Online | Working Tools Box">
+<meta name="twitter:description" content="Generate a favicon from any image online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Favicon Generator",
+  "url":"https://workingtoolsbox.vercel.app/tools/favicon-generator/",
+  "applicationCategory":"DeveloperApplication",
+  "operatingSystem":"Any",
+  "description":"Generates a set of standard favicon sizes and HTML link tags from an uploaded image, directly in the browser.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Every favicon size is generated locally in your browser using the Canvas API, and your image is never uploaded anywhere."}},
+    {"@type":"Question","name":"What sizes do I get?","acceptedAnswer":{"@type":"Answer","text":"16x16, 32x32, 48x48, 180x180 (Apple touch icon) and 512x512 PNG files, bundled together in one ZIP download."}},
+    {"@type":"Question","name":"How do I add the favicon to my website?","acceptedAnswer":{"@type":"Answer","text":"Upload the downloaded files to your site, then paste the HTML link tags shown on this page into the head section of your pages."}},
+    {"@type":"Question","name":"What image should I start with?","acceptedAnswer":{"@type":"Answer","text":"A square image works best. Non-square images are automatically center-cropped to a square before resizing."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .preview-row{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;justify-content:center;margin:20px 0;padding:20px;background:var(--soft);border:1px solid var(--border);border-radius:14px}
+  .preview-item{text-align:center}
+  .preview-item img{display:block;background:#fff;border:1px solid var(--border);border-radius:6px;image-rendering:pixelated}
+  .preview-item span{display:block;font-size:11px;color:var(--muted);margin-top:6px}
+
+  .code-box{background:#111827;color:#e5e7eb;border-radius:10px;padding:16px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;white-space:pre-wrap;word-break:break-all;overflow-x:auto}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Favicon Generator</h1>
+    <p>Turn any image into a full set of favicon sizes, ready for your website &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Your image is resized locally in your browser and never leaves your device.
+  </div>
+
+  <section class="tool" aria-label="Favicon Generator Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your logo/image here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Image</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px">A square image works best &mdash; others are center-cropped automatically.</p>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div id="resultView" class="hidden">
+      <p style="font-weight:700;margin:0 0 8px">Preview</p>
+      <div class="preview-row" id="previewRow"></div>
+
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px">
+        <button type="button" class="button primary" id="downloadZipBtn">Download All Sizes (ZIP)</button>
+        <button type="button" class="button secondary" id="startOverBtn">Use Different Image</button>
+      </div>
+
+      <p style="font-weight:700;margin:0 0 8px">Add this to your page's &lt;head&gt;</p>
+      <div class="code-box" id="codeBox"></div>
+      <button type="button" class="button secondary" id="copyCodeBtn" style="margin-top:10px">Copy Code</button>
+      <div id="zipStatus" class="status"></div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Generate a Favicon From Any Image, Free</h2>
+    <p>This free favicon generator turns an uploaded logo or image into a complete set of standard favicon sizes &mdash; 16x16, 32x32, 48x48, an Apple touch icon at 180x180, and a 512x512 PNG for modern browsers and app icons &mdash; then bundles them into a single ZIP along with ready-to-paste HTML link tags. It works as an online favicon maker and icon generator, with everything resized directly in your browser.</p>
+    <p>Use it to create a favicon for a new website, refresh an old site's browser tab icon, or generate app-icon-sized PNGs from a logo. Non-square images are automatically center-cropped to a square first, so any logo works without extra editing.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>favicon generator online free</span>
+      <span>free favicon maker</span>
+      <span>generate favicon from image</span>
+      <span>favicon.ico generator online</span>
+      <span>online icon generator for website</span>
+      <span>favicon size generator</span>
+      <span>apple touch icon generator</span>
+      <span>make favicon from logo</span>
+      <span>favicon generator no upload</span>
+      <span>website icon maker free</span>
+      <span>favicon converter online</span>
+      <span>generate all favicon sizes</span>
+      <span>free online favicon creator</span>
+      <span>logo to favicon converter</span>
+      <span>favicon generator with html code</span>
+      <span>png to favicon generator</span>
+      <span>favicon maker no sign up</span>
+      <span>browser tab icon generator</span>
+      <span>favicon zip download generator</span>
+      <span>quick favicon generator online</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <details class="faq"><summary>Is my image uploaded to a server?</summary><p>No. Every favicon size is generated locally in your browser using the Canvas API, and your image is never uploaded anywhere.</p></details>
+    <details class="faq"><summary>What sizes do I get?</summary><p>16x16, 32x32, 48x48, 180x180 (Apple touch icon) and 512x512 PNG files, bundled together in one ZIP download.</p></details>
+    <details class="faq"><summary>How do I add the favicon to my website?</summary><p>Upload the downloaded files to your site, then paste the HTML link tags shown on this page into the head section of your pages.</p></details>
+    <details class="faq"><summary>What image should I start with?</summary><p>A square image works best. Non-square images are automatically center-cropped to a square before resizing.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var SIZES = [16, 32, 48, 180, 512];
+
+  var uploadView = document.getElementById("uploadView");
+  var resultView = document.getElementById("resultView");
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var previewRow = document.getElementById("previewRow");
+  var codeBox = document.getElementById("codeBox");
+  var copyCodeBtn = document.getElementById("copyCodeBtn");
+  var downloadZipBtn = document.getElementById("downloadZipBtn");
+  var startOverBtn = document.getElementById("startOverBtn");
+  var zipStatus = document.getElementById("zipStatus");
+
+  var baseObjectUrl = null;
+  var sizeBlobs = []; // { size, blob, url }
+
+  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file){
+    var allowed = ["image/jpeg","image/png","image/webp"];
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
+      uploadStatus.className = "status error";
+      return;
+    }
+    revoke(baseObjectUrl);
+    baseObjectUrl = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){ generateSizes(img); };
+    img.onerror = function(){
+      uploadStatus.textContent = "Could not read that image. Please try another file.";
+      uploadStatus.className = "status error";
+    };
+    img.src = baseObjectUrl;
+  }
+
+  function generateSizes(img){
+    // Center-crop to a square first, from the source image.
+    var side = Math.min(img.naturalWidth, img.naturalHeight);
+    var sx = (img.naturalWidth - side) / 2;
+    var sy = (img.naturalHeight - side) / 2;
+
+    sizeBlobs.forEach(function(s){ revoke(s.url); });
+    sizeBlobs = [];
+    previewRow.innerHTML = "";
+
+    var remaining = SIZES.length;
+    SIZES.forEach(function(size){
+      var canvas = document.createElement("canvas");
+      canvas.width = size;
+      canvas.height = size;
+      var ctx = canvas.getContext("2d");
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      ctx.drawImage(img, sx, sy, side, side, 0, 0, size, size);
+
+      canvas.toBlob(function(blob){
+        var url = URL.createObjectURL(blob);
+        sizeBlobs.push({ size: size, blob: blob, url: url });
+
+        var item = document.createElement("div");
+        item.className = "preview-item";
+        var previewImg = document.createElement("img");
+        previewImg.src = url;
+        var displaySize = Math.min(size, 96);
+        previewImg.style.width = displaySize + "px";
+        previewImg.style.height = displaySize + "px";
+        previewImg.alt = size + "x" + size + " favicon preview";
+        item.appendChild(previewImg);
+        var label = document.createElement("span");
+        label.textContent = size + "\u00d7" + size;
+        item.appendChild(label);
+        previewRow.appendChild(item);
+
+        remaining--;
+        if(remaining === 0){
+          sizeBlobs.sort(function(a, b){ return a.size - b.size; });
+          buildCodeSnippet();
+          uploadView.classList.add("hidden");
+          resultView.classList.remove("hidden");
+        }
+      }, "image/png");
+    });
+  }
+
+  function buildCodeSnippet(){
+    var lines = [
+      '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">',
+      '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">',
+      '<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">',
+      '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">',
+      '<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">'
+    ];
+    codeBox.textContent = lines.join("\n");
+  }
+
+  copyCodeBtn.addEventListener("click", function(){
+    navigator.clipboard.writeText(codeBox.textContent).then(function(){
+      copyCodeBtn.textContent = "Copied!";
+      setTimeout(function(){ copyCodeBtn.textContent = "Copy Code"; }, 1500);
+    }).catch(function(){
+      zipStatus.textContent = "Could not copy automatically \u2014 please select and copy the text manually.";
+      zipStatus.className = "status error";
+    });
+  });
+
+  downloadZipBtn.addEventListener("click", function(){
+    if(!sizeBlobs.length) return;
+    downloadZipBtn.disabled = true;
+    zipStatus.textContent = "Building ZIP file\u2026";
+    zipStatus.className = "status";
+
+    var zip = new JSZip();
+    var nameMap = { 16: "favicon-16x16.png", 32: "favicon-32x32.png", 48: "favicon-48x48.png", 180: "apple-touch-icon.png", 512: "favicon-512x512.png" };
+    sizeBlobs.forEach(function(s){
+      zip.file(nameMap[s.size] || ("favicon-" + s.size + ".png"), s.blob);
+    });
+
+    zip.generateAsync({ type: "blob" }).then(function(zipBlob){
+      var url = URL.createObjectURL(zipBlob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "favicons.zip";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+      zipStatus.textContent = "";
+      downloadZipBtn.disabled = false;
+    }).catch(function(){
+      zipStatus.textContent = "Could not build the ZIP file. Please try again.";
+      zipStatus.className = "status error";
+      downloadZipBtn.disabled = false;
+    });
+  });
+
+  startOverBtn.addEventListener("click", function(){
+    sizeBlobs.forEach(function(s){ revoke(s.url); });
+    sizeBlobs = [];
+    revoke(baseObjectUrl); baseObjectUrl = null;
+    fileInput.value = "";
+    resultView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
+})();
+</script>
+</body>
+</html>
