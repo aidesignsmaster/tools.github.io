@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image Metadata &amp; EXIF Viewer Online | Working Tools Box</title>
+<meta name="description" content="View EXIF and metadata from a photo online for free \u2014 camera settings, date taken, GPS location and more. Entirely in your browser, no upload.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-exif-viewer/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image Metadata & EXIF Viewer Online | Working Tools Box">
+<meta property="og:description" content="View EXIF and metadata from a photo online for free, entirely in your browser.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-exif-viewer/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image Metadata & EXIF Viewer Online | Working Tools Box">
+<meta name="twitter:description" content="View EXIF and metadata from a photo online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Image Metadata & EXIF Viewer",
+  "url":"https://workingtoolsbox.vercel.app/tools/image-exif-viewer/",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "description":"Reads and displays EXIF metadata from a JPEG photo, including camera settings, date taken and GPS location if present, directly in the browser.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The photo's metadata is read entirely in your browser using JavaScript, and the image itself is never uploaded anywhere."}},
+    {"@type":"Question","name":"Why does my photo show no metadata?","acceptedAnswer":{"@type":"Answer","text":"Many apps and social media platforms strip EXIF data when you save or share a photo, so no metadata being found is common and does not mean the tool failed."}},
+    {"@type":"Question","name":"Can this tool read GPS location from a photo?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the photo still has GPS data embedded. It will be shown as coordinates along with a link to view the location on a map."}},
+    {"@type":"Question","name":"Does this work on PNG or WebP images?","acceptedAnswer":{"@type":"Answer","text":"EXIF metadata is a JPEG feature. PNG and WebP files generally do not contain EXIF data, so this tool works best with JPEG photos straight from a camera or phone."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:11px 20px;font-weight:700;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+  .preview-img{width:100%;border-radius:14px;border:1px solid var(--border);display:block;max-height:340px;object-fit:contain;background:#f8fafc}
+  .file-meta{font-size:12px;color:var(--muted);margin-top:8px}
+
+  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+  .filter-row input[type=search]{flex:1;min-width:160px;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px}
+
+  .meta-section{border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+  .meta-section h3{margin:0;padding:12px 16px;background:var(--soft);font-size:14px;font-weight:800;color:var(--purple)}
+  table.meta-table{width:100%;border-collapse:collapse}
+  table.meta-table tr{border-top:1px solid var(--border)}
+  table.meta-table tr:first-child{border-top:none}
+  table.meta-table td{padding:9px 16px;font-size:13.5px;vertical-align:top}
+  table.meta-table td:first-child{color:var(--muted);font-weight:600;width:42%}
+  table.meta-table td:last-child{word-break:break-word}
+  .gps-link{color:var(--purple);font-weight:700;text-decoration:none}
+  .gps-link:hover{text-decoration:underline}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Image Metadata &amp; EXIF Viewer</h1>
+    <p>See the hidden camera settings, date and location data stored inside a photo &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Your photo's metadata is read locally in your browser and never leaves your device.
+  </div>
+
+  <section class="tool" aria-label="Image Metadata and EXIF Viewer Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Photo</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:14px">Works best with JPEG photos straight from a camera or phone.</p>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div id="resultView" class="hidden">
+      <div class="grid2">
+        <div>
+          <img id="previewImg" class="preview-img" alt="Uploaded photo">
+          <div class="file-meta" id="fileMetaText"></div>
+          <button type="button" class="button secondary" id="downloadJsonBtn" style="width:100%;justify-content:center;margin-top:14px">Download All Data as JSON</button>
+          <button type="button" class="button secondary" id="chooseAnotherBtn" style="width:100%;justify-content:center;margin-top:8px">Choose Different Photo</button>
+        </div>
+        <div>
+          <div class="filter-row">
+            <input type="search" id="filterInput" placeholder="Filter fields, e.g. camera, gps, date&hellip;">
+          </div>
+          <div id="metaContainer"></div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">View Hidden Photo Metadata (EXIF), Free</h2>
+    <p>This free image metadata and EXIF viewer reads the technical details embedded inside a photo by the camera or phone that took it &mdash; camera make and model, exposure settings like aperture, shutter speed and ISO, the date and time the photo was taken, image orientation, and GPS location if it was recorded. It works as an online EXIF data reader and photo metadata inspector, with a search box to quickly filter to the fields you care about.</p>
+    <p>Use it to check when and where a photo was really taken, review camera settings from a shoot, verify whether a photo still has GPS data before sharing it publicly, or inspect a file's technical details. Everything is parsed locally in your browser, so your photo is never uploaded anywhere.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>exif viewer online free</span>
+      <span>image metadata viewer online</span>
+      <span>check photo exif data online</span>
+      <span>view camera settings from photo</span>
+      <span>photo gps location viewer</span>
+      <span>online exif data reader</span>
+      <span>check when photo was taken online</span>
+      <span>free metadata checker for photos</span>
+      <span>exif data extractor online</span>
+      <span>photo metadata inspector free</span>
+      <span>view hidden photo information</span>
+      <span>online image exif checker</span>
+      <span>photo location data viewer</span>
+      <span>check if photo has gps data</span>
+      <span>camera model from photo online</span>
+      <span>free exif reader no upload</span>
+      <span>image technical details viewer</span>
+      <span>jpeg metadata viewer online</span>
+      <span>photo exif data online free</span>
+      <span>check photo date taken online</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <details class="faq"><summary>Is my photo uploaded to a server?</summary><p>No. The photo's metadata is read entirely in your browser using JavaScript, and the image itself is never uploaded anywhere.</p></details>
+    <details class="faq"><summary>Why does my photo show no metadata?</summary><p>Many apps and social media platforms strip EXIF data when you save or share a photo, so no metadata being found is common and does not mean the tool failed.</p></details>
+    <details class="faq"><summary>Can this tool read GPS location from a photo?</summary><p>Yes, if the photo still has GPS data embedded. It will be shown as coordinates along with a link to view the location on a map.</p></details>
+    <details class="faq"><summary>Does this work on PNG or WebP images?</summary><p>EXIF metadata is a JPEG feature. PNG and WebP files generally do not contain EXIF data, so this tool works best with JPEG photos straight from a camera or phone.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  // -----------------------------------------------------------------
+  // Minimal, self-contained EXIF (TIFF-in-JPEG APP1) parser. No
+  // external library - keeps this tool free of any CDN dependency.
+  // -----------------------------------------------------------------
+  var TAG_NAMES = {
+    0x010F: "Camera Make", 0x0110: "Camera Model", 0x0112: "Orientation",
+    0x011A: "X Resolution", 0x011B: "Y Resolution", 0x0128: "Resolution Unit",
+    0x0131: "Software", 0x0132: "Modify Date", 0x013B: "Artist",
+    0x8298: "Copyright", 0x829A: "Exposure Time", 0x829D: "F-Number",
+    0x8827: "ISO Speed", 0x9003: "Date Taken (Original)", 0x9004: "Date Digitized",
+    0x9201: "Shutter Speed Value", 0x9202: "Aperture Value", 0x9204: "Exposure Bias",
+    0x9207: "Metering Mode", 0x9209: "Flash", 0x920A: "Focal Length",
+    0xA002: "Image Width", 0xA003: "Image Height", 0xA402: "Exposure Mode",
+    0xA403: "White Balance", 0xA406: "Scene Capture Type", 0xA430: "Camera Owner",
+    0xA431: "Body Serial Number", 0xA433: "Lens Make", 0xA434: "Lens Model"
+  };
+  var ORIENTATION_LABELS = {
+    1:"Normal",2:"Flip horizontal",3:"Rotate 180",4:"Flip vertical",
+    5:"Rotate 90 CW + flip",6:"Rotate 90 CW",7:"Rotate 90 CCW + flip",8:"Rotate 90 CCW"
+  };
+  var GPS_TAG_NAMES = {
+    1:"GPS Latitude Ref", 2:"GPS Latitude", 3:"GPS Longitude Ref", 4:"GPS Longitude",
+    5:"GPS Altitude Ref", 6:"GPS Altitude", 7:"GPS Time Stamp", 29:"GPS Date Stamp"
+  };
+
+  function readExif(buffer){
+    var view = new DataView(buffer);
+    if(view.getUint16(0) !== 0xFFD8) return null; // not a JPEG
+
+    var offset = 2;
+    while(offset < view.byteLength - 1){
+      var marker = view.getUint16(offset);
+      if(marker === 0xFFD9 || marker === 0xFFDA) break; // end / start of scan
+      var size = view.getUint16(offset + 2);
+      if(marker === 0xFFE1){ // APP1
+        var exifStr = String.fromCharCode(view.getUint8(offset+4), view.getUint8(offset+5), view.getUint8(offset+6), view.getUint8(offset+7));
+        if(exifStr === "Exif"){
+          return parseTiff(view, offset + 10);
+        }
+      }
+      offset += 2 + size;
+    }
+    return null;
+  }
+
+  function parseTiff(view, tiffStart){
+    var little = view.getUint16(tiffStart) === 0x4949;
+    var firstIFDOffset = view.getUint32(tiffStart + 4, little);
+    var tags = {};
+    var gpsIFDOffset = null;
+    var exifIFDOffset = null;
+
+    function readIFD(ifdOffset, targetTags){
+      var entries = view.getUint16(ifdOffset, little);
+      for(var i = 0; i < entries; i++){
+        var entryOffset = ifdOffset + 2 + i * 12;
+        var tag = view.getUint16(entryOffset, little);
+        var type = view.getUint16(entryOffset + 2, little);
+        var count = view.getUint32(entryOffset + 4, little);
+        var valueOffset = entryOffset + 8;
+
+        if(tag === 0x8825){ gpsIFDOffset = tiffStart + view.getUint32(valueOffset, little); continue; }
+        if(tag === 0x8769){ exifIFDOffset = tiffStart + view.getUint32(valueOffset, little); continue; }
+
+        var value = readValue(view, tiffStart, type, count, valueOffset, little);
+        if(value !== null) targetTags[tag] = value;
+      }
+    }
+
+    try{ readIFD(tiffStart + firstIFDOffset, tags); }catch(e){}
+    var gps = {};
+    try{ if(exifIFDOffset) readIFD(exifIFDOffset, tags); }catch(e){}
+    try{ if(gpsIFDOffset) readIFD(gpsIFDOffset, gps); }catch(e){}
+
+    return { tags: tags, gps: gps };
+  }
+
+  function typeSize(type){
+    return { 1:1, 2:1, 3:2, 4:4, 5:8, 7:1, 9:4, 10:8 }[type] || 1;
+  }
+
+  function readValue(view, tiffStart, type, count, valueOffset, little){
+    var size = typeSize(type) * count;
+    var dataOffset = size > 4 ? tiffStart + view.getUint32(valueOffset, little) : valueOffset;
+
+    function readOne(i){
+      switch(type){
+        case 1: return view.getUint8(dataOffset + i);
+        case 2: return null; // ASCII, handled separately below
+        case 3: return view.getUint16(dataOffset + i*2, little);
+        case 4: return view.getUint32(dataOffset + i*4, little);
+        case 5: return view.getUint32(dataOffset + i*8, little) / view.getUint32(dataOffset + i*8 + 4, little);
+        case 9: return view.getInt32(dataOffset + i*4, little);
+        case 10: return view.getInt32(dataOffset + i*8, little) / view.getInt32(dataOffset + i*8 + 4, little);
+        default: return null;
+      }
+    }
+
+    if(type === 2){ // ASCII string
+      var chars = [];
+      for(var i = 0; i < count - 1; i++){
+        var c = view.getUint8(dataOffset + i);
+        if(c === 0) break;
+        chars.push(String.fromCharCode(c));
+      }
+      return chars.join("").trim();
+    }
+
+    if(count === 1) return readOne(0);
+    var arr = [];
+    for(var j = 0; j < count; j++) arr.push(readOne(j));
+    return arr;
+  }
+
+  function dmsToDecimal(dms, ref){
+    if(!Array.isArray(dms) || dms.length !== 3) return null;
+    var deg = dms[0] + dms[1] / 60 + dms[2] / 3600;
+    if(ref === "S" || ref === "W") deg = -deg;
+    return deg;
+  }
+
+  function formatValue(tag, value){
+    if(tag === 0x0112) return ORIENTATION_LABELS[value] || value;
+    if(tag === 0x829A && typeof value === "number") return value < 1 ? "1/" + Math.round(1/value) + " s" : value + " s";
+    if(tag === 0x829D && typeof value === "number") return "f/" + value.toFixed(1);
+    if(tag === 0x920A && typeof value === "number") return value.toFixed(1) + " mm";
+    if(tag === 0x9204 && typeof value === "number") return (value >= 0 ? "+" : "") + value.toFixed(2) + " EV";
+    if(Array.isArray(value)) return value.join(", ");
+    return String(value);
+  }
+
+  // -----------------------------------------------------------------
+  // UI wiring
+  // -----------------------------------------------------------------
+  var uploadView = document.getElementById("uploadView");
+  var resultView = document.getElementById("resultView");
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var previewImg = document.getElementById("previewImg");
+  var fileMetaText = document.getElementById("fileMetaText");
+  var metaContainer = document.getElementById("metaContainer");
+  var filterInput = document.getElementById("filterInput");
+  var downloadJsonBtn = document.getElementById("downloadJsonBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+
+  var currentObjectUrl = null;
+  var currentJsonData = null;
+
+  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+  function fmtBytes(b){ return b < 1024*1024 ? (b/1024).toFixed(1)+" KB" : (b/(1024*1024)).toFixed(2)+" MB"; }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file){
+    var allowed = ["image/jpeg","image/png","image/webp"];
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
+      uploadStatus.className = "status error";
+      return;
+    }
+    uploadStatus.textContent = "";
+
+    revoke(currentObjectUrl);
+    currentObjectUrl = URL.createObjectURL(file);
+    previewImg.src = currentObjectUrl;
+
+    var reader = new FileReader();
+    reader.onload = function(){
+      var basic = {
+        "File Name": file.name,
+        "File Size": fmtBytes(file.size),
+        "File Type": file.type,
+        "Last Modified": new Date(file.lastModified).toLocaleString()
+      };
+
+      var exifData = null;
+      try{ exifData = readExif(reader.result); }catch(e){ exifData = null; }
+
+      renderResult(basic, exifData);
+      uploadView.classList.add("hidden");
+      resultView.classList.remove("hidden");
+    };
+    reader.onerror = function(){
+      uploadStatus.textContent = "Could not read that file. Please try another.";
+      uploadStatus.className = "status error";
+    };
+    reader.readAsArrayBuffer(file);
+  }
+
+  function renderResult(basic, exifData){
+    fileMetaText.textContent = basic["File Name"] + " \u2022 " + basic["File Size"];
+    metaContainer.innerHTML = "";
+    currentJsonData = { file: basic };
+
+    addSection("File Information", basic);
+
+    if(exifData && Object.keys(exifData.tags).length){
+      var camera = {}, capture = {}, other = {};
+      Object.keys(exifData.tags).forEach(function(tagHex){
+        var tag = parseInt(tagHex, 10);
+        var name = TAG_NAMES[tag];
+        if(!name) return;
+        var formatted = formatValue(tag, exifData.tags[tag]);
+        if([0x010F,0x0110,0x0131,0xA430,0xA431,0xA433,0xA434].indexOf(tag) !== -1) camera[name] = formatted;
+        else if([0x829A,0x829D,0x8827,0x9003,0x9004,0x920A,0x9204,0x9207,0x9209,0xA402,0xA403,0xA406].indexOf(tag) !== -1) capture[name] = formatted;
+        else other[name] = formatted;
+      });
+      if(Object.keys(camera).length) addSection("Camera", camera);
+      if(Object.keys(capture).length) addSection("Capture Settings", capture);
+      if(Object.keys(other).length) addSection("Other EXIF Fields", other);
+    }
+
+    if(exifData && exifData.gps && exifData.gps[2] && exifData.gps[4]){
+      var lat = dmsToDecimal(exifData.gps[2], exifData.gps[1]);
+      var lon = dmsToDecimal(exifData.gps[4], exifData.gps[3]);
+      if(lat !== null && lon !== null){
+        var gpsData = {
+          "Latitude": lat.toFixed(6),
+          "Longitude": lon.toFixed(6),
+          "View on Map": '<a class="gps-link" href="https://www.openstreetmap.org/?mlat=' + lat + '&mlon=' + lon + '#map=15/' + lat + '/' + lon + '" target="_blank" rel="noopener">Open in OpenStreetMap</a>'
+        };
+        addSection("GPS Location", gpsData, true);
+      }
+    }
+
+    if(!exifData || Object.keys(exifData.tags).length === 0){
+      var note = document.createElement("div");
+      note.className = "status";
+      note.style.marginTop = "10px";
+      note.textContent = "No EXIF camera metadata was found in this image \u2014 it may have been stripped when the file was saved or shared.";
+      metaContainer.appendChild(note);
+    }
+  }
+
+  function addSection(title, dataObj, allowHtml){
+    currentJsonData[title] = dataObj;
+    var section = document.createElement("div");
+    section.className = "meta-section";
+    var h3 = document.createElement("h3");
+    h3.textContent = title;
+    section.appendChild(h3);
+
+    var table = document.createElement("table");
+    table.className = "meta-table";
+    Object.keys(dataObj).forEach(function(key){
+      var tr = document.createElement("tr");
+      var tdKey = document.createElement("td");
+      tdKey.textContent = key;
+      var tdVal = document.createElement("td");
+      if(allowHtml) tdVal.innerHTML = dataObj[key];
+      else tdVal.textContent = dataObj[key];
+      tr.appendChild(tdKey);
+      tr.appendChild(tdVal);
+      table.appendChild(tr);
+    });
+    section.appendChild(table);
+    metaContainer.appendChild(section);
+  }
+
+  filterInput.addEventListener("input", function(){
+    var q = filterInput.value.trim().toLowerCase();
+    metaContainer.querySelectorAll(".meta-section").forEach(function(section){
+      var rows = section.querySelectorAll("tr");
+      var sectionMatches = section.querySelector("h3").textContent.toLowerCase().indexOf(q) !== -1;
+      var anyRowVisible = false;
+      rows.forEach(function(row){
+        var text = row.textContent.toLowerCase();
+        var match = q === "" || sectionMatches || text.indexOf(q) !== -1;
+        row.style.display = match ? "" : "none";
+        if(match) anyRowVisible = true;
+      });
+      section.style.display = anyRowVisible ? "" : "none";
+    });
+  });
+
+  downloadJsonBtn.addEventListener("click", function(){
+    var blob = new Blob([JSON.stringify(currentJsonData, null, 2)], { type: "application/json" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "image-metadata.json";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  });
+
+  chooseAnotherBtn.addEventListener("click", function(){
+    revoke(currentObjectUrl); currentObjectUrl = null;
+    fileInput.value = "";
+    resultView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
+})();
+</script>
+</body>
+</html>

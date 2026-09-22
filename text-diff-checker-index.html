@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Text Diff Checker Online | Working Tools Box</title>
+<meta name="description" content="Compare two texts online for free and see exactly what changed. Word, line or character-level diff with ignore-case and ignore-whitespace options, in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/text-diff-checker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Text Diff Checker Online | Working Tools Box">
+<meta property="og:description" content="Compare two texts online for free and see exactly what changed, entirely in your browser.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/text-diff-checker/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Text Diff Checker Online | Working Tools Box">
+<meta name="twitter:description" content="Compare two texts online for free, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Text Diff Checker",
+  "url":"https://workingtoolsbox.vercel.app/tools/text-diff-checker/",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "description":"Compares two blocks of text and highlights additions and deletions at the word, line or character level, directly in the browser.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The comparison runs entirely in your browser using JavaScript, and neither text is ever sent anywhere."}},
+    {"@type":"Question","name":"What is the difference between word, line and character diff?","acceptedAnswer":{"@type":"Answer","text":"Line diff compares whole lines, word diff compares individual words, and character diff compares every single character. Word diff is usually the most readable for prose."}},
+    {"@type":"Question","name":"Can I ignore case or whitespace differences?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn on Ignore Case or Ignore Whitespace before comparing to skip differences that are only about capitalization or spacing."}},
+    {"@type":"Question","name":"Is there a text length limit?","acceptedAnswer":{"@type":"Answer","text":"Very long texts, especially with character-level diff, can be slow to compare in the browser, so this tool works best under about 20,000 characters per side."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
+    --add-bg:#dcfce7;--add-text:#166534;--del-bg:#fee2e2;--del-text:#991b1b;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1160px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+  .notice.warn{background:#fff7ed;border-color:#fcd9a8;color:#92400e}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .input-grid label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+  textarea{width:100%;min-height:220px;padding:12px;border:1px solid #d1d5db;border-radius:10px;font-size:14px;font-family:ui-monospace,Consolas,monospace;resize:vertical}
+  .char-count{font-size:11px;color:var(--muted);margin-top:4px;text-align:right}
+
+  .options-row{display:flex;flex-wrap:wrap;gap:18px;align-items:center;padding:14px 18px;background:var(--soft);border:1px solid var(--border);border-radius:12px;margin-bottom:16px}
+  .options-row label{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
+  .options-row select{padding:7px;border:1px solid #d1d5db;border-radius:8px;font-size:13px}
+
+  .stats-row{display:flex;gap:18px;flex-wrap:wrap;margin:16px 0}
+  .stat-pill{border-radius:999px;padding:6px 16px;font-size:13px;font-weight:700}
+  .stat-pill.add{background:var(--add-bg);color:var(--add-text)}
+  .stat-pill.del{background:var(--del-bg);color:var(--del-text)}
+  .stat-pill.neutral{background:#f1eefb;color:var(--purple)}
+
+  .diff-output{border:1px solid var(--border);border-radius:12px;padding:18px;background:#fff;font-family:ui-monospace,Consolas,monospace;font-size:14px;white-space:pre-wrap;word-break:break-word;line-height:1.8;min-height:100px}
+  .diff-output ins{background:var(--add-bg);color:var(--add-text);text-decoration:none;border-radius:3px;padding:1px 2px}
+  .diff-output del{background:var(--del-bg);color:var(--del-text);text-decoration:line-through;border-radius:3px;padding:1px 2px}
+  .diff-empty{color:var(--muted);font-style:italic}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  @media(max-width:800px){.input-grid{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Text Diff Checker</h1>
+    <p>Compare two texts and see exactly what was added, removed or changed &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Both texts are compared locally in your browser and never leave your device.
+  </div>
+
+  <section class="tool" aria-label="Text Diff Checker Tool">
+
+    <div class="options-row">
+      <label for="modeSelect">Compare by:
+        <select id="modeSelect">
+          <option value="word" selected>Word</option>
+          <option value="line">Line</option>
+          <option value="char">Character</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="ignoreCase"> Ignore case</label>
+      <label><input type="checkbox" id="ignoreWhitespace"> Ignore extra whitespace</label>
+    </div>
+
+    <div class="input-grid">
+      <div>
+        <label for="textA">Original text</label>
+        <textarea id="textA" placeholder="Paste the original text here&hellip;"></textarea>
+        <div class="char-count" id="countA">0 characters</div>
+      </div>
+      <div>
+        <label for="textB">Changed text</label>
+        <textarea id="textB" placeholder="Paste the changed text here&hellip;"></textarea>
+        <div class="char-count" id="countB">0 characters</div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button type="button" class="button primary" id="compareBtn">Compare Texts</button>
+      <button type="button" class="button secondary" id="swapBtn">Swap Texts</button>
+      <button type="button" class="button secondary" id="clearBtn">Clear All</button>
+    </div>
+    <div id="diffStatus" class="status error" style="display:none"></div>
+
+    <div id="resultBlock" class="hidden" style="margin-top:22px">
+      <div class="stats-row">
+        <span class="stat-pill add" id="addCount">0 additions</span>
+        <span class="stat-pill del" id="delCount">0 removals</span>
+        <span class="stat-pill neutral" id="sameCount">0 unchanged</span>
+      </div>
+      <div class="diff-output" id="diffOutput"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <button type="button" class="button secondary" id="copyBtn">Copy Result as Text</button>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Compare Two Texts and Spot Every Change</h2>
+    <p>This free text diff checker compares two blocks of text and highlights exactly what was added, removed or left unchanged, with green for additions and red strikethrough for removals. Choose whether to compare word by word, line by line, or character by character, and optionally ignore case or extra whitespace so only meaningful differences are shown.</p>
+    <p>Use it to review edits to an article, compare two versions of code or config, check changes between contract drafts, or spot differences between two lists. Everything runs locally in your browser using JavaScript, so neither text is ever uploaded anywhere.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>text diff checker online free</span>
+      <span>compare two texts online</span>
+      <span>online text comparison tool</span>
+      <span>diff checker no upload</span>
+      <span>word diff tool online</span>
+      <span>line by line text compare</span>
+      <span>character diff checker free</span>
+      <span>compare paragraphs online</span>
+      <span>text difference highlighter</span>
+      <span>free diff tool no sign up</span>
+      <span>compare document versions online</span>
+      <span>online text compare tool free</span>
+      <span>find differences between texts</span>
+      <span>diff checker for writers</span>
+      <span>ignore case text compare</span>
+      <span>compare two paragraphs free</span>
+      <span>text version comparison online</span>
+      <span>highlight text changes online</span>
+      <span>online diff viewer free</span>
+      <span>compare edits between drafts</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <details class="faq"><summary>Is my text uploaded to a server?</summary><p>No. The comparison runs entirely in your browser using JavaScript, and neither text is ever sent anywhere.</p></details>
+    <details class="faq"><summary>What is the difference between word, line and character diff?</summary><p>Line diff compares whole lines, word diff compares individual words, and character diff compares every single character. Word diff is usually the most readable for prose.</p></details>
+    <details class="faq"><summary>Can I ignore case or whitespace differences?</summary><p>Yes. Turn on Ignore Case or Ignore Whitespace before comparing to skip differences that are only about capitalization or spacing.</p></details>
+    <details class="faq"><summary>Is there a text length limit?</summary><p>Very long texts, especially with character-level diff, can be slow to compare in the browser, so this tool works best under about 20,000 characters per side.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var MAX_CHARS = 20000;
+
+  var modeSelect = document.getElementById("modeSelect");
+  var ignoreCase = document.getElementById("ignoreCase");
+  var ignoreWhitespace = document.getElementById("ignoreWhitespace");
+  var textA = document.getElementById("textA");
+  var textB = document.getElementById("textB");
+  var countA = document.getElementById("countA");
+  var countB = document.getElementById("countB");
+  var compareBtn = document.getElementById("compareBtn");
+  var swapBtn = document.getElementById("swapBtn");
+  var clearBtn = document.getElementById("clearBtn");
+  var diffStatus = document.getElementById("diffStatus");
+  var resultBlock = document.getElementById("resultBlock");
+  var addCount = document.getElementById("addCount");
+  var delCount = document.getElementById("delCount");
+  var sameCount = document.getElementById("sameCount");
+  var diffOutput = document.getElementById("diffOutput");
+  var copyBtn = document.getElementById("copyBtn");
+
+  function updateCounts(){
+    countA.textContent = textA.value.length + " characters";
+    countB.textContent = textB.value.length + " characters";
+  }
+  textA.addEventListener("input", updateCounts);
+  textB.addEventListener("input", updateCounts);
+  updateCounts();
+
+  function tokenize(str, mode){
+    if(mode === "char") return str.split("");
+    if(mode === "line") return str.split("\n");
+    // word mode: keep whitespace runs as their own tokens so spacing is preserved on render
+    return str.match(/\S+|\s+/g) || [];
+  }
+
+  function normalize(tok, mode){
+    var t = tok;
+    if(ignoreCase.checked) t = t.toLowerCase();
+    if(ignoreWhitespace.checked && mode !== "char") t = t.replace(/\s+/g, " ").trim();
+    return t;
+  }
+
+  // Classic LCS-based diff: returns an array of {type:'equal'|'add'|'del', value}
+  function diffTokens(aTokens, bTokens, mode){
+    var aNorm = aTokens.map(function(t){ return normalize(t, mode); });
+    var bNorm = bTokens.map(function(t){ return normalize(t, mode); });
+    var n = aTokens.length, m = bTokens.length;
+
+    var dp = new Array(n + 1);
+    for(var i = 0; i <= n; i++){ dp[i] = new Uint32Array(m + 1); }
+    for(i = n - 1; i >= 0; i--){
+      for(var j = m - 1; j >= 0; j--){
+        dp[i][j] = aNorm[i] === bNorm[j] ? dp[i+1][j+1] + 1 : Math.max(dp[i+1][j], dp[i][j+1]);
+      }
+    }
+
+    var result = [];
+    i = 0; var j = 0;
+    while(i < n && j < m){
+      if(aNorm[i] === bNorm[j]){
+        result.push({ type: "equal", value: aTokens[i] });
+        i++; j++;
+      } else if(dp[i+1][j] >= dp[i][j+1]){
+        result.push({ type: "del", value: aTokens[i] });
+        i++;
+      } else {
+        result.push({ type: "add", value: bTokens[j] });
+        j++;
+      }
+    }
+    while(i < n){ result.push({ type: "del", value: aTokens[i] }); i++; }
+    while(j < m){ result.push({ type: "add", value: bTokens[j] }); j++; }
+    return result;
+  }
+
+  function escapeHtml(s){
+    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+  }
+
+  function render(diffOps, mode){
+    var html = "";
+    var additions = 0, deletions = 0, unchanged = 0;
+    var joiner = mode === "line" ? "\n" : "";
+
+    diffOps.forEach(function(op){
+      var text = escapeHtml(op.value) + (mode === "line" ? "\n" : "");
+      if(op.type === "equal"){ html += text; unchanged++; }
+      else if(op.type === "add"){ html += "<ins>" + text + "</ins>"; additions++; }
+      else { html += "<del>" + text + "</del>"; deletions++; }
+    });
+
+    return { html: html || '<span class="diff-empty">No differences to show.</span>', additions: additions, deletions: deletions, unchanged: unchanged };
+  }
+
+  compareBtn.addEventListener("click", function(){
+    diffStatus.style.display = "none";
+    var a = textA.value, b = textB.value;
+
+    if(!a && !b){
+      diffStatus.textContent = "Please enter some text in at least one box.";
+      diffStatus.style.display = "block";
+      return;
+    }
+    if(a.length > MAX_CHARS || b.length > MAX_CHARS){
+      diffStatus.textContent = "Each text should be under " + MAX_CHARS.toLocaleString() + " characters for a smooth comparison in the browser.";
+      diffStatus.style.display = "block";
+      return;
+    }
+
+    var mode = modeSelect.value;
+    if(mode === "char" && (a.length > 6000 || b.length > 6000)){
+      diffStatus.textContent = "Character-level comparison works best under 6,000 characters per side. Try Word or Line mode for longer text.";
+      diffStatus.style.display = "block";
+      return;
+    }
+
+    var aTokens = tokenize(a, mode);
+    var bTokens = tokenize(b, mode);
+    var ops = diffTokens(aTokens, bTokens, mode);
+    var rendered = render(ops, mode);
+
+    diffOutput.innerHTML = rendered.html;
+    addCount.textContent = rendered.additions + " additions";
+    delCount.textContent = rendered.deletions + " removals";
+    sameCount.textContent = rendered.unchanged + " unchanged";
+    resultBlock.classList.remove("hidden");
+  });
+
+  swapBtn.addEventListener("click", function(){
+    var tmp = textA.value;
+    textA.value = textB.value;
+    textB.value = tmp;
+    updateCounts();
+  });
+
+  clearBtn.addEventListener("click", function(){
+    textA.value = "";
+    textB.value = "";
+    updateCounts();
+    resultBlock.classList.add("hidden");
+    diffStatus.style.display = "none";
+  });
+
+  // Robust copy-to-clipboard: tries the modern Clipboard API first, and
+  // falls back to a hidden-textarea + execCommand approach if that API
+  // is unavailable or blocked (some browsers restrict it based on
+  // permissions or focus state). Always gives visible feedback either
+  // way, instead of silently doing nothing on failure.
+  function copyToClipboard(text, onSuccess, onFailure){
+    function fallbackCopy(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if(ok){ if(onSuccess) onSuccess(); } else if(onFailure){ onFailure(); }
+      }catch(e){
+        if(onFailure) onFailure();
+      }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(onSuccess).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  }
+
+  copyBtn.addEventListener("click", function(){
+    var plain = diffOutput.innerText;
+    copyToClipboard(plain, function(){
+      copyBtn.textContent = "Copied!";
+      setTimeout(function(){ copyBtn.textContent = "Copy Result as Text"; }, 1500);
+    }, function(){
+      copyBtn.textContent = "Copy failed \u2014 select text manually";
+      setTimeout(function(){ copyBtn.textContent = "Copy Result as Text"; }, 2000);
+    });
+  });
+})();
+</script>
+</body>
+</html>

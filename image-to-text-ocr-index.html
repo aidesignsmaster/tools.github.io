@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Image to Text OCR Online | Working Tools Box</title>
+<meta name="description" content="Extract text from any image online for free using AI-powered OCR. Multiple languages, adjustable preprocessing, copy or download the result, in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-to-text-ocr/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Image to Text OCR Online | Working Tools Box">
+<meta property="og:description" content="Extract text from any image online for free using AI-powered OCR, entirely in your browser.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-to-text-ocr/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Image to Text OCR Online | Working Tools Box">
+<meta name="twitter:description" content="Extract text from any image online for free using AI-powered OCR, entirely in your browser.">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebApplication",
+  "name":"Image to Text OCR",
+  "url":"https://workingtoolsbox.vercel.app/tools/image-to-text-ocr/",
+  "applicationCategory":"UtilitiesApplication",
+  "operatingSystem":"Any",
+  "description":"Extracts text from an uploaded image using on-device OCR (Tesseract), with language selection and image preprocessing, directly in the browser.",
+  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"Your image is processed by an OCR engine running inside your own browser, not sent to a remote server for analysis. A one-time language data file is fetched from a content delivery network the first time you use a language."}},
+    {"@type":"Question","name":"Which languages are supported?","acceptedAnswer":{"@type":"Answer","text":"English, Hindi, Spanish, French, German, and several other common languages are available from the language dropdown."}},
+    {"@type":"Question","name":"Why is the extracted text inaccurate?","acceptedAnswer":{"@type":"Answer","text":"OCR accuracy depends heavily on image quality. Try a higher-resolution, well-lit, non-blurry image, straighten any tilted text, and make sure the correct language is selected."}},
+    {"@type":"Question","name":"Can this read handwriting?","acceptedAnswer":{"@type":"Answer","text":"This tool is optimized for printed text. Handwriting recognition is far less reliable and results may be poor."}},
+    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit."}}
+  ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--success:#0f9d58;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+  .notice.warn{background:#fff7ed;border-color:#fcd9a8;color:#92400e}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:32px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:44px;height:44px;margin:0 auto 10px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:1fr 280px;gap:22px;align-items:start}
+  .preview-img{width:100%;border-radius:14px;border:1px solid var(--border);display:block;max-height:400px;object-fit:contain;background:#f8fafc}
+
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-of-type{margin-top:0}
+  select{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px}
+  .checkbox-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:16px 0 0}
+
+  .progress-wrap{background:#f1eefb;border-radius:999px;height:10px;overflow:hidden;margin-top:14px}
+  .progress-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));width:0%;transition:width .2s ease}
+
+  textarea#resultText{width:100%;min-height:220px;padding:14px;border:1px solid #d1d5db;border-radius:10px;font-size:14px;font-family:ui-monospace,Consolas,monospace;resize:vertical}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand grad-text" href="/">Working Tools Box</a>
+    <nav aria-label="Primary">
+      <a href="/">Home</a>
+      <a href="/tools/">Tools</a>
+      <a href="/tools/">Explore Tools</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Image to Text OCR</h1>
+    <p>Extract text from any photo, scan or screenshot using OCR &mdash; free, right in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>Runs on your device:</b> Your image is analyzed by an OCR engine inside your browser, not sent to a server for reading. A small language data file downloads once from a CDN the first time you use each language.
+  </div>
+
+  <section class="tool" aria-label="Image to Text OCR Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your image here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Image</button>
+      </div>
+      <div id="uploadStatus" class="status"></div>
+    </div>
+
+    <div id="optionsView" class="hidden">
+      <div class="grid2">
+        <div>
+          <img id="previewImg" class="preview-img" alt="Uploaded image">
+        </div>
+        <div class="panel">
+          <label for="langSelect">Language</label>
+          <select id="langSelect">
+            <option value="eng" selected>English</option>
+            <option value="hin">Hindi</option>
+            <option value="spa">Spanish</option>
+            <option value="fra">French</option>
+            <option value="deu">German</option>
+            <option value="por">Portuguese</option>
+            <option value="ara">Arabic</option>
+            <option value="chi_sim">Chinese (Simplified)</option>
+            <option value="jpn">Japanese</option>
+            <option value="rus">Russian</option>
+          </select>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="enhanceCheck" style="width:16px;height:16px" checked>
+            Enhance contrast before reading
+          </label>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
+            <button type="button" class="button primary" id="extractBtn">Extract Text</button>
+            <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Image</button>
+          </div>
+          <div id="extractStatus" class="status error" style="display:none"></div>
+        </div>
+      </div>
+
+      <div id="progressBlock" class="hidden" style="margin-top:20px">
+        <p style="font-weight:700;margin:0 0 8px" id="progressLabel">Reading your image\u2026</p>
+        <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+
+      <div id="resultBlock" class="hidden" style="margin-top:22px">
+        <p style="font-weight:700;margin:0 0 8px">Extracted Text</p>
+        <textarea id="resultText" readonly></textarea>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+          <button type="button" class="button primary" id="copyBtn">Copy Text</button>
+          <button type="button" class="button secondary" id="downloadTxtBtn">Download as .txt</button>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Extract Text From Images With OCR, Free</h2>
+    <p>This free image-to-text tool uses on-device OCR (optical character recognition) to read printed text out of a photo, scanned document or screenshot, right in your browser. Choose from several languages, optionally enhance contrast for a cleaner read on low-quality images, and copy or download the extracted text once it's ready.</p>
+    <p>Use it to digitize a scanned document, pull a quote out of a screenshot, copy text from a photo of a sign or book page, or extract data from a receipt. Recognition runs inside your own browser rather than uploading the photo to a server for analysis, so nothing about the image content leaves your device for the reading step itself.</p>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>image to text online free</span>
+      <span>free ocr online</span>
+      <span>extract text from image online</span>
+      <span>photo to text converter free</span>
+      <span>online ocr tool no sign up</span>
+      <span>convert screenshot to text</span>
+      <span>ocr scanner online free</span>
+      <span>picture to text online</span>
+      <span>read text from image online</span>
+      <span>free online text extractor</span>
+      <span>scan image to text free</span>
+      <span>jpg to text converter online</span>
+      <span>ocr multiple languages online</span>
+      <span>hindi ocr online free</span>
+      <span>copy text from image online</span>
+      <span>document scanner to text free</span>
+      <span>image text recognition online</span>
+      <span>free photo text scanner</span>
+      <span>online text extraction tool</span>
+      <span>convert image to editable text</span>
+    </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <details class="faq"><summary>Is my image uploaded to a server?</summary><p>Your image is processed by an OCR engine running inside your own browser, not sent to a remote server for analysis. A one-time language data file is fetched from a content delivery network the first time you use a language.</p></details>
+    <details class="faq"><summary>Which languages are supported?</summary><p>English, Hindi, Spanish, French, German, and several other common languages are available from the language dropdown.</p></details>
+    <details class="faq"><summary>Why is the extracted text inaccurate?</summary><p>OCR accuracy depends heavily on image quality. Try a higher-resolution, well-lit, non-blurry image, straighten any tilted text, and make sure the correct language is selected.</p></details>
+    <details class="faq"><summary>Can this read handwriting?</summary><p>This tool is optimized for printed text. Handwriting recognition is far less reliable and results may be poor.</p></details>
+    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit.</p></details>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <a href="/" class="brand grad-text">Working Tools Box</a>
+    <nav aria-label="Footer"><a href="/">Home</a><a href="/tools/">All Tools</a></nav>
+    <p>&copy; 2026 Working Tools Box. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js"></script>
+<script>
+(function(){
+  "use strict";
+
+  var uploadView = document.getElementById("uploadView");
+  var optionsView = document.getElementById("optionsView");
+  var dropZone = document.getElementById("dropZone");
+  var fileInput = document.getElementById("fileInput");
+  var selectBtn = document.getElementById("selectBtn");
+  var uploadStatus = document.getElementById("uploadStatus");
+
+  var previewImg = document.getElementById("previewImg");
+  var langSelect = document.getElementById("langSelect");
+  var enhanceCheck = document.getElementById("enhanceCheck");
+  var extractBtn = document.getElementById("extractBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+  var extractStatus = document.getElementById("extractStatus");
+
+  var progressBlock = document.getElementById("progressBlock");
+  var progressLabel = document.getElementById("progressLabel");
+  var progressBar = document.getElementById("progressBar");
+
+  var resultBlock = document.getElementById("resultBlock");
+  var resultText = document.getElementById("resultText");
+  var copyBtn = document.getElementById("copyBtn");
+  var downloadTxtBtn = document.getElementById("downloadTxtBtn");
+
+  var baseObjectUrl = null;
+  var currentFile = null;
+
+  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+
+  selectBtn.addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  dropZone.addEventListener("drop", function(e){
+    e.preventDefault();
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener("change", function(){
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file){
+    var allowed = ["image/jpeg","image/png","image/webp"];
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
+      uploadStatus.className = "status error";
+      return;
+    }
+    currentFile = file;
+    revoke(baseObjectUrl);
+    baseObjectUrl = URL.createObjectURL(file);
+    previewImg.src = baseObjectUrl;
+    resultBlock.classList.add("hidden");
+    progressBlock.classList.add("hidden");
+    uploadView.classList.add("hidden");
+    optionsView.classList.remove("hidden");
+  }
+
+  chooseAnotherBtn.addEventListener("click", function(){
+    currentFile = null;
+    fileInput.value = "";
+    optionsView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
+
+  // Optional contrast-boost preprocessing pass, often improves OCR
+  // accuracy on low-contrast or slightly faded source images.
+  function preprocess(img){
+    var canvas = document.createElement("canvas");
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+
+    if(enhanceCheck.checked){
+      var imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      var d = imgData.data;
+      var factor = 1.35;
+      for(var i = 0; i < d.length; i += 4){
+        var gray = d[i]*0.299 + d[i+1]*0.587 + d[i+2]*0.114;
+        var adjusted = (gray - 128) * factor + 128;
+        adjusted = Math.max(0, Math.min(255, adjusted));
+        d[i] = d[i+1] = d[i+2] = adjusted;
+      }
+      ctx.putImageData(imgData, 0, 0);
+    }
+    return canvas;
+  }
+
+  extractBtn.addEventListener("click", async function(){
+    if(!currentFile) return;
+    if(!window.Tesseract){
+      extractStatus.textContent = "The OCR engine did not load. Please check your connection and refresh the page.";
+      extractStatus.style.display = "block";
+      return;
+    }
+
+    extractStatus.style.display = "none";
+    extractBtn.disabled = true;
+    chooseAnotherBtn.disabled = true;
+    resultBlock.classList.add("hidden");
+    progressBlock.classList.remove("hidden");
+    progressBar.style.width = "0%";
+    progressLabel.textContent = "Preparing\u2026";
+
+    try{
+      var img = await loadImage(baseObjectUrl);
+      var canvas = preprocess(img);
+
+      var result = await Tesseract.recognize(canvas, langSelect.value, {
+        logger: function(m){
+          if(m.status && typeof m.progress === "number"){
+            progressBar.style.width = Math.round(m.progress * 100) + "%";
+            progressLabel.textContent = m.status.charAt(0).toUpperCase() + m.status.slice(1) + "\u2026";
+          }
+        }
+      });
+
+      resultText.value = result.data.text.trim();
+      progressBlock.classList.add("hidden");
+      resultBlock.classList.remove("hidden");
+
+    }catch(err){
+      console.error(err);
+      extractStatus.textContent = "Could not extract text from this image. Please try a clearer photo or a different language.";
+      extractStatus.style.display = "block";
+      progressBlock.classList.add("hidden");
+    }finally{
+      extractBtn.disabled = false;
+      chooseAnotherBtn.disabled = false;
+    }
+  });
+
+  function loadImage(src){
+    return new Promise(function(resolve, reject){
+      var img = new Image();
+      img.onload = function(){ resolve(img); };
+      img.onerror = reject;
+      img.src = src;
+    });
+  }
+
+  // Robust copy-to-clipboard with a fallback for browsers/contexts where
+  // the Clipboard API is blocked, and clear feedback either way.
+  function copyToClipboard(text, onSuccess, onFailure){
+    function fallbackCopy(){
+      try{
+        var ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.left = "-9999px";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if(ok){ if(onSuccess) onSuccess(); } else if(onFailure){ onFailure(); }
+      }catch(e){
+        if(onFailure) onFailure();
+      }
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(onSuccess).catch(fallbackCopy);
+    } else {
+      fallbackCopy();
+    }
+  }
+
+  copyBtn.addEventListener("click", function(){
+    copyToClipboard(resultText.value, function(){
+      copyBtn.textContent = "Copied!";
+      setTimeout(function(){ copyBtn.textContent = "Copy Text"; }, 1500);
+    }, function(){
+      copyBtn.textContent = "Copy failed \u2014 select text manually";
+      setTimeout(function(){ copyBtn.textContent = "Copy Text"; }, 2000);
+    });
+  });
+
+  downloadTxtBtn.addEventListener("click", function(){
+    var blob = new Blob([resultText.value], { type: "text/plain" });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a");
+    a.href = url;
+    a.download = "extracted-text.txt";
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  });
+})();
+</script>
+</body>
+</html>
