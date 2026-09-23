@@ -13,35 +13,91 @@
   <meta name="p:domain_verify" content="58051de39b9d3361d7c2f279741308d7"/>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Working Tools Box - Free Online Image Tools</title>
-  <meta name="description" content="Working Tools Box offers fast, free browser-based tools to compress, resize, crop, convert and pick colors from your images. No uploads to a server required.">
+  <title>Working Tools Box - 23 Free Online Image, PDF &amp; Video Tools</title>
+  <meta name="description" content="Working Tools Box offers 23 fast, free browser-based tools to compress, resize, crop and convert images, edit PDFs, trim videos, extract text with OCR and more.">
   <meta name="google-site-verification" content="jt9Tuki893Pc4flCKVwJOOKcBuZf8u6fCLdh9wkL7YA" />
   <link rel="canonical" href="https://workingtoolsbox.vercel.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Working Tools Box - Free Online Tools">
+  <meta property="og:description" content="23 free browser-based tools for images, PDFs, video and everyday tasks.">
+  <meta property="og:url" content="https://workingtoolsbox.vercel.app/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@700;800&amp;display=swap">
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+.wt-page{--ink:#14161f;--mut:#5b6275;--line:#e3e6ef;--bg:#f6f7fb;--brand:#4338ca;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+.wt-page *,.wt-page *::before,.wt-page *::after{box-sizing:border-box}
+[hidden]{display:none!important}
+.wt-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.wt-page h1,.wt-page h2,.wt-page h3{font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.02em;margin:0}
+.wt-hero{background:#fff;border-bottom:1px solid var(--line)}
+.wt-hero .wt-wrap{display:grid;gap:28px;align-items:center;padding-top:52px;padding-bottom:52px}
+@media(min-width:900px){.wt-hero .wt-wrap{grid-template-columns:1.1fr .9fr}}
+.wt-hero h1{font-size:clamp(2.1rem,5.4vw,3.6rem);line-height:1.05;font-weight:800;margin-bottom:16px}
+.wt-hero h1 em{font-style:normal;color:var(--brand)}
+.wt-lead{color:var(--mut);font-size:1.08rem;max-width:520px;margin:0 0 26px}
+.wt-actions{display:flex;flex-wrap:wrap;gap:12px}
+.wt-btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:12px;font-weight:600;text-decoration:none;font-size:.95rem}
+.wt-btn-p{background:var(--brand);color:#fff}.wt-btn-p:hover{background:#3730a3}
+.wt-btn-s{background:#fff;color:var(--ink);border:1px solid var(--line)}.wt-btn-s:hover{border-color:var(--brand);color:var(--brand)}
+.wt-btn:focus-visible,.wt-open:focus-visible,.wt-chip:focus-visible{outline:3px solid #a5b4fc;outline-offset:2px}
+.wt-hero-visual svg{width:100%;height:auto;max-height:360px;display:block}
+.float-chip{animation:wtf 5s ease-in-out infinite}.float-chip-b{animation-delay:-1.6s}.float-chip-c{animation-delay:-3.2s}
+@keyframes wtf{50%{transform:translateY(-8px)}}
+@media(prefers-reduced-motion:reduce){.float-chip{animation:none}}
+.wt-sec{padding:44px 0 72px}
+.wt-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:20px}
+.wt-head h2{font-size:clamp(1.7rem,3.6vw,2.4rem);font-weight:800}
+.wt-head p{margin:6px 0 0;color:var(--mut)}
+.wt-search{position:relative;flex:1 1 280px;max-width:400px}
+.wt-search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--mut)}
+.wt-search input{width:100%;padding:13px 14px 13px 42px;border:1px solid var(--line);border-radius:12px;font:inherit;background:#fff;color:var(--ink)}
+.wt-search input:focus{outline:3px solid #a5b4fc;border-color:var(--brand)}
+.wt-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px}
+.wt-chip{flex:none;border:1px solid var(--line);background:#fff;color:var(--ink);padding:8px 16px;border-radius:999px;font:inherit;font-size:.85rem;font-weight:600;cursor:pointer}
+.wt-chip:hover{border-color:var(--brand)}
+.wt-chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.wt-catsec[data-cat=image],.wt-card[data-cat=image]{--c:#4338ca;--t:#eef2ff}
+.wt-catsec[data-cat=pdf],.wt-card[data-cat=pdf]{--c:#e11d48;--t:#fff1f2}
+.wt-catsec[data-cat=video],.wt-card[data-cat=video]{--c:#0e7490;--t:#ecfeff}
+.wt-catsec[data-cat=utility],.wt-card[data-cat=utility]{--c:#047857;--t:#ecfdf5}
+.wt-cat{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:38px 0 16px;font-size:1.35rem;font-weight:700;scroll-margin-top:90px}
+.wt-cat small{font-family:system-ui,-apple-system,sans-serif;font-size:.85rem;font-weight:500;color:var(--mut);letter-spacing:0}
+.wt-cat-ico{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--c)}
+.wt-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.wt-card{display:flex;flex-direction:column;gap:14px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;transition:border-color .2s,box-shadow .2s}
+.wt-card:hover{border-color:var(--c);box-shadow:0 0 0 3px var(--t)}
+.wt-top{display:flex;gap:14px}
+.wt-ico{flex:none;width:48px;height:48px;border-radius:13px;display:grid;place-items:center;background:var(--c)}
+.wt-title{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin-bottom:6px}
+.wt-title h4{margin:0;font-size:1.02rem;line-height:1.3;font-weight:700}
+.wt-badge{font-size:.7rem;font-weight:700;padding:2px 9px;border-radius:999px}
+.b-green{background:#dcfce7;color:#166534}.b-blue{background:#dbeafe;color:#1e40af}.b-purple{background:#f3e8ff;color:#6b21a8}.b-gray{background:#eef0f4;color:#475066}
+.wt-card p{margin:0;color:var(--mut);font-size:.9rem}
+.wt-tags{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.wt-tags li{font-size:.74rem;padding:3px 10px;border-radius:999px;background:var(--bg);color:var(--mut);border:1px solid var(--line)}
+.wt-open{margin-top:auto;display:flex;justify-content:center;align-items:center;gap:8px;padding:11px;border-radius:11px;font-weight:600;font-size:.9rem;text-decoration:none;color:var(--c);background:var(--t);transition:background .2s,color .2s}
+.wt-open:hover{background:var(--c);color:#fff}
+.wt-empty{display:none;text-align:center;color:var(--mut);padding:56px 0}
+</style>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Working Tools Box - Free Online Tools", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Image Compressor", "url": "https://workingtoolsbox.vercel.app/tools/image-compressor/"}, {"@type": "ListItem", "position": 2, "name": "Image Color Picker", "url": "https://workingtoolsbox.vercel.app/tools/image-color-picker/"}, {"@type": "ListItem", "position": 3, "name": "Image Resizer", "url": "https://workingtoolsbox.vercel.app/tools/image-resizer/"}, {"@type": "ListItem", "position": 4, "name": "Image Cropper", "url": "https://workingtoolsbox.vercel.app/tools/image-cropper/"}, {"@type": "ListItem", "position": 5, "name": "Image Converter", "url": "https://workingtoolsbox.vercel.app/tools/image-converter/"}, {"@type": "ListItem", "position": 6, "name": "Image to PDF Converter", "url": "https://workingtoolsbox.vercel.app/tools/image-to-pdf/"}, {"@type": "ListItem", "position": 7, "name": "Image Background Remover", "url": "https://workingtoolsbox.vercel.app/tools/image-background-remover/"}, {"@type": "ListItem", "position": 8, "name": "PDF to Image Converter", "url": "https://workingtoolsbox.vercel.app/tools/pdf-to-image/"}, {"@type": "ListItem", "position": 9, "name": "Image Sharpener & Upscaler", "url": "https://workingtoolsbox.vercel.app/tools/image-sharpener-upscaler/"}, {"@type": "ListItem", "position": 10, "name": "Image Watermark Adder", "url": "https://workingtoolsbox.vercel.app/tools/image-watermark-adder/"}, {"@type": "ListItem", "position": 11, "name": "Image Grid Splitter", "url": "https://workingtoolsbox.vercel.app/tools/image-grid-splitter/"}, {"@type": "ListItem", "position": 12, "name": "Photo Color Changer", "url": "https://workingtoolsbox.vercel.app/tools/photo-color-changer/"}, {"@type": "ListItem", "position": 13, "name": "Meme Generator", "url": "https://workingtoolsbox.vercel.app/tools/meme-generator/"}, {"@type": "ListItem", "position": 14, "name": "PDF Compressor", "url": "https://workingtoolsbox.vercel.app/tools/pdf-compressor/"}, {"@type": "ListItem", "position": 15, "name": "Video Trimmer & Cutter", "url": "https://workingtoolsbox.vercel.app/tools/video-trimmer/"}, {"@type": "ListItem", "position": 16, "name": "Photo Slideshow & Animation Maker", "url": "https://workingtoolsbox.vercel.app/tools/photo-slideshow-maker/"}, {"@type": "ListItem", "position": 17, "name": "QR Code Generator", "url": "https://workingtoolsbox.vercel.app/tools/qr-code-generator/"}, {"@type": "ListItem", "position": 18, "name": "Favicon Generator", "url": "https://workingtoolsbox.vercel.app/tools/favicon-generator/"}, {"@type": "ListItem", "position": 19, "name": "Color Palette Extractor", "url": "https://workingtoolsbox.vercel.app/tools/color-palette-extractor/"}, {"@type": "ListItem", "position": 20, "name": "Image EXIF Viewer", "url": "https://workingtoolsbox.vercel.app/tools/image-exif-viewer/"}, {"@type": "ListItem", "position": 21, "name": "Image to Text (OCR)", "url": "https://workingtoolsbox.vercel.app/tools/image-to-text-ocr/"}, {"@type": "ListItem", "position": 22, "name": "PDF Merger & Splitter", "url": "https://workingtoolsbox.vercel.app/tools/pdf-merger-splitter/"}, {"@type": "ListItem", "position": 23, "name": "Text Diff Checker", "url": "https://workingtoolsbox.vercel.app/tools/text-diff-checker/"}]}</script>
 </head>
 <body>
   <div id="site-header"></div>
 
-  <main>
-    <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow">WORKING TOOLS BOX</p>
-        <h1>Free Online Tools for <span class="text-gradient">Everyday Work</span></h1>
-        <p class="hero-text">Fast, simple browser-based tools for images, files, and everyday tasks. Save time and get things done — all in one place.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#tools">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9M10 5H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Explore All Tools</span>
-          </a>
-          <a class="button button-secondary" href="#image-tools">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/></svg>
-            <span>View Categories</span>
-          </a>
+  <main class="wt-page">
+    <section class="wt-hero">
+      <div class="wt-wrap">
+        <div>
+          <h1>Free online tools that get <em>the job done</em></h1>
+          <p class="wt-lead">Compress, convert and edit images, PDFs and video right in your browser. Pick a tool and start, no setup needed.</p>
+          <div class="wt-actions">
+            <a class="wt-btn wt-btn-p" href="#tools">Explore all 23 tools</a>
+            <a class="wt-btn wt-btn-s" href="#image-tools">View categories</a>
+          </div>
         </div>
-      </div>
-
-      <div class="hero-visual" aria-hidden="true">
-        <svg viewBox="0 0 520 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+        <div class="wt-hero-visual" aria-hidden="true"><svg viewBox="0 0 520 400" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="chipGrad1" x1="0" y1="0" x2="1" y2="1">
               <stop stop-color="#3b82f6"/><stop offset="1" stop-color="#2563eb"/>
@@ -98,509 +154,215 @@
             <rect x="420" y="200" width="46" height="46" rx="12" fill="#fff" stroke="#e5e7eb"/>
             <rect x="433" y="212" width="20" height="22" rx="2" fill="none" stroke="url(#chipGrad2)" stroke-width="2"/>
           </g>
-        </svg>
+        </svg></div>
       </div>
     </section>
 
-    <section id="tools" class="section container">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">TOOLS</p>
-          <h2>Tool <span class="text-gradient">Collection</span></h2>
-          <p class="section-subtext">Powerful browser-based tools to help you work faster and smarter.</p>
+    <section id="tools" class="wt-sec">
+      <div class="wt-wrap">
+        <div class="wt-head">
+          <div>
+            <h2>Tool collection</h2>
+            <p>23 browser-based tools to help you work faster.</p>
+          </div>
+          <div class="wt-search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            <input id="wt-q" type="search" placeholder="Search tools, e.g. compress or PDF" aria-label="Search tools" autocomplete="off">
+          </div>
         </div>
-        <span class="tool-count">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2 3 7l9 5 9-5-9-5zM3 12l9 5 9-5M3 17l9 5 9-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          18 Tools
-        </span>
-      </div>
+        <div class="wt-chips" role="group" aria-label="Filter by category"><button class="wt-chip on" data-c="all" type="button">All (23)</button><button class="wt-chip" data-c="image" type="button">Image (14)</button><button class="wt-chip" data-c="pdf" type="button">PDF (4)</button><button class="wt-chip" data-c="video" type="button">Video (2)</button><button class="wt-chip" data-c="utility" type="button">Utility (3)</button></div>
+<div class="wt-catsec" data-cat="image">
+<h3 id="image-tools" class="wt-cat"><span class="wt-cat-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.8"/><circle cx="9" cy="9" r="1.8" fill="#fff"/><path d="M21 15l-5.5-5.5L6 19" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Image Tools<small>Edit, convert and inspect photos</small></h3>
+<div class="wt-grid">
+<article class="wt-card" data-cat="image" data-s="image compressor compress jpg, png and webp images in your browser while reducing file size. jpg png webp fast">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 16l4.5-6 3.5 4 2.5-3L20 16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="2.5" stroke="#fff" stroke-width="1.8"/><path d="M9 20V4" stroke="#fff" stroke-width="1.4" stroke-dasharray="1 3" opacity=".6"/></svg></div><div>
+<div class="wt-title"><h4>Image Compressor</h4><span class="wt-badge b-green">Popular</span></div>
+<p>Compress JPG, PNG and WebP images in your browser while reducing file size.</p></div></div>
+<ul class="wt-tags"><li>JPG</li><li>PNG</li><li>WebP</li><li>Fast</li></ul>
+<a class="wt-open" href="/tools/image-compressor/" aria-label="Open Image Compressor"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image color picker upload an image and pick colors from any point to get accurate color values. hex rgb hsl picker">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M19 3a3.5 3.5 0 0 1 0 5l-9.5 9.5-5 1.5 1.5-5L15.5 4A3.5 3.5 0 0 1 19 3z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 6.5l4 4" stroke="#fff" stroke-width="1.8"/></svg></div><div>
+<div class="wt-title"><h4>Image Color Picker</h4><span class="wt-badge b-blue">Trending</span></div>
+<p>Upload an image and pick colors from any point to get accurate color values.</p></div></div>
+<ul class="wt-tags"><li>HEX</li><li>RGB</li><li>HSL</li><li>Picker</li></ul>
+<a class="wt-open" href="/tools/image-color-picker/" aria-label="Open Image Color Picker"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image resizer resize images to custom dimensions or common preset sizes directly in your browser. jpg png webp custom">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3v14a2 2 0 0 0 2 2h11M3 7h14a2 2 0 0 1 2 2v11" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Image Resizer</h4><span class="wt-badge b-purple">Best For You</span></div>
+<p>Resize images to custom dimensions or common preset sizes directly in your browser.</p></div></div>
+<ul class="wt-tags"><li>JPG</li><li>PNG</li><li>WebP</li><li>Custom</li></ul>
+<a class="wt-open" href="/tools/image-resizer/" aria-label="Open Image Resizer"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image cropper crop images to a precise area directly in your browser before downloading the result. jpg png webp crop">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 2v14a2 2 0 0 0 2 2h14M18 22V8a2 2 0 0 0-2-2H2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Image Cropper</h4><span class="wt-badge b-gray">Handy</span></div>
+<p>Crop images to a precise area directly in your browser before downloading the result.</p></div></div>
+<ul class="wt-tags"><li>JPG</li><li>PNG</li><li>WebP</li><li>Crop</li></ul>
+<a class="wt-open" href="/tools/image-cropper/" aria-label="Open Image Cropper"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image converter convert images between jpg, png and webp formats directly in your browser. jpg png webp convert">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Image Converter</h4><span class="wt-badge b-blue">Trending</span></div>
+<p>Convert images between JPG, PNG and WebP formats directly in your browser.</p></div></div>
+<ul class="wt-tags"><li>JPG</li><li>PNG</li><li>WebP</li><li>Convert</li></ul>
+<a class="wt-open" href="/tools/image-converter/" aria-label="Open Image Converter"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image background remover remove the background from a photo and get a transparent png, right in your browser. png transparent cutout fast">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#fff" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg></div><div>
+<div class="wt-title"><h4>Image Background Remover</h4><span class="wt-badge b-blue">New</span></div>
+<p>Remove the background from a photo and get a transparent PNG, right in your browser.</p></div></div>
+<ul class="wt-tags"><li>PNG</li><li>Transparent</li><li>Cutout</li><li>Fast</li></ul>
+<a class="wt-open" href="/tools/image-background-remover/" aria-label="Open Image Background Remover"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image sharpener &amp; upscaler sharpen detail and upscale image resolution instantly, right in your browser. sharpen upscale 3x fast">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8l1 2.5L15.5 12 13 13l-1 2.5-1-2.5L8.5 12 11 10.5z" fill="#fff"/></svg></div><div>
+<div class="wt-title"><h4>Image Sharpener &amp; Upscaler</h4><span class="wt-badge b-green">New</span></div>
+<p>Sharpen detail and upscale image resolution instantly, right in your browser.</p></div></div>
+<ul class="wt-tags"><li>Sharpen</li><li>Upscale</li><li>3x</li><li>Fast</li></ul>
+<a class="wt-open" href="/tools/image-sharpener-upscaler/" aria-label="Open Image Sharpener &amp; Upscaler"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image watermark adder add a text or logo watermark to your photos with full control over position and opacity. text logo tile brand">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Image Watermark Adder</h4><span class="wt-badge b-gray">New</span></div>
+<p>Add a text or logo watermark to your photos with full control over position and opacity.</p></div></div>
+<ul class="wt-tags"><li>Text</li><li>Logo</li><li>Tile</li><li>Brand</li></ul>
+<a class="wt-open" href="/tools/image-watermark-adder/" aria-label="Open Image Watermark Adder"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image grid splitter split a photo into 3 to 21 equal grid pieces, perfect for instagram grid posts. grid instagram zip split">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M11 3v18M3 9h8M3 15h8" stroke="#fff" stroke-width="1.6"/></svg></div><div>
+<div class="wt-title"><h4>Image Grid Splitter</h4><span class="wt-badge b-blue">New</span></div>
+<p>Split a photo into 3 to 21 equal grid pieces, perfect for Instagram grid posts.</p></div></div>
+<ul class="wt-tags"><li>Grid</li><li>Instagram</li><li>ZIP</li><li>Split</li></ul>
+<a class="wt-open" href="/tools/image-grid-splitter/" aria-label="Open Image Grid Splitter"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="photo color changer click any object in a photo and change its color while keeping natural shading. recolor dress object color">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8"/><path d="M9 10c0-1.5 1.2-2.5 3-2.5s3 1 3 2.5-1.5 2-3 2.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="1.1" fill="#fff"/></svg></div><div>
+<div class="wt-title"><h4>Photo Color Changer</h4><span class="wt-badge b-purple">New</span></div>
+<p>Click any object in a photo and change its color while keeping natural shading.</p></div></div>
+<ul class="wt-tags"><li>Recolor</li><li>Dress</li><li>Object</li><li>Color</li></ul>
+<a class="wt-open" href="/tools/photo-color-changer/" aria-label="Open Photo Color Changer"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="meme generator add classic top and bottom captions to any photo and create a meme. meme caption fun text">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><circle cx="8.5" cy="10" r="1.4" fill="#fff"/><path d="M4 16l4-4 3 3 5-5 4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Meme Generator</h4><span class="wt-badge b-gray">New</span></div>
+<p>Add classic top and bottom captions to any photo and create a meme.</p></div></div>
+<ul class="wt-tags"><li>Meme</li><li>Caption</li><li>Fun</li><li>Text</li></ul>
+<a class="wt-open" href="/tools/meme-generator/" aria-label="Open Meme Generator"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="color palette extractor pull the main colors out of any image and copy them as hex or rgb codes. palette hex rgb colors">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.2-1.6-.4-1 .2-2.1 1.4-2.1H17a4 4 0 0 0 4-4c0-5-4-10.3-9-10.3z" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="8" cy="11" r="1.3" fill="#fff"/><circle cx="12" cy="7.5" r="1.3" fill="#fff"/><circle cx="16" cy="10" r="1.3" fill="#fff"/></svg></div><div>
+<div class="wt-title"><h4>Color Palette Extractor</h4><span class="wt-badge b-blue">New</span></div>
+<p>Pull the main colors out of any image and copy them as HEX or RGB codes.</p></div></div>
+<ul class="wt-tags"><li>Palette</li><li>HEX</li><li>RGB</li><li>Colors</li></ul>
+<a class="wt-open" href="/tools/color-palette-extractor/" aria-label="Open Color Palette Extractor"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image exif viewer see the hidden metadata inside a photo, such as camera model, date and settings. exif metadata camera photo">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8h3l1.5-2h7L17 8h3a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="13" r="3.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Image EXIF Viewer</h4><span class="wt-badge b-purple">New</span></div>
+<p>See the hidden metadata inside a photo, such as camera model, date and settings.</p></div></div>
+<ul class="wt-tags"><li>EXIF</li><li>Metadata</li><li>Camera</li><li>Photo</li></ul>
+<a class="wt-open" href="/tools/image-exif-viewer/" aria-label="Open Image EXIF Viewer"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="image" data-s="image to text (ocr) extract text from photos and screenshots with ocr, then copy it in one click. ocr text copy scan">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 8V5a1 1 0 0 1 1-1h3M16 4h3a1 1 0 0 1 1 1v3M20 16v3a1 1 0 0 1-1 1h-3M8 20H5a1 1 0 0 1-1-1v-3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 9h8M8 12h8M8 15h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Image to Text (OCR)</h4><span class="wt-badge b-green">New</span></div>
+<p>Extract text from photos and screenshots with OCR, then copy it in one click.</p></div></div>
+<ul class="wt-tags"><li>OCR</li><li>Text</li><li>Copy</li><li>Scan</li></ul>
+<a class="wt-open" href="/tools/image-to-text-ocr/" aria-label="Open Image to Text (OCR)"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+</div></div>
+<div class="wt-catsec" data-cat="pdf">
+<h3 id="pdf-tools" class="wt-cat"><span class="wt-cat-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13H7z" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>PDF Tools<small>Convert, compress, merge and split PDFs</small></h3>
+<div class="wt-grid">
+<article class="wt-card" data-cat="pdf" data-s="image to pdf converter combine one or more images into a single downloadable pdf file in your browser. jpg png pdf merge">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 15h6M9 18h4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div>
+<div class="wt-title"><h4>Image to PDF Converter</h4><span class="wt-badge b-green">Popular</span></div>
+<p>Combine one or more images into a single downloadable PDF file in your browser.</p></div></div>
+<ul class="wt-tags"><li>JPG</li><li>PNG</li><li>PDF</li><li>Merge</li></ul>
+<a class="wt-open" href="/tools/image-to-pdf/" aria-label="Open Image to PDF Converter"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="pdf" data-s="pdf to image converter convert pdf pages into jpg or png images directly in your browser. pdf jpg png convert">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="12" height="16" rx="1.5" stroke="#fff" stroke-width="1.8"/><path d="M16 8h4v13a1 1 0 0 1-1 1H9" stroke="#fff" stroke-width="1.6"/><circle cx="9" cy="9" r="1.4" fill="#fff"/><path d="M6 15l3-3 2 2 3-3 2 2" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>PDF to Image Converter</h4><span class="wt-badge b-purple">New</span></div>
+<p>Convert PDF pages into JPG or PNG images directly in your browser.</p></div></div>
+<ul class="wt-tags"><li>PDF</li><li>JPG</li><li>PNG</li><li>Convert</li></ul>
+<a class="wt-open" href="/tools/pdf-to-image/" aria-label="Open PDF to Image Converter"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="pdf" data-s="pdf compressor reduce pdf file size with adjustable compression levels, right in your browser. pdf compress shrink reduce">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#fff" stroke-width="1.8"/><path d="M14 2v6h6" stroke="#fff" stroke-width="1.8"/><path d="M8 16l2-2 2 2 2-3 2 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>PDF Compressor</h4><span class="wt-badge b-blue">New</span></div>
+<p>Reduce PDF file size with adjustable compression levels, right in your browser.</p></div></div>
+<ul class="wt-tags"><li>PDF</li><li>Compress</li><li>Shrink</li><li>Reduce</li></ul>
+<a class="wt-open" href="/tools/pdf-compressor/" aria-label="Open PDF Compressor"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="pdf" data-s="pdf merger &amp; splitter merge several pdfs into one file, or split a pdf into separate pages. pdf merge split pages">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="8" height="11" rx="1.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="9" width="8" height="11" rx="1.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M11 9.5h2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>PDF Merger &amp; Splitter</h4><span class="wt-badge b-blue">New</span></div>
+<p>Merge several PDFs into one file, or split a PDF into separate pages.</p></div></div>
+<ul class="wt-tags"><li>PDF</li><li>Merge</li><li>Split</li><li>Pages</li></ul>
+<a class="wt-open" href="/tools/pdf-merger-splitter/" aria-label="Open PDF Merger &amp; Splitter"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+</div></div>
+<div class="wt-catsec" data-cat="video">
+<h3 id="video-tools" class="wt-cat"><span class="wt-cat-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M10 9l5 3-5 3V9z" fill="#fff"/></svg></span>Video Tools<small>Trim clips and build slideshows</small></h3>
+<div class="wt-grid">
+<article class="wt-card" data-cat="video" data-s="video trimmer &amp; cutter trim and cut videos down to the exact section you need, entirely in your browser. mp4 webm trim cut">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M10 9l5 3-5 3V9z" fill="#fff"/><path d="M3 12h1.5M19.5 12H21" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div><div>
+<div class="wt-title"><h4>Video Trimmer &amp; Cutter</h4><span class="wt-badge b-blue">New</span></div>
+<p>Trim and cut videos down to the exact section you need, entirely in your browser.</p></div></div>
+<ul class="wt-tags"><li>MP4</li><li>WebM</li><li>Trim</li><li>Cut</li></ul>
+<a class="wt-open" href="/tools/video-trimmer/" aria-label="Open Video Trimmer &amp; Cutter"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="video" data-s="photo slideshow &amp; animation maker turn up to 30 photos into an animated video with 30 motion and transition effects. slideshow 30 effects animation video">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.6"/><rect x="14" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.6"/><rect x="9" y="14" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.6"/><path d="M12 12v2M10 8h4M17 12v2" stroke="#fff" stroke-width="1.4" stroke-dasharray="1 2"/></svg></div><div>
+<div class="wt-title"><h4>Photo Slideshow &amp; Animation Maker</h4><span class="wt-badge b-green">New</span></div>
+<p>Turn up to 30 photos into an animated video with 30 motion and transition effects.</p></div></div>
+<ul class="wt-tags"><li>Slideshow</li><li>30 Effects</li><li>Animation</li><li>Video</li></ul>
+<a class="wt-open" href="/tools/photo-slideshow-maker/" aria-label="Open Photo Slideshow &amp; Animation Maker"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+</div></div>
+<div class="wt-catsec" data-cat="utility">
+<h3 id="utility-tools" class="wt-cat"><span class="wt-cat-ico" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Utility Tools<small>Small helpers for everyday tasks</small></h3>
+<div class="wt-grid">
+<article class="wt-card" data-cat="utility" data-s="qr code generator create a custom qr code with your own colors, size and logo, free in your browser. qr logo custom color png">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" stroke="#fff" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" stroke="#fff" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" stroke="#fff" stroke-width="1.8"/><path d="M15 15h2.5M15 18.5h6M19.5 15v6" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg></div><div>
+<div class="wt-title"><h4>QR Code Generator</h4><span class="wt-badge b-blue">New</span></div>
+<p>Create a custom QR code with your own colors, size and logo, free in your browser.</p></div></div>
+<ul class="wt-tags"><li>QR</li><li>Logo</li><li>Custom Color</li><li>PNG</li></ul>
+<a class="wt-open" href="/tools/qr-code-generator/" aria-label="Open QR Code Generator"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="utility" data-s="favicon generator turn any image into a full set of favicon sizes, ready for your website. favicon icon zip website">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" fill="#fff"/></svg></div><div>
+<div class="wt-title"><h4>Favicon Generator</h4><span class="wt-badge b-purple">New</span></div>
+<p>Turn any image into a full set of favicon sizes, ready for your website.</p></div></div>
+<ul class="wt-tags"><li>Favicon</li><li>Icon</li><li>ZIP</li><li>Website</li></ul>
+<a class="wt-open" href="/tools/favicon-generator/" aria-label="Open Favicon Generator"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+<article class="wt-card" data-cat="utility" data-s="text diff checker compare two texts side by side and see exactly what was added, removed or changed. diff compare text code">
+<div class="wt-top"><div class="wt-ico" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="8" height="16" rx="1.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="13" y="4" width="8" height="16" rx="1.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M5.5 9h3M5.5 13h3M15.5 9h3M15.5 13h3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div>
+<div class="wt-title"><h4>Text Diff Checker</h4><span class="wt-badge b-gray">New</span></div>
+<p>Compare two texts side by side and see exactly what was added, removed or changed.</p></div></div>
+<ul class="wt-tags"><li>Diff</li><li>Compare</li><li>Text</li><li>Code</li></ul>
+<a class="wt-open" href="/tools/text-diff-checker/" aria-label="Open Text Diff Checker"><span>Open Tool</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+</article>
+</div></div>
 
-      <h3 id="image-tools" class="category-heading">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="3" stroke="#fff" stroke-width="1.8"/><circle cx="9" cy="9" r="1.8" fill="#fff"/><path d="M21 15l-5.5-5.5L6 19" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Image Tools
-      </h3>
-
-      <div class="tool-grid">
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-blue" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 16l4.5-6 3.5 4 2.5-3L20 16" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><rect x="3" y="4" width="18" height="16" rx="2.5" stroke="#fff" stroke-width="1.8"/><path d="M9 20V4" stroke="#fff" stroke-width="1.4" stroke-dasharray="1 3" opacity=".6"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Compressor</h4>
-                <span class="badge badge-green">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  Popular
-                </span>
-              </div>
-              <p>Compress JPG, PNG and WebP images in your browser while reducing file size.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Fast</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-compressor/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-pink" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M19 3a3.5 3.5 0 0 1 0 5l-9.5 9.5-5 1.5 1.5-5L15.5 4A3.5 3.5 0 0 1 19 3z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M13.5 6.5l4 4" stroke="#fff" stroke-width="1.8"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Color Picker</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Trending
-                </span>
-              </div>
-              <p>Upload an image and pick colors from any point to get accurate color values.</p>
-              <ul class="tag-list">
-                <li>HEX</li><li>RGB</li><li>HSL</li><li>Picker</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-color-picker/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-green" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3v14a2 2 0 0 0 2 2h11M3 7h14a2 2 0 0 1 2 2v11" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Resizer</h4>
-                <span class="badge badge-purple">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6c-2.5 4.5-9.5 9-9.5 9z" fill="currentColor"/></svg>
-                  Best For You
-                </span>
-              </div>
-              <p>Resize images to custom dimensions or common preset sizes directly in your browser.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Custom</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-resizer/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-orange" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M6 2v14a2 2 0 0 0 2 2h14M18 22V8a2 2 0 0 0-2-2H2" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Cropper</h4>
-                <span class="badge badge-gray">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
-                  Handy
-                </span>
-              </div>
-              <p>Crop images to a precise area directly in your browser before downloading the result.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Crop</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-cropper/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-indigo" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Converter</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  Trending
-                </span>
-              </div>
-              <p>Convert images between JPG, PNG and WebP formats directly in your browser.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>WebP</li><li>Convert</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-converter/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-red" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 3h7l5 5v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 3v5h5" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 15h6M9 18h4" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image to PDF Converter</h4>
-                <span class="badge badge-green">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  Popular
-                </span>
-              </div>
-              <p>Combine one or more images into a single downloadable PDF file in your browser.</p>
-              <ul class="tag-list">
-                <li>JPG</li><li>PNG</li><li>PDF</li><li>Merge</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-to-pdf/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-indigo" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#fff" stroke-width="1.6" stroke-dasharray="3 3"/><circle cx="12" cy="12" r="5" fill="#fff"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Background Remover</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Remove the background from a photo and get a transparent PNG, right in your browser.</p>
-              <ul class="tag-list">
-                <li>PNG</li><li>Transparent</li><li>Cutout</li><li>Fast</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-background-remover/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-blue" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="12" height="16" rx="1.5" stroke="#fff" stroke-width="1.8"/><path d="M16 8h4v13a1 1 0 0 1-1 1H9" stroke="#fff" stroke-width="1.6"/><circle cx="9" cy="9" r="1.4" fill="#fff"/><path d="M6 15l3-3 2 2 3-3 2 2" stroke="#fff" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>PDF to Image Converter</h4>
-                <span class="badge badge-purple">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Convert PDF pages into JPG or PNG images directly in your browser.</p>
-              <ul class="tag-list">
-                <li>PDF</li><li>JPG</li><li>PNG</li><li>Convert</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/pdf-to-image/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-pink" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 8l1 2.5L15.5 12 13 13l-1 2.5-1-2.5L8.5 12 11 10.5z" fill="#fff"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Sharpener &amp; Upscaler</h4>
-                <span class="badge badge-green">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Sharpen detail and upscale image resolution instantly, right in your browser.</p>
-              <ul class="tag-list">
-                <li>Sharpen</li><li>Upscale</li><li>3x</li><li>Fast</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-sharpener-upscaler/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-green" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3s6 7 6 11a6 6 0 0 1-12 0c0-4 6-11 6-11z" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Watermark Adder</h4>
-                <span class="badge badge-gray">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Add a text or logo watermark to your photos with full control over position and opacity.</p>
-              <ul class="tag-list">
-                <li>Text</li><li>Logo</li><li>Tile</li><li>Brand</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-watermark-adder/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-orange" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M11 3v18M3 9h8M3 15h8" stroke="#fff" stroke-width="1.6"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Image Grid Splitter</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Split a photo into 3 to 21 equal grid pieces, perfect for Instagram grid posts.</p>
-              <ul class="tag-list">
-                <li>Grid</li><li>Instagram</li><li>ZIP</li><li>Split</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/image-grid-splitter/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-indigo" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#fff" stroke-width="1.8"/><path d="M9 10c0-1.5 1.2-2.5 3-2.5s3 1 3 2.5-1.5 2-3 2.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="16" r="1.1" fill="#fff"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Photo Color Changer</h4>
-                <span class="badge badge-purple">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Click any object in a photo and change its color while keeping natural shading.</p>
-              <ul class="tag-list">
-                <li>Recolor</li><li>Dress</li><li>Object</li><li>Color</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/photo-color-changer/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-pink" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><circle cx="8.5" cy="10" r="1.4" fill="#fff"/><path d="M4 16l4-4 3 3 5-5 4 4" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Meme Generator</h4>
-                <span class="badge badge-gray">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Add classic top and bottom captions to any photo and create a meme.</p>
-              <ul class="tag-list">
-                <li>Meme</li><li>Caption</li><li>Fun</li><li>Text</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/meme-generator/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-green" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="#fff" stroke-width="1.8"/><path d="M14 2v6h6" stroke="#fff" stroke-width="1.8"/><path d="M8 16l2-2 2 2 2-3 2 3" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>PDF Compressor</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Reduce PDF file size with adjustable compression levels, right in your browser.</p>
-              <ul class="tag-list">
-                <li>PDF</li><li>Compress</li><li>Shrink</li><li>Reduce</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/pdf-compressor/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-      </div>
-
-      <h3 id="video-tools" class="category-heading">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M10 9l5 3-5 3V9z" fill="#fff"/></svg>
-        </span>
-        Video Tools
-      </h3>
-
-      <div class="tool-grid">
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-red" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M10 9l5 3-5 3V9z" fill="#fff"/><path d="M3 12h1.5M19.5 12H21" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Video Trimmer &amp; Cutter</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Trim and cut videos down to the exact section you need, entirely in your browser.</p>
-              <ul class="tag-list">
-                <li>MP4</li><li>WebM</li><li>Trim</li><li>Cut</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/video-trimmer/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-indigo" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.6"/><rect x="14" y="5" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.6"/><rect x="9" y="14" width="7" height="7" rx="1" stroke="#fff" stroke-width="1.6"/><path d="M12 12v2M10 8h4M17 12v2" stroke="#fff" stroke-width="1.4" stroke-dasharray="1 2"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Photo Slideshow &amp; Animation Maker</h4>
-                <span class="badge badge-green">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Turn up to 30 photos into an animated video with 30 motion and transition effects.</p>
-              <ul class="tag-list">
-                <li>Slideshow</li><li>30 Effects</li><li>Animation</li><li>Video</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/photo-slideshow-maker/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-      </div>
-
-      <h3 id="utility-tools" class="category-heading">
-        <span class="category-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </span>
-        Utility Tools
-      </h3>
-
-      <div class="tool-grid">
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-red" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" stroke="#fff" stroke-width="1.8"/><rect x="14" y="3" width="7" height="7" stroke="#fff" stroke-width="1.8"/><rect x="3" y="14" width="7" height="7" stroke="#fff" stroke-width="1.8"/><path d="M15 15h2.5M15 18.5h6M19.5 15v6" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>QR Code Generator</h4>
-                <span class="badge badge-blue">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M3 17l6-6 4 4 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Create a custom QR code with your own colors, size and logo, free in your browser.</p>
-              <ul class="tag-list">
-                <li>QR</li><li>Logo</li><li>Custom Color</li><li>PNG</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/qr-code-generator/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
-        <article class="tool-card">
-          <div class="tool-card-main">
-            <div class="tool-icon icon-blue" aria-hidden="true">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="4" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" fill="#fff"/></svg>
-            </div>
-            <div class="tool-info">
-              <div class="tool-title-row">
-                <h4>Favicon Generator</h4>
-                <span class="badge badge-purple">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z" fill="currentColor"/></svg>
-                  New
-                </span>
-              </div>
-              <p>Turn any image into a full set of favicon sizes, ready for your website.</p>
-              <ul class="tag-list">
-                <li>Favicon</li><li>Icon</li><li>ZIP</li><li>Website</li>
-              </ul>
-            </div>
-          </div>
-          <a class="button button-open" href="/tools/favicon-generator/">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 3h6v6M10 14 21 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Open Tool</span>
-          </a>
-        </article>
-
+        <p id="wt-empty" class="wt-empty">No tool matches your search. Try a different word, like "image" or "PDF".</p>
       </div>
     </section>
   </main>
 
   <div id="site-footer"></div>
+  <script>(function(){var q=document.getElementById('wt-q'),chips=[].slice.call(document.querySelectorAll('.wt-chip')),cards=[].slice.call(document.querySelectorAll('.wt-card')),secs=[].slice.call(document.querySelectorAll('.wt-catsec')),empty=document.getElementById('wt-empty'),cat='all';
+function run(){var t=q.value.trim().toLowerCase(),n=0;
+cards.forEach(function(c){var ok=(cat==='all'||c.dataset.cat===cat)&&(!t||c.dataset.s.indexOf(t)>-1);c.hidden=!ok;if(ok)n++});
+secs.forEach(function(s){s.hidden=!s.querySelector('.wt-card:not([hidden])')});
+empty.style.display=n?'none':'block'}
+q.addEventListener('input',run);
+chips.forEach(function(b){b.addEventListener('click',function(){cat=b.dataset.c;chips.forEach(function(x){x.classList.toggle('on',x===b)});run()})});
+})();</script>
   <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
