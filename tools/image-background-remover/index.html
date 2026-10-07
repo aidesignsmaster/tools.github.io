@@ -13,7 +13,6 @@
 <meta property="og:description" content="Remove image backgrounds online and create transparent PNGs directly in your browser with Working Tools Box.">
 <meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-background-remover/">
 
-<link rel="stylesheet" href="/shared/style.css">
 
 <script type="application/ld+json">
 {
@@ -455,16 +454,7 @@
 <body>
 
 <div id="wtb-shared-header">
-  <header class="wtb-site-header">
-    <div class="wtb-site-header-inner">
-      <a href="/" class="wtb-brand">Working Tools Box</a>
-      <nav aria-label="Primary">
-        <a href="/">Home</a>
-        <a href="/tools/">Tools</a>
-        <a href="/tools/">Explore Tools</a>
-      </nav>
-    </div>
-  </header>
+  <div id="site-header"></div>
 </div>
 
 <main class="wtb-tool-wrap">
@@ -615,16 +605,7 @@
 </main>
 
 <div id="wtb-shared-footer">
-  <footer class="wtb-site-footer">
-    <div class="wtb-site-footer-inner">
-      <a href="/" class="wtb-brand">Working Tools Box</a>
-      <nav aria-label="Footer">
-        <a href="/">Home</a>
-        <a href="/tools/">All Tools</a>
-      </nav>
-      <p class="wtb-copyright">&copy; 2026 Working Tools Box. All rights reserved.</p>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.0/dist/ort.min.js"></script>
@@ -1066,5 +1047,7 @@
   });
 </script>
 
+
+<script src="/shared/shared.js" defer></script>
 </body>
 </html>
