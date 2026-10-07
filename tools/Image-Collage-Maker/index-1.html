@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Photo Collage Maker Online | Working Tools Box</title>
+<meta name="description" content="Make a photo collage online for free. Combine up to 12 photos with grid layouts, spacing, rounded corners and custom sizes, all in your browser.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://workingtoolsbox.vercel.app/tools/image-collage-maker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Free Photo Collage Maker Online | Working Tools Box">
+<meta property="og:description" content="Make a photo collage online for free. Combine up to 12 photos with grid layouts, spacing, rounded corners and custom sizes, all in your browser.">
+<meta property="og:url" content="https://workingtoolsbox.vercel.app/tools/image-collage-maker/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Free Photo Collage Maker Online | Working Tools Box">
+<meta name="twitter:description" content="Make a photo collage online for free. Combine up to 12 photos with grid layouts, spacing, rounded corners and custom sizes, all in your browser.">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Image Collage Maker",
+ "url": "https://workingtoolsbox.vercel.app/tools/image-collage-maker/",
+ "applicationCategory": "PhotoApplication",
+ "operatingSystem": "Any",
+ "description": "Combines up to 12 photos into one collage in the browser, with layouts, spacing, rounded corners and custom canvas sizes.",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Are my photos uploaded to a server?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The collage is built locally in your browser using the Canvas API, so your photos never leave your device."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many photos can I add?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can combine up to 12 photos in one collage. You can add more at any time until you reach the limit."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which image formats are supported?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can add JPG, PNG and WebP photos and download the collage as a PNG or a JPG."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I change the order of my photos?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Use the arrow buttons under each thumbnail to move a photo, or press Shuffle Photos to mix them randomly."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What size is the finished collage?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You choose the size: square 1080x1080, portrait 1080x1350, story 1080x1920, landscape 1920x1080 or A4 print 1240x1754 pixels."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is the collage maker free and watermark-free?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It is completely free, needs no sign-up and adds no watermark to your collage."
+   }
+  }
+ ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
+    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
+    --shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:44px 0 20px}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
+
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+
+  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload:hover{border-color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
+  input[type=file]{display:none}
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 22px;font-weight:700;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .primary:disabled{opacity:.5;cursor:not-allowed}
+  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+  .secondary:hover{background:#f8f6ff}
+  .button:focus-visible,select:focus-visible,input:focus-visible,.pos-btn:focus-visible,.tab-btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+  .status{margin-top:14px;font-size:14px;color:var(--muted)}
+  .status.error{color:var(--error);font-weight:600}
+
+  .editor{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:start}
+  .canvas-wrap{background:#111827;border-radius:14px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px}
+  #previewCanvas{max-width:100%;max-height:560px;display:block}
+
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .tabs{display:flex;gap:8px;margin-bottom:16px}
+  .tab-btn{flex:1;border:1.5px solid var(--border);background:#fff;border-radius:10px;padding:9px;font-weight:700;font-size:13px;cursor:pointer;color:var(--muted)}
+  .tab-btn.active{border-color:var(--purple);color:var(--purple);background:#f8f6ff}
+
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-of-type{margin-top:0}
+  input[type=text],select{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px}
+  input[type=range]{width:100%}
+  input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px}
+
+  .pos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+  .pos-btn{aspect-ratio:1;border:1.5px solid var(--border);background:#fbf9ff;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .pos-btn.active{border-color:var(--purple);background:#f0eafd}
+  .pos-btn span{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+  .pos-btn.active span{background:var(--purple)}
+
+  .checkbox-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:16px 0 0}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
+  .content p,.content li{color:#3c3a46}
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
+  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
+  .faq[open] summary::after{content:"\2212"}
+  .faq p{padding-bottom:14px;margin-top:0}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+
+  .hidden{display:none!important}
+  @media(max-width:800px){.editor{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+
+  .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+  .thumb{border:1px solid var(--border);border-radius:10px;overflow:hidden;background:var(--soft)}
+  .thumb img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+  .tbtns{display:flex}
+  .tbtns button{flex:1;border:0;border-top:1px solid var(--border);background:#fff;padding:5px 0;cursor:pointer;font-size:12px;color:var(--muted)}
+  .tbtns button:hover{background:#f8f6ff;color:var(--purple)}
+  .tbtns button:focus-visible{outline:3px solid var(--focus);outline-offset:-3px}
+  .hint{font-size:13px;color:var(--muted);margin:10px 0 0}
+  .steps li,.feat li{margin-bottom:6px}
+  .related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .related a{border:1px solid var(--border);border-radius:12px;padding:14px 16px;text-decoration:none;background:#fff;display:block}
+  .related a:hover{border-color:var(--purple)}
+  .related b{display:block;color:var(--purple)}
+  .related span{font-size:.85rem;color:var(--muted)}
+  .bar{height:10px;background:#eee;border-radius:99px;overflow:hidden;margin-top:8px}
+  .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .15s}
+  #vid{max-width:100%;max-height:560px;display:block}
+  .result{margin-top:22px;text-align:center}
+  .result img{max-width:100%;max-height:420px;border-radius:12px;border:1px solid var(--border)}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .upload:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<main class="container">
+  <section class="hero">
+    <h1 class="grad-text">Image Collage Maker</h1>
+    <p>Combine up to 12 photos into one picture with layouts, spacing and rounded corners &mdash; free, in your browser.</p>
+  </section>
+
+  <div class="notice">
+    <b>100% free, no upload:</b> Your photos are processed locally in your browser and never leave your device.
+  </div>
+
+  <section class="tool" aria-label="Image Collage Maker Tool">
+
+    <div id="uploadView">
+      <div class="upload" id="dropZone" tabindex="0" role="button" aria-label="Select photos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photos here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
+        <button type="button" class="button primary" id="selectBtn">Select Photos</button>
+        <p class="hint">Up to 12 photos &middot; JPG, PNG or WebP</p>
+      </div>
+      <div id="uploadStatus" class="status" role="status" aria-live="polite"></div>
+    </div>
+
+    <div id="editorView" class="hidden">
+      <div class="editor">
+        <div class="canvas-wrap"><canvas id="previewCanvas" aria-label="Collage preview"></canvas></div>
+        <div class="panel">
+          <label>Photos (<span id="count">0</span>/12)</label>
+          <div class="thumbs" id="thumbs"></div>
+          <button type="button" class="button secondary" id="addBtn" style="width:100%;justify-content:center;margin-top:10px">+ Add More Photos</button>
+          <div id="editorStatus" class="status" role="status" aria-live="polite"></div>
+
+          <label for="layout">Layout</label>
+          <select id="layout"><option value="grid">Grid</option><option value="left">Big photo left</option><option value="top">Big photo top</option><option value="row">Single row</option><option value="col">Single column</option></select>
+          <label for="cols">Grid columns</label>
+          <select id="cols"><option value="0">Auto</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+          <label for="size">Canvas size</label>
+          <select id="size"><option value="1080x1080">Square 1080&times;1080</option><option value="1080x1350">Portrait 1080&times;1350</option><option value="1080x1920">Story 1080&times;1920</option><option value="1920x1080">Landscape 1920&times;1080</option><option value="1240x1754">A4 print 1240&times;1754</option></select>
+          <label for="gap">Spacing: <span id="gapVal">12</span>px</label>
+          <input type="range" id="gap" min="0" max="60" value="12">
+          <label for="radius">Rounded corners: <span id="radiusVal">0</span>px</label>
+          <input type="range" id="radius" min="0" max="80" value="0">
+          <label for="bg">Background color</label>
+          <input type="color" id="bg" value="#ffffff">
+          <label for="fit">Photo fit</label>
+          <select id="fit"><option value="cover">Fill cell (crop)</option><option value="contain">Show whole photo</option></select>
+          <label for="fmt">Download format</label>
+          <select id="fmt"><option value="png">PNG (best quality)</option><option value="jpg">JPG (smaller file)</option></select>
+          <div id="qualBlock" class="hidden"><label for="qual">JPG quality: <span id="qualVal">92</span>%</label><input type="range" id="qual" min="50" max="100" value="92"></div>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
+            <button type="button" class="button primary" id="downloadBtn" style="justify-content:center">Download Collage</button>
+            <button type="button" class="button secondary" id="shuffleBtn" style="justify-content:center">Shuffle Photos</button>
+            <button type="button" class="button secondary" id="resetBtn" style="justify-content:center">Start Over</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="content">
+    <h2 class="grad-text">Make a Photo Collage Online for Free</h2>
+    <p>This free image collage maker combines up to 12 photos into a single picture. Pick a layout such as a classic grid, one big photo with smaller ones beside it, a single row or a single column, then adjust spacing, rounded corners, background color and canvas size. The preview updates instantly, so you can see exactly what you will download.</p>
+    <p>It is made for Instagram posts and stories, Facebook and WhatsApp status, product photo sheets, family albums, travel memories and before-and-after comparisons. Your photos are processed locally in your browser with the Canvas API, so nothing is uploaded and there is no watermark.</p>
+
+    <h2 class="grad-text">How to Make a Collage</h2>
+    <ol class="steps">
+      <li>Select or drop your photos (up to 12, JPG, PNG or WebP).</li>
+      <li>Choose a layout and canvas size, such as Square or Story.</li>
+      <li>Set spacing, rounded corners and a background color. Use the arrows to reorder photos or the cross to remove one.</li>
+      <li>Download your collage as PNG or JPG.</li>
+    </ol>
+
+    <h2 class="grad-text">Features</h2>
+    <ul class="feat">
+      <li>5 layouts with adjustable grid columns</li>
+      <li>5 ready canvas sizes: square, portrait, story, landscape and A4 print</li>
+      <li>Spacing, rounded corners and any background color</li>
+      <li>Fill (crop) or fit (show whole photo) mode</li>
+      <li>Reorder, remove, add more or shuffle photos</li>
+      <li>PNG or JPG download with quality control</li>
+    </ul>
+
+    <h2 class="grad-text">Popular Searches</h2>
+    <div class="keyword-tags">
+      <span>photo collage maker</span>
+      <span>free collage maker online</span>
+      <span>image collage maker</span>
+      <span>make photo collage</span>
+      <span>collage maker no upload</span>
+      <span>picture collage maker</span>
+      <span>photo grid maker</span>
+      <span>instagram collage maker</span>
+      <span>combine photos into one</span>
+      <span>merge images into one picture</span>
+      <span>photo layout maker</span>
+      <span>collage maker with borders</span>
+      <span>rounded corner collage</span>
+      <span>photo collage for facebook</span>
+      <span>free photo grid online</span>
+      <span>create collage from photos</span>
+      <span>multiple photos in one image</span>
+      <span>collage maker no watermark</span>
+      <span>online picture grid</span>
+      <span>simple collage maker</span>
+      </div>
+
+    <h2 class="grad-text">Frequently Asked Questions</h2>
+    <details class="faq"><summary>Are my photos uploaded to a server?</summary><p>No. The collage is built locally in your browser using the Canvas API, so your photos never leave your device.</p></details>
+    <details class="faq"><summary>How many photos can I add?</summary><p>You can combine up to 12 photos in one collage. You can add more at any time until you reach the limit.</p></details>
+    <details class="faq"><summary>Which image formats are supported?</summary><p>You can add JPG, PNG and WebP photos and download the collage as a PNG or a JPG.</p></details>
+    <details class="faq"><summary>Can I change the order of my photos?</summary><p>Yes. Use the arrow buttons under each thumbnail to move a photo, or press Shuffle Photos to mix them randomly.</p></details>
+    <details class="faq"><summary>What size is the finished collage?</summary><p>You choose the size: square 1080x1080, portrait 1080x1350, story 1080x1920, landscape 1920x1080 or A4 print 1240x1754 pixels.</p></details>
+    <details class="faq"><summary>Is the collage maker free and watermark-free?</summary><p>Yes. It is completely free, needs no sign-up and adds no watermark to your collage.</p></details>
+    
+    <h2 class="grad-text">More Free Tools</h2>
+    <div class="related"><a href="/tools/video-to-gif-converter/"><b>Video to GIF Converter</b><span>Turn any video clip into an animated GIF</span></a><a href="/tools/image-watermark-adder/"><b>Image Watermark Adder</b><span>Add a text or logo watermark to your photos.</span></a></div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(i){return document.getElementById(i)};
+  var MAX=12,items=[];
+  var uploadView=$("uploadView"),editorView=$("editorView"),dropZone=$("dropZone"),fileInput=$("fileInput");
+  var cv=$("previewCanvas"),ctx=cv.getContext("2d"),thumbs=$("thumbs");
+  var ids=["layout","cols","size","gap","radius","bg","fit","fmt","qual"],el={};
+  ids.forEach(function(i){el[i]=$(i)});
+
+  function msg(t,err){["uploadStatus","editorStatus"].forEach(function(i){var e=$(i);e.textContent=t||"";e.className="status"+(err?" error":"")})}
+  function revoke(u){if(u)URL.revokeObjectURL(u)}
+
+  $("selectBtn").addEventListener("click",function(e){e.stopPropagation();fileInput.click()});
+  $("addBtn").addEventListener("click",function(){fileInput.click()});
+  dropZone.addEventListener("click",function(e){if(e.target===dropZone||e.target.closest("svg")||e.target.tagName==="P")fileInput.click()});
+  dropZone.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();fileInput.click()}});
+  [dropZone,editorView].forEach(function(z){
+    z.addEventListener("dragover",function(e){e.preventDefault()});
+    z.addEventListener("drop",function(e){e.preventDefault();if(e.dataTransfer.files.length)addFiles(e.dataTransfer.files)});
+  });
+  fileInput.addEventListener("change",function(){if(fileInput.files.length)addFiles(fileInput.files);fileInput.value=""});
+
+  function loadFile(f){
+    return new Promise(function(res){
+      var u=URL.createObjectURL(f),im=new Image();
+      im.onload=function(){res({img:im,url:u})};
+      im.onerror=function(){revoke(u);res(null)};
+      im.src=u;
+    });
+  }
+  function addFiles(fl){
+    var all=Array.prototype.slice.call(fl);
+    var ok=all.filter(function(f){return /^image\/(jpeg|png|webp)$/.test(f.type)});
+    if(!ok.length){msg("Please choose JPG, PNG or WebP images.",true);return}
+    var room=MAX-items.length;
+    if(room<=0){msg("Maximum "+MAX+" photos reached.",true);return}
+    var note=(ok.length>room||ok.length<all.length)?"Some files were skipped (max "+MAX+" photos, JPG/PNG/WebP only).":"";
+    Promise.all(ok.slice(0,room).map(loadFile)).then(function(r){
+      r.forEach(function(x){if(x)items.push(x)});
+      if(!items.length){msg("Could not read those images.",true);return}
+      uploadView.classList.add("hidden");editorView.classList.remove("hidden");
+      msg(note,false);refresh();
+    });
+  }
+
+  function renderThumbs(){
+    thumbs.innerHTML="";$("count").textContent=items.length;
+    items.forEach(function(it,i){
+      var d=document.createElement("div");d.className="thumb";
+      var im=document.createElement("img");im.src=it.url;im.alt="Photo "+(i+1);d.appendChild(im);
+      var b=document.createElement("div");b.className="tbtns";
+      [["\u25C0","Move photo "+(i+1)+" earlier",function(){move(i,-1)}],
+       ["\u25B6","Move photo "+(i+1)+" later",function(){move(i,1)}],
+       ["\u2715","Remove photo "+(i+1),function(){removeAt(i)}]].forEach(function(x){
+        var bt=document.createElement("button");bt.type="button";bt.textContent=x[0];bt.setAttribute("aria-label",x[1]);
+        bt.addEventListener("click",x[2]);b.appendChild(bt);
+      });
+      d.appendChild(b);thumbs.appendChild(d);
+    });
+  }
+  function move(i,d){var j=i+d;if(j<0||j>=items.length)return;var t=items[i];items[i]=items[j];items[j]=t;refresh()}
+  function removeAt(i){revoke(items[i].url);items.splice(i,1);if(!items.length){toUpload();return}refresh()}
+  function toUpload(){items.forEach(function(x){revoke(x.url)});items=[];msg("");editorView.classList.add("hidden");uploadView.classList.remove("hidden")}
+  $("resetBtn").addEventListener("click",toUpload);
+  $("shuffleBtn").addEventListener("click",function(){
+    for(var i=items.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=items[i];items[i]=items[j];items[j]=t}
+    refresh();
+  });
+  function refresh(){renderThumbs();draw()}
+
+  function rects(n,W,H,g,kind,cols){
+    var x0=g,y0=g,w=W-2*g,h=H-2*g,r=[];
+    function row(k,x,y,cw,ch){var c=(cw-g*(k-1))/k;for(var i=0;i<k;i++)r.push({x:x+i*(c+g),y:y,w:c,h:ch})}
+    function col(k,x,y,cw,ch){var c=(ch-g*(k-1))/k;for(var i=0;i<k;i++)r.push({x:x,y:y+i*(c+g),w:cw,h:c})}
+    if(n===1)return [{x:x0,y:y0,w:w,h:h}];
+    if(kind==="row")row(n,x0,y0,w,h);
+    else if(kind==="col")col(n,x0,y0,w,h);
+    else if(kind==="left"){var bw=(w-g)*0.6;r.push({x:x0,y:y0,w:bw,h:h});col(n-1,x0+bw+g,y0,w-bw-g,h)}
+    else if(kind==="top"){var bh=(h-g)*0.55;r.push({x:x0,y:y0,w:w,h:bh});row(n-1,x0,y0+bh+g,w,h-bh-g)}
+    else{
+      var c=cols||Math.min(n,Math.max(1,Math.round(Math.sqrt(n*W/H)))),rows=Math.ceil(n/c),rh=(h-g*(rows-1))/rows;
+      for(var i=0;i<rows;i++)row(Math.min(c,n-i*c),x0,y0+i*(rh+g),w,rh);
+    }
+    return r;
+  }
+  function rr(c,x,y,w,h,k){
+    k=Math.max(0,Math.min(k,w/2,h/2));
+    c.beginPath();c.moveTo(x+k,y);c.arcTo(x+w,y,x+w,y+h,k);c.arcTo(x+w,y+h,x,y+h,k);c.arcTo(x,y+h,x,y,k);c.arcTo(x,y,x+w,y,k);c.closePath();
+  }
+  function draw(){
+    if(!items.length)return;
+    var s=el.size.value.split("x"),W=+s[0],H=+s[1];
+    cv.width=W;cv.height=H;
+    ctx.fillStyle=el.bg.value;ctx.fillRect(0,0,W,H);
+    var rs=rects(items.length,W,H,+el.gap.value,el.layout.value,+el.cols.value),rad=+el.radius.value;
+    rs.forEach(function(r,i){
+      var im=items[i].img,iw=im.naturalWidth,ih=im.naturalHeight;
+      var sc=el.fit.value==="cover"?Math.max(r.w/iw,r.h/ih):Math.min(r.w/iw,r.h/ih);
+      var dw=iw*sc,dh=ih*sc;
+      ctx.save();rr(ctx,r.x,r.y,r.w,r.h,rad);ctx.clip();
+      ctx.drawImage(im,r.x+(r.w-dw)/2,r.y+(r.h-dh)/2,dw,dh);
+      ctx.restore();
+    });
+  }
+  ids.forEach(function(i){
+    el[i].addEventListener("input",function(){
+      $("gapVal").textContent=el.gap.value;$("radiusVal").textContent=el.radius.value;$("qualVal").textContent=el.qual.value;
+      $("qualBlock").classList.toggle("hidden",el.fmt.value!=="jpg");
+      draw();
+    });
+  });
+  $("downloadBtn").addEventListener("click",function(){
+    var jpg=el.fmt.value==="jpg";
+    cv.toBlob(function(b){
+      if(!b){msg("Could not create the image. Try a smaller canvas size.",true);return}
+      var u=URL.createObjectURL(b),a=document.createElement("a");
+      a.href=u;a.download="image-collage."+(jpg?"jpg":"png");
+      document.body.appendChild(a);a.click();a.remove();
+      setTimeout(function(){revoke(u)},4000);
+    },jpg?"image/jpeg":"image/png",+el.qual.value/100);
+  });
+})();
+</script>
+
+<script>
+(function () {
+  "use strict";
+
+  function loadShared(selector, url) {
+    return fetch(url, { credentials: "same-origin" })
+      .then(function (response) {
+        if (!response.ok) throw new Error("Failed to load " + url + " (HTTP " + response.status + ")");
+        return response.text();
+      })
+      .then(function (html) {
+        var target = document.querySelector(selector);
+        if (!target) throw new Error("Missing shared component target: " + selector);
+        target.innerHTML = html;
+      });
+  }
+
+  Promise.all([
+    loadShared("#site-header", "/shared/header.html"),
+    loadShared("#site-footer", "/shared/footer.html")
+  ]).catch(function (error) {
+    console.error("Working Tools Box shared layout error:", error);
+  });
+})();
+</script>
+
+</body>
+</html>
