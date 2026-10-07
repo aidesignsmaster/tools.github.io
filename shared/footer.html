@@ -1,34 +1,99 @@
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-top">
-      <a class="brand footer-brand" href="/">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="url(#brandGradFooter)"/>
+<style>
+.wtbf,.wtbf *{box-sizing:border-box}
+.wtbf-wrap{padding:0 16px 20px;margin-top:48px}
+.wtbf{--wtbf-ink:#2a1f6b;--wtbf-soft:#5b4fa3;--wtbf-line:rgba(124,58,237,.16);position:relative;overflow:hidden;max-width:1180px;margin:0 auto;padding:40px 40px 22px;border-radius:30px;border:1px solid var(--wtbf-line);background:radial-gradient(520px 260px at 0% 100%,rgba(96,165,250,.28),transparent 70%),radial-gradient(520px 260px at 100% 100%,rgba(244,114,182,.26),transparent 70%),linear-gradient(135deg,#fff 0%,#f7f2ff 55%,#fdf1fa 100%);box-shadow:0 14px 40px rgba(124,58,237,.12);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;color:var(--wtbf-soft)}
+.wtbf a{text-decoration:none}
+.wtbf-grid{position:relative;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+.wtbf-brand{display:inline-flex;align-items:center;gap:11px;color:var(--wtbf-ink)}
+.wtbf-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#fff;border:1px solid var(--wtbf-line);box-shadow:0 4px 12px rgba(124,58,237,.14)}
+.wtbf-text{display:flex;flex-direction:column;gap:2px}
+.wtbf-name{font-size:19px;font-weight:800;letter-spacing:-.2px;color:var(--wtbf-ink)}
+.wtbf-name em{font-style:normal;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wtbf-tag{font-size:12px;font-weight:500;color:var(--wtbf-soft)}
+.wtbf-about{margin:16px 0 16px;max-width:34ch;font-size:14.5px}
+.wtbf-chips{display:flex;flex-wrap:wrap;gap:8px}
+.wtbf-chip{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:999px;font-size:13px;font-weight:600;color:#6d28d9;background:#fff;border:1px solid var(--wtbf-line)}
+.wtbf-chip svg{width:15px;height:15px}
+.wtbf-title{margin:4px 0 14px;font-size:16px;font-weight:800;color:var(--wtbf-ink)}
+.wtbf-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.wtbf-list a{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--wtbf-soft);transition:color .18s,transform .18s}
+.wtbf-list a::before{content:"";width:6px;height:6px;border-top:2px solid #a855f7;border-right:2px solid #a855f7;transform:rotate(45deg);flex:0 0 auto}
+.wtbf-list a:hover{color:#6d28d9;transform:translateX(3px)}
+.wtbf-bottom{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding-top:18px;border-top:1px solid var(--wtbf-line);font-size:13.5px}
+.wtbf-bottom p{margin:0}
+.wtbf-mini{display:flex;gap:10px;flex-wrap:wrap}
+.wtbf-pill{display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700;color:#fff!important;background:linear-gradient(120deg,#d946ef 0%,#8b5cf6 52%,#2563eb 100%);box-shadow:0 8px 18px rgba(139,92,246,.3)}
+.wtbf a:focus-visible{outline:3px solid #8b5cf6;outline-offset:3px;border-radius:8px}
+@media (max-width:980px){.wtbf-grid{grid-template-columns:1fr 1fr;gap:30px}.wtbf-col-brand{grid-column:1 / -1}.wtbf{padding:32px 26px 20px}}
+@media (max-width:560px){.wtbf-grid{grid-template-columns:1fr}.wtbf{padding:28px 20px 18px;border-radius:24px}.wtbf-bottom{flex-direction:column;align-items:flex-start}}
+@media (prefers-reduced-motion:reduce){.wtbf-list a{transition:none}.wtbf-list a:hover{transform:none}}
+</style>
+<div class="wtbf-wrap">
+<footer class="wtbf">
+  <div class="wtbf-grid">
+    <div class="wtbf-col-brand">
+      <a class="wtbf-brand" href="/" aria-label="Working Tools Box home">
+        <span class="wtbf-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="url(#wtbfGrad)"/>
             <path d="M12 2v20M3 7l9 5 9-5" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
-            <defs>
-              <linearGradient id="brandGradFooter" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#2563eb"/>
-                <stop offset=".5" stop-color="#8b5cf6"/>
-                <stop offset="1" stop-color="#ec4899"/>
-              </linearGradient>
-            </defs>
+            <defs><linearGradient id="wtbfGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#2563eb"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
           </svg>
         </span>
-        <span class="brand-text">
-          <span class="brand-name">Working <em>Tools Box</em></span>
-          <span class="brand-tagline">Tools for a Smarter Web</span>
+        <span class="wtbf-text">
+          <span class="wtbf-name">Working <em>Tools Box</em></span>
+          <span class="wtbf-tag">Tools for a Smarter Web</span>
         </span>
       </a>
-
-      <nav class="footer-nav" aria-label="Footer navigation">
-        <a href="/">Home</a>
-        <a href="/#tools">All Tools</a>
-      </nav>
+      <p class="wtbf-about">Free online tools for images, PDFs, video and more. Open a tool, use it, and get your result in seconds.</p>
+      <div class="wtbf-chips">
+        <span class="wtbf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free to use</span>
+        <span class="wtbf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Runs in your browser</span>
+      </div>
     </div>
 
-    <div class="footer-bottom">
-      <p>&copy; <span data-current-year></span> Working Tools Box. All rights reserved.</p>
+    <nav aria-label="Image tools">
+      <h2 class="wtbf-title">Image Tools</h2>
+      <ul class="wtbf-list">
+        <li><a href="/tools/image-compressor/">Image Compressor</a></li>
+        <li><a href="/tools/image-resizer/">Image Resizer</a></li>
+        <li><a href="/tools/image-converter/">Image Converter</a></li>
+        <li><a href="/tools/image-cropper/">Image Cropper</a></li>
+        <li><a href="/tools/image-background-remover/">Background Remover</a></li>
+        <li><a href="/tools/image-sharpener-upscaler/">Sharpener &amp; Upscaler</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="PDF and document tools">
+      <h2 class="wtbf-title">PDF &amp; Documents</h2>
+      <ul class="wtbf-list">
+        <li><a href="/tools/pdf-compressor/">PDF Compressor</a></li>
+        <li><a href="/tools/pdf-merger-splitter/">PDF Merger &amp; Splitter</a></li>
+        <li><a href="/tools/pdf-to-image/">PDF to Image</a></li>
+        <li><a href="/tools/image-to-pdf/">Image to PDF</a></li>
+        <li><a href="/tools/image-to-text-ocr/">Image to Text (OCR)</a></li>
+        <li><a href="/tools/text-diff-checker/">Text Diff Checker</a></li>
+      </ul>
+    </nav>
+
+    <nav aria-label="Video and creative tools">
+      <h2 class="wtbf-title">Video &amp; Creative</h2>
+      <ul class="wtbf-list">
+        <li><a href="/tools/video-trimmer/">Video Trimmer</a></li>
+        <li><a href="/tools/video-to-gif-converter/">Video to GIF</a></li>
+        <li><a href="/tools/photo-slideshow-maker/">Photo Slideshow Maker</a></li>
+        <li><a href="/tools/qr-code-generator/">QR Code Generator</a></li>
+        <li><a href="/tools/meme-generator/">Meme Generator</a></li>
+        <li><a href="/tools/favicon-generator/">Favicon Generator</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="wtbf-bottom">
+    <p>&copy; <span data-wtb-year data-current-year></span> Working Tools Box. All rights reserved.</p>
+    <div class="wtbf-mini">
+      <a class="wtbf-pill" href="/#tools">Browse all tools</a>
     </div>
   </div>
 </footer>
+</div>

@@ -1,33 +1,80 @@
-<header class="site-header">
-  <div class="nav container">
-    <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="url(#brandGrad)"/>
+<style>
+#site-header{position:sticky;top:0;z-index:1000;padding:12px 16px 0;background:transparent}
+.wtbh,.wtbh *{box-sizing:border-box}
+.wtbh{--wtbh-ink:#2a1f6b;--wtbh-soft:#5b4fa3;--wtbh-line:rgba(124,58,237,.16);position:relative;max-width:1180px;margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.3}
+.wtbh-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 14px 10px 18px;border-radius:26px;border:1px solid var(--wtbh-line);background:linear-gradient(120deg,rgba(255,255,255,.96) 0%,rgba(246,241,255,.94) 55%,rgba(253,240,250,.94) 100%);box-shadow:0 12px 34px rgba(124,58,237,.14),0 2px 6px rgba(37,99,235,.06);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.wtbh a{text-decoration:none}
+.wtbh-brand{display:flex;align-items:center;gap:11px;color:var(--wtbh-ink);flex:0 0 auto}
+.wtbh-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#fff;border:1px solid var(--wtbh-line);box-shadow:0 4px 12px rgba(124,58,237,.14)}
+.wtbh-text{display:flex;flex-direction:column;gap:2px}
+.wtbh-name{font-size:19px;font-weight:800;letter-spacing:-.2px;color:var(--wtbh-ink)}
+.wtbh-name em{font-style:normal;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wtbh-tag{font-size:12px;font-weight:500;color:var(--wtbh-soft)}
+.wtbh-nav{display:flex;align-items:center;gap:4px}
+.wtbh-link{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--wtbh-soft);border:1px solid transparent;transition:background .18s,color .18s,border-color .18s,box-shadow .18s}
+.wtbh-link svg{width:18px;height:18px;flex:0 0 auto}
+.wtbh-link:hover{background:#fff;border-color:var(--wtbh-line);color:#6d28d9}
+.wtbh-link[aria-current="page"]{color:#fff;background:linear-gradient(120deg,#7c3aed 0%,#5b5bf0 55%,#2563eb 100%);box-shadow:0 8px 18px rgba(99,70,240,.34)}
+.wtbh-cta{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-size:14.5px;font-weight:700;color:#fff!important;background:linear-gradient(120deg,#d946ef 0%,#8b5cf6 52%,#2563eb 100%);box-shadow:0 10px 22px rgba(139,92,246,.36);transition:transform .18s,box-shadow .18s;white-space:nowrap}
+.wtbh-cta svg{width:17px;height:17px}
+.wtbh-cta:hover{transform:translateY(-1px);box-shadow:0 14px 26px rgba(139,92,246,.44)}
+.wtbh-toggle{display:none;align-items:center;justify-content:center;width:44px;height:44px;border-radius:14px;border:1px solid var(--wtbh-line);background:#fff;color:#6d28d9;cursor:pointer;padding:0}
+.wtbh-toggle svg{width:22px;height:22px}
+.wtbh-toggle .wtbh-x{display:none}
+.wtbh.wtbh-open .wtbh-toggle .wtbh-x{display:block}
+.wtbh.wtbh-open .wtbh-toggle .wtbh-m{display:none}
+.wtbh a:focus-visible,.wtbh-toggle:focus-visible{outline:3px solid #8b5cf6;outline-offset:2px}
+@media (max-width:980px){
+  .wtbh-toggle{display:inline-flex}
+  .wtbh-panel{position:absolute;left:0;right:0;top:calc(100% + 10px);display:none;flex-direction:column;gap:6px;padding:14px;border-radius:24px;border:1px solid var(--wtbh-line);background:linear-gradient(160deg,#fff 0%,#f6f1ff 60%,#fdf0fa 100%);box-shadow:0 18px 40px rgba(124,58,237,.2)}
+  .wtbh.wtbh-open .wtbh-panel{display:flex}
+  .wtbh-nav{flex-direction:column;align-items:stretch;gap:6px}
+  .wtbh-link{padding:13px 16px;font-size:15.5px}
+  .wtbh-cta{justify-content:center;padding:14px 20px}
+}
+@media (max-width:420px){.wtbh-tag{display:none}.wtbh-name{font-size:17px}}
+@media (min-width:981px){.wtbh-panel{display:flex;align-items:center;gap:14px}}
+@media (prefers-reduced-motion:reduce){.wtbh-link,.wtbh-cta{transition:none}.wtbh-cta:hover{transform:none}}
+</style>
+<header class="wtbh" id="wtbh">
+  <div class="wtbh-bar">
+    <a class="wtbh-brand" href="/" aria-label="Working Tools Box home">
+      <span class="wtbh-mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="url(#wtbhGrad)"/>
           <path d="M12 2v20M3 7l9 5 9-5" stroke="#fff" stroke-width="1.2" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="brandGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#2563eb"/>
-              <stop offset=".5" stop-color="#8b5cf6"/>
-              <stop offset="1" stop-color="#ec4899"/>
-            </linearGradient>
-          </defs>
+          <defs><linearGradient id="wtbhGrad" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#2563eb"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs>
         </svg>
       </span>
-      <span class="brand-text">
-        <span class="brand-name">Working <em>Tools Box</em></span>
-        <span class="brand-tagline">Tools for a Smarter Web</span>
+      <span class="wtbh-text">
+        <span class="wtbh-name">Working <em>Tools Box</em></span>
+        <span class="wtbh-tag">Tools for a Smarter Web</span>
       </span>
     </a>
 
-    <nav aria-label="Main navigation">
-      <a href="/" aria-current="page">Home</a>
-      <a href="/#tools">Tools</a>
-    </nav>
+    <button class="wtbh-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="wtbh-panel">
+      <svg class="wtbh-m" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      <svg class="wtbh-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
 
-    <a class="button button-primary nav-cta" href="/#tools">
-      <span>Explore Tools</span>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </a>
+    <div class="wtbh-panel" id="wtbh-panel">
+      <nav class="wtbh-nav" aria-label="Main navigation">
+        <a class="wtbh-link" href="/" data-wtb-home>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>Home
+        </a>
+        <a class="wtbh-link" href="/#image-tools">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 9"/></svg>Image Tools
+        </a>
+        <a class="wtbh-link" href="/#video-tools">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="13" height="14" rx="3"/><path d="M16 10l5-3v10l-5-3z"/></svg>Video Tools
+        </a>
+        <a class="wtbh-link" href="/#utility-tools">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.6 2.6-2.4-.6-.6-2.4z"/></svg>Utility Tools
+        </a>
+      </nav>
+      <a class="wtbh-cta" href="/#tools">Explore Tools
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </header>
