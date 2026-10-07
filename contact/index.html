@@ -287,7 +287,7 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
         <div class="pg-panel-body">
           <h2 id="form-title">Send us a message</h2>
           <p class="pg-sub">Fill in the form and we will get back to you by email.</p>
-          <form class="pg-form" id="cform" novalidate>
+          <form class="pg-form" id="cform" action="https://formsubmit.co/muma90748@gmail.com" method="POST" novalidate>
             <div class="pg-field"><label for="cf-name">Your name</label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg><input class="pg-input" id="cf-name" name="name" type="text" placeholder="Your name" autocomplete="name" required maxlength="80"></div>
             <div class="pg-field"><label for="cf-email">Your email</label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M3.5 7.5l8.5 6 8.5-6"/></svg><input class="pg-input" id="cf-email" name="email" type="email" placeholder="Your email" autocomplete="email" required maxlength="120"></div>
             <div class="pg-field"><label for="cf-topic">Topic</label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.4 1.1 2.2h5c0-.8.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg>
@@ -299,6 +299,10 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
               </select></div>
             <div class="pg-field"><label for="cf-msg">Your message</label><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-4.7A8 8 0 1 1 21 12z"/><circle cx="8.5" cy="12" r=".6" fill="currentColor"/><circle cx="12" cy="12" r=".6" fill="currentColor"/><circle cx="15.5" cy="12" r=".6" fill="currentColor"/></svg><textarea class="pg-input" id="cf-msg" name="message" placeholder="Write your message here" required minlength="10" maxlength="3000"></textarea></div>
             <input class="pg-hp" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_subject" value="Working Tools Box: New message">
+            <input type="hidden" name="_next" value="https://workingtoolsbox.vercel.app/contact/?sent=1">
             <button class="pg-btn" type="submit" id="cf-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg><span>Send message</span></button>
             <p class="pg-status" id="cf-status" role="status" aria-live="polite"></p>
             <p class="pg-privacy">We only use your details to reply to your message.</p>
@@ -336,30 +340,26 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
     <script>
 (function(){
   var form=document.getElementById('cform'),btn=document.getElementById('cf-btn'),st=document.getElementById('cf-status');
-  if(!form)return;
+  if(!form||!btn||!st)return;
   var label=btn.querySelector('span');
-  function say(msg,cls,html){st.className='pg-status '+(cls||'');if(html){st.innerHTML=msg}else{st.textContent=msg}}
+  function say(msg,cls){st.className='pg-status '+(cls||'');st.textContent=msg;}
+  function reset(){btn.disabled=false;label.textContent='Send message';}
+  if(/[?&]sent=1/.test(location.search)){
+    say('Thank you! Your message has been sent. We will reply soon.','ok');
+    try{history.replaceState(null,'',location.pathname+'#contact-form');}catch(e){}
+    var box=document.getElementById('contact-form');if(box&&box.scrollIntoView)box.scrollIntoView();
+  }
   form.addEventListener('submit',function(e){
-    e.preventDefault();
-    var d=new FormData(form);
-    if(d.get('_honey')){say('Thank you! Your message has been sent.','ok');form.reset();return;}
-    var name=(d.get('name')||'').trim(),email=(d.get('email')||'').trim(),msg=(d.get('message')||'').trim();
-    if(!name){say('Please enter your name.','err');form.name.focus();return;}
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){say('Please enter a valid email address.','err');form.email.focus();return;}
-    if(msg.length<10){say('Please write a message of at least 10 characters.','err');form.message.focus();return;}
-    btn.disabled=true;label.textContent='Sending...';say('');
-    fetch('https://formsubmit.co/ajax/muma90748@gmail.com',{
-      method:'POST',
-      headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body:JSON.stringify({name:name,email:email,topic:d.get('topic'),message:msg,_subject:'Working Tools Box: '+d.get('topic'),_template:'table'})
-    }).then(function(r){return r.json().then(function(j){return {ok:r.ok,j:j}})})
-    .then(function(x){
-      if(x.ok&&(x.j.success===true||x.j.success==='true')){say('Thank you! Your message has been sent. We will reply soon.','ok');form.reset();}
-      else{throw new Error('send failed')}
-    }).catch(function(){
-      say('Sorry, the message could not be sent. Please email us at <a href="mailto:muma90748@gmail.com">muma90748@gmail.com</a>.','err',true);
-    }).then(function(){btn.disabled=false;label.textContent='Send message';});
+    var name=(form.elements['name'].value||'').trim(),email=(form.elements['email'].value||'').trim(),msg=(form.elements['message'].value||'').trim();
+    if(!name){e.preventDefault();say('Please enter your name.','err');form.elements['name'].focus();return;}
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){e.preventDefault();say('Please enter a valid email address.','err');form.elements['email'].focus();return;}
+    if(msg.length<10){e.preventDefault();say('Please write a message of at least 10 characters.','err');form.elements['message'].focus();return;}
+    form.elements['_subject'].value='Working Tools Box: '+form.elements['topic'].value;
+    say('Sending your message...','');
+    label.textContent='Sending...';
+    setTimeout(function(){btn.disabled=true;},0);
   });
+  window.addEventListener('pageshow',function(e){if(e.persisted)reset();});
 })();
 </script>
 </main>
