@@ -534,31 +534,7 @@
 })();
 </script>
 
-<script>
-(function () {
-  "use strict";
-
-  function loadShared(selector, url) {
-    return fetch(url, { credentials: "same-origin" })
-      .then(function (response) {
-        if (!response.ok) throw new Error("Failed to load " + url + " (HTTP " + response.status + ")");
-        return response.text();
-      })
-      .then(function (html) {
-        var target = document.querySelector(selector);
-        if (!target) throw new Error("Missing shared component target: " + selector);
-        target.innerHTML = html;
-      });
-  }
-
-  Promise.all([
-    loadShared("#site-header", "/shared/header.html"),
-    loadShared("#site-footer", "/shared/footer.html")
-  ]).catch(function (error) {
-    console.error("Working Tools Box shared layout error:", error);
-  });
-})();
-</script>
+<script src="/shared/shared.js" defer></script>
 
 </body>
 </html>
