@@ -157,15 +157,27 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://workingtoolsbox.vercel.app/about/</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://workingtoolsbox.vercel.app/privacy-policy/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://workingtoolsbox.vercel.app/contact/</loc>
-    <lastmod>2026-10-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <loc>https://workingtoolsbox.vercel.app/terms/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://workingtoolsbox.vercel.app/disclaimer/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://workingtoolsbox.vercel.app/cookie-policy/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
