@@ -3,29 +3,30 @@
    ========================================================== */
 
 :root{
-  --grad-a:#2563eb;
-  --grad-b:#8b5cf6;
+  --grad-a:#7c3aed;
+  --grad-b:#c026d3;
   --grad-c:#ec4899;
   --gradient: linear-gradient(90deg, var(--grad-a), var(--grad-b), var(--grad-c));
-  --ink:#0f172a;
-  --muted:#64748b;
-  --border:#e5e7eb;
-  --surface:#ffffff;
-  --surface-soft:#f8fafc;
-  --shadow-sm: 0 1px 2px rgba(15,23,42,.04);
-  --shadow-md: 0 8px 24px rgba(15,23,42,.08);
-  --shadow-lg: 0 20px 45px rgba(76,29,149,.12);
+  --ink:#2a1f4d;
+  --muted:#6b5b95;
+  --border:#ecd5f5;
+  --surface:rgba(255,255,255,.84);
+  --surface-soft:#fbf3ff;
+  --shadow-sm: 0 2px 8px rgba(124,58,237,.07);
+  --shadow-md: 0 10px 26px rgba(168,85,247,.18);
+  --shadow-lg: 0 22px 48px rgba(192,38,211,.22);
   --radius-lg: 20px;
   --radius-md: 14px;
   --radius-sm: 10px;
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:100px;background:#fbf0fc}
 body{
   margin:0;
+  position:relative;
   font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  background:var(--surface);
+  background:transparent;
   color:var(--ink);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
@@ -46,64 +47,10 @@ img,svg{display:block}
 /* ---------- Focus & accessibility ---------- */
 a:focus-visible,
 button:focus-visible{
-  outline:3px solid #93c5fd;
+  outline:3px solid #c084fc;
   outline-offset:2px;
   border-radius:8px;
 }
-
-/* ---------- Header ---------- */
-.site-header{
-  position:sticky;
-  top:0;
-  z-index:30;
-  background:rgba(255,255,255,.85);
-  border-bottom:1px solid var(--border);
-  backdrop-filter:blur(14px);
-  -webkit-backdrop-filter:blur(14px);
-}
-.nav{
-  min-height:76px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-.brand-mark{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  flex-shrink:0;
-  width:38px;
-  height:38px;
-  border-radius:10px;
-  background:var(--surface-soft);
-  border:1px solid var(--border);
-}
-.brand-text{display:flex;flex-direction:column;line-height:1.15}
-.brand-name{font-weight:800;font-size:17px;letter-spacing:-.3px;color:var(--ink)}
-.brand-name em{font-style:normal;background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
-.brand-tagline{font-size:11px;color:var(--muted);font-weight:600}
-
-nav[aria-label="Main navigation"]{
-  display:flex;
-  gap:28px;
-  font-size:14px;
-  font-weight:700;
-  color:#334155;
-}
-nav[aria-label="Main navigation"] a{padding:6px 2px;border-bottom:2px solid transparent}
-nav[aria-label="Main navigation"] a:hover,
-nav[aria-label="Main navigation"] a[aria-current="page"]{
-  color:var(--grad-a);
-  border-bottom-color:var(--grad-a);
-}
-
-.nav-cta{display:none}
 
 /* ---------- Buttons ---------- */
 .button{
@@ -156,8 +103,8 @@ nav[aria-label="Main navigation"] a[aria-current="page"]{
   font-size:12px;
   font-weight:800;
   letter-spacing:1.2px;
-  color:var(--grad-a);
-  background:#eef2ff;
+  color:#7c3aed;
+  background:linear-gradient(90deg,#f3e8ff,#fce7f3);
   padding:6px 12px;
   border-radius:999px;
 }
@@ -251,8 +198,8 @@ h4{font-size:19px;color:var(--ink)}
 }
 .tool-card:hover{
   box-shadow:var(--shadow-lg);
-  border-color:#ddd6fe;
-  transform:translateY(-2px);
+  border-color:#e6b1f3;
+  transform:translateY(-4px);
 }
 
 .tool-card-main{
@@ -301,39 +248,19 @@ h4{font-size:19px;color:var(--ink)}
 }
 .badge-green{background:#dcfce7;color:#166534}
 .badge-blue{background:#dbeafe;color:#1d4ed8}
-.badge-purple{background:#ede9fe;color:#6d28d9}
-.badge-gray{background:#f1f5f9;color:#475569}
+.badge-purple{background:#f3e8ff;color:#6d28d9}
+.badge-gray{background:#f5ecfb;color:#5b4a7d}
 
 .tag-list{display:flex;flex-wrap:wrap;gap:8px}
 .tag-list li{
   font-size:12px;
   font-weight:700;
-  color:#334155;
-  background:var(--surface-soft);
+  color:#4a3a73;
+  background:#fbf3ff;
   border:1px solid var(--border);
   padding:5px 11px;
   border-radius:999px;
 }
-
-/* ---------- Footer ---------- */
-.site-footer{
-  border-top:1px solid var(--border);
-  background:var(--surface-soft);
-}
-.footer-inner{padding:36px 0 26px}
-.footer-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
-  padding-bottom:24px;
-  border-bottom:1px solid var(--border);
-}
-.footer-brand .brand-mark{background:var(--surface)}
-.footer-nav{display:flex;gap:22px;font-size:14px;font-weight:700}
-.footer-nav a:hover{color:var(--grad-a)}
-.footer-bottom{padding-top:20px;color:var(--muted);font-size:13px;text-align:center}
 
 /* ---------- Responsive ---------- */
 @media (max-width:900px){
@@ -342,19 +269,153 @@ h4{font-size:19px;color:var(--ink)}
 }
 
 @media (max-width:640px){
-  .nav{min-height:64px}
-  .brand-tagline{display:none}
-  nav[aria-label="Main navigation"]{gap:16px;font-size:13px}
   .hero-actions{flex-direction:column;align-items:stretch}
   .hero-actions .button{width:100%}
   .section-heading{flex-direction:column;align-items:flex-start}
   .tool-card{grid-template-columns:1fr;align-items:stretch}
   .tool-card-main{flex-direction:column}
   .tool-title-row{justify-content:space-between}
-  .footer-top{flex-direction:column;align-items:flex-start}
 }
 
 @media (min-width:641px) and (max-width:900px){
   .tool-card{grid-template-columns:1fr;align-items:stretch}
   .button-open{width:auto;align-self:flex-start;margin-top:6px}
 }
+
+
+/* ==========================================================
+   Soft purple-pink theme + page-wide animation
+   (transform / opacity only, so it stays smooth on phones)
+   ========================================================== */
+
+/* Drifting pastel colour clouds behind everything */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  z-index:-2;
+  pointer-events:none;
+  background:
+    radial-gradient(38% 34% at 18% 22%, rgba(196,150,255,.55), transparent 70%),
+    radial-gradient(34% 32% at 82% 18%, rgba(255,160,220,.50), transparent 70%),
+    radial-gradient(40% 36% at 72% 80%, rgba(160,175,255,.45), transparent 70%),
+    radial-gradient(36% 32% at 20% 85%, rgba(255,190,235,.46), transparent 70%),
+    linear-gradient(160deg,#fdf3fc 0%,#f6ecff 50%,#fdeefa 100%);
+  will-change:transform;
+  animation:wtb-drift 26s ease-in-out infinite alternate;
+}
+@keyframes wtb-drift{
+  0%  {transform:translate3d(-3%,-2%,0) scale(1) rotate(0deg)}
+  50% {transform:translate3d(3%,2%,0) scale(1.06) rotate(2deg)}
+  100%{transform:translate3d(-2%,3%,0) scale(1.02) rotate(-2deg)}
+}
+
+/* Tiny bubbles slowly floating up the whole page */
+body::after{
+  content:"";
+  position:fixed;
+  left:0;
+  top:0;
+  width:100%;
+  height:calc(100% + 640px);
+  z-index:-1;
+  pointer-events:none;
+  background-image:
+    radial-gradient(circle, rgba(217,70,239,.30) 0 5px, transparent 6px),
+    radial-gradient(circle, rgba(139,92,246,.27) 0 4px, transparent 5px),
+    radial-gradient(circle, rgba(236,72,153,.24) 0 7px, transparent 8px),
+    radial-gradient(circle, rgba(96,165,250,.28) 0 3px, transparent 4px);
+  background-size:360px 640px, 610px 640px, 530px 640px, 450px 320px;
+  background-position:40px 80px, 260px 330px, 90px 470px, 150px 40px;
+  will-change:transform;
+  animation:wtb-rise 48s linear infinite;
+}
+@keyframes wtb-rise{
+  from{transform:translate3d(0,0,0)}
+  to  {transform:translate3d(0,-640px,0)}
+}
+
+/* Shimmering gradient headline word */
+.text-gradient{
+  background:linear-gradient(90deg,#7c3aed,#c026d3,#ec4899,#7c3aed);
+  background-size:200% 100%;
+  -webkit-background-clip:text;
+  background-clip:text;
+  color:transparent;
+  animation:wtb-shine 7s linear infinite;
+}
+@keyframes wtb-shine{
+  from{background-position:0% 0}
+  to  {background-position:200% 0}
+}
+
+/* Glow that gently breathes behind the hero picture */
+.hero-visual::before{
+  content:"";
+  position:absolute;
+  inset:6% 4%;
+  border-radius:50%;
+  z-index:0;
+  background:radial-gradient(circle, rgba(217,70,239,.30), rgba(139,92,246,.18) 45%, transparent 72%);
+  animation:wtb-pulse 5.5s ease-in-out infinite;
+}
+.hero-visual svg{position:relative;z-index:1}
+@keyframes wtb-pulse{
+  0%,100%{transform:scale(.92);opacity:.75}
+  50%    {transform:scale(1.08);opacity:1}
+}
+
+/* Sheen that glides across the gradient buttons */
+.button-primary,
+.button-open{position:relative;overflow:hidden}
+.button-primary::after,
+.button-open::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(110deg, transparent 35%, rgba(255,255,255,.45) 50%, transparent 65%);
+  transform:translateX(-130%);
+  animation:wtb-sheen 5s ease-in-out infinite;
+}
+.tool-card:nth-child(3n+2) .button-open::after{animation-delay:1.2s}
+.tool-card:nth-child(3n) .button-open::after{animation-delay:2.4s}
+@keyframes wtb-sheen{
+  0%,55%{transform:translateX(-130%)}
+  100%  {transform:translateX(130%)}
+}
+
+/* Category icons bob softly, tool icons tilt on hover */
+.category-icon{animation:wtb-bob 4.5s ease-in-out infinite}
+@keyframes wtb-bob{
+  0%,100%{transform:translateY(0)}
+  50%    {transform:translateY(-3px)}
+}
+.tool-icon{transition:transform .25s ease}
+.tool-card:hover .tool-icon{transform:rotate(-8deg) scale(1.08)}
+
+/* Cards float into view while you scroll (browsers that support it) */
+@supports (animation-timeline: view()){
+  .tool-card{
+    animation:wtb-reveal linear both;
+    animation-timeline:view();
+    animation-range:entry 0% entry 38%;
+  }
+  @keyframes wtb-reveal{
+    from{opacity:0;translate:0 28px;scale:.97}
+    to  {opacity:1;translate:0 0;scale:1}
+  }
+}
+
+/* Respect people who prefer no motion */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  body::before,
+  body::after,
+  .text-gradient,
+  .hero-visual::before,
+  .category-icon,
+  .tool-card{animation:none!important}
+  .button-primary::after,
+  .button-open::after{display:none}
+   }
