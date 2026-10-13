@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://workingtoolsbox.vercel.app/sitemap.xml
+Sitemap: https://www.wtoolsbox.com/sitemap.xml
