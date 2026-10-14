@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Tic-Tac-Toe Online Free | vs Computer | Working Tools Box</title>
+<meta name="description" content="Play Tic-Tac-Toe online free on a 3D board. Challenge a friend on one device or the computer on Easy, Medium or Hard. No download, no sign-up.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.wtoolsbox.com/games/tic-tac-toe/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play Tic-Tac-Toe Online Free | vs Computer | Working Tools Box">
+<meta property="og:description" content="Play Tic-Tac-Toe online free on a 3D board. Challenge a friend on one device or the computer on Easy, Medium or Hard. No download, no sign-up.">
+<meta property="og:url" content="https://www.wtoolsbox.com/games/tic-tac-toe/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Play Tic-Tac-Toe Online Free | vs Computer | Working Tools Box">
+<meta name="twitter:description" content="Play Tic-Tac-Toe online free on a 3D board. Challenge a friend on one device or the computer on Easy, Medium or Hard. No download, no sign-up.">
+
+<!-- Structured Data: game -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "WebApplication"
+  ],
+  "name": "Tic-Tac-Toe Online",
+  "url": "https://www.wtoolsbox.com/games/tic-tac-toe/",
+  "description": "Play Tic-Tac-Toe online free on a 3D board. Challenge a friend on one device or the computer on Easy, Medium or Hard. No download, no sign-up.",
+  "genre": "Strategy",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "gamePlatform": "Web browser",
+  "playMode": [
+    "SinglePlayer",
+    "MultiPlayer"
+  ],
+  "numberOfPlayers": {
+    "@type": "QuantitativeValue",
+    "minValue": 1,
+    "maxValue": 2
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- Structured Data: FAQPage (text identical to the visible FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Tic-Tac-Toe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tic-Tac-Toe, also called Noughts and Crosses, is a two-player game on a 3 by 3 grid. One player uses X and the other uses O. The first player to make three in a row wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I play Tic-Tac-Toe online here?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the page, choose Play vs Computer or 2 Players, and the game starts. Tap an empty square to place your piece. X goes first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the rules of Tic-Tac-Toe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Players take turns placing one piece on an empty square. Three of your pieces in a row, in a column or on a diagonal, wins. If all nine squares are full and nobody has won, the game is a draw."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Tic-Tac-Toe game free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is free to play, with no download, no account and no sign-up. It works in your browser."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play with a friend on one device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose 2 Players and take turns on the same screen. This is play on the same device. It is not online multiplayer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do the difficulty levels do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Easy plays randomly about half of the time and never blocks. Medium takes wins and usually blocks your wins, but sometimes slips. Hard plays perfectly and never loses. The computer follows the same rules as you and does not cheat."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The 3D board scales to small screens, and every square is large enough to tap easily. It works on phones, tablets and computers."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is a good strategy tip for Tic-Tac-Toe?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Start in the centre or in a corner. Before each move, check if you can win, and check if you must block. Try to make a fork, which is a move that creates two threats at once."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I beat the Hard computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No one can win against perfect play. The best result against Hard is a draw. If you make no mistakes, you will draw every game. Try Medium if you want to practise winning."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --grad-main: linear-gradient(135deg, #4361ee 0%, #7209b7 100%);
+    --grad-text: linear-gradient(135deg, #7209b7 0%, #f72585 100%);
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-alt: #faf9fd;
+    --color-border: #e6e1f2;
+    --color-text: #1f1c2e;
+    --color-text-muted: #625d76;
+    --color-success-bg: #eafaf0;
+    --color-success-text: #12794a;
+    --color-success-border: #b7ecd0;
+    --color-error-bg: #fdeef0;
+    --color-error-text: #b3123a;
+    --color-error-border: #f6c3d0;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --shadow-card: 0 10px 30px rgba(76, 29, 149, 0.08), 0 2px 8px rgba(76, 29, 149, 0.05);
+    --shadow-btn-primary: 0 8px 20px rgba(114, 9, 183, 0.35), 0 2px 4px rgba(67, 97, 238, 0.25);
+    --shadow-btn-primary-hover: 0 12px 26px rgba(114, 9, 183, 0.42), 0 4px 8px rgba(67, 97, 238, 0.3);
+    --shadow-btn-secondary: 0 4px 12px rgba(76, 29, 149, 0.08);
+    --focus-ring: 0 0 0 3px rgba(114, 9, 183, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Inter", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: #7209b7; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: #1f1c2e;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 0 0 8px 0;
+    z-index: 1000;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .main-nav {
+    display: flex;
+    gap: 24px;
+  }
+  .main-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .main-nav a:hover { border-bottom-color: #f72585; }
+
+  /* ---------- Layout ---------- */
+  .page-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 56px 0 36px;
+  }
+  h1.hero-title {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-desc {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+  }
+
+  .gradient-heading {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Tool card ---------- */
+  .tool-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 32px;
+    margin-bottom: 56px;
+  }
+  @media (max-width: 640px) {
+    .tool-card { padding: 20px; border-radius: var(--radius-md); }
+  }
+
+  .tool-heading {
+    font-size: 1.6rem;
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 860px) {
+    .tool-grid.has-image {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .panel-heading {
+    font-size: 1.05rem;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- Upload area ---------- */
+  .upload-zone {
+    border: 2px dashed #c9b9ec;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: 36px 20px;
+    text-align: center;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .upload-zone.dragover {
+    border-color: #7209b7;
+    background: #f5eefc;
+  }
+  .upload-icon {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 14px;
+    color: #7209b7;
+  }
+  .upload-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+  }
+  .upload-sub {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin: 0 0 18px;
+  }
+  .upload-formats {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 0.98rem;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .btn-primary {
+    background: var(--grad-main);
+    color: #fff;
+    box-shadow: var(--shadow-btn-primary);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 1px 1px auto 1px;
+    height: 40%;
+    border-radius: var(--radius-sm) var(--radius-sm) 40% 40% / var(--radius-sm) var(--radius-sm) 100% 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-btn-primary-hover);
+    filter: brightness(1.03);
+  }
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(114, 9, 183, 0.3);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .btn-secondary {
+    background: #ffffff;
+    color: #4c1d95;
+    border: 1.5px solid #b79ee8;
+    box-shadow: var(--shadow-btn-secondary);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(76, 29, 149, 0.14);
+    border-color: #7209b7;
+    background: #faf7ff;
+  }
+  .btn-secondary:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-block { width: 100%; }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .btn-row .btn { flex: 1 1 160px; }
+
+  /* ---------- Form controls ---------- */
+  .field {
+    margin-bottom: 18px;
+  }
+  .field label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--color-text);
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.98rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background: #fff;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  }
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #7209b7;
+    box-shadow: var(--focus-ring);
+  }
+  input[type="number"]:disabled,
+  select:disabled {
+    background: #f4f2f8;
+    color: #a29cb5;
+    cursor: not-allowed;
+  }
+
+  .checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .checkbox-field input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #7209b7;
+    cursor: pointer;
+  }
+  .checkbox-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: #7209b7;
+    cursor: pointer;
+  }
+  .range-value {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 6px;
+  }
+  fieldset legend {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- Info rows ---------- */
+  .dim-info {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+  }
+  .dim-info dt {
+    color: var(--color-text-muted);
+    font-weight: 600;
+    display: inline;
+  }
+  .dim-info dd {
+    display: inline;
+    margin: 0 0 0 6px;
+    font-weight: 700;
+  }
+  .dim-pair { display: flex; gap: 6px; }
+
+  /* ---------- Preview ---------- */
+  .preview-box {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: 16px;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .preview-box img {
+    max-height: 380px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  .preview-placeholder {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- Status / messages ---------- */
+  .status-msg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-top: 18px;
+  }
+  .status-msg[hidden] { display: none; }
+  .status-loading {
+    background: #f0eefc;
+    color: #4c1d95;
+    border: 1px solid #dcd0f7;
+  }
+  .status-success {
+    background: var(--color-success-bg);
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
+  }
+  .status-error {
+    background: var(--color-error-bg);
+    color: var(--color-error-text);
+    border: 1px solid var(--color-error-border);
+  }
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2.5px solid #cdb9ee;
+    border-top-color: #7209b7;
+    animation: spin 0.7s linear infinite;
+    flex: 0 0 auto;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .status-icon { flex: 0 0 auto; }
+
+  /* ---------- Content sections ---------- */
+  .content-section {
+    margin-bottom: 48px;
+  }
+  .content-section h2 {
+    font-size: 1.55rem;
+    margin-bottom: 14px;
+  }
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .keyword-tags span{display:inline-block;background:var(--color-surface-alt);border:1px solid var(--color-border);color:var(--color-text-muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;}
+  .content-section p {
+    color: var(--color-text-muted);
+    max-width: 760px;
+  }
+
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .step-card {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--grad-main);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .step-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+  }
+  .step-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    border-top: 1px solid var(--color-border);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #7209b7;
+    flex: 0 0 auto;
+    transition: transform 0.15s ease;
+  }
+  .faq-item[open] summary::after {
+    content: "\2212";
+  }
+  .faq-item p {
+    margin: 0 0 18px;
+    padding: 0 4px;
+    color: var(--color-text-muted);
+  }
+
+  .visually-hidden-heading {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+  }
+
+  .dim-info-spaced { margin-top: 16px; }
+  .quality-field-hidden { display: none !important; }
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+  .site-footer .site-header-inner{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;}
+  .site-footer .main-nav{display:flex;gap:18px;}
+  .site-footer .main-nav a{color:var(--color-text-muted);text-decoration:none;font-weight:600;}
+  .site-footer .main-nav a:hover{color:#7209b7;}
+  .site-footer .brand{font-weight:800;text-decoration:none;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+  /* ===== GAME EXTRAS (uses only existing site variables) ===== */
+  .game-card{position:relative}
+  .screen[hidden],.end-overlay[hidden]{display:none}
+  .screen-title{text-align:center;font-size:1.2rem;margin:4px 0 18px}
+  .mode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;max-width:780px;margin:0 auto 16px}
+  .mode-card{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:24px 16px;border:1.5px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface-alt);cursor:pointer;font:inherit;color:var(--color-text);transition:transform .15s,border-color .15s,box-shadow .15s}
+  .mode-card:hover{transform:translateY(-2px);border-color:#7209b7;box-shadow:var(--shadow-card)}
+  .mode-icon{width:54px;height:54px;border-radius:16px;background:var(--grad-main);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+  .mode-icon svg{width:28px;height:28px}
+  .mode-title{font-weight:800;font-size:1.05rem}
+  .mode-sub{font-size:.85rem;color:var(--color-text-muted)}
+  .screen-actions{display:flex;justify-content:center}
+  .hud{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
+  .turn-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--color-surface-alt);border:1px solid var(--color-border);font-weight:700;font-size:.92rem}
+  .turn-dot{width:12px;height:12px;border-radius:50%;background:#7209b7}
+  .game-status{font-size:.9rem;color:var(--color-text-muted);flex:1 1 180px}
+  .game-status:empty{display:none}
+  .hud-right{display:flex;gap:8px;margin-left:auto}
+  .mini-btn{border:1.5px solid var(--color-border);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;font-size:.85rem;font-weight:700;color:var(--color-text)}
+  .mini-btn:hover{border-color:#7209b7;color:#7209b7}
+  .game-root{display:flex;justify-content:center;align-items:flex-start;min-height:280px;touch-action:manipulation}
+  .end-overlay{position:fixed;inset:0;z-index:3000;background:rgba(31,28,46,.62);display:flex;align-items:center;justify-content:center;padding:16px}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+  .end-card{position:relative;background:#fff;border-radius:var(--radius-lg);padding:30px 26px;max-width:420px;width:100%;text-align:center;box-shadow:var(--shadow-card);animation:pop .35s ease}
+  .end-card h3{margin:10px 0 4px;font-size:1.7rem;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .end-card p{margin:0 0 6px;color:var(--color-text-muted)}
+  .end-card .btn-row{justify-content:center}
+  .trophy{width:74px;height:74px;margin:0 auto}
+  @keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.end-card{animation:none}.mode-card{transition:none}}
+  @media (max-width:560px){.tool-card{padding:20px 14px}}
+  /* ===== 3D LAYER (game card only; site colours and variables, base CSS untouched) ===== */
+  .keyword-tags a{display:inline-block;background:var(--color-surface-alt);border:1px solid var(--color-border);color:#7209b7;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;text-decoration:none}.keyword-tags a:hover{border-color:#7209b7}
+  .game-card .mode-grid{perspective:900px;padding-bottom:10px}
+  .game-card .mode-card{border-color:transparent;background:linear-gradient(180deg,#ffffff 0%,#efe8fb 100%);box-shadow:0 7px 0 #b79ee8,0 14px 22px rgba(76,29,149,.22);transition:transform .12s ease,box-shadow .12s ease}
+  .game-card .mode-card:hover{border-color:transparent;transform:translateY(-3px) rotateX(7deg);box-shadow:0 10px 0 #b79ee8,0 20px 28px rgba(76,29,149,.26)}
+  .game-card .mode-card:active{transform:translateY(5px);box-shadow:0 2px 0 #b79ee8,0 4px 8px rgba(76,29,149,.2)}
+  .game-card .mode-icon{box-shadow:0 5px 0 #4a0a78,0 9px 14px rgba(67,97,238,.35)}
+  .game-card .btn-primary{box-shadow:0 6px 0 #4a0a78,0 12px 22px rgba(114,9,183,.35)}
+  .game-card .btn-primary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 0 #4a0a78,0 16px 26px rgba(114,9,183,.42)}
+  .game-card .btn-primary:active:not(:disabled){transform:translateY(5px);box-shadow:0 1px 0 #4a0a78,0 3px 6px rgba(114,9,183,.3)}
+  .game-card .btn-primary:disabled{box-shadow:0 4px 0 #9d86c4;filter:grayscale(.35)}
+  .game-card .btn-secondary{box-shadow:0 6px 0 #b79ee8,0 10px 16px rgba(76,29,149,.14)}
+  .game-card .btn-secondary:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 8px 0 #b79ee8,0 14px 22px rgba(76,29,149,.18)}
+  .game-card .btn-secondary:active:not(:disabled){transform:translateY(5px);box-shadow:0 1px 0 #b79ee8}
+  .game-card .mini-btn{box-shadow:0 4px 0 #b79ee8;transition:transform .1s ease,box-shadow .1s ease;margin-bottom:4px}
+  .game-card .mini-btn:active{transform:translateY(3px);box-shadow:0 1px 0 #b79ee8}
+  .game-card .end-card .btn-row{margin-bottom:8px}
+  .game-card .turn-pill{box-shadow:0 3px 0 #d8cdf0}
+  .slab3d{position:relative;transform-style:preserve-3d}
+  .slab3d .sf{position:absolute}
+  .slab3d .sf-front{left:0;top:100%;width:100%;height:var(--T);transform-origin:0 0;transform:rotateX(-90deg);background:linear-gradient(180deg,#5a24b0,#33107a)}
+  .slab3d .sf-left{left:0;top:0;width:var(--T);height:100%;transform-origin:0 0;transform:rotateY(90deg);background:linear-gradient(90deg,#33107a,#4a1a96)}
+  .slab3d .sf-right{right:0;top:0;width:var(--T);height:100%;transform-origin:100% 0;transform:rotateY(-90deg);background:linear-gradient(90deg,#4a1a96,#33107a)}
+  .slab3d .sf-bottom{inset:0;transform:translateZ(calc(var(--T) * -1));background:#1f0a4d;box-shadow:0 26px 40px rgba(31,10,77,.35)}
+  @media (prefers-reduced-motion:reduce){.game-card .mode-card,.game-card .mini-btn,.game-card .btn{transition:none}}
+  /* ===== Tic-Tac-Toe 3D board ===== */
+  .t3-scene{--rx:40deg;--rz:0deg;width:min(100%,400px);perspective:1000px;margin:20px auto 34px;padding:0 3%}
+  .t3-board{--T:12px;width:100%;aspect-ratio:1;transform:rotateX(var(--rx)) rotateZ(var(--rz));transition:transform .15s ease-out}
+  .t3-top{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:4%;padding:5%;background:var(--grad-main);transform-style:preserve-3d;box-shadow:inset 0 0 0 3px rgba(255,255,255,.18)}
+  .t3-slot{position:relative;transform-style:preserve-3d;transform:translateZ(var(--z,6px));transition:transform .12s ease}
+  .t3-slot.can:hover,.t3-slot.can:focus-within{--z:16px}
+  .t3-hit{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;border-radius:12px;background:linear-gradient(180deg,#ffffff,#efe8fb);box-shadow:0 6px 0 #a58bdc,0 10px 14px rgba(0,0,0,.28);cursor:pointer;font:inherit}
+  .t3-hit:disabled{cursor:default}
+  .t3-slot.can .t3-hit:active{transform:translateY(3px);box-shadow:0 2px 0 #a58bdc}
+  .t3-slot.win{--z:12px}
+  .t3-slot.win .t3-hit{background:linear-gradient(180deg,#eafaf0,#b7ecd0);box-shadow:0 6px 0 #12794a,0 10px 14px rgba(0,0,0,.28)}
+  .t3-piece{position:absolute;inset:16%;pointer-events:none;transform-style:preserve-3d;animation:t3drop .3s ease-out}
+  .t3-l{position:absolute;inset:0;transform:translateZ(calc(var(--i) * 1.7px));filter:brightness(calc(.58 + var(--i) * .055))}
+  .t3-sh{position:absolute;inset:6%;transform:translateZ(-1px);background:rgba(0,0,0,.3);border-radius:14px;filter:blur(5px)}
+  .t3-x .t3-l::before,.t3-x .t3-l::after{content:"";position:absolute;left:50%;top:-6%;width:24%;height:112%;margin-left:-12%;background:currentColor;border-radius:8px}
+  .t3-x .t3-l::before{transform:rotate(45deg)}
+  .t3-x .t3-l::after{transform:rotate(-45deg)}
+  .t3-o .t3-l{border-radius:50%;background:radial-gradient(circle closest-side,transparent 55%,currentColor 56%)}
+  .t3-slot.win .t3-piece{animation:t3bob .8s ease-in-out infinite alternate}
+  @keyframes t3drop{from{transform:translateZ(90px)}to{transform:translateZ(0)}}
+  @keyframes t3bob{from{transform:translateZ(4px)}to{transform:translateZ(26px)}}
+  @media (prefers-reduced-motion:reduce){.t3-piece,.t3-slot.win .t3-piece{animation:none}.t3-board,.t3-slot{transition:none}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div id="site-header"></div>
+
+<main id="main-content" class="page-wrap">
+
+  <section class="hero">
+    <h1 class="hero-title">Tic-Tac-Toe Online</h1>
+    <p class="hero-desc">Play Tic-Tac-Toe online for free in your browser. Place 3D X and O pieces on a 3D board, play a friend on the same device, or take on the computer on Easy, Medium or Hard.</p>
+  </section>
+
+  <section class="tool-card game-card" aria-labelledby="tool-heading">
+    <h2 id="tool-heading" class="tool-heading gradient-heading">Play Tic-Tac-Toe</h2>
+    <div id="game-app">
+      <div id="screen-mode" class="screen">
+        <h3 class="screen-title">How do you want to play?</h3>
+        <div class="mode-grid" id="mode-grid"></div>
+      </div>
+      <div id="screen-level" class="screen" hidden>
+        <h3 class="screen-title">Choose the computer's level</h3>
+        <div class="mode-grid" id="level-grid"></div>
+        <div class="screen-actions"><button type="button" class="btn btn-secondary" id="level-back">Back</button></div>
+      </div>
+      <div id="screen-play" class="screen" hidden>
+        <div class="hud">
+          <span class="turn-pill" id="turn-pill"></span>
+          <span class="game-status" id="game-status" role="status" aria-live="polite"></span>
+          <div class="hud-right">
+            <button type="button" class="mini-btn" id="sound-btn" aria-pressed="true">Sound: On</button>
+            <button type="button" class="mini-btn" id="menu-btn">Menu</button>
+          </div>
+        </div>
+        <div id="game-root" class="game-root"></div>
+      </div>
+      <div id="end-overlay" class="end-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="end-title">
+        <canvas id="confetti" aria-hidden="true"></canvas>
+        <div class="end-card">
+          <svg class="trophy" viewBox="0 0 64 64" aria-hidden="true"><path id="trophy-fill" fill="#7209b7" d="M18 8h28v14c0 8-6 14-14 14S18 30 18 22V8zM46 12h10v6c0 6-4 10-10 10v-4c3 0 6-2 6-6v-2h-6zM18 12H8v6c0 6 4 10 10 10v-4c-3 0-6-2-6-6v-2h6zM28 38h8v8h8v6H20v-6h8z"/></svg>
+          <h3 id="end-title"></h3>
+          <p id="end-sub"></p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="replay-btn">Play Again</button>
+            <a class="btn btn-secondary" id="home-btn" href="/games/" style="text-decoration:none">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">Play Tic-Tac-Toe Online</h2>
+    <p>Tic-Tac-Toe, also called Noughts and Crosses, is the first board game that many people learn. Here you can play Tic-Tac-Toe online for free, with no download and no sign-up. The board, the X and O pieces and even the buttons are drawn in 3D. Pieces drop onto the board with a soft landing, and a winning line lifts up so you can see it at once.</p><p>You can play with a friend on the same device, or play against the computer. The computer has three levels, Easy, Medium and Hard, so a young player can win and an expert can face a real challenge. Pick a mode and the game starts straight away. When a game ends, you can play again with one tap.</p><p>A match takes less than a minute, which makes Tic-Tac-Toe perfect for a short break. It is also a good first strategy game for kids, because it teaches planning and looking ahead. If you want a game of pure luck, you can also try Snakes &amp; Ladders in 3D on this site.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">How to Play Tic-Tac-Toe (Rules)</h2>
+    <ol class="steps-list">
+      <li class="step-card"><span class="step-number">1</span><h3>The board</h3><p>The board is a grid of 3 by 3 squares, nine squares in total. All squares start empty.</p></li>
+      <li class="step-card"><span class="step-number">2</span><h3>Take turns</h3><p>X always goes first. In Play vs Computer you are X and the computer is O. In 2 Players mode, Player 1 is X and Player 2 is O. On your turn, tap one empty square to place your piece. A piece can never be moved or removed.</p></li>
+      <li class="step-card"><span class="step-number">3</span><h3>Make three in a row</h3><p>The first player to get three of their own pieces in a straight line wins. A line can be across, up and down, or diagonal. There are eight possible lines. The winning line lifts up and turns green.</p></li>
+      <li class="step-card"><span class="step-number">4</span><h3>A draw</h3><p>If all nine squares are full and nobody has three in a row, the game is a draw.</p></li>
+      <li class="step-card"><span class="step-number">5</span><h3>Play again</h3><p>When the game ends, the Play Again button starts a new game with the same mode and level. The Home button takes you to the games page.</p></li>
+    </ol>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">Game Modes and Difficulty</h2>
+    <p>Play vs Computer has three levels. Easy plays random moves about half of the time, and it never blocks you, so it is a good level for beginners and young children. Medium always takes a win when it sees one and usually blocks yours, but it misses about one block in three, it does not plan ahead, and about one move in eight is a random slip. Hard plays perfectly. It checks every possible future and never loses. The best result you can get against Hard is a draw.</p><p>All levels follow the same rules as you. The computer only looks at the board, and it does not cheat. 2 Players mode is for two friends on the same device: pass the phone or share the screen, and take turns. It is not online multiplayer, and players do not connect from different devices.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">Tic-Tac-Toe Tips and Strategy</h2>
+    <p>Take the centre or a corner on your first move. The centre is part of four lines, a corner is part of three lines, and an edge square is part of only two. If the other player takes the centre, answer with a corner. If you go second and the other player starts in a corner, take the centre.</p><p>Try to build a fork. A fork is a move that creates two threats at the same time, so the other player can block only one of them. Before every move, check two things: can I win now, and must I block a win by the other player? Most lost games come from missing one of these two checks.</p><p>Common mistakes: playing on an edge square first, forgetting to block a diagonal, and trying to win too early instead of making a safe move. Against Hard, do not expect a win. With perfect play from both sides, Tic-Tac-Toe always ends in a draw, which is why it is called a solved game.</p><p>A little history: a very similar game, called terni lapilli, was played in ancient Rome. In the United Kingdom the game is named Noughts and Crosses. In 1952, a computer game called OXO ran on the EDSAC computer in Cambridge and let a person play Tic-Tac-Toe against a machine. If you count every possible order of moves, there are 255,168 different games of Tic-Tac-Toe.</p>
+  </section>
+
+  <section class="content-section" aria-label="More games">
+    <h2 class="gradient-heading">More Games to Play</h2>
+    <div class="keyword-tags"><a href="/games/snakes-and-ladders/">Snakes &amp; Ladders 3D dice game</a><a href="/games/">All games</a></div>
+  </section>
+
+  <section class="content-section" aria-label="Related searches">
+    <h2 class="gradient-heading">Popular Searches</h2>
+    <div class="keyword-tags"><span>tic tac toe online free</span><span>play tic tac toe with friends</span><span>tic tac toe vs computer</span><span>2 player tic tac toe</span><span>tic tac toe no download</span><span>tic tac toe on mobile</span><span>tic tac toe rules</span><span>how to win tic tac toe</span><span>3D tic tac toe</span><span>tic tac toe easy medium hard</span><span>unbeatable tic tac toe</span><span>noughts and crosses online</span><span>play noughts and crosses</span><span>tic tac toe game online</span><span>tic tac toe for kids</span><span>tic tac toe strategy</span><span>tic tac toe first move</span><span>tic tac toe no sign up</span><span>tic tac toe on phone</span><span>free board games online</span><span>tic tac toe same device</span><span>tic tac toe against AI</span></div>
+  </section>
+
+  <section class="content-section" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="gradient-heading">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What is Tic-Tac-Toe?</summary><p>Tic-Tac-Toe, also called Noughts and Crosses, is a two-player game on a 3 by 3 grid. One player uses X and the other uses O. The first player to make three in a row wins.</p></details>
+      <details class="faq-item"><summary>How do I play Tic-Tac-Toe online here?</summary><p>Open the page, choose Play vs Computer or 2 Players, and the game starts. Tap an empty square to place your piece. X goes first.</p></details>
+      <details class="faq-item"><summary>What are the rules of Tic-Tac-Toe?</summary><p>Players take turns placing one piece on an empty square. Three of your pieces in a row, in a column or on a diagonal, wins. If all nine squares are full and nobody has won, the game is a draw.</p></details>
+      <details class="faq-item"><summary>Is this Tic-Tac-Toe game free?</summary><p>Yes. It is free to play, with no download, no account and no sign-up. It works in your browser.</p></details>
+      <details class="faq-item"><summary>Can I play with a friend on one device?</summary><p>Yes. Choose 2 Players and take turns on the same screen. This is play on the same device. It is not online multiplayer.</p></details>
+      <details class="faq-item"><summary>What do the difficulty levels do?</summary><p>Easy plays randomly about half of the time and never blocks. Medium takes wins and usually blocks your wins, but sometimes slips. Hard plays perfectly and never loses. The computer follows the same rules as you and does not cheat.</p></details>
+      <details class="faq-item"><summary>Does it work on mobile?</summary><p>Yes. The 3D board scales to small screens, and every square is large enough to tap easily. It works on phones, tablets and computers.</p></details>
+      <details class="faq-item"><summary>What is a good strategy tip for Tic-Tac-Toe?</summary><p>Start in the centre or in a corner. Before each move, check if you can win, and check if you must block. Try to make a fork, which is a move that creates two threats at once.</p></details>
+      <details class="faq-item"><summary>Can I beat the Hard computer?</summary><p>No one can win against perfect play. The best result against Hard is a draw. If you make no mistakes, you will draw every game. Try Medium if you want to practise winning.</p></details>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+(function () {
+  "use strict";
+  var Shell=(function(){
+    var $=function(i){return document.getElementById(i)};
+    var COLORS=["#4c1de6","#d628a0","#0a9396","#f4a300"];
+    var cfg=null,cur=null,cx=null,mode=null,level=null,players=2,session=0,ended=false,soundOn=true,actx=null,craf=0,endTimer=0;
+    var ICONS={
+      ai:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 21h6"/></svg>',
+      two:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19c0-3 2.2-5 5-5s5 2 5 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg>',
+      four:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.4"/><circle cx="17" cy="7" r="2.4"/><circle cx="7" cy="16" r="2.4"/><circle cx="17" cy="16" r="2.4"/><path d="M3 11.5h8M13 11.5h8M3 21h8M13 21h8"/></svg>'};
+    function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+
+    /* ---- sound (synthesised, no files) ---- */
+    function tone(f,d,type,v,delay){
+      if(!soundOn)return;
+      try{
+        if(!actx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=new AC()}
+        if(actx.state==="suspended")actx.resume();
+        var o=actx.createOscillator(),g=actx.createGain(),t=actx.currentTime+(delay||0);
+        o.type=type||"sine";o.frequency.setValueAtTime(f,t);
+        g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(v||0.08,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+        o.connect(g);g.connect(actx.destination);o.start(t);o.stop(t+d+0.03);
+      }catch(e){}
+    }
+    var SND={
+      move:function(){tone(440,.08,"triangle",.07)},
+      capture:function(){tone(220,.12,"square",.05);tone(330,.1,"square",.04,.07)},
+      dice:function(){for(var i=0;i<4;i++)tone(300+Math.random()*300,.05,"square",.035,i*.06)},
+      error:function(){tone(150,.15,"sawtooth",.04)},
+      win:function(){[523,659,784,1047].forEach(function(f,i){tone(f,.22,"triangle",.09,i*.13)})},
+      lose:function(){[392,330,262].forEach(function(f,i){tone(f,.25,"sine",.07,i*.16)})},
+      draw:function(){tone(392,.2,"sine",.06);tone(392,.2,"sine",.06,.25)}
+    };
+    function sound(n){if(SND[n])SND[n]()}
+
+    /* ---- confetti ---- */
+    function stopConfetti(){cancelAnimationFrame(craf);var c=$("confetti");if(c&&c.width)c.getContext("2d").clearRect(0,0,c.width,c.height)}
+    function confetti(colors){
+      stopConfetti();
+      if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+      var c=$("confetti"),g=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,P=[],pal=colors.concat(["#ffd166","#06d6a0","#ffffff"]);
+      for(var i=0;i<170;i++)P.push({x:Math.random()*W,y:-20-Math.random()*H*.6,vx:(Math.random()-.5)*4,vy:2+Math.random()*4,s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:pal[i%pal.length]});
+      var t0=performance.now();
+      (function loop(now){
+        g.clearRect(0,0,W,H);
+        P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.04;p.r+=p.vr;g.save();g.translate(p.x,p.y);g.rotate(p.r);g.fillStyle=p.c;g.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);g.restore()});
+        if(now-t0<4500)craf=requestAnimationFrame(loop);else g.clearRect(0,0,W,H);
+      })(t0);
+    }
+
+    /* ---- per-game context handed to the game ---- */
+    function makeCtx(){
+      var sid=session,cl=[];
+      var x={
+        root:$("game-root"),mode:mode,players:players,level:level,
+        isAI:function(i){return mode==="ai"&&i===1},
+        name:function(i){return mode==="ai"?(i===0?"You":"Computer"):((cfg.names&&cfg.names[i])||("Player "+(i+1)))},
+        color:function(i){return (cfg.colors||COLORS)[i%4]},
+        alive:function(){return sid===session&&!ended},
+        after:function(ms,fn){var id=setTimeout(function(){if(sid===session)fn()},ms);cl.push(function(){clearTimeout(id)});return id},
+        on:function(t,ev,fn,o){t.addEventListener(ev,fn,o);cl.push(function(){t.removeEventListener(ev,fn,o)})},
+        raf:function(fn){var id,run=true;function f(ts){if(!run||sid!==session)return;fn(ts);id=requestAnimationFrame(f)}id=requestAnimationFrame(f);var stop=function(){run=false;cancelAnimationFrame(id)};cl.push(stop);return stop},
+        /* run a SELF-CONTAINED function(data) in a Web Worker; falls back to the main thread. Rejects on timeout. */
+        compute:function(fn,data,ms){
+          return new Promise(function(res,rej){
+            var w=null,url=null,done=false,to=0;
+            function kill(){clearTimeout(to);try{if(w)w.terminate()}catch(e){}if(url){URL.revokeObjectURL(url);url=null}w=null}
+            cl.push(kill);
+            function local(){if(done)return;done=true;kill();try{res(fn(data))}catch(e){rej(e)}}
+            try{
+              url=URL.createObjectURL(new Blob(["var F=("+fn.toString()+");self.onmessage=function(e){try{self.postMessage({ok:1,r:F(e.data)})}catch(err){self.postMessage({ok:0,e:String(err)})}}"],{type:"text/javascript"}));
+              w=new Worker(url);
+            }catch(e){return local()}
+            w.onmessage=function(e){if(done)return;done=true;kill();if(e.data.ok)res(e.data.r);else rej(new Error(e.data.e))};
+            w.onerror=function(){local()};
+            to=setTimeout(function(){if(done)return;done=true;kill();rej(new Error("timeout"))},ms||8000);
+            w.postMessage(data);
+          });
+        },
+        /* shows "Computer is thinking...", waits for work (function or promise) AND a minimum delay so moves feel natural */
+        think:function(work,minMs){
+          x.setStatus("Computer is thinking...");var t0=Date.now();
+          return Promise.resolve().then(function(){return typeof work==="function"?work():work}).then(function(r){
+            return new Promise(function(res){x.after(Math.max(0,(minMs||500)-(Date.now()-t0)),function(){x.setStatus("");res(r)})});
+          });
+        },
+        setTurn:function(i,text){
+          var p=$("turn-pill");p.innerHTML='<span class="turn-dot"></span><span></span>';
+          p.firstChild.style.background=x.color(i);
+          p.lastChild.textContent=text||(mode==="ai"?(i===0?"Your turn":"Computer's turn"):(x.name(i)+"'s turn"));
+        },
+        setStatus:function(t){$("game-status").textContent=t||""},
+        sound:sound,
+        finish:function(r){
+          if(ended||sid!==session)return;ended=true;r=r||{};
+          var win=r.winner==null?null:r.winner,title,sub,col=x.color(win==null?0:win);
+          if(win==null){title=r.title||"It's a Draw!";sub=r.sub||"Well played by both sides.";sound("draw")}
+          else if(mode==="ai"&&win!==0){title=r.title||"Computer Wins";sub=r.sub||"Better luck next time. Try again!";sound("lose")}
+          else{title=r.title||(mode==="ai"?"You Win!":x.name(win)+" Wins!");sub=r.sub||(mode==="ai"?"Congratulations, great game!":"Congratulations "+x.name(win)+"!");sound("win")}
+          $("end-title").textContent=title;$("end-sub").textContent=sub;x.setStatus(title);
+          $("trophy-fill").setAttribute("fill",win==null||(mode==="ai"&&win!==0)?"#9aa0b4":col);
+          clearTimeout(endTimer);
+          endTimer=setTimeout(function(){
+            if(sid!==session)return;
+            $("end-overlay").hidden=false;$("replay-btn").focus();
+            if(win!=null&&!(mode==="ai"&&win!==0))confetti([col]);
+          },r.delay==null?700:r.delay);
+        }
+      };
+      x._cleanup=function(){cl.forEach(function(f){try{f()}catch(e){}});cl.length=0};
+      return x;
+    }
+
+    /* ---- screens and flow ---- */
+    function show(id){["screen-mode","screen-level","screen-play"].forEach(function(s){$(s).hidden=(s!==id)});$("end-overlay").hidden=true}
+    function teardown(){
+      clearTimeout(endTimer);
+      if(cur){try{if(cur.destroy)cur.destroy()}catch(e){}cur=null}
+      if(cx)cx._cleanup();
+      session++;ended=false;stopConfetti();
+      $("game-root").innerHTML="";$("game-status").textContent="";$("turn-pill").innerHTML="";
+    }
+    function begin(){
+      teardown();show("screen-play");cx=makeCtx();
+      try{cur=cfg.start(cx)||{}}
+      catch(e){console.error(e);$("game-status").textContent="Sorry, the game could not start. Please reload the page."}
+    }
+    function menu(){teardown();show("screen-mode");var b=$("mode-grid").querySelector("button");if(b)b.focus()}
+    function card(id,title,sub,fn){
+      var b=el("button","mode-card",'<span class="mode-icon">'+ICONS[id]+'</span><span class="mode-title"></span><span class="mode-sub"></span>');
+      b.type="button";b.children[1].textContent=title;b.children[2].textContent=sub;b.addEventListener("click",fn);return b;
+    }
+    function register(c){
+      cfg=c;var g=$("mode-grid");g.innerHTML="";
+      if(c.ai!==false)g.appendChild(card("ai","Play vs Computer","Automatic opponent. Pick Easy, Medium or Hard.",function(){
+        mode="ai";players=2;
+        if(c.levels===false){level=null;begin()}else{show("screen-level");$("level-grid").querySelector("button").focus()}
+      }));
+      (c.players||[2]).forEach(function(n){
+        g.appendChild(card(n===4?"four":"two",n+" Players",c.teamNote&&n===4?c.teamNote:"Play with friends on this device, taking turns.",function(){mode="friends";players=n;level=null;begin()}));
+      });
+      var lg=$("level-grid");lg.innerHTML="";
+      [["easy","Easy","Relaxed play. The computer makes mistakes."],["medium","Medium","A fair challenge for most players."],["hard","Hard","The computer plays its best. Hard to beat."]].forEach(function(l){
+        var b=el("button","mode-card",'<span class="mode-icon">'+ICONS.ai+'</span><span class="mode-title"></span><span class="mode-sub"></span>');
+        b.type="button";b.children[1].textContent=l[1];b.children[2].textContent=l[2];
+        b.addEventListener("click",function(){level=l[0];begin()});lg.appendChild(b);
+      });
+      show("screen-mode");
+    }
+    document.addEventListener("DOMContentLoaded",function(){
+      $("level-back").addEventListener("click",function(){show("screen-mode");$("mode-grid").querySelector("button").focus()});
+      $("replay-btn").addEventListener("click",begin);
+      $("menu-btn").addEventListener("click",menu);
+      $("sound-btn").addEventListener("click",function(){soundOn=!soundOn;this.textContent="Sound: "+(soundOn?"On":"Off");this.setAttribute("aria-pressed",soundOn)});
+    });
+    window.addEventListener("pagehide",teardown);
+    return {register:register,sound:sound};
+  })();
+
+  /* ===== PURE ENGINE START ===== */
+  var Engine={
+    LINES:[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]],
+    newBoard:function(){return [null,null,null,null,null,null,null,null,null]},
+    result:function(b){
+      var L=Engine.LINES;
+      for(var k=0;k<8;k++){var l=L[k];if(b[l[0]]!==null&&b[l[0]]===b[l[1]]&&b[l[0]]===b[l[2]])return {winner:b[l[0]],line:l.slice()}}
+      for(var i=0;i<9;i++)if(b[i]===null)return null;
+      return {draw:true};
+    },
+    legal:function(b){var r=[];for(var i=0;i<9;i++)if(b[i]===null)r.push(i);return r},
+    apply:function(b,i,p){if(i<0||i>8||b[i]!==null)throw new Error("illegal move");var c=b.slice();c[i]=p;return c},
+    /* Perfect play. SELF-CONTAINED on purpose: it is sent to a Web Worker. d = {board, me}. Picks randomly among equally best moves. */
+    bestMove:function(d){
+      var L=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]],me=d.me,b=d.board.slice();
+      function win(bb,p){for(var k=0;k<8;k++){var l=L[k];if(bb[l[0]]===p&&bb[l[1]]===p&&bb[l[2]]===p)return true}return false}
+      var M1={},M2={};
+      function key(bb,p){var k=p+":";for(var i=0;i<9;i++)k+=bb[i]===null?"-":bb[i];return k}
+      function mm(bb,p,depth){
+        var kk=key(bb,p);if(M1[kk]!==undefined)return M1[kk];
+        var res;
+        if(win(bb,me))res=10-depth;
+        else if(win(bb,1-me))res=depth-10;
+        else{
+          var any=false,best=p===me?-99:99;
+          for(var i=0;i<9;i++){
+            if(bb[i]!==null)continue;
+            any=true;bb[i]=p;var s=mm(bb,1-p,depth+1);bb[i]=null;
+            if(p===me){if(s>best)best=s}else{if(s<best)best=s}
+          }
+          res=any?best:0;
+        }
+        M1[kk]=res;return res;
+      }
+      /* tie-break among equally safe moves: prefer the one that sets the most traps (expected result if the other side slips) */
+      function ex(bb,p,depth){
+        var kk=key(bb,p);if(M2[kk]!==undefined)return M2[kk];
+        var res;
+        if(win(bb,me))res=10-depth;
+        else if(win(bb,1-me))res=depth-10;
+        else{
+          var n=0,sum=0,best=-99;
+          for(var i=0;i<9;i++){
+            if(bb[i]!==null)continue;
+            bb[i]=p;var s=ex(bb,1-p,depth+1);bb[i]=null;n++;sum+=s;if(s>best)best=s;
+          }
+          res=!n?0:(p===me?best:sum/n);
+        }
+        M2[kk]=res;return res;
+      }
+      var best=-99,cand=[];
+      for(var i=0;i<9;i++){
+        if(b[i]!==null)continue;
+        b[i]=me;var s=mm(b,1-me,1);b[i]=null;
+        if(s>best){best=s;cand=[i]}else if(s===best)cand.push(i);
+      }
+      if(cand.length>1){
+        var bx=-99,c2=[];
+        cand.forEach(function(i){b[i]=me;var v=Math.round(ex(b,1-me,1)*1e6);b[i]=null;if(v>bx){bx=v;c2=[i]}else if(v===bx)c2.push(i)});
+        cand=c2;
+      }
+      return cand[Math.floor(Math.random()*cand.length)];
+    },
+    /* level: easy / medium / hard. rnd is optional (for tests). The computer sees only the board, like a human.
+       easy: half of its moves are random; otherwise it takes a win if it sees one, but never blocks.
+       medium: 12% random slips; always takes a win; blocks your win about 65% of the time; no planning.
+       hard: perfect play (never loses). */
+    choose:function(b,me,level,rnd){
+      rnd=rnd||Math.random;
+      var e=Engine.legal(b);if(!e.length)return -1;
+      function rand(){return e[Math.floor(rnd()*e.length)]}
+      function finder(p){
+        for(var k=0;k<e.length;k++){var c=b.slice();c[e[k]]=p;var r=Engine.result(c);if(r&&r.winner===p)return e[k]}
+        return -1;
+      }
+      if(level==="easy"){if(rnd()<0.5)return rand();var w=finder(me);return w>=0?w:rand()}
+      if(level==="medium"){
+        if(rnd()<0.12)return rand();
+        var w2=finder(me);if(w2>=0)return w2;
+        var bl=finder(1-me);if(bl>=0&&rnd()<0.65)return bl;
+        return rand();
+      }
+      return Engine.bestMove({board:b,me:me});
+    }
+  };
+  /* ===== PURE ENGINE END ===== */
+
+  Shell.register({
+    name:"Tic-Tac-Toe",
+    players:[2],
+    colors:["#4c1de6","#d628a0"],
+    start:function(ctx){
+      var board=Engine.newBoard(),turn=0,state="waiting-human",slots=[],btns=[],pieces=[null,null,null,null,null,null,null,null,null];
+      var reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+      ctx.root.innerHTML='<div class="t3-scene"><div class="t3-board slab3d" role="group" aria-label="Tic-Tac-Toe board, 3 by 3"><div class="sf sf-bottom"></div><div class="sf sf-front"></div><div class="sf sf-left"></div><div class="sf sf-right"></div><div class="t3-top"></div></div></div>';
+      var scene=ctx.root.firstChild,top=scene.querySelector(".t3-top");
+      for(var i=0;i<9;i++)(function(i){
+        var slot=document.createElement("div");slot.className="t3-slot";
+        var b=document.createElement("button");b.type="button";b.className="t3-hit";
+        ctx.on(b,"click",function(){humanMove(i)});
+        slot.appendChild(b);top.appendChild(slot);slots.push(slot);btns.push(b);
+      })(i);
+      if(!reduce){
+        ctx.on(scene,"pointermove",function(e){
+          var r=scene.getBoundingClientRect();if(!r.width)return;
+          var nx=(e.clientX-r.left)/r.width*2-1,ny=(e.clientY-r.top)/r.height*2-1;
+          nx=Math.max(-1,Math.min(1,nx));ny=Math.max(-1,Math.min(1,ny));
+          scene.style.setProperty("--rx",(40-ny*5).toFixed(1)+"deg");
+          scene.style.setProperty("--rz",(nx*6).toFixed(1)+"deg");
+        });
+        ctx.on(scene,"pointerleave",function(){scene.style.removeProperty("--rx");scene.style.removeProperty("--rz")});
+      }
+      function makePiece(p){
+        var s=document.createElement("span");s.className="t3-piece "+(p===0?"t3-x":"t3-o");s.style.color=ctx.color(p);
+        var sh=document.createElement("i");sh.className="t3-sh";s.appendChild(sh);
+        for(var k=0;k<9;k++){var l=document.createElement("i");l.className="t3-l";l.style.setProperty("--i",k);s.appendChild(l)}
+        return s;
+      }
+      function paint(line){
+        for(var i=0;i<9;i++){
+          var v=board[i];
+          if(v!==null&&!pieces[i]){pieces[i]=makePiece(v);slots[i].appendChild(pieces[i])}
+          var open=v===null&&state==="waiting-human"&&ctx.alive();
+          btns[i].disabled=!open;
+          btns[i].setAttribute("aria-label","Cell "+(i+1)+(v===null?", empty":", "+(v===0?"X":"O")));
+          slots[i].classList.toggle("can",open);
+          slots[i].classList.toggle("win",!!line&&line.indexOf(i)>-1);
+        }
+      }
+      function place(i){
+        board=Engine.apply(board,i,turn);ctx.sound("move");
+        var r=Engine.result(board);
+        if(r){
+          state="finished";paint(r.line);
+          ctx.setStatus(r.draw?"The board is full.":(turn===0?"X":"O")+" made three in a row.");
+          ctx.finish(r.draw?{draw:true,delay:900}:{winner:r.winner,delay:1100});return;
+        }
+        turn=1-turn;next();
+      }
+      function next(){
+        var label=(ctx.mode==="ai"?(turn===0?"Your turn":"Computer's turn"):(ctx.name(turn)+"'s turn"))+" ("+(turn===0?"X":"O")+")";
+        ctx.setTurn(turn,label);
+        if(ctx.isAI(turn)){state="ai-thinking";paint();aiMove()}
+        else{state="waiting-human";paint();ctx.setStatus("Pick an empty square.")}
+      }
+      function humanMove(i){if(state!=="waiting-human"||board[i]!==null||!ctx.alive())return;place(i)}
+      function aiMove(){
+        var snap=board.slice(),me=turn;
+        var pick=ctx.level==="hard"
+          ?ctx.compute(Engine.bestMove,{board:snap,me:me},4000)
+          :Promise.resolve().then(function(){return Engine.choose(snap,me,ctx.level)});
+        ctx.think(pick.catch(function(){return Engine.choose(snap,me,"medium")}),650).then(function(i){
+          if(!ctx.alive()||state!=="ai-thinking")return;
+          if(typeof i!=="number"||board[i]!==null){var e=Engine.legal(board);i=e[0]}
+          place(i);
+        });
+      }
+      next();
+      return {destroy:function(){}};
+    }
+  });
+})();
+</script>
+
+<script src="/shared/shared.js" defer></script>
+</body>
+</html>

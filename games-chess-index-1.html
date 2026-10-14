@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Chess Online Free | vs Computer | Working Tools Box</title>
+<meta name="description" content="Play chess free online with a friend on one device or against the computer (Easy, Medium, Hard). Full chess rules, no download, no sign-up.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.wtoolsbox.com/games/chess/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play Chess Online Free | vs Computer | Working Tools Box">
+<meta property="og:description" content="Play chess free online with a friend on one device or against the computer (Easy, Medium, Hard). Full chess rules, no download, no sign-up.">
+<meta property="og:url" content="https://www.wtoolsbox.com/games/chess/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Play Chess Online Free | vs Computer | Working Tools Box">
+<meta name="twitter:description" content="Play chess free online with a friend on one device or against the computer (Easy, Medium, Hard). Full chess rules, no download, no sign-up.">
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": [
+  "VideoGame",
+  "WebApplication"
+ ],
+ "name": "Chess Online",
+ "url": "https://www.wtoolsbox.com/games/chess/",
+ "description": "Play chess free online with a friend on one device or against the computer (Easy, Medium, Hard). Full chess rules, no download, no sign-up.",
+ "genre": "Board game",
+ "applicationCategory": "GameApplication",
+ "operatingSystem": "Any",
+ "browserRequirements": "Requires JavaScript",
+ "gamePlatform": "Web browser",
+ "playMode": [
+  "SinglePlayer",
+  "MultiPlayer"
+ ],
+ "numberOfPlayers": {
+  "@type": "QuantitativeValue",
+  "minValue": 1,
+  "maxValue": 2
+ },
+ "isAccessibleForFree": true,
+ "inLanguage": "en",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is chess?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Chess is a two-player strategy game on an 8 by 8 board. Each side has 16 pieces, and the goal is to checkmate the opposing king."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I play chess here?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose a mode, click one of your pieces to see where it can go, then click a highlighted square. In two-player mode, players take turns on the same device."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does this game use the real chess rules?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It includes castling, en passant, promotion, check, checkmate, stalemate, insufficient material, threefold repetition and the 50-move rule."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is this chess game free?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It is free to play, with no download and no sign-up."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I play chess with a friend?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes, on one device. Choose 2 Players and take turns. There is no online multiplayer."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What are the difficulty levels?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Easy makes frequent mistakes. Medium thinks a few moves ahead. Hard searches deeper and plays its best. The computer never cheats at any level."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does it work on mobile?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. The board fits phone screens and works with touch, mouse and keyboard."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is a good tip for beginners?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Control the center, develop your minor pieces, castle early and always check what your opponent is threatening before you move."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I pick a different piece when my pawn reaches the end?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. When your pawn reaches the last row, you choose a queen, rook, bishop or knight. The computer chooses a queen."
+   }
+  }
+ ]
+}
+</script>
+<style>
+  :root {
+    --grad-main: linear-gradient(135deg, #4361ee 0%, #7209b7 100%);
+    --grad-text: linear-gradient(135deg, #7209b7 0%, #f72585 100%);
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-alt: #faf9fd;
+    --color-border: #e6e1f2;
+    --color-text: #1f1c2e;
+    --color-text-muted: #625d76;
+    --color-success-bg: #eafaf0;
+    --color-success-text: #12794a;
+    --color-success-border: #b7ecd0;
+    --color-error-bg: #fdeef0;
+    --color-error-text: #b3123a;
+    --color-error-border: #f6c3d0;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --shadow-card: 0 10px 30px rgba(76, 29, 149, 0.08), 0 2px 8px rgba(76, 29, 149, 0.05);
+    --shadow-btn-primary: 0 8px 20px rgba(114, 9, 183, 0.35), 0 2px 4px rgba(67, 97, 238, 0.25);
+    --shadow-btn-primary-hover: 0 12px 26px rgba(114, 9, 183, 0.42), 0 4px 8px rgba(67, 97, 238, 0.3);
+    --shadow-btn-secondary: 0 4px 12px rgba(76, 29, 149, 0.08);
+    --focus-ring: 0 0 0 3px rgba(114, 9, 183, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Inter", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: #7209b7; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: #1f1c2e;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 0 0 8px 0;
+    z-index: 1000;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .main-nav {
+    display: flex;
+    gap: 24px;
+  }
+  .main-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .main-nav a:hover { border-bottom-color: #f72585; }
+
+  /* ---------- Layout ---------- */
+  .page-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 56px 0 36px;
+  }
+  h1.hero-title {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-desc {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+  }
+
+  .gradient-heading {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Tool card ---------- */
+  .tool-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 32px;
+    margin-bottom: 56px;
+  }
+  @media (max-width: 640px) {
+    .tool-card { padding: 20px; border-radius: var(--radius-md); }
+  }
+
+  .tool-heading {
+    font-size: 1.6rem;
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 860px) {
+    .tool-grid.has-image {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .panel-heading {
+    font-size: 1.05rem;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- Upload area ---------- */
+  .upload-zone {
+    border: 2px dashed #c9b9ec;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: 36px 20px;
+    text-align: center;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .upload-zone.dragover {
+    border-color: #7209b7;
+    background: #f5eefc;
+  }
+  .upload-icon {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 14px;
+    color: #7209b7;
+  }
+  .upload-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+  }
+  .upload-sub {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin: 0 0 18px;
+  }
+  .upload-formats {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 0.98rem;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .btn-primary {
+    background: var(--grad-main);
+    color: #fff;
+    box-shadow: var(--shadow-btn-primary);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 1px 1px auto 1px;
+    height: 40%;
+    border-radius: var(--radius-sm) var(--radius-sm) 40% 40% / var(--radius-sm) var(--radius-sm) 100% 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-btn-primary-hover);
+    filter: brightness(1.03);
+  }
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(114, 9, 183, 0.3);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .btn-secondary {
+    background: #ffffff;
+    color: #4c1d95;
+    border: 1.5px solid #b79ee8;
+    box-shadow: var(--shadow-btn-secondary);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(76, 29, 149, 0.14);
+    border-color: #7209b7;
+    background: #faf7ff;
+  }
+  .btn-secondary:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-block { width: 100%; }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .btn-row .btn { flex: 1 1 160px; }
+
+  /* ---------- Form controls ---------- */
+  .field {
+    margin-bottom: 18px;
+  }
+  .field label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--color-text);
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.98rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background: #fff;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  }
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #7209b7;
+    box-shadow: var(--focus-ring);
+  }
+  input[type="number"]:disabled,
+  select:disabled {
+    background: #f4f2f8;
+    color: #a29cb5;
+    cursor: not-allowed;
+  }
+
+  .checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .checkbox-field input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #7209b7;
+    cursor: pointer;
+  }
+  .checkbox-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: #7209b7;
+    cursor: pointer;
+  }
+  .range-value {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 6px;
+  }
+  fieldset legend {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- Info rows ---------- */
+  .dim-info {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+  }
+  .dim-info dt {
+    color: var(--color-text-muted);
+    font-weight: 600;
+    display: inline;
+  }
+  .dim-info dd {
+    display: inline;
+    margin: 0 0 0 6px;
+    font-weight: 700;
+  }
+  .dim-pair { display: flex; gap: 6px; }
+
+  /* ---------- Preview ---------- */
+  .preview-box {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: 16px;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .preview-box img {
+    max-height: 380px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  .preview-placeholder {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- Status / messages ---------- */
+  .status-msg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-top: 18px;
+  }
+  .status-msg[hidden] { display: none; }
+  .status-loading {
+    background: #f0eefc;
+    color: #4c1d95;
+    border: 1px solid #dcd0f7;
+  }
+  .status-success {
+    background: var(--color-success-bg);
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
+  }
+  .status-error {
+    background: var(--color-error-bg);
+    color: var(--color-error-text);
+    border: 1px solid var(--color-error-border);
+  }
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2.5px solid #cdb9ee;
+    border-top-color: #7209b7;
+    animation: spin 0.7s linear infinite;
+    flex: 0 0 auto;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .status-icon { flex: 0 0 auto; }
+
+  /* ---------- Content sections ---------- */
+  .content-section {
+    margin-bottom: 48px;
+  }
+  .content-section h2 {
+    font-size: 1.55rem;
+    margin-bottom: 14px;
+  }
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .keyword-tags span{display:inline-block;background:var(--color-surface-alt);border:1px solid var(--color-border);color:var(--color-text-muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;}
+  .content-section p {
+    color: var(--color-text-muted);
+    max-width: 760px;
+  }
+
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .step-card {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--grad-main);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .step-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+  }
+  .step-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    border-top: 1px solid var(--color-border);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #7209b7;
+    flex: 0 0 auto;
+    transition: transform 0.15s ease;
+  }
+  .faq-item[open] summary::after {
+    content: "\2212";
+  }
+  .faq-item p {
+    margin: 0 0 18px;
+    padding: 0 4px;
+    color: var(--color-text-muted);
+  }
+
+  .visually-hidden-heading {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+  }
+
+  .dim-info-spaced { margin-top: 16px; }
+  .quality-field-hidden { display: none !important; }
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+  .site-footer .site-header-inner{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;}
+  .site-footer .main-nav{display:flex;gap:18px;}
+  .site-footer .main-nav a{color:var(--color-text-muted);text-decoration:none;font-weight:600;}
+  .site-footer .main-nav a:hover{color:#7209b7;}
+  .site-footer .brand{font-weight:800;text-decoration:none;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+  /* ===== GAME EXTRAS (uses only existing site variables) ===== */
+  .game-card{position:relative}
+  .screen[hidden],.end-overlay[hidden]{display:none}
+  .screen-title{text-align:center;font-size:1.2rem;margin:4px 0 18px}
+  .mode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;max-width:780px;margin:0 auto 16px}
+  .mode-card{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:24px 16px;border:1.5px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface-alt);cursor:pointer;font:inherit;color:var(--color-text);transition:transform .15s,border-color .15s,box-shadow .15s}
+  .mode-card:hover{transform:translateY(-2px);border-color:#7209b7;box-shadow:var(--shadow-card)}
+  .mode-icon{width:54px;height:54px;border-radius:16px;background:var(--grad-main);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+  .mode-icon svg{width:28px;height:28px}
+  .mode-title{font-weight:800;font-size:1.05rem}
+  .mode-sub{font-size:.85rem;color:var(--color-text-muted)}
+  .screen-actions{display:flex;justify-content:center}
+  .hud{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:14px}
+  .turn-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--color-surface-alt);border:1px solid var(--color-border);font-weight:700;font-size:.92rem}
+  .turn-dot{width:12px;height:12px;border-radius:50%;background:#7209b7}
+  .game-status{font-size:.9rem;color:var(--color-text-muted);flex:1 1 180px}
+  .game-status:empty{display:none}
+  .hud-right{display:flex;gap:8px;margin-left:auto}
+  .mini-btn{border:1.5px solid var(--color-border);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;font-size:.85rem;font-weight:700;color:var(--color-text)}
+  .mini-btn:hover{border-color:#7209b7;color:#7209b7}
+  .game-root{display:flex;justify-content:center;align-items:flex-start;min-height:280px;touch-action:manipulation}
+  .end-overlay{position:fixed;inset:0;z-index:3000;background:rgba(31,28,46,.62);display:flex;align-items:center;justify-content:center;padding:16px}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+  .end-card{position:relative;background:#fff;border-radius:var(--radius-lg);padding:30px 26px;max-width:420px;width:100%;text-align:center;box-shadow:var(--shadow-card);animation:pop .35s ease}
+  .end-card h3{margin:10px 0 4px;font-size:1.7rem;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .end-card p{margin:0 0 6px;color:var(--color-text-muted)}
+  .end-card .btn-row{justify-content:center}
+  .trophy{width:74px;height:74px;margin:0 auto}
+  @keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.end-card{animation:none}.mode-card{transition:none}}
+  @media (max-width:560px){.tool-card{padding:20px 14px}}
+.keyword-tags a{display:inline-block;background:var(--color-surface-alt);border:1px solid var(--color-border);color:#7209b7;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;text-decoration:none}.keyword-tags a:hover{border-color:#7209b7}
+
+.chess{width:min(100%,560px);margin:0 auto}
+.cb{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));grid-template-rows:repeat(8,minmax(0,1fr));border:9px solid #151515;border-radius:12px;overflow:hidden;aspect-ratio:1/1;touch-action:manipulation;box-shadow:0 0 0 2px #8a8a8a,0 16px 26px rgba(0,0,0,.45),inset 0 0 12px rgba(0,0,0,.5);background:#111}
+.sq{position:relative;border:0;padding:0;margin:0;width:100%;height:100%;min-width:0;min-height:0;overflow:hidden;cursor:pointer;display:flex;align-items:center;justify-content:center;background:linear-gradient(145deg,#ffffff,#d2d2d2);box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.sq.d{background:linear-gradient(145deg,#4d4d4d,#121212);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.sq svg{position:relative;z-index:1;width:86%;height:86%;pointer-events:none;filter:drop-shadow(0 3px 2px rgba(0,0,0,.5))}
+.sq.pb svg{filter:drop-shadow(0 0 1px rgba(255,255,255,.95)) drop-shadow(0 3px 2px rgba(0,0,0,.55))}
+.sq.last::before,.sq.sel::before,.sq.chk::before{content:"";position:absolute;inset:0;z-index:0}
+.sq.last::before{background:rgba(255,200,0,.5)}
+.sq.sel::before{background:rgba(247,37,133,.55)}
+.sq.chk::before{background:radial-gradient(circle,rgba(255,30,60,.95),rgba(255,30,60,.25) 70%)}
+.sq.hint::after{content:"";position:absolute;z-index:2;width:28%;height:28%;border-radius:50%;background:rgba(40,200,110,.9);box-shadow:0 0 0 2px rgba(255,255,255,.7)}
+.sq.hint.cap::after{width:90%;height:90%;background:none;border:5px solid rgba(40,200,110,.9);box-shadow:none}
+.sq:focus-visible{outline:3px solid #7209b7;outline-offset:-3px}
+.cap-row{min-height:26px;display:flex;flex-wrap:wrap;align-items:center;padding:3px 2px}
+.cap-row svg{width:24px;height:24px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.4))}
+.promo{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:10px 0}.promo[hidden]{display:none}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<div id="site-header"></div>
+<main id="main-content" class="page-wrap">
+<section class="hero"><h1 class="hero-title">Chess Online</h1><p class="hero-desc">Play chess online for free. Challenge a friend on the same device, or play against the computer at Easy, Medium or Hard level. It uses the full standard rules of chess.</p></section>
+<section class="tool-card game-card" aria-labelledby="tool-heading">
+<h2 id="tool-heading" class="tool-heading gradient-heading">Play Chess</h2>
+<div id="game-app">
+<div id="screen-mode" class="screen"><h3 class="screen-title">How do you want to play?</h3><div class="mode-grid" id="mode-grid"></div></div>
+<div id="screen-level" class="screen" hidden><h3 class="screen-title">Choose the computer's level</h3><div class="mode-grid" id="level-grid"></div><div class="screen-actions"><button type="button" class="btn btn-secondary" id="level-back">Back</button></div></div>
+<div id="screen-play" class="screen" hidden>
+<div class="hud"><span class="turn-pill" id="turn-pill"></span><span class="game-status" id="game-status" role="status" aria-live="polite"></span>
+<div class="hud-right"><button type="button" class="mini-btn" id="sound-btn" aria-pressed="true">Sound: On</button><button type="button" class="mini-btn" id="menu-btn">Menu</button></div></div>
+<div id="game-root" class="game-root"></div></div>
+<div id="end-overlay" class="end-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="end-title"><canvas id="confetti" aria-hidden="true"></canvas>
+<div class="end-card"><svg class="trophy" viewBox="0 0 64 64" aria-hidden="true"><path id="trophy-fill" fill="#7209b7" d="M18 8h28v14c0 8-6 14-14 14S18 30 18 22V8zM46 12h10v6c0 6-4 10-10 10v-4c3 0 6-2 6-6v-2h-6zM18 12H8v6c0 6 4 10 10 10v-4c-3 0-6-2-6-6v-2h6zM28 38h8v8h8v6H20v-6h8z"/></svg>
+<h3 id="end-title"></h3><p id="end-sub"></p>
+<div class="btn-row"><button type="button" class="btn btn-primary" id="replay-btn">Play Again</button><a class="btn btn-secondary" id="home-btn" href="/games/" style="text-decoration:none">Home</a></div></div></div>
+</div>
+</section>
+<section class="content-section"><h2 class="gradient-heading">Play Chess Online</h2><p>This chess game runs in your browser. You do not need to download anything or make an account. Pick a mode, and the board is ready at once. You play White and move first when you play the computer. In two-player mode, two friends share one phone, tablet or computer and take turns.</p><p>The game follows the standard international rules, including castling, en passant, pawn promotion, check, checkmate and the usual draws. Legal moves are shown as dots, so you can learn the rules while you play. Illegal moves are not possible.</p></section>
+<section class="content-section"><h2 class="gradient-heading">How to Play Chess (Rules)</h2><ol class="steps-list"><li class="step-card"><span class="step-number">1</span><h3>The goal</h3><p>Trap the other side&#x27;s king so it cannot escape. This is called checkmate. White moves first, then players take turns.</p></li><li class="step-card"><span class="step-number">2</span><h3>How the pieces move</h3><p>Rooks move in straight lines. Bishops move on diagonals. Queens do both. Knights jump in an L shape. Kings move one square. Pawns move forward one square, or two on their first move, and capture one square diagonally.</p></li><li class="step-card"><span class="step-number">3</span><h3>Check</h3><p>If a king is attacked, the player must get out of check right away. You cannot make a move that leaves your own king attacked.</p></li><li class="step-card"><span class="step-number">4</span><h3>Special moves</h3><p>Castling moves the king two squares toward a rook, and the rook jumps over. It is only allowed if neither piece has moved, the squares between are empty, and the king does not pass through check. En passant lets a pawn capture a pawn that just moved two squares. A pawn that reaches the last row becomes a queen, rook, bishop or knight of your choice.</p></li><li class="step-card"><span class="step-number">5</span><h3>Draws</h3><p>The game is a draw by stalemate, when the player to move has no legal move but is not in check. It is also a draw when neither side has enough pieces to checkmate, when the same position appears three times, or after 50 moves by each side without a capture or pawn move.</p></li></ol></section>
+<section class="content-section"><h2 class="gradient-heading">Game Modes and Difficulty</h2><p>Choose Play vs Computer and then a level. Easy plays legal moves but often misses good ones, so a beginner can win. Medium looks a few moves ahead and avoids simple blunders. Hard searches deeper and plays its best within about a second of thinking time. The computer follows the same rules as you and never cheats. Choose 2 Players to play a friend on the same screen. This is pass and play on one device. It is not online multiplayer.</p></section>
+<section class="content-section"><h2 class="gradient-heading">Chess Tips and Strategy</h2><p>Control the center with your pawns and knights early. Develop your knights and bishops before you move the queen. Castle early to keep your king safe. Before every move, check what your opponent&#x27;s last move attacks.</p><p>Common mistakes are moving the same piece many times in the opening, leaving pieces undefended and ignoring simple threats. Chess has been played for over 1,400 years and grew from an Indian game called chaturanga. Practice against Easy, then move up a level when you win.</p></section>
+<section class="content-section" aria-label="More games"><h2 class="gradient-heading">More Games to Play</h2><div class="keyword-tags"><a href="/games/ludo/">Play Ludo online</a><a href="/games/">All games</a></div></section>
+<section class="content-section" aria-label="Related searches"><h2 class="gradient-heading">Popular Searches</h2><div class="keyword-tags"><span>chess online free</span><span>play chess with friends</span><span>chess vs computer</span><span>2 player chess</span><span>chess no download</span><span>chess on mobile</span><span>chess rules</span><span>how to win chess</span><span>free chess game</span><span>chess against computer easy</span><span>chess hard level</span><span>chess for beginners</span><span>chess strategy tips</span><span>chess no sign up</span><span>chess same device</span><span>play chess on phone</span><span>chess browser game</span><span>chess game for kids</span><span>chess practice online</span><span>chess pass and play</span><span>chess checkmate rules</span><span>chess openings for beginners</span></div></section>
+<section class="content-section" aria-labelledby="faq-heading"><h2 id="faq-heading" class="gradient-heading">Frequently Asked Questions</h2><div class="faq-list"><details class="faq-item"><summary>What is chess?</summary><p>Chess is a two-player strategy game on an 8 by 8 board. Each side has 16 pieces, and the goal is to checkmate the opposing king.</p></details><details class="faq-item"><summary>How do I play chess here?</summary><p>Choose a mode, click one of your pieces to see where it can go, then click a highlighted square. In two-player mode, players take turns on the same device.</p></details><details class="faq-item"><summary>Does this game use the real chess rules?</summary><p>Yes. It includes castling, en passant, promotion, check, checkmate, stalemate, insufficient material, threefold repetition and the 50-move rule.</p></details><details class="faq-item"><summary>Is this chess game free?</summary><p>Yes. It is free to play, with no download and no sign-up.</p></details><details class="faq-item"><summary>Can I play chess with a friend?</summary><p>Yes, on one device. Choose 2 Players and take turns. There is no online multiplayer.</p></details><details class="faq-item"><summary>What are the difficulty levels?</summary><p>Easy makes frequent mistakes. Medium thinks a few moves ahead. Hard searches deeper and plays its best. The computer never cheats at any level.</p></details><details class="faq-item"><summary>Does it work on mobile?</summary><p>Yes. The board fits phone screens and works with touch, mouse and keyboard.</p></details><details class="faq-item"><summary>What is a good tip for beginners?</summary><p>Control the center, develop your minor pieces, castle early and always check what your opponent is threatening before you move.</p></details><details class="faq-item"><summary>Can I pick a different piece when my pawn reaches the end?</summary><p>Yes. When your pawn reaches the last row, you choose a queen, rook, bishop or knight. The computer chooses a queen.</p></details></div></section>
+</main>
+<div id="site-footer"></div>
+<script>
+(function () {
+  "use strict";
+  var Shell=(function(){
+    var $=function(i){return document.getElementById(i)};
+    var COLORS=["#4c1de6","#d628a0","#0a9396","#f4a300"];
+    var cfg=null,cur=null,cx=null,mode=null,level=null,players=2,session=0,ended=false,soundOn=true,actx=null,craf=0,endTimer=0;
+    var ICONS={
+      ai:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 21h6"/></svg>',
+      two:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19c0-3 2.2-5 5-5s5 2 5 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg>',
+      four:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.4"/><circle cx="17" cy="7" r="2.4"/><circle cx="7" cy="16" r="2.4"/><circle cx="17" cy="16" r="2.4"/><path d="M3 11.5h8M13 11.5h8M3 21h8M13 21h8"/></svg>'};
+    function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+
+    /* ---- sound (synthesised, no files) ---- */
+    function tone(f,d,type,v,delay){
+      if(!soundOn)return;
+      try{
+        if(!actx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=new AC()}
+        if(actx.state==="suspended")actx.resume();
+        var o=actx.createOscillator(),g=actx.createGain(),t=actx.currentTime+(delay||0);
+        o.type=type||"sine";o.frequency.setValueAtTime(f,t);
+        g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(v||0.08,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+        o.connect(g);g.connect(actx.destination);o.start(t);o.stop(t+d+0.03);
+      }catch(e){}
+    }
+    var SND={
+      move:function(){tone(440,.08,"triangle",.07)},
+      capture:function(){tone(220,.12,"square",.05);tone(330,.1,"square",.04,.07)},
+      dice:function(){for(var i=0;i<4;i++)tone(300+Math.random()*300,.05,"square",.035,i*.06)},
+      error:function(){tone(150,.15,"sawtooth",.04)},
+      win:function(){[523,659,784,1047].forEach(function(f,i){tone(f,.22,"triangle",.09,i*.13)})},
+      lose:function(){[392,330,262].forEach(function(f,i){tone(f,.25,"sine",.07,i*.16)})},
+      draw:function(){tone(392,.2,"sine",.06);tone(392,.2,"sine",.06,.25)}
+    };
+    function sound(n){if(SND[n])SND[n]()}
+
+    /* ---- confetti ---- */
+    function stopConfetti(){cancelAnimationFrame(craf);var c=$("confetti");if(c&&c.width)c.getContext("2d").clearRect(0,0,c.width,c.height)}
+    function confetti(colors){
+      stopConfetti();
+      if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+      var c=$("confetti"),g=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,P=[],pal=colors.concat(["#ffd166","#06d6a0","#ffffff"]);
+      for(var i=0;i<170;i++)P.push({x:Math.random()*W,y:-20-Math.random()*H*.6,vx:(Math.random()-.5)*4,vy:2+Math.random()*4,s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:pal[i%pal.length]});
+      var t0=performance.now();
+      (function loop(now){
+        g.clearRect(0,0,W,H);
+        P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.04;p.r+=p.vr;g.save();g.translate(p.x,p.y);g.rotate(p.r);g.fillStyle=p.c;g.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);g.restore()});
+        if(now-t0<4500)craf=requestAnimationFrame(loop);else g.clearRect(0,0,W,H);
+      })(t0);
+    }
+
+    /* ---- per-game context handed to the game ---- */
+    function makeCtx(){
+      var sid=session,cl=[];
+      var x={
+        root:$("game-root"),mode:mode,players:players,level:level,
+        isAI:function(i){return mode==="ai"&&i===1},
+        name:function(i){return mode==="ai"?(i===0?"You":"Computer"):((cfg.names&&cfg.names[i])||("Player "+(i+1)))},
+        color:function(i){return (cfg.colors||COLORS)[i%4]},
+        alive:function(){return sid===session&&!ended},
+        after:function(ms,fn){var id=setTimeout(function(){if(sid===session)fn()},ms);cl.push(function(){clearTimeout(id)});return id},
+        on:function(t,ev,fn,o){t.addEventListener(ev,fn,o);cl.push(function(){t.removeEventListener(ev,fn,o)})},
+        raf:function(fn){var id,run=true;function f(ts){if(!run||sid!==session)return;fn(ts);id=requestAnimationFrame(f)}id=requestAnimationFrame(f);var stop=function(){run=false;cancelAnimationFrame(id)};cl.push(stop);return stop},
+        /* run a SELF-CONTAINED function(data) in a Web Worker; falls back to the main thread. Rejects on timeout. */
+        compute:function(fn,data,ms){
+          return new Promise(function(res,rej){
+            var w=null,url=null,done=false,to=0;
+            function kill(){clearTimeout(to);try{if(w)w.terminate()}catch(e){}if(url){URL.revokeObjectURL(url);url=null}w=null}
+            cl.push(kill);
+            function local(){if(done)return;done=true;kill();try{res(fn(data))}catch(e){rej(e)}}
+            try{
+              url=URL.createObjectURL(new Blob(["var F=("+fn.toString()+");self.onmessage=function(e){try{self.postMessage({ok:1,r:F(e.data)})}catch(err){self.postMessage({ok:0,e:String(err)})}}"],{type:"text/javascript"}));
+              w=new Worker(url);
+            }catch(e){return local()}
+            w.onmessage=function(e){if(done)return;done=true;kill();if(e.data.ok)res(e.data.r);else rej(new Error(e.data.e))};
+            w.onerror=function(){local()};
+            to=setTimeout(function(){if(done)return;done=true;kill();rej(new Error("timeout"))},ms||8000);
+            w.postMessage(data);
+          });
+        },
+        /* shows "Computer is thinking...", waits for work (function or promise) AND a minimum delay so moves feel natural */
+        think:function(work,minMs){
+          x.setStatus("Computer is thinking...");var t0=Date.now();
+          return Promise.resolve().then(function(){return typeof work==="function"?work():work}).then(function(r){
+            return new Promise(function(res){x.after(Math.max(0,(minMs||500)-(Date.now()-t0)),function(){x.setStatus("");res(r)})});
+          });
+        },
+        setTurn:function(i,text){
+          var p=$("turn-pill");p.innerHTML='<span class="turn-dot"></span><span></span>';
+          p.firstChild.style.background=x.color(i);
+          p.lastChild.textContent=text||(mode==="ai"?(i===0?"Your turn":"Computer's turn"):(x.name(i)+"'s turn"));
+        },
+        setStatus:function(t){$("game-status").textContent=t||""},
+        sound:sound,
+        finish:function(r){
+          if(ended||sid!==session)return;ended=true;r=r||{};
+          var win=r.winner==null?null:r.winner,title,sub,col=x.color(win==null?0:win);
+          if(win==null){title=r.title||"It's a Draw!";sub=r.sub||"Well played by both sides.";sound("draw")}
+          else if(mode==="ai"&&win!==0){title=r.title||"Computer Wins";sub=r.sub||"Better luck next time. Try again!";sound("lose")}
+          else{title=r.title||(mode==="ai"?"You Win!":x.name(win)+" Wins!");sub=r.sub||(mode==="ai"?"Congratulations, great game!":"Congratulations "+x.name(win)+"!");sound("win")}
+          $("end-title").textContent=title;$("end-sub").textContent=sub;x.setStatus(title);
+          $("trophy-fill").setAttribute("fill",win==null||(mode==="ai"&&win!==0)?"#9aa0b4":col);
+          clearTimeout(endTimer);
+          endTimer=setTimeout(function(){
+            if(sid!==session)return;
+            $("end-overlay").hidden=false;$("replay-btn").focus();
+            if(win!=null&&!(mode==="ai"&&win!==0))confetti([col]);
+          },r.delay==null?700:r.delay);
+        }
+      };
+      x._cleanup=function(){cl.forEach(function(f){try{f()}catch(e){}});cl.length=0};
+      return x;
+    }
+
+    /* ---- screens and flow ---- */
+    function show(id){["screen-mode","screen-level","screen-play"].forEach(function(s){$(s).hidden=(s!==id)});$("end-overlay").hidden=true}
+    function teardown(){
+      clearTimeout(endTimer);
+      if(cur){try{if(cur.destroy)cur.destroy()}catch(e){}cur=null}
+      if(cx)cx._cleanup();
+      session++;ended=false;stopConfetti();
+      $("game-root").innerHTML="";$("game-status").textContent="";$("turn-pill").innerHTML="";
+    }
+    function begin(){
+      teardown();show("screen-play");cx=makeCtx();
+      try{cur=cfg.start(cx)||{}}
+      catch(e){console.error(e);$("game-status").textContent="Sorry, the game could not start. Please reload the page."}
+    }
+    function menu(){teardown();show("screen-mode");var b=$("mode-grid").querySelector("button");if(b)b.focus()}
+    function card(id,title,sub,fn){
+      var b=el("button","mode-card",'<span class="mode-icon">'+ICONS[id]+'</span><span class="mode-title"></span><span class="mode-sub"></span>');
+      b.type="button";b.children[1].textContent=title;b.children[2].textContent=sub;b.addEventListener("click",fn);return b;
+    }
+    function register(c){
+      cfg=c;var g=$("mode-grid");g.innerHTML="";
+      if(c.ai!==false)g.appendChild(card("ai","Play vs Computer","Automatic opponent. Pick Easy, Medium or Hard.",function(){
+        mode="ai";players=2;
+        if(c.levels===false){level=null;begin()}else{show("screen-level");$("level-grid").querySelector("button").focus()}
+      }));
+      (c.players||[2]).forEach(function(n){
+        g.appendChild(card(n===4?"four":"two",n+" Players",c.teamNote&&n===4?c.teamNote:"Play with friends on this device, taking turns.",function(){mode="friends";players=n;level=null;begin()}));
+      });
+      var lg=$("level-grid");lg.innerHTML="";
+      [["easy","Easy","Relaxed play. The computer makes mistakes."],["medium","Medium","A fair challenge for most players."],["hard","Hard","The computer plays its best. Hard to beat."]].forEach(function(l){
+        var b=el("button","mode-card",'<span class="mode-icon">'+ICONS.ai+'</span><span class="mode-title"></span><span class="mode-sub"></span>');
+        b.type="button";b.children[1].textContent=l[1];b.children[2].textContent=l[2];
+        b.addEventListener("click",function(){level=l[0];begin()});lg.appendChild(b);
+      });
+      show("screen-mode");
+    }
+    document.addEventListener("DOMContentLoaded",function(){
+      $("level-back").addEventListener("click",function(){show("screen-mode");$("mode-grid").querySelector("button").focus()});
+      $("replay-btn").addEventListener("click",begin);
+      $("menu-btn").addEventListener("click",menu);
+      $("sound-btn").addEventListener("click",function(){soundOn=!soundOn;this.textContent="Sound: "+(soundOn?"On":"Off");this.setAttribute("aria-pressed",soundOn)});
+    });
+    window.addEventListener("pagehide",teardown);
+    return {register:register,sound:sound};
+  })();
+  /* ===== PURE ENGINE START ===== */
+  function mkEngine(){
+    var V={p:100,n:320,b:330,r:500,q:900,k:0};
+    var ND=[[1,2],[2,1],[2,-1],[1,-2],[-1,-2],[-2,-1],[-2,1],[-1,2]],KD=[[1,0],[-1,0],[0,1],[0,-1],[1,1],[1,-1],[-1,1],[-1,-1]];
+    function col(p){return p===""?-1:(p<"a"?0:1)}
+    function fromFEN(f){
+      var a=f.split(" "),b=[],cs=a[2]||"-";
+      a[0].split("/").forEach(function(row){for(var i=0;i<row.length;i++){var ch=row[i];if(ch>="1"&&ch<="8")for(var k=0;k<+ch;k++)b.push("");else b.push(ch)}});
+      return {b:b,t:a[1]==="b"?1:0,c:[cs.indexOf("K")>=0,cs.indexOf("Q")>=0,cs.indexOf("k")>=0,cs.indexOf("q")>=0],ep:a[3]&&a[3]!=="-"?(8-a[3][1])*8+a[3].charCodeAt(0)-97:-1,hm:+(a[4]||0)};
+    }
+    function att(b,s,by){
+      var r=s>>3,c=s&7,i,d,x,y,p,pr=by===0?r+1:r-1,pc=by===0?"P":"p";
+      if(pr>=0&&pr<8){if(c>0&&b[pr*8+c-1]===pc)return true;if(c<7&&b[pr*8+c+1]===pc)return true}
+      var N=by===0?"N":"n",K=by===0?"K":"k",B=by===0?"B":"b",R=by===0?"R":"r",Q=by===0?"Q":"q";
+      for(i=0;i<8;i++){
+        y=r+ND[i][0];x=c+ND[i][1];if(y>=0&&y<8&&x>=0&&x<8&&b[y*8+x]===N)return true;
+        y=r+KD[i][0];x=c+KD[i][1];if(y>=0&&y<8&&x>=0&&x<8&&b[y*8+x]===K)return true;
+      }
+      for(i=0;i<8;i++){d=KD[i];y=r+d[0];x=c+d[1];
+        while(y>=0&&y<8&&x>=0&&x<8){p=b[y*8+x];if(p!==""){if(i<4?(p===R||p===Q):(p===B||p===Q))return true;break}y+=d[0];x+=d[1]}}
+      return false;
+    }
+    function gen(s,q){
+      var b=s.b,t=s.t,m=[],i,j,p,r,c,u,y,x,d;
+      function add(f,to,promo){if(promo){(q?["q"]:["q","r","b","n"]).forEach(function(k){m.push({f:f,t:to,p:k})})}else m.push({f:f,t:to})}
+      for(i=0;i<64;i++){
+        p=b[i];if(p===""||col(p)!==t)continue;r=i>>3;c=i&7;u=p.toLowerCase();
+        if(u==="p"){
+          var dr=t===0?-1:1,sr=t===0?6:1,pr=t===0?0:7,y2=r+dr;
+          if(y2>=0&&y2<8){
+            if(b[y2*8+c]===""){add(i,y2*8+c,y2===pr);if(r===sr&&b[(r+2*dr)*8+c]==="")m.push({f:i,t:(r+2*dr)*8+c,e:4})}
+            for(var dc=-1;dc<=1;dc+=2){x=c+dc;if(x<0||x>7)continue;var to=y2*8+x,tp=b[to];
+              if(tp!==""&&col(tp)!==t)add(i,to,y2===pr);else if(to===s.ep&&tp==="")m.push({f:i,t:to,e:1})}
+          }
+        }else if(u==="n"||u==="k"){
+          var D=u==="n"?ND:KD;
+          for(j=0;j<8;j++){y=r+D[j][0];x=c+D[j][1];if(y<0||y>7||x<0||x>7)continue;var t2=y*8+x;if(b[t2]===""||col(b[t2])!==t)m.push({f:i,t:t2})}
+          if(u==="k"){var h=t===0?60:4,o=1-t,rk=t?"r":"R";
+            if(i===h&&!att(b,h,o)){
+              if(s.c[t*2]&&b[h+3]===rk&&!b[h+1]&&!b[h+2]&&!att(b,h+1,o)&&!att(b,h+2,o))m.push({f:h,t:h+2,e:2});
+              if(s.c[t*2+1]&&b[h-4]===rk&&!b[h-1]&&!b[h-2]&&!b[h-3]&&!att(b,h-1,o)&&!att(b,h-2,o))m.push({f:h,t:h-2,e:3});
+            }}
+        }else{
+          for(j=(u==="b"?4:0);j<(u==="r"?4:8);j++){d=KD[j];y=r+d[0];x=c+d[1];
+            while(y>=0&&y<8&&x>=0&&x<8){var tq=b[y*8+x];if(tq===""||col(tq)!==t)m.push({f:i,t:y*8+x});if(tq!=="")break;y+=d[0];x+=d[1]}}
+        }
+      }
+      return m;
+    }
+    function apply(s,m){
+      var b=s.b.slice(),p=b[m.f],t=s.t,u=p.toLowerCase(),cap=b[m.t]!=="",c=s.c.slice();
+      b[m.t]=m.p?(t===0?m.p.toUpperCase():m.p):p;b[m.f]="";
+      if(m.e===1)b[m.t+(t===0?8:-8)]="";
+      if(m.e===2){b[m.t-1]=b[m.t+1];b[m.t+1]=""}
+      if(m.e===3){b[m.t+1]=b[m.t-2];b[m.t-2]=""}
+      if(u==="k"){c[t*2]=false;c[t*2+1]=false}
+      if(m.f===63||m.t===63)c[0]=false;if(m.f===56||m.t===56)c[1]=false;if(m.f===7||m.t===7)c[2]=false;if(m.f===0||m.t===0)c[3]=false;
+      return {b:b,t:1-t,c:c,ep:m.e===4?(m.f+m.t)/2:-1,hm:(u==="p"||cap)?0:s.hm+1};
+    }
+    function kingSq(b,t){return b.indexOf(t===0?"K":"k")}
+    function inCheck(s){return att(s.b,kingSq(s.b,s.t),1-s.t)}
+    function legal(s,q){return gen(s,q).filter(function(m){var n=apply(s,m);return !att(n.b,kingSq(n.b,1-n.t),n.t)})}
+    function key(s){return s.b.map(function(x){return x||"."}).join("")+s.t+s.c.map(Number).join("")+s.ep}
+    function insuf(b){
+      var o=[],i,p;
+      for(i=0;i<64;i++){p=b[i];if(p&&p.toLowerCase()!=="k")o.push([p.toLowerCase(),((i>>3)+(i&7))&1])}
+      if(!o.length)return true;if(o.length===1)return o[0][0]==="n"||o[0][0]==="b";
+      return o.every(function(x){return x[0]==="b"&&x[1]===o[0][1]});
+    }
+    function status(s,hist){
+      var l=legal(s);
+      if(!l.length)return inCheck(s)?{over:true,winner:1-s.t,why:"Checkmate"}:{over:true,draw:true,why:"Draw by stalemate"};
+      if(insuf(s.b))return {over:true,draw:true,why:"Draw: not enough pieces to checkmate"};
+      if(s.hm>=100)return {over:true,draw:true,why:"Draw by the 50-move rule"};
+      if(hist){var k=key(s),n=0;hist.forEach(function(h){if(h===k)n++});if(n>=3)return {over:true,draw:true,why:"Draw by threefold repetition"}}
+      return {over:false,moves:l};
+    }
+    function perft(s,d){if(d===0)return 1;var l=legal(s);if(d===1)return l.length;var n=0;l.forEach(function(m){n+=perft(apply(s,m),d-1)});return n}
+    function ev(s){
+      var b=s.b,sc=0,i,p,u,v,r,c;
+      for(i=0;i<64;i++){p=b[i];if(p==="")continue;u=p.toLowerCase();r=i>>3;c=i&7;v=V[u];
+        var cen=3.5-Math.max(Math.abs(r-3.5),Math.abs(c-3.5));
+        if(u==="p"){var adv=col(p)===0?6-r:r-1;v+=adv*6+((c>2&&c<5)?adv*3:0)}
+        else if(u==="n"||u==="b")v+=cen*8;else if(u==="q")v+=cen*2;else if(u==="k")v+=(r===0||r===7)?10:0;
+        sc+=col(p)===0?v:-v}
+      return s.t===0?sc:-sc;
+    }
+    function sc(s,m){var v=s.b[m.t]!==""?10*V[s.b[m.t].toLowerCase()]-V[s.b[m.f].toLowerCase()]:0;if(m.e===1)v=900;if(m.p)v+=800;return v}
+    function best(s,depth,ms){
+      var t0=Date.now(),stop=false,nodes=0,INF=100000;
+      function tick(){if((++nodes&511)===0&&Date.now()-t0>ms)stop=true}
+      function qs(s,a,b){
+        tick();if(stop)return 0;
+        var st=ev(s);if(st>=b)return b;if(st>a)a=st;
+        var l=legal(s,true).filter(function(m){return s.b[m.t]!==""||m.e===1||m.p});
+        l.sort(function(x,y){return sc(s,y)-sc(s,x)});
+        for(var i=0;i<l.length;i++){var v=-qs(apply(s,l[i]),-b,-a);if(stop)return 0;if(v>=b)return b;if(v>a)a=v}
+        return a;
+      }
+      function nm(s,d,a,b,ply){
+        tick();if(stop)return 0;if(s.hm>=100)return 0;
+        var l=legal(s,true);
+        if(!l.length)return inCheck(s)?-30000+ply:0;
+        if(d<=0)return qs(s,a,b);
+        l.sort(function(x,y){return sc(s,y)-sc(s,x)});
+        for(var i=0;i<l.length;i++){var v=-nm(apply(s,l[i]),d-1,-b,-a,ply+1);if(stop)return 0;if(v>=b)return b;if(v>a)a=v}
+        return a;
+      }
+      var root=legal(s,true);if(!root.length)return null;
+      var bm=root[0];
+      for(var d=1;d<=depth;d++){
+        root.sort(function(x,y){return (y===bm?1e6:sc(s,y))-(x===bm?1e6:sc(s,x))});
+        var a=-INF,cb=null,cs=-INF;
+        for(var i=0;i<root.length;i++){
+          var v=-nm(apply(s,root[i]),d-1,-INF,-a,1);if(stop)break;
+          if(v>cs){cs=v;cb=root[i]}if(v>a)a=v;
+        }
+        if(stop)break;bm=cb;if(cs>20000)break;
+      }
+      return bm;
+    }
+    return {start:function(){return fromFEN("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -")},fromFEN:fromFEN,gen:gen,legal:legal,apply:apply,status:status,inCheck:inCheck,key:key,perft:perft,best:best,att:att,kingSq:kingSq,col:col};
+  }
+  var Engine=mkEngine();
+  /* ===== PURE ENGINE END ===== */
+
+
+  var PCS={p:'<circle cx="50" cy="31" r="13"/><rect x="36" y="44" width="28" height="6" rx="3"/><path d="M41 48h18l6 30H35z"/>',
+   r:'<path d="M29 18h10v8h6v-8h10v8h6v-8h10v24H29z"/><path d="M35 42h30l4 36H31z"/><rect x="27" y="38" width="46" height="7" rx="3"/>',
+   n:'<path d="M28 80C28 62 36 52 46 42C40 42 34 40 32 34L46 14L50 20L58 10C74 20 78 40 76 60L74 80Z"/><circle cx="52" cy="28" r="2.6" style="fill:#000;stroke:none"/>',
+   b:'<circle cx="50" cy="12" r="5.5"/><path d="M50 18C38 26 34 36 38 46h24c4-10 0-20-12-28z"/><path d="M36 46h28l5 32H31z"/><rect x="31" y="42" width="38" height="6" rx="3"/>',
+   q:'<path d="M26 30l11 24 13-32 13 32 11-24 5 46H21z"/><circle cx="26" cy="26" r="5.5"/><circle cx="50" cy="16" r="5.5"/><circle cx="74" cy="26" r="5.5"/><rect x="21" y="72" width="58" height="8" rx="3"/>',
+   k:'<rect x="46" y="5" width="8" height="26" rx="2"/><rect x="38" y="13" width="24" height="8" rx="2"/><rect x="42" y="30" width="16" height="8"/><path d="M34 38h32c6 12 8 24 9 40H25c1-16 3-28 9-40z"/>'};
+  var BASEP='<path d="M20 92h60v-5c0-5-4-8-8-8H28c-4 0-8 3-8 8z"/>';
+  function pieceDefs(){
+    var s='<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><radialGradient id="gW" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#e2e2e2"/><stop offset="1" stop-color="#868686"/></radialGradient><radialGradient id="gB" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#8a8a8a"/><stop offset=".5" stop-color="#282828"/><stop offset="1" stop-color="#000"/></radialGradient>';
+    ["w","b"].forEach(function(c){for(var u in PCS)s+='<symbol id="pc-'+c+u+'" viewBox="0 0 100 100"><g fill="url(#g'+(c==="w"?"W":"B")+')" stroke="'+(c==="w"?"#1d1d1d":"#000")+'" stroke-width="2.5" stroke-linejoin="round">'+PCS[u]+BASEP+'</g></symbol>'});
+    return s+'</defs></svg>';
+  }
+  function icon(c,u){return '<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#pc-'+c+u+'"/></svg>'}
+  Shell.register({
+    name:"Chess",players:[2],colors:["#4c1de6","#d628a0"],
+    start:function(ctx){
+      var E=Engine,SRC=mkEngine.toString(),s=E.start(),hist=[E.key(s)],moves=E.legal(s),sel=-1,targets=[],last=null,busy=false,promo=false,sq=[];
+      var G={K:"\u265A",Q:"\u265B",R:"\u265C",B:"\u265D",N:"\u265E",P:"\u265F"},NM={k:"king",q:"queen",r:"rook",b:"bishop",n:"knight",p:"pawn"},START={p:8,n:2,b:2,r:2,q:1};
+      ctx.root.innerHTML=pieceDefs()+'<div class="chess"><div class="cap-row" data-cap="1" aria-label="Pieces White has captured"></div><div class="cb" role="group" aria-label="Chess board"></div><div class="cap-row" data-cap="0" aria-label="Pieces Black has captured"></div><div class="promo" hidden></div></div>';
+      var grid=ctx.root.querySelector(".cb"),pbox=ctx.root.querySelector(".promo"),caps=ctx.root.querySelectorAll(".cap-row");
+      for(var i=0;i<64;i++){var b=document.createElement("button");b.type="button";b.className="sq"+((((i>>3)+(i&7))&1)?" d":"");b.setAttribute("data-i",i);grid.appendChild(b);sq.push(b)}
+      ctx.on(grid,"click",function(e){var t=e.target.closest(".sq");if(t)click(+t.getAttribute("data-i"))});
+      function paint(){
+        var ks=E.inCheck(s)?E.kingSq(s.b,s.t):-1;
+        sq.forEach(function(el,i){
+          var p=s.b[i];if(el._p!==p){el._p=p;el.innerHTML=p?icon(E.col(p)===0?"w":"b",p.toLowerCase()):""}
+          el.className="sq"+((((i>>3)+(i&7))&1)?" d":"")+(p?(E.col(p)===0?" pw":" pb"):"")+(i===sel?" sel":"")+(last&&(i===last.f||i===last.t)?" last":"")+(i===ks?" chk":"");
+          var tg=targets.some(function(m){return m.t===i});if(tg)el.className+=p||targets.some(function(m){return m.t===i&&m.e===1})?" hint cap":" hint";
+          el.setAttribute("aria-label","abcdefgh"[i&7]+(8-(i>>3))+", "+(p?(E.col(p)===0?"white ":"black ")+NM[p.toLowerCase()]:"empty")+(i===sel?", selected":""));
+        });
+        var cnt={};s.b.forEach(function(p){if(p)cnt[p]=(cnt[p]||0)+1});
+        [0,1].forEach(function(w){ /* w=0: White captured black pieces */
+          var out="";["q","r","b","n","p"].forEach(function(u){var have=cnt[w===0?u:u.toUpperCase()]||0;for(var k=have;k<START[u];k++)out+=icon(w===0?"b":"w",u)});
+          var row=ctx.root.querySelector('[data-cap="'+(w===0?1:0)+'"]');row.innerHTML=out;row.className="cap-row "+(w===0?"cb-black":"cb-white");
+        });
+      }
+      function click(i){
+        if(busy||promo||!ctx.alive())return;
+        var p=s.b[i];
+        if(sel>=0){var mv=targets.filter(function(m){return m.t===i});if(mv.length){if(mv[0].p)askPromo(mv);else commit(mv[0]);return}}
+        if(p&&E.col(p)===s.t){sel=i;targets=moves.filter(function(m){return m.f===i})}else{sel=-1;targets=[]}
+        paint();
+      }
+      function askPromo(mv){
+        promo=true;pbox.hidden=false;pbox.innerHTML="";
+        [["q","Queen"],["r","Rook"],["b","Bishop"],["n","Knight"]].forEach(function(o){
+          var bt=document.createElement("button");bt.type="button";bt.className="btn btn-secondary";bt.textContent=o[1];
+          ctx.on(bt,"click",function(){promo=false;pbox.hidden=true;commit(mv.filter(function(m){return m.p===o[0]})[0])});pbox.appendChild(bt);
+        });
+        ctx.setStatus("Choose a piece for your pawn");pbox.firstChild.focus();
+      }
+      function commit(m){
+        var cap=s.b[m.t]!==""||m.e===1;
+        s=E.apply(s,m);hist.push(E.key(s));last=m;sel=-1;targets=[];ctx.sound(cap?"capture":"move");paint();after();
+      }
+      function after(){
+        var st=E.status(s,hist);
+        if(st.over){busy=true;paint();ctx.setStatus(st.why);ctx.finish(st.draw?{draw:true}:{winner:st.winner});return}
+        moves=st.moves;ctx.setTurn(s.t);ctx.setStatus(E.inCheck(s)?"Check!":"");
+        if(ctx.isAI(s.t)){busy=true;ai()}else busy=false;
+      }
+      function rnd(){return moves[Math.floor(Math.random()*moves.length)]}
+      function ai(){
+        var lv=ctx.level,miss=lv==="easy"?0.4:lv==="medium"?0.12:0,p;
+        var work=function(d){var X=(new Function("return ("+d.src+")()"))();return X.best(d.s,d.depth,d.ms)};
+        if(Math.random()<miss)p=Promise.resolve(rnd());
+        else if(lv==="easy")p=Promise.resolve().then(function(){return E.best(s,1,300)});
+        else p=ctx.compute(work,{src:SRC,s:s,depth:lv==="hard"?8:3,ms:lv==="hard"?1200:2500},4000);
+        ctx.think(p.catch(function(){return null}),700).then(function(m){
+          if(!ctx.alive())return;
+          var mm=m&&moves.filter(function(x){return x.f===m.f&&x.t===m.t&&(x.p||"")===(m.p||"")})[0];
+          commit(mm||rnd());
+        });
+      }
+      paint();ctx.setTurn(0);busy=false;
+      return {destroy:function(){}};
+    }
+  });
+
+})();
+</script>
+<script src="/shared/shared.js" defer></script>
+</body>
+</html>
