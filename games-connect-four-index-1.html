@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Play Connect Four Online Free | vs Computer | Working Tools Box</title>
+<meta name="description" content="Play Connect Four online for free in 3D. Drop discs with a friend on one device or beat the computer on Easy, Medium or Hard. No download, no sign-up.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.wtoolsbox.com/games/connect-four/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Play Connect Four Online Free | vs Computer | Working Tools Box">
+<meta property="og:description" content="Play Connect Four online for free in 3D. Drop discs with a friend on one device or beat the computer on Easy, Medium or Hard. No download, no sign-up.">
+<meta property="og:url" content="https://www.wtoolsbox.com/games/connect-four/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Play Connect Four Online Free | vs Computer | Working Tools Box">
+<meta name="twitter:description" content="Play Connect Four online for free in 3D. Drop discs with a friend on one device or beat the computer on Easy, Medium or Hard. No download, no sign-up.">
+
+<!-- Structured Data: game -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "WebApplication"
+  ],
+  "name": "Connect Four Online",
+  "url": "https://www.wtoolsbox.com/games/connect-four/",
+  "description": "Play Connect Four online for free in 3D. Drop discs with a friend on one device or beat the computer on Easy, Medium or Hard. No download, no sign-up.",
+  "genre": "Board game",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "gamePlatform": "Web browser",
+  "playMode": [
+    "SinglePlayer",
+    "MultiPlayer"
+  ],
+  "numberOfPlayers": {
+    "@type": "QuantitativeValue",
+    "minValue": 1,
+    "maxValue": 2
+  },
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
+}
+</script>
+
+<!-- Structured Data: FAQPage (text identical to the visible FAQ) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Connect Four?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Connect Four is a two-player strategy game. Players drop red or yellow discs into a board with 7 columns and 6 rows. The first player to make a line of four discs wins."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I play Connect Four on this page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose a mode, then click or tap a column to drop your disc. You can also use the Tab key to reach a column and press Enter. Drag sideways on the board if you want to turn the 3D view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the rules of Connect Four?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Players take turns, and Red goes first. A disc falls to the lowest empty space in the column you pick. Four discs in a row, across, up and down, or diagonal, wins. A full board with no winner is a draw."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this Connect Four game free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is free to play, it runs in your browser, and you do not need to download anything or sign up."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I play with a friend on one device?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose 2 Players and take turns on the same phone, tablet or computer. This page does not offer online play between two different devices."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What do Easy, Medium and Hard mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Easy makes many random moves and is good for beginners. Medium looks about four moves ahead and sometimes slips. Hard searches much deeper and does not make random mistakes. The computer never cheats on any level."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on mobile?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The board fits small screens, the buttons are large, and you can tap a column to play. On a phone you can swipe sideways on the board to turn the 3D view."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the best strategy for Connect Four?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Play in the centre column early, because it is part of the most possible lines. Then try to create two threats at once so your opponent cannot block both."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who goes first, and can the game end in a draw?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Red always goes first. In vs Computer mode you are Red. A draw happens when all 42 spaces are filled and nobody has four in a row."
+      }
+    }
+  ]
+}
+</script>
+
+<style>
+  :root {
+    --grad-main: linear-gradient(135deg, #4361ee 0%, #7209b7 100%);
+    --grad-text: linear-gradient(135deg, #7209b7 0%, #f72585 100%);
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-alt: #faf9fd;
+    --color-border: #e6e1f2;
+    --color-text: #1f1c2e;
+    --color-text-muted: #625d76;
+    --color-success-bg: #eafaf0;
+    --color-success-text: #12794a;
+    --color-success-border: #b7ecd0;
+    --color-error-bg: #fdeef0;
+    --color-error-text: #b3123a;
+    --color-error-border: #f6c3d0;
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+    --shadow-card: 0 10px 30px rgba(76, 29, 149, 0.08), 0 2px 8px rgba(76, 29, 149, 0.05);
+    --shadow-btn-primary: 0 8px 20px rgba(114, 9, 183, 0.35), 0 2px 4px rgba(67, 97, 238, 0.25);
+    --shadow-btn-primary-hover: 0 12px 26px rgba(114, 9, 183, 0.42), 0 4px 8px rgba(67, 97, 238, 0.3);
+    --shadow-btn-secondary: 0 4px 12px rgba(76, 29, 149, 0.08);
+    --focus-ring: 0 0 0 3px rgba(114, 9, 183, 0.35);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Inter", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.55;
+    overflow-x: hidden;
+  }
+
+  img { max-width: 100%; display: block; }
+
+  a { color: #7209b7; }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Skip link */
+  .skip-link {
+    position: absolute;
+    left: -999px;
+    top: 0;
+    background: #1f1c2e;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 0 0 8px 0;
+    z-index: 1000;
+  }
+  .skip-link:focus {
+    left: 0;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+
+  /* ---------- Header ---------- */
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .site-header-inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 1.15rem;
+    text-decoration: none;
+    background: linear-gradient(90deg, #7c3aed, #ec4899);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .main-nav {
+    display: flex;
+    gap: 24px;
+  }
+  .main-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .main-nav a:hover { border-bottom-color: #f72585; }
+
+  /* ---------- Layout ---------- */
+  .page-wrap {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  .hero {
+    text-align: center;
+    padding: 56px 0 36px;
+  }
+  h1.hero-title {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 5vw, 2.9rem);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .hero-desc {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    font-size: 1.08rem;
+  }
+
+  .gradient-heading {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  /* ---------- Tool card ---------- */
+  .tool-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 32px;
+    margin-bottom: 56px;
+  }
+  @media (max-width: 640px) {
+    .tool-card { padding: 20px; border-radius: var(--radius-md); }
+  }
+
+  .tool-heading {
+    font-size: 1.6rem;
+    margin: 0 0 24px;
+    text-align: center;
+  }
+
+  .tool-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 860px) {
+    .tool-grid.has-image {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .panel-heading {
+    font-size: 1.05rem;
+    margin: 0 0 14px;
+  }
+
+  /* ---------- Upload area ---------- */
+  .upload-zone {
+    border: 2px dashed #c9b9ec;
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: 36px 20px;
+    text-align: center;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .upload-zone.dragover {
+    border-color: #7209b7;
+    background: #f5eefc;
+  }
+  .upload-icon {
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 14px;
+    color: #7209b7;
+  }
+  .upload-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0 0 6px;
+  }
+  .upload-sub {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+    margin: 0 0 18px;
+  }
+  .upload-formats {
+    margin-top: 14px;
+    font-size: 0.82rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 0.98rem;
+    font-weight: 700;
+    padding: 13px 26px;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+  .btn-primary {
+    background: var(--grad-main);
+    color: #fff;
+    box-shadow: var(--shadow-btn-primary);
+    text-shadow: 0 1px 1px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .btn-primary::after {
+    content: "";
+    position: absolute;
+    inset: 1px 1px auto 1px;
+    height: 40%;
+    border-radius: var(--radius-sm) var(--radius-sm) 40% 40% / var(--radius-sm) var(--radius-sm) 100% 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+  .btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-btn-primary-hover);
+    filter: brightness(1.03);
+  }
+  .btn-primary:active:not(:disabled) {
+    transform: translateY(1px);
+    box-shadow: 0 4px 10px rgba(114, 9, 183, 0.3);
+  }
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+
+  .btn-secondary {
+    background: #ffffff;
+    color: #4c1d95;
+    border: 1.5px solid #b79ee8;
+    box-shadow: var(--shadow-btn-secondary);
+  }
+  .btn-secondary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(76, 29, 149, 0.14);
+    border-color: #7209b7;
+    background: #faf7ff;
+  }
+  .btn-secondary:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+  .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .btn-block { width: 100%; }
+
+  .btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .btn-row .btn { flex: 1 1 160px; }
+
+  /* ---------- Form controls ---------- */
+  .field {
+    margin-bottom: 18px;
+  }
+  .field label {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    color: var(--color-text);
+  }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1.5px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 0.98rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background: #fff;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease;
+  }
+  input[type="number"]:focus,
+  select:focus {
+    border-color: #7209b7;
+    box-shadow: var(--focus-ring);
+  }
+  input[type="number"]:disabled,
+  select:disabled {
+    background: #f4f2f8;
+    color: #a29cb5;
+    cursor: not-allowed;
+  }
+
+  .checkbox-field {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .checkbox-field input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: #7209b7;
+    cursor: pointer;
+  }
+  .checkbox-field label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin: 0;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: #7209b7;
+    cursor: pointer;
+  }
+  .range-value {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    font-weight: 600;
+    margin-top: 4px;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0 0 6px;
+  }
+  fieldset legend {
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 0;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- Info rows ---------- */
+  .dim-info {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    font-size: 0.92rem;
+  }
+  .dim-info dt {
+    color: var(--color-text-muted);
+    font-weight: 600;
+    display: inline;
+  }
+  .dim-info dd {
+    display: inline;
+    margin: 0 0 0 6px;
+    font-weight: 700;
+  }
+  .dim-pair { display: flex; gap: 6px; }
+
+  /* ---------- Preview ---------- */
+  .preview-box {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface-alt);
+    padding: 16px;
+    text-align: center;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .preview-box img {
+    max-height: 380px;
+    border-radius: 8px;
+    margin: 0 auto;
+  }
+  .preview-placeholder {
+    color: var(--color-text-muted);
+    font-size: 0.92rem;
+  }
+
+  /* ---------- Status / messages ---------- */
+  .status-msg {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 0.92rem;
+    font-weight: 600;
+    margin-top: 18px;
+  }
+  .status-msg[hidden] { display: none; }
+  .status-loading {
+    background: #f0eefc;
+    color: #4c1d95;
+    border: 1px solid #dcd0f7;
+  }
+  .status-success {
+    background: var(--color-success-bg);
+    color: var(--color-success-text);
+    border: 1px solid var(--color-success-border);
+  }
+  .status-error {
+    background: var(--color-error-bg);
+    color: var(--color-error-text);
+    border: 1px solid var(--color-error-border);
+  }
+  .spinner {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 2.5px solid #cdb9ee;
+    border-top-color: #7209b7;
+    animation: spin 0.7s linear infinite;
+    flex: 0 0 auto;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .status-icon { flex: 0 0 auto; }
+
+  /* ---------- Content sections ---------- */
+  .content-section {
+    margin-bottom: 48px;
+  }
+  .content-section h2 {
+    font-size: 1.55rem;
+    margin-bottom: 14px;
+  }
+  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
+  .keyword-tags span{display:inline-block;background:var(--color-surface-alt);border:1px solid var(--color-border);color:var(--color-text-muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;}
+  .content-section p {
+    color: var(--color-text-muted);
+    max-width: 760px;
+  }
+
+  .steps-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+  .step-card {
+    background: var(--color-surface-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 20px;
+  }
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--grad-main);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .step-card h3 {
+    margin: 0 0 6px;
+    font-size: 1.05rem;
+  }
+  .step-card p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: var(--color-text-muted);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list {
+    border-top: 1px solid var(--color-border);
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+  }
+  .faq-item summary {
+    cursor: pointer;
+    padding: 18px 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #7209b7;
+    flex: 0 0 auto;
+    transition: transform 0.15s ease;
+  }
+  .faq-item[open] summary::after {
+    content: "\2212";
+  }
+  .faq-item p {
+    margin: 0 0 18px;
+    padding: 0 4px;
+    color: var(--color-text-muted);
+  }
+
+  .visually-hidden-heading {
+    position: absolute;
+    width: 1px; height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+  }
+
+  .dim-info-spaced { margin-top: 16px; }
+  .quality-field-hidden { display: none !important; }
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    padding: 24px;
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+  }
+  .site-footer .site-header-inner{display:flex;flex-direction:column;align-items:center;gap:10px;margin-bottom:12px;}
+  .site-footer .main-nav{display:flex;gap:18px;}
+  .site-footer .main-nav a{color:var(--color-text-muted);text-decoration:none;font-weight:600;}
+  .site-footer .main-nav a:hover{color:#7209b7;}
+  .site-footer .brand{font-weight:800;text-decoration:none;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent;}
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+  }
+
+  /* ===== GAME EXTRAS (uses only existing site variables) ===== */
+  .game-card{position:relative}
+  .screen[hidden],.end-overlay[hidden]{display:none}
+  .screen-title{text-align:center;font-size:1.2rem;margin:4px 0 18px}
+  .mode-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;max-width:780px;margin:0 auto 16px}
+  .mode-card{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:24px 16px;border:1.5px solid var(--color-border);border-radius:var(--radius-md);background:var(--color-surface-alt);cursor:pointer;font:inherit;color:var(--color-text);transition:transform .15s,border-color .15s,box-shadow .15s}
+  .mode-card:hover{transform:translateY(-2px);border-color:#7209b7;box-shadow:var(--shadow-card)}
+  .mode-icon{width:54px;height:54px;border-radius:16px;background:var(--grad-main);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
+  .mode-icon svg{width:28px;height:28px}
+  .mode-title{font-weight:800;font-size:1.05rem}
+  .mode-sub{font-size:.85rem;color:var(--color-text-muted)}
+  .screen-actions{display:flex;justify-content:center}
+  .hud{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:10px;margin-bottom:14px}
+  .turn-pill{min-width:0;white-space:nowrap;justify-self:start;max-width:100%}
+  .turn-pill span:last-child{overflow:hidden;text-overflow:ellipsis}
+  .turn-pill{display:inline-flex;align-items:center;gap:8px;padding:7px 14px;border-radius:999px;background:var(--color-surface-alt);border:1px solid var(--color-border);font-weight:700;font-size:.92rem}
+  .turn-dot{width:12px;height:12px;border-radius:50%;background:#7209b7}
+  .game-status{font-size:.85rem;line-height:1.35;color:var(--color-text-muted);grid-column:1/-1;height:4em;overflow-y:auto;overflow-x:hidden}
+  .hud-right{display:flex;gap:8px;margin-left:auto}
+  .mini-btn{border:1.5px solid var(--color-border);background:#fff;border-radius:8px;padding:6px 12px;cursor:pointer;font:inherit;font-size:.85rem;font-weight:700;color:var(--color-text)}
+  .mini-btn:hover{border-color:#7209b7;color:#7209b7}
+  .game-root{display:flex;justify-content:center;align-items:flex-start;min-height:280px;touch-action:manipulation}
+  .end-overlay{position:fixed;inset:0;z-index:3000;background:rgba(31,28,46,.62);display:flex;align-items:center;justify-content:center;padding:16px}
+  #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+  .end-card{position:relative;background:#fff;border-radius:var(--radius-lg);padding:30px 26px;max-width:420px;width:100%;text-align:center;box-shadow:var(--shadow-card);animation:pop .35s ease}
+  .end-card h3{margin:10px 0 4px;font-size:1.7rem;background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .end-card p{margin:0 0 6px;color:var(--color-text-muted)}
+  .end-card .btn-row{justify-content:center}
+  .trophy{width:74px;height:74px;margin:0 auto}
+  @keyframes pop{from{transform:scale(.85);opacity:0}to{transform:scale(1);opacity:1}}
+  @media (prefers-reduced-motion:reduce){.end-card{animation:none}.mode-card{transition:none}}
+  @media (max-width:560px){.tool-card{padding:20px 14px}}
+
+  /* ===== 3D buttons (this game page only; site colours and fonts unchanged) ===== */
+  .game-card .mode-card{position:relative;box-shadow:0 6px 0 #cfc3ee,0 12px 20px rgba(76,29,149,.12);transition:transform .12s,box-shadow .12s,border-color .15s}
+  .game-card .mode-card:hover{transform:translateY(-2px);box-shadow:0 8px 0 #cfc3ee,0 16px 24px rgba(76,29,149,.16)}
+  .game-card .mode-card:active{transform:translateY(5px);box-shadow:0 1px 0 #cfc3ee,0 3px 6px rgba(76,29,149,.14)}
+  .game-card .mini-btn{box-shadow:0 3px 0 #cfc3ee;transition:transform .1s,box-shadow .1s,border-color .15s}
+  .game-card .mini-btn:active{transform:translateY(3px);box-shadow:0 0 0 #cfc3ee}
+  .game-card .btn-primary{box-shadow:0 6px 0 #4a0a7a,0 12px 20px rgba(114,9,183,.32)}
+  .game-card .btn-primary:hover:not(:disabled){box-shadow:0 8px 0 #4a0a7a,0 16px 24px rgba(114,9,183,.38);transform:translateY(-2px)}
+  .game-card .btn-primary:active:not(:disabled){box-shadow:0 1px 0 #4a0a7a,0 3px 6px rgba(114,9,183,.3);transform:translateY(5px)}
+  .game-card .btn-secondary{box-shadow:0 5px 0 #b79ee8,0 10px 16px rgba(76,29,149,.1)}
+  .game-card .btn-secondary:hover:not(:disabled){box-shadow:0 7px 0 #b79ee8,0 14px 20px rgba(76,29,149,.14);transform:translateY(-2px)}
+  .game-card .btn-secondary:active:not(:disabled){box-shadow:0 1px 0 #b79ee8;transform:translateY(4px)}
+  .game-card .end-card .btn-row{margin-bottom:6px}
+  .keyword-tags a{display:inline-block;background:var(--color-surface-alt);border:1px solid var(--color-border);color:#7209b7;font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px;text-decoration:none}.keyword-tags a:hover{border-color:#7209b7}
+
+  /* ===== Connect Four 3D board ===== */
+  .c4-wrap{width:100%;max-width:560px;margin:0 auto}
+  .c4-view{position:relative;overflow:hidden;border-radius:var(--radius-md);border:1px solid var(--color-border);background:radial-gradient(ellipse at 50% 16%,#f1ecfd 0%,#fff 72%);touch-action:pan-y;-webkit-user-select:none;user-select:none;cursor:grab;min-height:200px}
+  .c4-view.drag{cursor:grabbing}
+  .c4-stage{position:absolute;left:0;top:0;width:504px;height:576px;transform-origin:0 0}
+  .c4-scene{position:absolute;left:0;top:0;right:0;bottom:0;perspective:1900px}
+  .c4-board{position:absolute;left:252px;top:324px;width:0;height:0;transform-style:preserve-3d}
+  .c4-g{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d}
+  .c4-f{position:absolute;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+  .c4-back{background:linear-gradient(160deg,#0c1d63,#09174d)}
+  .c4-plate svg,.c4-top svg{display:block;width:100%;height:100%}
+  .c4-side{background:linear-gradient(90deg,#1c3cb0,#142f94)}
+  .c4-shadow{background:radial-gradient(ellipse at center,rgba(31,28,46,.34) 0%,rgba(31,28,46,.14) 45%,rgba(31,28,46,0) 70%)}
+  .c4-foot.f,.c4-foot.b{background:#1e3a8a}
+  .c4-foot.l,.c4-foot.r{background:#142a6b}
+  .c4-foot.t{background:#2b4bb5}
+  .c4-foot.u{background:#0d1c4d}
+  .c4-key .c4-in{transition:transform .12s}
+  .c4-key.on .c4-in{transform:translateY(9px)}
+  .c4-key .f{background:linear-gradient(#fff,#e8e2f7);color:#7209b7;display:flex;align-items:center;justify-content:center}
+  .c4-key .f svg{width:22px;height:22px}
+  .c4-key .b{background:#cdc3ea}
+  .c4-key .l,.c4-key .r{background:#c2b6e6}
+  .c4-key .t{background:#fff}
+  .c4-key .u{background:#a899d6}
+  .c4-key.on .f{background:linear-gradient(135deg,#4361ee,#7209b7);color:#fff}
+  .c4-key.on .l,.c4-key.on .r{background:#5a2fb4}
+  .c4-key.on .t{background:#8a63e0}
+  .c4-key.dim .f{background:linear-gradient(#f3f1f8,#e6e3ee);color:#b6b0c8}
+  .c4-key.dim .l,.c4-key.dim .r,.c4-key.dim .b{background:#d6d1e4}
+  .c4-key.dim .u{background:#c3bdd6}
+  .c4-col{position:absolute;left:0;top:0;margin:0;padding:0;border:0;background:transparent;cursor:pointer;-webkit-tap-highlight-color:transparent;border-radius:12px}
+  .c4-col[aria-disabled="true"]{cursor:default}
+  .c4-col:focus{outline:none}
+  .c4-col:focus-visible{outline:3px solid #7209b7;outline-offset:-3px}
+  .c4-disc{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;will-change:transform}
+  .c4-hide{visibility:hidden}
+  .c4-ghost{transition:transform .1s ease-out}
+  .c4-body{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;transition:transform .25s ease}
+  .c4-disc.p0{--l:#ff8f98;--b:#e63946;--d:#a31826}
+  .c4-disc.p1{--l:#ffe28a;--b:#f2b705;--d:#b47f00}
+  .c4-face{border-radius:50%;background:radial-gradient(circle at 36% 30%,var(--l) 0%,var(--b) 52%,var(--d) 100%);box-shadow:inset 0 0 0 3px rgba(0,0,0,.12)}
+  .c4-face::before{content:"";position:absolute;left:17%;top:17%;right:17%;bottom:17%;border-radius:50%;border:3px solid rgba(0,0,0,.2);box-shadow:inset 0 2px 4px rgba(0,0,0,.18),0 1px 0 rgba(255,255,255,.28)}
+  .c4-disc.p0 .c4-face::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:rgba(0,0,0,.3)}
+  .c4-rim{background:var(--d)}
+  .c4-disc.win .c4-body{transform:translateZ(26px)}
+  .c4-disc.win .c4-face.fr{box-shadow:0 0 0 4px #fff,0 0 20px 8px rgba(255,255,255,.95);animation:c4pulse .8s ease-in-out infinite alternate}
+  @keyframes c4pulse{from{box-shadow:0 0 0 3px #fff,0 0 10px 3px rgba(255,255,255,.8)}to{box-shadow:0 0 0 5px #fff,0 0 26px 11px rgba(255,255,255,1)}}
+  .c4-hint{margin:10px 0 0;text-align:center;font-size:.82rem;color:var(--color-text-muted)}
+
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+<div id="site-header"></div>
+
+<main id="main-content" class="page-wrap">
+
+  <section class="hero">
+    <h1 class="hero-title">Connect Four Online</h1>
+    <p class="hero-desc">Play Connect Four online in 3D. Drop discs into a real-looking board, turn the view with your finger or mouse, and play with a friend on the same device or against the computer.</p>
+  </section>
+
+  <section class="tool-card game-card" aria-labelledby="tool-heading">
+    <h2 id="tool-heading" class="tool-heading gradient-heading">Play Connect Four</h2>
+    <div id="game-app">
+      <div id="screen-mode" class="screen">
+        <h3 class="screen-title">How do you want to play?</h3>
+        <div class="mode-grid" id="mode-grid"></div>
+      </div>
+      <div id="screen-level" class="screen" hidden>
+        <h3 class="screen-title">Choose the computer's level</h3>
+        <div class="mode-grid" id="level-grid"></div>
+        <div class="screen-actions"><button type="button" class="btn btn-secondary" id="level-back">Back</button></div>
+      </div>
+      <div id="screen-play" class="screen" hidden>
+        <div class="hud">
+          <span class="turn-pill" id="turn-pill"></span>
+          <span class="game-status" id="game-status" role="status" aria-live="polite"></span>
+          <div class="hud-right">
+            <button type="button" class="mini-btn" id="sound-btn" aria-pressed="true">Sound: On</button>
+            <button type="button" class="mini-btn" id="menu-btn">Menu</button>
+          </div>
+        </div>
+        <div id="game-root" class="game-root"></div>
+      </div>
+      <div id="end-overlay" class="end-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="end-title">
+        <canvas id="confetti" aria-hidden="true"></canvas>
+        <div class="end-card">
+          <svg class="trophy" viewBox="0 0 64 64" aria-hidden="true"><path id="trophy-fill" fill="#7209b7" d="M18 8h28v14c0 8-6 14-14 14S18 30 18 22V8zM46 12h10v6c0 6-4 10-10 10v-4c3 0 6-2 6-6v-2h-6zM18 12H8v6c0 6 4 10 10 10v-4c-3 0-6-2-6-6v-2h6zM28 38h8v8h8v6H20v-6h8z"/></svg>
+          <h3 id="end-title"></h3>
+          <p id="end-sub"></p>
+          <div class="btn-row">
+            <button type="button" class="btn btn-primary" id="replay-btn">Play Again</button>
+            <a class="btn btn-secondary" id="home-btn" href="/games/" style="text-decoration:none">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">Play Connect Four Online</h2>
+    <p>Connect Four is a simple game with surprisingly deep tactics. Two players take turns dropping coloured discs into a tall, upright board. Each disc falls to the lowest free space in the column you choose. The first player to line up four discs in a row wins the game. This page gives you a free 3D version that runs right in your browser. There is nothing to download and you do not need an account.</p><p>You can play with a friend on the same phone, tablet or computer and pass the device after each move, or you can play against the computer. The board is drawn in 3D, so you can drag sideways to look at it from a different angle. The drop keys above the board and the buttons on this page are 3D too. Everything works with a mouse, a finger or the keyboard.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">How to Play Connect Four (Rules)</h2>
+    <ol class="steps-list">
+      <li class="step-card"><span class="step-number">1</span><h3>The board and the discs</h3><p>The board has 7 columns and 6 rows, so it holds 42 discs. One player uses red discs and the other uses yellow discs. The players move one after the other, and Red always goes first.</p></li>
+      <li class="step-card"><span class="step-number">2</span><h3>Drop a disc</h3><p>On your turn, click or tap a column, or press the 3D key above it. Your disc falls to the lowest empty space in that column. You cannot put a disc in a full column, and you cannot skip your turn.</p></li>
+      <li class="step-card"><span class="step-number">3</span><h3>Make four in a row</h3><p>The first player to connect four of their own discs in a straight line wins. The line can run across, up and down, or diagonally in either direction. The winning discs glow and pop out of the board.</p></li>
+      <li class="step-card"><span class="step-number">4</span><h3>A full board is a draw</h3><p>If all 42 spaces are filled and nobody has four in a row, the game is a draw. The game always ends, because every move fills one space.</p></li>
+      <li class="step-card"><span class="step-number">5</span><h3>Who plays first</h3><p>Against the computer, you play Red and move first. The computer plays Yellow. With two players on one device, Player 1 is Red and Player 2 is Yellow.</p></li>
+    </ol>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">Game Modes and Difficulty</h2>
+    <p>Choose Play vs Computer to face an automatic opponent. On Easy, about half of the computer moves are random, so a beginner can win. On Medium, the computer looks about four moves ahead and notices most quick threats, but it still slips now and then. On Hard, the computer searches many moves ahead, up to about twelve in roughly one second, and it never plays a random move. The computer follows the same rules as you and cannot cheat.</p><p>Choose 2 Players to play with a friend on this device. You take turns, and the turn badge above the board shows whose turn it is. This is pass-and-play on one screen. It is not an online game, so both players need to be at the same device.</p>
+  </section>
+
+  <section class="content-section">
+    <h2 class="gradient-heading">Connect Four Tips and Strategy</h2>
+    <p>Start in the middle. The centre column is part of more possible lines than any other column, so discs there give you more ways to win. Try to build two threats at once. A double threat means you can win in two different places, and your opponent can only block one of them. Before every move, check what your opponent could win with their next disc, and also check the space above your own disc.</p><p>A common mistake is playing in a column and letting your opponent drop on top to complete a line. Another mistake is watching only the rows and forgetting the diagonals. Connect Four was sold as a board game from 1974, and computer scientists solved it in the late 1980s. They found that the first player can always force a win with perfect play, as long as the first disc goes in the centre column.</p>
+  </section>
+
+  <section class="content-section" aria-label="More games">
+    <h2 class="gradient-heading">More Games to Play</h2>
+    <div class="keyword-tags"><a href="/games/reversi/">Play Reversi (Othello) online</a><a href="/games/">All games</a></div>
+  </section>
+
+  <section class="content-section" aria-label="Related searches">
+    <h2 class="gradient-heading">Popular Searches</h2>
+    <div class="keyword-tags"><span>connect four online free</span><span>play connect four with friends</span><span>connect four vs computer</span><span>2 player connect four</span><span>connect four no download</span><span>connect four on mobile</span><span>connect four rules</span><span>how to win connect four</span><span>connect four strategy</span><span>connect 4 game online</span><span>connect four against ai</span><span>connect four hard mode</span><span>3d connect four</span><span>connect four 4 in a row</span><span>connect four same device</span><span>free connect four game</span><span>connect four for kids</span><span>connect four tips and tricks</span><span>connect four board game online</span><span>four in a row game</span><span>connect four play now</span><span>connect four without sign up</span></div>
+  </section>
+
+  <section class="content-section" aria-labelledby="faq-heading">
+    <h2 id="faq-heading" class="gradient-heading">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <details class="faq-item"><summary>What is Connect Four?</summary><p>Connect Four is a two-player strategy game. Players drop red or yellow discs into a board with 7 columns and 6 rows. The first player to make a line of four discs wins.</p></details>
+      <details class="faq-item"><summary>How do I play Connect Four on this page?</summary><p>Choose a mode, then click or tap a column to drop your disc. You can also use the Tab key to reach a column and press Enter. Drag sideways on the board if you want to turn the 3D view.</p></details>
+      <details class="faq-item"><summary>What are the rules of Connect Four?</summary><p>Players take turns, and Red goes first. A disc falls to the lowest empty space in the column you pick. Four discs in a row, across, up and down, or diagonal, wins. A full board with no winner is a draw.</p></details>
+      <details class="faq-item"><summary>Is this Connect Four game free?</summary><p>Yes. It is free to play, it runs in your browser, and you do not need to download anything or sign up.</p></details>
+      <details class="faq-item"><summary>Can I play with a friend on one device?</summary><p>Yes. Choose 2 Players and take turns on the same phone, tablet or computer. This page does not offer online play between two different devices.</p></details>
+      <details class="faq-item"><summary>What do Easy, Medium and Hard mean?</summary><p>Easy makes many random moves and is good for beginners. Medium looks about four moves ahead and sometimes slips. Hard searches much deeper and does not make random mistakes. The computer never cheats on any level.</p></details>
+      <details class="faq-item"><summary>Does it work on mobile?</summary><p>Yes. The board fits small screens, the buttons are large, and you can tap a column to play. On a phone you can swipe sideways on the board to turn the 3D view.</p></details>
+      <details class="faq-item"><summary>What is the best strategy for Connect Four?</summary><p>Play in the centre column early, because it is part of the most possible lines. Then try to create two threats at once so your opponent cannot block both.</p></details>
+      <details class="faq-item"><summary>Who goes first, and can the game end in a draw?</summary><p>Red always goes first. In vs Computer mode you are Red. A draw happens when all 42 spaces are filled and nobody has four in a row.</p></details>
+    </div>
+  </section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+(function () {
+  "use strict";
+  var Shell=(function(){
+    var $=function(i){return document.getElementById(i)};
+    var COLORS=["#4c1de6","#d628a0","#0a9396","#f4a300"];
+    var cfg=null,cur=null,cx=null,mode=null,level=null,players=2,session=0,ended=false,soundOn=true,actx=null,craf=0,endTimer=0;
+    var ICONS={
+      ai:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="10" rx="3"/><path d="M12 4v4M9 13h.01M15 13h.01M9 21h6"/></svg>',
+      two:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 19c0-3 2.2-5 5-5s5 2 5 5M13 19c0-3 2-5 4-5s4 2 4 5"/></svg>',
+      four:'<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.4"/><circle cx="17" cy="7" r="2.4"/><circle cx="7" cy="16" r="2.4"/><circle cx="17" cy="16" r="2.4"/><path d="M3 11.5h8M13 11.5h8M3 21h8M13 21h8"/></svg>'};
+    function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e}
+
+    /* ---- sound (synthesised, no files) ---- */
+    function tone(f,d,type,v,delay){
+      if(!soundOn)return;
+      try{
+        if(!actx){var AC=window.AudioContext||window.webkitAudioContext;if(!AC)return;actx=new AC()}
+        if(actx.state==="suspended")actx.resume();
+        var o=actx.createOscillator(),g=actx.createGain(),t=actx.currentTime+(delay||0);
+        o.type=type||"sine";o.frequency.setValueAtTime(f,t);
+        g.gain.setValueAtTime(0.0001,t);g.gain.exponentialRampToValueAtTime(v||0.08,t+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t+d);
+        o.connect(g);g.connect(actx.destination);o.start(t);o.stop(t+d+0.03);
+      }catch(e){}
+    }
+    var SND={
+      move:function(){tone(440,.08,"triangle",.07)},
+      capture:function(){tone(220,.12,"square",.05);tone(330,.1,"square",.04,.07)},
+      dice:function(){for(var i=0;i<4;i++)tone(300+Math.random()*300,.05,"square",.035,i*.06)},
+      error:function(){tone(150,.15,"sawtooth",.04)},
+      win:function(){[523,659,784,1047].forEach(function(f,i){tone(f,.22,"triangle",.09,i*.13)})},
+      lose:function(){[392,330,262].forEach(function(f,i){tone(f,.25,"sine",.07,i*.16)})},
+      draw:function(){tone(392,.2,"sine",.06);tone(392,.2,"sine",.06,.25)}
+    };
+    function sound(n){if(SND[n])SND[n]()}
+
+    /* ---- confetti ---- */
+    function stopConfetti(){cancelAnimationFrame(craf);var c=$("confetti");if(c&&c.width)c.getContext("2d").clearRect(0,0,c.width,c.height)}
+    function confetti(colors){
+      stopConfetti();
+      if(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+      var c=$("confetti"),g=c.getContext("2d"),W=c.width=innerWidth,H=c.height=innerHeight,P=[],pal=colors.concat(["#ffd166","#06d6a0","#ffffff"]);
+      for(var i=0;i<170;i++)P.push({x:Math.random()*W,y:-20-Math.random()*H*.6,vx:(Math.random()-.5)*4,vy:2+Math.random()*4,s:5+Math.random()*7,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:pal[i%pal.length]});
+      var t0=performance.now();
+      (function loop(now){
+        g.clearRect(0,0,W,H);
+        P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.04;p.r+=p.vr;g.save();g.translate(p.x,p.y);g.rotate(p.r);g.fillStyle=p.c;g.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);g.restore()});
+        if(now-t0<4500)craf=requestAnimationFrame(loop);else g.clearRect(0,0,W,H);
+      })(t0);
+    }
+
+    /* ---- per-game context handed to the game ---- */
+    function makeCtx(){
+      var sid=session,cl=[];
+      var x={
+        root:$("game-root"),mode:mode,players:players,level:level,
+        isAI:function(i){return mode==="ai"&&i===1},
+        name:function(i){return mode==="ai"?(i===0?"You":"Computer"):((cfg.names&&cfg.names[i])||("Player "+(i+1)))},
+        color:function(i){return (cfg.colors||COLORS)[i%4]},
+        alive:function(){return sid===session&&!ended},
+        after:function(ms,fn){var id=setTimeout(function(){if(sid===session)fn()},ms);cl.push(function(){clearTimeout(id)});return id},
+        on:function(t,ev,fn,o){t.addEventListener(ev,fn,o);cl.push(function(){t.removeEventListener(ev,fn,o)})},
+        raf:function(fn){var id,run=true;function f(ts){if(!run||sid!==session)return;fn(ts);id=requestAnimationFrame(f)}id=requestAnimationFrame(f);var stop=function(){run=false;cancelAnimationFrame(id)};cl.push(stop);return stop},
+        /* run a SELF-CONTAINED function(data) in a Web Worker; falls back to the main thread. Rejects on timeout. */
+        compute:function(fn,data,ms){
+          return new Promise(function(res,rej){
+            var w=null,url=null,done=false,to=0;
+            function kill(){clearTimeout(to);try{if(w)w.terminate()}catch(e){}if(url){URL.revokeObjectURL(url);url=null}w=null}
+            cl.push(kill);
+            function local(){if(done)return;done=true;kill();try{res(fn(data))}catch(e){rej(e)}}
+            try{
+              url=URL.createObjectURL(new Blob(["var F=("+fn.toString()+");self.onmessage=function(e){try{self.postMessage({ok:1,r:F(e.data)})}catch(err){self.postMessage({ok:0,e:String(err)})}}"],{type:"text/javascript"}));
+              w=new Worker(url);
+            }catch(e){return local()}
+            w.onmessage=function(e){if(done)return;done=true;kill();if(e.data.ok)res(e.data.r);else rej(new Error(e.data.e))};
+            w.onerror=function(){local()};
+            to=setTimeout(function(){if(done)return;done=true;kill();rej(new Error("timeout"))},ms||8000);
+            w.postMessage(data);
+          });
+        },
+        /* shows "Computer is thinking...", waits for work (function or promise) AND a minimum delay so moves feel natural */
+        think:function(work,minMs){
+          x.setStatus("Computer is thinking...");var t0=Date.now();
+          return Promise.resolve().then(function(){return typeof work==="function"?work():work}).then(function(r){
+            return new Promise(function(res){x.after(Math.max(0,(minMs||500)-(Date.now()-t0)),function(){x.setStatus("");res(r)})});
+          });
+        },
+        setTurn:function(i,text){
+          var p=$("turn-pill");p.innerHTML='<span class="turn-dot"></span><span></span>';
+          p.firstChild.style.background=x.color(i);
+          p.lastChild.textContent=text||(mode==="ai"?(i===0?"Your turn":"Computer's turn"):(x.name(i)+"'s turn"));
+        },
+        setStatus:function(t){$("game-status").textContent=t||""},
+        sound:sound,
+        finish:function(r){
+          if(ended||sid!==session)return;ended=true;r=r||{};
+          var win=r.winner==null?null:r.winner,title,sub,col=x.color(win==null?0:win);
+          if(win==null){title=r.title||"It's a Draw!";sub=r.sub||"Well played by both sides.";sound("draw")}
+          else if(mode==="ai"&&win!==0){title=r.title||"Computer Wins";sub=r.sub||"Better luck next time. Try again!";sound("lose")}
+          else{title=r.title||(mode==="ai"?"You Win!":x.name(win)+" Wins!");sub=r.sub||(mode==="ai"?"Congratulations, great game!":"Congratulations "+x.name(win)+"!");sound("win")}
+          $("end-title").textContent=title;$("end-sub").textContent=sub;x.setStatus(title);
+          $("trophy-fill").setAttribute("fill",win==null?"#9aa0b4":col);
+          clearTimeout(endTimer);
+          endTimer=setTimeout(function(){
+            if(sid!==session)return;
+            $("end-overlay").hidden=false;try{$("replay-btn").focus()}catch(e){}
+            if(win!=null){try{confetti([col])}catch(e){}}
+          },r.delay==null?700:r.delay);
+        }
+      };
+      x._cleanup=function(){cl.forEach(function(f){try{f()}catch(e){}});cl.length=0};
+      return x;
+    }
+
+    /* ---- screens and flow ---- */
+    function show(id){["screen-mode","screen-level","screen-play"].forEach(function(s){$(s).hidden=(s!==id)});$("end-overlay").hidden=true}
+    function teardown(){
+      clearTimeout(endTimer);
+      if(cur){try{if(cur.destroy)cur.destroy()}catch(e){}cur=null}
+      if(cx)cx._cleanup();
+      session++;ended=false;stopConfetti();
+      $("game-root").innerHTML="";$("game-status").textContent="";$("turn-pill").innerHTML="";
+    }
+    function begin(){
+      teardown();show("screen-play");cx=makeCtx();
+      try{cur=cfg.start(cx)||{}}
+      catch(e){console.error(e);$("game-status").textContent="Sorry, the game could not start. Please reload the page."}
+    }
+    function menu(){teardown();show("screen-mode");var b=$("mode-grid").querySelector("button");if(b)b.focus()}
+    function card(id,title,sub,fn){
+      var b=el("button","mode-card",'<span class="mode-icon">'+ICONS[id]+'</span><span class="mode-title"></span><span class="mode-sub"></span>');
+      b.type="button";b.children[1].textContent=title;b.children[2].textContent=sub;b.addEventListener("click",fn);return b;
+    }
+    function register(c){
+      cfg=c;var g=$("mode-grid");g.innerHTML="";
+      if(c.ai!==false)g.appendChild(card("ai","Play vs Computer","Automatic opponent. Pick Easy, Medium or Hard.",function(){
+        mode="ai";players=2;
+        if(c.levels===false){level=null;begin()}else{show("screen-level");$("level-grid").querySelector("button").focus()}
+      }));
+      (c.players||[2]).forEach(function(n){
+        g.appendChild(card(n===4?"four":"two",n+" Players",c.teamNote&&n===4?c.teamNote:"Play with friends on this device, taking turns.",function(){mode="friends";players=n;level=null;begin()}));
+      });
+      var lg=$("level-grid");lg.innerHTML="";
+      [["easy","Easy","Relaxed play. The computer makes mistakes."],["medium","Medium","A fair challenge for most players."],["hard","Hard","The computer plays its best. Hard to beat."]].forEach(function(l){
+        var b=el("button","mode-card",'<span class="mode-icon">'+ICONS.ai+'</span><span class="mode-title"></span><span class="mode-sub"></span>');
+        b.type="button";b.children[1].textContent=l[1];b.children[2].textContent=l[2];
+        b.addEventListener("click",function(){level=l[0];begin()});lg.appendChild(b);
+      });
+      show("screen-mode");
+    }
+    document.addEventListener("DOMContentLoaded",function(){
+      $("level-back").addEventListener("click",function(){show("screen-mode");$("mode-grid").querySelector("button").focus()});
+      $("replay-btn").addEventListener("click",begin);
+      $("menu-btn").addEventListener("click",menu);
+      $("sound-btn").addEventListener("click",function(){soundOn=!soundOn;this.textContent="Sound: "+(soundOn?"On":"Off");this.setAttribute("aria-pressed",soundOn)});
+    });
+    window.addEventListener("pagehide",teardown);
+    return {register:register,sound:sound};
+  })();
+
+  /* ===== PURE ENGINE START ===== */
+  var Engine=(function(){
+    var COLS=7,ROWS=6;
+    function create(){var cells=[],i;for(i=0;i<42;i++)cells.push(-1);return {cells:cells,h:[0,0,0,0,0,0,0],hist:[]}}
+    function turn(s){return s.hist.length&1}
+    function canPlay(s,c){return c>=0&&c<COLS&&s.h[c]<ROWS}
+    function legal(s){var o=[],c;for(c=0;c<COLS;c++)if(s.h[c]<ROWS)o.push(c);return o}
+    function play(s,c){
+      if(!canPlay(s,c))return -1;
+      var r=s.h[c];s.cells[c*ROWS+r]=s.hist.length&1;s.h[c]=r+1;s.hist.push(c);return r;
+    }
+    function undo(s){
+      var c=s.hist.pop();if(c===undefined)return;
+      var r=--s.h[c];s.cells[c*ROWS+r]=-1;
+    }
+    function get(s,c,r){return (c<0||c>=COLS||r<0||r>=ROWS)?-2:s.cells[c*ROWS+r]}
+    /* every [col,row] that belongs to a line of 4 or more through (c,r) */
+    function winLine(s,c,r){
+      var p=get(s,c,r);if(p<0)return null;
+      var D=[[1,0],[0,1],[1,1],[1,-1]],out=[],seen={},k,x,y,line;
+      function add(q){var id=q[0]*ROWS+q[1];if(!seen[id]){seen[id]=1;out.push(q)}}
+      for(k=0;k<4;k++){
+        line=[[c,r]];
+        x=c+D[k][0];y=r+D[k][1];while(get(s,x,y)===p){line.push([x,y]);x+=D[k][0];y+=D[k][1]}
+        x=c-D[k][0];y=r-D[k][1];while(get(s,x,y)===p){line.push([x,y]);x-=D[k][0];y-=D[k][1]}
+        if(line.length>=4)line.forEach(add);
+      }
+      return out.length?out:null;
+    }
+    /* null = game goes on, {winner,line} or {draw:true} */
+    function result(s){
+      if(!s.hist.length)return null;
+      var c=s.hist[s.hist.length-1],r=s.h[c]-1,l=winLine(s,c,r);
+      if(l)return {winner:s.cells[c*ROWS+r],line:l};
+      if(s.hist.length===42)return {draw:true};
+      return null;
+    }
+    function fromMoves(arr){var s=create(),i;for(i=0;i<arr.length;i++)if(play(s,arr[i])<0)return null;return s}
+    /* tiny fallback used only if the search fails: win, block, else most central legal column */
+    function heuristicMove(s){
+      var ORDER=[3,2,4,1,5,0,6],me=turn(s),i,c,m;
+      for(i=0;i<7;i++){c=ORDER[i];if(!canPlay(s,c))continue;play(s,c);m=result(s);undo(s);if(m&&m.winner===me)return c}
+      for(i=0;i<7;i++){
+        c=ORDER[i];if(!canPlay(s,c))continue;
+        var r=s.h[c],l;
+        s.cells[c*ROWS+r]=1-me;l=winLine(s,c,r);s.cells[c*ROWS+r]=-1;
+        if(l)return c;
+      }
+      for(i=0;i<7;i++)if(canPlay(s,ORDER[i]))return ORDER[i];
+      return -1;
+    }
+    /* Self-contained negamax / alpha-beta (it is serialised into a Web Worker, so it may not use anything outside).
+       d = {hist:[cols], maxDepth, timeMs, out?}. Returns the column to play. */
+    var aiSearch=function(d){
+      var W=7,H=6,t0=Date.now(),limit=d.timeMs||1200,maxD=d.maxDepth||8,WIN=100000,INF=1000000;
+      var cells=[],hts=[0,0,0,0,0,0,0],vcol=[1,1,1,1,1,1,1],key=0,nply=0,nodes=0,aborted=false,i,k,c,r,oi;
+      var P=[1,128,16384,2097152,268435456,34359738368,4398046511104];
+      var ORDER=[3,2,4,1,5,0,6],SC=[0,1,10,50,0],SO=[0,1,10,56,0];
+      for(i=0;i<42;i++)cells.push(-1);
+      var WINS=[],DIRS=[[1,0],[0,1],[1,1],[1,-1]];
+      for(c=0;c<W;c++)for(r=0;r<H;r++)for(k=0;k<4;k++){
+        var ec=c+3*DIRS[k][0],er=r+3*DIRS[k][1];
+        if(ec<0||ec>=W||er<0||er>=H)continue;
+        var w=[];for(var q=0;q<4;q++)w.push((c+q*DIRS[k][0])*H+(r+q*DIRS[k][1]));
+        WINS.push(w);
+      }
+      function play(c,p){var r=hts[c];cells[c*H+r]=p;hts[c]=r+1;var o=vcol[c];vcol[c]=o*2+p;key+=(vcol[c]-o)*P[c];nply++}
+      function unplay(c,p){var r=hts[c]-1;cells[c*H+r]=-1;hts[c]=r;var cur=vcol[c],o=(cur-p)/2;key-=(cur-o)*P[c];vcol[c]=o;nply--}
+      function wins(c,r,p){
+        var dx=[1,0,1,1],dy=[0,1,1,-1],k,n,x,y;
+        for(k=0;k<4;k++){
+          n=1;x=c+dx[k];y=r+dy[k];
+          while(x>=0&&x<W&&y>=0&&y<H&&cells[x*H+y]===p){n++;x+=dx[k];y+=dy[k]}
+          x=c-dx[k];y=r-dy[k];
+          while(x>=0&&x<W&&y>=0&&y<H&&cells[x*H+y]===p){n++;x-=dx[k];y-=dy[k]}
+          if(n>=4)return true;
+        }
+        return false;
+      }
+      function evaluate(side){
+        var s=0,wi,w,a,b,v,j;
+        for(wi=0;wi<WINS.length;wi++){
+          w=WINS[wi];a=0;b=0;
+          for(j=0;j<4;j++){v=cells[w[j]];if(v===side)a++;else if(v>=0)b++}
+          if(a&&b)continue;
+          if(a)s+=SC[a];else if(b)s-=SO[b];
+        }
+        for(j=0;j<H;j++){v=cells[3*H+j];if(v===side)s+=3;else if(v>=0)s-=3}
+        return s;
+      }
+      var tt=new Map();
+      function nega(depth,alpha,beta,side){
+        if((++nodes&1023)===0&&Date.now()-t0>limit)aborted=true;
+        if(aborted)return 0;
+        if(nply>=42)return 0;
+        var opp=1-side,threats=0,tcol=-1,c,r,oi,v,best,ent,a0,b0,f;
+        for(oi=0;oi<7;oi++){
+          c=ORDER[oi];if(hts[c]>=H)continue;r=hts[c];
+          if(wins(c,r,side))return WIN-nply;
+          if(wins(c,r,opp)){threats++;tcol=c}
+        }
+        if(threats>1)return -(WIN-nply-2);
+        if(depth<=0)return evaluate(side);
+        ent=tt.get(key);
+        if(ent&&ent.d>=depth){
+          if(ent.f===0)return ent.v;
+          if(ent.f===1){if(ent.v>alpha)alpha=ent.v}else if(ent.v<beta)beta=ent.v;
+          if(alpha>=beta)return ent.v;
+        }
+        a0=alpha;b0=beta;best=-INF;
+        for(oi=0;oi<7;oi++){
+          c=ORDER[oi];if(hts[c]>=H)continue;
+          if(threats===1&&c!==tcol)continue;
+          play(c,side);v=-nega(depth-1,-beta,-alpha,opp);unplay(c,side);
+          if(aborted)return 0;
+          if(v>best)best=v;
+          if(v>alpha)alpha=v;
+          if(alpha>=beta)break;
+        }
+        if(best===-INF)return 0;
+        f=best<=a0?2:(best>=b0?1:0);
+        if(tt.size>600000)tt.clear();
+        tt.set(key,{d:depth,v:best,f:f});
+        return best;
+      }
+      var hist=d.hist,side;
+      for(i=0;i<hist.length;i++)play(hist[i],i&1);
+      side=hist.length&1;
+      var legal=[];
+      for(oi=0;oi<7;oi++){c=ORDER[oi];if(hts[c]<H)legal.push(c)}
+      if(!legal.length)return -1;
+      for(oi=0;oi<legal.length;oi++)if(wins(legal[oi],hts[legal[oi]],side)){if(d.out)d.out.score=WIN;return legal[oi]}
+      var th=[];
+      for(oi=0;oi<legal.length;oi++)if(wins(legal[oi],hts[legal[oi]],1-side))th.push(legal[oi]);
+      if(th.length>=1&&!d.out)return th[0];/* forced block (shortcut skipped when a test asks for the exact score) */
+      var bestMove=legal[0],ordered=legal.slice(),depth,completed=0,bestScore=0;
+      for(depth=1;depth<=maxD;depth++){
+        var curBest=-INF,curMoves=[],a=-INF,v;
+        for(oi=0;oi<ordered.length;oi++){
+          c=ordered[oi];
+          play(c,side);
+          v=a===-INF?-nega(depth-1,-INF,INF,1-side):-nega(depth-1,-INF,-(a-1),1-side);
+          unplay(c,side);
+          if(aborted)break;
+          if(v>curBest){curBest=v;curMoves=[c];a=v}else if(v===curBest)curMoves.push(c);
+        }
+        if(aborted)break;
+        bestMove=curMoves[Math.floor(Math.random()*curMoves.length)];bestScore=curBest;completed=depth;
+        ordered=curMoves.concat(ordered.filter(function(m){return curMoves.indexOf(m)<0}));
+        if(Math.abs(curBest)>=WIN-60)break;
+      }
+      if(d.out){d.out.score=bestScore;d.out.depth=completed;d.out.nodes=nodes}
+      return bestMove;
+    };
+    /* Easy: about 45% of the time a random legal column, otherwise a plain 1-ply greedy choice */
+    function easyMove(s){
+      var l=legal(s);if(!l.length)return -1;
+      if(Math.random()<0.45)return l[Math.floor(Math.random()*l.length)];
+      return aiSearch({hist:s.hist.slice(),maxDepth:1,timeMs:200});
+    }
+    return {COLS:COLS,ROWS:ROWS,create:create,turn:turn,canPlay:canPlay,legal:legal,play:play,undo:undo,get:get,winLine:winLine,result:result,fromMoves:fromMoves,heuristicMove:heuristicMove,aiSearch:aiSearch,easyMove:easyMove};
+  })();
+  /* ===== PURE ENGINE END ===== */
+
+  /* ===== GAME PLUGIN: Connect Four (3D) ===== */
+  Shell.register({
+    name:"Connect Four",
+    players:[2],
+    colors:["#e63946","#f2b705"],
+    start:function(ctx){
+      var U=60,SW=504,SH=576,OX=252,OY=324,R=25.2,T=20.4,Y0=-4.2*U;
+      var RGB=[[230,57,70],[242,183,5]],NAMES=["Red","Yellow"];
+      var reduced=!!(window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches);
+      var s=Engine.create(),state="waiting-human",rx=6,ry=0;
+      var cellEls=new Array(42),cols=[],keys=[],ghosts=[null,null],hover=-1;
+
+      function mk(cls,css,parent){var e=document.createElement("div");if(cls)e.className=cls;if(css)e.style.cssText=css;if(parent)parent.appendChild(e);return e}
+      function F(parent,w,h,tf,cls,css){return mk("c4-f "+(cls||""),"left:"+(-w/2)+"px;top:"+(-h/2)+"px;width:"+w+"px;height:"+h+"px;transform:"+tf+";"+(css||""),parent)}
+      /* a 3D box (6 faces) centred on (cx,cy,cz); returns {g:positioned group, n:inner group, f:front face} */
+      function box(parent,w,h,d,cx,cy,cz,cls){
+        var g=mk("c4-g "+cls,"transform:translate3d("+cx+"px,"+cy+"px,"+cz+"px)",parent),n=mk("c4-g c4-in","",g);
+        var f=F(n,w,h,"translateZ("+d/2+"px)",cls+" f");
+        F(n,w,h,"rotateY(180deg) translateZ("+d/2+"px)",cls+" b");
+        F(n,d,h,"rotateY(-90deg) translateZ("+w/2+"px)",cls+" l");
+        F(n,d,h,"rotateY(90deg) translateZ("+w/2+"px)",cls+" r");
+        F(n,w,d,"rotateX(90deg) translateZ("+h/2+"px)",cls+" t");
+        F(n,w,d,"rotateX(-90deg) translateZ("+h/2+"px)",cls+" u");
+        return {g:g,n:n,f:f};
+      }
+      function T3(x,y){return "translate3d("+x+"px,"+y+"px,0)"}
+      function shade(rgb,f){return "rgb("+Math.round(rgb[0]*f)+","+Math.round(rgb[1]*f)+","+Math.round(rgb[2]*f)+")"}
+
+      /* ---------- scene ---------- */
+      ctx.root.innerHTML='<div class="c4-wrap"><div class="c4-view" id="c4-view"><div class="c4-stage"><div class="c4-scene"><div class="c4-board" role="group" aria-label="Connect Four board, 7 columns and 6 rows"></div></div></div></div><p class="c4-hint">Tip: drag sideways on the board to turn the 3D view.</p></div>';
+      var view=ctx.root.querySelector(".c4-view"),stage=ctx.root.querySelector(".c4-stage"),board=ctx.root.querySelector(".c4-board");
+
+      /* floor shadow, frame, plates */
+      F(board,560,150,"translateY(240px) rotateX(90deg)","c4-shadow");
+      F(board,468,408,"translateZ(-"+R+"px)","c4-back");
+      var plate=F(board,468,408,"translateZ("+R+"px)","c4-plate");
+      (function(){
+        var W=780,H=680,d="M0 0H"+W+"V"+H+"H0Z",i,j,rim="",hi="";
+        for(i=0;i<7;i++)for(j=0;j<6;j++){
+          var cx=390+(i-3)*100,cy=340+(j-2.5)*100;
+          d+="M"+(cx-46)+" "+cy+"a46 46 0 1 0 92 0a46 46 0 1 0 -92 0Z";
+          rim+='<circle cx="'+cx+'" cy="'+cy+'" r="46"/>';
+          hi+='<path d="M'+(cx-40)+' '+(cy-12)+'a42 42 0 0 1 40 -30"/>';
+        }
+        plate.innerHTML='<svg viewBox="0 0 780 680" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="c4g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3f73f5"/><stop offset="1" stop-color="#1c3cb8"/></linearGradient></defs><path fill-rule="evenodd" fill="url(#c4g)" d="'+d+'"/><g fill="none" stroke="#12298a" stroke-width="6">'+rim+'</g><g fill="none" stroke="rgba(255,255,255,.35)" stroke-width="4" stroke-linecap="round">'+hi+'</g></svg>';
+      })();
+      F(board,2*R,408,"translateX(-234px) rotateY(-90deg)","c4-side");
+      F(board,2*R,408,"translateX(234px) rotateY(90deg)","c4-side");
+      F(board,468,2*R,"translateY(204px) rotateX(-90deg)","c4-side");
+      var topFace=F(board,468,2*R,"translateY(-204px) rotateX(90deg)","c4-top");
+      (function(){
+        var d="M0 0H780V84H0Z",c;
+        for(c=0;c<7;c++)d+="M"+(390+(c-3)*100-46)+" 17h92v50h-92Z";
+        topFace.innerHTML='<svg viewBox="0 0 780 84" preserveAspectRatio="none" aria-hidden="true"><path fill-rule="evenodd" fill="#2f55d8" d="'+d+'"/></svg>';
+      })();
+      box(board,42,33,2*R,-180,220.5,0,"c4-foot");
+      box(board,42,33,2*R,180,220.5,0,"c4-foot");
+
+      /* discs */
+      var discs=mk("c4-g","",board);
+      function discTemplate(p){
+        var N=12,disc=mk("c4-disc p"+p,""),body=mk("c4-body","",disc),i,th,fac,chord=2*R*Math.sin(Math.PI/N)+0.8,ap=R*Math.cos(Math.PI/N);
+        F(body,2*R,2*R,"translateZ("+T/2+"px)","c4-face fr");
+        F(body,2*R,2*R,"rotateY(180deg) translateZ("+T/2+"px)","c4-face bk");
+        for(i=0;i<N;i++){
+          th=i*360/N;
+          fac=0.58+0.42*(Math.cos((th+135)*Math.PI/180)+1)/2;
+          F(body,T,chord,"rotateZ("+th+"deg) translateX("+ap+"px) rotateY(90deg)","c4-rim","background:"+shade(RGB[p],fac));
+        }
+        return disc;
+      }
+      var tpl=[discTemplate(0),discTemplate(1)];
+      function newDisc(p,x,y){var d=tpl[p].cloneNode(true);d.style.transform=T3(x,y);return d}
+      [0,1].forEach(function(p){
+        var g=newDisc(p,0,Y0);g.className+=" c4-hide c4-ghost";discs.appendChild(g);ghosts[p]=g;
+      });
+
+      /* 3D drop keys and the invisible column buttons in front of the board */
+      var c;
+      for(c=0;c<7;c++)(function(c){
+        var x=(c-3)*U,k=box(board,46,30,22,x,-300,0,"c4-key");
+        k.f.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19 4 7h16z" fill="currentColor"/></svg>';
+        keys.push(k.g);
+        var b=document.createElement("button");
+        b.type="button";b.className="c4-col";
+        b.style.cssText="left:"+(x-U/2)+"px;top:-336px;width:"+U+"px;height:540px;transform:translateZ("+(R+6)+"px)";
+        board.appendChild(b);cols.push(b);
+        ctx.on(b,"click",function(){humanMove(c)});
+        ctx.on(b,"pointerenter",function(e){if(e.pointerType!=="touch")setHover(c)});
+        ctx.on(b,"pointerleave",function(){setHover(-1)});
+        ctx.on(b,"focus",function(){setHover(c)});
+        ctx.on(b,"blur",function(){setHover(-1)});
+      })(c);
+      ctx.on(board,"keydown",function(e){
+        var i=cols.indexOf(document.activeElement);if(i<0)return;
+        if(e.key==="ArrowRight"&&i<6){e.preventDefault();cols[i+1].focus()}
+        else if(e.key==="ArrowLeft"&&i>0){e.preventDefault();cols[i-1].focus()}
+      });
+
+      /* ---------- camera (drag to turn) and fit ---------- */
+      function cam(){board.style.transform="rotateX("+rx+"deg) rotateY("+ry+"deg)"}
+      function clamp(v,a,b){return Math.max(a,Math.min(b,v))}
+      function fit(){
+        var w=view.clientWidth||SW,k=Math.min(1.12,w/SW);
+        stage.style.transform="scale("+k+")";stage.style.left=((w-SW*k)/2)+"px";view.style.height=Math.round(SH*k)+"px";
+      }
+      var drag=null,dragged=false;
+      ctx.on(view,"pointerdown",function(e){
+        if(e.button>0)return;
+        drag={id:e.pointerId,x:e.clientX,y:e.clientY,ry:ry,rx:rx,moved:false,t:e.pointerType};
+      });
+      ctx.on(view,"pointermove",function(e){
+        if(!drag||e.pointerId!==drag.id)return;
+        var dx=e.clientX-drag.x,dy=e.clientY-drag.y;
+        if(!drag.moved){
+          if(Math.abs(dx)<7&&Math.abs(dy)<7)return;
+          drag.moved=true;dragged=true;view.classList.add("drag");
+          try{view.setPointerCapture(e.pointerId)}catch(err){}
+        }
+        ry=clamp(drag.ry+dx*0.35,-38,38);
+        if(drag.t!=="touch")rx=clamp(drag.rx-dy*0.25,0,34);
+        cam();
+      });
+      function endDrag(e){
+        if(!drag||(e&&e.pointerId!==drag.id))return;
+        var m=drag.moved;drag=null;view.classList.remove("drag");
+        if(m)ctx.after(0,function(){dragged=false});
+      }
+      ctx.on(view,"pointerup",endDrag);
+      ctx.on(view,"pointercancel",endDrag);
+      ctx.on(view,"click",function(e){if(dragged){e.stopPropagation();e.preventDefault();dragged=false}},true);
+      ctx.on(window,"resize",fit);
+      ctx.on(window,"orientationchange",fit);
+      cam();fit();
+
+      /* ---------- game flow (state machine: waiting-human, animating, ai-thinking, finished) ---------- */
+      function who(p){return ctx.mode==="ai"?(p===0?"You":"Computer"):("Player "+(p+1))}
+      function label(p){
+        if(ctx.mode==="ai")return p===0?"Your turn (Red)":"Computer's turn (Yellow)";
+        return "Player "+(p+1)+"'s turn ("+NAMES[p]+")";
+      }
+      function refresh(){
+        var i,full,can=state==="waiting-human";
+        for(i=0;i<7;i++){
+          full=s.h[i]>=6;
+          cols[i].setAttribute("aria-label","Drop a disc in column "+(i+1)+(full?", column is full":", "+s.h[i]+" of 6 filled"));
+          cols[i].setAttribute("aria-disabled",(full||!can)?"true":"false");
+          cols[i].classList.toggle("full",full);
+          keys[i].classList.toggle("dim",full||!can);
+        }
+      }
+      function setHover(c){
+        hover=c;var i;
+        for(i=0;i<7;i++)keys[i].classList.toggle("on",i===c&&state==="waiting-human"&&s.h[i]<6);
+        ghosts[0].classList.add("c4-hide");ghosts[1].classList.add("c4-hide");
+        if(c>=0&&state==="waiting-human"&&s.h[c]<6){
+          var p=Engine.turn(s),g=ghosts[p];
+          g.style.transform=T3((c-3)*U,Y0);g.classList.remove("c4-hide");
+        }
+      }
+      function humanMove(c){
+        if(!ctx.alive())return;
+        if(state!=="waiting-human")return;
+        if(!Engine.canPlay(s,c)){ctx.sound("error");ctx.setStatus("That column is full. Pick another column.");return}
+        drop(c);
+      }
+      function drop(c){
+        var p=Engine.turn(s),r=Engine.play(s,c);
+        if(r<0){state="waiting-human";refresh();return}
+        state="animating";setHover(-1);refresh();
+        var x=(c-3)*U,y=-(r-2.5)*U,d=newDisc(p,x,Y0);
+        discs.appendChild(d);cellEls[c*6+r]=d;
+        var ms=reduced?30:Math.round(Math.min(380,170+30*((y-Y0)/U)));
+        void d.offsetWidth;
+        d.style.transition="transform "+ms+"ms cubic-bezier(.5,0,.85,.55)";
+        d.style.transform=T3(x,y);
+        ctx.after(ms+40,function(){
+          ctx.sound("move");
+          ctx.setStatus(who(p)+" dropped a disc in column "+(c+1)+".");
+          var res=Engine.result(s);
+          if(res&&res.line){
+            state="finished";refresh();
+            res.line.forEach(function(q){var e=cellEls[q[0]*6+q[1]];if(e)e.classList.add("win")});
+            ctx.finish({winner:res.winner});return;
+          }
+          if(res&&res.draw){state="finished";refresh();ctx.finish({draw:true});return}
+          next();
+        });
+      }
+      function next(){
+        var p=Engine.turn(s);
+        ctx.setTurn(p,label(p));
+        if(ctx.isAI(p)){state="ai-thinking";refresh();aiTurn()}
+        else{state="waiting-human";refresh();if(hover>=0)setHover(hover)}
+      }
+      function aiTurn(){
+        var lvl=ctx.level,work,min;
+        if(lvl==="easy"){
+          work=Promise.resolve().then(function(){return Engine.easyMove(s)});min=500+Math.random()*400;
+        }else if(lvl==="medium"){
+          if(Math.random()<0.12)work=Promise.resolve().then(function(){var l=Engine.legal(s);return l[Math.floor(Math.random()*l.length)]});
+          else work=ctx.compute(Engine.aiSearch,{hist:s.hist.slice(),maxDepth:4,timeMs:900},3000);
+          min=600+Math.random()*400;
+        }else{
+          work=ctx.compute(Engine.aiSearch,{hist:s.hist.slice(),maxDepth:12,timeMs:1200},3000);min=700+Math.random()*500;
+        }
+        ctx.think(work.catch(function(){return Engine.heuristicMove(s)}),min).then(function(c){
+          if(!ctx.alive()||state!=="ai-thinking")return;
+          if(typeof c!=="number"||!Engine.canPlay(s,c))c=Engine.heuristicMove(s);
+          drop(c);
+        });
+      }
+      ctx.setStatus(ctx.mode==="ai"?"You play Red and go first. Pick a column.":"Red goes first. Pick a column.");
+      next();
+      return {destroy:function(){}};
+    }
+  });
+
+})();
+</script>
+
+<script src="/shared/shared.js" defer></script>
+</body>
+</html>
