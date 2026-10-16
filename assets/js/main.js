@@ -30,6 +30,16 @@
     }
   }
 
+  // Pause decorative animations while the window is being zoomed/resized,
+  // so browser zoom stays smooth.
+  var rzTimer = 0;
+  window.addEventListener("resize", function () {
+    var d = document.documentElement;
+    d.classList.add("wtb-resizing");
+    clearTimeout(rzTimer);
+    rzTimer = setTimeout(function () { d.classList.remove("wtb-resizing"); }, 350);
+  }, { passive: true });
+
   function init() {
     load("site-header", "/shared/header.html", markActive);
     load("site-footer", "/shared/footer.html", setYear);
