@@ -3,7 +3,7 @@
 .wtbf-wrap{padding:0 16px 20px;margin-top:48px}
 .wtbf{--wtbf-ink:#2a1f6b;--wtbf-soft:#5b4fa3;--wtbf-line:rgba(124,58,237,.16);position:relative;overflow:hidden;max-width:1180px;margin:0 auto;padding:40px 40px 22px;border-radius:30px;border:1px solid var(--wtbf-line);background:radial-gradient(520px 260px at 0% 100%,rgba(96,165,250,.28),transparent 70%),radial-gradient(520px 260px at 100% 100%,rgba(244,114,182,.26),transparent 70%),linear-gradient(135deg,#fff 0%,#f7f2ff 55%,#fdf1fa 100%);box-shadow:0 14px 40px rgba(124,58,237,.12);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;color:var(--wtbf-soft)}
 .wtbf a{text-decoration:none}
-.wtbf-grid{position:relative;display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:36px}
+.wtbf-grid{position:relative;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;gap:30px}
 .wtbf-brand{display:inline-flex;align-items:center;gap:11px;color:var(--wtbf-ink)}
 .wtbf-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#fff;border:1px solid var(--wtbf-line);box-shadow:0 4px 12px rgba(124,58,237,.14)}
 .wtbf-text{display:flex;flex-direction:column;gap:2px}
@@ -27,7 +27,8 @@
 .wtbf-legal a:hover{color:#6d28d9;text-decoration:underline}
 .wtbf-pill{display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700;color:#fff!important;background:linear-gradient(120deg,#d946ef 0%,#8b5cf6 52%,#2563eb 100%);box-shadow:0 8px 18px rgba(139,92,246,.3)}
 .wtbf a:focus-visible{outline:3px solid #8b5cf6;outline-offset:3px;border-radius:8px}
-@media (max-width:980px){.wtbf-grid{grid-template-columns:1fr 1fr;gap:30px}.wtbf-col-brand{grid-column:1 / -1}.wtbf{padding:32px 26px 20px}}
+@media (max-width:1060px){.wtbf-grid{grid-template-columns:1fr 1fr 1fr;gap:28px}.wtbf-col-brand{grid-column:1 / -1}}
+@media (max-width:760px){.wtbf-grid{grid-template-columns:1fr 1fr;gap:26px}.wtbf-col-brand{grid-column:1 / -1}.wtbf{padding:32px 26px 20px}}
 @media (max-width:560px){.wtbf-grid{grid-template-columns:1fr}.wtbf{padding:28px 20px 18px;border-radius:24px}.wtbf-bottom{flex-direction:column;align-items:flex-start}}
 @media (prefers-reduced-motion:reduce){.wtbf-list a{transition:none}.wtbf-list a:hover{transform:none}}
 </style>
@@ -48,7 +49,7 @@
           <span class="wtbf-tag">Tools for a Smarter Web</span>
         </span>
       </a>
-      <p class="wtbf-about">Free online tools for images, PDFs, video and more. Open a tool, use it, and get your result in seconds.</p>
+      <p class="wtbf-about">Free online tools for images, PDFs, video and text, plus free games. Open one, use it, and get your result in seconds.</p>
       <div class="wtbf-chips">
         <span class="wtbf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg>Free to use</span>
         <span class="wtbf-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>Runs in your browser</span>
@@ -66,28 +67,37 @@
         <li><a href="/tools/image-sharpener-upscaler/">Sharpener &amp; Upscaler</a></li>
       </ul>
     </nav>
-
     <nav aria-label="PDF and document tools">
       <h2 class="wtbf-title">PDF &amp; Documents</h2>
       <ul class="wtbf-list">
         <li><a href="/tools/pdf-compressor/">PDF Compressor</a></li>
         <li><a href="/tools/pdf-merger-splitter/">PDF Merger &amp; Splitter</a></li>
+        <li><a href="/tools/pdf-editor/">PDF Editor</a></li>
         <li><a href="/tools/pdf-to-image/">PDF to Image</a></li>
         <li><a href="/tools/image-to-pdf/">Image to PDF</a></li>
         <li><a href="/tools/image-to-text-ocr/">Image to Text (OCR)</a></li>
-        <li><a href="/tools/text-diff-checker/">Text Diff Checker</a></li>
       </ul>
     </nav>
-
-    <nav aria-label="Video and creative tools">
-      <h2 class="wtbf-title">Video &amp; Creative</h2>
+    <nav aria-label="Video and utility tools">
+      <h2 class="wtbf-title">Video &amp; More</h2>
       <ul class="wtbf-list">
         <li><a href="/tools/video-trimmer/">Video Trimmer</a></li>
+        <li><a href="/tools/video-compressor/">Video Compressor</a></li>
+        <li><a href="/tools/video-merger/">Video Merger</a></li>
         <li><a href="/tools/video-to-gif-converter/">Video to GIF</a></li>
-        <li><a href="/tools/photo-slideshow-maker/">Photo Slideshow Maker</a></li>
         <li><a href="/tools/qr-code-generator/">QR Code Generator</a></li>
-        <li><a href="/tools/meme-generator/">Meme Generator</a></li>
-        <li><a href="/tools/favicon-generator/">Favicon Generator</a></li>
+        <li><a href="/tools/fancy-text-generator/">Fancy Text Generator</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Games">
+      <h2 class="wtbf-title">Play Games</h2>
+      <ul class="wtbf-list">
+        <li><a href="/games/ludo/">Ludo</a></li>
+        <li><a href="/games/chess/">Chess</a></li>
+        <li><a href="/games/carrom/">Carrom</a></li>
+        <li><a href="/games/checkers/">Checkers</a></li>
+        <li><a href="/games/connect-four/">Connect Four</a></li>
+        <li><a href="/games/">All Games</a></li>
       </ul>
     </nav>
   </div>
@@ -104,6 +114,7 @@
     </nav>
     <div class="wtbf-mini">
       <a class="wtbf-pill" href="/#tools">Browse all tools</a>
+      <a class="wtbf-pill" href="/games/">Play free games</a>
     </div>
   </div>
 </footer>
