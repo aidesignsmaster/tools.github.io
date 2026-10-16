@@ -284,21 +284,17 @@ h4{font-size:19px;color:var(--ink)}
 
 
 /* ==========================================================
-   Soft purple-pink theme + light animation
-   Built to stay smooth on phones: only 2 background layers,
-   transform-only motion, fixed sizes (no resize while scrolling),
-   fancy effects only on desktop with a mouse.
+   Soft purple-pink theme (performance-tuned)
+   Background layers are static (no continuous animation, no will-change)
+   so browser zoom, resize and scrolling stay smooth even on phones.
+   Only small transform/opacity effects remain.
    ========================================================== */
 
-/* Layer 1: soft colour clouds that drift slowly */
+/* Layer 1: soft colour clouds (static) */
 body::before{
   content:"";
   position:fixed;
-  left:-8vw;
-  top:-8vh;
-  width:116vw;
-  height:116vh;
-  height:116lvh;
+  inset:0;
   z-index:-2;
   pointer-events:none;
   background:
@@ -307,38 +303,22 @@ body::before{
     radial-gradient(40% 36% at 72% 80%, rgba(160,175,255,.45), transparent 70%),
     radial-gradient(36% 32% at 20% 85%, rgba(255,190,235,.46), transparent 70%),
     linear-gradient(160deg,#fdf3fc 0%,#f6ecff 50%,#fdeefa 100%);
-  will-change:transform;
-  animation:wtb-drift 32s ease-in-out infinite alternate;
-}
-@keyframes wtb-drift{
-  from{transform:translate3d(-3vw,-2vh,0)}
-  to  {transform:translate3d(3vw,3vh,0)}
 }
 
-/* Layer 2: tiny bubbles floating slowly up */
+/* Layer 2: tiny bubbles (static) */
 body::after{
   content:"";
   position:fixed;
-  left:0;
-  top:0;
-  width:100%;
-  height:calc(100vh + 640px);
-  height:calc(100lvh + 640px);
+  inset:0;
   z-index:-1;
   pointer-events:none;
   background-image:
-    radial-gradient(circle, rgba(217,70,239,.30) 0 5px, transparent 6px),
-    radial-gradient(circle, rgba(139,92,246,.27) 0 4px, transparent 5px),
-    radial-gradient(circle, rgba(236,72,153,.24) 0 7px, transparent 8px),
-    radial-gradient(circle, rgba(96,165,250,.28) 0 3px, transparent 4px);
+    radial-gradient(circle, rgba(217,70,239,.26) 0 5px, transparent 6px),
+    radial-gradient(circle, rgba(139,92,246,.24) 0 4px, transparent 5px),
+    radial-gradient(circle, rgba(236,72,153,.20) 0 7px, transparent 8px),
+    radial-gradient(circle, rgba(96,165,250,.24) 0 3px, transparent 4px);
   background-size:360px 640px, 610px 640px, 530px 640px, 450px 320px;
   background-position:40px 80px, 260px 330px, 90px 470px, 150px 40px;
-  will-change:transform;
-  animation:wtb-rise 60s linear infinite;
-}
-@keyframes wtb-rise{
-  from{transform:translate3d(0,0,0)}
-  to  {transform:translate3d(0,-640px,0)}
 }
 
 /* Hero picture glow breathes softly (one small element) */
@@ -358,10 +338,8 @@ body::after{
 }
 
 /* Shine on the main hero button only */
-.button-primary,
-.button-open{position:relative;overflow:hidden}
-.button-primary::after,
-.button-open::after{
+.button-primary, .button-open{position:relative;overflow:hidden}
+.button-primary::after, .button-open::after{
   content:"";
   position:absolute;
   inset:0;
@@ -378,56 +356,53 @@ body::after{
   from{transform:translateX(-130%)}
   to  {transform:translateX(130%)}
 }
-
 .tool-icon{transition:transform .25s ease}
 
-/* Extra polish only for desktop / laptop with a mouse */
+/* Gradient headline text: static (animating background-clip text repaints every frame) */
+.text-gradient{background:var(--gradient);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Desktop with a mouse: only light hover effects */
 @media (hover:hover) and (pointer:fine){
-  .text-gradient{
-    background:linear-gradient(90deg,#7c3aed,#c026d3,#ec4899,#7c3aed);
-    background-size:200% 100%;
-    -webkit-background-clip:text;
-    background-clip:text;
-    color:transparent;
-    animation:wtb-shine 8s linear infinite;
-  }
-  .category-icon{animation:wtb-bob 5s ease-in-out infinite}
   .tool-card:hover .tool-icon{transform:rotate(-8deg) scale(1.08)}
   .button-open:hover::after{animation:wtb-sheen-once .9s ease}
 }
-@keyframes wtb-shine{
-  from{background-position:0% 0}
-  to  {background-position:200% 0}
-}
-@keyframes wtb-bob{
-  0%,100%{transform:translateY(0)}
-  50%    {transform:translateY(-3px)}
+
+/* While the window is being zoomed or resized, pause every animation (set by main.js) */
+.wtb-resizing *, .wtb-resizing *::before, .wtb-resizing *::after{
+  animation-play-state:paused !important;
+  transition:none !important;
 }
 
-/* Cards float into view while scrolling (desktop browsers that support it) */
-@media (hover:hover) and (pointer:fine){
-  @supports (animation-timeline: view()){
-    .tool-card{
-      animation:wtb-reveal linear both;
-      animation-timeline:view();
-      animation-range:entry 0% entry 38%;
-    }
-    @keyframes wtb-reveal{
-      from{opacity:0;translate:0 28px;scale:.97}
-      to  {opacity:1;translate:0 0;scale:1}
-    }
-  }
+/* Phones: no decorative motion at all */
+@media (max-width:640px){
+  .hero-visual::before, .button-primary::after, .float-chip{animation:none}
 }
 
 /* People who prefer no motion get a calm page */
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
-  body::before,
-  body::after,
-  .text-gradient,
-  .hero-visual::before,
-  .category-icon,
-  .tool-card{animation:none!important}
-  .button-primary::after,
-  .button-open::after{display:none}
+  .hero-visual::before, .float-chip{animation:none!important}
+  .button-primary::after, .button-open::after{display:none}
 }
+
+/* ---------- Games banner (tools home page) ---------- */
+.games-banner{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:30px;
+  align-items:center;
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  padding:36px;
+  background:linear-gradient(135deg,rgba(124,58,237,.10),rgba(236,72,153,.10)),var(--surface);
+  box-shadow:var(--shadow-sm);
+}
+.games-banner h2{margin:0 0 10px}
+.games-banner p{margin:0 0 20px;color:var(--muted);max-width:520px}
+.game-chips{display:flex;flex-wrap:wrap;gap:10px}
+.game-chips a{
+  font-size:13.5px;font-weight:700;color:#4a3a73;background:#fff;border:1px solid var(--border);
+  padding:9px 15px;border-radius:999px;box-shadow:var(--shadow-sm);transition:border-color .15s,color .15s;
+}
+.game-chips a:hover{border-color:var(--grad-a);color:var(--grad-a)}
+@media (max-width:820px){.games-banner{grid-template-columns:1fr;padding:26px}}
