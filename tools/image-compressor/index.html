@@ -674,6 +674,12 @@
     .main-nav{gap:16px;}
     .main-nav a{font-size:0.85rem;}
   }
+
+  input[type="number"]{width:100%;padding:12px 14px;border-radius:10px;border:1.5px solid var(--border);background:#fff;font-weight:600;font-size:0.95rem;color:var(--ink)}
+  .check-row{display:flex!important;align-items:center;gap:8px;font-weight:600!important;font-size:.9rem!important;cursor:pointer;margin:0!important}
+  .check-row input{width:18px;height:18px;accent-color:var(--purple)}
+  .hint-note{font-size:.85rem;color:var(--ink-soft);margin:14px 0 0}
+  [hidden]{display:none!important}
 </style>
 </head>
 <body>
@@ -706,21 +712,73 @@
         <h3 class="grad-text">Compression Settings</h3>
         <div class="settings-grid">
           <div class="field">
-            <label for="quality-range">Quality</label>
-            <div class="quality-row">
-              <input type="range" id="quality-range" min="10" max="100" step="1" value="80" aria-describedby="quality-value">
-              <span class="quality-value" id="quality-value">80%</span>
-            </div>
+            <label for="mode-select">Compression Mode</label>
+            <select id="mode-select">
+              <option value="target" selected>Exact target size (KB)</option>
+              <option value="manual">Manual quality slider</option>
+            </select>
           </div>
           <div class="field">
             <label for="format-select">Output Format</label>
             <select id="format-select">
-              <option value="jpeg">JPG</option>
-              <option value="png">PNG</option>
-              <option value="webp">WebP</option>
+              <option value="jpeg">JPG (best for size)</option>
+              <option value="webp">WebP (smaller, modern)</option>
+              <option value="png">PNG (lossless, needs resize)</option>
             </select>
           </div>
+          <div class="field" id="quality-field" hidden>
+            <label for="quality-range">Quality</label>
+            <div class="quality-row">
+              <input type="range" id="quality-range" min="1" max="100" step="1" value="80" aria-describedby="quality-value">
+              <span class="quality-value" id="quality-value">80%</span>
+            </div>
+          </div>
+          <div class="field" id="target-fields">
+            <label for="target-preset">Target File Size</label>
+            <select id="target-preset">
+              <option value="10">10 KB</option><option value="20">20 KB</option><option value="30">30 KB</option>
+              <option value="40">40 KB</option><option value="50" selected>50 KB</option><option value="60">60 KB</option>
+              <option value="80">80 KB</option><option value="100">100 KB</option><option value="150">150 KB</option>
+              <option value="200">200 KB</option><option value="300">300 KB</option><option value="500">500 KB</option>
+              <option value="1024">1 MB</option><option value="2048">2 MB</option><option value="custom">Custom (type KB)</option>
+            </select>
+          </div>
+          <div class="field" id="target-custom-field" hidden>
+            <label for="target-custom">Custom Size (KB)</label>
+            <input type="number" id="target-custom" min="1" step="1" value="45" inputmode="numeric">
+          </div>
+          <div class="field">
+            <label for="strategy-select">How to Reach the Size</label>
+            <select id="strategy-select">
+              <option value="balanced" selected>Smart mix (quality + size)</option>
+              <option value="quality">Keep quality high (reduce dimensions)</option>
+              <option value="dims">Keep dimensions (reduce quality)</option>
+              <option value="max">Maximum compression (smallest possible)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="maxwidth-select">Max Width</label>
+            <select id="maxwidth-select">
+              <option value="0" selected>Keep original width</option>
+              <option value="3840">3840 px</option><option value="2560">2560 px</option><option value="1920">1920 px</option>
+              <option value="1280">1280 px</option><option value="1024">1024 px</option><option value="800">800 px</option>
+              <option value="640">640 px</option><option value="480">480 px</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="target-unit">KB Counting</label>
+            <select id="target-unit">
+              <option value="1000" selected>1 KB = 1000 bytes (safe everywhere)</option>
+              <option value="1024">1 KB = 1024 bytes (Windows style)</option>
+            </select>
+          </div>
+          <div class="field" id="pad-field">
+            <label for="pad-exact">Exact Size (JPG only)</label>
+            <label class="check-row"><input type="checkbox" id="pad-exact"> Pad file to exactly the target size</label>
+          </div>
         </div>
+        <p class="hint-note" id="png-note" hidden>PNG is lossless, so only resizing can reduce it. Choose JPG or WebP for the best quality at a small size.</p>
+        <p class="hint-note">Target mode finds the best quality that stays at or below your chosen size, so the file is never bigger than the limit.</p>
 
         <div class="actions-row">
           <button type="button" class="btn btn-primary" id="compress-btn">Compress All Images</button>
@@ -831,91 +889,58 @@
   "use strict";
 
   const MAX_FILES = 50;
-  const MAX_FILE_BYTES = 30 * 1024 * 1024; // 30MB safety cap per image
+  const MAX_FILE_BYTES = 60 * 1024 * 1024;
   const ACCEPTED_TYPES = ["image/jpeg", "image/png", "image/webp"];
+  const $ = (id) => document.getElementById(id);
 
-  const uploadZone = document.getElementById("upload-zone");
-  const fileInput = document.getElementById("file-input");
-  const selectBtn = document.getElementById("select-btn");
-  const fileList = document.getElementById("file-list");
-  const settingsPanel = document.getElementById("settings-panel");
-  const qualityRange = document.getElementById("quality-range");
-  const qualityValue = document.getElementById("quality-value");
-  const formatSelect = document.getElementById("format-select");
-  const compressBtn = document.getElementById("compress-btn");
-  const clearBtn = document.getElementById("clear-btn");
-  const statusBox = document.getElementById("status-box");
-  const statusText = document.getElementById("status-text");
-  const progressTrack = document.getElementById("progress-track");
-  const progressFill = document.getElementById("progress-fill");
-  const resultsSection = document.getElementById("results-section");
-  const resultGrid = document.getElementById("result-grid");
-  const zipBtn = document.getElementById("zip-btn");
-  const resetBtn = document.getElementById("reset-btn");
+  const uploadZone = $("upload-zone"), fileInput = $("file-input"), selectBtn = $("select-btn");
+  const fileList = $("file-list"), settingsPanel = $("settings-panel");
+  const qualityRange = $("quality-range"), qualityValue = $("quality-value");
+  const formatSelect = $("format-select"), modeSelect = $("mode-select");
+  const maxWidthSelect = $("maxwidth-select"), strategySelect = $("strategy-select");
+  const targetPreset = $("target-preset"), targetCustom = $("target-custom"), targetUnit = $("target-unit");
+  const padExact = $("pad-exact");
+  const compressBtn = $("compress-btn"), clearBtn = $("clear-btn");
+  const statusBox = $("status-box"), statusText = $("status-text");
+  const progressTrack = $("progress-track"), progressFill = $("progress-fill");
+  const resultsSection = $("results-section"), resultGrid = $("result-grid");
+  const zipBtn = $("zip-btn"), resetBtn = $("reset-btn");
 
-  /** @type {{id:string, file:File, previewUrl:string}[]} */
   let queue = [];
-  /** @type {{id:string, name:string, originalSize:number, compressedSize:number, blob:Blob, previewUrl:string}[]} */
   let results = [];
-
   let idCounter = 0;
   const nextId = () => `img_${Date.now()}_${idCounter++}`;
 
   function formatBytes(bytes) {
     if (bytes < 1024) return `${bytes} B`;
     const units = ["KB", "MB", "GB"];
-    let val = bytes / 1024;
-    let i = 0;
-    while (val >= 1024 && i < units.length - 1) {
-      val /= 1024;
-      i++;
-    }
+    let val = bytes / 1024, i = 0;
+    while (val >= 1024 && i < units.length - 1) { val /= 1024; i++; }
     return `${val.toFixed(val < 10 ? 2 : 1)} ${units[i]}`;
   }
-
   function showStatus(message, type) {
     statusText.textContent = message;
     statusBox.classList.add("active");
     statusBox.classList.remove("error", "success");
     if (type) statusBox.classList.add(type);
   }
-
   function hideStatus() {
     statusBox.classList.remove("active", "error", "success");
     progressTrack.hidden = true;
     progressFill.style.width = "0%";
   }
-
-  function setProgress(pct) {
-    progressTrack.hidden = false;
-    progressFill.style.width = `${pct}%`;
-  }
-
-  function safeExtensionFor(mime) {
-    if (mime === "image/png") return "png";
-    if (mime === "image/webp") return "webp";
-    return "jpg";
-  }
-
-  function baseName(name) {
-    const dot = name.lastIndexOf(".");
-    return dot > 0 ? name.slice(0, dot) : name;
-  }
-
-  function sanitizeFileName(name) {
-    return name.replace(/[\\/:*?"<>|]/g, "_").trim() || "image";
-  }
+  function setProgress(pct) { progressTrack.hidden = false; progressFill.style.width = `${pct}%`; }
+  function safeExtensionFor(mime) { return mime === "image/png" ? "png" : mime === "image/webp" ? "webp" : "jpg"; }
+  function baseName(name) { const d = name.lastIndexOf("."); return d > 0 ? name.slice(0, d) : name; }
+  function sanitizeFileName(name) { return name.replace(/[\\/:*?"<>|]/g, "_").trim() || "image"; }
+  function escapeHtml(str) { const d = document.createElement("div"); d.textContent = str; return d.innerHTML; }
+  const yieldUI = () => new Promise((r) => setTimeout(r, 0));
 
   function validateFile(file) {
-    if (!ACCEPTED_TYPES.includes(file.type)) {
-      return "Unsupported file format. Please use JPG, JPEG, PNG, or WebP.";
-    }
-    if (file.size > MAX_FILE_BYTES) {
-      return "This file is too large to process. Please use an image under 30 MB.";
-    }
-    if (file.size === 0) {
-      return "This file appears to be empty or corrupted.";
-    }
+    const okType = ACCEPTED_TYPES.includes(file.type) || (!file.type && /\.(jpe?g|png|webp)$/i.test(file.name));
+    if (!okType) return "Unsupported file format. Please use JPG, JPEG, PNG, or WebP.";
+    if (file.size > MAX_FILE_BYTES) return "This file is too large to process. Please use an image under 60 MB.";
+    if (file.size === 0) return "This file appears to be empty or corrupted.";
     return null;
   }
 
@@ -933,181 +958,196 @@
       card.querySelector(".remove-btn").addEventListener("click", () => removeFile(item.id));
       fileList.appendChild(card);
     });
-
     settingsPanel.hidden = queue.length === 0;
-    if (queue.length === 0) {
-      hideStatus();
-    }
+    if (queue.length === 0) hideStatus();
   }
-
-  function escapeHtml(str) {
-    const div = document.createElement("div");
-    div.textContent = str;
-    return div.innerHTML;
-  }
-
   function removeFile(id) {
     const idx = queue.findIndex((q) => q.id === id);
-    if (idx !== -1) {
-      URL.revokeObjectURL(queue[idx].previewUrl);
-      queue.splice(idx, 1);
-      renderFileList();
-    }
+    if (idx !== -1) { URL.revokeObjectURL(queue[idx].previewUrl); queue.splice(idx, 1); renderFileList(); }
   }
-
   function addFiles(fileArr) {
     const incoming = Array.from(fileArr);
-    if (incoming.length === 0) return;
-
-    let rejected = [];
-    let accepted = [];
-
+    if (!incoming.length) return;
+    let rejected = [], accepted = [];
     for (const file of incoming) {
       const error = validateFile(file);
-      if (error) {
-        rejected.push(`${file.name}: ${error}`);
-        continue;
-      }
+      if (error) { rejected.push(`${file.name}: ${error}`); continue; }
       accepted.push(file);
     }
-
-    const availableSlots = MAX_FILES - queue.length;
-    if (accepted.length > availableSlots) {
+    const slots = MAX_FILES - queue.length;
+    if (accepted.length > slots) {
       rejected.push(`Only ${MAX_FILES} images are allowed at once. Some files were not added.`);
-      accepted = accepted.slice(0, Math.max(availableSlots, 0));
+      accepted = accepted.slice(0, Math.max(slots, 0));
     }
-
-    accepted.forEach((file) => {
-      queue.push({
-        id: nextId(),
-        file,
-        previewUrl: URL.createObjectURL(file),
-      });
-    });
-
+    accepted.forEach((file) => queue.push({ id: nextId(), file, previewUrl: URL.createObjectURL(file) }));
     renderFileList();
-
-    if (rejected.length > 0) {
-      showStatus(rejected[0], "error");
-    } else if (accepted.length > 0) {
-      hideStatus();
-    }
+    if (rejected.length) showStatus(rejected[0], "error");
+    else if (accepted.length) hideStatus();
   }
 
-  // Upload interactions
-  selectBtn.addEventListener("click", () => fileInput.click());
-  fileInput.addEventListener("change", (e) => {
-    addFiles(e.target.files);
-    fileInput.value = "";
-  });
+  selectBtn.addEventListener("click", (e) => { e.stopPropagation(); fileInput.click(); });
+  fileInput.addEventListener("change", (e) => { addFiles(e.target.files); fileInput.value = ""; });
+  ["dragenter", "dragover"].forEach((evt) => uploadZone.addEventListener(evt, (e) => { e.preventDefault(); uploadZone.classList.add("dragover"); }));
+  ["dragleave", "drop"].forEach((evt) => uploadZone.addEventListener(evt, (e) => { e.preventDefault(); uploadZone.classList.remove("dragover"); }));
+  uploadZone.addEventListener("drop", (e) => { if (e.dataTransfer && e.dataTransfer.files) addFiles(e.dataTransfer.files); });
 
-  ["dragenter", "dragover"].forEach((evt) => {
-    uploadZone.addEventListener(evt, (e) => {
-      e.preventDefault();
-      uploadZone.classList.add("dragover");
-    });
-  });
-  ["dragleave", "drop"].forEach((evt) => {
-    uploadZone.addEventListener(evt, (e) => {
-      e.preventDefault();
-      uploadZone.classList.remove("dragover");
-    });
-  });
-  uploadZone.addEventListener("drop", (e) => {
-    if (e.dataTransfer && e.dataTransfer.files) {
-      addFiles(e.dataTransfer.files);
-    }
-  });
+  qualityRange.addEventListener("input", () => { qualityValue.textContent = `${qualityRange.value}%`; });
 
-  // Quality slider
-  qualityRange.addEventListener("input", () => {
-    qualityValue.textContent = `${qualityRange.value}%`;
-  });
+  /* ---------- UI mode switching ---------- */
+  function syncUI() {
+    const target = modeSelect.value === "target";
+    $("quality-field").hidden = target;
+    $("target-fields").hidden = !target;
+    $("target-custom-field").hidden = !(target && targetPreset.value === "custom");
+    const png = formatSelect.value === "png";
+    $("png-note").hidden = !(png);
+    $("pad-field").hidden = !(target && formatSelect.value === "jpeg");
+  }
+  [modeSelect, targetPreset, formatSelect].forEach((el) => el.addEventListener("change", syncUI));
 
-  // Clear all (uploaded queue, before compression)
+  function getTargetBytes() {
+    let kb = targetPreset.value === "custom" ? Number(targetCustom.value) : Number(targetPreset.value);
+    if (!isFinite(kb) || kb < 1) kb = 50;
+    return Math.floor(kb * (Number(targetUnit.value) || 1000));
+  }
+
   clearBtn.addEventListener("click", () => {
-    queue.forEach((item) => URL.revokeObjectURL(item.previewUrl));
-    queue = [];
-    renderFileList();
-    hideStatus();
+    queue.forEach((i) => URL.revokeObjectURL(i.previewUrl));
+    queue = []; renderFileList(); hideStatus();
   });
 
-  // Compression pipeline
+  /* ---------- Compression engine ---------- */
   function loadImage(file) {
     return new Promise((resolve, reject) => {
       const url = URL.createObjectURL(file);
       const img = new Image();
       img.onload = () => resolve({ img, url });
-      img.onerror = () => {
-        URL.revokeObjectURL(url);
-        reject(new Error("Could not read this image. It may be corrupted."));
-      };
+      img.onerror = () => { URL.revokeObjectURL(url); reject(new Error("Could not read this image. It may be corrupted.")); };
       img.src = url;
     });
   }
+  function enc(canvas, mime, q) {
+    return new Promise((resolve) => canvas.toBlob((b) => resolve(b), mime, q));
+  }
+  function mimeFor(format) { return format === "png" ? "image/png" : format === "webp" ? "image/webp" : "image/jpeg"; }
 
-  function compressImage(file, quality, format) {
-    return new Promise(async (resolve, reject) => {
-      let loaded;
-      try {
-        loaded = await loadImage(file);
-      } catch (err) {
-        reject(err);
-        return;
+  function makeRenderer(img, format, maxW) {
+    const W = img.naturalWidth, H = img.naturalHeight;
+    const baseScale = maxW && W > maxW ? maxW / W : 1;
+    const src = document.createElement("canvas");
+    src.width = W; src.height = H;
+    const sctx = src.getContext("2d");
+    if (!sctx) throw new Error("Your browser could not process this image.");
+    if (format === "jpeg") { sctx.fillStyle = "#ffffff"; sctx.fillRect(0, 0, W, H); }
+    sctx.drawImage(img, 0, 0);
+
+    function render(scale) {
+      const s = Math.min(1, baseScale * scale);
+      const tw = Math.max(1, Math.round(W * s)), th = Math.max(1, Math.round(H * s));
+      if (tw === W && th === H) return src;
+      let cur = src, cw = W, ch = H;
+      // step-down by halves for crisp results
+      while (cw / 2 > tw && ch / 2 > th) {
+        const nw = Math.max(1, Math.round(cw / 2)), nh = Math.max(1, Math.round(ch / 2));
+        const c = document.createElement("canvas"); c.width = nw; c.height = nh;
+        const x = c.getContext("2d"); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = "high";
+        x.drawImage(cur, 0, 0, nw, nh);
+        cur = c; cw = nw; ch = nh;
       }
-      const { img, url } = loaded;
+      const out = document.createElement("canvas"); out.width = tw; out.height = th;
+      const ox = out.getContext("2d");
+      if (format === "jpeg") { ox.fillStyle = "#ffffff"; ox.fillRect(0, 0, tw, th); }
+      ox.imageSmoothingEnabled = true; ox.imageSmoothingQuality = "high";
+      ox.drawImage(cur, 0, 0, tw, th);
+      return out;
+    }
+    return { render, W, H, baseScale };
+  }
 
-      try {
-        const canvas = document.createElement("canvas");
-        canvas.width = img.naturalWidth;
-        canvas.height = img.naturalHeight;
-        const ctx = canvas.getContext("2d");
-        if (!ctx) {
-          throw new Error("Your browser could not process this image.");
+  async function compressManual(file, quality, format, maxW) {
+    const { img, url } = await loadImage(file);
+    try {
+      const r = makeRenderer(img, format, maxW);
+      const q = format === "png" ? undefined : Math.min(Math.max(quality / 100, 0.01), 1);
+      const blob = await enc(r.render(1), mimeFor(format), q);
+      if (!blob) throw new Error("Compression failed for this image.");
+      return { blob, fit: true };
+    } finally { URL.revokeObjectURL(url); }
+  }
+
+  async function compressToTarget(file, target, strategy, format, maxW, pad) {
+    const { img, url } = await loadImage(file);
+    try {
+      const mime = mimeFor(format);
+      const r = makeRenderer(img, format, maxW);
+      const sizeAt = async (scale, q) => {
+        const b = await enc(r.render(scale), mime, format === "png" ? undefined : q);
+        if (!b) throw new Error("Compression failed for this image.");
+        return b;
+      };
+      // largest quality that fits (scale fixed)
+      async function searchQ(scale, lo, hi, iters) {
+        let b = await sizeAt(scale, hi);
+        if (b.size <= target) return { blob: b, fit: true };
+        let best = await sizeAt(scale, lo);
+        if (best.size > target) return { blob: best, fit: false };
+        for (let i = 0; i < iters; i++) {
+          const mid = (lo + hi) / 2;
+          b = await sizeAt(scale, mid);
+          if (b.size <= target) { best = b; lo = mid; } else hi = mid;
         }
-
-        if (format === "jpeg") {
-          // JPEG has no transparency; use a white background to avoid black fills.
-          ctx.fillStyle = "#ffffff";
-          ctx.fillRect(0, 0, canvas.width, canvas.height);
-        }
-        ctx.drawImage(img, 0, 0);
-
-        const mime = format === "png" ? "image/png" : format === "webp" ? "image/webp" : "image/jpeg";
-        const qualityParam = format === "png" ? undefined : Math.min(Math.max(quality / 100, 0.1), 1);
-
-        canvas.toBlob(
-          (blob) => {
-            URL.revokeObjectURL(url);
-            if (!blob) {
-              reject(new Error("Compression failed for this image."));
-              return;
-            }
-            resolve(blob);
-          },
-          mime,
-          qualityParam
-        );
-      } catch (err) {
-        URL.revokeObjectURL(url);
-        reject(err);
+        return { blob: best, fit: true };
       }
-    });
+      // largest scale that fits (quality fixed)
+      async function searchS(q, iters) {
+        let b = await sizeAt(1, q);
+        if (b.size <= target) return { blob: b, fit: true };
+        let lo = 0.02, hi = 1;
+        let best = await sizeAt(lo, q);
+        if (best.size > target) return { blob: best, fit: false };
+        for (let i = 0; i < iters; i++) {
+          const mid = (lo + hi) / 2;
+          b = await sizeAt(mid, q);
+          if (b.size <= target) { best = b; lo = mid; } else hi = mid;
+        }
+        return { blob: best, fit: true };
+      }
+
+      let res;
+      if (format === "png") {
+        res = await searchS(undefined, 11);
+      } else if (strategy === "quality") {
+        res = await searchS(0.9, 11);
+        if (!res.fit) res = await searchS(0.6, 11);
+      } else if (strategy === "dims") {
+        res = await searchQ(1, 0.02, 1, 10);
+        if (!res.fit) res = await searchS(0.02, 11);
+      } else if (strategy === "max") {
+        res = await searchQ(1, 0.02, 1, 10);
+        if (!res.fit) res = await searchS(0.02, 11);
+      } else { // balanced
+        res = await searchQ(1, 0.55, 0.95, 9);
+        if (!res.fit) res = await searchS(0.55, 11);
+        if (!res.fit) res = await searchS(0.3, 11);
+        if (!res.fit) res = await searchS(0.05, 11);
+      }
+      let blob = res.blob;
+      if (pad && res.fit && blob.type === "image/jpeg" && blob.size < target) {
+        blob = new Blob([blob, new Uint8Array(target - blob.size)], { type: "image/jpeg" });
+      }
+      return { blob, fit: res.fit };
+    } finally { URL.revokeObjectURL(url); }
   }
 
   function clearResults() {
     results.forEach((r) => URL.revokeObjectURL(r.previewUrl));
-    results = [];
-    resultGrid.innerHTML = "";
+    results = []; resultGrid.innerHTML = "";
     resultsSection.classList.remove("active");
   }
 
   function renderResultCard(result) {
     const savedBytes = Math.max(result.originalSize - result.compressedSize, 0);
-    const savingsPct = result.originalSize > 0
-      ? Math.max(Math.round((savedBytes / result.originalSize) * 100), 0)
-      : 0;
-
+    const pct = result.originalSize > 0 ? Math.max(Math.round((savedBytes / result.originalSize) * 100), 0) : 0;
     const card = document.createElement("div");
     card.className = "result-card";
     card.innerHTML = `
@@ -1116,144 +1156,111 @@
       <div class="stat-row"><span>Original Size</span><strong>${formatBytes(result.originalSize)}</strong></div>
       <div class="stat-row"><span>Compressed Size</span><strong>${formatBytes(result.compressedSize)}</strong></div>
       <div class="stat-row"><span>Saved</span><strong>${formatBytes(savedBytes)}</strong></div>
-      <span class="savings-pill">Savings: ${savingsPct}%</span>
+      ${result.targetBytes ? `<div class="stat-row"><span>Target</span><strong>${formatBytes(result.targetBytes)}</strong></div>` : ""}
+      <span class="savings-pill">Savings: ${pct}%</span>
+      ${result.note ? `<div class="stat-row" style="margin-top:6px;color:#b45309;font-weight:700">${escapeHtml(result.note)}</div>` : ""}
       <button type="button" class="btn btn-secondary btn-block btn-sm download-one">Download</button>
     `;
-    card.querySelector(".download-one").addEventListener("click", () => {
-      downloadBlob(result.blob, result.name);
-    });
+    card.querySelector(".download-one").addEventListener("click", () => downloadBlob(result.blob, result.name));
     resultGrid.appendChild(card);
   }
 
   function downloadBlob(blob, name) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
-    a.href = url;
-    a.download = name;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    a.href = url; a.download = name;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1500);
   }
 
   compressBtn.addEventListener("click", async () => {
-    if (queue.length === 0) {
-      showStatus("Please upload at least one image before compressing.", "error");
-      return;
-    }
-
+    if (queue.length === 0) { showStatus("Please upload at least one image before compressing.", "error"); return; }
     clearResults();
-    compressBtn.disabled = true;
-    clearBtn.disabled = true;
-    const quality = Number(qualityRange.value);
+    compressBtn.disabled = true; clearBtn.disabled = true;
     const format = formatSelect.value;
+    const mode = modeSelect.value;
+    const quality = Number(qualityRange.value);
+    const maxW = Number(maxWidthSelect.value) || 0;
+    const target = getTargetBytes();
+    const strategy = strategySelect.value;
+    const pad = padExact.checked;
 
     showStatus("Compressing Images...");
     setProgress(0);
-
-    let successCount = 0;
-    let failCount = 0;
+    let ok = 0, fail = 0;
 
     for (let i = 0; i < queue.length; i++) {
       const item = queue[i];
+      showStatus(`Compressing image ${i + 1} of ${queue.length}...`);
+      await yieldUI();
       try {
-        const blob = await compressImage(item.file, quality, format);
+        const r = mode === "target"
+          ? await compressToTarget(item.file, target, strategy, format, maxW, pad)
+          : await compressManual(item.file, quality, format, maxW);
+        const blob = r.blob;
         const ext = safeExtensionFor(blob.type);
         const name = `${sanitizeFileName(baseName(item.file.name))}.${ext}`;
-        const previewUrl = URL.createObjectURL(blob);
         const result = {
-          id: item.id,
-          name,
-          originalSize: item.file.size,
-          compressedSize: blob.size,
-          blob,
-          previewUrl,
+          id: item.id, name, originalSize: item.file.size, compressedSize: blob.size, blob,
+          previewUrl: URL.createObjectURL(blob),
+          targetBytes: mode === "target" ? target : 0,
+          note: mode === "target" && !r.fit ? "Could not reach the target. This is the smallest possible size." : ""
         };
         results.push(result);
         renderResultCard(result);
-        successCount++;
-      } catch (err) {
-        failCount++;
-      }
+        ok++;
+      } catch (err) { console.error(err); fail++; }
       setProgress(Math.round(((i + 1) / queue.length) * 100));
     }
 
-    compressBtn.disabled = false;
-    clearBtn.disabled = false;
-
-    if (successCount > 0) {
-      resultsSection.classList.add("active");
-    }
-
-    if (failCount === 0) {
-      showStatus("Images compressed successfully.", "success");
-    } else if (successCount > 0) {
-      showStatus(`Images compressed successfully. ${failCount} file(s) could not be processed.`, "success");
-    } else {
-      showStatus("We could not compress these images. Please try different files.", "error");
-    }
-
+    compressBtn.disabled = false; clearBtn.disabled = false;
+    if (ok > 0) resultsSection.classList.add("active");
+    if (fail === 0) showStatus("Images compressed successfully.", "success");
+    else if (ok > 0) showStatus(`Images compressed successfully. ${fail} file(s) could not be processed.`, "success");
+    else showStatus("We could not compress these images. Please try different files.", "error");
     progressTrack.hidden = true;
   });
 
   zipBtn.addEventListener("click", async () => {
     if (results.length === 0) return;
-    if (typeof JSZip === "undefined") {
-      showStatus("ZIP download is unavailable right now. Please try individual downloads.", "error");
-      return;
-    }
-
+    if (typeof JSZip === "undefined") { showStatus("ZIP download is unavailable right now. Please try individual downloads.", "error"); return; }
     zipBtn.disabled = true;
-    const originalLabel = zipBtn.textContent;
+    const label = zipBtn.textContent;
     zipBtn.textContent = "Preparing ZIP...";
-
     try {
       const zip = new JSZip();
-      const usedNames = new Map();
-
-      results.forEach((result) => {
-        let name = result.name;
-        if (usedNames.has(name)) {
-          const count = usedNames.get(name) + 1;
-          usedNames.set(name, count);
-          const dot = name.lastIndexOf(".");
-          name = dot > 0 ? `${name.slice(0, dot)}_${count}${name.slice(dot)}` : `${name}_${count}`;
-        } else {
-          usedNames.set(name, 0);
-        }
-        zip.file(name, result.blob);
+      const used = new Map();
+      results.forEach((r) => {
+        let name = r.name;
+        if (used.has(name)) {
+          const c = used.get(name) + 1; used.set(name, c);
+          const d = name.lastIndexOf(".");
+          name = d > 0 ? `${name.slice(0, d)}_${c}${name.slice(d)}` : `${name}_${c}`;
+        } else used.set(name, 0);
+        zip.file(name, r.blob);
       });
-
       const content = await zip.generateAsync({ type: "blob" });
       downloadBlob(content, "compressed-images.zip");
     } catch (err) {
       showStatus("Could not create the ZIP file. Please try again.", "error");
-    } finally {
-      zipBtn.disabled = false;
-      zipBtn.textContent = originalLabel;
-    }
+    } finally { zipBtn.disabled = false; zipBtn.textContent = label; }
   });
 
   resetBtn.addEventListener("click", startOver);
-
   function startOver() {
-    queue.forEach((item) => URL.revokeObjectURL(item.previewUrl));
-    queue = [];
-    clearResults();
-    fileList.innerHTML = "";
+    queue.forEach((i) => URL.revokeObjectURL(i.previewUrl));
+    queue = []; clearResults(); fileList.innerHTML = "";
     settingsPanel.hidden = true;
-    qualityRange.value = 80;
-    qualityValue.textContent = "80%";
-    formatSelect.value = "jpeg";
-    hideStatus();
+    qualityRange.value = 80; qualityValue.textContent = "80%";
+    formatSelect.value = "jpeg"; modeSelect.value = "target"; targetPreset.value = "50";
+    hideStatus(); syncUI();
   }
-
   window.addEventListener("beforeunload", () => {
-    queue.forEach((item) => URL.revokeObjectURL(item.previewUrl));
+    queue.forEach((i) => URL.revokeObjectURL(i.previewUrl));
     results.forEach((r) => URL.revokeObjectURL(r.previewUrl));
   });
+  syncUI();
 })();
-
 </script>
 
 <script src="/shared/shared.js" defer></script>
