@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.wtoolsbox.com/sitemap.xml
+Sitemap: https://wtoolsbox.com/sitemap.xml
