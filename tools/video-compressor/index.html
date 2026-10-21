@@ -793,13 +793,21 @@
 
           <h3 class="panel-heading gradient-heading">Compression Settings</h3>
           <div class="field"><label for="preset">Compression Level</label>
-            <select id="preset"><option value="0.07">Recommended (balanced)</option><option value="0.12">High quality (larger file)</option><option value="0.04">Small file</option><option value="0.02">Extreme (smallest file)</option><option value="custom">Custom bitrate</option></select></div>
+            <select id="preset"><option value="0.07">Recommended (balanced)</option><option value="0.12">High quality (larger file)</option><option value="0.04">Small file</option><option value="0.02">Extreme (smallest file)</option><option value="custom">Custom bitrate</option><option value="target">Exact target size (KB / MB)</option></select></div>
+          <div id="tgt-box" hidden>
+            <div class="field-row">
+              <div class="field"><label for="tgt-preset">Target File Size</label><select id="tgt-preset"><option value="30">30 KB</option><option value="40">40 KB</option><option value="50" selected>50 KB</option><option value="100">100 KB</option><option value="200">200 KB</option><option value="300">300 KB</option><option value="500">500 KB</option><option value="1000">1 MB</option><option value="2000">2 MB</option><option value="5000">5 MB</option><option value="10000">10 MB</option><option value="16000">16 MB (WhatsApp)</option><option value="custom">Custom (type KB)</option></select></div>
+              <div class="field" id="tgt-custom-f" hidden><label for="tgt-custom">Custom Size (KB)</label><input type="number" id="tgt-custom" min="5" step="1" value="45" inputmode="numeric"></div>
+            </div>
+            <div class="checkbox-field"><input type="checkbox" id="tgt-retry" checked><label for="tgt-retry">Auto-retry until the file is under the target</label></div>
+            <p class="hint">Target mode picks resolution and bitrate for you (set Resolution to Auto). 1 KB = 1000 bytes. Very small targets work best with a short clip and audio removed.</p>
+          </div>
           <div class="field-row">
             <div class="field"><label for="res">Resolution</label><select id="res"></select></div>
-            <div class="field"><label for="fps">Frame Rate</label><select id="fps"><option value="60">60 FPS</option><option value="30" selected>30 FPS</option><option value="24">24 FPS</option><option value="15">15 FPS</option></select></div>
+            <div class="field"><label for="fps">Frame Rate</label><select id="fps"><option value="60">60 FPS</option><option value="30" selected>30 FPS</option><option value="24">24 FPS</option><option value="15">15 FPS</option><option value="12">12 FPS</option><option value="10">10 FPS</option><option value="5">5 FPS</option></select></div>
           </div>
           <div class="field"><label for="vbr">Video Bitrate</label>
-            <input type="range" id="vbr" min="100" max="12000" step="50" value="1500" aria-describedby="vbr-val"><div class="range-value" id="vbr-val">1500 kbps</div></div>
+            <input type="range" id="vbr" min="5" max="12000" step="5" value="1500" aria-describedby="vbr-val"><div class="range-value" id="vbr-val">1500 kbps</div></div>
           <div class="field-row">
             <div class="field"><label for="audio">Audio</label><select id="audio"><option value="keep">Keep audio</option><option value="remove">Remove audio</option></select></div>
             <div class="field"><label for="abr">Audio Quality</label><select id="abr"><option value="64">64 kbps</option><option value="96">96 kbps</option><option value="128" selected>128 kbps</option><option value="192">192 kbps</option></select></div>
@@ -1093,7 +1101,7 @@
       info=i;clearResult();
       el["orig-video"].src=i.url;
       $("o-size").textContent=fmtSize(f.size);$("o-dur").textContent=fmtTime(i.dur);$("o-res").textContent=i.w+" \u00D7 "+i.h;
-      var opts=[["orig","Original ("+i.h+"p)"]];[1080,720,480,360,240].forEach(function(p){if(p<i.h)opts.push([p,p+"p"])});
+      var opts=[["auto","Auto (best for target)"],["orig","Original ("+i.h+"p)"]];[1080,720,480,360,240,144].forEach(function(p){if(p<i.h)opts.push([p,p+"p"])});
       el.res.innerHTML="";opts.forEach(function(o){var op=document.createElement("option");op.value=o[0];op.textContent=o[1];el.res.appendChild(op)});
       el.res.value=i.h>720?"720":"orig";
       el.fmt.innerHTML="";FM.forEach(function(m,k){var op=document.createElement("option");op.value=k;op.textContent=m.label;el.fmt.appendChild(op)});
@@ -1103,29 +1111,68 @@
     }).catch(function(){showUploadError("This video could not be read. Try an MP4 (H.264) or WebM file.")});
   });
 
-  function dims(){
-    if(!info)return {W:2,H:2};
-    var h=el.res.value==="orig"?info.h:Math.min(+el.res.value,info.h),w=info.w*h/info.h;
-    return {W:VE.even(w),H:VE.even(h)};
+  function tgtBytes(){
+    var kb=$("tgt-preset").value==="custom"?+$("tgt-custom").value:+$("tgt-preset").value;
+    if(!isFinite(kb)||kb<5)kb=50;return Math.floor(kb*1000);
   }
+  function isTarget(){return el.preset.value==="target"}
+  function audioKbps(budgetK){
+    if(el.audio.value==="remove")return 0;
+    return Math.min(+el.abr.value,Math.max(12,Math.round(budgetK*0.12)));
+  }
+  var HEIGHTS=[1080,720,480,360,240,144];
+  function plan(){
+    // returns {W,H,fps,vbr,abr} for current settings
+    if(!info)return {W:2,H:2,fps:30,vbr:100,abr:64};
+    var len=trimLen()||1,fps=+el.fps.value,mode=el.res.value;
+    var budgetK=isTarget()?tgtBytes()*8/1000/len*0.85:0;
+    var abr=isTarget()?audioKbps(budgetK):+el.abr.value;
+    var vbr=isTarget()?Math.max(5,budgetK-abr):+el.vbr.value;
+    var h;
+    if(mode==="auto"&&isTarget()){
+      h=144;
+      var cand=[info.h].concat(HEIGHTS.filter(function(x){return x<info.h}));
+      for(var i=0;i<cand.length;i++){
+        var hh=cand[i],ww=info.w*hh/info.h;
+        if(vbr*1000/(ww*hh*fps)>=0.06){h=hh;break}
+      }
+    }else if(mode==="auto"||mode==="orig"){h=mode==="auto"&&info.h>720?720:info.h}
+    else h=Math.min(+mode,info.h);
+    var w=info.w*h/info.h,W=VE.even(w),H=VE.even(h);
+    if(isTarget()&&fps>5){
+      var maxFps=Math.floor(vbr*1000/(W*H*0.05));
+      if(maxFps<fps)fps=Math.max(5,maxFps);
+    }
+    return {W:W,H:H,fps:fps,vbr:Math.max(5,Math.round(vbr)),abr:abr};
+  }
+  function dims(){var p=plan();return {W:p.W,H:p.H}}
   function auto(){
-    if(el.preset.value!=="custom"){
-      var d=dims(),k=Math.round(d.W*d.H*(+el.fps.value)*(+el.preset.value)/1000/50)*50;
-      el.vbr.value=Math.max(100,Math.min(12000,k));
+    $("tgt-box").hidden=!isTarget();
+    $("tgt-custom-f").hidden=!($("tgt-preset").value==="custom");
+    if(isTarget()){
+      el.vbr.disabled=true;
+      var p=plan();el.vbr.value=Math.min(12000,Math.max(5,p.vbr));
+    }else{
+      el.vbr.disabled=false;
+      if(el.preset.value!=="custom"){
+        var d=plan(),k=Math.round(d.W*d.H*(+el.fps.value)*(+el.preset.value)/1000/50)*50;
+        el.vbr.value=Math.max(5,Math.min(12000,k));
+      }
     }
     upd();
   }
   function trimLen(){var s=+el["trim-s"].value||0,e=+el["trim-e"].value;return Math.max(0,(isFinite(e)&&e>0?e:info.dur)-s)}
   function upd(){
     $("vbr-val").textContent=el.vbr.value+" kbps";
-    el.abr.disabled=el.audio.value==="remove";
-    var len=trimLen(),kb=(+el.vbr.value+(el.audio.value==="keep"?+el.abr.value:0))*len/8,orig=info.file.size;
-    el.est.textContent="Estimated size: about "+fmtSize(kb*1024)+(orig>kb*1024?" ("+Math.round(100-kb*1024/orig*100)+"% smaller)":" (larger than the original; lower the bitrate)");
+    el.abr.disabled=el.audio.value==="remove"||isTarget();
+    var len=trimLen(),pl=plan(),kb=(pl.vbr+pl.abr)*len/8,orig=info.file.size;
+    el.est.textContent="Estimated size: about "+fmtSize(kb*1024)+(orig>kb*1024?" ("+Math.round(100-kb*1024/orig*100)+"% smaller)":" (larger than the original; lower the bitrate)")+(isTarget()?" \u2022 "+pl.H+"p, "+pl.fps+" FPS, "+pl.vbr+" kbps":"");
   }
   ["res","fps"].forEach(function(i){el[i].addEventListener("change",auto)});
+  ["tgt-preset","tgt-custom","tgt-retry"].forEach(function(i){$(i).addEventListener("input",auto)});
   el.preset.addEventListener("change",auto);
-  el.vbr.addEventListener("input",function(){el.preset.value="custom";upd()});
-  ["audio","abr","trim-s","trim-e"].forEach(function(i){el[i].addEventListener("input",upd)});
+  el.vbr.addEventListener("input",function(){if(isTarget())return;el.preset.value="custom";upd()});
+  ["audio","abr","trim-s","trim-e"].forEach(function(i){el[i].addEventListener("input",function(){if(isTarget())auto();else upd()})});
 
   function clearResult(){
     revoke(resUrl);resUrl=null;resBlob=null;el["res-video"].removeAttribute("src");el["res-video"].hidden=true;el["res-ph"].hidden=false;
@@ -1133,8 +1180,8 @@
   }
   function busy(b){
     running=b;["go-btn","clear-btn","reset-btn"].forEach(function(i){el[i].disabled=b});
-    ["preset","res","fps","vbr","audio","abr","trim-s","trim-e","fmt"].forEach(function(i){el[i].disabled=b});
-    el["cancel-btn"].hidden=!b;show("status-loading",b);show("prog",b);if(!b)upd();
+    ["preset","res","fps","vbr","audio","abr","trim-s","trim-e","fmt"].forEach(function(i){el[i].disabled=b});["tgt-preset","tgt-custom"].forEach(function(i){$(i).disabled=b});
+    el["cancel-btn"].hidden=!b;show("status-loading",b);show("prog",b);if(!b&&info)auto();
   }
   el["cancel-btn"].addEventListener("click",function(){cancelled=true;$("loading-txt").textContent="Cancelling..."});
   el["clear-btn"].addEventListener("click",function(){
@@ -1143,7 +1190,7 @@
   });
   el["reset-btn"].addEventListener("click",function(){
     if(running||!info)return;clearResult();el["trim-s"].value=0;el["trim-e"].value=info.dur.toFixed(2);
-    el.audio.value="keep";el.fps.value="30";el.preset.value="0.07";el.res.value=info.h>720?"720":"orig";el.abr.value="128";auto();
+    el.audio.value="keep";el.fps.value="30";el.preset.value="0.07";el.res.value=info.h>720?"720":"orig";el.abr.value="128";el.res.value=info.h>720?"720":"orig";auto();
   });
 
   el["go-btn"].addEventListener("click",function(){
@@ -1151,17 +1198,33 @@
     var s=Math.max(0,+el["trim-s"].value||0),e=+el["trim-e"].value;if(!(e>0)||e>info.dur)e=info.dur;
     if(e-s<0.2){setMsg("status-error","Trim range is too short. Make sure End is greater than Start.");return}
     clearResult();cancelled=false;busy(true);$("loading-txt").textContent="Compressing...";el["orig-video"].pause();
-    var d=dims(),m=FM[+el.fmt.value],o={W:d.W,H:d.H,fps:+el.fps.value,vbr:+el.vbr.value,abr:+el.abr.value,mute:el.audio.value==="remove",mime:m.mime,fit:"stretch",bg:"#000000",fade:false};
-    VE.run([{url:info.url,start:s,end:e}],o,function(p){el["prog-bar"].style.width=(p*100).toFixed(1)+"%";$("loading-txt").textContent="Compressing... "+Math.round(p*100)+"%"},function(){return cancelled})
-    .then(function(r){
-      var b=r.blob;if(!b.size)throw new Error("empty");
+    var m=FM[+el.fmt.value],tgt=isTarget(),tb=tgt?tgtBytes():0,retry=tgt&&$("tgt-retry").checked;
+    var pl=plan(),d={W:pl.W,H:pl.H},vbrNow=pl.vbr,bestBlob=null;
+    function attempt(n){
+      var o={W:pl.W,H:pl.H,fps:pl.fps,vbr:vbrNow,abr:pl.abr||+el.abr.value,mute:el.audio.value==="remove",mime:m.mime,fit:"stretch",bg:"#000000",fade:false};
+      var tag=n>0?" (attempt "+(n+1)+")":"";
+      return VE.run([{url:info.url,start:s,end:e}],o,function(p){el["prog-bar"].style.width=(p*100).toFixed(1)+"%";$("loading-txt").textContent="Compressing"+tag+"... "+Math.round(p*100)+"%"},function(){return cancelled})
+      .then(function(r){
+        if(!r.blob.size)throw new Error("empty");
+        if(!bestBlob||r.blob.size<bestBlob.blob.size||(bestBlob.blob.size>tb&&r.blob.size<=tb))bestBlob=r;
+        if(tgt&&retry&&r.blob.size>tb&&n<3){
+          vbrNow=Math.max(5,Math.round(vbrNow*tb/r.blob.size*0.88));
+          el["prog-bar"].style.width="0";
+          return attempt(n+1);
+        }
+        return tgt?bestBlob:r;
+      });
+    }
+    attempt(0).then(function(r){
+      var b=r.blob;
       resBlob=b;resExt=m.ext;resUrl=URL.createObjectURL(b);
       el["res-video"].src=resUrl;el["res-video"].hidden=false;el["res-ph"].hidden=true;
       var saved=100-b.size/info.file.size*100;
       $("n-size").textContent=fmtSize(b.size);$("n-res").textContent=d.W+" \u00D7 "+d.H;$("n-saved").textContent=saved>0?Math.round(saved)+"% smaller":"Larger than original";
       el["dl-btn"].disabled=false;
-      setMsg("status-success",saved>0?"Video compressed successfully."+(r.warn?" Note: your browser blocked audio, so audio may be missing.":""):"Done, but the result is not smaller. Choose Small file or lower the bitrate and try again.");
-      if(saved<=0)$("status-success").className="status-msg status-warn";else $("status-success").className="status-msg status-success";
+      var over=tgt&&b.size>tb;
+      setMsg("status-success",over?"Done, but the file is still above your target. Pick a smaller resolution, remove audio, trim the clip, or choose a bigger target.":saved>0?"Video compressed successfully."+(tgt?" Final size is within your target.":"")+(r.warn?" Note: your browser blocked audio, so audio may be missing.":""):"Done, but the result is not smaller. Choose Small file or lower the bitrate and try again.");
+      $("status-success").className=(over||saved<=0)?"status-msg status-warn":"status-msg status-success";
     }).catch(function(err){
       if(err==="cancel")setMsg("status-error","Compression cancelled.");
       else setMsg("status-error",(err&&err.message&&err.message!=="empty")?err.message:"Compression failed. Try a shorter clip, lower resolution or another format.");
