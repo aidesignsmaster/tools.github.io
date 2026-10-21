@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Photo to Video Animation Maker | 30 Effects | Working Tools Box</title>
-<meta name="description" content="Turn up to 30 photos into an animated video with 30 different transition and motion effects, a different effect per photo, plus crop framing. Free, in your browser.">
+<title>Free Photo Color Change Tool Online | Working Tools Box</title>
+<meta name="description" content="Change the color of any object in a photo online for free \u2014 clothes, walls, cars or anything else. Click to pick a color and replace it, right in your browser.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://www.wtoolsbox.com/tools/photo-slideshow-maker/">
+<link rel="canonical" href="https://wtoolsbox.com/tools/photo-color-changer/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Photo to Video Animation Maker | 30 Effects | Working Tools Box">
-<meta property="og:description" content="Turn your photos into an animated video with 30 transition and motion effects, entirely in your browser.">
-<meta property="og:url" content="https://www.wtoolsbox.com/tools/photo-slideshow-maker/">
+<meta property="og:title" content="Free Photo Color Change Tool Online | Working Tools Box">
+<meta property="og:description" content="Change the color of any object in a photo online for free, entirely in your browser.">
+<meta property="og:url" content="https://wtoolsbox.com/tools/photo-color-changer/">
 <meta property="og:site_name" content="Working Tools Box">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Photo to Video Animation Maker | 30 Effects | Working Tools Box">
-<meta name="twitter:description" content="Turn your photos into an animated video with 30 transition and motion effects, entirely in your browser.">
+<meta name="twitter:title" content="Free Photo Color Change Tool Online | Working Tools Box">
+<meta name="twitter:description" content="Change the color of any object in a photo online for free, entirely in your browser.">
 
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@type":"WebApplication",
-  "name":"Photo to Video Animation Maker",
-  "url":"https://www.wtoolsbox.com/tools/photo-slideshow-maker/",
-  "applicationCategory":"MultimediaApplication",
+  "name":"Photo Color Changer",
+  "url":"https://wtoolsbox.com/tools/photo-color-changer/",
+  "applicationCategory":"PhotoApplication",
   "operatingSystem":"Any",
-  "description":"Combines up to 30 photos into an animated slideshow video, with 30 selectable motion and transition effects assignable per photo, plus per-photo crop framing, directly in the browser.",
+  "description":"Changes the color of any object in a photo by selecting similar colors and replacing them, while preserving shading and texture, directly in the browser.",
   "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
 }
 </script>
@@ -34,10 +34,10 @@
   "@context":"https://schema.org",
   "@type":"FAQPage",
   "mainEntity":[
-    {"@type":"Question","name":"Are my photos uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The slideshow video is built and recorded locally in your browser, and your photos are never uploaded anywhere."}},
-    {"@type":"Question","name":"Can each photo have a different animation effect?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every photo has its own effect dropdown with 30 options, so you can mix zooms, pans, wipes, slides and more across a single slideshow."}},
-    {"@type":"Question","name":"What does the crop framing option do?","acceptedAnswer":{"@type":"Answer","text":"It controls how a photo that does not match the video's shape gets fitted into the frame \u2014 showing the whole photo with padding, or cropping it from the center, top, bottom, left or right edge to fill the frame completely."}},
-    {"@type":"Question","name":"What video format do I get?","acceptedAnswer":{"@type":"Answer","text":"The slideshow is saved as a WebM video file, since that is the format browsers can record directly without extra software."}},
+    {"@type":"Question","name":"How does this tool know which object to recolor?","acceptedAnswer":{"@type":"Answer","text":"Click anywhere on the photo to pick a color. The tool then finds every pixel with a similar color, based on the tolerance you set, and replaces it while keeping the original shading and texture."}},
+    {"@type":"Question","name":"Will it only change the object I clicked on?","acceptedAnswer":{"@type":"Answer","text":"It changes every area of a similar color, not just the exact spot you clicked. If another object shares that color, it may change too \u2014 lower the tolerance for a more precise selection."}},
+    {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The recoloring happens locally in your browser using the Canvas API, and your photo is never uploaded anywhere."}},
+    {"@type":"Question","name":"Will the shading and folds in clothing still look natural?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool replaces the hue and saturation of matched pixels but keeps their original brightness, so shadows, highlights and fabric folds are preserved."}},
     {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
   ]
 }
@@ -48,11 +48,11 @@
   :root{
     --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
     --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
-    --soft:#fbf9ff;--error:#c0392b;--success:#0f9d58;--focus:#4338ca;--radius:16px;
+    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
     --shadow:0 4px 24px rgba(40,20,80,0.06);
   }
   body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-  .container{width:min(1160px,calc(100% - 32px));margin:auto}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
   .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
 
   .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
@@ -63,17 +63,16 @@
   .nav nav a:hover{color:var(--purple)}
 
   .hero{text-align:center;padding:44px 0 20px}
-  .hero h1{font-size:clamp(26px,5vw,40px);margin:0 0 12px;font-weight:800}
-  .hero p{color:var(--muted);max-width:720px;margin:auto}
+  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
+  .hero p{color:var(--muted);max-width:680px;margin:auto}
 
   .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
-  .notice.warn{background:#fff7ed;border-color:#fcd9a8;color:#92400e}
 
   .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
 
-  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:30px 18px;text-align:center;background:var(--soft);cursor:pointer}
+  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
   .upload:hover{border-color:var(--purple)}
-  .upload svg{width:42px;height:42px;margin:0 auto 10px;color:var(--purple)}
+  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
   input[type=file]{display:none}
 
   .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
@@ -82,39 +81,31 @@
   .primary:disabled{opacity:.5;cursor:not-allowed}
   .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
   .secondary:hover{background:#f8f6ff}
-  .button:focus-visible,select:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 
   .status{margin-top:14px;font-size:14px;color:var(--muted)}
   .status.error{color:var(--error);font-weight:600}
 
-  .setup-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:20px}
-  .setup-row label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
-  select{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:13px;background:#fff}
+  .grid2{display:grid;grid-template-columns:1fr 300px;gap:22px;align-items:start}
+  .canvas-wrap{background:#111827;border-radius:14px;min-height:340px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px}
+  #workCanvas{max-width:100%;max-height:520px;display:block;cursor:crosshair}
 
-  .thumb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:14px;margin:18px 0}
-  .thumb-card{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
-  .thumb-card .thumb-img-wrap{position:relative}
-  .thumb-card img{width:100%;height:110px;object-fit:cover;display:block}
-  .thumb-card .thumb-order{position:absolute;top:6px;left:6px;background:rgba(17,24,39,.75);color:#fff;font-size:11px;font-weight:700;padding:2px 7px;border-radius:6px}
-  .thumb-body{padding:8px 10px;display:flex;flex-direction:column;gap:6px}
-  .thumb-body label{font-size:11px;font-weight:700;color:var(--muted);margin:0}
-  .thumb-body select{padding:6px;font-size:12px}
-  .thumb-actions{display:flex;justify-content:space-between;padding:4px 8px 8px}
-  .thumb-actions button{border:none;background:none;cursor:pointer;color:#4c1d95;font-weight:800;font-size:13px;padding:2px 6px}
-  .thumb-actions button:hover{color:var(--purple)}
-  .thumb-actions button:disabled{opacity:.3;cursor:not-allowed}
-
-  .progress-wrap{background:#f1eefb;border-radius:999px;height:10px;overflow:hidden;margin-top:14px}
-  .progress-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));width:0%;transition:width .2s ease}
-
-  video.result-video{width:100%;border-radius:14px;background:#111827;max-height:480px}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-of-type{margin-top:0}
+  input[type=range]{width:100%}
+  .swatch-row{display:flex;align-items:center;gap:10px}
+  .swatch{width:38px;height:38px;border-radius:8px;border:2px solid var(--border);flex-shrink:0}
+  input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px;cursor:pointer}
+  .checkbox-row{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;margin:16px 0 0}
+  .hint{font-size:12px;color:var(--muted);margin-top:6px}
 
   .content{padding:0 0 55px}
   .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
   .content p,.content li{color:#3c3a46}
   .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
   .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
-  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
+  .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
   .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
   .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
@@ -128,8 +119,8 @@
   .footer-inner nav a:hover{color:var(--purple)}
 
   .hidden{display:none!important}
-  @media(max-width:700px){.setup-row{grid-template-columns:1fr}}
-  @media(max-width:640px){.tool{padding:18px}}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
+  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
 </style>
 </head>
 <body>
@@ -137,123 +128,99 @@
 <div id="site-header"></div>
 <main class="container">
   <section class="hero">
-    <h1 class="grad-text">Photo to Video Animation Maker</h1>
-    <p>Turn your photos into an animated video with 30 motion and transition effects &mdash; a different effect for every photo &mdash; free, in your browser.</p>
+    <h1 class="grad-text">Photo Color Changer</h1>
+    <p>Click any object in your photo &mdash; a dress, a wall, a car &mdash; and change its color while keeping natural shading. Free, in your browser.</p>
   </section>
 
   <div class="notice">
-    <b>100% free, no upload:</b> Your photos are combined into a video locally in your browser and never leave your device.
-  </div>
-  <div class="notice warn hidden" id="unsupportedNotice">
-    <b>Heads up:</b> your browser does not support in-browser video recording (it needs the MediaRecorder API). Please try the latest version of Chrome or Edge.
+    <b>100% free, no upload:</b> Your photo is recolored locally in your browser and never leaves your device.
   </div>
 
-  <section class="tool" aria-label="Photo to Video Animation Maker Tool">
+  <section class="tool" aria-label="Photo Color Changer Tool">
 
-    <div id="setupView">
-      <div class="setup-row">
-        <div>
-          <label for="shapeSelect">Video shape</label>
-          <select id="shapeSelect">
-            <option value="16:9" selected>16:9 Landscape (YouTube)</option>
-            <option value="9:16">9:16 Portrait (Reels/Shorts/Stories)</option>
-            <option value="1:1">1:1 Square (Feed post)</option>
-            <option value="4:5">4:5 Portrait (Feed post)</option>
-            <option value="4:3">4:3 Classic</option>
-          </select>
-        </div>
-        <div>
-          <label for="maxPhotos">Maximum photos</label>
-          <select id="maxPhotos">
-            <option value="4">4 photos</option>
-            <option value="6">6 photos</option>
-            <option value="10" selected>10 photos</option>
-            <option value="20">20 photos</option>
-            <option value="30">30 photos</option>
-          </select>
-        </div>
-        <div>
-          <label for="durationSelect">Seconds per photo</label>
-          <select id="durationSelect">
-            <option value="1.2">1.2 seconds (Fast)</option>
-            <option value="1.8" selected>1.8 seconds</option>
-            <option value="2.5">2.5 seconds</option>
-            <option value="4">4 seconds</option>
-          </select>
-        </div>
-      </div>
-
+    <div id="uploadView">
       <div class="upload" id="dropZone">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop photos here, or</p>
-        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
-        <button type="button" class="button primary" id="selectBtn">Add Photos</button>
-        <p id="countLabel" style="font-size:12px;color:var(--muted);margin-top:12px">0 of 10 photos added</p>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+        <button type="button" class="button primary" id="selectBtn">Select Photo</button>
       </div>
       <div id="uploadStatus" class="status"></div>
-
-      <p class="status" id="thumbHint" style="display:none">Each photo below has its own <b>Effect</b> and <b>Crop</b> dropdown &mdash; set them per photo before generating.</p>
-      <div id="thumbGrid" class="thumb-grid"></div>
-
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-        <button type="button" class="button primary" id="autoGenerateBtn" disabled>\u2728 Auto-Style &amp; Generate (No Setup Needed)</button>
-        <button type="button" class="button secondary" id="generateBtn" disabled>Generate With My Settings</button>
-        <button type="button" class="button secondary" id="randomizeBtn" hidden>Randomize All Effects</button>
-        <button type="button" class="button secondary" id="clearBtn" hidden>Clear All Photos</button>
-      </div>
     </div>
 
-    <div id="generatingView" class="hidden">
-      <p style="font-weight:700;margin:0 0 8px" id="generatingLabel">Building your video&hellip;</p>
-      <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
-    </div>
+    <div id="editorView" class="hidden">
+      <div class="grid2">
+        <div>
+          <div class="canvas-wrap"><canvas id="workCanvas"></canvas></div>
+          <p class="hint">Click anywhere on the photo to pick the color you want to change.</p>
+        </div>
 
-    <div id="resultView" class="hidden">
-      <p style="font-weight:700;margin:0 0 10px">Your Video</p>
-      <video id="resultVideo" class="result-video" controls playsinline></video>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
-        <button type="button" class="button primary" id="downloadBtn">Download Video</button>
-        <button type="button" class="button secondary" id="startOverBtn">Make Another Video</button>
+        <div class="panel">
+          <label>Picked color</label>
+          <div class="swatch-row">
+            <div class="swatch" id="pickedSwatch" style="background:#e5e7eb"></div>
+            <span id="pickedLabel" style="font-size:13px;color:var(--muted)">Click the photo</span>
+          </div>
+
+          <label for="newColor">New color</label>
+          <input type="color" id="newColor" value="#ec4899">
+
+          <label for="toleranceRange">Selection range: <span id="toleranceVal">45</span></label>
+          <input type="range" id="toleranceRange" min="5" max="120" value="45">
+
+          <label for="featherRange">Edge softness: <span id="featherVal">30</span></label>
+          <input type="range" id="featherRange" min="0" max="80" value="30">
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="preserveShadeCheck" style="width:16px;height:16px" checked>
+            Preserve shading and texture
+          </label>
+
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
+            <button type="button" class="button primary" id="downloadBtn" disabled>Download Result</button>
+            <button type="button" class="button secondary" id="undoBtn" disabled>Reset Color Pick</button>
+            <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Photo</button>
+          </div>
+        </div>
       </div>
     </div>
 
   </section>
 
   <section class="content">
-    <h2 class="grad-text">Photo to Video With 30 Animation Effects, Free</h2>
-    <p>This free photo to video animation maker combines up to 30 of your photos into a single video, with 30 different motion and transition effects to choose from &mdash; zooms, pans, slides, wipes, blinds, iris reveals, cross-zooms and more &mdash; and a different effect can be set for every single photo in the sequence. A crop framing option on each photo controls whether it is shown in full or filled edge-to-edge from a chosen side, so photos of any shape fit the video cleanly.</p>
-    <p>Use it to build a dynamic highlight reel, turn a photoshoot into a showreel-style video, or create a varied, professional-looking slideshow instead of one repeated transition throughout. Everything is recorded directly in your browser using the same technology built into modern browsers for live video capture, so no software installation or upload is needed.</p>
+    <h2 class="grad-text">Change the Color of Anything in a Photo</h2>
+    <p>This free photo color changer lets you click on any object in a picture &mdash; a shirt, a dress, a car, a wall, a flower &mdash; and swap its color for a new one while keeping the original shading, shadows and fabric folds intact. It works as an online color replacement tool and a selective recolor filter, finding every pixel with a similar color to the one you clicked and blending in the new color smoothly at the edges.</p>
+    <p>Use it to preview a dress in a different color, change a car's paint color, try out a new wall color for a room, or restyle a product photo. Everything runs locally in your browser using the Canvas API, so your photo is never uploaded anywhere.</p>
 
     <h2 class="grad-text">Popular Searches</h2>
     <div class="keyword-tags">
-      <span>photo to video maker online free</span>
-      <span>photo animation maker with effects</span>
-      <span>slideshow maker with 30 effects</span>
-      <span>photos to video converter online</span>
-      <span>video maker with transitions free</span>
-      <span>ken burns effect video maker</span>
-      <span>photo slideshow different effects per photo</span>
-      <span>online video maker with zoom pan effects</span>
-      <span>free slideshow video generator</span>
-      <span>photo to video with wipe transitions</span>
-      <span>make a video from pictures online</span>
-      <span>animated slideshow maker free</span>
-      <span>photo montage video maker online</span>
-      <span>slideshow video with crop options</span>
-      <span>online photo animation tool no upload</span>
-      <span>cross zoom slideshow effect</span>
-      <span>photo video maker no watermark</span>
-      <span>combine photos into animated video</span>
-      <span>free photo to video with custom effects</span>
-      <span>online highlight reel maker</span>
+      <span>change color of object in photo</span>
+      <span>photo color changer online free</span>
+      <span>change dress color online</span>
+      <span>change clothes color in photo</span>
+      <span>online color replacement tool</span>
+      <span>change car color online</span>
+      <span>recolor image online free</span>
+      <span>change wall color in photo</span>
+      <span>selective color change tool</span>
+      <span>photo object recolor online</span>
+      <span>change shirt color online</span>
+      <span>free color swap tool for photos</span>
+      <span>change hair color in photo online</span>
+      <span>image color replacement free</span>
+      <span>recolor clothing online</span>
+      <span>photo editor change color of item</span>
+      <span>change product color online</span>
+      <span>online paint color changer photo</span>
+      <span>swap color in image free</span>
+      <span>change color of any object online</span>
     </div>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Are my photos uploaded to a server?</summary><p>No. The slideshow video is built and recorded locally in your browser, and your photos are never uploaded anywhere.</p></details>
-    <details class="faq"><summary>Can each photo have a different animation effect?</summary><p>Yes. Every photo has its own effect dropdown with 30 options, so you can mix zooms, pans, wipes, slides and more across a single slideshow.</p></details>
-    <details class="faq"><summary>What does the crop framing option do?</summary><p>It controls how a photo that does not match the video's shape gets fitted into the frame &mdash; showing the whole photo with padding, or cropping it from the center, top, bottom, left or right edge to fill the frame completely.</p></details>
-    <details class="faq"><summary>What video shapes can I choose?</summary><p>Pick from 16:9 landscape, 9:16 portrait for Reels and Stories, 1:1 square, 4:5 portrait feed, or 4:3 classic, before generating your video.</p></details>
-    <details class="faq"><summary>What video format do I get?</summary><p>The slideshow is saved as a WebM video file, since that is the format browsers can record directly without extra software.</p></details>
+    <details class="faq"><summary>How does this tool know which object to recolor?</summary><p>Click anywhere on the photo to pick a color. The tool then finds every pixel with a similar color, based on the tolerance you set, and replaces it while keeping the original shading and texture.</p></details>
+    <details class="faq"><summary>Will it only change the object I clicked on?</summary><p>It changes every area of a similar color, not just the exact spot you clicked. If another object shares that color, it may change too &mdash; lower the tolerance for a more precise selection.</p></details>
+    <details class="faq"><summary>Is my photo uploaded to a server?</summary><p>No. The recoloring happens locally in your browser using the Canvas API, and your photo is never uploaded anywhere.</p></details>
+    <details class="faq"><summary>Will the shading and folds in clothing still look natural?</summary><p>Yes. The tool replaces the hue and saturation of matched pixels but keeps their original brightness, so shadows, highlights and fabric folds are preserved.</p></details>
     <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></details>
   </section>
 </main>
@@ -263,574 +230,221 @@
 (function(){
   "use strict";
 
-  var SHAPE_DIMENSIONS = {
-    "16:9": [1280, 720],
-    "9:16": [720, 1280],
-    "1:1":  [1000, 1000],
-    "4:5":  [864, 1080],
-    "4:3":  [960, 720]
-  };
+  var MAX_DIMENSION = 1600;
 
-  // ---------------------------------------------------------------------
-  // 30 effects: 13 "motion" effects (camera movement sustained across the
-  // whole photo duration, then a quick plain fade into the next photo)
-  // and 17 "transition" effects (photo sits with a very gentle default
-  // zoom, then that specific transition plays during the final portion
-  // of its duration to reveal the next photo).
-  // ---------------------------------------------------------------------
-  var MOTION_EFFECTS = {
-    "none":            { label: "None (Static)",              zoomFrom: 1,    zoomTo: 1,    panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: 0 },
-    "zoom-in":         { label: "Zoom In",                     zoomFrom: 1,    zoomTo: 1.18, panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: 0 },
-    "zoom-out":        { label: "Zoom Out",                    zoomFrom: 1.18, zoomTo: 1,    panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: 0 },
-    "pan-left":        { label: "Pan Left",                    zoomFrom: 1.15, zoomTo: 1.15, panFromX: 1,  panFromY: 0,  panToX: -1, panToY: 0 },
-    "pan-right":       { label: "Pan Right",                   zoomFrom: 1.15, zoomTo: 1.15, panFromX: -1, panFromY: 0,  panToX: 1,  panToY: 0 },
-    "pan-up":          { label: "Pan Up",                      zoomFrom: 1.15, zoomTo: 1.15, panFromX: 0,  panFromY: 1,  panToX: 0,  panToY: -1 },
-    "pan-down":        { label: "Pan Down",                    zoomFrom: 1.15, zoomTo: 1.15, panFromX: 0,  panFromY: -1, panToX: 0,  panToY: 1 },
-    "zoomin-panleft":  { label: "Zoom In + Pan Left",          zoomFrom: 1,    zoomTo: 1.22, panFromX: 0,  panFromY: 0,  panToX: -1, panToY: 0 },
-    "zoomin-panright": { label: "Zoom In + Pan Right",         zoomFrom: 1,    zoomTo: 1.22, panFromX: 0,  panFromY: 0,  panToX: 1,  panToY: 0 },
-    "zoomin-panup":    { label: "Zoom In + Pan Up",            zoomFrom: 1,    zoomTo: 1.22, panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: -1 },
-    "zoomin-pandown":  { label: "Zoom In + Pan Down",          zoomFrom: 1,    zoomTo: 1.22, panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: 1 },
-    "zoomout-panleft": { label: "Zoom Out + Pan Left",         zoomFrom: 1.22, zoomTo: 1,    panFromX: 1,  panFromY: 0,  panToX: 0,  panToY: 0 },
-    "zoomout-panright":{ label: "Zoom Out + Pan Right",        zoomFrom: 1.22, zoomTo: 1,    panFromX: -1, panFromY: 0,  panToX: 0,  panToY: 0 }
-  };
-
-  var TRANSITION_KEYS = [
-    "fade","slide-left","slide-right","slide-up","slide-down",
-    "wipe-left","wipe-right","wipe-up","wipe-down",
-    "diag-tlbr","diag-trbl","rotate-in","cross-zoom","iris",
-    "blinds-v","blinds-h","blur-dissolve"
-  ];
-  var TRANSITION_LABELS = {
-    "fade":"Fade","slide-left":"Slide Left","slide-right":"Slide Right","slide-up":"Slide Up","slide-down":"Slide Down",
-    "wipe-left":"Wipe Left","wipe-right":"Wipe Right","wipe-up":"Wipe Up","wipe-down":"Wipe Down",
-    "diag-tlbr":"Diagonal Wipe (Top-Left)","diag-trbl":"Diagonal Wipe (Top-Right)","rotate-in":"Rotate In",
-    "cross-zoom":"Cross Zoom","iris":"Iris Circle Reveal","blinds-v":"Vertical Blinds","blinds-h":"Horizontal Blinds",
-    "blur-dissolve":"Blur Dissolve"
-  };
-
-  var CROP_MODES = [
-    { value: "fit",          label: "Fit (show whole photo)" },
-    { value: "fill-center",  label: "Fill \u2013 Center crop" },
-    { value: "fill-top",     label: "Fill \u2013 Top crop" },
-    { value: "fill-bottom",  label: "Fill \u2013 Bottom crop" },
-    { value: "fill-left",    label: "Fill \u2013 Left crop" },
-    { value: "fill-right",   label: "Fill \u2013 Right crop" }
-  ];
-
-  function buildEffectOptionsHtml(selected){
-    var html = "";
-    Object.keys(MOTION_EFFECTS).forEach(function(key){
-      html += '<option value="' + key + '"' + (key === selected ? " selected" : "") + '>' + MOTION_EFFECTS[key].label + '</option>';
-    });
-    TRANSITION_KEYS.forEach(function(key){
-      html += '<option value="' + key + '"' + (key === selected ? " selected" : "") + '>' + TRANSITION_LABELS[key] + '</option>';
-    });
-    return html;
-  }
-  function buildCropOptionsHtml(selected){
-    return CROP_MODES.map(function(c){
-      return '<option value="' + c.value + '"' + (c.value === selected ? " selected" : "") + '>' + c.label + '</option>';
-    }).join("");
-  }
-  var ALL_EFFECT_KEYS = Object.keys(MOTION_EFFECTS).concat(TRANSITION_KEYS);
-
-  // ---------------------------------------------------------------------
-
-  var unsupportedNotice = document.getElementById("unsupportedNotice");
-  var setupView = document.getElementById("setupView");
-  var generatingView = document.getElementById("generatingView");
-  var resultView = document.getElementById("resultView");
-
-  var shapeSelect = document.getElementById("shapeSelect");
-  var maxPhotosSelect = document.getElementById("maxPhotos");
-  var durationSelect = document.getElementById("durationSelect");
-
+  var uploadView = document.getElementById("uploadView");
+  var editorView = document.getElementById("editorView");
   var dropZone = document.getElementById("dropZone");
   var fileInput = document.getElementById("fileInput");
   var selectBtn = document.getElementById("selectBtn");
   var uploadStatus = document.getElementById("uploadStatus");
-  var countLabel = document.getElementById("countLabel");
-  var thumbHint = document.getElementById("thumbHint");
-  var thumbGrid = document.getElementById("thumbGrid");
-  var generateBtn = document.getElementById("generateBtn");
-  var autoGenerateBtn = document.getElementById("autoGenerateBtn");
-  var randomizeBtn = document.getElementById("randomizeBtn");
-  var clearBtn = document.getElementById("clearBtn");
 
-  var progressBar = document.getElementById("progressBar");
-  var generatingLabel = document.getElementById("generatingLabel");
+  var canvas = document.getElementById("workCanvas");
+  var ctx = canvas.getContext("2d");
 
-  var resultVideo = document.getElementById("resultVideo");
+  var pickedSwatch = document.getElementById("pickedSwatch");
+  var pickedLabel = document.getElementById("pickedLabel");
+  var newColor = document.getElementById("newColor");
+  var toleranceRange = document.getElementById("toleranceRange");
+  var toleranceVal = document.getElementById("toleranceVal");
+  var featherRange = document.getElementById("featherRange");
+  var featherVal = document.getElementById("featherVal");
+  var preserveShadeCheck = document.getElementById("preserveShadeCheck");
+
   var downloadBtn = document.getElementById("downloadBtn");
-  var startOverBtn = document.getElementById("startOverBtn");
+  var undoBtn = document.getElementById("undoBtn");
+  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
 
-  var photos = []; // { img, objectUrl, effect, crop }
+  var baseImage = null;
+  var baseObjectUrl = null;
+  var originalImageData = null;
+  var pickedRGB = null;
   var resultObjectUrl = null;
 
-  function supportsRecording(){
-    return !!(window.MediaRecorder && HTMLCanvasElement.prototype.captureStream);
-  }
-  if(!supportsRecording()){
-    unsupportedNotice.classList.remove("hidden");
-    selectBtn.disabled = true;
-  }
-
   function revoke(url){ if(url) URL.revokeObjectURL(url); }
-  function maxPhotos(){ return parseInt(maxPhotosSelect.value, 10); }
-
-  function updateCountLabel(){
-    countLabel.textContent = photos.length + " of " + maxPhotos() + " photos added";
-    generateBtn.disabled = photos.length < 2;
-    autoGenerateBtn.disabled = photos.length < 2;
-    clearBtn.hidden = photos.length === 0;
-    randomizeBtn.hidden = photos.length === 0;
-    thumbHint.style.display = photos.length > 0 ? "block" : "none";
-  }
-  maxPhotosSelect.addEventListener("change", updateCountLabel);
 
   selectBtn.addEventListener("click", function(){ fileInput.click(); });
   dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
   dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
   dropZone.addEventListener("drop", function(e){
     e.preventDefault();
-    if(e.dataTransfer.files) handleFiles(e.dataTransfer.files);
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
   fileInput.addEventListener("change", function(){
-    if(fileInput.files) handleFiles(fileInput.files);
-    fileInput.value = "";
+    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
   });
 
-  var effectCycle = Object.keys(MOTION_EFFECTS).concat(TRANSITION_KEYS);
-  var effectCycleIndex = 0;
+  function clampDims(w, h){
+    if(Math.max(w, h) <= MAX_DIMENSION) return { w: w, h: h };
+    var ratio = MAX_DIMENSION / Math.max(w, h);
+    return { w: Math.round(w * ratio), h: Math.round(h * ratio) };
+  }
 
-  function handleFiles(fileList){
-    uploadStatus.textContent = "";
+  function handleFile(file){
     var allowed = ["image/jpeg","image/png","image/webp"];
-    var files = Array.prototype.slice.call(fileList);
-    var room = maxPhotos() - photos.length;
-
-    if(files.length > room){
-      uploadStatus.textContent = "Only " + room + " more photo(s) can be added (limit is " + maxPhotos() + ").";
+    if(allowed.indexOf(file.type) === -1){
+      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
       uploadStatus.className = "status error";
-      files = files.slice(0, room);
-    }
-
-    files.forEach(function(file){
-      if(allowed.indexOf(file.type) === -1) return;
-      var url = URL.createObjectURL(file);
-      var img = new Image();
-      img.onload = function(){
-        var defaultEffect = effectCycle[effectCycleIndex % effectCycle.length];
-        effectCycleIndex++;
-        photos.push({ img: img, objectUrl: url, effect: defaultEffect, crop: "fit" });
-        renderThumbs();
-        updateCountLabel();
-      };
-      img.onerror = function(){ revoke(url); };
-      img.src = url;
-    });
-  }
-
-  function renderThumbs(){
-    thumbGrid.innerHTML = "";
-    photos.forEach(function(p, idx){
-      var card = document.createElement("div");
-      card.className = "thumb-card";
-
-      var imgWrap = document.createElement("div");
-      imgWrap.className = "thumb-img-wrap";
-      var img = document.createElement("img");
-      img.src = p.objectUrl;
-      img.alt = "Photo " + (idx + 1);
-      imgWrap.appendChild(img);
-      var order = document.createElement("span");
-      order.className = "thumb-order";
-      order.textContent = "#" + (idx + 1);
-      imgWrap.appendChild(order);
-      card.appendChild(imgWrap);
-
-      var body = document.createElement("div");
-      body.className = "thumb-body";
-
-      var effLabel = document.createElement("label");
-      effLabel.textContent = "Effect";
-      body.appendChild(effLabel);
-      var effSelect = document.createElement("select");
-      effSelect.innerHTML = buildEffectOptionsHtml(p.effect);
-      effSelect.addEventListener("change", function(){ p.effect = effSelect.value; });
-      body.appendChild(effSelect);
-
-      var cropLabel = document.createElement("label");
-      cropLabel.textContent = "Crop";
-      body.appendChild(cropLabel);
-      var cropSelect = document.createElement("select");
-      cropSelect.innerHTML = buildCropOptionsHtml(p.crop);
-      cropSelect.addEventListener("change", function(){ p.crop = cropSelect.value; });
-      body.appendChild(cropSelect);
-
-      card.appendChild(body);
-
-      var actions = document.createElement("div");
-      actions.className = "thumb-actions";
-
-      var upBtn = document.createElement("button");
-      upBtn.type = "button";
-      upBtn.textContent = "\u2191 Up";
-      upBtn.disabled = idx === 0;
-      upBtn.addEventListener("click", function(){
-        var tmp = photos[idx - 1]; photos[idx - 1] = photos[idx]; photos[idx] = tmp;
-        renderThumbs();
-      });
-      actions.appendChild(upBtn);
-
-      var downBtn = document.createElement("button");
-      downBtn.type = "button";
-      downBtn.textContent = "\u2193 Down";
-      downBtn.disabled = idx === photos.length - 1;
-      downBtn.addEventListener("click", function(){
-        var tmp = photos[idx + 1]; photos[idx + 1] = photos[idx]; photos[idx] = tmp;
-        renderThumbs();
-      });
-      actions.appendChild(downBtn);
-
-      var removeBtn = document.createElement("button");
-      removeBtn.type = "button";
-      removeBtn.textContent = "\u2715 Remove";
-      removeBtn.addEventListener("click", function(){
-        revoke(photos[idx].objectUrl);
-        photos.splice(idx, 1);
-        renderThumbs();
-        updateCountLabel();
-      });
-      actions.appendChild(removeBtn);
-
-      card.appendChild(actions);
-      thumbGrid.appendChild(card);
-    });
-  }
-
-  clearBtn.addEventListener("click", function(){
-    photos.forEach(function(p){ revoke(p.objectUrl); });
-    photos = [];
-    renderThumbs();
-    updateCountLabel();
-  });
-
-  randomizeBtn.addEventListener("click", function(){
-    photos.forEach(function(p){
-      p.effect = ALL_EFFECT_KEYS[Math.floor(Math.random() * ALL_EFFECT_KEYS.length)];
-    });
-    renderThumbs();
-  });
-
-  // Draws `img` into the w x h frame according to cropMode, with an extra
-  // zoom multiplier and a pan offset (panX/panY in -1..1, relative to the
-  // overscan room created by the zoom). Used for both the static crop
-  // preview logic and the per-frame animated rendering.
-  function drawFramed(ctx, img, w, h, cropMode, zoom, panX, panY){
-    zoom = zoom || 1;
-    panX = panX || 0;
-    panY = panY || 0;
-
-    if(cropMode === "fit"){
-      var scale = Math.min(w / img.naturalWidth, h / img.naturalHeight) * zoom;
-      var dw = img.naturalWidth * scale, dh = img.naturalHeight * scale;
-      var dx = (w - dw) / 2 + panX * (w - dw) * 0.5;
-      var dy = (h - dh) / 2 + panY * (h - dh) * 0.5;
-      ctx.drawImage(img, dx, dy, dw, dh);
       return;
     }
-
-    var imgRatio = img.naturalWidth / img.naturalHeight;
-    var frameRatio = w / h;
-    var baseW, baseH;
-    if(imgRatio > frameRatio){ baseH = h; baseW = baseH * imgRatio; }
-    else { baseW = w; baseH = baseW / imgRatio; }
-
-    var drawW = baseW * zoom, drawH = baseH * zoom;
-    var overW = drawW - w, overH = drawH - h; // room available to shift within
-
-    var dx, dy;
-    switch(cropMode){
-      case "fill-top":    dx = (w - drawW) / 2; dy = 0; break;
-      case "fill-bottom":  dx = (w - drawW) / 2; dy = h - drawH; break;
-      case "fill-left":   dx = 0; dy = (h - drawH) / 2; break;
-      case "fill-right":  dx = w - drawW; dy = (h - drawH) / 2; break;
-      default:            dx = (w - drawW) / 2; dy = (h - drawH) / 2; // fill-center
-    }
-    // Pan (from motion effects) shifts within the overscanned room, on
-    // top of the chosen crop anchor.
-    dx += panX * overW * 0.5;
-    dy += panY * overH * 0.5;
-
-    ctx.drawImage(img, dx, dy, drawW, drawH);
-  }
-
-  function lerp(a, b, t){ return a + (b - a) * t; }
-  function easeInOut(t){ return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2; }
-
-  function startGeneration(){
-    if(photos.length < 2 || !supportsRecording()) return;
-
-    var dims = SHAPE_DIMENSIONS[shapeSelect.value] || SHAPE_DIMENSIONS["16:9"];
-    var CANVAS_W = dims[0], CANVAS_H = dims[1];
-
-    setupView.classList.add("hidden");
-    generatingView.classList.remove("hidden");
-    progressBar.style.width = "0%";
-    var totalSeconds = Math.round((parseFloat(durationSelect.value) * photos.length) * 10) / 10;
-    generatingLabel.textContent = "Building your " + totalSeconds + "s video\u2026 this takes about as long as the video itself.";
-
-    var canvas = document.createElement("canvas");
-    canvas.width = CANVAS_W;
-    canvas.height = CANVAS_H;
-    var ctx = canvas.getContext("2d");
-
-    var perPhotoMs = parseFloat(durationSelect.value) * 1000;
-    var transitionMs = Math.min(500, perPhotoMs * 0.3);
-    var totalMs = perPhotoMs * photos.length;
-
-    var stream = canvas.captureStream(30);
-    var mimeType = MediaRecorder.isTypeSupported("video/webm;codecs=vp9") ? "video/webm;codecs=vp9" : "video/webm";
-    var recorder = new MediaRecorder(stream, { mimeType: mimeType });
-    var chunks = [];
-    recorder.ondataavailable = function(e){ if(e.data && e.data.size > 0) chunks.push(e.data); };
-
-    recorder.onstop = function(){
-      var blob = new Blob(chunks, { type: "video/webm" });
-      revoke(resultObjectUrl);
-      resultObjectUrl = URL.createObjectURL(blob);
-      resultVideo.src = resultObjectUrl;
-      generatingView.classList.add("hidden");
-      resultView.classList.remove("hidden");
+    revoke(baseObjectUrl);
+    baseObjectUrl = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function(){
+      baseImage = img;
+      var dims = clampDims(img.naturalWidth, img.naturalHeight);
+      canvas.width = dims.w;
+      canvas.height = dims.h;
+      ctx.drawImage(img, 0, 0, dims.w, dims.h);
+      originalImageData = ctx.getImageData(0, 0, dims.w, dims.h);
+      pickedRGB = null;
+      pickedSwatch.style.background = "#e5e7eb";
+      pickedLabel.textContent = "Click the photo";
+      downloadBtn.disabled = true;
+      undoBtn.disabled = true;
+      uploadView.classList.add("hidden");
+      editorView.classList.remove("hidden");
     };
-
-    recorder.start();
-    var startTime = performance.now();
-
-    function renderTransition(key, curP, nextP, w, h, progress){
-      var t = easeInOut(progress);
-      switch(key){
-        case "fade":
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.globalAlpha = t;
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.globalAlpha = 1;
-          break;
-        case "slide-left":
-        case "slide-right":
-        case "slide-up":
-        case "slide-down": {
-          var dir = { "slide-left":[-1,0], "slide-right":[1,0], "slide-up":[0,-1], "slide-down":[0,1] }[key];
-          ctx.save(); ctx.translate(dir[0]*w*t, dir[1]*h*t);
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.restore();
-          ctx.save(); ctx.translate(dir[0]*w*(t-1), dir[1]*h*(t-1));
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        }
-        case "wipe-left": case "wipe-right": case "wipe-up": case "wipe-down": {
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.save();
-          ctx.beginPath();
-          if(key === "wipe-left") ctx.rect(w - w*t, 0, w*t, h);
-          else if(key === "wipe-right") ctx.rect(0, 0, w*t, h);
-          else if(key === "wipe-up") ctx.rect(0, h - h*t, w, h*t);
-          else ctx.rect(0, 0, w, h*t);
-          ctx.clip();
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        }
-        case "diag-tlbr": case "diag-trbl": {
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.save();
-          ctx.beginPath();
-          var diag = w + h;
-          var pos = diag * t;
-          if(key === "diag-tlbr"){
-            ctx.moveTo(0,0); ctx.lineTo(pos,0); ctx.lineTo(0,pos); ctx.closePath();
-            ctx.moveTo(w,h); ctx.lineTo(w - pos, h); ctx.lineTo(w, h - pos); ctx.closePath();
-          } else {
-            ctx.moveTo(w,0); ctx.lineTo(w - pos,0); ctx.lineTo(w,pos); ctx.closePath();
-            ctx.moveTo(0,h); ctx.lineTo(pos,h); ctx.lineTo(0,h - pos); ctx.closePath();
-          }
-          ctx.clip("evenodd");
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        }
-        case "rotate-in":
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.save();
-          ctx.globalAlpha = t;
-          ctx.translate(w/2, h/2);
-          ctx.rotate((1 - t) * 0.3);
-          ctx.scale(0.7 + 0.3*t, 0.7 + 0.3*t);
-          ctx.translate(-w/2, -h/2);
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        case "cross-zoom":
-          ctx.save();
-          ctx.globalAlpha = 1 - t;
-          ctx.translate(w/2, h/2); ctx.scale(1 + t*0.5, 1 + t*0.5); ctx.translate(-w/2, -h/2);
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.restore();
-          ctx.save();
-          ctx.globalAlpha = t;
-          ctx.translate(w/2, h/2); ctx.scale(1.5 - t*0.5, 1.5 - t*0.5); ctx.translate(-w/2, -h/2);
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        case "iris":
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.save();
-          ctx.beginPath();
-          var maxR = Math.sqrt(w*w + h*h) / 2;
-          ctx.arc(w/2, h/2, maxR * t, 0, Math.PI * 2);
-          ctx.clip();
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        case "blinds-v": case "blinds-h": {
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.save();
-          ctx.beginPath();
-          var strips = 8;
-          if(key === "blinds-v"){
-            var sw = w / strips;
-            for(var i = 0; i < strips; i++) ctx.rect(i * sw, 0, sw * t, h);
-          } else {
-            var sh = h / strips;
-            for(var j = 0; j < strips; j++) ctx.rect(0, j * sh, w, sh * t);
-          }
-          ctx.clip();
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          break;
-        }
-        case "blur-dissolve":
-          ctx.save();
-          ctx.filter = "blur(" + (t * 14) + "px)";
-          ctx.globalAlpha = 1 - t;
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.restore();
-          ctx.save();
-          ctx.filter = "blur(" + ((1 - t) * 14) + "px)";
-          ctx.globalAlpha = t;
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.restore();
-          ctx.filter = "none";
-          break;
-        default:
-          drawFramed(ctx, curP.img, w, h, curP.crop, 1, 0, 0);
-          ctx.globalAlpha = t;
-          drawFramed(ctx, nextP.img, w, h, nextP.crop, 1, 0, 0);
-          ctx.globalAlpha = 1;
-      }
-    }
-
-    function renderFrame(){
-      var elapsed = performance.now() - startTime;
-      if(elapsed >= totalMs){
-        ctx.fillStyle = "#111827";
-        ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-        var lastP = photos[photos.length - 1];
-        drawFramed(ctx, lastP.img, CANVAS_W, CANVAS_H, lastP.crop, 1, 0, 0);
-        setTimeout(function(){ if(recorder.state === "recording") recorder.stop(); }, 60);
-        return;
-      }
-
-      var index = Math.min(photos.length - 1, Math.floor(elapsed / perPhotoMs));
-      var localT = elapsed - index * perPhotoMs;
-      var curP = photos[index];
-      var nextP = photos[index + 1] || null;
-
-      ctx.fillStyle = "#111827";
-      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-
-      var motion = MOTION_EFFECTS[curP.effect];
-
-      if(motion){
-        var progress = perPhotoMs > 0 ? localT / perPhotoMs : 0;
-        var eased = easeInOut(progress);
-        var zoom = lerp(motion.zoomFrom, motion.zoomTo, eased);
-        var panX = lerp(motion.panFromX, motion.panToX, eased);
-        var panY = lerp(motion.panFromY, motion.panToY, eased);
-        drawFramed(ctx, curP.img, CANVAS_W, CANVAS_H, curP.crop, zoom, panX, panY);
-
-        // plain quick fade at the very end, into the next photo
-        if(nextP && localT > perPhotoMs - transitionMs){
-          var fadeT = (localT - (perPhotoMs - transitionMs)) / transitionMs;
-          ctx.globalAlpha = fadeT;
-          drawFramed(ctx, nextP.img, CANVAS_W, CANVAS_H, nextP.crop, 1, 0, 0);
-          ctx.globalAlpha = 1;
-        }
-      } else if(nextP && localT > perPhotoMs - transitionMs){
-        var tProgress = (localT - (perPhotoMs - transitionMs)) / transitionMs;
-        renderTransition(curP.effect, curP, nextP, CANVAS_W, CANVAS_H, tProgress);
-      } else {
-        // gentle default life while waiting for the transition window
-        var idleZoom = lerp(1, 1.05, localT / Math.max(1, perPhotoMs - transitionMs));
-        drawFramed(ctx, curP.img, CANVAS_W, CANVAS_H, curP.crop, idleZoom, 0, 0);
-      }
-
-      progressBar.style.width = Math.round((elapsed / totalMs) * 100) + "%";
-      generatingLabel.textContent = "Building your video\u2026 photo " + (index + 1) + " of " + photos.length;
-
-      requestAnimationFrame(renderFrame);
-    }
-    requestAnimationFrame(renderFrame);
+    img.onerror = function(){
+      uploadStatus.textContent = "Could not read that image. Please try another file.";
+      uploadStatus.className = "status error";
+    };
+    img.src = baseObjectUrl;
   }
 
-  generateBtn.addEventListener("click", startGeneration);
+  chooseAnotherBtn.addEventListener("click", function(){
+    baseImage = null;
+    fileInput.value = "";
+    editorView.classList.add("hidden");
+    uploadView.classList.remove("hidden");
+  });
 
-  // Curated subset used for Auto mode - smooth, reliably good-looking
-  // effects (skips the busier blinds/diagonal wipes so the automatic
-  // result always looks clean without any manual tweaking).
-  var AUTO_EFFECT_POOL = [
-    "zoom-in","zoom-out","pan-left","pan-right","pan-up","pan-down",
-    "zoomin-panleft","zoomin-panright","zoomin-panup","zoomin-pandown",
-    "zoomout-panleft","zoomout-panright",
-    "fade","slide-left","slide-right","cross-zoom","iris"
-  ];
+  function rgbToHsl(r, g, b){
+    r /= 255; g /= 255; b /= 255;
+    var max = Math.max(r, g, b), min = Math.min(r, g, b);
+    var h, s, l = (max + min) / 2;
+    if(max === min){ h = s = 0; }
+    else{
+      var d = max - min;
+      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+      switch(max){
+        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+        case g: h = (b - r) / d + 2; break;
+        default: h = (r - g) / d + 4;
+      }
+      h /= 6;
+    }
+    return [h, s, l];
+  }
+  function hslToRgb(h, s, l){
+    var r, g, b;
+    if(s === 0){ r = g = b = l; }
+    else{
+      var hue2rgb = function(p, q, t){
+        if(t < 0) t += 1;
+        if(t > 1) t -= 1;
+        if(t < 1/6) return p + (q - p) * 6 * t;
+        if(t < 1/2) return q;
+        if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
+        return p;
+      };
+      var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
+      var p = 2 * l - q;
+      r = hue2rgb(p, q, h + 1/3);
+      g = hue2rgb(p, q, h);
+      b = hue2rgb(p, q, h - 1/3);
+    }
+    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+  }
 
-  autoGenerateBtn.addEventListener("click", function(){
-    photos.forEach(function(p, idx){
-      // Smart crop: photos close to the video's own 16:9 shape fill the
-      // frame cleanly; taller/squarer photos use Fit so nothing is ever
-      // cropped out of view.
-      var imgRatio = p.img.naturalWidth / p.img.naturalHeight;
-      p.crop = imgRatio >= 1.3 ? "fill-center" : "fit";
-      p.effect = AUTO_EFFECT_POOL[idx % AUTO_EFFECT_POOL.length];
+  canvas.addEventListener("click", function(e){
+    if(!originalImageData) return;
+    var rect = canvas.getBoundingClientRect();
+    var scaleX = canvas.width / rect.width;
+    var scaleY = canvas.height / rect.height;
+    var x = Math.floor((e.clientX - rect.left) * scaleX);
+    var y = Math.floor((e.clientY - rect.top) * scaleY);
+    var i = (y * canvas.width + x) * 4;
+    var d = originalImageData.data;
+    pickedRGB = [d[i], d[i+1], d[i+2]];
+    pickedSwatch.style.background = "rgb(" + pickedRGB.join(",") + ")";
+    pickedLabel.textContent = "RGB(" + pickedRGB.join(", ") + ")";
+    downloadBtn.disabled = false;
+    undoBtn.disabled = false;
+    applyRecolor();
+  });
+
+  function applyRecolor(){
+    if(!pickedRGB || !originalImageData) return;
+    var tolerance = parseInt(toleranceRange.value, 10);
+    var feather = parseInt(featherRange.value, 10);
+    var preserveShade = preserveShadeCheck.checked;
+    var targetHex = newColor.value;
+    var tr = parseInt(targetHex.slice(1,3), 16);
+    var tg = parseInt(targetHex.slice(3,5), 16);
+    var tb = parseInt(targetHex.slice(5,7), 16);
+    var targetHsl = rgbToHsl(tr, tg, tb);
+
+    var src = originalImageData.data;
+    var out = ctx.createImageData(canvas.width, canvas.height);
+    var od = out.data;
+
+    for(var i = 0; i < src.length; i += 4){
+      var r = src[i], g = src[i+1], b = src[i+2];
+      var dist = Math.sqrt(
+        Math.pow(r - pickedRGB[0], 2) +
+        Math.pow(g - pickedRGB[1], 2) +
+        Math.pow(b - pickedRGB[2], 2)
+      );
+
+      if(dist <= tolerance + feather){
+        var blend = dist <= tolerance ? 1 : 1 - ((dist - tolerance) / Math.max(1, feather));
+        var hsl = rgbToHsl(r, g, b);
+        var newL = preserveShade ? hsl[2] : targetHsl[2];
+        var newRgb = hslToRgb(targetHsl[0], targetHsl[1], newL);
+
+        od[i]   = Math.round(r * (1 - blend) + newRgb[0] * blend);
+        od[i+1] = Math.round(g * (1 - blend) + newRgb[1] * blend);
+        od[i+2] = Math.round(b * (1 - blend) + newRgb[2] * blend);
+      } else {
+        od[i] = r; od[i+1] = g; od[i+2] = b;
+      }
+      od[i+3] = src[i+3];
+    }
+    ctx.putImageData(out, 0, 0);
+  }
+
+  [newColor, toleranceRange, featherRange, preserveShadeCheck].forEach(function(el){
+    el.addEventListener("input", function(){
+      toleranceVal.textContent = toleranceRange.value;
+      featherVal.textContent = featherRange.value;
+      if(pickedRGB) applyRecolor();
     });
-    renderThumbs();
-    startGeneration();
+  });
+
+  undoBtn.addEventListener("click", function(){
+    pickedRGB = null;
+    pickedSwatch.style.background = "#e5e7eb";
+    pickedLabel.textContent = "Click the photo";
+    downloadBtn.disabled = true;
+    undoBtn.disabled = true;
+    ctx.putImageData(originalImageData, 0, 0);
   });
 
   downloadBtn.addEventListener("click", function(){
-    if(!resultObjectUrl) return;
-    var a = document.createElement("a");
-    a.href = resultObjectUrl;
-    a.download = "photo-animation-video.webm";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+    canvas.toBlob(function(blob){
+      if(!blob) return;
+      revoke(resultObjectUrl);
+      resultObjectUrl = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = resultObjectUrl;
+      a.download = "color-changed-photo.png";
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      setTimeout(function(){ revoke(resultObjectUrl); resultObjectUrl = null; }, 4000);
+    }, "image/png");
   });
-
-  startOverBtn.addEventListener("click", function(){
-    revoke(resultObjectUrl); resultObjectUrl = null;
-    photos.forEach(function(p){ revoke(p.objectUrl); });
-    photos = [];
-    renderThumbs();
-    updateCountLabel();
-    resultView.classList.add("hidden");
-    setupView.classList.remove("hidden");
-  });
-
-  updateCountLabel();
 })();
 </script>
 <script src="/shared/shared.js" defer></script>
