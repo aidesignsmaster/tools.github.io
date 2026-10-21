@@ -88,7 +88,10 @@
 
   .editor{display:grid;grid-template-columns:1fr 320px;gap:22px;align-items:start}
   .canvas-wrap{background:#111827;border-radius:14px;min-height:360px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px}
-  #previewCanvas{max-width:100%;max-height:560px;display:block}
+  #previewCanvas{max-width:100%;max-height:560px;display:block;touch-action:none;cursor:grab;-webkit-user-select:none;user-select:none}
+  #previewCanvas.dragging{cursor:grabbing}
+  #previewCanvas.no-drag{cursor:default;touch-action:auto}
+  .drag-hint{margin:10px 2px 0;font-size:13px;color:var(--muted);text-align:center}
 
   .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
   .tabs{display:flex;gap:8px;margin-bottom:16px}
@@ -160,7 +163,10 @@
 
     <div id="editorView" class="hidden">
       <div class="editor">
-        <div class="canvas-wrap"><canvas id="previewCanvas"></canvas></div>
+        <div>
+          <div class="canvas-wrap"><canvas id="previewCanvas"></canvas></div>
+          <p class="drag-hint" id="dragHint">Tip: drag the watermark with your finger or mouse to place it anywhere.</p>
+        </div>
 
         <div class="panel">
           <div class="tabs">
@@ -312,6 +318,10 @@
   var resultObjectUrl = null;
   var mode = "text"; // "text" | "logo"
   var position = "middle-center";
+  var customPos = null;   // {x,y} fractions (0-1) of image, set when user drags
+  var lastCenter = null;  // watermark center (image px) from last render
+  var dragging = false, dragDX = 0, dragDY = 0;
+  var dragHint = document.getElementById("dragHint");
 
   function revoke(url){ if(url) URL.revokeObjectURL(url); }
 
@@ -358,6 +368,9 @@
     logoInput.value = "";
     revoke(baseObjectUrl); baseObjectUrl = null;
     revoke(logoObjectUrl); logoObjectUrl = null;
+    logoStatus.textContent = ""; logoStatus.className = "status";
+    customPos = null; position = "middle-center";
+    posButtons.forEach(function(b){ b.classList.toggle("active", b.getAttribute("data-pos") === "middle-center"); });
     editorView.classList.add("hidden");
     uploadView.classList.remove("hidden");
   });
@@ -407,6 +420,7 @@
       posButtons.forEach(function(b){ b.classList.remove("active"); });
       btn.classList.add("active");
       position = btn.getAttribute("data-pos");
+      customPos = null;
       render();
     });
   });
@@ -424,10 +438,13 @@
   wmTile.addEventListener("change", function(){
     positionBlock.style.opacity = wmTile.checked ? "0.4" : "1";
     positionBlock.style.pointerEvents = wmTile.checked ? "none" : "auto";
+    canvas.classList.toggle("no-drag", wmTile.checked);
+    dragHint.classList.toggle("hidden", wmTile.checked);
     render();
   });
 
   function getAnchorXY(w, h, itemW, itemH, pad){
+    if(customPos) return { x: customPos.x * w, y: customPos.y * h };
     var x, y;
     if(position.indexOf("left") !== -1) x = pad + itemW / 2;
     else if(position.indexOf("right") !== -1) x = w - pad - itemW / 2;
@@ -493,6 +510,7 @@
         var tw = ctx.measureText(text).width;
         var pad = Math.max(16, fontSize * 0.6);
         var anchor = getAnchorXY(w, h, tw, fontSize, pad);
+        lastCenter = anchor;
         drawTextStamp(anchor.x, anchor.y, rot, opacity, text, color, fontSize);
       }
     } else {
@@ -512,10 +530,47 @@
       } else {
         var pad2 = Math.max(16, drawW * 0.15);
         var anchor2 = getAnchorXY(w, h, drawW, drawH, pad2);
+        lastCenter = anchor2;
         drawLogoStamp(anchor2.x, anchor2.y, rot, opacity, drawW, drawH);
       }
     }
   }
+
+  // drag the watermark to any spot (mouse or finger)
+  function canvasPoint(e){
+    var r = canvas.getBoundingClientRect();
+    return { x: (e.clientX - r.left) * (canvas.width / r.width), y: (e.clientY - r.top) * (canvas.height / r.height) };
+  }
+  canvas.addEventListener("pointerdown", function(e){
+    if(!baseImage || wmTile.checked || !lastCenter) return;
+    if(mode === "logo" && !logoImage) return;
+    if(e.pointerType === "mouse" && e.button !== 0) return;
+    var p = canvasPoint(e);
+    dragDX = lastCenter.x - p.x; dragDY = lastCenter.y - p.y;
+    dragging = true;
+    canvas.classList.add("dragging");
+    try{ canvas.setPointerCapture(e.pointerId); }catch(err){}
+    e.preventDefault();
+  });
+  canvas.addEventListener("pointermove", function(e){
+    if(!dragging) return;
+    var p = canvasPoint(e);
+    var fx = Math.min(1, Math.max(0, (p.x + dragDX) / canvas.width));
+    var fy = Math.min(1, Math.max(0, (p.y + dragDY) / canvas.height));
+    customPos = { x: fx, y: fy };
+    position = "custom";
+    posButtons.forEach(function(b){ b.classList.remove("active"); });
+    render();
+    e.preventDefault();
+  });
+  function endDrag(e){
+    if(!dragging) return;
+    dragging = false;
+    canvas.classList.remove("dragging");
+    try{ canvas.releasePointerCapture(e.pointerId); }catch(err){}
+  }
+  canvas.addEventListener("pointerup", endDrag);
+  canvas.addEventListener("pointercancel", endDrag);
 
   downloadBtn.addEventListener("click", function(){
     canvas.toBlob(function(blob){
