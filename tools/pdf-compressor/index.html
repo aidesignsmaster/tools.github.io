@@ -127,6 +127,13 @@
 
   .hidden{display:none!important}
   @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+
+  .opt-panel{background:var(--soft);border:1px solid var(--border);border-radius:12px;padding:14px 16px;margin:0 0 14px}
+  .opt-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:12px}
+  .opt-panel label{display:block;font-weight:700;font-size:.88rem;margin-bottom:6px}
+  .opt-panel select,.opt-panel input[type=number]{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--border);background:#fff;font-size:.95rem;font-weight:600;color:var(--text);font-family:inherit}
+  .opt-panel .chk{display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;margin:0}
+  .opt-panel .chk input{width:18px;height:18px;accent-color:var(--purple)}
 </style>
 </head>
 <body>
@@ -166,10 +173,44 @@
 
       <p style="font-weight:700;margin:0 0 4px">Compression level</p>
       <div class="level-grid" id="levelGrid">
+        <button type="button" class="level-btn active" data-level="target"><b>Exact KB Size</b><span>Set 30 / 40 / 50 KB or any size</span></button>
+        <button type="button" class="level-btn" data-level="lossless"><b>Lossless</b><span>Keeps text, no quality loss</span></button>
         <button type="button" class="level-btn" data-level="low"><b>Low</b><span>Best quality, smaller savings</span></button>
-        <button type="button" class="level-btn active" data-level="medium"><b>Medium</b><span>Balanced (recommended)</span></button>
+        <button type="button" class="level-btn" data-level="medium"><b>Medium</b><span>Balanced (recommended)</span></button>
         <button type="button" class="level-btn" data-level="high"><b>High</b><span>Smaller file, lower quality</span></button>
         <button type="button" class="level-btn" data-level="extreme"><b>Extreme</b><span>Smallest file, lowest quality</span></button>
+        <button type="button" class="level-btn" data-level="max"><b>Maximum</b><span>Tiniest possible file</span></button>
+      </div>
+
+      <div id="targetBox" class="opt-panel">
+        <div class="opt-grid2">
+          <div><label for="targetPreset">Target File Size</label>
+            <select id="targetPreset">
+              <option value="10">10 KB</option><option value="20">20 KB</option><option value="30">30 KB</option>
+              <option value="40">40 KB</option><option value="50" selected>50 KB</option><option value="60">60 KB</option>
+              <option value="80">80 KB</option><option value="100">100 KB</option><option value="150">150 KB</option>
+              <option value="200">200 KB</option><option value="300">300 KB</option><option value="500">500 KB</option>
+              <option value="1024">1 MB</option><option value="2048">2 MB</option><option value="custom">Custom (type KB)</option>
+            </select></div>
+          <div id="customWrap" class="hidden"><label for="targetCustom">Custom Size (KB)</label>
+            <input type="number" id="targetCustom" min="1" step="1" value="45" inputmode="numeric"></div>
+          <div><label for="strategySel">How to Reach the Size</label>
+            <select id="strategySel">
+              <option value="balanced" selected>Smart mix (quality + size)</option>
+              <option value="quality">Keep quality high (lower page resolution)</option>
+              <option value="dims">Keep resolution (lower quality)</option>
+              <option value="max">Maximum compression (smallest possible)</option>
+            </select></div>
+          <div><label for="targetUnit">KB Counting</label>
+            <select id="targetUnit">
+              <option value="1000" selected>1 KB = 1000 bytes (safe everywhere)</option>
+              <option value="1024">1 KB = 1024 bytes (Windows style)</option>
+            </select></div>
+        </div>
+        <label class="chk"><input type="checkbox" id="padChk"> Make the file exactly the target size</label>
+      </div>
+      <div id="grayWrap" class="opt-panel" style="margin-top:10px">
+        <label class="chk"><input type="checkbox" id="grayChk"> Convert to black &amp; white (grayscale) for an even smaller file</label>
       </div>
 
       <div style="display:flex;gap:10px;flex-wrap:wrap">
@@ -180,7 +221,7 @@
     </div>
 
     <div id="processingView" class="hidden">
-      <p style="font-weight:700;margin:0 0 8px" id="processingLabel">Compressing your PDF\u2026</p>
+      <p style="font-weight:700;margin:0 0 8px" id="processingLabel">Compressing your PDF…</p>
       <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
     </div>
 
@@ -188,6 +229,7 @@
       <div class="result-card">
         <div class="big grad-text" id="reductionPct">0%</div>
         <p style="margin:4px 0 0;color:var(--muted)">smaller</p>
+        <p id="resultNote" style="display:none;margin:8px 0 0;color:#92400e;font-weight:600;font-size:.9rem"></p>
         <div class="compare">
           <div><div class="label">Original</div><div class="value" id="originalSizeLabel">-</div></div>
           <div><div class="label">Compressed</div><div class="value" id="compressedSizeLabel">-</div></div>
@@ -241,325 +283,394 @@
 
 <div id="site-footer"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs" type="module"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
 <script type="module">
 (function(){
   "use strict";
 
+  var BASE = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/";
   var pdfjsLib = null;
-  var engineReady = false;
 
-  import("https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.min.mjs")
-    .then(function(mod){
-      pdfjsLib = mod;
-      pdfjsLib.GlobalWorkerOptions.workerSrc =
-        "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/pdf.worker.min.mjs";
-      engineReady = true;
-    })
-    .catch(function(err){
-      console.error("PDF.js load error:", err);
-    });
+  // Load PDF.js and its worker in a way that works on every browser
+  // (a cross-origin CDN worker is blocked by browsers, so we wrap it in a blob URL).
+  var enginePromise = (async function(){
+    var mod = await import(BASE + "pdf.min.mjs");
+    try{
+      var r = await fetch(BASE + "pdf.worker.min.mjs");
+      if(!r.ok) throw new Error("worker fetch failed");
+      var t = await r.text();
+      mod.GlobalWorkerOptions.workerSrc = URL.createObjectURL(new Blob([t], {type:"text/javascript"}));
+    }catch(e){
+      try{
+        var w = await import(BASE + "pdf.worker.min.mjs");
+        globalThis.pdfjsWorker = w;
+        mod.GlobalWorkerOptions.workerSrc = BASE + "pdf.worker.min.mjs";
+      }catch(e2){ mod.GlobalWorkerOptions.workerSrc = BASE + "pdf.worker.min.mjs"; }
+    }
+    pdfjsLib = mod;
+    return mod;
+  })();
+  enginePromise.catch(function(err){ console.error("PDF.js load error:", err); });
 
   var LEVELS = {
     low:     { scale: 1.65, quality: 0.82 },
     medium:  { scale: 1.30, quality: 0.68 },
     high:    { scale: 1.05, quality: 0.52 },
-    extreme: { scale: 0.85, quality: 0.38 }
+    extreme: { scale: 0.85, quality: 0.38 },
+    max:     { scale: 0.65, quality: 0.25 }
   };
   var MAX_PAGES = 300;
+  var $ = function(id){ return document.getElementById(id); };
 
-  var uploadView = document.getElementById("uploadView");
-  var optionsView = document.getElementById("optionsView");
-  var processingView = document.getElementById("processingView");
-  var resultView = document.getElementById("resultView");
+  var uploadView=$("uploadView"), optionsView=$("optionsView"), processingView=$("processingView"), resultView=$("resultView");
+  var dropZone=$("dropZone"), fileInput=$("fileInput"), selectBtn=$("selectBtn"), uploadStatus=$("uploadStatus");
+  var fileName=$("fileName"), fileSize=$("fileSize"), levelGrid=$("levelGrid");
+  var compressBtn=$("compressBtn"), chooseAnotherBtn=$("chooseAnotherBtn"), compressStatus=$("compressStatus");
+  var progressBar=$("progressBar"), processingLabel=$("processingLabel");
+  var reductionPct=$("reductionPct"), originalSizeLabel=$("originalSizeLabel"), compressedSizeLabel=$("compressedSizeLabel");
+  var resultNote=$("resultNote"), downloadBtn=$("downloadBtn"), startOverBtn=$("startOverBtn");
+  var targetPreset=$("targetPreset"), targetCustom=$("targetCustom"), targetUnit=$("targetUnit");
+  var strategySel=$("strategySel"), grayChk=$("grayChk"), padChk=$("padChk");
 
-  var dropZone = document.getElementById("dropZone");
-  var fileInput = document.getElementById("fileInput");
-  var selectBtn = document.getElementById("selectBtn");
-  var uploadStatus = document.getElementById("uploadStatus");
+  var currentFile=null, selectedLevel="target", resultBlob=null, resultObjectUrl=null;
 
-  var fileName = document.getElementById("fileName");
-  var fileSize = document.getElementById("fileSize");
-  var levelGrid = document.getElementById("levelGrid");
-  var compressBtn = document.getElementById("compressBtn");
-  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
-  var compressStatus = document.getElementById("compressStatus");
-
-  var progressBar = document.getElementById("progressBar");
-  var processingLabel = document.getElementById("processingLabel");
-
-  var reductionPct = document.getElementById("reductionPct");
-  var originalSizeLabel = document.getElementById("originalSizeLabel");
-  var compressedSizeLabel = document.getElementById("compressedSizeLabel");
-  var downloadBtn = document.getElementById("downloadBtn");
-  var startOverBtn = document.getElementById("startOverBtn");
-
-  var currentFile = null;
-  var selectedLevel = "medium";
-  var resultBlob = null;
-  var resultObjectUrl = null;
-
-  function fmtBytes(bytes){
-    if(bytes < 1024) return bytes + " B";
-    if(bytes < 1024*1024) return (bytes/1024).toFixed(1) + " KB";
-    return (bytes/(1024*1024)).toFixed(2) + " MB";
+  function fmtBytes(b){
+    if(b < 1024) return b + " B";
+    if(b < 1024*1024) return (b/1024).toFixed(1) + " KB";
+    return (b/(1024*1024)).toFixed(2) + " MB";
   }
+  function revoke(u){ if(u) URL.revokeObjectURL(u); }
+  function yieldUI(){ return new Promise(function(r){ setTimeout(r,0); }); }
 
-  function revoke(url){ if(url) URL.revokeObjectURL(url); }
+  function syncOptions(){
+    var isTarget = selectedLevel === "target";
+    var isLossless = selectedLevel === "lossless";
+    $("targetBox").classList.toggle("hidden", !isTarget);
+    $("customWrap").classList.toggle("hidden", !(isTarget && targetPreset.value === "custom"));
+    $("grayWrap").classList.toggle("hidden", isLossless);
+  }
+  targetPreset.addEventListener("change", syncOptions);
 
-  selectBtn.addEventListener("click", function(){ fileInput.click(); });
-
+  selectBtn.addEventListener("click", function(e){ e.stopPropagation(); fileInput.click(); });
   dropZone.addEventListener("click", function(e){
-    if(e.target === dropZone || e.target.closest("svg") ||
-       (e.target.tagName === "P" && !e.target.closest("button"))){
-      fileInput.click();
-    }
+    if(e.target === dropZone || e.target.closest("svg") || (e.target.tagName === "P" && !e.target.closest("button"))) fileInput.click();
   });
-
-  dropZone.addEventListener("dragover", function(e){
-    e.preventDefault();
-    e.dataTransfer.dropEffect = "copy";
-  });
-
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); e.dataTransfer.dropEffect = "copy"; });
   dropZone.addEventListener("drop", function(e){
     e.preventDefault();
-    if(e.dataTransfer.files && e.dataTransfer.files[0])
-      handleFile(e.dataTransfer.files[0]);
+    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
   });
-
   fileInput.addEventListener("change", function(){
     if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
   });
 
   function handleFile(file){
-    uploadStatus.textContent = "";
-    uploadStatus.className = "status";
-
+    uploadStatus.textContent = ""; uploadStatus.className = "status";
     if(file.type !== "application/pdf" && !/\.pdf$/i.test(file.name)){
-      uploadStatus.textContent = "Please choose a PDF file.";
-      uploadStatus.className = "status error";
-      return;
+      uploadStatus.textContent = "Please choose a PDF file."; uploadStatus.className = "status error"; return;
     }
-
     if(file.size === 0){
-      uploadStatus.textContent = "The selected PDF is empty.";
-      uploadStatus.className = "status error";
-      return;
+      uploadStatus.textContent = "The selected PDF is empty."; uploadStatus.className = "status error"; return;
     }
-
-    currentFile = file;
-    resultBlob = null;
-    revoke(resultObjectUrl);
-    resultObjectUrl = null;
-
-    fileName.textContent = file.name;
-    fileSize.textContent = fmtBytes(file.size);
-    uploadView.classList.add("hidden");
-    resultView.classList.add("hidden");
-    optionsView.classList.remove("hidden");
-    compressStatus.style.display = "none";
+    currentFile = file; resultBlob = null; revoke(resultObjectUrl); resultObjectUrl = null;
+    fileName.textContent = file.name; fileSize.textContent = fmtBytes(file.size);
+    uploadView.classList.add("hidden"); resultView.classList.add("hidden");
+    optionsView.classList.remove("hidden"); compressStatus.style.display = "none";
+    syncOptions();
   }
 
   chooseAnotherBtn.addEventListener("click", function(){
-    currentFile = null;
-    resultBlob = null;
-    revoke(resultObjectUrl);
-    resultObjectUrl = null;
-    fileInput.value = "";
-    optionsView.classList.add("hidden");
-    uploadView.classList.remove("hidden");
+    currentFile = null; resultBlob = null; revoke(resultObjectUrl); resultObjectUrl = null;
+    fileInput.value = ""; optionsView.classList.add("hidden"); uploadView.classList.remove("hidden");
   });
 
   levelGrid.querySelectorAll(".level-btn").forEach(function(btn){
     btn.addEventListener("click", function(){
-      levelGrid.querySelectorAll(".level-btn").forEach(function(b){
-        b.classList.remove("active");
-      });
+      levelGrid.querySelectorAll(".level-btn").forEach(function(b){ b.classList.remove("active"); });
       btn.classList.add("active");
       selectedLevel = btn.getAttribute("data-level");
+      syncOptions();
     });
   });
 
-  function showError(msg){
-    compressStatus.textContent = msg;
-    compressStatus.style.display = "block";
+  function showError(msg){ compressStatus.textContent = msg; compressStatus.style.display = "block"; }
+
+  /* ---------- JPEG helpers ---------- */
+  function toBlob(canvas, q){
+    return new Promise(function(res, rej){ canvas.toBlob(function(b){ if(b) res(b); else rej(new Error("Page is too large for your browser to process.")); }, "image/jpeg", q); });
+  }
+  function scaleCanvas(src, f){
+    var tw = Math.max(8, Math.round(src.width * f)), th = Math.max(8, Math.round(src.height * f));
+    if(tw === src.width && th === src.height) return src;
+    var cur = src, cw = src.width, ch = src.height;
+    while(cw / 2 > tw && ch / 2 > th){
+      var nw = Math.max(8, Math.round(cw / 2)), nh = Math.max(8, Math.round(ch / 2));
+      var c = document.createElement("canvas"); c.width = nw; c.height = nh;
+      var x = c.getContext("2d"); x.imageSmoothingEnabled = true; x.imageSmoothingQuality = "high";
+      x.drawImage(cur, 0, 0, nw, nh); cur = c; cw = nw; ch = nh;
+    }
+    var out = document.createElement("canvas"); out.width = tw; out.height = th;
+    var ox = out.getContext("2d", {alpha:false});
+    ox.fillStyle = "#fff"; ox.fillRect(0, 0, tw, th);
+    ox.imageSmoothingEnabled = true; ox.imageSmoothingQuality = "high";
+    ox.drawImage(cur, 0, 0, tw, th);
+    return out;
+  }
+  function makeGray(canvas){
+    var ctx = canvas.getContext("2d");
+    var d = ctx.getImageData(0, 0, canvas.width, canvas.height), p = d.data;
+    for(var i = 0; i < p.length; i += 4){
+      var g = (p[i]*299 + p[i+1]*587 + p[i+2]*114) / 1000 | 0;
+      p[i] = p[i+1] = p[i+2] = g;
+    }
+    ctx.putImageData(d, 0, 0);
+  }
+  async function renderPage(pdf, i, scale, gray){
+    var page = await pdf.getPage(i);
+    var base = page.getViewport({ scale: 1 });
+    var MAXPX = 16000000, MAXSIDE = 8192;
+    var eff = Math.min(scale, Math.sqrt(MAXPX / (base.width * base.height)), MAXSIDE / Math.max(base.width, base.height));
+    var vp = page.getViewport({ scale: eff });
+    var canvas = document.createElement("canvas");
+    canvas.width = Math.max(8, Math.ceil(vp.width)); canvas.height = Math.max(8, Math.ceil(vp.height));
+    var ctx = canvas.getContext("2d", { alpha: false });
+    if(!ctx) throw new Error("Your browser could not create the PDF rendering surface.");
+    ctx.fillStyle = "#ffffff"; ctx.fillRect(0, 0, canvas.width, canvas.height);
+    await page.render({ canvasContext: ctx, canvas: canvas, viewport: vp, background: "#ffffff" }).promise;
+    page.cleanup();
+    if(gray) makeGray(canvas);
+    return { canvas: canvas, wpt: base.width, hpt: base.height };
   }
 
-  function yieldToBrowser(){
-    return new Promise(function(resolve){ setTimeout(resolve, 0); });
+  /* ---------- Minimal PDF writer (JPEG pages) ---------- */
+  function latin1(s){ var u = new Uint8Array(s.length); for(var i=0;i<s.length;i++) u[i] = s.charCodeAt(i) & 255; return u; }
+  function fnum(n){ return (Math.round(n*100)/100).toString(); }
+  function buildPdf(pages, padComment){
+    var parts = [], offsets = [], len = 0;
+    function push(x){ var u = (typeof x === "string") ? latin1(x) : x; parts.push(u); len += u.length; }
+    push("%PDF-1.4\n%âãÏÓ\n");
+    if(padComment > 0){
+      var pad = "%" + new Array(padComment - 1).join(" ") + "\n";
+      push(pad);
+    }
+    var n = pages.length, kids = [];
+    for(var i = 0; i < n; i++) kids.push((3 + i*3) + " 0 R");
+    offsets[1] = len; push("1 0 obj\n<< /Type /Catalog /Pages 2 0 R >>\nendobj\n");
+    offsets[2] = len; push("2 0 obj\n<< /Type /Pages /Kids [" + kids.join(" ") + "] /Count " + n + " >>\nendobj\n");
+    for(var k = 0; k < n; k++){
+      var p = pages[k], po = 3 + k*3, co = po + 1, io = po + 2;
+      var w = fnum(p.wpt), h = fnum(p.hpt);
+      offsets[po] = len;
+      push(po + " 0 obj\n<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + w + " " + h + "] /Resources << /XObject << /Im0 " + io + " 0 R >> /ProcSet [/PDF /ImageC] >> /Contents " + co + " 0 R >>\nendobj\n");
+      var content = "q " + w + " 0 0 " + h + " 0 0 cm /Im0 Do Q";
+      offsets[co] = len;
+      push(co + " 0 obj\n<< /Length " + content.length + " >>\nstream\n" + content + "\nendstream\nendobj\n");
+      offsets[io] = len;
+      push(io + " 0 obj\n<< /Type /XObject /Subtype /Image /Width " + p.jw + " /Height " + p.jh + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length " + p.bytes.length + " >>\nstream\n");
+      push(p.bytes);
+      push("\nendstream\nendobj\n");
+    }
+    var total = 2 + n*3 + 1, xref = len;
+    var x = "xref\n0 " + total + "\n0000000000 65535 f \n";
+    for(var j = 1; j < total; j++) x += ("0000000000" + offsets[j]).slice(-10) + " 00000 n \n";
+    x += "trailer\n<< /Size " + total + " /Root 1 0 R >>\nstartxref\n" + xref + "\n%%EOF\n";
+    push(x);
+    return new Blob(parts, { type: "application/pdf" });
+  }
+  async function bytesOf(blob){ return new Uint8Array(await blob.arrayBuffer()); }
+
+  /* ---------- Compression modes ---------- */
+  async function loadDoc(buffer){
+    await enginePromise;
+    var task = pdfjsLib.getDocument({ data: new Uint8Array(buffer.slice(0)), useWorkerFetch: false, isEvalSupported: false, cMapUrl: "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/cmaps/", cMapPacked: true, standardFontDataUrl: "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.10.38/standard_fonts/" });
+    var pdf = await task.promise;
+    if(pdf.numPages > MAX_PAGES){
+      throw new Error("This PDF has " + pdf.numPages + " pages, which is more than this tool supports in the browser (" + MAX_PAGES + "). Please try a smaller PDF.");
+    }
+    return pdf;
+  }
+  function setProg(pct, label){
+    progressBar.style.width = Math.round(pct) + "%";
+    if(label) processingLabel.textContent = label;
+  }
+
+  async function runLossless(buffer){
+    if(!window.PDFLib) throw new Error("The PDF engine is still loading. Please wait a moment and try again.");
+    setProg(20, "Optimizing PDF structure…");
+    var doc = await PDFLib.PDFDocument.load(buffer, { updateMetadata: false });
+    var out = await doc.save({ useObjectStreams: true });
+    setProg(100);
+    return { blob: new Blob([out], { type: "application/pdf" }), note: "Text stays selectable. Lossless mode only trims structure, so for big savings pick a stronger level or a target size." };
+  }
+
+  async function runLevel(buffer, level, gray){
+    var pdf = await loadDoc(buffer), n = pdf.numPages, s = LEVELS[level], pages = [];
+    for(var i = 1; i <= n; i++){
+      setProg(((i-1)/n)*100, "Compressing page " + i + " of " + n + "…");
+      var r = await renderPage(pdf, i, s.scale, gray);
+      var b = await toBlob(r.canvas, s.quality);
+      pages.push({ wpt: r.wpt, hpt: r.hpt, jw: r.canvas.width, jh: r.canvas.height, bytes: await bytesOf(b) });
+      r.canvas.width = 1; r.canvas.height = 1;
+      await yieldUI();
+    }
+    setProg(100);
+    return { blob: buildPdf(pages, 0), note: "" };
+  }
+
+  async function runTarget(buffer, target, strategy, gray, pad){
+    var pdf = await loadDoc(buffer), n = pdf.numPages;
+    var baseScale = n <= 12 ? 2 : n <= 30 ? 1.5 : n <= 80 ? 1.1 : 0.8;
+    var cache = [];
+    for(var i = 1; i <= n; i++){
+      setProg(((i-1)/n)*35, "Reading page " + i + " of " + n + "…");
+      cache.push(await renderPage(pdf, i, baseScale, gray));
+      await yieldUI();
+    }
+    var overhead = buildPdf(cache.map(function(c){ return { wpt:c.wpt, hpt:c.hpt, jw:c.canvas.width, jh:c.canvas.height, bytes:new Uint8Array(0) }; }), 0).size + 24 * n + 64;
+    var step = 0, planned = 22;
+
+    async function evalAt(f, q){
+      var blobs = [], total = overhead;
+      for(var k = 0; k < cache.length; k++){
+        var c = scaleCanvas(cache[k].canvas, f);
+        var b = await toBlob(c, q);
+        blobs.push({ b: b, w: c.width, h: c.height });
+        total += b.size;
+      }
+      step++; setProg(35 + Math.min(60, step/planned*60), "Fitting to target size… (step " + step + ")");
+      await yieldUI();
+      return { total: total, blobs: blobs };
+    }
+    async function searchQ(f, lo, hi, goal, iters){
+      var r = await evalAt(f, hi);
+      if(r.total <= goal) return { r: r, fit: true };
+      var best = await evalAt(f, lo);
+      if(best.total > goal) return { r: best, fit: false };
+      for(var i = 0; i < iters; i++){
+        var mid = (lo + hi) / 2, t = await evalAt(f, mid);
+        if(t.total <= goal){ best = t; lo = mid; } else hi = mid;
+      }
+      return { r: best, fit: true };
+    }
+    async function searchS(q, goal, iters){
+      var r = await evalAt(1, q);
+      if(r.total <= goal) return { r: r, fit: true };
+      var lo = 0.04, hi = 1, best = await evalAt(lo, q);
+      if(best.total > goal) return { r: best, fit: false };
+      for(var i = 0; i < iters; i++){
+        var mid = (lo + hi) / 2, t = await evalAt(mid, q);
+        if(t.total <= goal){ best = t; lo = mid; } else hi = mid;
+      }
+      return { r: best, fit: true };
+    }
+    async function solve(goal){
+      var res;
+      if(strategy === "quality"){
+        res = await searchS(0.85, goal, 9);
+        if(!res.fit) res = await searchS(0.5, goal, 9);
+      }else if(strategy === "dims" || strategy === "max"){
+        res = await searchQ(1, 0.02, 0.95, goal, 8);
+        if(!res.fit) res = await searchS(0.02, goal, 9);
+      }else{
+        res = await searchQ(1, 0.5, 0.92, goal, 7);
+        if(!res.fit) res = await searchS(0.5, goal, 9);
+        if(!res.fit) res = await searchS(0.25, goal, 9);
+        if(!res.fit) res = await searchS(0.05, goal, 9);
+      }
+      return res;
+    }
+    function assemble(res){
+      return Promise.all(res.r.blobs.map(function(x){ return bytesOf(x.b); })).then(function(arr){
+        return arr.map(function(bytes, k){ return { wpt: cache[k].wpt, hpt: cache[k].hpt, jw: res.r.blobs[k].w, jh: res.r.blobs[k].h, bytes: bytes }; });
+      });
+    }
+
+    var goal = target, res = null, blob = null, tries = 0;
+    while(tries < 4){
+      res = await solve(goal);
+      blob = buildPdf(await assemble(res), 0);
+      if(blob.size <= target || !res.fit) break;
+      goal -= (blob.size - target) + 64; tries++;
+    }
+    var fit = blob.size <= target;
+    if(fit && pad && blob.size < target){
+      var need = target - blob.size;
+      var pagesData = await assemble(res);
+      if(need >= 2){
+        var padded = buildPdf(pagesData, need);
+        if(padded.size === target) blob = padded;
+        else if(padded.size < target) blob = buildPdf(pagesData, need + (target - padded.size));
+      }
+    }
+    cache.forEach(function(c){ c.canvas.width = 1; c.canvas.height = 1; });
+    setProg(100);
+    return { blob: blob, note: fit ? "" : "Target could not be reached. This is the smallest possible size for this PDF." };
+  }
+
+  function getTargetBytes(){
+    var kb = targetPreset.value === "custom" ? Number(targetCustom.value) : Number(targetPreset.value);
+    if(!isFinite(kb) || kb < 1) kb = 50;
+    return Math.floor(kb * (Number(targetUnit.value) || 1000));
   }
 
   compressBtn.addEventListener("click", async function(){
     if(!currentFile) return;
-
-    if(!engineReady || !pdfjsLib || !window.jspdf){
-      showError("The PDF engine is still loading. Please wait a moment and try again.");
-      return;
-    }
-
     compressStatus.style.display = "none";
     optionsView.classList.add("hidden");
     processingView.classList.remove("hidden");
-    progressBar.style.width = "0%";
+    setProg(0, "Compressing your PDF…");
     compressBtn.disabled = true;
-
     try{
-      var arrayBuffer = await currentFile.arrayBuffer();
+      var buffer = await currentFile.arrayBuffer();
+      var out;
+      if(selectedLevel === "lossless") out = await runLossless(buffer);
+      else if(selectedLevel === "target") out = await runTarget(buffer, getTargetBytes(), strategySel.value, grayChk.checked, padChk.checked);
+      else out = await runLevel(buffer, selectedLevel, grayChk.checked);
 
-      // Pass a fresh Uint8Array so PDF.js can safely consume the file.
-      var data = new Uint8Array(arrayBuffer);
-      var loadingTask = pdfjsLib.getDocument({
-        data: data,
-        useWorkerFetch: true,
-        isEvalSupported: true
-      });
-      var pdf = await loadingTask.promise;
-      var numPages = pdf.numPages;
-
-      if(numPages > MAX_PAGES){
-        throw new Error(
-          "This PDF has " + numPages +
-          " pages, which is more than this tool supports in the browser (" +
-          MAX_PAGES + "). Please try a smaller PDF."
-        );
-      }
-
-      var settings = LEVELS[selectedLevel];
-      var jsPDF = window.jspdf.jsPDF;
-      var outPdf = null;
-
-      for(var i = 1; i <= numPages; i++){
-        processingLabel.textContent =
-          "Compressing page " + i + " of " + numPages + "\u2026";
-        progressBar.style.width =
-          Math.round(((i - 1) / numPages) * 100) + "%";
-
-        var page = await pdf.getPage(i);
-        var baseViewport = page.getViewport({ scale: 1 });
-        var viewport = page.getViewport({ scale: settings.scale });
-
-        var canvas = document.createElement("canvas");
-        canvas.width = Math.max(1, Math.ceil(viewport.width));
-        canvas.height = Math.max(1, Math.ceil(viewport.height));
-
-        var ctx = canvas.getContext("2d", { alpha: false });
-        if(!ctx) throw new Error("Your browser could not create the PDF rendering surface.");
-
-        ctx.fillStyle = "#ffffff";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-        await page.render({
-          canvasContext: ctx,
-          viewport: viewport,
-          background: "#ffffff"
-        }).promise;
-
-        var imgData = canvas.toDataURL("image/jpeg", settings.quality);
-
-        var pageWidthPt = baseViewport.width;
-        var pageHeightPt = baseViewport.height;
-
-        if(!outPdf){
-          outPdf = new jsPDF({
-            unit: "pt",
-            format: [pageWidthPt, pageHeightPt],
-            orientation: pageWidthPt > pageHeightPt ? "landscape" : "portrait",
-            compress: true
-          });
-        }else{
-          outPdf.addPage(
-            [pageWidthPt, pageHeightPt],
-            pageWidthPt > pageHeightPt ? "landscape" : "portrait"
-          );
-        }
-
-        outPdf.addImage(
-          imgData, "JPEG", 0, 0, pageWidthPt, pageHeightPt,
-          undefined, "FAST"
-        );
-
-        canvas.width = 1;
-        canvas.height = 1;
-        canvas.remove();
-        page.cleanup();
-
-        await yieldToBrowser();
-        progressBar.style.width =
-          Math.round((i / numPages) * 100) + "%";
-      }
-
-      if(!outPdf) throw new Error("No pages were found in this PDF.");
-
-      resultBlob = outPdf.output("blob");
-
-      var originalSize = currentFile.size;
-      var compressedSize = resultBlob.size;
-      var pct = originalSize > 0
-        ? Math.round((1 - compressedSize / originalSize) * 100)
-        : 0;
-
-      originalSizeLabel.textContent = fmtBytes(originalSize);
-      compressedSizeLabel.textContent = fmtBytes(compressedSize);
-
-      // Never show a fake positive saving if the rebuilt file is larger.
+      resultBlob = out.blob;
+      var orig = currentFile.size, comp = resultBlob.size;
+      var pct = orig > 0 ? Math.round((1 - comp/orig) * 100) : 0;
+      originalSizeLabel.textContent = fmtBytes(orig);
+      compressedSizeLabel.textContent = fmtBytes(comp);
       reductionPct.textContent = (pct > 0 ? pct : 0) + "%";
-
+      var note = out.note || "";
+      if(!note && comp >= orig) note = "This PDF is already small. Try a stronger level or a target size.";
+      resultNote.textContent = note;
+      resultNote.style.display = note ? "block" : "none";
       processingView.classList.add("hidden");
       resultView.classList.remove("hidden");
-
     }catch(err){
       console.error("PDF compression error:", err);
       processingView.classList.add("hidden");
       optionsView.classList.remove("hidden");
-
       var msg = "Could not compress this PDF. ";
       if(err && (err.name === "PasswordException" || /password|encrypted/i.test(err.message || ""))){
         msg = "This PDF is password-protected. Please remove the password first, then try again.";
-      }else if(err && err.message){
-        msg += err.message;
-      }else{
-        msg += "Please try a different file.";
-      }
+      }else if(err && err.message){ msg += err.message; }
+      else{ msg += "Please try a different file."; }
       showError(msg);
-    }finally{
-      compressBtn.disabled = false;
-    }
+    }finally{ compressBtn.disabled = false; }
   });
 
   downloadBtn.addEventListener("click", function(){
     if(!resultBlob) return;
-
     revoke(resultObjectUrl);
     resultObjectUrl = URL.createObjectURL(resultBlob);
-
     var a = document.createElement("a");
     a.href = resultObjectUrl;
-    var baseName = currentFile
-      ? currentFile.name.replace(/\.pdf$/i, "")
-      : "document";
-    a.download = baseName + "-compressed.pdf";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-
-    setTimeout(function(){
-      revoke(resultObjectUrl);
-      resultObjectUrl = null;
-    }, 4000);
+    a.download = (currentFile ? currentFile.name.replace(/\.pdf$/i, "") : "document") + "-compressed.pdf";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ revoke(resultObjectUrl); resultObjectUrl = null; }, 4000);
   });
 
   startOverBtn.addEventListener("click", function(){
-    resultBlob = null;
-    revoke(resultObjectUrl);
-    resultObjectUrl = null;
-    currentFile = null;
-    fileInput.value = "";
-    resultView.classList.add("hidden");
-    uploadView.classList.remove("hidden");
+    resultBlob = null; revoke(resultObjectUrl); resultObjectUrl = null; currentFile = null;
+    fileInput.value = ""; resultView.classList.add("hidden"); uploadView.classList.remove("hidden");
   });
+  syncOptions();
 })();
 </script>
+
 <script src="/shared/shared.js" defer></script>
 </body>
 </html>
