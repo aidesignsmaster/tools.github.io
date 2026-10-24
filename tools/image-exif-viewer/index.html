@@ -3,167 +3,302 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Image Metadata &amp; EXIF Viewer Online | Working Tools Box</title>
-<meta name="description" content="View EXIF and metadata from a photo online for free \u2014 camera settings, date taken, GPS location and more. Entirely in your browser, no upload.">
-<meta name="robots" content="index, follow">
+<title>Free Image EXIF &amp; Metadata Viewer | Working Tools Box</title>
+<meta name="description" content="View EXIF data and GPS location from your photos for free. Check up to 50 images, copy or export the details, and remove metadata. Runs in your browser.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/image-exif-viewer/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Image Metadata & EXIF Viewer Online | Working Tools Box">
-<meta property="og:description" content="View EXIF and metadata from a photo online for free, entirely in your browser.">
+<meta property="og:title" content="Free Image EXIF &amp; Metadata Viewer | Working Tools Box">
+<meta property="og:description" content="View EXIF data and GPS location from your photos for free. Check up to 50 images, copy or export the details, and remove metadata. Runs in your browser.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/image-exif-viewer/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Image Metadata & EXIF Viewer Online | Working Tools Box">
-<meta name="twitter:description" content="View EXIF and metadata from a photo online for free, entirely in your browser.">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/image-exif-viewer-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="EXIF Viewer banner showing a photo, its camera details and an upload area.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Free Image EXIF &amp; Metadata Viewer | Working Tools Box">
+<meta name="twitter:description" content="View EXIF data and GPS location from your photos for free. Check up to 50 images, copy or export the details, and remove metadata. Runs in your browser.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/image-exif-viewer-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Image Metadata & EXIF Viewer",
-  "url":"https://wtoolsbox.com/tools/image-exif-viewer/",
-  "applicationCategory":"UtilitiesApplication",
-  "operatingSystem":"Any",
-  "description":"Reads and displays EXIF metadata from a JPEG photo, including camera settings, date taken and GPS location if present, directly in the browser.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Image Metadata & EXIF Viewer",
+  "url": "https://wtoolsbox.com/tools/image-exif-viewer/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "description": "Reads EXIF metadata such as camera settings, date taken and GPS location from photos, and removes metadata, entirely in the browser.",
+  "image": "https://wtoolsbox.com/images/tools/image-exif-viewer-og.jpg",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The photo's metadata is read entirely in your browser using JavaScript, and the image itself is never uploaded anywhere."}},
-    {"@type":"Question","name":"Why does my photo show no metadata?","acceptedAnswer":{"@type":"Answer","text":"Many apps and social media platforms strip EXIF data when you save or share a photo, so no metadata being found is common and does not mean the tool failed."}},
-    {"@type":"Question","name":"Can this tool read GPS location from a photo?","acceptedAnswer":{"@type":"Answer","text":"Yes, if the photo still has GPS data embedded. It will be shown as coordinates along with a link to view the location on a map."}},
-    {"@type":"Question","name":"Does this work on PNG or WebP images?","acceptedAnswer":{"@type":"Answer","text":"EXIF metadata is a JPEG feature. PNG and WebP files generally do not contain EXIF data, so this tool works best with JPEG photos straight from a camera or phone."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The metadata is read entirely in your browser with JavaScript, and the image itself is never uploaded anywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does my photo show no metadata?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Many apps and social networks remove EXIF data when a photo is saved or shared, and screenshots usually have none. An empty result is common and does not mean the tool failed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can this tool read GPS location from a photo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, if the photo still has GPS data. It shows latitude and longitude with links to open the place on a map."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work with PNG and WebP files?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can add them and see basic file details, but EXIF is mainly a JPEG feature, so PNG and WebP files rarely contain camera data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I remove metadata from a photo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose a photo and press Remove Metadata and Download, or use the ZIP button for the whole list. The picture is redrawn without EXIF or GPS data and saved as a new file. Your original is not changed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this tool free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. It is free to use with no sign-up, because all the work happens on your own device."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Working Tools Box",
+      "item": "https://wtoolsbox.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Image Metadata & EXIF Viewer",
+      "item": "https://wtoolsbox.com/tools/image-exif-viewer/"
+    }
   ]
 }
 </script>
 
 <style>
-  *{box-sizing:border-box}
-  :root{
-    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
-    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
-    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
-    --shadow:0 4px 24px rgba(40,20,80,0.06);
-  }
-  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-  .container{width:min(1100px,calc(100% - 32px));margin:auto}
-  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+*{box-sizing:border-box}
+:root{--purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#625f70;--soft:#fbf9ff;--error:#b3261e;--success:#0f7a45;--focus:#4338ca;--radius:16px;--shadow:0 4px 24px rgba(40,20,80,0.06)}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6;overflow-x:hidden}
+img{max-width:100%}
+.container{width:min(1100px,calc(100% - 32px));margin:auto}
+.grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero{text-align:center;padding:44px 0 20px}
+.hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800;line-height:1.2}
+.hero p{color:var(--muted);max-width:680px;margin:auto}
+.notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+.warn{background:#fff7ed;border:1px solid #fed7aa;color:#9a3412;border-radius:12px;padding:12px 16px;font-size:.9rem;margin-bottom:14px}
+.tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+.upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer;transition:border-color .15s,background .15s}
+.upload:hover,.upload.dragover{border-color:var(--purple);background:#f5f0ff}
+.upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple);display:block}
+.upload .u-title{font-weight:700;margin:0 0 12px}
+.upload .u-sub{font-size:12.5px;color:var(--muted);margin:14px 0 0}
+input[type=file]{display:none}
+.button{border:2px solid transparent;border-radius:12px;padding:11px 20px;font-weight:700;cursor:pointer;font-size:14.5px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;transition:transform .12s,opacity .12s,background .12s}
+.button:active:not(:disabled){transform:translateY(1px)}
+.primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+.primary:hover:not(:disabled){opacity:.92}
+.secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
+.secondary:hover:not(:disabled){background:#f8f6ff}
+.button:disabled{opacity:.5;cursor:not-allowed}
+.button.block{width:100%}
+.button.small{padding:7px 12px;font-size:13px;border-radius:10px}
+.button:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.stack{display:flex;flex-direction:column;gap:10px}
+.row{display:flex;flex-wrap:wrap;gap:10px}
+.status{margin-top:14px;font-size:14px;color:var(--muted);min-height:1.2em}
+.status.error{color:var(--error);font-weight:600}
+.status.ok{color:var(--success);font-weight:600}
+.grid2{display:grid;gap:22px;align-items:start}
+.grid2>*{min-width:0}
+.panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+.panel h2,.panel h3{margin:0 0 12px;font-size:1rem;font-weight:800}
+.field{margin-bottom:14px}
+.field label,.field .lbl{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+select,input[type=number],input[type=search]{width:100%;padding:10px 11px;border:1.5px solid #d1d5db;border-radius:10px;font-size:14.5px;font-family:inherit;color:var(--text);background:#fff}
+select:focus,input[type=number]:focus,input[type=search]:focus{border-color:var(--purple)}
+input[type=color]{width:100%;height:42px;padding:3px;border:1.5px solid #d1d5db;border-radius:10px;background:#fff;cursor:pointer}
+input[type=range]{width:100%;accent-color:var(--purple);cursor:pointer}
+.check{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.check input{width:19px;height:19px;accent-color:var(--purple);cursor:pointer}
+.check label{font-weight:600;font-size:14px;cursor:pointer}
+.hint{font-size:12.5px;color:var(--muted);margin:6px 0 0}
+.content{padding:0 0 55px}
+.content h2{font-size:1.4rem;margin:36px 0 10px;font-weight:800;line-height:1.3}
+.content h3{font-size:1.05rem;margin:0 0 6px}
+.content p,.content li{color:#3c3a46}
+.content a{color:#5b21b6;font-weight:600}
+.content ul{padding-left:20px}
+.steps{counter-reset:s;list-style:none;padding:0!important;margin:0;display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.steps li{counter-increment:s;background:var(--soft);border:1px solid var(--border);border-radius:14px;padding:18px}
+.steps li::before{content:counter(s);display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;font-weight:800;font-size:.9rem;margin-bottom:8px}
+.steps h3{margin:0 0 4px}
+.steps p{margin:0;font-size:.93rem}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.related a{display:block;border:1px solid var(--border);border-radius:12px;padding:14px 16px;background:#fff;text-decoration:none;color:var(--text);font-weight:700}
+.related a span{display:block;font-weight:400;font-size:.88rem;color:var(--muted);margin-top:2px}
+.related a:hover{border-color:var(--purple)}
+.faq-item{border:1px solid var(--border);border-radius:12px;padding:14px 18px;margin-bottom:12px;background:#fff}
+.faq-item h3{margin:0 0 6px;font-size:1rem}
+.faq-item p{margin:0}
+.size-table{width:100%;border-collapse:collapse;font-size:.93rem;margin:8px 0}
+.size-table th,.size-table td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
+.size-table th{background:var(--soft);font-weight:800}
+.table-scroll{overflow-x:auto}
+.hidden{display:none!important}
+.button,.chip,select,input[type=number],input[type=search]{min-height:42px}
+.button,.chip,.upload{touch-action:manipulation}
+.tool-figure{margin:22px auto;max-width:760px}
+.tool-figure img{width:100%;height:auto;display:block;border-radius:14px;border:1px solid var(--border);background:var(--soft)}
+.tool-figure figcaption{font-size:.85rem;color:var(--muted);margin-top:8px;text-align:center}
+.flist{display:flex;flex-direction:column;gap:8px;max-height:340px;overflow-y:auto;margin:10px 0;padding:2px}
+.li{display:flex;align-items:stretch;border:1.5px solid var(--border);border-radius:12px;background:#fff;overflow:hidden}
+.li.sel{border-color:var(--purple);background:#faf7ff}
+.li-main{flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:8px;border:0;background:none;cursor:pointer;text-align:left;font-family:inherit;color:var(--text);min-height:56px}
+.li-main img{width:44px;height:44px;border-radius:8px;object-fit:cover;background:#f1eefb;flex:0 0 auto}
+.li-text{min-width:0;display:flex;flex-direction:column}
+.li-name{font-weight:700;font-size:13.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.li-sub{font-size:12px;color:var(--muted)}
+.li-sub.ok{color:var(--success);font-weight:600}
+.li-sub.err{color:var(--error);font-weight:600}
+.li-act{display:flex;align-items:center;gap:4px;padding:0 6px}
+.li-btn{min-width:40px;min-height:40px;border:1px solid var(--border);background:#fff;border-radius:10px;cursor:pointer;font-weight:700;font-size:12px;color:#4c1d95;font-family:inherit;touch-action:manipulation}
+.li-btn:hover{background:#f8f6ff}
+.seg{display:flex;gap:6px;margin-bottom:14px}
+.seg button{flex:1;min-height:42px;border:1.5px solid #cabdf7;background:#fff;color:#4c1d95;border-radius:10px;font-weight:700;font-family:inherit;cursor:pointer;touch-action:manipulation}
+.seg button[aria-pressed="true"]{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;border-color:transparent}
+.bar{height:8px;border-radius:99px;background:#ece8f8;overflow:hidden;margin-top:10px}
+.bar>i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .15s}
+@media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
-  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
-  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  .brand{font-weight:800;text-decoration:none;font-size:19px}
-  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
-  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
-  .nav nav a:hover{color:var(--purple)}
+.site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.brand{font-weight:800;text-decoration:none;font-size:19px}
+.nav nav{display:flex;gap:20px;flex-wrap:wrap}
+.nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+.nav nav a:hover{color:var(--purple)}
+.site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.footer-inner nav{display:flex;gap:20px}
+.footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+.footer-inner nav a:hover{color:var(--purple)}
 
-  .hero{text-align:center;padding:44px 0 20px}
-  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
-  .hero p{color:var(--muted);max-width:680px;margin:auto}
-
-  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
-
-  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
-
-  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:38px 18px;text-align:center;background:var(--soft);cursor:pointer}
-  .upload:hover{border-color:var(--purple)}
-  .upload svg{width:48px;height:48px;margin:0 auto 12px;color:var(--purple)}
-  input[type=file]{display:none}
-
-  .button{border:2px solid transparent;border-radius:12px;padding:11px 20px;font-weight:700;cursor:pointer;font-size:14px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
-  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
-  .primary:hover{opacity:.92}
-  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
-  .secondary:hover{background:#f8f6ff}
-  .button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-
-  .status{margin-top:14px;font-size:14px;color:var(--muted)}
-  .status.error{color:var(--error);font-weight:600}
-
-  .grid2{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
-  .preview-img{width:100%;border-radius:14px;border:1px solid var(--border);display:block;max-height:340px;object-fit:contain;background:#f8fafc}
-  .file-meta{font-size:12px;color:var(--muted);margin-top:8px}
-
-  .filter-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
-  .filter-row input[type=search]{flex:1;min-width:160px;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px}
-
-  .meta-section{border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
-  .meta-section h3{margin:0;padding:12px 16px;background:var(--soft);font-size:14px;font-weight:800;color:var(--purple)}
-  table.meta-table{width:100%;border-collapse:collapse}
-  table.meta-table tr{border-top:1px solid var(--border)}
-  table.meta-table tr:first-child{border-top:none}
-  table.meta-table td{padding:9px 16px;font-size:13.5px;vertical-align:top}
-  table.meta-table td:first-child{color:var(--muted);font-weight:600;width:42%}
-  table.meta-table td:last-child{word-break:break-word}
-  .gps-link{color:var(--purple);font-weight:700;text-decoration:none}
-  .gps-link:hover{text-decoration:underline}
-
-  .content{padding:0 0 55px}
-  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
-  .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
-  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
-  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
-  .faq[open] summary::after{content:"\2212"}
-  .faq p{padding-bottom:14px;margin-top:0}
-
-  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
-  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
-  .footer-inner nav{display:flex;gap:20px}
-  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
-  .footer-inner nav a:hover{color:var(--purple)}
-
-  .hidden{display:none!important}
-  @media(max-width:800px){.grid2{grid-template-columns:1fr}}
-  @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+.grid2{grid-template-columns:320px minmax(0,1fr)}
+.preview-img{width:100%;border-radius:14px;border:1px solid var(--border);display:block;max-height:300px;object-fit:contain;background:#f8fafc}
+.file-meta{font-size:12.5px;color:var(--muted);margin:8px 0 14px;word-break:break-word}
+.filter-row{margin-bottom:14px}
+.meta-section{border:1px solid var(--border);border-radius:12px;margin-bottom:14px;overflow:hidden}
+.meta-section h3{margin:0;padding:12px 16px;background:var(--soft);font-size:14px;font-weight:800;color:var(--purple)}
+table.meta-table{width:100%;border-collapse:collapse}
+table.meta-table tr{border-top:1px solid var(--border)}
+table.meta-table tr:first-child{border-top:none}
+table.meta-table td{padding:9px 16px;font-size:13.5px;vertical-align:top}
+table.meta-table td:first-child{color:var(--muted);font-weight:600;width:42%}
+table.meta-table td:last-child{word-break:break-word}
+.gps-link{display:inline-block;color:var(--purple);font-weight:700;text-decoration:none;margin-right:14px;padding:4px 0}
+.gps-link:hover{text-decoration:underline}
+.gps-badge{color:#9a3412;font-weight:700}
+@media(max-width:800px){.grid2{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 
 <div id="site-header"></div>
 
-<main class="container">
+<main class="container" id="main-content">
   <section class="hero">
     <h1 class="grad-text">Image Metadata &amp; EXIF Viewer</h1>
-    <p>See the hidden camera settings, date and location data stored inside a photo &mdash; free, in your browser.</p>
+    <p>See the camera settings, date and location data stored inside your photos, free and right in your browser.</p>
   </section>
 
-  <div class="notice">
-    <b>100% free, no upload:</b> Your photo's metadata is read locally in your browser and never leaves your device.
-  </div>
+  <div class="notice"><b>100% free, no upload:</b> Your photos are read locally in your browser and never leave your device.</div>
 
-  <section class="tool" aria-label="Image Metadata and EXIF Viewer Tool">
+  <section class="tool" id="toolBox" aria-label="Image Metadata and EXIF Viewer Tool">
 
     <div id="uploadView">
       <div class="upload" id="dropZone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
-        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
-        <button type="button" class="button primary" id="selectBtn">Select Photo</button>
-        <p style="font-size:12px;color:var(--muted);margin-top:14px">Works best with JPEG photos straight from a camera or phone.</p>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p class="u-title">Drop photos here, paste, or</p>
+        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple aria-label="Select photos">
+        <button type="button" class="button primary" id="selectBtn">Select Photos</button>
+        <p class="u-sub">JPG, PNG and WebP, up to 50 photos at a time (50 MB each). JPEG photos from a camera or phone show the most data.</p>
       </div>
-      <div id="uploadStatus" class="status"></div>
+      <div id="uploadStatus" class="status" role="status"></div>
     </div>
 
-    <div id="resultView" class="hidden">
+    <div id="workView" class="hidden">
       <div class="grid2">
         <div>
-          <img id="previewImg" class="preview-img" alt="Uploaded photo">
+          <div class="row" style="align-items:center;justify-content:space-between">
+            <strong id="countLabel">Photos</strong>
+            <div class="row">
+              <button type="button" class="button secondary small" id="addMoreBtn">Add More</button>
+              <button type="button" class="button secondary small" id="clearAllBtn">Clear All</button>
+            </div>
+          </div>
+          <div class="flist" id="fileList" role="list" aria-label="Your photos"></div>
+          <img id="previewImg" class="preview-img" alt="Preview of the selected photo">
           <div class="file-meta" id="fileMetaText"></div>
-          <button type="button" class="button secondary" id="downloadJsonBtn" style="width:100%;justify-content:center;margin-top:14px">Download All Data as JSON</button>
-          <button type="button" class="button secondary" id="chooseAnotherBtn" style="width:100%;justify-content:center;margin-top:8px">Choose Different Photo</button>
+          <div class="stack">
+            <button type="button" class="button secondary block" id="copyTextBtn">Copy Details as Text</button>
+            <button type="button" class="button secondary block" id="downloadJsonBtn">Download Details as JSON</button>
+            <button type="button" class="button secondary block" id="downloadAllJsonBtn">Download All Photos as JSON</button>
+            <button type="button" class="button primary block" id="cleanBtn">Remove Metadata &amp; Download</button>
+            <button type="button" class="button primary block" id="cleanAllBtn">Remove Metadata from All (ZIP)</button>
+          </div>
+          <div id="actionStatus" class="status" role="status"></div>
+          <div class="bar hidden" id="progressBar"><i id="progressFill"></i></div>
         </div>
         <div>
+          <div id="gpsWarn" class="warn hidden"><b>Location found:</b> this photo contains GPS coordinates. Remove the metadata before sharing it publicly.</div>
           <div class="filter-row">
-            <input type="search" id="filterInput" placeholder="Filter fields, e.g. camera, gps, date&hellip;">
+            <label for="filterInput" class="hint" style="margin:0 0 6px;font-weight:700">Filter fields</label>
+            <input type="search" id="filterInput" placeholder="Type to filter, e.g. camera, gps, date">
           </div>
           <div id="metaContainer"></div>
         </div>
@@ -173,40 +308,46 @@
   </section>
 
   <section class="content">
-    <h2 class="grad-text">View Hidden Photo Metadata (EXIF), Free</h2>
-    <p>This free image metadata and EXIF viewer reads the technical details embedded inside a photo by the camera or phone that took it &mdash; camera make and model, exposure settings like aperture, shutter speed and ISO, the date and time the photo was taken, image orientation, and GPS location if it was recorded. It works as an online EXIF data reader and photo metadata inspector, with a search box to quickly filter to the fields you care about.</p>
-    <p>Use it to check when and where a photo was really taken, review camera settings from a shoot, verify whether a photo still has GPS data before sharing it publicly, or inspect a file's technical details. Everything is parsed locally in your browser, so your photo is never uploaded anywhere.</p>
+    <h2 class="grad-text">Read the Hidden Details Inside Your Photos</h2>
+    <p>Almost every photo from a phone or camera carries a block of extra information called EXIF metadata. It can include the camera and lens, exposure settings such as aperture, shutter speed and ISO, the exact moment the picture was taken and, if location services were on, the GPS position. This viewer reads that block right in your browser, so your photos never leave your device.</p>
+    <figure class="tool-figure"><img src="/images/tools/image-exif-viewer.webp" width="1200" height="800" loading="lazy" decoding="async" alt="EXIF Viewer banner showing a photo, its camera details and an upload area." title="Image Metadata &amp; EXIF Viewer by Working Tools Box"><figcaption>Add photos to see their camera details, date and location data.</figcaption></figure>
+    <h2 class="grad-text">How to Check a Photo&rsquo;s EXIF Data</h2>
+    <ol class="steps">
+      <li><h3>Add your photos</h3><p>Select, drag in or paste up to 50 images. Each one appears in the list.</p></li>
+      <li><h3>Pick a photo</h3><p>Tap a name to see its camera, capture and location sections. Use the filter box to find a field fast.</p></li>
+      <li><h3>Export or clean</h3><p>Copy the details, save them as JSON, or download a copy with all metadata removed.</p></li>
+    </ol>
 
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>exif viewer online free</span>
-      <span>image metadata viewer online</span>
-      <span>check photo exif data online</span>
-      <span>view camera settings from photo</span>
-      <span>photo gps location viewer</span>
-      <span>online exif data reader</span>
-      <span>check when photo was taken online</span>
-      <span>free metadata checker for photos</span>
-      <span>exif data extractor online</span>
-      <span>photo metadata inspector free</span>
-      <span>view hidden photo information</span>
-      <span>online image exif checker</span>
-      <span>photo location data viewer</span>
-      <span>check if photo has gps data</span>
-      <span>camera model from photo online</span>
-      <span>free exif reader no upload</span>
-      <span>image technical details viewer</span>
-      <span>jpeg metadata viewer online</span>
-      <span>photo exif data online free</span>
-      <span>check photo date taken online</span>
-    </div>
+    <h2 class="grad-text">Tips for Reading and Cleaning Metadata</h2>
+    <ul>
+      <li>JPEG files straight from a camera or phone hold the most data. Screenshots and many downloaded images hold little or none.</li>
+      <li>Check the GPS section before posting a photo of your home, school or workplace. Messaging apps often strip location, but not every site does.</li>
+      <li>The clean copy is drawn again from the visible pixels, so a JPEG is saved a second time with high quality and its file size can differ slightly.</li>
+      <li>If you also need a smaller file after cleaning, try the <a href="/tools/image-compressor/">Image Compressor</a> or the <a href="/tools/image-resizer/">Image Resizer</a>.</li>
+    </ul>
+
+    <h2 class="grad-text">When This Tool Helps</h2>
+    <p>Photographers use it to review the settings behind a favourite shot. Sellers and bloggers use it to confirm that a picture does not reveal a home address before publishing. Anyone can use it to see when a photo was taken or which device captured it, and to remove that information before sending files to people they do not know.</p>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Is my photo uploaded to a server?</summary><p>No. The photo's metadata is read entirely in your browser using JavaScript, and the image itself is never uploaded anywhere.</p></details>
-    <details class="faq"><summary>Why does my photo show no metadata?</summary><p>Many apps and social media platforms strip EXIF data when you save or share a photo, so no metadata being found is common and does not mean the tool failed.</p></details>
-    <details class="faq"><summary>Can this tool read GPS location from a photo?</summary><p>Yes, if the photo still has GPS data embedded. It will be shown as coordinates along with a link to view the location on a map.</p></details>
-    <details class="faq"><summary>Does this work on PNG or WebP images?</summary><p>EXIF metadata is a JPEG feature. PNG and WebP files generally do not contain EXIF data, so this tool works best with JPEG photos straight from a camera or phone.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
+    <div class="faq-list">
+      <div class="faq-item"><h3>Is my photo uploaded to a server?</h3><p>No. The metadata is read entirely in your browser with JavaScript, and the image itself is never uploaded anywhere.</p></div>
+      <div class="faq-item"><h3>Why does my photo show no metadata?</h3><p>Many apps and social networks remove EXIF data when a photo is saved or shared, and screenshots usually have none. An empty result is common and does not mean the tool failed.</p></div>
+      <div class="faq-item"><h3>Can this tool read GPS location from a photo?</h3><p>Yes, if the photo still has GPS data. It shows latitude and longitude with links to open the place on a map.</p></div>
+      <div class="faq-item"><h3>Does it work with PNG and WebP files?</h3><p>You can add them and see basic file details, but EXIF is mainly a JPEG feature, so PNG and WebP files rarely contain camera data.</p></div>
+      <div class="faq-item"><h3>How do I remove metadata from a photo?</h3><p>Choose a photo and press Remove Metadata and Download, or use the ZIP button for the whole list. The picture is redrawn without EXIF or GPS data and saved as a new file. Your original is not changed.</p></div>
+      <div class="faq-item"><h3>Is this tool free?</h3><p>Yes. It is free to use with no sign-up, because all the work happens on your own device.</p></div>
+    </div>
+
+    <h2 class="grad-text">More Free Tools You May Need</h2>
+    <div class="related">
+      <a href="/tools/image-resizer/"><strong>Image Resizer</strong><span>Change the width and height of your images.</span></a>
+      <a href="/tools/image-compressor/"><strong>Image Compressor</strong><span>Reduce image file size for faster sharing.</span></a>
+      <a href="/tools/image-converter/"><strong>Image Converter</strong><span>Convert images from one format to another.</span></a>
+      <a href="/tools/image-cropper/"><strong>Image Cropper</strong><span>Trim a photo to the area or ratio you need.</span></a>
+      <a href="/tools/image-watermark-adder/"><strong>Image Watermark Adder</strong><span>Add a watermark to your photos.</span></a>
+      <a href="/tools/image-to-pdf/"><strong>Image to PDF</strong><span>Put your images into a PDF document.</span></a>
+    </div>
   </section>
 </main>
 
@@ -214,313 +355,480 @@
 
 <script>
 (function(){
-  "use strict";
+"use strict";
 
-  // -----------------------------------------------------------------
-  // Minimal, self-contained EXIF (TIFF-in-JPEG APP1) parser. No
-  // external library - keeps this tool free of any CDN dependency.
-  // -----------------------------------------------------------------
-  var TAG_NAMES = {
-    0x010F: "Camera Make", 0x0110: "Camera Model", 0x0112: "Orientation",
-    0x011A: "X Resolution", 0x011B: "Y Resolution", 0x0128: "Resolution Unit",
-    0x0131: "Software", 0x0132: "Modify Date", 0x013B: "Artist",
-    0x8298: "Copyright", 0x829A: "Exposure Time", 0x829D: "F-Number",
-    0x8827: "ISO Speed", 0x9003: "Date Taken (Original)", 0x9004: "Date Digitized",
-    0x9201: "Shutter Speed Value", 0x9202: "Aperture Value", 0x9204: "Exposure Bias",
-    0x9207: "Metering Mode", 0x9209: "Flash", 0x920A: "Focal Length",
-    0xA002: "Image Width", 0xA003: "Image Height", 0xA402: "Exposure Mode",
-    0xA403: "White Balance", 0xA406: "Scene Capture Type", 0xA430: "Camera Owner",
-    0xA431: "Body Serial Number", 0xA433: "Lens Make", 0xA434: "Lens Model"
-  };
-  var ORIENTATION_LABELS = {
-    1:"Normal",2:"Flip horizontal",3:"Rotate 180",4:"Flip vertical",
-    5:"Rotate 90 CW + flip",6:"Rotate 90 CW",7:"Rotate 90 CCW + flip",8:"Rotate 90 CCW"
-  };
-  var GPS_TAG_NAMES = {
-    1:"GPS Latitude Ref", 2:"GPS Latitude", 3:"GPS Longitude Ref", 4:"GPS Longitude",
-    5:"GPS Altitude Ref", 6:"GPS Altitude", 7:"GPS Time Stamp", 29:"GPS Date Stamp"
+var $=function(id){return document.getElementById(id)||document.createElement("div");};
+function on(el,ev,fn,opt){if(el&&el.addEventListener){el.addEventListener(ev,fn,opt);}}
+function say(el,msg,cls){if(!el)return;el.textContent=msg||"";el.className="status"+(cls?" "+cls:"");}
+function fmtBytes(b){return b<1024?b+" B":b<1048576?(b/1024).toFixed(1)+" KB":(b/1048576).toFixed(2)+" MB";}
+function revoke(u){if(u){try{URL.revokeObjectURL(u);}catch(e){}}}
+function saveBlob(blob,name){
+  var url=URL.createObjectURL(blob),a=document.createElement("a");
+  a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(function(){revoke(url);},5000);
+}
+function stemOf(n){return (n||"image").replace(/\.[^.]+$/,"").replace(/[^\w\- ]+/g,"").trim().replace(/\s+/g,"-")||"image";}
+function uniqueName(name,used){
+  var dot=name.lastIndexOf("."),stem=dot>0?name.slice(0,dot):name,ext=dot>0?name.slice(dot):"",n=name,i=2;
+  while(used[n.toLowerCase()]){n=stem+"-"+i+ext;i++;}
+  used[n.toLowerCase()]=1;return n;
+}
+function loadImg(url){
+  return new Promise(function(res,rej){
+    var im=new Image();
+    im.onload=function(){if(!im.naturalWidth||!im.naturalHeight){rej(new Error("empty"));}else{res(im);}};
+    im.onerror=function(){rej(new Error("decode"));};
+    im.src=url;
+  });
+}
+function canvasBlob(c,type,q){
+  return new Promise(function(res){try{c.toBlob(function(b){res(b);},type,q);}catch(e){res(null);}});
+}
+function blobToU8(b){return b.arrayBuffer().then(function(x){return new Uint8Array(x);});}
+function thumbOf(img,size){
+  try{
+    var c=document.createElement("canvas");c.width=size;c.height=size;
+    var x=c.getContext("2d"),s=Math.min(img.naturalWidth,img.naturalHeight),sx=(img.naturalWidth-s)/2,sy=(img.naturalHeight-s)/2;
+    x.drawImage(img,sx,sy,s,s,0,0,size,size);
+    return c.toDataURL("image/jpeg",0.7);
+  }catch(e){return "";}
+}
+function triage(files,room,o){
+  var ok=[],bad=[],big=0,empty=0,extra=0;
+  files.forEach(function(f){
+    var typeOk=o.types.indexOf(f.type)!==-1||(!f.type&&o.extRe.test(f.name||""));
+    if(!typeOk){bad.push(f.name||"file");}
+    else if(!f.size){empty++;}
+    else if(f.size>o.maxBytes){big++;}
+    else if(ok.length>=room){extra++;}
+    else{ok.push(f);}
+  });
+  var parts=[];
+  if(bad.length){parts.push(bad.length+" unsupported ("+bad.slice(0,3).join(", ")+(bad.length>3?"\u2026":"")+")");}
+  if(empty){parts.push(empty+" empty");}
+  if(big){parts.push(big+" over "+Math.round(o.maxBytes/1048576)+" MB");}
+  if(extra){parts.push(extra+" beyond the "+o.maxFiles+"-file limit");}
+  return {ok:ok,skipped:parts.length?"Skipped: "+parts.join(", ")+".":""};
+}
+function intake(o){
+  var fi=o.input,tgt=o.dropTarget||o.dropZone;
+  on(o.selectBtn,"click",function(e){e.stopPropagation();fi.click();});
+  on(o.dropZone,"click",function(e){if(e.target===fi||(o.selectBtn&&o.selectBtn.contains&&o.selectBtn.contains(e.target))){return;}fi.click();});
+  ["dragenter","dragover"].forEach(function(ev){on(tgt,ev,function(e){e.preventDefault();o.dropZone.classList.add("dragover");});});
+  ["dragleave","dragend"].forEach(function(ev){on(tgt,ev,function(e){e.preventDefault();o.dropZone.classList.remove("dragover");});});
+  on(tgt,"drop",function(e){
+    e.preventDefault();o.dropZone.classList.remove("dragover");
+    var fl=e.dataTransfer&&e.dataTransfer.files;
+    if(fl&&fl.length){o.onFiles(Array.prototype.slice.call(fl));}
+  });
+  on(fi,"change",function(){
+    var fl=Array.prototype.slice.call(fi.files||[]);fi.value="";
+    if(fl.length){o.onFiles(fl);}
+  });
+  on(document,"paste",function(e){
+    var fl=e.clipboardData&&e.clipboardData.files;
+    if(!fl||!fl.length){return;}
+    var arr=Array.prototype.slice.call(fl).filter(function(f){return /^image\//.test(f.type);});
+    if(arr.length){e.preventDefault();o.onFiles(arr);}
+  });
+}
+
+
+  /* Small built-in ZIP writer (no external library needed) */
+  var CRC_TABLE=(function(){var t=[],c,n,k;for(n=0;n<256;n++){c=n;for(k=0;k<8;k++){c=(c&1)?(0xEDB88320^(c>>>1)):(c>>>1);}t[n]=c>>>0;}return t;})();
+  function crc32(u8){var c=0xFFFFFFFF,i;for(i=0;i<u8.length;i++){c=CRC_TABLE[(c^u8[i])&0xFF]^(c>>>8);}return(c^0xFFFFFFFF)>>>0;}
+  function buildZip(files){
+    var enc=new TextEncoder(),parts=[],central=[],offset=0,cdSize=0;
+    files.forEach(function(f){
+      var nameB=enc.encode(f.name),crc=crc32(f.data),size=f.data.length;
+      var lh=new DataView(new ArrayBuffer(30));
+      lh.setUint32(0,0x04034b50,true);lh.setUint16(4,20,true);lh.setUint16(6,0x0800,true);
+      lh.setUint16(8,0,true);lh.setUint16(10,0,true);lh.setUint16(12,0x21,true);
+      lh.setUint32(14,crc,true);lh.setUint32(18,size,true);lh.setUint32(22,size,true);
+      lh.setUint16(26,nameB.length,true);lh.setUint16(28,0,true);
+      parts.push(lh.buffer,nameB,f.data);
+      var ch=new DataView(new ArrayBuffer(46));
+      ch.setUint32(0,0x02014b50,true);ch.setUint16(4,20,true);ch.setUint16(6,20,true);ch.setUint16(8,0x0800,true);
+      ch.setUint16(10,0,true);ch.setUint16(12,0,true);ch.setUint16(14,0x21,true);
+      ch.setUint32(16,crc,true);ch.setUint32(20,size,true);ch.setUint32(24,size,true);
+      ch.setUint16(28,nameB.length,true);ch.setUint16(30,0,true);ch.setUint16(32,0,true);
+      ch.setUint16(34,0,true);ch.setUint16(36,0,true);ch.setUint32(38,0,true);ch.setUint32(42,offset,true);
+      central.push(ch.buffer,nameB);
+      cdSize+=46+nameB.length;
+      offset+=30+nameB.length+size;
+    });
+    var end=new DataView(new ArrayBuffer(22));
+    end.setUint32(0,0x06054b50,true);end.setUint16(4,0,true);end.setUint16(6,0,true);
+    end.setUint16(8,files.length,true);end.setUint16(10,files.length,true);
+    end.setUint32(12,cdSize,true);end.setUint32(16,offset,true);end.setUint16(20,0,true);
+    return new Blob(parts.concat(central,[end.buffer]),{type:"application/zip"});
+  }
+
+
+  var TAGS={0x010E:"Image Description",0x010F:"Camera Make",0x0110:"Camera Model",0x0112:"Orientation",0x011A:"X Resolution",0x011B:"Y Resolution",0x0128:"Resolution Unit",0x0131:"Software",0x0132:"Modify Date",0x013B:"Artist",0x8298:"Copyright",0x829A:"Exposure Time",0x829D:"F-Number",0x8822:"Exposure Program",0x8827:"ISO Speed",0x9003:"Date Taken",0x9004:"Date Digitized",0x9204:"Exposure Bias",0x9207:"Metering Mode",0x9209:"Flash",0x920A:"Focal Length",0xA001:"Color Space",0xA002:"Pixel Width (EXIF)",0xA003:"Pixel Height (EXIF)",0xA402:"Exposure Mode",0xA403:"White Balance",0xA405:"Focal Length (35mm)",0xA406:"Scene Capture Type",0xA430:"Camera Owner",0xA431:"Body Serial Number",0xA433:"Lens Make",0xA434:"Lens Model"};
+  var GROUPS=[
+    {title:"Camera & Device",tags:[0x010F,0x0110,0x0131,0xA433,0xA434,0x013B,0x8298,0xA430,0xA431]},
+    {title:"Capture Settings",tags:[0x9003,0x9004,0x829A,0x829D,0x8827,0x920A,0xA405,0x9204,0x8822,0x9207,0x9209,0xA402,0xA403,0xA406]},
+    {title:"Image Details",tags:[0x010E,0x0112,0xA002,0xA003,0xA001,0x011A,0x011B,0x0128,0x0132]}
+  ];
+  var ENUM={
+    0x0112:{1:"Normal",2:"Flip horizontal",3:"Rotate 180",4:"Flip vertical",5:"Rotate 90 CW + flip",6:"Rotate 90 CW",7:"Rotate 90 CCW + flip",8:"Rotate 90 CCW"},
+    0x0128:{2:"Inches",3:"Centimeters"},
+    0x8822:{0:"Not defined",1:"Manual",2:"Normal program",3:"Aperture priority",4:"Shutter priority",5:"Creative program",6:"Action program",7:"Portrait mode",8:"Landscape mode"},
+    0x9207:{0:"Unknown",1:"Average",2:"Center-weighted average",3:"Spot",4:"Multi-spot",5:"Pattern",6:"Partial",255:"Other"},
+    0xA001:{1:"sRGB",65535:"Uncalibrated"},
+    0xA402:{0:"Auto exposure",1:"Manual exposure",2:"Auto bracket"},
+    0xA403:{0:"Auto",1:"Manual"},
+    0xA406:{0:"Standard",1:"Landscape",2:"Portrait",3:"Night scene"}
   };
 
   function readExif(buffer){
-    var view = new DataView(buffer);
-    if(view.getUint16(0) !== 0xFFD8) return null; // not a JPEG
-
-    var offset = 2;
-    while(offset < view.byteLength - 1){
-      var marker = view.getUint16(offset);
-      if(marker === 0xFFD9 || marker === 0xFFDA) break; // end / start of scan
-      var size = view.getUint16(offset + 2);
-      if(marker === 0xFFE1){ // APP1
-        var exifStr = String.fromCharCode(view.getUint8(offset+4), view.getUint8(offset+5), view.getUint8(offset+6), view.getUint8(offset+7));
-        if(exifStr === "Exif"){
-          return parseTiff(view, offset + 10);
-        }
+    var view=new DataView(buffer);
+    if(view.byteLength<4||view.getUint16(0)!==0xFFD8){return null;}
+    var offset=2;
+    while(offset+4<view.byteLength){
+      var marker=view.getUint16(offset);
+      if((marker&0xFF00)!==0xFF00||marker===0xFFD9||marker===0xFFDA){break;}
+      var size=view.getUint16(offset+2);
+      if(marker===0xFFE1&&size>=8&&offset+10<view.byteLength&&view.getUint32(offset+4)===0x45786966){
+        return parseTiff(view,offset+10);
       }
-      offset += 2 + size;
+      offset+=2+size;
     }
     return null;
   }
-
-  function parseTiff(view, tiffStart){
-    var little = view.getUint16(tiffStart) === 0x4949;
-    var firstIFDOffset = view.getUint32(tiffStart + 4, little);
-    var tags = {};
-    var gpsIFDOffset = null;
-    var exifIFDOffset = null;
-
-    function readIFD(ifdOffset, targetTags){
-      var entries = view.getUint16(ifdOffset, little);
-      for(var i = 0; i < entries; i++){
-        var entryOffset = ifdOffset + 2 + i * 12;
-        var tag = view.getUint16(entryOffset, little);
-        var type = view.getUint16(entryOffset + 2, little);
-        var count = view.getUint32(entryOffset + 4, little);
-        var valueOffset = entryOffset + 8;
-
-        if(tag === 0x8825){ gpsIFDOffset = tiffStart + view.getUint32(valueOffset, little); continue; }
-        if(tag === 0x8769){ exifIFDOffset = tiffStart + view.getUint32(valueOffset, little); continue; }
-
-        var value = readValue(view, tiffStart, type, count, valueOffset, little);
-        if(value !== null) targetTags[tag] = value;
+  function parseTiff(view,tiffStart){
+    var order=view.getUint16(tiffStart);
+    if(order!==0x4949&&order!==0x4D4D){return null;}
+    var little=order===0x4949,tags={},gps={},gpsOff=null,exifOff=null;
+    function readIFD(ifdOffset,target,top){
+      if(ifdOffset<0||ifdOffset+2>view.byteLength){return;}
+      var entries=view.getUint16(ifdOffset,little);
+      for(var i=0;i<entries;i++){
+        var eo=ifdOffset+2+i*12;
+        if(eo+12>view.byteLength){break;}
+        var tag=view.getUint16(eo,little),type=view.getUint16(eo+2,little),count=view.getUint32(eo+4,little);
+        if(top&&tag===0x8825){gpsOff=tiffStart+view.getUint32(eo+8,little);continue;}
+        if(top&&tag===0x8769){exifOff=tiffStart+view.getUint32(eo+8,little);continue;}
+        var v=null;
+        try{v=readValue(view,tiffStart,type,count,eo+8,little);}catch(e){v=null;}
+        if(v!==null){target[tag]=v;}
       }
     }
-
-    try{ readIFD(tiffStart + firstIFDOffset, tags); }catch(e){}
-    var gps = {};
-    try{ if(exifIFDOffset) readIFD(exifIFDOffset, tags); }catch(e){}
-    try{ if(gpsIFDOffset) readIFD(gpsIFDOffset, gps); }catch(e){}
-
-    return { tags: tags, gps: gps };
+    try{readIFD(tiffStart+view.getUint32(tiffStart+4,little),tags,true);}catch(e){}
+    try{if(exifOff){readIFD(exifOff,tags,false);}}catch(e){}
+    try{if(gpsOff){readIFD(gpsOff,gps,false);}}catch(e){}
+    return {tags:tags,gps:gps};
   }
-
-  function typeSize(type){
-    return { 1:1, 2:1, 3:2, 4:4, 5:8, 7:1, 9:4, 10:8 }[type] || 1;
-  }
-
-  function readValue(view, tiffStart, type, count, valueOffset, little){
-    var size = typeSize(type) * count;
-    var dataOffset = size > 4 ? tiffStart + view.getUint32(valueOffset, little) : valueOffset;
-
-    function readOne(i){
-      switch(type){
-        case 1: return view.getUint8(dataOffset + i);
-        case 2: return null; // ASCII, handled separately below
-        case 3: return view.getUint16(dataOffset + i*2, little);
-        case 4: return view.getUint32(dataOffset + i*4, little);
-        case 5: return view.getUint32(dataOffset + i*8, little) / view.getUint32(dataOffset + i*8 + 4, little);
-        case 9: return view.getInt32(dataOffset + i*4, little);
-        case 10: return view.getInt32(dataOffset + i*8, little) / view.getInt32(dataOffset + i*8 + 4, little);
-        default: return null;
-      }
-    }
-
-    if(type === 2){ // ASCII string
-      var chars = [];
-      for(var i = 0; i < count - 1; i++){
-        var c = view.getUint8(dataOffset + i);
-        if(c === 0) break;
-        chars.push(String.fromCharCode(c));
-      }
+  function readValue(view,tiffStart,type,count,valueOffset,little){
+    var unit={1:1,2:1,3:2,4:4,5:8,7:1,9:4,10:8}[type];
+    if(!unit||count<1){return null;}
+    var size=unit*count;
+    var dataOffset=size>4?tiffStart+view.getUint32(valueOffset,little):valueOffset;
+    if(dataOffset<0||dataOffset+size>view.byteLength){return null;}
+    if(type===2){
+      var chars=[];
+      for(var i=0;i<count&&i<1024;i++){var c=view.getUint8(dataOffset+i);if(c===0){break;}chars.push(String.fromCharCode(c));}
       return chars.join("").trim();
     }
-
-    if(count === 1) return readOne(0);
-    var arr = [];
-    for(var j = 0; j < count; j++) arr.push(readOne(j));
+    if(count>64){return null;}
+    function one(i){
+      switch(type){
+        case 1:case 7:return view.getUint8(dataOffset+i);
+        case 3:return view.getUint16(dataOffset+i*2,little);
+        case 4:return view.getUint32(dataOffset+i*4,little);
+        case 5:{var d=view.getUint32(dataOffset+i*8+4,little);return d?view.getUint32(dataOffset+i*8,little)/d:0;}
+        case 9:return view.getInt32(dataOffset+i*4,little);
+        case 10:{var d2=view.getInt32(dataOffset+i*8+4,little);return d2?view.getInt32(dataOffset+i*8,little)/d2:0;}
+      }
+      return null;
+    }
+    if(count===1){return one(0);}
+    var arr=[];for(var j=0;j<count;j++){arr.push(one(j));}
     return arr;
   }
-
-  function dmsToDecimal(dms, ref){
-    if(!Array.isArray(dms) || dms.length !== 3) return null;
-    var deg = dms[0] + dms[1] / 60 + dms[2] / 3600;
-    if(ref === "S" || ref === "W") deg = -deg;
-    return deg;
+  function dmsToDecimal(dms,ref){
+    if(!Array.isArray(dms)||dms.length!==3){return null;}
+    var deg=dms[0]+dms[1]/60+dms[2]/3600;
+    if(ref==="S"||ref==="W"){deg=-deg;}
+    return isFinite(deg)?deg:null;
   }
-
-  function formatValue(tag, value){
-    if(tag === 0x0112) return ORIENTATION_LABELS[value] || value;
-    if(tag === 0x829A && typeof value === "number") return value < 1 ? "1/" + Math.round(1/value) + " s" : value + " s";
-    if(tag === 0x829D && typeof value === "number") return "f/" + value.toFixed(1);
-    if(tag === 0x920A && typeof value === "number") return value.toFixed(1) + " mm";
-    if(tag === 0x9204 && typeof value === "number") return (value >= 0 ? "+" : "") + value.toFixed(2) + " EV";
-    if(Array.isArray(value)) return value.join(", ");
-    return String(value);
-  }
-
-  // -----------------------------------------------------------------
-  // UI wiring
-  // -----------------------------------------------------------------
-  var uploadView = document.getElementById("uploadView");
-  var resultView = document.getElementById("resultView");
-  var dropZone = document.getElementById("dropZone");
-  var fileInput = document.getElementById("fileInput");
-  var selectBtn = document.getElementById("selectBtn");
-  var uploadStatus = document.getElementById("uploadStatus");
-
-  var previewImg = document.getElementById("previewImg");
-  var fileMetaText = document.getElementById("fileMetaText");
-  var metaContainer = document.getElementById("metaContainer");
-  var filterInput = document.getElementById("filterInput");
-  var downloadJsonBtn = document.getElementById("downloadJsonBtn");
-  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
-
-  var currentObjectUrl = null;
-  var currentJsonData = null;
-
-  function revoke(url){ if(url) URL.revokeObjectURL(url); }
-  function fmtBytes(b){ return b < 1024*1024 ? (b/1024).toFixed(1)+" KB" : (b/(1024*1024)).toFixed(2)+" MB"; }
-
-  selectBtn.addEventListener("click", function(){ fileInput.click(); });
-  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
-  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
-  dropZone.addEventListener("drop", function(e){
-    e.preventDefault();
-    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
-  });
-  fileInput.addEventListener("change", function(){
-    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
-  });
-
-  function handleFile(file){
-    var allowed = ["image/jpeg","image/png","image/webp"];
-    if(allowed.indexOf(file.type) === -1){
-      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
-      uploadStatus.className = "status error";
-      return;
+  function r1(n){return Math.round(n*10)/10;}
+  function formatValue(tag,v){
+    if(v===null||v===undefined||v===""){return "";}
+    if(Array.isArray(v)){if(tag===0x8827){v=v[0];}else{return v.join(", ");}}
+    if(ENUM[tag]){return ENUM[tag][v]!==undefined?ENUM[tag][v]:String(v);}
+    if(typeof v==="number"){
+      if(!isFinite(v)){return "";}
+      switch(tag){
+        case 0x829A:return (v>0&&v<1)?"1/"+Math.round(1/v)+" s":r1(v)+" s";
+        case 0x829D:return "f/"+v.toFixed(1);
+        case 0x920A:case 0xA405:return r1(v)+" mm";
+        case 0x9204:return (v>=0?"+":"")+v.toFixed(2)+" EV";
+        case 0x011A:case 0x011B:return String(r1(v));
+        case 0x9209:return (v&1)?"Flash fired":"Flash did not fire";
+      }
+      return String(v);
     }
-    uploadStatus.textContent = "";
-
-    revoke(currentObjectUrl);
-    currentObjectUrl = URL.createObjectURL(file);
-    previewImg.src = currentObjectUrl;
-
-    var reader = new FileReader();
-    reader.onload = function(){
-      var basic = {
-        "File Name": file.name,
-        "File Size": fmtBytes(file.size),
-        "File Type": file.type,
-        "Last Modified": new Date(file.lastModified).toLocaleString()
-      };
-
-      var exifData = null;
-      try{ exifData = readExif(reader.result); }catch(e){ exifData = null; }
-
-      renderResult(basic, exifData);
-      uploadView.classList.add("hidden");
-      resultView.classList.remove("hidden");
-    };
-    reader.onerror = function(){
-      uploadStatus.textContent = "Could not read that file. Please try another.";
-      uploadStatus.className = "status error";
-    };
-    reader.readAsArrayBuffer(file);
+    if(typeof v==="string"&&(tag===0x9003||tag===0x9004||tag===0x0132)){v=v.replace(/^(\d{4}):(\d{2}):(\d{2})/,"$1-$2-$3");}
+    return String(v);
   }
 
-  function renderResult(basic, exifData){
-    fileMetaText.textContent = basic["File Name"] + " \u2022 " + basic["File Size"];
-    metaContainer.innerHTML = "";
-    currentJsonData = { file: basic };
+  /* ---------- state & helpers ---------- */
+  var MAX_FILES=50,MAX_BYTES=50*1048576,MAX_PIXELS=120000000;
+  var OPTS={types:["image/jpeg","image/png","image/webp"],extRe:/\.(jpe?g|png|webp)$/i,maxBytes:MAX_BYTES,maxFiles:MAX_FILES};
+  var items=[],selId=null,nextId=1,busy=false;
 
-    addSection("File Information", basic);
+  var uploadView=$("uploadView"),workView=$("workView"),uploadStatus=$("uploadStatus"),actionStatus=$("actionStatus");
+  var fileList=$("fileList"),countLabel=$("countLabel"),previewImg=$("previewImg"),fileMetaText=$("fileMetaText");
+  var metaContainer=$("metaContainer"),filterInput=$("filterInput"),gpsWarn=$("gpsWarn");
+  var progressBar=$("progressBar"),progressFill=$("progressFill");
 
-    if(exifData && Object.keys(exifData.tags).length){
-      var camera = {}, capture = {}, other = {};
-      Object.keys(exifData.tags).forEach(function(tagHex){
-        var tag = parseInt(tagHex, 10);
-        var name = TAG_NAMES[tag];
-        if(!name) return;
-        var formatted = formatValue(tag, exifData.tags[tag]);
-        if([0x010F,0x0110,0x0131,0xA430,0xA431,0xA433,0xA434].indexOf(tag) !== -1) camera[name] = formatted;
-        else if([0x829A,0x829D,0x8827,0x9003,0x9004,0x920A,0x9204,0x9207,0x9209,0xA402,0xA403,0xA406].indexOf(tag) !== -1) capture[name] = formatted;
-        else other[name] = formatted;
+  function byId(id){for(var i=0;i<items.length;i++){if(items[i].id===id){return items[i];}}return null;}
+  function setBusy(b){
+    busy=b;
+    ["copyTextBtn","downloadJsonBtn","downloadAllJsonBtn","cleanBtn","cleanAllBtn","addMoreBtn","clearAllBtn"].forEach(function(id){$(id).disabled=b;});
+  }
+  function progress(p){
+    if(p===null){progressBar.classList.add("hidden");progressFill.style.width="0";return;}
+    progressBar.classList.remove("hidden");progressFill.style.width=Math.round(p*100)+"%";
+  }
+
+  function buildSections(file,w,h,exif){
+    var secs=[];
+    secs.push({title:"File Information",rows:[
+      {k:"File Name",v:file.name||"image"},{k:"File Size",v:fmtBytes(file.size)},{k:"File Type",v:file.type||"unknown"},
+      {k:"Dimensions",v:w+" \u00D7 "+h+" px ("+(w*h/1e6).toFixed(1)+" MP)"},
+      {k:"Last Modified",v:file.lastModified?new Date(file.lastModified).toLocaleString():"unknown"}]});
+    var gps=null;
+    if(exif&&exif.tags){
+      GROUPS.forEach(function(g){
+        var rows=[];
+        g.tags.forEach(function(t){
+          if(exif.tags[t]===undefined){return;}
+          var val=formatValue(t,exif.tags[t]);
+          if(val!==""){rows.push({k:TAGS[t],v:val});}
+        });
+        if(rows.length){secs.push({title:g.title,rows:rows});}
       });
-      if(Object.keys(camera).length) addSection("Camera", camera);
-      if(Object.keys(capture).length) addSection("Capture Settings", capture);
-      if(Object.keys(other).length) addSection("Other EXIF Fields", other);
     }
-
-    if(exifData && exifData.gps && exifData.gps[2] && exifData.gps[4]){
-      var lat = dmsToDecimal(exifData.gps[2], exifData.gps[1]);
-      var lon = dmsToDecimal(exifData.gps[4], exifData.gps[3]);
-      if(lat !== null && lon !== null){
-        var gpsData = {
-          "Latitude": lat.toFixed(6),
-          "Longitude": lon.toFixed(6),
-          "View on Map": '<a class="gps-link" href="https://www.openstreetmap.org/?mlat=' + lat + '&mlon=' + lon + '#map=15/' + lat + '/' + lon + '" target="_blank" rel="noopener">Open in OpenStreetMap</a>'
-        };
-        addSection("GPS Location", gpsData, true);
+    if(exif&&exif.gps&&exif.gps[2]&&exif.gps[4]){
+      var lat=dmsToDecimal(exif.gps[2],exif.gps[1]),lon=dmsToDecimal(exif.gps[4],exif.gps[3]);
+      if(lat!==null&&lon!==null&&Math.abs(lat)<=90&&Math.abs(lon)<=180){
+        var rows2=[{k:"Latitude",v:lat.toFixed(6)},{k:"Longitude",v:lon.toFixed(6)}];
+        if(typeof exif.gps[6]==="number"&&isFinite(exif.gps[6])){rows2.push({k:"Altitude",v:(exif.gps[5]===1?"-":"")+r1(exif.gps[6])+" m"});}
+        if(exif.gps[29]){rows2.push({k:"GPS Date",v:String(exif.gps[29]).replace(/:/g,"-")});}
+        rows2.push({k:"Open Map",links:[
+          {t:"OpenStreetMap",h:"https://www.openstreetmap.org/?mlat="+lat+"&mlon="+lon+"#map=15/"+lat+"/"+lon},
+          {t:"Google Maps",h:"https://www.google.com/maps?q="+lat+","+lon}]});
+        secs.push({title:"GPS Location",rows:rows2});
+        gps={lat:lat,lon:lon};
       }
     }
+    return {sections:secs,gps:gps,hasExif:secs.length>1};
+  }
 
-    if(!exifData || Object.keys(exifData.tags).length === 0){
-      var note = document.createElement("div");
-      note.className = "status";
-      note.style.marginTop = "10px";
-      note.textContent = "No EXIF camera metadata was found in this image \u2014 it may have been stripped when the file was saved or shared.";
+  /* ---------- adding files ---------- */
+  async function addFiles(files){
+    if(busy){say(actionStatus,"Please wait for the current job to finish.","error");return;}
+    var t=triage(files,MAX_FILES-items.length,OPTS);
+    var statusEl=items.length?actionStatus:uploadStatus;
+    if(!t.ok.length){say(statusEl,t.skipped||"No usable photos were found.","error");return;}
+    setBusy(true);
+    var added=0,failed=0;
+    for(var i=0;i<t.ok.length;i++){
+      var f=t.ok[i];
+      say(statusEl,"Reading "+(i+1)+" of "+t.ok.length+"\u2026");
+      var url=URL.createObjectURL(f);
+      try{
+        var img=await loadImg(url);
+        if(img.naturalWidth*img.naturalHeight>MAX_PIXELS){throw new Error("big");}
+        var exif=null;
+        try{exif=readExif(await f.slice(0,1048576).arrayBuffer());}catch(e){exif=null;}
+        var info=buildSections(f,img.naturalWidth,img.naturalHeight,exif);
+        items.push({id:nextId++,file:f,url:url,w:img.naturalWidth,h:img.naturalHeight,thumb:thumbOf(img,96),sections:info.sections,gps:info.gps,hasExif:info.hasExif});
+        added++;
+      }catch(e){revoke(url);failed++;}
+    }
+    setBusy(false);
+    var msg=(added?"Added "+added+" photo"+(added===1?"":"s")+". ":"")+(failed?failed+" could not be opened as an image. ":"")+t.skipped;
+    if(!added){say(statusEl,msg.trim()||"Nothing was added.","error");return;}
+    if(selId===null||!byId(selId)){selId=items[items.length-added].id;}
+    uploadView.classList.add("hidden");workView.classList.remove("hidden");
+    renderList();renderSelected();
+    say(actionStatus,msg.trim(),(failed||t.skipped)?"":"ok");
+  }
+
+  function renderList(){
+    fileList.innerHTML="";
+    countLabel.textContent="Photos ("+items.length+" of "+MAX_FILES+")";
+    items.forEach(function(it){
+      var row=document.createElement("div");row.className="li"+(it.id===selId?" sel":"");row.setAttribute("role","listitem");
+      var main=document.createElement("button");main.type="button";main.className="li-main";main.setAttribute("aria-pressed",it.id===selId?"true":"false");
+      var im=document.createElement("img");im.alt="";if(it.thumb){im.src=it.thumb;}
+      var tx=document.createElement("span");tx.className="li-text";
+      var nm=document.createElement("span");nm.className="li-name";nm.textContent=it.file.name||"image";
+      var sub=document.createElement("span");sub.className="li-sub";
+      sub.textContent=fmtBytes(it.file.size)+" \u2022 "+(it.gps?"GPS found":it.hasExif?"EXIF found":"no EXIF");
+      if(it.gps){sub.className="li-sub err";}
+      tx.appendChild(nm);tx.appendChild(sub);main.appendChild(im);main.appendChild(tx);
+      on(main,"click",function(){selId=it.id;renderList();renderSelected();});
+      var act=document.createElement("span");act.className="li-act";
+      var rm=document.createElement("button");rm.type="button";rm.className="li-btn";rm.textContent="\u2715";rm.setAttribute("aria-label","Remove "+(it.file.name||"photo"));
+      on(rm,"click",function(){removeItem(it.id);});
+      act.appendChild(rm);row.appendChild(main);row.appendChild(act);fileList.appendChild(row);
+    });
+  }
+
+  function renderSelected(){
+    var it=byId(selId);
+    metaContainer.innerHTML="";filterInput.value="";
+    if(!it){previewImg.removeAttribute("src");fileMetaText.textContent="";gpsWarn.classList.add("hidden");return;}
+    previewImg.src=it.url;
+    fileMetaText.textContent=(it.file.name||"image")+" \u2022 "+fmtBytes(it.file.size);
+    it.sections.forEach(function(s){addSection(s);});
+    if(!it.hasExif){
+      var note=document.createElement("div");note.className="status";
+      note.textContent="No EXIF camera metadata was found in this image. It may have been removed when the file was saved or shared.";
       metaContainer.appendChild(note);
     }
+    gpsWarn.classList.toggle("hidden",!it.gps);
   }
 
-  function addSection(title, dataObj, allowHtml){
-    currentJsonData[title] = dataObj;
-    var section = document.createElement("div");
-    section.className = "meta-section";
-    var h3 = document.createElement("h3");
-    h3.textContent = title;
-    section.appendChild(h3);
-
-    var table = document.createElement("table");
-    table.className = "meta-table";
-    Object.keys(dataObj).forEach(function(key){
-      var tr = document.createElement("tr");
-      var tdKey = document.createElement("td");
-      tdKey.textContent = key;
-      var tdVal = document.createElement("td");
-      if(allowHtml) tdVal.innerHTML = dataObj[key];
-      else tdVal.textContent = dataObj[key];
-      tr.appendChild(tdKey);
-      tr.appendChild(tdVal);
-      table.appendChild(tr);
+  function addSection(s){
+    var sec=document.createElement("div");sec.className="meta-section";
+    var h3=document.createElement("h3");h3.textContent=s.title;sec.appendChild(h3);
+    var table=document.createElement("table");table.className="meta-table";
+    s.rows.forEach(function(r){
+      var tr=document.createElement("tr"),a=document.createElement("td"),b=document.createElement("td");
+      a.textContent=r.k;
+      if(r.links){r.links.forEach(function(l){var link=document.createElement("a");link.className="gps-link";link.href=l.h;link.target="_blank";link.rel="noopener noreferrer";link.textContent=l.t;b.appendChild(link);});}
+      else{b.textContent=r.v;}
+      tr.appendChild(a);tr.appendChild(b);table.appendChild(tr);
     });
-    section.appendChild(table);
-    metaContainer.appendChild(section);
+    sec.appendChild(table);metaContainer.appendChild(sec);
   }
 
-  filterInput.addEventListener("input", function(){
-    var q = filterInput.value.trim().toLowerCase();
-    metaContainer.querySelectorAll(".meta-section").forEach(function(section){
-      var rows = section.querySelectorAll("tr");
-      var sectionMatches = section.querySelector("h3").textContent.toLowerCase().indexOf(q) !== -1;
-      var anyRowVisible = false;
-      rows.forEach(function(row){
-        var text = row.textContent.toLowerCase();
-        var match = q === "" || sectionMatches || text.indexOf(q) !== -1;
-        row.style.display = match ? "" : "none";
-        if(match) anyRowVisible = true;
+  function removeItem(id){
+    if(busy){return;}
+    var idx=-1;for(var i=0;i<items.length;i++){if(items[i].id===id){idx=i;}}
+    if(idx<0){return;}
+    revoke(items[idx].url);items.splice(idx,1);
+    if(!items.length){resetAll();return;}
+    if(selId===id){selId=items[Math.min(idx,items.length-1)].id;}
+    renderList();renderSelected();say(actionStatus,"");
+  }
+  function resetAll(){
+    items.forEach(function(it){revoke(it.url);});
+    items=[];selId=null;
+    fileList.innerHTML="";metaContainer.innerHTML="";previewImg.removeAttribute("src");
+    say(actionStatus,"");say(uploadStatus,"");progress(null);
+    workView.classList.add("hidden");uploadView.classList.remove("hidden");
+  }
+
+  on(filterInput,"input",function(){
+    var q=filterInput.value.trim().toLowerCase();
+    metaContainer.querySelectorAll(".meta-section").forEach(function(sec){
+      var secMatch=sec.querySelector("h3").textContent.toLowerCase().indexOf(q)!==-1,any=false;
+      sec.querySelectorAll("tr").forEach(function(row){
+        var show=q===""||secMatch||row.textContent.toLowerCase().indexOf(q)!==-1;
+        row.style.display=show?"":"none";if(show){any=true;}
       });
-      section.style.display = anyRowVisible ? "" : "none";
+      sec.style.display=any?"":"none";
     });
   });
 
-  downloadJsonBtn.addEventListener("click", function(){
-    var blob = new Blob([JSON.stringify(currentJsonData, null, 2)], { type: "application/json" });
-    var url = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = url;
-    a.download = "image-metadata.json";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
+  /* ---------- exports ---------- */
+  function asText(it){
+    var out=[it.file.name||"image",""];
+    it.sections.forEach(function(s){
+      out.push(s.title);
+      s.rows.forEach(function(r){out.push("  "+r.k+": "+(r.links?r.links.map(function(l){return l.h;}).join("  "):r.v));});
+      out.push("");
+    });
+    return out.join("\n").trim();
+  }
+  function asObject(it){
+    var o={};
+    it.sections.forEach(function(s){o[s.title]={};s.rows.forEach(function(r){o[s.title][r.k]=r.links?r.links[0].h:r.v;});});
+    return o;
+  }
+  on($("copyTextBtn"),"click",function(){
+    var it=byId(selId);if(!it){return;}
+    var text=asText(it);
+    function fallback(){
+      var ta=document.createElement("textarea");ta.value=text;ta.style.position="fixed";ta.style.opacity="0";
+      document.body.appendChild(ta);ta.select();
+      var ok=false;try{ok=document.execCommand("copy");}catch(e){}
+      ta.remove();
+      say(actionStatus,ok?"Copied to clipboard.":"Copy was blocked by your browser. Use Download as JSON instead.",ok?"ok":"error");
+    }
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(function(){say(actionStatus,"Copied to clipboard.","ok");},fallback);
+    }else{fallback();}
+  });
+  on($("downloadJsonBtn"),"click",function(){
+    var it=byId(selId);if(!it){return;}
+    saveBlob(new Blob([JSON.stringify(asObject(it),null,2)],{type:"application/json"}),stemOf(it.file.name)+"-metadata.json");
+    say(actionStatus,"JSON file downloaded.","ok");
+  });
+  on($("downloadAllJsonBtn"),"click",function(){
+    if(!items.length){return;}
+    var all={},used={};
+    items.forEach(function(it){all[uniqueName(it.file.name||"image",used)]=asObject(it);});
+    saveBlob(new Blob([JSON.stringify(all,null,2)],{type:"application/json"}),"all-photos-metadata.json");
+    say(actionStatus,"JSON file with "+items.length+" photo"+(items.length===1?"":"s")+" downloaded.","ok");
   });
 
-  chooseAnotherBtn.addEventListener("click", function(){
-    revoke(currentObjectUrl); currentObjectUrl = null;
-    fileInput.value = "";
-    resultView.classList.add("hidden");
-    uploadView.classList.remove("hidden");
+  async function cleanItem(it){
+    var type=it.file.type==="image/png"?"image/png":it.file.type==="image/webp"?"image/webp":"image/jpeg";
+    var img=await loadImg(it.url);
+    var c=document.createElement("canvas");c.width=img.naturalWidth;c.height=img.naturalHeight;
+    var ctx=c.getContext("2d");
+    if(!ctx){throw new Error("ctx");}
+    if(type==="image/jpeg"){ctx.fillStyle="#ffffff";ctx.fillRect(0,0,c.width,c.height);}
+    ctx.drawImage(img,0,0);
+    var blob=await canvasBlob(c,type,0.95);
+    c.width=1;c.height=1;
+    if(!blob){throw new Error("blob");}
+    var ext=blob.type==="image/png"?"png":blob.type==="image/webp"?"webp":"jpg";
+    return {blob:blob,ext:ext};
+  }
+  on($("cleanBtn"),"click",async function(){
+    var it=byId(selId);if(!it||busy){return;}
+    setBusy(true);say(actionStatus,"Removing metadata\u2026");
+    try{
+      var r=await cleanItem(it);
+      saveBlob(r.blob,stemOf(it.file.name)+"-clean."+r.ext);
+      say(actionStatus,"Clean copy downloaded. All metadata was removed.","ok");
+    }catch(e){say(actionStatus,"Could not create the clean image. Try a smaller photo.","error");}
+    setBusy(false);
   });
+  on($("cleanAllBtn"),"click",async function(){
+    if(!items.length||busy){return;}
+    setBusy(true);
+    var files=[],used={},fail=0;
+    for(var i=0;i<items.length;i++){
+      say(actionStatus,"Cleaning "+(i+1)+" of "+items.length+"\u2026");progress(i/items.length);
+      try{
+        var r=await cleanItem(items[i]);
+        files.push({name:uniqueName(stemOf(items[i].file.name)+"-clean."+r.ext,used),data:await blobToU8(r.blob)});
+      }catch(e){fail++;}
+    }
+    progress(null);
+    if(!files.length){say(actionStatus,"None of the photos could be cleaned. Try smaller photos.","error");setBusy(false);return;}
+    try{
+      saveBlob(buildZip(files),"clean-photos.zip");
+      say(actionStatus,"ZIP downloaded with "+files.length+" clean photo"+(files.length===1?"":"s")+"."+(fail?" "+fail+" failed.":""),fail?"":"ok");
+    }catch(e){say(actionStatus,"Could not build the ZIP file. Please download photos one by one.","error");}
+    setBusy(false);
+  });
+
+  on($("addMoreBtn"),"click",function(){$("fileInput").click();});
+  on($("clearAllBtn"),"click",function(){if(!busy){resetAll();}});
+
+  intake({dropZone:$("dropZone"),dropTarget:$("toolBox"),input:$("fileInput"),selectBtn:$("selectBtn"),onFiles:addFiles});
+
 })();
 </script>
 <script src="/shared/shared.js" defer></script>
