@@ -3,42 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Color Palette Extractor Online | Working Tools Box</title>
-<meta name="description" content="Extract a color palette from any image online for free. Choose how many colors, sort by frequency, hue or brightness, and export as CSS, JSON or PNG.">
-<meta name="robots" content="index, follow">
+<title>Color Palette Extractor from Image | Working Tools Box</title>
+<meta name="description" content="Extract a color palette from any image in your browser. Pick exact colors, check contrast and export CSS, SCSS, Tailwind or JSON. Free, private, no upload.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/color-palette-extractor/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Color Palette Extractor Online | Working Tools Box">
-<meta property="og:description" content="Extract a color palette from any image online for free, entirely in your browser.">
+<meta property="og:title" content="Color Palette Extractor from Image | Working Tools Box">
+<meta property="og:description" content="Extract a color palette from any image in your browser. Pick exact colors, check contrast and export CSS, SCSS, Tailwind or JSON. Free, private, no upload.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/color-palette-extractor/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Color Palette Extractor Online | Working Tools Box">
-<meta name="twitter:description" content="Extract a color palette from any image online for free, entirely in your browser.">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/color-palette-extractor-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Color Palette Extractor banner showing an uploaded landscape photo and its extracted color swatches.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Color Palette Extractor from Image | Working Tools Box">
+<meta name="twitter:description" content="Extract a color palette from any image in your browser. Pick exact colors, check contrast and export CSS, SCSS, Tailwind or JSON. Free, private, no upload.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/color-palette-extractor-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Color Palette Extractor",
-  "url":"https://wtoolsbox.com/tools/color-palette-extractor/",
-  "applicationCategory":"DesignApplication",
-  "operatingSystem":"Any",
-  "description":"Extracts a color palette from an uploaded image using median-cut color quantization, with sorting and export options, directly in the browser.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Color Palette Extractor",
+  "url": "https://wtoolsbox.com/tools/color-palette-extractor/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "description": "Extracts a color palette from an uploaded image with median-cut quantization, with color picking, contrast checks, harmonies and export options, directly in the browser.",
+  "image": "https://wtoolsbox.com/images/tools/color-palette-extractor-og.jpg",
+  "featureList": [
+    "2 to 16 colors using median-cut quantization",
+    "Click the image to pick an exact color",
+    "HEX, RGB and HSL codes with color names",
+    "WCAG contrast rating for white and black text",
+    "Color harmonies",
+    "Export as CSS, SCSS, Tailwind, JSON or HEX list",
+    "PNG swatch download",
+    "Runs in the browser with no upload"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Is my image uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The palette is extracted locally in your browser using the Canvas API, and your image is never uploaded anywhere."}},
-    {"@type":"Question","name":"How many colors can I extract?","acceptedAnswer":{"@type":"Answer","text":"Choose anywhere from 3 to 10 colors using the slider before extracting."}},
-    {"@type":"Question","name":"What export formats are available?","acceptedAnswer":{"@type":"Answer","text":"You can copy the palette as CSS custom properties, as JSON, copy individual hex codes, or download a PNG swatch strip."}},
-    {"@type":"Question","name":"How does the color extraction work?","acceptedAnswer":{"@type":"Answer","text":"It uses a median-cut color quantization algorithm, which groups similar pixel colors together and picks a representative color for each group."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my image uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The colors are read in your browser with the Canvas API, so your image never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many colors can I extract?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose 2 to 16 colors with the slider and sort them by frequency, hue or brightness. The palette updates as you change the setting."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I pick an exact color from my image?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Click any spot on the image and that exact color is added to the palette. Remove it again with its close button or Remove Colors I Picked."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which export formats are available?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "CSS variables, SCSS variables, a Tailwind config, JSON and a plain HEX list, each with Copy and Download File buttons. You can also save a PNG swatch strip."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How are the colors chosen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool uses median-cut quantization. It groups similar pixels together and averages each group into one color, which works well for logos and photos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does the contrast rating mean?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "For each color the tool shows whether white or black text is easier to read and the WCAG contrast ratio. A ratio of 4.5:1 or higher passes AA for normal text."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Working Tools Box",
+      "item": "https://wtoolsbox.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Color Palette Extractor",
+      "item": "https://wtoolsbox.com/tools/color-palette-extractor/"
+    }
   ]
 }
 </script>
@@ -109,8 +196,6 @@
   .content{padding:0 0 55px}
   .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
   .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
   .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
@@ -127,6 +212,70 @@
   .hidden{display:none!important}
   @media(max-width:800px){.grid2{grid-template-columns:1fr}}
   @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}.palette-strip{height:80px}}
+  .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .tab{border:2px solid var(--border);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--text)}
+  .tab.on{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;border-color:transparent}
+  .tab:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.upload:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .grid2{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-child{margin-top:0}
+  .panel select,.panel input[type=text],.field-text{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text)}
+  .panel input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+  .panel input[type=range]{width:100%}
+  .check{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600}
+  .check input{width:18px;height:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .upload.drag{border-color:var(--purple);background:#f3edff}
+  .tip{font-size:12px;color:var(--muted);margin:8px 0 0}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .button[disabled]{opacity:.55;cursor:not-allowed}
+  .mini{border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;padding:3px 9px;margin-top:6px;cursor:pointer;color:#4c1d95;font-family:inherit}
+  .mini:hover{background:#f8f6ff}
+  .tabmock{display:inline-flex;align-items:center;gap:8px;background:#e8e6f2;border-radius:10px 10px 0 0;padding:8px 14px;font-size:13px;max-width:100%;margin-top:8px}
+  .tabmock img{width:16px;height:16px;display:block}
+  .tabmock span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .faq-list{border-top:1px solid var(--border)}
+  .faq{border-bottom:1px solid var(--border);padding:4px 2px}
+  .faq h3{font-size:1.02rem;font-weight:700;margin:14px 0 6px}
+  .faq p{margin:0 0 14px}
+  .steps{padding-left:20px}
+  .steps li{margin-bottom:8px}
+  .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .related a{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:#7209b7;font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;text-decoration:none}
+  .related a:hover{border-color:#7209b7}
+  .imgwrap{position:relative}
+  #imgCanvas{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block;cursor:crosshair;background:#f8fafc}
+  .hoverchip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-monospace,Consolas,monospace}
+  .hoverchip i{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.15);background:#fff}
+  .palette-item{position:relative}
+  .palette-item .x{position:absolute;top:4px;right:6px;border:0;background:transparent;font-size:16px;cursor:pointer;color:#6b6878;line-height:1}
+  .palette-item .nm{font-family:inherit;font-size:11px;color:var(--muted);display:block}
+  .palette-item .ct{font-family:inherit;font-size:11px;color:#3c3a46;display:block}
+  .export-box{width:100%;min-height:130px;background:#111827;color:#e5e7eb;border-radius:10px;padding:14px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;border:0;resize:vertical}
+  .harm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .harm-row b{font-size:12px;width:130px}
+  .harm-sw{display:flex;gap:6px;flex-wrap:wrap}
+  .harm-sw button{width:56px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.12);cursor:pointer;font-size:9px;font-weight:700;font-family:ui-monospace,monospace}
+  .sub{font-weight:700;margin:22px 0 8px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}.harm-row b{width:100%}}
+
+  .tool-figure{margin:20px 0}
+  .tool-figure img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+  .tool-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .related-grid a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:#fff;text-decoration:none;color:var(--text);min-height:64px}
+  .related-grid a:hover{border-color:#7209b7}
+  .related-grid a strong{color:#7209b7}
+  .related-grid a span{font-size:13px;color:var(--muted)}
+  button,.button,.tab,select,input[type=number]{touch-action:manipulation}
+  .button,.tab,.mini{min-height:44px}
+  .mini{padding:6px 14px}
+  .palette-item .x{width:40px;height:40px;top:0;right:0}
+  .check{min-height:40px}
+  .panel select,.panel input[type=text],.panel input[type=number],.field-text,select.field-text{min-height:42px;box-sizing:border-box}
+  #imgCanvas{touch-action:manipulation}
+  img,canvas,svg{max-width:100%}
 </style>
 </head>
 <body>
@@ -136,33 +285,37 @@
 <main class="container">
   <section class="hero">
     <h1 class="grad-text">Color Palette Extractor</h1>
-    <p>Pull a clean color palette out of any photo or design, free, in your browser.</p>
+    <p>Pull a clean color palette out of any photo or design, pick exact colors by clicking, check contrast, and export for CSS, SCSS or Tailwind &mdash; free, in your browser.</p>
   </section>
 
   <div class="notice">
     <b>100% free, no upload:</b> Your image is analyzed locally in your browser and never leaves your device.
   </div>
 
+  <noscript><div class="notice" style="background:#fef2f2;border-color:#fecaca;color:#991b1b">This tool needs JavaScript. Please enable it in your browser to extract colors.</div></noscript>
+
   <section class="tool" aria-label="Color Palette Extractor Tool">
 
     <div id="uploadView">
-      <div class="upload" id="dropZone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop your image here, or</p>
-        <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
+      <div class="upload" id="dropZone" tabindex="0" role="button" aria-label="Choose an image or drop it here">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your image here, paste it (Ctrl+V), or</p>
+        <input type="file" id="fileInput" accept="image/*">
         <button type="button" class="button primary" id="selectBtn">Select Image</button>
+        <p class="tip">JPG, PNG, WebP, GIF or SVG.</p>
       </div>
-      <div id="uploadStatus" class="status"></div>
+      <div id="uploadStatus" class="status" role="status"></div>
     </div>
 
     <div id="editorView" class="hidden">
       <div class="grid2">
         <div>
-          <img id="previewImg" class="preview-img" alt="Uploaded image">
+          <div class="imgwrap"><canvas id="imgCanvas" width="10" height="10" aria-label="Your image. Click any spot to add that exact color to the palette."></canvas></div>
+          <div class="hoverchip"><i id="hoverDot"></i><span id="hoverText">Click anywhere on the image to add that exact color.</span></div>
         </div>
         <div class="panel">
           <label for="colorCount">Number of colors: <span id="colorCountVal">6</span></label>
-          <input type="range" id="colorCount" min="3" max="10" value="6">
+          <input type="range" id="colorCount" min="2" max="16" value="6">
 
           <label for="sortSelect">Sort by</label>
           <select id="sortSelect">
@@ -171,62 +324,99 @@
             <option value="brightness">Brightness</option>
           </select>
 
+          <label for="fmtSelect">Copy a color as</label>
+          <select id="fmtSelect">
+            <option value="hex" selected>HEX (#rrggbb)</option>
+            <option value="rgb">RGB</option>
+            <option value="hsl">HSL</option>
+          </select>
+
+          <div class="check"><input type="checkbox" id="skipWhite"><label for="skipWhite" style="margin:0">Ignore white / near-white</label></div>
+          <div class="check"><input type="checkbox" id="skipBlack"><label for="skipBlack" style="margin:0">Ignore black / near-black</label></div>
+
           <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
-            <button type="button" class="button primary" id="extractBtn">Extract Palette</button>
+            <button type="button" class="button secondary" id="resetPicksBtn">Remove Colors I Picked</button>
             <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Image</button>
           </div>
         </div>
       </div>
 
       <div id="resultBlock" class="hidden">
-        <p style="font-weight:700;margin:22px 0 0">Your Palette</p>
+        <p class="sub" style="margin-bottom:0">Your Palette <span style="font-weight:400;color:var(--muted);font-size:13px">&mdash; click a color to copy it</span></p>
         <div class="palette-strip" id="paletteStrip"></div>
         <div class="palette-list" id="paletteList"></div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button type="button" class="button secondary" id="copyCssBtn">Copy as CSS Variables</button>
-          <button type="button" class="button secondary" id="copyJsonBtn">Copy as JSON</button>
+        <div id="copyStatus" class="status" role="status"></div>
+
+        <p class="sub">Export</p>
+        <div class="row2" style="max-width:420px;margin-bottom:10px">
+          <select id="exportFmt" class="field-text" aria-label="Export format">
+            <option value="css">CSS variables</option>
+            <option value="scss">SCSS variables</option>
+            <option value="tailwind">Tailwind config</option>
+            <option value="json">JSON</option>
+            <option value="hexlist">HEX list</option>
+          </select>
+        </div>
+        <textarea id="exportBox" class="export-box" readonly aria-label="Exported palette code"></textarea>
+        <div class="btn-row">
+          <button type="button" class="button secondary" id="copyExportBtn">Copy Code</button>
+          <button type="button" class="button secondary" id="downloadTxtBtn">Download File</button>
           <button type="button" class="button primary" id="downloadPngBtn">Download Swatch PNG</button>
         </div>
+
+        <p class="sub">Color Harmonies</p>
+        <label for="harmBase" style="font-size:13px;font-weight:700;display:block;margin-bottom:6px">Base color</label>
+        <select id="harmBase" class="field-text" style="max-width:260px" aria-label="Base color for harmonies"></select>
+        <div id="harmonies" style="margin-top:12px"></div>
       </div>
     </div>
 
   </section>
 
   <section class="content">
-    <h2 class="grad-text">Extract a Color Palette From Any Image, Free</h2>
-    <p>This free color palette extractor analyzes an image using median-cut color quantization to find its most representative colors, then presents them as a clean palette with hex, RGB and HSL codes. Choose how many colors to extract, sort them by frequency, hue or brightness, and export the result as CSS custom properties, JSON, or a downloadable PNG swatch strip.</p>
-    <p>Use it to pull a brand color palette from a logo, find complementary colors for a design from a reference photo, or document the color scheme used in an image. Everything runs locally in your browser using the Canvas API, so your image is never uploaded anywhere.</p>
+    <h2 class="grad-text">About This Color Palette Extractor</h2>
+    <p>A color palette is a short list of colors that sums up an image. This color palette extractor reads the picture you choose, finds its main colors and shows each one with HEX, RGB and HSL codes, so you can reuse them in a design, a website or a presentation. The image is analyzed inside your browser and is never uploaded.</p>
+    <figure class="tool-figure"><img src="/images/tools/color-palette-extractor.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Color Palette Extractor banner showing an uploaded landscape photo and its extracted color swatches." title="Color Palette Extractor by Working Tools Box"><figcaption>Upload an image and get its main colors with HEX, RGB and HSL codes.</figcaption></figure>
+    <p>Choose between 2 and 16 colors and sort them by frequency, hue or brightness. Click anywhere on the image to add the exact color of that spot, ignore white or black backgrounds, and check whether white or black text is readable on each color. You can export the result as CSS variables, SCSS variables, a Tailwind config, JSON or a plain HEX list, or save a PNG swatch strip.</p>
 
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>color palette extractor online free</span>
-      <span>extract colors from image online</span>
-      <span>image color palette generator</span>
-      <span>free color scheme generator from photo</span>
-      <span>get hex codes from image</span>
-      <span>online palette generator no upload</span>
-      <span>dominant color extractor free</span>
-      <span>photo to color palette online</span>
-      <span>color palette from logo generator</span>
-      <span>extract hex colors from picture</span>
-      <span>online color scheme extractor</span>
-      <span>image to css color variables</span>
-      <span>palette generator with export</span>
-      <span>color picker from image palette</span>
-      <span>generate palette from photo free</span>
-      <span>online image color analyzer</span>
-      <span>free hex code extractor tool</span>
-      <span>brand color extractor online</span>
-      <span>color palette maker from picture</span>
-      <span>image dominant colors free tool</span>
-    </div>
+    <h2 class="grad-text">How to Extract Colors from an Image</h2>
+    <ol class="steps">
+      <li>Choose an image, drop it on the page or paste it with Ctrl+V.</li>
+      <li>Set how many colors you want. For a logo on a white background, tick Ignore white so the background does not use up a slot.</li>
+      <li>Click the image to add exact colors, or click a swatch to copy its code as HEX, RGB or HSL.</li>
+      <li>Pick an export format and copy the code or download it as a file. The Color Harmonies section suggests matching colors for any palette color.</li>
+    </ol>
+
+    <h2 class="grad-text">Tips for Better Palettes</h2>
+    <ul>
+      <li>Flat logos give accurate colors because they contain only a few real ones. Photos with soft gradients give blended colors, so raise the color count or click the exact tones you need.</li>
+      <li>Check contrast before using a color for text or buttons. A ratio of 4.5:1 or higher passes the WCAG AA level for normal text.</li>
+      <li>Screens and printers show color differently, so confirm the final values with your printer for print work.</li>
+      <li>Keep a design to five or six colors: one main color, one or two supporting colors and a neutral.</li>
+    </ul>
+
+    <h2 class="grad-text">When This Tool Helps</h2>
+    <p>Use it to build a brand palette from a logo, match a website theme to a hero photo or choose slide colors that fit a picture. Developers can paste the CSS or Tailwind export straight into a project. If you only need the color of a single pixel, the <a href="/tools/image-color-picker/">Image Color Picker</a> is quicker, and the <a href="/tools/favicon-generator/">Favicon Generator</a> is a natural next step for a brand-colored icon.</p>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Is my image uploaded to a server?</summary><p>No. The palette is extracted locally in your browser using the Canvas API, and your image is never uploaded anywhere.</p></details>
-    <details class="faq"><summary>How many colors can I extract?</summary><p>Choose anywhere from 3 to 10 colors using the slider before extracting.</p></details>
-    <details class="faq"><summary>What export formats are available?</summary><p>You can copy the palette as CSS custom properties, as JSON, copy individual hex codes, or download a PNG swatch strip.</p></details>
-    <details class="faq"><summary>How does the color extraction work?</summary><p>It uses a median-cut color quantization algorithm, which groups similar pixel colors together and picks a representative color for each group.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
+    <div class="faq-list">
+      <div class="faq"><h3>Is my image uploaded to a server?</h3><p>No. The colors are read in your browser with the Canvas API, so your image never leaves your device.</p></div>
+      <div class="faq"><h3>How many colors can I extract?</h3><p>Choose 2 to 16 colors with the slider and sort them by frequency, hue or brightness. The palette updates as you change the setting.</p></div>
+      <div class="faq"><h3>Can I pick an exact color from my image?</h3><p>Yes. Click any spot on the image and that exact color is added to the palette. Remove it again with its close button or Remove Colors I Picked.</p></div>
+      <div class="faq"><h3>Which export formats are available?</h3><p>CSS variables, SCSS variables, a Tailwind config, JSON and a plain HEX list, each with Copy and Download File buttons. You can also save a PNG swatch strip.</p></div>
+      <div class="faq"><h3>How are the colors chosen?</h3><p>The tool uses median-cut quantization. It groups similar pixels together and averages each group into one color, which works well for logos and photos.</p></div>
+      <div class="faq"><h3>What does the contrast rating mean?</h3><p>For each color the tool shows whether white or black text is easier to read and the WCAG contrast ratio. A ratio of 4.5:1 or higher passes AA for normal text.</p></div>
+    </div>
+
+    <h2 class="grad-text">More Free Tools You May Need</h2>
+    <div class="related-grid">
+      <a href="/tools/image-color-picker/"><strong>Image Color Picker</strong><span>Pick the exact color of any spot in a picture.</span></a>
+      <a href="/tools/photo-color-changer/"><strong>Photo Color Changer</strong><span>Change the colors in a photo.</span></a>
+      <a href="/tools/favicon-generator/"><strong>Favicon Generator</strong><span>Turn a logo, letter or emoji into a favicon set.</span></a>
+      <a href="/tools/image-background-remover/"><strong>Image Background Remover</strong><span>Cut the background out of a photo or logo.</span></a>
+      <a href="/tools/image-cropper/"><strong>Image Cropper</strong><span>Crop a picture to the area or size you need.</span></a>
+      <a href="/tools/image-resizer/"><strong>Image Resizer</strong><span>Change the width and height of an image.</span></a>
+    </div>
   </section>
 </main>
 
@@ -235,303 +425,345 @@
 <script>
 (function(){
   "use strict";
+  var _miss = {};
+  var $ = function(id){ var e = document.getElementById(id); if(e) return e; if(!_miss[id]) _miss[id] = document.createElement(id === "imgCanvas" ? "canvas" : "div"); return _miss[id]; };
+  var SAMPLE_SIZE = 160, CANVAS_MAX = 900, MAX_FILE = 25 * 1024 * 1024;
 
-  var SAMPLE_SIZE = 160; // downsample to this max dimension for fast, representative sampling
+  var NAMED = [["Black","#000000"],["White","#ffffff"],["Gray","#808080"],["Silver","#c0c0c0"],["Dark Gray","#404040"],["Red","#e53935"],["Crimson","#b71c1c"],["Maroon","#800000"],["Orange","#fb8c00"],["Amber","#ffb300"],["Gold","#ffd700"],["Yellow","#fdd835"],["Lime","#c0ca33"],["Olive","#808000"],["Green","#43a047"],["Forest Green","#1b5e20"],["Mint","#98e1b5"],["Teal","#00897b"],["Cyan","#00bcd4"],["Sky Blue","#4fc3f7"],["Blue","#1e88e5"],["Navy","#0d1b4c"],["Indigo","#3949ab"],["Purple","#8e24aa"],["Violet","#7c4dff"],["Lavender","#c5b3f0"],["Magenta","#d81b60"],["Pink","#f48fb1"],["Hot Pink","#ec407a"],["Brown","#6d4c41"],["Chocolate","#8d5524"],["Tan","#d2b48c"],["Beige","#f5e6c8"],["Peach","#ffcc99"],["Coral","#ff7f50"],["Salmon","#fa8072"],["Turquoise","#1de9b6"]];
 
-  var uploadView = document.getElementById("uploadView");
-  var editorView = document.getElementById("editorView");
-  var dropZone = document.getElementById("dropZone");
-  var fileInput = document.getElementById("fileInput");
-  var selectBtn = document.getElementById("selectBtn");
-  var uploadStatus = document.getElementById("uploadStatus");
+  var uploadView = $("uploadView"), editorView = $("editorView"), resultBlock = $("resultBlock");
+  var dropZone = $("dropZone"), fileInput = $("fileInput");
+  var cv = $("imgCanvas"), cctx = cv.getContext("2d", { willReadFrequently: true });
 
-  var previewImg = document.getElementById("previewImg");
-  var colorCount = document.getElementById("colorCount");
-  var colorCountVal = document.getElementById("colorCountVal");
-  var sortSelect = document.getElementById("sortSelect");
-  var extractBtn = document.getElementById("extractBtn");
-  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
+  var baseImage = null, baseObjectUrl = null;
+  var extracted = [], extras = [], palette = [];
 
-  var resultBlock = document.getElementById("resultBlock");
-  var paletteStrip = document.getElementById("paletteStrip");
-  var paletteList = document.getElementById("paletteList");
-  var copyCssBtn = document.getElementById("copyCssBtn");
-  var copyJsonBtn = document.getElementById("copyJsonBtn");
-  var downloadPngBtn = document.getElementById("downloadPngBtn");
+  function revoke(u){ if(u) URL.revokeObjectURL(u); }
+  function status(el, msg, err){ el.textContent = msg || ""; el.className = "status" + (err ? " error" : ""); }
 
-  var baseImage = null;
-  var baseObjectUrl = null;
-  var currentPalette = [];
-
-  function revoke(url){ if(url) URL.revokeObjectURL(url); }
-
-  colorCount.addEventListener("input", function(){ colorCountVal.textContent = colorCount.value; });
-
-  selectBtn.addEventListener("click", function(){ fileInput.click(); });
-  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
-  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
+  /* ---------- input ---------- */
+  $("selectBtn").addEventListener("click", function(e){ e.stopPropagation(); fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target.id !== "selectBtn") fileInput.click(); });
+  dropZone.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); fileInput.click(); } });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); dropZone.classList.add("drag"); });
+  dropZone.addEventListener("dragleave", function(){ dropZone.classList.remove("drag"); });
   dropZone.addEventListener("drop", function(e){
-    e.preventDefault();
-    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
+    e.preventDefault(); dropZone.classList.remove("drag");
+    if(e.dataTransfer.files && e.dataTransfer.files[0]){
+      handleFile(e.dataTransfer.files[0]);
+      if(e.dataTransfer.files.length > 1) status($("uploadStatus"), "Only the first image was used.");
+    }
   });
-  fileInput.addEventListener("change", function(){
-    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
+  fileInput.addEventListener("change", function(){ if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]); });
+  document.addEventListener("paste", function(e){
+    if(!e.clipboardData || !e.clipboardData.items) return;
+    for(var i = 0; i < e.clipboardData.items.length; i++){
+      var it = e.clipboardData.items[i];
+      if(it.kind === "file" && it.type.indexOf("image/") === 0){ var f = it.getAsFile(); if(f){ handleFile(f); e.preventDefault(); return; } }
+    }
   });
 
   function handleFile(file){
-    var allowed = ["image/jpeg","image/png","image/webp"];
-    if(allowed.indexOf(file.type) === -1){
-      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
-      uploadStatus.className = "status error";
-      return;
-    }
-    revoke(baseObjectUrl);
-    baseObjectUrl = URL.createObjectURL(file);
-    var img = new Image();
+    var st = $("uploadStatus");
+    if(!file.size){ status(st, "That file is empty. Please choose another image.", true); return; }
+    if(!file.type || file.type.indexOf("image/") !== 0){ status(st, "Please choose an image file (JPG, PNG, WebP, GIF or SVG).", true); return; }
+    if(file.size > MAX_FILE){ status(st, "That image is larger than 25 MB. Please choose a smaller one.", true); return; }
+    var url = URL.createObjectURL(file), img = new Image();
     img.onload = function(){
-      baseImage = img;
-      previewImg.src = baseObjectUrl;
-      resultBlock.classList.add("hidden");
-      uploadView.classList.add("hidden");
-      editorView.classList.remove("hidden");
+      revoke(baseObjectUrl); baseObjectUrl = url;
+      baseImage = img; extras = []; extracted = [];
+      try{ drawImageCanvas(img); }
+      catch(err){ status(st, "This image is too large or could not be drawn on this device. Please try a smaller one.", true); return; }
+      status(st, "");
+      uploadView.classList.add("hidden"); editorView.classList.remove("hidden");
+      runExtract();
     };
-    img.onerror = function(){
-      uploadStatus.textContent = "Could not read that image. Please try another file.";
-      uploadStatus.className = "status error";
-    };
-    img.src = baseObjectUrl;
+    img.onerror = function(){ revoke(url); status(st, "Could not read that image. Please try another file.", true); };
+    img.src = url;
+  }
+  function drawImageCanvas(img){
+    var nw = img.naturalWidth || 600, nh = img.naturalHeight || 400;
+    var k = Math.min(1, CANVAS_MAX / Math.max(nw, nh));
+    cv.width = Math.max(1, Math.round(nw * k)); cv.height = Math.max(1, Math.round(nh * k));
+    cctx.clearRect(0, 0, cv.width, cv.height);
+    cctx.drawImage(img, 0, 0, cv.width, cv.height);
   }
 
-  chooseAnotherBtn.addEventListener("click", function(){
-    baseImage = null;
-    fileInput.value = "";
-    editorView.classList.add("hidden");
-    uploadView.classList.remove("hidden");
+  /* ---------- pick exact color from image ---------- */
+  function pixelAt(e){
+    var r = cv.getBoundingClientRect();
+    var x = Math.floor((e.clientX - r.left) * cv.width / r.width), y = Math.floor((e.clientY - r.top) * cv.height / r.height);
+    if(x < 0 || y < 0 || x >= cv.width || y >= cv.height) return null;
+    var d = cctx.getImageData(x, y, 1, 1).data;
+    return d[3] < 128 ? null : { r: d[0], g: d[1], b: d[2] };
+  }
+  cv.addEventListener("mousemove", function(e){
+    var p = pixelAt(e); if(!p) return;
+    $("hoverDot").style.background = hex(p.r, p.g, p.b);
+    $("hoverText").textContent = hex(p.r, p.g, p.b) + " \u2014 click to add";
+  });
+  cv.addEventListener("click", function(e){
+    var p = pixelAt(e); if(!p) return;
+    var c = makeColor(p.r, p.g, p.b, 0); c.picked = true;
+    var all = extracted.concat(extras);
+    if(all.some(function(x){ return x.hex === c.hex; })){ status($("copyStatus"), c.hex + " is already in your palette."); return; }
+    extras.push(c); refresh();
+    status($("copyStatus"), "Added " + c.hex + " to your palette.");
   });
 
-  function getSampledPixels(img){
-    var ratio = Math.min(1, SAMPLE_SIZE / Math.max(img.naturalWidth, img.naturalHeight));
-    var w = Math.max(1, Math.round(img.naturalWidth * ratio));
-    var h = Math.max(1, Math.round(img.naturalHeight * ratio));
-    var canvas = document.createElement("canvas");
-    canvas.width = w; canvas.height = h;
-    var ctx = canvas.getContext("2d");
-    ctx.drawImage(img, 0, 0, w, h);
-    var data = ctx.getImageData(0, 0, w, h).data;
-    var pixels = [];
-    for(var i = 0; i < data.length; i += 4){
-      if(data[i+3] < 128) continue; // skip mostly-transparent pixels
-      pixels.push([data[i], data[i+1], data[i+2]]);
+  /* ---------- color math ---------- */
+  function hex(r, g, b){ return "#" + [r, g, b].map(function(v){ return v.toString(16).padStart(2, "0"); }).join(""); }
+  function rgbToHsl(r, g, b){
+    r /= 255; g /= 255; b /= 255;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), h, s, l = (mx + mn) / 2;
+    if(mx === mn){ h = s = 0; }
+    else {
+      var d = mx - mn; s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+      switch(mx){ case r: h = (g - b) / d + (g < b ? 6 : 0); break; case g: h = (b - r) / d + 2; break; default: h = (r - g) / d + 4; }
+      h /= 6;
     }
-    return pixels;
+    return [Math.round(h * 360) % 360, Math.round(s * 100), Math.round(l * 100)];
+  }
+  function hslToHex(h, s, l){
+    h = ((h % 360) + 360) % 360; s = Math.max(0, Math.min(100, s)) / 100; l = Math.max(0, Math.min(100, l)) / 100;
+    var a = s * Math.min(l, 1 - l);
+    function f(n){ var k = (n + h / 30) % 12; return Math.round(255 * (l - a * Math.max(-1, Math.min(k - 3, 9 - k, 1)))); }
+    return hex(f(0), f(8), f(4));
+  }
+  function hexToRgb(h){ var n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+  function lum(r, g, b){
+    var a = [r, g, b].map(function(v){ v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * a[0] + 0.7152 * a[1] + 0.0722 * a[2];
+  }
+  function ratio(l1, l2){ var a = Math.max(l1, l2), b = Math.min(l1, l2); return (a + 0.05) / (b + 0.05); }
+  function nearestName(r, g, b){
+    var best = "", bd = Infinity;
+    NAMED.forEach(function(n){ var c = hexToRgb(n[1]); var d = Math.pow(r - c[0], 2) + Math.pow(g - c[1], 2) + Math.pow(b - c[2], 2); if(d < bd){ bd = d; best = n[0]; } });
+    return best;
+  }
+  function makeColor(r, g, b, count){
+    var hsl = rgbToHsl(r, g, b), L = lum(r, g, b);
+    var cw = ratio(L, 1), cb = ratio(L, 0);
+    return { r: r, g: g, b: b, hex: hex(r, g, b), h: hsl[0], s: hsl[1], l: hsl[2], count: count, name: nearestName(r, g, b),
+             textOn: cw >= cb ? "White" : "Black", cr: Math.max(cw, cb) };
+  }
+  function grade(cr){ return cr >= 7 ? "AAA" : (cr >= 4.5 ? "AA" : (cr >= 3 ? "AA Large only" : "Low contrast")); }
+  function fmt(c){
+    var f = $("fmtSelect").value;
+    return f === "rgb" ? "rgb(" + c.r + ", " + c.g + ", " + c.b + ")" : (f === "hsl" ? "hsl(" + c.h + ", " + c.s + "%, " + c.l + "%)" : c.hex);
   }
 
-  // Median-cut color quantization: recursively split the pixel set along
-  // its widest color-channel range until we have `count` buckets, then
-  // average each bucket to get the final palette colors.
-  function medianCutQuantize(pixels, count){
-    if(pixels.length === 0) return [];
+  /* ---------- extraction ---------- */
+  function sampledPixels(img){
+    var nw = img.naturalWidth || 600, nh = img.naturalHeight || 400;
+    var k = Math.min(1, SAMPLE_SIZE / Math.max(nw, nh));
+    var w = Math.max(1, Math.round(nw * k)), h = Math.max(1, Math.round(nh * k));
+    var c = document.createElement("canvas"); c.width = w; c.height = h;
+    var x = c.getContext("2d", { willReadFrequently: true }); x.drawImage(img, 0, 0, w, h);
+    var d = x.getImageData(0, 0, w, h).data, out = [];
+    var sw = $("skipWhite").checked, sb = $("skipBlack").checked;
+    for(var i = 0; i < d.length; i += 4){
+      if(d[i + 3] < 128) continue;
+      var r = d[i], g = d[i + 1], b = d[i + 2];
+      if(sw && r > 240 && g > 240 && b > 240) continue;
+      if(sb && r < 15 && g < 15 && b < 15) continue;
+      out.push([r, g, b]);
+    }
+    return out;
+  }
+  function medianCut(pixels, count){
+    if(!pixels.length) return [];
     var buckets = [pixels];
-
     while(buckets.length < count){
       buckets.sort(function(a, b){ return b.length - a.length; });
-      var bucket = buckets.shift();
-      if(bucket.length < 2){ buckets.push(bucket); break; }
-
+      var bk = buckets.shift();
+      if(bk.length < 2){ buckets.push(bk); break; }
       var ranges = [0, 1, 2].map(function(ch){
-        var min = 255, max = 0;
-        bucket.forEach(function(p){ if(p[ch] < min) min = p[ch]; if(p[ch] > max) max = p[ch]; });
-        return max - min;
+        var mn = 255, mx = 0;
+        bk.forEach(function(p){ if(p[ch] < mn) mn = p[ch]; if(p[ch] > mx) mx = p[ch]; });
+        return mx - mn;
       });
-      var channel = ranges.indexOf(Math.max.apply(null, ranges));
-
-      bucket.sort(function(a, b){ return a[channel] - b[channel]; });
-      var mid = Math.floor(bucket.length / 2);
-      buckets.push(bucket.slice(0, mid));
-      buckets.push(bucket.slice(mid));
-
-      if(buckets.every(function(b){ return b.length < 2; })) break;
+      var ch = ranges.indexOf(Math.max.apply(null, ranges));
+      if(ranges[ch] === 0){ buckets.push(bk); break; }   // identical colors: cannot split further
+      bk.sort(function(a, b){ return a[ch] - b[ch]; });
+      var mid = Math.floor(bk.length / 2);
+      buckets.push(bk.slice(0, mid)); buckets.push(bk.slice(mid));
     }
-
-    return buckets.filter(function(b){ return b.length > 0; }).map(function(bucket){
-      var sum = [0, 0, 0];
-      bucket.forEach(function(p){ sum[0]+=p[0]; sum[1]+=p[1]; sum[2]+=p[2]; });
-      return {
-        r: Math.round(sum[0] / bucket.length),
-        g: Math.round(sum[1] / bucket.length),
-        b: Math.round(sum[2] / bucket.length),
-        count: bucket.length
-      };
+    return buckets.filter(function(b){ return b.length > 0; }).map(function(bk){
+      var s = [0, 0, 0];
+      bk.forEach(function(p){ s[0] += p[0]; s[1] += p[1]; s[2] += p[2]; });
+      return { r: Math.round(s[0] / bk.length), g: Math.round(s[1] / bk.length), b: Math.round(s[2] / bk.length), count: bk.length };
     });
   }
-
-  function rgbToHex(r,g,b){
-    return "#" + [r,g,b].map(function(v){ return v.toString(16).padStart(2,"0"); }).join("");
-  }
-  function rgbToHsl(r,g,b){
-    r/=255; g/=255; b/=255;
-    var max=Math.max(r,g,b), min=Math.min(r,g,b);
-    var h,s,l=(max+min)/2;
-    if(max===min){ h=s=0; }
-    else{
-      var d=max-min;
-      s = l>0.5 ? d/(2-max-min) : d/(max+min);
-      switch(max){
-        case r: h=(g-b)/d+(g<b?6:0); break;
-        case g: h=(b-r)/d+2; break;
-        default: h=(r-g)/d+4;
-      }
-      h/=6;
-    }
-    return [Math.round(h*360), Math.round(s*100), Math.round(l*100)];
-  }
-
-  extractBtn.addEventListener("click", function(){
+  function runExtract(){
     if(!baseImage) return;
-    var pixels = getSampledPixels(baseImage);
-    var count = parseInt(colorCount.value, 10);
-    var colors = medianCutQuantize(pixels, count);
-
-    colors.forEach(function(c){
-      c.hex = rgbToHex(c.r, c.g, c.b);
-      var hsl = rgbToHsl(c.r, c.g, c.b);
-      c.h = hsl[0]; c.s = hsl[1]; c.l = hsl[2];
+    var raw;
+    try{ raw = medianCut(sampledPixels(baseImage), parseInt($("colorCount").value, 10) || 6); }
+    catch(err){ status($("copyStatus"), "Could not read the colors of this image. Please try another image.", true); return; }
+    var seen = {}, list = [];
+    raw.forEach(function(c){
+      var h = hex(c.r, c.g, c.b);
+      if(seen[h]){ seen[h].count += c.count; return; }
+      var col = makeColor(c.r, c.g, c.b, c.count); seen[h] = col; list.push(col);
     });
-
-    var sortMode = sortSelect.value;
-    if(sortMode === "frequency") colors.sort(function(a,b){ return b.count - a.count; });
-    else if(sortMode === "hue") colors.sort(function(a,b){ return a.h - b.h; });
-    else colors.sort(function(a,b){ return b.l - a.l; });
-
-    currentPalette = colors;
-    renderPalette(colors);
-    resultBlock.classList.remove("hidden");
-  });
-
-  sortSelect.addEventListener("change", function(){
-    if(currentPalette.length) extractBtn.click();
-  });
-
-  function renderPalette(colors){
-    paletteStrip.innerHTML = "";
-    paletteList.innerHTML = "";
-
-    colors.forEach(function(c){
-      var swatch = document.createElement("div");
-      swatch.className = "palette-swatch";
-      swatch.style.background = c.hex;
-      var label = document.createElement("span");
-      label.textContent = c.hex;
-      swatch.appendChild(label);
-      swatch.addEventListener("click", function(){ copyText(c.hex, swatch, label); });
-      paletteStrip.appendChild(swatch);
-
-      var item = document.createElement("div");
-      item.className = "palette-item";
-      var dot = document.createElement("div");
-      dot.className = "dot";
-      dot.style.background = c.hex;
-      item.appendChild(dot);
-      var codes = document.createElement("div");
-      codes.className = "codes";
-      codes.innerHTML = "<b>" + c.hex + "</b><br>rgb(" + c.r + ", " + c.g + ", " + c.b + ")<br>hsl(" + c.h + ", " + c.s + "%, " + c.l + "%)";
-      item.appendChild(codes);
-      item.addEventListener("click", function(){ copyText(c.hex, null, null); });
-      paletteList.appendChild(item);
-    });
+    extracted = list;
+    if(!list.length && !extras.length){
+      status($("copyStatus"), "No usable colors found. Try turning off the ignore options, or pick colors by clicking the image.", true);
+    } else status($("copyStatus"), "");
+    refresh();
+  }
+  function refresh(){
+    var all = extracted.concat(extras.filter(function(e){ return !extracted.some(function(x){ return x.hex === e.hex; }); }));
+    var mode = $("sortSelect").value;
+    if(mode === "frequency") all.sort(function(a, b){ return b.count - a.count; });
+    else if(mode === "hue") all.sort(function(a, b){ return a.h - b.h || a.l - b.l; });
+    else all.sort(function(a, b){ return b.l - a.l; });
+    palette = all;
+    if(!palette.length){ resultBlock.classList.add("hidden"); return; }
+    render(); renderExport(); renderHarmonyOptions(); resultBlock.classList.remove("hidden");
   }
 
-  // Robust copy-to-clipboard with a fallback for browsers/contexts where
-  // the Clipboard API is blocked, and clear feedback either way.
-  function copyToClipboard(text, onSuccess, onFailure){
-    function fallbackCopy(){
+  /* ---------- render ---------- */
+  function render(){
+    var strip = $("paletteStrip"), list = $("paletteList");
+    strip.innerHTML = ""; list.innerHTML = "";
+    palette.forEach(function(c){
+      var sw = document.createElement("div"); sw.className = "palette-swatch"; sw.style.background = c.hex;
+      sw.setAttribute("role", "button"); sw.tabIndex = 0; sw.setAttribute("aria-label", "Copy " + c.hex);
+      var lb = document.createElement("span"); lb.textContent = c.hex; sw.appendChild(lb);
+      var go = function(){ copyColor(c, sw, lb); };
+      sw.addEventListener("click", go);
+      sw.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); go(); } });
+      strip.appendChild(sw);
+
+      var it = document.createElement("div"); it.className = "palette-item";
+      var dot = document.createElement("div"); dot.className = "dot"; dot.style.background = c.hex; it.appendChild(dot);
+      var codes = document.createElement("div"); codes.className = "codes";
+      codes.innerHTML = "<b>" + c.hex + "</b><span class='nm'>" + c.name + (c.picked ? " (picked)" : "") + "</span>rgb(" + c.r + ", " + c.g + ", " + c.b + ")<br>hsl(" + c.h + ", " + c.s + "%, " + c.l + "%)<span class='ct'>" + c.textOn + " text: " + c.cr.toFixed(1) + ":1 " + grade(c.cr) + "</span>";
+      it.appendChild(codes);
+      it.addEventListener("click", function(){ copyColor(c, null, null); });
+      if(c.picked){
+        var x = document.createElement("button"); x.type = "button"; x.className = "x"; x.textContent = "\u00d7"; x.setAttribute("aria-label", "Remove " + c.hex);
+        x.addEventListener("click", function(e){ e.stopPropagation(); extras = extras.filter(function(v){ return v.hex !== c.hex; }); refresh(); });
+        it.appendChild(x);
+      }
+      list.appendChild(it);
+    });
+  }
+  $("fmtSelect").addEventListener("change", function(){ status($("copyStatus"), "Colors will now copy as " + $("fmtSelect").value.toUpperCase() + "."); });
+
+  /* ---------- clipboard ---------- */
+  function copyToClipboard(text, ok, fail){
+    function fallback(){
       try{
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        var ok = document.execCommand("copy");
-        document.body.removeChild(ta);
-        if(ok){ if(onSuccess) onSuccess(); } else if(onFailure){ onFailure(); }
-      }catch(e){
-        if(onFailure) onFailure();
-      }
+        var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.left = "-9999px";
+        document.body.appendChild(ta); ta.focus(); ta.select();
+        var s = document.execCommand("copy"); document.body.removeChild(ta);
+        if(s){ if(ok) ok(); } else if(fail) fail();
+      }catch(e){ if(fail) fail(); }
     }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(onSuccess).catch(fallbackCopy);
-    } else {
-      fallbackCopy();
-    }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok).catch(fallback); } else fallback();
+  }
+  function copyColor(c, sw, lb){
+    var t = fmt(c);
+    copyToClipboard(t, function(){
+      status($("copyStatus"), "Copied " + t);
+      if(sw && lb){ var o = lb.textContent; lb.textContent = "Copied!"; sw.classList.add("copied"); setTimeout(function(){ lb.textContent = o; sw.classList.remove("copied"); }, 1100); }
+    }, function(){ status($("copyStatus"), "Could not copy automatically. The code is " + t, true); });
+  }
+  function btnCopy(text, btn, label){
+    copyToClipboard(text, function(){ btn.textContent = "Copied!"; setTimeout(function(){ btn.textContent = label; }, 1500); },
+      function(){ btn.textContent = "Copy failed \u2014 select the text and copy it"; setTimeout(function(){ btn.textContent = label; }, 2500); });
   }
 
-  function copyText(text, swatchEl, labelEl){
-    copyToClipboard(text, function(){
-      if(swatchEl && labelEl){
-        var original = labelEl.textContent;
-        labelEl.textContent = "Copied!";
-        swatchEl.classList.add("copied");
-        setTimeout(function(){ labelEl.textContent = original; swatchEl.classList.remove("copied"); }, 1200);
-      }
-    }, function(){
-      if(labelEl) labelEl.textContent = "Copy failed";
+  /* ---------- export ---------- */
+  function exportText(){
+    var f = $("exportFmt").value, i;
+    if(f === "css") return ":root {\n" + palette.map(function(c, i){ return "  --palette-" + (i + 1) + ": " + c.hex + ";"; }).join("\n") + "\n}";
+    if(f === "scss") return palette.map(function(c, i){ return "$palette-" + (i + 1) + ": " + c.hex + ";"; }).join("\n");
+    if(f === "tailwind") return "// tailwind.config.js\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n        palette: {\n" + palette.map(function(c, i){ return "          '" + (i + 1) + "': '" + c.hex + "',"; }).join("\n") + "\n        },\n      },\n    },\n  },\n};";
+    if(f === "json") return JSON.stringify(palette.map(function(c){ return { name: c.name, hex: c.hex, rgb: [c.r, c.g, c.b], hsl: [c.h, c.s, c.l] }; }), null, 2);
+    return palette.map(function(c){ return c.hex; }).join(", ");
+  }
+  function renderExport(){ $("exportBox").value = exportText(); }
+  $("exportFmt").addEventListener("change", renderExport);
+  $("copyExportBtn").addEventListener("click", function(){ btnCopy($("exportBox").value, $("copyExportBtn"), "Copy Code"); });
+  function save(blob, name){
+    var u = URL.createObjectURL(blob), a = document.createElement("a");
+    a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ revoke(u); }, 4000);
+  }
+  $("downloadTxtBtn").addEventListener("click", function(){
+    var ext = { css: "css", scss: "scss", tailwind: "js", json: "json", hexlist: "txt" }[$("exportFmt").value];
+    save(new Blob([$("exportBox").value], { type: "text/plain" }), "palette." + ext);
+  });
+  $("downloadPngBtn").addEventListener("click", function(){
+    if(!palette.length) return;
+    var sw = 180, h = 200, c = document.createElement("canvas");
+    c.width = sw * palette.length; c.height = h;
+    var x = c.getContext("2d");
+    palette.forEach(function(p, i){
+      x.fillStyle = p.hex; x.fillRect(i * sw, 0, sw, h);
+      x.fillStyle = p.textOn === "Black" ? "#000000" : "#ffffff";
+      x.textAlign = "center";
+      x.font = "bold 16px ui-monospace, monospace"; x.fillText(p.hex, i * sw + sw / 2, h - 32);
+      x.font = "12px sans-serif"; x.fillText(p.name, i * sw + sw / 2, h - 14);
     });
-  }
-
-  function copyWithButtonFeedback(text, btn, originalLabel){
-    copyToClipboard(text, function(){
-      btn.textContent = "Copied!";
-      setTimeout(function(){ btn.textContent = originalLabel; }, 1500);
-    }, function(){
-      btn.textContent = "Copy failed \u2014 try again";
-      setTimeout(function(){ btn.textContent = originalLabel; }, 2000);
-    });
-  }
-
-  copyCssBtn.addEventListener("click", function(){
-    var lines = [":root {"];
-    currentPalette.forEach(function(c, i){ lines.push("  --palette-color-" + (i+1) + ": " + c.hex + ";"); });
-    lines.push("}");
-    copyWithButtonFeedback(lines.join("\n"), copyCssBtn, "Copy as CSS Variables");
+    c.toBlob(function(b){ if(b) save(b, "color-palette.png"); }, "image/png");
   });
 
-  copyJsonBtn.addEventListener("click", function(){
-    var json = JSON.stringify(currentPalette.map(function(c){
-      return { hex: c.hex, rgb: [c.r,c.g,c.b], hsl: [c.h,c.s,c.l] };
-    }), null, 2);
-    copyWithButtonFeedback(json, copyJsonBtn, "Copy as JSON");
-  });
+  /* ---------- harmonies ---------- */
+  function renderHarmonyOptions(){
+    var sel = $("harmBase"), prev = sel.value;
+    sel.innerHTML = "";
+    palette.forEach(function(c){ var o = document.createElement("option"); o.value = c.hex; o.textContent = c.hex + " \u2014 " + c.name; sel.appendChild(o); });
+    if(prev && palette.some(function(c){ return c.hex === prev; })) sel.value = prev;
+    renderHarmonies();
+  }
+  function renderHarmonies(){
+    var base = $("harmBase").value; if(!base) return;
+    var rgb = hexToRgb(base), hsl = rgbToHsl(rgb[0], rgb[1], rgb[2]), h = hsl[0], s = hsl[1], l = hsl[2];
+    var sets = [
+      ["Complementary", [h, h + 180]],
+      ["Analogous", [h - 30, h, h + 30]],
+      ["Triadic", [h, h + 120, h + 240]],
+      ["Split-complementary", [h, h + 150, h + 210]]
+    ];
+    var box = $("harmonies"); box.innerHTML = "";
+    function row(label, hexes){
+      var r = document.createElement("div"); r.className = "harm-row";
+      var b = document.createElement("b"); b.textContent = label; r.appendChild(b);
+      var w = document.createElement("div"); w.className = "harm-sw";
+      hexes.forEach(function(hx){
+        var bt = document.createElement("button"); bt.type = "button"; bt.style.background = hx;
+        var rg = hexToRgb(hx); bt.style.color = lum(rg[0], rg[1], rg[2]) > 0.4 ? "#000" : "#fff";
+        bt.textContent = hx; bt.setAttribute("aria-label", "Copy " + hx);
+        bt.addEventListener("click", function(){ copyToClipboard(hx, function(){ status($("copyStatus"), "Copied " + hx); }, function(){ status($("copyStatus"), "Could not copy automatically. The code is " + hx, true); }); });
+        w.appendChild(bt);
+      });
+      r.appendChild(w); box.appendChild(r);
+    }
+    sets.forEach(function(st){ row(st[0], st[1].map(function(hh){ return hslToHex(hh, s, l); })); });
+    row("Shades & tints", [90, 75, 60, 45, 30, 15].map(function(L){ return hslToHex(h, s, L); }));
+  }
+  $("harmBase").addEventListener("change", renderHarmonies);
 
-  downloadPngBtn.addEventListener("click", function(){
-    if(!currentPalette.length) return;
-    var swatchW = 160, h = 160;
-    var canvas = document.createElement("canvas");
-    canvas.width = swatchW * currentPalette.length;
-    canvas.height = h;
-    var ctx = canvas.getContext("2d");
-    currentPalette.forEach(function(c, i){
-      ctx.fillStyle = c.hex;
-      ctx.fillRect(i * swatchW, 0, swatchW, h);
-      ctx.fillStyle = (c.l > 55) ? "#000000" : "#ffffff";
-      ctx.font = "bold 14px ui-monospace, monospace";
-      ctx.textAlign = "center";
-      ctx.fillText(c.hex, i * swatchW + swatchW/2, h - 16);
-    });
-    canvas.toBlob(function(blob){
-      if(!blob) return;
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement("a");
-      a.href = url;
-      a.download = "color-palette.png";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
-    }, "image/png");
+  /* ---------- controls ---------- */
+  var t = null;
+  $("colorCount").addEventListener("input", function(){
+    $("colorCountVal").textContent = $("colorCount").value;
+    clearTimeout(t); t = setTimeout(runExtract, 120);
+  });
+  $("sortSelect").addEventListener("change", refresh);
+  $("skipWhite").addEventListener("change", runExtract);
+  $("skipBlack").addEventListener("change", runExtract);
+  $("resetPicksBtn").addEventListener("click", function(){ extras = []; refresh(); status($("copyStatus"), "Picked colors removed."); });
+  $("chooseAnotherBtn").addEventListener("click", function(){
+    baseImage = null; extracted = []; extras = []; palette = [];
+    revoke(baseObjectUrl); baseObjectUrl = null; fileInput.value = "";
+    resultBlock.classList.add("hidden"); editorView.classList.add("hidden"); uploadView.classList.remove("hidden");
   });
 })();
+
 </script>
 
 <script src="/shared/shared.js" defer></script>
