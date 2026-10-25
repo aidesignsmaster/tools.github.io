@@ -3,547 +3,746 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free PDF Merger &amp; Splitter Online | Working Tools Box</title>
-<meta name="description" content="Merge multiple PDFs into one or split a PDF into separate pages online for free. Full quality, selectable text preserved, entirely in your browser.">
-<meta name="robots" content="index, follow">
+<title>PDF Merger &amp; Splitter | Working Tools Box</title>
+<meta name="description" content="Merge PDF files into one or split a PDF by page range, page count or file size. Free, private and done in your browser, with a ZIP download for the parts.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/pdf-merger-splitter/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free PDF Merger & Splitter Online | Working Tools Box">
-<meta property="og:description" content="Merge or split PDFs online for free, entirely in your browser, with full quality preserved.">
-<meta property="og:url" content="https://wtoolsbox.com/tools/pdf-merger-splitter/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free PDF Merger & Splitter Online | Working Tools Box">
-<meta name="twitter:description" content="Merge or split PDFs online for free, entirely in your browser.">
+<meta property="og:title" content="PDF Merger &amp; Splitter | Working Tools Box">
+<meta property="og:description" content="Merge PDF files into one or split a PDF by page range, page count or file size. Free, private and done in your browser, with a ZIP download for the parts.">
+<meta property="og:url" content="https://wtoolsbox.com/tools/pdf-merger-splitter/">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/pdf-merger-splitter-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="PDF Merger and Splitter banner showing PDFs being combined and split">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Merger &amp; Splitter | Working Tools Box">
+<meta name="twitter:description" content="Merge PDF files into one or split a PDF by page range, page count or file size. Free, private and done in your browser, with a ZIP download for the parts.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/pdf-merger-splitter-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"PDF Merger & Splitter",
-  "url":"https://wtoolsbox.com/tools/pdf-merger-splitter/",
-  "applicationCategory":"UtilitiesApplication",
-  "operatingSystem":"Any",
-  "description":"Merges multiple PDF files into one, or splits a PDF into a page range or individual pages, directly in the browser without rasterizing pages.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "PDF Merger & Splitter",
+ "url": "https://wtoolsbox.com/tools/pdf-merger-splitter/",
+ "description": "Merges up to 50 PDFs into one and splits a PDF by page range, number of pages or file size, entirely in the browser, with ZIP download for the parts.",
+ "applicationCategory": "MultimediaApplication",
+ "operatingSystem": "Any",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ },
+ "image": "https://wtoolsbox.com/images/tools/pdf-merger-splitter-og.jpg",
+ "isAccessibleForFree": true,
+ "inLanguage": "en",
+ "featureList": [
+  "Merge up to 50 PDFs",
+  "Drag or arrow reordering",
+  "Pick pages from each file before merging",
+  "Split by page range, page count or file size",
+  "Download parts one by one or as ZIP"
+ ],
+ "publisher": {
+  "@type": "Organization",
+  "name": "Working Tools Box",
+  "url": "https://wtoolsbox.com/"
+ }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Are my PDFs uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. Merging and splitting both happen entirely in your browser, and your files are never uploaded anywhere."}},
-    {"@type":"Question","name":"Will my PDF's text still be selectable after merging or splitting?","acceptedAnswer":{"@type":"Answer","text":"Yes. Unlike tools that redraw pages as images, this tool copies the original PDF pages directly, so text stays fully selectable and searchable."}},
-    {"@type":"Question","name":"How do I specify which pages to extract when splitting?","acceptedAnswer":{"@type":"Answer","text":"Use a page range like 1-3,5,8-10 to extract those pages into one PDF, or choose Split Every Page for a ZIP with one PDF per page."}},
-    {"@type":"Question","name":"Can I reorder PDFs before merging?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the up and down arrows on each uploaded file to change the order before merging."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
-  ]
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "Are my PDF files uploaded to a server?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. Merging and splitting happen inside your browser, so your files never leave your device. The PDF library itself is loaded from a public script host the first time you add a file."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How many files and how large can they be?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "You can merge up to 50 PDFs at once, and each file can be up to 100 MB. The splitter works on one PDF at a time, also up to 100 MB. Very large files need more memory, so older phones may be slower."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I control the order of a merge?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Choose Custom order, then drag files or use the arrow buttons. Use upload order keeps the files in the sequence you added them. You can also type pages such as 1-3, 5 next to a file to merge only those pages."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What are the ways to split a PDF?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Split by page range, such as 1-3, 5, 8-10, where each range becomes its own PDF or all ranges go into one PDF. Split every set number of pages, or split into parts that stay under a chosen file size."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Will the result look the same as the original?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Pages are copied as they are, so text, images and layout stay the same. Document-level extras such as bookmarks and some form features may not carry over, so check the result if you rely on them."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why can't I use a password-protected PDF?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Protected files cannot be read here, and the tool tells you when it meets one. Remove the password in the program that created the PDF, then add the file again."
+   }
+  }
+ ]
 }
 </script>
-
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Working Tools Box",
+   "item": "https://wtoolsbox.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "PDF Merger & Splitter",
+   "item": "https://wtoolsbox.com/tools/pdf-merger-splitter/"
+  }
+ ]
+}
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
 <style>
-  *{box-sizing:border-box}
-  :root{
-    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
-    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#6b6878;
-    --soft:#fbf9ff;--error:#c0392b;--focus:#4338ca;--radius:16px;
-    --shadow:0 4px 24px rgba(40,20,80,0.06);
-  }
-  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
-  .container{width:min(1100px,calc(100% - 32px));margin:auto}
-  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+*,*::before,*::after{box-sizing:border-box}
+:root{--ink:#1c1b26;--muted:#625f72;--line:#e6e4ee;--bg:#fbfbfd;--card:#fff;--soft:#f8f6ff;
+--purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;--ok:#15803d;--err:#b3261e;--focus:#4338ca;
+--radius:16px;--shadow:0 4px 24px rgba(40,20,80,.07)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.6}
+.wtb-page{max-width:1100px;margin:0 auto;padding:34px 18px 60px}
+.wtb-grad{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+.wtb-hero{text-align:center;margin-bottom:22px}
+.wtb-hero h1{font-size:clamp(28px,5vw,42px);line-height:1.15;margin:0 0 12px;font-weight:800;letter-spacing:-.02em;display:inline-block}
+.wtb-hero p{color:var(--muted);max-width:680px;margin:0 auto;font-size:17px}
+.wtb-notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:11px 16px;font-size:14px;margin:0 auto 18px;max-width:820px;text-align:center}
+.wtb-card{background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:24px}
+.wtb-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+[hidden]{display:none!important}
+.wtb-page input[type=file]{position:absolute;width:1px;height:1px;opacity:0;pointer-events:none}
 
-  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
-  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
-  .brand{font-weight:800;text-decoration:none;font-size:19px}
-  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
-  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
-  .nav nav a:hover{color:var(--purple)}
+.wtb-drop{border:2px dashed #d0c8f5;border-radius:var(--radius);padding:34px 18px;text-align:center;background:var(--soft);cursor:pointer;transition:border-color .15s,background .15s}
+.wtb-drop:hover,.wtb-drop.is-over{border-color:var(--purple);background:#f3eeff}
+.wtb-drop svg{width:44px;height:44px;color:var(--purple);margin:0 auto 8px;display:block}
+.wtb-drop p{margin:6px 0}
+.wtb-drop .wtb-drop-title{font-weight:700;font-size:17px}
+.wtb-hint{font-size:13px;color:var(--muted);margin:8px 0 0}
 
-  .hero{text-align:center;padding:44px 0 20px}
-  .hero h1{font-size:clamp(28px,5vw,42px);margin:0 0 12px;font-weight:800}
-  .hero p{color:var(--muted);max-width:680px;margin:auto}
+.wtb-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid transparent;border-radius:12px;padding:11px 20px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;line-height:1.2;transition:opacity .15s,transform .1s,background .15s}
+.wtb-btn:disabled{opacity:.5;cursor:not-allowed}
+.wtb-btn-primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+.wtb-btn-primary:not(:disabled):hover{opacity:.92}
+.wtb-btn-ghost{background:#fff;color:#4c1d95;border-color:#cabdf7}
+.wtb-btn-ghost:not(:disabled):hover{background:#f8f6ff}
+.wtb-btn-sm{padding:7px 12px;font-size:13px;border-radius:9px}
+.wtb-page button:focus-visible,.wtb-page select:focus-visible,.wtb-page input:focus-visible,.wtb-page [tabindex]:focus-visible,.wtb-page summary:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wtb-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:20px}
 
-  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:20px 0}
+.wtb-field{margin:14px 0 0}
+.wtb-field:first-child{margin-top:0}
+.wtb-page label,.wtb-lbl{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+.wtb-page select,.wtb-page input[type=text],.wtb-page input[type=number]{width:100%;padding:9px 10px;border:1px solid #cfd2dc;border-radius:8px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+.wtb-page input[type=range]{width:100%;accent-color:var(--purple)}
+.wtb-page input[type=color]{width:100%;height:38px;border:1px solid #cfd2dc;border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+.wtb-check{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:600;margin:14px 0 0;cursor:pointer}
+.wtb-check input{width:18px;height:18px;accent-color:var(--purple)}
+.wtb-page .wtb-check{margin-bottom:0}
+.wtb-row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 
-  .tool{margin:15px auto 40px;border:1px solid var(--border);border-radius:20px;padding:26px;background:#fff;box-shadow:var(--shadow)}
+.wtb-status{margin-top:14px;text-align:center;font-size:14px;font-weight:600;color:var(--muted);min-height:22px}
+.wtb-status.is-busy{color:var(--blue)}
+.wtb-status.is-ok{color:var(--ok)}
+.wtb-status.is-err{color:var(--err)}
+.wtb-error{margin-top:14px;background:#fff2f2;border:1px solid #ffd4d4;color:var(--err);border-radius:10px;padding:11px 14px;font-size:14px}
+.wtb-error:empty{display:none}
+.wtb-bar{height:8px;background:#ece9f7;border-radius:99px;overflow:hidden;margin:10px auto 0;max-width:420px}
+.wtb-bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--purple));transition:width .15s}
 
-  .tabs{display:flex;gap:8px;margin-bottom:22px}
-  .tab-btn{flex:1;border:1.5px solid var(--border);background:#fff;border-radius:12px;padding:12px;font-weight:800;font-size:15px;cursor:pointer;color:var(--muted)}
-  .tab-btn.active{border-color:var(--purple);color:var(--purple);background:#f8f6ff}
-  .tab-btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wtb-checker{background-color:#fafafe;background-image:linear-gradient(45deg,#e3e4ec 25%,transparent 25%),linear-gradient(-45deg,#e3e4ec 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e3e4ec 75%),linear-gradient(-45deg,transparent 75%,#e3e4ec 75%);background-size:20px 20px;background-position:0 0,0 10px,10px -10px,-10px 0}
 
-  .upload{border:2px dashed #d6cff5;border-radius:var(--radius);padding:32px 18px;text-align:center;background:var(--soft);cursor:pointer}
-  .upload:hover{border-color:var(--purple)}
-  .upload svg{width:44px;height:44px;margin:0 auto 10px;color:var(--purple)}
-  input[type=file]{display:none}
+.wtb-toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,12px);background:#111827;color:#fff;padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.2s;z-index:9999;max-width:90vw}
+.wtb-toast.show{opacity:1;transform:translate(-50%,0)}
 
-  .button{border:2px solid transparent;border-radius:12px;padding:12px 24px;font-weight:700;cursor:pointer;font-size:15px;display:inline-flex;align-items:center;gap:8px;font-family:inherit}
-  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
-  .primary:hover{opacity:.92}
-  .primary:disabled{opacity:.5;cursor:not-allowed}
-  .secondary{background:#fff;color:#4c1d95;border-color:#cabdf7}
-  .secondary:hover{background:#f8f6ff}
-  .button:focus-visible,input:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wtb-content{margin-top:44px;max-width:860px;margin-left:auto;margin-right:auto}
+.wtb-content h2{font-size:clamp(21px,3vw,27px);margin:36px 0 12px;font-weight:800;letter-spacing:-.01em;line-height:1.25;display:inline-block}
+.wtb-content h3{font-size:17px;margin:0 0 6px;line-height:1.35}
+.wtb-content p,.wtb-content li{color:#3c3a46}
+.wtb-content ol,.wtb-content ul{padding-left:22px}
+.wtb-content li{margin-bottom:6px}
+.wtb-steps{list-style:none;counter-reset:s;padding:0!important;display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.wtb-steps li{counter-increment:s;background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin:0}
+.wtb-steps li::before{content:counter(s);display:inline-flex;width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--purple));color:#fff;font-weight:700;font-size:14px;align-items:center;justify-content:center;margin-bottom:8px}
+.wtb-faq-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-bottom:12px}
+.wtb-faq-item p{margin:0}
+.wtb-related{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.wtb-related a{display:block;border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none;background:#fff;color:var(--muted);font-size:14px}
+.wtb-related a:hover{border-color:var(--purple)}
+.wtb-related b{display:block;color:var(--purple);font-size:15px;margin-bottom:2px}
 
-  .status{margin-top:14px;font-size:14px;color:var(--muted)}
-  .status.error{color:var(--error);font-weight:600}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:640px){.wtb-card{padding:16px;border-radius:16px}.wtb-drop{padding:26px 12px}}
 
-  .file-list{margin:18px 0}
-  .file-item{display:flex;align-items:center;gap:12px;padding:10px 14px;border:1px solid var(--border);border-radius:10px;margin-bottom:8px;background:#fff;flex-wrap:wrap}
-  .file-item .name{flex:1;font-weight:700;font-size:13.5px;word-break:break-all}
-  .file-item .pages{font-size:12px;color:var(--muted)}
-  .file-item .mini-btn{border:none;background:none;cursor:pointer;color:#4c1d95;font-weight:800;font-size:14px;padding:4px 6px}
-  .file-item .mini-btn:hover{color:var(--purple)}
-  .file-item .mini-btn:disabled{opacity:.3;cursor:not-allowed}
+.wtb-btn{min-height:44px}
+.wtb-btn-sm{min-height:40px;padding:8px 14px}
+.wtb-page select,.wtb-page input[type=text],.wtb-page input[type=number]{min-height:42px}
+.wtb-page input[type=range]{min-height:32px}
+.tool-figure{margin:22px 0}
+.tool-figure img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+.tool-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px;text-align:center}
+.wtb-related strong{display:block;color:var(--purple);font-size:15px;margin-bottom:2px}
+.wtb-related span{display:block}
+.wtb-tray{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:16px}
+.wtb-ti{border:2px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;display:flex;flex-direction:column}
+.wtb-ti.active{border-color:var(--purple);box-shadow:0 0 0 3px #ede9fe}
+.wtb-ti-main{border:0;background:none;padding:0;cursor:pointer;position:relative;display:block;width:100%;text-align:left;font:inherit}
+.wtb-ti-main img{display:block;width:100%;height:96px;object-fit:cover}
+.wtb-ti-badge{position:absolute;left:6px;top:6px;background:rgba(17,24,39,.8);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:99px}
+.wtb-ti-badge.ok{background:#15803d}.wtb-ti-badge.err{background:#b3261e}.wtb-ti-badge.busy{background:#2563eb}
+.wtb-ti-name{font-size:12px;padding:6px 8px 2px;color:var(--ink);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wtb-ti-sub{font-size:11px;padding:0 8px 6px;color:var(--muted)}
+.wtb-ti-btns{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line)}
+.wtb-ti-btns button{min-height:40px;border:0;background:#fff;font:inherit;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer}
+.wtb-ti-btns button+button{border-left:1px solid var(--line)}
+.wtb-ti-btns button:hover:not(:disabled){background:#f8f6ff;color:var(--purple)}
+.wtb-ti-btns button:disabled{opacity:.4;cursor:not-allowed}
 
-  .radio-group{display:flex;flex-direction:column;gap:10px;margin:14px 0 18px}
-  .radio-option{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer}
-  .radio-option.active{border-color:var(--purple);background:#f8f6ff}
-  .radio-option input{margin-top:3px}
-  .radio-option .opt-title{font-weight:700;font-size:14px}
-  .radio-option .opt-sub{font-size:12.5px;color:var(--muted);margin-top:2px}
-  input[type=text].range-input{width:100%;padding:9px 12px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;margin-top:8px}
-
-  .content{padding:0 0 55px}
-  .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
-  .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
-  .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
-  .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary::after{content:"+";float:right;color:var(--purple);font-weight:800;font-size:1.2rem}
-  .faq[open] summary::after{content:"\2212"}
-  .faq p{padding-bottom:14px;margin-top:0}
-
-  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
-  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
-  .footer-inner nav{display:flex;gap:20px}
-  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
-  .footer-inner nav a:hover{color:var(--purple)}
-
-  .hidden{display:none!important}
-  @media(max-width:640px){
-    .tool{padding:18px}
-    .file-item{gap:8px;padding:9px 10px}
-    .file-item .name{flex-basis:100%;order:-1}
-    .tabs{flex-direction:column}
-  }
+.wtb-tabs2{display:flex;gap:8px;justify-content:center;margin-bottom:18px;flex-wrap:wrap}
+.wtb-tab{min-height:44px;border:2px solid var(--line);background:#fff;border-radius:12px;padding:10px 24px;font:inherit;font-size:15px;font-weight:700;cursor:pointer;color:var(--muted)}
+.wtb-tab[aria-selected=true]{border-color:var(--purple);color:var(--purple);background:#f8f6ff}
+.wtb-list{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+.wtb-li{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff}
+.wtb-li.drag{opacity:.4}.wtb-li.over{outline:3px solid var(--purple)}
+.wtb-li .wtb-pt{width:56px;height:72px;border-radius:6px;background:#f1f5f9;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#94a3b8;font-size:11px;font-weight:700}
+.wtb-li .wtb-pt img{width:100%;height:100%;object-fit:cover;display:block}
+.wtb-li .wtb-nm{font-weight:700;font-size:14px;word-break:break-word}
+.wtb-li .wtb-sb{font-size:12px;color:var(--muted)}
+.wtb-li .wtb-pr{margin-top:6px;display:flex;align-items:center;gap:8px;font-size:12px}
+.wtb-li .wtb-pr input{max-width:170px;min-height:36px!important;padding:5px 8px!important}
+.wtb-li .wtb-bt{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.wtb-li .wtb-bt button{min-width:40px}
+.wtb-opt{border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-top:14px;background:#fff}
+.wtb-radios{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0}
+.wtb-radios label{display:flex;align-items:center;gap:8px;font-weight:600;margin:0!important;cursor:pointer;min-height:36px}
+.wtb-radios input{width:18px;height:18px;accent-color:var(--purple)}
+.wtb-out{border:1px solid #bbf7d0;background:#f0fdf4;border-radius:12px;padding:14px;margin-top:16px}
+.wtb-parts{display:grid;gap:8px;margin-top:10px}
+.wtb-part{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px solid var(--line);border-radius:10px;background:#fff;padding:8px 10px;flex-wrap:wrap}
+.wtb-part .wtb-nm{font-weight:700;font-size:13px;word-break:break-word}
+.wtb-part .wtb-sb{font-size:12px;color:var(--muted)}
+.wtb-sinfo{display:flex;gap:12px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:10px;background:#fff;margin-top:14px}
+@media (max-width:560px){.wtb-li{grid-template-columns:48px 1fr}.wtb-li .wtb-bt{grid-column:1/-1;justify-content:flex-start}}
 </style>
 </head>
-<body>
 
+<body>
 <div id="site-header"></div>
 
-<main class="container">
-  <section class="hero">
-    <h1 class="grad-text">PDF Merger &amp; Splitter</h1>
-    <p>Combine PDFs into one, or pull out just the pages you need &mdash; free, with full text quality preserved.</p>
+<main class="wtb-page">
+  <header class="wtb-hero">
+    <h1 class="wtb-grad">PDF Merger &amp; Splitter</h1>
+    <p>Merge several PDFs into one, or split a PDF by page range, page count or file size. Everything runs in your browser.</p>
+  </header>
+  <div class="wtb-notice"><b>Free and private:</b> your PDF files are processed on your device and never uploaded.</div>
+
+  <section class="wtb-card" aria-labelledby="tool-h">
+    <h2 class="wtb-sr" id="tool-h">PDF merger and splitter tool</h2>
+    <div class="wtb-tabs2" role="tablist" aria-label="Choose a tool">
+      <button type="button" class="wtb-tab" role="tab" id="tMerge" aria-controls="pMerge" aria-selected="true">Merge PDFs</button>
+      <button type="button" class="wtb-tab" role="tab" id="tSplit" aria-controls="pSplit" aria-selected="false">Split PDF</button>
+    </div>
+
+    <div class="wtb-error" id="err" role="alert"></div>
+    <div class="wtb-status" id="status" role="status" aria-live="polite"></div>
+    <div class="wtb-bar" id="barWrap" hidden><i id="bar"></i></div>
+
+    <div id="pMerge" role="tabpanel" aria-labelledby="tMerge">
+      <div class="wtb-drop" id="dropM" role="button" tabindex="0" aria-label="Add PDF files: click, drag files here, or press Enter">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3h7l5 5v13H7z M14 3v5h5 M10 14h6 M10 17h6"/></svg>
+        <p class="wtb-drop-title">Drag and drop PDF files here</p>
+        <p><button type="button" class="wtb-btn wtb-btn-primary" id="pickM">Add PDF Files</button></p>
+        <p class="wtb-hint">Up to 50 PDFs, 100 MB each. Add at least two to merge.</p>
+        <input type="file" id="fileM" multiple accept=".pdf,application/pdf" aria-label="Choose PDF files to merge">
+      </div>
+      <div id="mWork" hidden>
+        <div class="wtb-opt">
+          <span class="wtb-lbl">Merge order</span>
+          <div class="wtb-radios" role="radiogroup" aria-label="Merge order">
+            <label><input type="radio" name="order" value="upload" checked> Use upload order</label>
+            <label><input type="radio" name="order" value="custom"> Custom order</label>
+          </div>
+          <div class="wtb-actions" id="sortBtns" style="justify-content:flex-start;margin-top:8px" hidden>
+            <button type="button" class="wtb-btn wtb-btn-ghost wtb-btn-sm" id="sortAZ">Sort A to Z</button>
+            <button type="button" class="wtb-btn wtb-btn-ghost wtb-btn-sm" id="sortZA">Sort Z to A</button>
+            <button type="button" class="wtb-btn wtb-btn-ghost wtb-btn-sm" id="revBtn">Reverse</button>
+          </div>
+          <div class="wtb-field"><label for="outName">Output file name</label><input type="text" id="outName" value="merged.pdf" maxlength="80" autocomplete="off"></div>
+        </div>
+        <ul class="wtb-list" id="mList" aria-label="PDF files to merge"></ul>
+        <div class="wtb-actions">
+          <button type="button" class="wtb-btn wtb-btn-ghost" id="addMore">+ Add More PDFs</button>
+          <button type="button" class="wtb-btn wtb-btn-primary" id="mergeBtn" disabled>Merge PDFs</button>
+          <button type="button" class="wtb-btn wtb-btn-ghost" id="clearM">Clear All</button>
+        </div>
+        <div class="wtb-out" id="mOut" hidden>
+          <b id="mOutName"></b>
+          <p class="wtb-hint" id="mOutInfo" style="margin:4px 0 10px"></p>
+          <button type="button" class="wtb-btn wtb-btn-primary" id="mDl">Download Merged PDF</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="pSplit" role="tabpanel" aria-labelledby="tSplit" hidden>
+      <div class="wtb-drop" id="dropS" role="button" tabindex="0" aria-label="Choose a PDF file to split: click, drag a file here, or press Enter">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 3h7l5 5v13H7z M14 3v5h5 M10 14h6 M10 17h6"/></svg>
+        <p class="wtb-drop-title">Drag and drop a PDF here</p>
+        <p><button type="button" class="wtb-btn wtb-btn-primary" id="pickS">Select PDF</button></p>
+        <p class="wtb-hint">One PDF at a time, up to 100 MB.</p>
+        <input type="file" id="fileS" accept=".pdf,application/pdf" aria-label="Choose a PDF file to split">
+      </div>
+      <div id="sWork" hidden>
+        <div class="wtb-sinfo"><div class="wtb-pt" id="sThumb" style="width:56px;height:72px"></div><div><b id="sName"></b><div class="wtb-sb" id="sMeta"></div></div></div>
+        <div class="wtb-opt">
+          <span class="wtb-lbl">Split method</span>
+          <div class="wtb-radios" role="radiogroup" aria-label="Split method">
+            <label><input type="radio" name="method" value="range" checked> By page range</label>
+            <label><input type="radio" name="method" value="count"> By number of pages</label>
+            <label><input type="radio" name="method" value="size"> By file size</label>
+          </div>
+          <div id="mRange">
+            <div class="wtb-field"><label for="rangeIn">Page range</label><input type="text" id="rangeIn" placeholder="e.g. 1-3, 5, 8-10" autocomplete="off"></div>
+            <label class="wtb-check"><input type="checkbox" id="oneFile"> Put all ranges into one PDF</label>
+          </div>
+          <div id="mCount" hidden><div class="wtb-field"><label for="countIn">Pages in each part</label><input type="number" id="countIn" min="1" value="1"></div></div>
+          <div id="mSize" hidden>
+            <div class="wtb-field wtb-row2"><div><label for="sizeIn">Maximum size of each part</label><input type="number" id="sizeIn" min="1" value="5"></div>
+            <div><label for="sizeUnit">Unit</label><select id="sizeUnit"><option value="1048576">MB</option><option value="1024">KB</option></select></div></div>
+            <p class="wtb-hint">A single page larger than the limit stays in a part of its own.</p>
+          </div>
+          <p class="wtb-hint" style="margin-top:12px">Output format: PDF</p>
+        </div>
+        <div class="wtb-actions">
+          <button type="button" class="wtb-btn wtb-btn-primary" id="splitBtn">Split PDF</button>
+          <button type="button" class="wtb-btn wtb-btn-ghost" id="resetS">Choose Different PDF</button>
+        </div>
+        <div class="wtb-out" id="sOut" hidden>
+          <b id="sOutTitle"></b>
+          <div class="wtb-actions" style="justify-content:flex-start;margin:10px 0 0"><button type="button" class="wtb-btn wtb-btn-primary" id="sZip">Download All (ZIP)</button></div>
+          <div class="wtb-parts" id="parts"></div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <div class="notice">
-    <b>100% free, no upload:</b> Your PDFs are processed locally in your browser and never leave your device. Text stays fully selectable &mdash; pages are copied directly, never turned into images.
-  </div>
+  <article class="wtb-content">
+    <h2 class="wtb-grad">Combine or Split PDFs Without Leaving Your Browser</h2>
+    <p>With this tool you can join several PDF files into a single document, or cut one PDF into smaller files. You decide the order, the pages and the size of each part. Everything is processed on your device, so contracts, invoices and scans are not uploaded to a server.</p>
+    <figure class="tool-figure"><img src="/images/tools/pdf-merger-splitter.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Pink banner for the PDF Merger and Splitter showing several PDFs combined into one and one PDF split into parts" title="PDF Merger &amp; Splitter by Working Tools Box"><figcaption>Merge PDFs into one file or split a PDF into parts.</figcaption></figure>
+    <p>Merging lets you pick pages from each file before they are joined. Splitting works by page range, by a fixed number of pages or by a maximum file size, and the parts can be downloaded one by one or as a ZIP. Password-protected files must be unlocked first.</p>
 
-  <section class="tool" aria-label="PDF Merger and Splitter Tool">
+    <h2 class="wtb-grad">How to Merge or Split a PDF</h2>
+    <ol class="wtb-steps">
+      <li><b>Add files.</b> Select or drop your PDFs on the Merge or Split tab.</li>
+      <li><b>Set the order or method.</b> Drag files, or choose how to split.</li>
+      <li><b>Run it.</b> Press Merge PDFs or Split PDF.</li>
+      <li><b>Download.</b> Save the new PDF, or the parts as a ZIP.</li>
+    </ol>
 
-    <div class="tabs" role="tablist">
-      <button type="button" class="tab-btn active" id="mergeTabBtn" role="tab" aria-selected="true">Merge PDFs</button>
-      <button type="button" class="tab-btn" id="splitTabBtn" role="tab" aria-selected="false">Split PDF</button>
-    </div>
+    <h2 class="wtb-grad">Practical Tips</h2>
+    <ul>
+      <li>Rename the output file before merging so it is easy to find later.</li>
+      <li>Type pages next to a file, for example 2-4, to merge only part of it and skip cover pages.</li>
+      <li>Use split by file size when an email service limits attachments. Choose a limit a little below the real limit.</li>
+      <li>Use split by number of pages for chapters or batches, and page ranges when you know exactly which pages you need.</li>
+      <li>Merging many large files needs memory. If the page slows down, merge in smaller groups.</li>
+    </ul>
 
-    <!-- MERGE -->
-    <div id="mergeView">
-      <div class="upload" id="mergeDropZone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop PDF files here, or</p>
-        <input type="file" id="mergeFileInput" accept="application/pdf" multiple>
-        <button type="button" class="button primary" id="mergeSelectBtn">Add PDF Files</button>
-      </div>
-      <div id="mergeUploadStatus" class="status"></div>
+    <h2 class="wtb-grad">When This Tool Helps</h2>
+    <p>Merge a cover letter with attachments, combine scanned pages into one report, or send only the relevant pages of a long document. To shrink the result afterwards, try the <a href="/tools/pdf-compressor/">PDF compressor</a>, and to add text, shapes or page numbers use the <a href="/tools/pdf-editor/">PDF editor</a>.</p>
 
-      <div class="file-list" id="mergeFileList"></div>
-
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
-        <button type="button" class="button primary" id="mergeBtn" disabled>Merge PDFs</button>
-        <button type="button" class="button secondary" id="mergeClearBtn" hidden>Clear All</button>
-      </div>
-      <div id="mergeStatus" class="status"></div>
-    </div>
-
-    <!-- SPLIT -->
-    <div id="splitView" class="hidden">
-      <div id="splitUploadBlock">
-        <div class="upload" id="splitDropZone">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-          <p style="font-weight:700;margin:0 0 12px">Drop a PDF here, or</p>
-          <input type="file" id="splitFileInput" accept="application/pdf">
-          <button type="button" class="button primary" id="splitSelectBtn">Select PDF</button>
-        </div>
-        <div id="splitUploadStatus" class="status"></div>
-      </div>
-
-      <div id="splitOptionsBlock" class="hidden">
-        <div class="file-item" id="splitFileInfo"></div>
-
-        <div class="radio-group">
-          <label class="radio-option active" id="rangeOption">
-            <input type="radio" name="splitMode" value="range" checked>
-            <div>
-              <div class="opt-title">Extract a page range</div>
-              <div class="opt-sub">Get one PDF containing just the pages you choose.</div>
-              <input type="text" id="rangeInput" class="range-input" placeholder="e.g. 1-3,5,8-10">
-            </div>
-          </label>
-          <label class="radio-option" id="everyOption">
-            <input type="radio" name="splitMode" value="every">
-            <div>
-              <div class="opt-title">Split every page separately</div>
-              <div class="opt-sub">Get a ZIP file with one PDF per page.</div>
-            </div>
-          </label>
-        </div>
-
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <button type="button" class="button primary" id="splitBtn">Split PDF</button>
-          <button type="button" class="button secondary" id="splitClearBtn">Choose Different PDF</button>
-        </div>
-        <div id="splitStatus" class="status"></div>
-      </div>
-    </div>
-
-  </section>
-
-  <section class="content">
-    <h2 class="grad-text">Merge or Split PDFs Without Losing Quality</h2>
-    <p>This free PDF merger and splitter combines multiple PDF files into one, or pulls specific pages out of a PDF, by copying the original pages directly rather than redrawing them as images. That means text stays fully selectable and searchable, and image quality is never reduced. Reorder files before merging, or choose a page range like 1-3,5,8-10 to extract, or split a document into one file per page.</p>
-    <p>Use it to combine scanned chapters into one document, pull a specific section out of a long report, or break a multi-page PDF into individual files for sharing. Everything happens locally in your browser, so your files are never uploaded anywhere.</p>
-
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>pdf merger online free</span>
-      <span>merge pdf files online</span>
-      <span>split pdf online free</span>
-      <span>combine pdf files free</span>
-      <span>extract pages from pdf online</span>
-      <span>pdf splitter no upload</span>
-      <span>join pdf files online</span>
-      <span>free pdf merge tool</span>
-      <span>split pdf into pages online</span>
-      <span>merge multiple pdfs free</span>
-      <span>online pdf page extractor</span>
-      <span>combine pdf documents online</span>
-      <span>pdf merger no watermark</span>
-      <span>split pdf by page range</span>
-      <span>free pdf splitter online</span>
-      <span>merge pdf keep text selectable</span>
-      <span>pdf combiner online free</span>
-      <span>extract specific pdf pages</span>
-      <span>online pdf merge and split tool</span>
-      <span>free pdf page splitter</span>
-    </div>
-
-    <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Are my PDFs uploaded to a server?</summary><p>No. Merging and splitting both happen entirely in your browser, and your files are never uploaded anywhere.</p></details>
-    <details class="faq"><summary>Will my PDF's text still be selectable after merging or splitting?</summary><p>Yes. Unlike tools that redraw pages as images, this tool copies the original PDF pages directly, so text stays fully selectable and searchable.</p></details>
-    <details class="faq"><summary>How do I specify which pages to extract when splitting?</summary><p>Use a page range like 1-3,5,8-10 to extract those pages into one PDF, or choose Split Every Page for a ZIP with one PDF per page.</p></details>
-    <details class="faq"><summary>Can I reorder PDFs before merging?</summary><p>Yes. Use the up and down arrows on each uploaded file to change the order before merging.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></details>
-  </section>
+    <h2 class="wtb-grad">Frequently Asked Questions</h2>
+<div class="wtb-faq-item"><h3>Are my PDF files uploaded to a server?</h3><p>No. Merging and splitting happen inside your browser, so your files never leave your device. The PDF library itself is loaded from a public script host the first time you add a file.</p></div>
+<div class="wtb-faq-item"><h3>How many files and how large can they be?</h3><p>You can merge up to 50 PDFs at once, and each file can be up to 100 MB. The splitter works on one PDF at a time, also up to 100 MB. Very large files need more memory, so older phones may be slower.</p></div>
+<div class="wtb-faq-item"><h3>How do I control the order of a merge?</h3><p>Choose Custom order, then drag files or use the arrow buttons. Use upload order keeps the files in the sequence you added them. You can also type pages such as 1-3, 5 next to a file to merge only those pages.</p></div>
+<div class="wtb-faq-item"><h3>What are the ways to split a PDF?</h3><p>Split by page range, such as 1-3, 5, 8-10, where each range becomes its own PDF or all ranges go into one PDF. Split every set number of pages, or split into parts that stay under a chosen file size.</p></div>
+<div class="wtb-faq-item"><h3>Will the result look the same as the original?</h3><p>Pages are copied as they are, so text, images and layout stay the same. Document-level extras such as bookmarks and some form features may not carry over, so check the result if you rely on them.</p></div>
+<div class="wtb-faq-item"><h3>Why can&#x27;t I use a password-protected PDF?</h3><p>Protected files cannot be read here, and the tool tells you when it meets one. Remove the password in the program that created the PDF, then add the file again.</p></div>
+    <h2 class="wtb-grad">More Free Tools You May Need</h2>
+<div class="wtb-related"><a href="/tools/pdf-editor/"><strong>PDF Editor</strong><span>Edit, annotate and organize PDF pages</span></a><a href="/tools/pdf-compressor/"><strong>PDF Compressor</strong><span>Make PDF files smaller</span></a><a href="/tools/pdf-to-image/"><strong>PDF to Image</strong><span>Turn PDF pages into JPG, PNG, WebP or BMP</span></a><a href="/tools/image-to-pdf/"><strong>Image to PDF</strong><span>Put your images into a PDF file</span></a><a href="/tools/image-to-text-ocr/"><strong>Image to Text (OCR)</strong><span>Read text from an image</span></a><a href="/tools/image-compressor/"><strong>Image Compressor</strong><span>Reduce the file size of your images</span></a></div>
+  </article>
 </main>
 
+<div class="wtb-toast" id="toast" role="status" aria-live="polite"></div>
 <div id="site-footer"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 <script>
 (function(){
-  "use strict";
+'use strict';
 
-  var mergeTabBtn = document.getElementById("mergeTabBtn");
-  var splitTabBtn = document.getElementById("splitTabBtn");
-  var mergeView = document.getElementById("mergeView");
-  var splitView = document.getElementById("splitView");
+var $=function(id){return document.getElementById(id)||document.createElement('div')};
+function clamp(v,a,b){return v<a?a:v>b?b:v}
+function fmtSize(b){return b<1048576?Math.max(1,Math.round(b/1024))+' KB':(b/1048576).toFixed(1)+' MB'}
+function frame(){return new Promise(function(r){requestAnimationFrame(function(){setTimeout(r,12)})})}
+function toast(t){var e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(function(){e.classList.remove('show')},2400)}
+function setErr(t){var e=$('err');e.textContent=t||''}
+function setStatus(t,k){var e=$('status');e.textContent=t||'';e.className='wtb-status'+(k?' is-'+k:'')}
+function setBar(p){var w=$('barWrap');if(p==null){w.hidden=true;return}w.hidden=false;$('bar').style.width=clamp(p,0,100)+'%'}
+function decodeFile(f){
+  return (window.createImageBitmap?createImageBitmap(f):Promise.reject()).catch(function(){
+    return new Promise(function(res,rej){
+      var u=URL.createObjectURL(f),im=new Image();
+      im.onload=function(){URL.revokeObjectURL(u);res(im)};
+      im.onerror=function(){URL.revokeObjectURL(u);rej(new Error('decode'))};
+      im.src=u;
+    });
+  });
+}
+function scaledCanvas(src,sw,sh,maxSide){
+  var k=Math.min(1,maxSide/Math.max(sw,sh)),c=document.createElement('canvas');
+  c.width=Math.max(1,Math.round(sw*k));c.height=Math.max(1,Math.round(sh*k));
+  var x=c.getContext('2d');x.imageSmoothingQuality='high';x.drawImage(src,0,0,c.width,c.height);return c;
+}
+function fileToCanvas(f,maxSide){
+  return decodeFile(f).then(function(b){
+    var w=b.width||b.naturalWidth,h=b.height||b.naturalHeight;
+    if(!w||!h)throw new Error('decode');
+    var c=scaledCanvas(b,w,h,maxSide);c.srcW=w;c.srcH=h;
+    if(b.close)b.close();
+    return c;
+  });
+}
+function saveBlob(blob,name){
+  var u=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();
+  setTimeout(function(){URL.revokeObjectURL(u)},5000);
+}
+function toBlob(canvas,type,q){return new Promise(function(res){try{canvas.toBlob(function(b){res(b)},type,q)}catch(e){res(null)}})}
+function baseName(n){return String(n||'image').replace(/\.[^.]+$/,'').replace(/[^\w\- .()]+/g,'_')||'image'}
+function uniqueName(n,used){var b=n,i=2,dot=n.lastIndexOf('.'),stem=dot>0?n.slice(0,dot):n,ext=dot>0?n.slice(dot):'';while(used[n]){n=stem+'-'+(i++)+ext}used[n]=1;return n}
+function needZip(){
+  if(window.JSZip)return true;
+  toast('The ZIP tool did not load. Check your connection or download files one by one.');return false;
+}
+function wireDrop(drop,fileIn,pickBtn,onFiles,isBusy){
+  pickBtn.addEventListener('click',function(e){e.stopPropagation();if(!isBusy())fileIn.click()});
+  drop.addEventListener('click',function(e){if(isBusy())return;if(e.target===drop||e.target.tagName==='P'||e.target.closest('svg'))fileIn.click()});
+  drop.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target===drop){e.preventDefault();if(!isBusy())fileIn.click()}});
+  fileIn.addEventListener('change',function(){if(fileIn.files&&fileIn.files.length)onFiles(Array.prototype.slice.call(fileIn.files));fileIn.value=''});
+  ['dragenter','dragover'].forEach(function(t){drop.addEventListener(t,function(e){e.preventDefault();drop.classList.add('is-over')})});
+  ['dragleave','drop'].forEach(function(t){drop.addEventListener(t,function(e){e.preventDefault();drop.classList.remove('is-over')})});
+  drop.addEventListener('drop',function(e){if(isBusy())return;var f=e.dataTransfer&&e.dataTransfer.files;if(f&&f.length)onFiles(Array.prototype.slice.call(f))});
+  document.addEventListener('paste',function(e){
+    if(isBusy())return;var f=e.clipboardData&&e.clipboardData.files;
+    if(f&&f.length){var imgs=Array.prototype.filter.call(f,function(x){return /^image\//.test(x.type)});if(imgs.length)onFiles(imgs)}
+  });
+}
+window.addEventListener('error',function(e){try{setErr('Something unexpected happened. Please reload the page and try again.');console.error(e.error||e.message)}catch(x){}});
+window.addEventListener('unhandledrejection',function(e){try{console.error(e.reason)}catch(x){}});
 
-  mergeTabBtn.addEventListener("click", function(){ switchTab("merge"); });
-  splitTabBtn.addEventListener("click", function(){ switchTab("split"); });
-  function switchTab(tab){
-    var isMerge = tab === "merge";
-    mergeTabBtn.classList.toggle("active", isMerge);
-    splitTabBtn.classList.toggle("active", !isMerge);
-    mergeTabBtn.setAttribute("aria-selected", isMerge);
-    splitTabBtn.setAttribute("aria-selected", !isMerge);
-    mergeView.classList.toggle("hidden", !isMerge);
-    splitView.classList.toggle("hidden", isMerge);
+
+var PDFJS_URL='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',PDFJS_WORKER='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js',PDFLIB_URL='https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js';
+function loadScript(src){return new Promise(function(res,rej){var s=document.createElement('script');s.src=src;s.async=true;s.onload=res;s.onerror=function(){s.remove();rej(new Error('script'))};document.head.appendChild(s)})}
+var _pj=null,_pl=null;
+function getPdfJs(){
+  if(window.pdfjsLib&&window.pdfjsLib.GlobalWorkerOptions){window.pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS_WORKER;return Promise.resolve(window.pdfjsLib)}
+  if(!_pj)_pj=loadScript(PDFJS_URL).then(function(){if(!window.pdfjsLib)throw new Error('script');window.pdfjsLib.GlobalWorkerOptions.workerSrc=PDFJS_WORKER;return window.pdfjsLib}).catch(function(e){_pj=null;throw e});
+  return _pj;
+}
+function getPdfLib(){
+  if(window.PDFLib)return Promise.resolve(window.PDFLib);
+  if(!_pl)_pl=loadScript(PDFLIB_URL).then(function(){if(!window.PDFLib)throw new Error('script');return window.PDFLib}).catch(function(e){_pl=null;throw e});
+  return _pl;
+}
+function isPdfName(f){return f.type==='application/pdf'||/\.pdf$/i.test(f.name||'')}
+async function looksLikePdf(f){try{var t=await f.slice(0,1024).text();return t.indexOf('%PDF')>=0}catch(e){return false}}
+function isPasswordError(e){return !!e&&(e.name==='PasswordException'||/password|encrypt/i.test(String(e.message||'')))}
+function parseRanges(text,n){
+  var set={},out=[],t=String(text||'').replace(/\s+/g,'');
+  if(!t)return {error:'Enter page numbers like 1-3,5,8-10.'};
+  var parts=t.split(',');
+  for(var i=0;i<parts.length;i++){
+    var p=parts[i];if(!p)continue;
+    var m=/^(\d+)(?:-(\d*))?$/.exec(p);
+    if(!m)return {error:'"'+p+'" is not a valid page or range. Use a format like 1-3,5,8-10.'};
+    var a=+m[1],b=m[2]===undefined?a:(m[2]===''?n:+m[2]);
+    if(a<1||b<1||a>n||b>n)return {error:'Page numbers must be between 1 and '+n+'.'};
+    if(a>b)return {error:'The range '+a+'-'+b+' is backwards. Write the smaller page first.'};
+    for(var k=a;k<=b;k++){if(!set[k]){set[k]=1;out.push(k)}}
   }
+  return {pages:out};
+}
+function rangeList(text,n){
+  var t=String(text||'').replace(/\s+/g,''),parts=t.split(','),res=[];
+  if(!t)return {error:'Enter page numbers like 1-3,5,8-10.'};
+  for(var i=0;i<parts.length;i++){
+    if(!parts[i])continue;var r=parseRanges(parts[i],n);if(r.error)return r;res.push(r.pages);
+  }
+  return {groups:res};
+}
 
-  function fmtBytes(b){ return b < 1024*1024 ? (b/1024).toFixed(1)+" KB" : (b/(1024*1024)).toFixed(2)+" MB"; }
-  function libsReady(){ return !!(window.PDFLib && window.JSZip); }
 
-  // ============================= MERGE =============================
-  var mergeDropZone = document.getElementById("mergeDropZone");
-  var mergeFileInput = document.getElementById("mergeFileInput");
-  var mergeSelectBtn = document.getElementById("mergeSelectBtn");
-  var mergeUploadStatus = document.getElementById("mergeUploadStatus");
-  var mergeFileList = document.getElementById("mergeFileList");
-  var mergeBtn = document.getElementById("mergeBtn");
-  var mergeClearBtn = document.getElementById("mergeClearBtn");
-  var mergeStatus = document.getElementById("mergeStatus");
+var MAX_FILES=50,MAX_BYTES=100*1048576,MAX_PARTS=300;
+var S={items:[],uid:0,busy:false,order:'upload',split:null,parts:[],mergeOut:null,dragFrom:-1};
 
-  var mergeFiles = []; // { file, name, size }
+/* ---------- helpers ---------- */
+function pad(n,w){var s=String(n);while(s.length<w)s='0'+s;return s}
+function cleanPdfName(n,def){n=String(n||'').replace(/[\\/:*?"<>|]+/g,'_').trim();if(!n)n=def;if(!/\.pdf$/i.test(n))n+='.pdf';return n}
+function lock(on){S.busy=on;['mergeBtn','splitBtn','addMore','clearM','resetS','pickM','pickS'].forEach(function(i){$(i).disabled=on});if(!on)updateMergeBtn()}
+async function loadDoc(buf){
+  var L=await getPdfLib();
+  try{return await L.PDFDocument.load(buf)}catch(e){if(isPasswordError(e)){var x=new Error('password');x.name='PasswordException';throw x}throw e}
+}
+async function firstThumb(file){
+  try{
+    var lib=await getPdfJs(),doc=await lib.getDocument({data:new Uint8Array(await file.arrayBuffer())}).promise,pg=await doc.getPage(1),v=pg.getViewport({scale:1}),sc=120/v.width,vp=pg.getViewport({scale:sc}),c=document.createElement('canvas');
+    c.width=Math.round(vp.width);c.height=Math.round(vp.height);await pg.render({canvasContext:c.getContext('2d'),viewport:vp,background:'#ffffff'}).promise;doc.destroy();return c.toDataURL('image/jpeg',.7);
+  }catch(e){return ''}
+}
+async function checkFile(f,problems){
+  var nm=f.name||'file';
+  if(!f.size){problems.push(nm+' is empty.');return false}
+  if(!isPdfName(f)){problems.push(nm+' is not a PDF file.');return false}
+  if(f.size>MAX_BYTES){problems.push(nm+' is larger than 100 MB.');return false}
+  if(!(await looksLikePdf(f))){problems.push(nm+' does not look like a valid PDF.');return false}
+  return true;
+}
+function showProblems(p){if(p.length)setErr(p.slice(0,4).join(' ')+(p.length>4?' (and '+(p.length-4)+' more)':''))}
 
-  mergeSelectBtn.addEventListener("click", function(){ mergeFileInput.click(); });
-  mergeDropZone.addEventListener("click", function(e){ if(e.target === mergeDropZone || e.target.closest("svg") || e.target.tagName === "P") mergeFileInput.click(); });
-  mergeDropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
-  mergeDropZone.addEventListener("drop", function(e){ e.preventDefault(); addMergeFiles(e.dataTransfer.files); });
-  mergeFileInput.addEventListener("change", function(){ addMergeFiles(mergeFileInput.files); mergeFileInput.value = ""; });
+/* ---------- tabs ---------- */
+function showTab(n){
+  var m=n==='merge';$('tMerge').setAttribute('aria-selected',m);$('tSplit').setAttribute('aria-selected',!m);$('pMerge').hidden=!m;$('pSplit').hidden=m;setErr('');
+}
+$('tMerge').addEventListener('click',function(){showTab('merge')});$('tSplit').addEventListener('click',function(){showTab('split')});
+['tMerge','tSplit'].forEach(function(id){$(id).addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();var t=id==='tMerge'?'split':'merge';showTab(t);$(t==='merge'?'tMerge':'tSplit').focus()}})});
 
-  function addMergeFiles(fileList){
-    mergeUploadStatus.textContent = "";
-    Array.prototype.forEach.call(fileList, function(file){
-      if(file.type !== "application/pdf" && !/\.pdf$/i.test(file.name)){
-        mergeUploadStatus.textContent = "Only PDF files can be added.";
-        mergeUploadStatus.className = "status error";
-        return;
+/* ---------- MERGE: list ---------- */
+function orderedItems(){return S.order==='upload'?S.items.slice().sort(function(a,b){return a.id-b.id}):S.items}
+function updateMergeBtn(){$('mergeBtn').disabled=S.busy||S.items.length<2;$('mWork').hidden=!S.items.length;$('dropM').hidden=!!S.items.length&&false}
+function renderMerge(){
+  var ul=$('mList');ul.innerHTML='';var list=orderedItems(),custom=S.order==='custom';
+  list.forEach(function(it,i){
+    var li=document.createElement('li');li.className='wtb-li';li.draggable=custom;
+    var th=document.createElement('div');th.className='wtb-pt';
+    if(it.thumb){var im=document.createElement('img');im.alt='';im.src=it.thumb;th.appendChild(im)}else th.textContent='PDF';
+    li.appendChild(th);
+    var mid=document.createElement('div');
+    var nm=document.createElement('div');nm.className='wtb-nm';nm.textContent=(i+1)+'. '+it.name;mid.appendChild(nm);
+    var sb=document.createElement('div');sb.className='wtb-sb';sb.textContent=it.pages+' page'+(it.pages===1?'':'s')+' - '+fmtSize(it.size);mid.appendChild(sb);
+    var pr=document.createElement('div');pr.className='wtb-pr';
+    var lb=document.createElement('label');lb.textContent='Pages';lb.style.margin='0';lb.htmlFor='pr'+it.id;
+    var inp=document.createElement('input');inp.type='text';inp.id='pr'+it.id;inp.value=it.range;inp.placeholder='All pages (or 1-3, 5)';inp.setAttribute('autocomplete','off');
+    inp.addEventListener('input',function(){it.range=inp.value});pr.appendChild(lb);pr.appendChild(inp);mid.appendChild(pr);li.appendChild(mid);
+    var bt=document.createElement('div');bt.className='wtb-bt';
+    function mk(t,label,fn,dis){var b=document.createElement('button');b.type='button';b.className='wtb-btn wtb-btn-ghost wtb-btn-sm';b.textContent=t;b.setAttribute('aria-label',label);b.disabled=!!dis;b.addEventListener('click',fn);bt.appendChild(b)}
+    mk('\u25B2','Move '+it.name+' up',function(){move(i,-1)},!custom||i===0);
+    mk('\u25BC','Move '+it.name+' down',function(){move(i,1)},!custom||i===list.length-1);
+    mk('Remove','Remove '+it.name,function(){removeItem(it)});
+    li.appendChild(bt);
+    li.addEventListener('dragstart',function(e){if(!custom)return;S.dragFrom=i;li.classList.add('drag');try{e.dataTransfer.setData('text/plain','pdf');e.dataTransfer.effectAllowed='move'}catch(x){}});
+    li.addEventListener('dragend',function(){S.dragFrom=-1;li.classList.remove('drag')});
+    li.addEventListener('dragover',function(e){if(S.dragFrom>=0){e.preventDefault();li.classList.add('over')}});
+    li.addEventListener('dragleave',function(){li.classList.remove('over')});
+    li.addEventListener('drop',function(e){if(S.dragFrom>=0){e.preventDefault();e.stopPropagation();li.classList.remove('over');var f=S.dragFrom;S.dragFrom=-1;reorder(f,i)}});
+    ul.appendChild(li);
+  });
+  $('sortBtns').hidden=!custom;updateMergeBtn();
+}
+function move(i,d){var j=i+d;if(j<0||j>=S.items.length)return;var t=S.items[i];S.items[i]=S.items[j];S.items[j]=t;renderMerge()}
+function reorder(a,b){if(a===b||a<0)return;var t=S.items.splice(a,1)[0];S.items.splice(b,0,t);renderMerge()}
+function removeItem(it){var i=S.items.indexOf(it);if(i>=0)S.items.splice(i,1);S.mergeOut=null;$('mOut').hidden=true;renderMerge()}
+Array.prototype.forEach.call(document.querySelectorAll('input[name=order]'),function(r){r.addEventListener('change',function(){
+  if(!r.checked)return;
+  if(r.value==='custom'&&S.order==='upload'){S.items=S.items.slice().sort(function(a,b){return a.id-b.id})}
+  if(r.value==='upload')S.items=S.items.slice().sort(function(a,b){return a.id-b.id});
+  S.order=r.value;renderMerge();
+})});
+function sortBy(fn){S.items.sort(fn);renderMerge()}
+$('sortAZ').addEventListener('click',function(){sortBy(function(a,b){return a.name.localeCompare(b.name,undefined,{numeric:true})})});
+$('sortZA').addEventListener('click',function(){sortBy(function(a,b){return b.name.localeCompare(a.name,undefined,{numeric:true})})});
+$('revBtn').addEventListener('click',function(){S.items.reverse();renderMerge()});
+
+async function addMerge(list){
+  if(S.busy)return;setErr('');var problems=[],added=0;lock(true);
+  try{
+    for(var i=0;i<list.length;i++){
+      if(S.items.length>=MAX_FILES){problems.push('Only '+MAX_FILES+' PDFs can be merged at once.');break}
+      var f=list[i];if(!(await checkFile(f,problems)))continue;
+      setStatus('Reading '+f.name+' ('+(i+1)+' of '+list.length+')...','busy');await frame();
+      try{
+        var doc=await loadDoc(await f.arrayBuffer()),it={id:++S.uid,file:f,name:f.name||'file.pdf',size:f.size,pages:doc.getPageCount(),range:'',thumb:''};
+        if(!it.pages){problems.push(f.name+' has no pages.');continue}
+        S.items.push(it);added++;S.mergeOut=null;$('mOut').hidden=true;
+        (function(item){firstThumb(f).then(function(t){if(t){item.thumb=t;if(S.items.indexOf(item)>=0&&!S.busy)renderMerge()}})})(it);
+      }catch(e){problems.push(isPasswordError(e)?f.name+' is password protected. Unlock it first, then add it again.':f.name+' could not be read. It may be damaged.')}
+    }
+  }catch(e){problems.push('The PDF engine could not be loaded. Check your internet connection and try again.')}
+  finally{setStatus('');lock(false)}
+  renderMerge();showProblems(problems);
+  if(added)toast(added+' PDF'+(added>1?'s':'')+' added');
+}
+wireDrop($('dropM'),$('fileM'),$('pickM'),function(l){if($('pMerge').hidden){showTab('merge')}addMerge(l)},function(){return S.busy||!$('pSplit').hidden});
+$('addMore').addEventListener('click',function(){if(!S.busy)$('fileM').click()});
+$('mWork').addEventListener('dragover',function(e){if(e.dataTransfer&&Array.prototype.indexOf.call(e.dataTransfer.types||[],'Files')>=0)e.preventDefault()});
+$('mWork').addEventListener('drop',function(e){if(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files.length&&!S.busy){e.preventDefault();addMerge(Array.prototype.slice.call(e.dataTransfer.files))}});
+$('clearM').addEventListener('click',function(){if(S.busy)return;S.items=[];S.mergeOut=null;$('mOut').hidden=true;setErr('');setStatus('');renderMerge()});
+
+/* ---------- MERGE: run ---------- */
+$('mergeBtn').addEventListener('click',async function(){
+  if(S.busy)return;var list=orderedItems();setErr('');
+  if(list.length<2){setErr('Add at least two PDF files to merge.');return}
+  var plans=[];
+  for(var i=0;i<list.length;i++){
+    var it=list[i],idx=null;
+    if(it.range.trim()){var r=parseRanges(it.range,it.pages);if(r.error){setErr(it.name+': '+r.error);return}idx=r.pages.map(function(p){return p-1})}
+    plans.push({it:it,idx:idx});
+  }
+  lock(true);S.mergeOut=null;$('mOut').hidden=true;
+  try{
+    var L=await getPdfLib(),out=await L.PDFDocument.create(),total=0;
+    for(var k=0;k<plans.length;k++){
+      var pl=plans[k];setStatus('Adding '+pl.it.name+' ('+(k+1)+' of '+plans.length+')...','busy');setBar(k/plans.length*100);await frame();
+      var src=await loadDoc(await pl.it.file.arrayBuffer()),idx=pl.idx||src.getPageIndices(),pages=await out.copyPages(src,idx);
+      pages.forEach(function(p){out.addPage(p)});total+=idx.length;
+    }
+    setStatus('Saving the merged PDF...','busy');await frame();
+    var bytes=await out.save(),blob=new Blob([bytes],{type:'application/pdf'}),name=cleanPdfName($('outName').value,'merged.pdf');
+    S.mergeOut={blob:blob,name:name,pages:total};
+    $('mOutName').textContent=name;$('mOutInfo').textContent=total+' pages from '+plans.length+' files, '+fmtSize(blob.size);$('mOut').hidden=false;
+    setStatus('Merged successfully.','ok');
+    if($('mOut').scrollIntoView)$('mOut').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }catch(e){
+    console.error(e);setStatus('');
+    setErr(isPasswordError(e)?'One of the files is password protected. Unlock it first, then try again.':'The PDFs could not be merged. One of the files may be damaged, or the files are too large for this device.');
+  }finally{setBar(null);lock(false)}
+});
+$('mDl').addEventListener('click',function(){if(S.mergeOut)saveBlob(S.mergeOut.blob,S.mergeOut.name)});
+
+/* ---------- SPLIT ---------- */
+async function loadSplit(f){
+  if(S.busy)return;setErr('');var problems=[];
+  if(!(await checkFile(f,problems))){showProblems(problems);return}
+  lock(true);setStatus('Reading '+f.name+'...','busy');
+  try{
+    var buf=await f.arrayBuffer(),doc=await loadDoc(buf),n=doc.getPageCount();
+    if(!n){setErr(f.name+' has no pages.');return}
+    S.split={file:f,name:f.name||'file.pdf',size:f.size,pages:n,buf:buf};S.parts=[];$('sOut').hidden=true;
+    $('sName').textContent=S.split.name;$('sMeta').textContent=n+' page'+(n===1?'':'s')+' - '+fmtSize(f.size);
+    $('dropS').hidden=true;$('sWork').hidden=false;$('countIn').max=n;
+    var th=$('sThumb');th.textContent='PDF';firstThumb(f).then(function(t){if(t&&S.split&&S.split.file===f){th.innerHTML='';var im=new Image();im.alt='';im.src=t;th.appendChild(im)}});
+  }catch(e){setErr(isPasswordError(e)?f.name+' is password protected. Unlock it first, then add it again.':f.name+' could not be read. It may be damaged.')}
+  finally{setStatus('');lock(false)}
+}
+wireDrop($('dropS'),$('fileS'),$('pickS'),function(l){if(l[0])loadSplit(l[0])},function(){return S.busy||$('pSplit').hidden});
+$('resetS').addEventListener('click',function(){if(S.busy)return;S.split=null;S.parts=[];$('sOut').hidden=true;$('sWork').hidden=true;$('dropS').hidden=false;setErr('');setStatus('')});
+Array.prototype.forEach.call(document.querySelectorAll('input[name=method]'),function(r){r.addEventListener('change',function(){
+  if(!r.checked)return;$('mRange').hidden=r.value!=='range';$('mCount').hidden=r.value!=='count';$('mSize').hidden=r.value!=='size';
+})});
+function method(){var r=document.querySelector('input[name=method]:checked');return r?r.value:'range'}
+function label(a){return a.length===1?String(a[0]):a[0]+'-'+a[a.length-1]}
+async function build(L,src,idx0){var out=await L.PDFDocument.create(),pages=await out.copyPages(src,idx0);pages.forEach(function(p){out.addPage(p)});return out.save()}
+function renderParts(base){
+  var box=$('parts');box.innerHTML='';
+  S.parts.forEach(function(p){
+    var row=document.createElement('div');row.className='wtb-part';
+    var l=document.createElement('div');var n=document.createElement('div');n.className='wtb-nm';n.textContent=p.name;var s=document.createElement('div');s.className='wtb-sb';s.textContent=p.label+' - '+fmtSize(p.blob.size)+(p.over?' (single page larger than the limit)':'');l.appendChild(n);l.appendChild(s);row.appendChild(l);
+    var d=document.createElement('button');d.type='button';d.className='wtb-btn wtb-btn-ghost wtb-btn-sm';d.textContent='Download';d.setAttribute('aria-label','Download '+p.name);d.addEventListener('click',function(){saveBlob(p.blob,p.name)});row.appendChild(d);box.appendChild(row);
+  });
+  $('sOutTitle').textContent=S.parts.length+' file'+(S.parts.length===1?'':'s')+' created';$('sZip').hidden=S.parts.length<2;$('sOut').hidden=!S.parts.length;
+}
+$('splitBtn').addEventListener('click',async function(){
+  var sp=S.split;if(!sp||S.busy)return;setErr('');var n=sp.pages,m=method(),jobs=[],base=baseName(sp.name);
+  if(m==='range'){
+    var r=rangeList($('rangeIn').value,n);if(r.error){setErr(r.error);return}
+    if($('oneFile').checked){var seen={},all=[];r.groups.forEach(function(g){g.forEach(function(p){if(!seen[p]){seen[p]=1;all.push(p)}})});jobs.push({pages:all,name:base+'-extracted.pdf'})}
+    else r.groups.forEach(function(g){jobs.push({pages:g,name:base+'-pages-'+label(g)+'.pdf'})});
+  }else if(m==='count'){
+    var c=Math.floor(+$('countIn').value);if(!(c>=1)){setErr('Enter how many pages each part should have (1 or more).');return}
+    var parts=Math.ceil(n/c);if(parts>MAX_PARTS){setErr('That would create '+parts+' files. The limit is '+MAX_PARTS+'. Use a larger number of pages.');return}
+    var w=String(parts).length;for(var s=0;s<n;s+=c){var g=[];for(var k=s;k<Math.min(n,s+c);k++)g.push(k+1);jobs.push({pages:g,name:base+'-part-'+pad(jobs.length+1,w)+'.pdf'})}
+  }else{
+    var lim=Math.floor((+$('sizeIn').value)*(+$('sizeUnit').value));if(!(lim>=1024)){setErr('Enter a maximum size of at least 1 KB.');return}
+    jobs=null;sp.limit=lim;
+  }
+  lock(true);S.parts=[];$('sOut').hidden=true;
+  try{
+    var L=await getPdfLib(),src=await loadDoc(sp.buf);
+    if(jobs){
+      for(var i=0;i<jobs.length;i++){
+        setStatus('Creating file '+(i+1)+' of '+jobs.length+'...','busy');setBar(i/jobs.length*100);await frame();
+        var bytes=await build(L,src,jobs[i].pages.map(function(p){return p-1}));
+        S.parts.push({name:jobs[i].name,label:'Pages '+(jobs[i].pages.length>1&&jobs[i].pages[jobs[i].pages.length-1]-jobs[i].pages[0]===jobs[i].pages.length-1?label(jobs[i].pages):jobs[i].pages.length>8?jobs[i].pages.length+' pages':jobs[i].pages.join(', ')),blob:new Blob([bytes],{type:'application/pdf'})});
       }
-      mergeFiles.push({ file: file, name: file.name, size: file.size });
-    });
-    renderMergeList();
-  }
-
-  function renderMergeList(){
-    mergeFileList.innerHTML = "";
-    mergeFiles.forEach(function(entry, idx){
-      var item = document.createElement("div");
-      item.className = "file-item";
-
-      var name = document.createElement("div");
-      name.className = "name";
-      name.textContent = entry.name;
-      item.appendChild(name);
-
-      var size = document.createElement("div");
-      size.className = "pages";
-      size.textContent = fmtBytes(entry.size);
-      item.appendChild(size);
-
-      var up = document.createElement("button");
-      up.className = "mini-btn"; up.type = "button"; up.textContent = "\u2191";
-      up.disabled = idx === 0;
-      up.addEventListener("click", function(){ var t=mergeFiles[idx-1]; mergeFiles[idx-1]=mergeFiles[idx]; mergeFiles[idx]=t; renderMergeList(); });
-      item.appendChild(up);
-
-      var down = document.createElement("button");
-      down.className = "mini-btn"; down.type = "button"; down.textContent = "\u2193";
-      down.disabled = idx === mergeFiles.length - 1;
-      down.addEventListener("click", function(){ var t=mergeFiles[idx+1]; mergeFiles[idx+1]=mergeFiles[idx]; mergeFiles[idx]=t; renderMergeList(); });
-      item.appendChild(down);
-
-      var remove = document.createElement("button");
-      remove.className = "mini-btn"; remove.type = "button"; remove.textContent = "\u2715";
-      remove.addEventListener("click", function(){ mergeFiles.splice(idx,1); renderMergeList(); });
-      item.appendChild(remove);
-
-      mergeFileList.appendChild(item);
-    });
-    mergeBtn.disabled = mergeFiles.length < 2;
-    mergeClearBtn.hidden = mergeFiles.length === 0;
-  }
-
-  mergeClearBtn.addEventListener("click", function(){ mergeFiles = []; renderMergeList(); mergeStatus.textContent = ""; });
-
-  mergeBtn.addEventListener("click", async function(){
-    if(mergeFiles.length < 2) return;
-    if(!libsReady()){
-      mergeStatus.textContent = "The PDF engine did not load. Please check your connection and refresh the page.";
-      mergeStatus.className = "status error";
-      return;
-    }
-    mergeBtn.disabled = true;
-    mergeStatus.textContent = "Merging your PDFs\u2026";
-    mergeStatus.className = "status";
-
-    try{
-      var outDoc = await PDFLib.PDFDocument.create();
-      for(var i = 0; i < mergeFiles.length; i++){
-        var bytes = await mergeFiles[i].file.arrayBuffer();
-        var srcDoc = await PDFLib.PDFDocument.load(bytes, { ignoreEncryption: true });
-        var pages = await outDoc.copyPages(srcDoc, srcDoc.getPageIndices());
-        pages.forEach(function(p){ outDoc.addPage(p); });
-      }
-      var outBytes = await outDoc.save();
-      var blob = new Blob([outBytes], { type: "application/pdf" });
-      var url = URL.createObjectURL(blob);
-      var a = document.createElement("a");
-      a.href = url;
-      a.download = "merged.pdf";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
-
-      mergeStatus.textContent = "Merged " + mergeFiles.length + " PDFs successfully.";
-      mergeBtn.disabled = false;
-    }catch(err){
-      console.error(err);
-      mergeStatus.textContent = "Could not merge these PDFs. One of the files may be corrupted or password-protected.";
-      mergeStatus.className = "status error";
-      mergeBtn.disabled = false;
-    }
-  });
-
-  // ============================= SPLIT =============================
-  var splitDropZone = document.getElementById("splitDropZone");
-  var splitFileInput = document.getElementById("splitFileInput");
-  var splitSelectBtn = document.getElementById("splitSelectBtn");
-  var splitUploadStatus = document.getElementById("splitUploadStatus");
-  var splitUploadBlock = document.getElementById("splitUploadBlock");
-  var splitOptionsBlock = document.getElementById("splitOptionsBlock");
-  var splitFileInfo = document.getElementById("splitFileInfo");
-  var rangeInput = document.getElementById("rangeInput");
-  var rangeOption = document.getElementById("rangeOption");
-  var everyOption = document.getElementById("everyOption");
-  var splitBtn = document.getElementById("splitBtn");
-  var splitClearBtn = document.getElementById("splitClearBtn");
-  var splitStatus = document.getElementById("splitStatus");
-
-  var splitFile = null;
-  var splitPageCount = 0;
-
-  splitSelectBtn.addEventListener("click", function(){ splitFileInput.click(); });
-  splitDropZone.addEventListener("click", function(e){ if(e.target === splitDropZone || e.target.closest("svg") || e.target.tagName === "P") splitFileInput.click(); });
-  splitDropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
-  splitDropZone.addEventListener("drop", function(e){ e.preventDefault(); if(e.dataTransfer.files[0]) handleSplitFile(e.dataTransfer.files[0]); });
-  splitFileInput.addEventListener("change", function(){ if(splitFileInput.files[0]) handleSplitFile(splitFileInput.files[0]); });
-
-  [rangeOption, everyOption].forEach(function(opt){
-    opt.addEventListener("click", function(){
-      rangeOption.classList.toggle("active", opt === rangeOption);
-      everyOption.classList.toggle("active", opt === everyOption);
-    });
-  });
-
-  async function handleSplitFile(file){
-    splitUploadStatus.textContent = "";
-    if(file.type !== "application/pdf" && !/\.pdf$/i.test(file.name)){
-      splitUploadStatus.textContent = "Please choose a PDF file.";
-      splitUploadStatus.className = "status error";
-      return;
-    }
-    if(!libsReady()){
-      splitUploadStatus.textContent = "The PDF engine did not load. Please check your connection and refresh the page.";
-      splitUploadStatus.className = "status error";
-      return;
-    }
-    try{
-      var bytes = await file.arrayBuffer();
-      var doc = await PDFLib.PDFDocument.load(bytes, { ignoreEncryption: true });
-      splitPageCount = doc.getPageCount();
-      splitFile = file;
-
-      splitFileInfo.innerHTML = "";
-      var name = document.createElement("div"); name.className = "name"; name.textContent = file.name;
-      var pages = document.createElement("div"); pages.className = "pages"; pages.textContent = splitPageCount + " pages \u2022 " + fmtBytes(file.size);
-      splitFileInfo.appendChild(name); splitFileInfo.appendChild(pages);
-
-      splitUploadBlock.classList.add("hidden");
-      splitOptionsBlock.classList.remove("hidden");
-    }catch(err){
-      splitUploadStatus.textContent = "Could not open this PDF. It may be corrupted or password-protected.";
-      splitUploadStatus.className = "status error";
-    }
-  }
-
-  splitClearBtn.addEventListener("click", function(){
-    splitFile = null;
-    splitFileInput.value = "";
-    splitOptionsBlock.classList.add("hidden");
-    splitUploadBlock.classList.remove("hidden");
-    splitStatus.textContent = "";
-  });
-
-  function parsePageRange(rangeStr, maxPage){
-    var pages = [];
-    var parts = rangeStr.split(",");
-    for(var i = 0; i < parts.length; i++){
-      var part = parts[i].trim();
-      if(!part) continue;
-      if(part.indexOf("-") !== -1){
-        var bounds = part.split("-").map(function(s){ return parseInt(s.trim(), 10); });
-        if(bounds.length !== 2 || isNaN(bounds[0]) || isNaN(bounds[1])) throw new Error("Invalid range: " + part);
-        for(var p = bounds[0]; p <= bounds[1]; p++){
-          if(p < 1 || p > maxPage) throw new Error("Page " + p + " is out of range (1\u2013" + maxPage + ")");
-          pages.push(p - 1);
+    }else{
+      var start=0,idxAll=[];for(var q=0;q<n;q++)idxAll.push(q);
+      while(start<n){
+        if(S.parts.length>=MAX_PARTS)throw new Error('toomany');
+        setStatus('Calculating part '+(S.parts.length+1)+'...','busy');setBar(start/n*100);await frame();
+        var lo=start,hi=n-1,best=null,over=false;
+        var full=await build(L,src,idxAll.slice(start,n));
+        if(full.length<=sp.limit){best={end:n-1,bytes:full}}
+        else{
+          var one=await build(L,src,[start]);best={end:start,bytes:one};if(one.length>sp.limit)over=true;
+          if(!over){
+            var a=start+1,b=n-2;
+            while(a<=b){
+              var mid=(a+b)>>1,t=await build(L,src,idxAll.slice(start,mid+1));
+              if(t.length<=sp.limit){best={end:mid,bytes:t};a=mid+1}else b=mid-1;
+              await frame();
+            }
+          }
         }
-      } else {
-        var n = parseInt(part, 10);
-        if(isNaN(n)) throw new Error("Invalid page number: " + part);
-        if(n < 1 || n > maxPage) throw new Error("Page " + n + " is out of range (1\u2013" + maxPage + ")");
-        pages.push(n - 1);
+        var pgs=[];for(var z=start;z<=best.end;z++)pgs.push(z+1);
+        S.parts.push({name:'',label:'Pages '+label(pgs),blob:new Blob([best.bytes],{type:'application/pdf'}),over:over,first:start+1,last:best.end+1});
+        start=best.end+1;
       }
+      var wd=String(S.parts.length).length;S.parts.forEach(function(p,ix){p.name=base+'-part-'+pad(ix+1,wd)+'.pdf'});
     }
-    if(pages.length === 0) throw new Error("Please enter at least one page or range.");
-    return pages;
-  }
+    renderParts(base);setStatus('Done. '+S.parts.length+' file'+(S.parts.length===1?'':'s')+' ready to download.','ok');
+    if($('sOut').scrollIntoView)$('sOut').scrollIntoView({behavior:'smooth',block:'nearest'});
+  }catch(e){
+    console.error(e);S.parts=[];setStatus('');
+    setErr(e&&e.message==='toomany'?'That would create more than '+MAX_PARTS+' files. Choose a larger size limit.':'The PDF could not be split. The file may be damaged, or it is too large for this device.');
+  }finally{setBar(null);lock(false)}
+});
+$('sZip').addEventListener('click',async function(){
+  if(S.busy||S.parts.length<2||!needZip())return;
+  var zip=new window.JSZip(),used={};lock(true);
+  try{
+    S.parts.forEach(function(p){zip.file(uniqueName(p.name,used),p.blob)});
+    setStatus('Creating the ZIP file...','busy');
+    var z=await zip.generateAsync({type:'blob'},function(m){setBar(m.percent)});
+    saveBlob(z,baseName(S.split.name)+'-split.zip');setStatus('ZIP downloaded ('+fmtSize(z.size)+').','ok');
+  }catch(e){setErr('The ZIP file could not be created. Download the files one by one instead.');setStatus('')}
+  finally{setBar(null);lock(false)}
+});
+renderMerge();
 
-  splitBtn.addEventListener("click", async function(){
-    if(!splitFile) return;
-    var mode = document.querySelector('input[name="splitMode"]:checked').value;
-    splitStatus.style.display = "block";
-    splitStatus.className = "status";
-    splitBtn.disabled = true;
-
-    try{
-      var bytes = await splitFile.arrayBuffer();
-      var srcDoc = await PDFLib.PDFDocument.load(bytes, { ignoreEncryption: true });
-      var baseName = splitFile.name.replace(/\.pdf$/i, "");
-
-      if(mode === "range"){
-        var pageIndices = parsePageRange(rangeInput.value, splitPageCount);
-        splitStatus.textContent = "Extracting pages\u2026";
-        var outDoc = await PDFLib.PDFDocument.create();
-        var pages = await outDoc.copyPages(srcDoc, pageIndices);
-        pages.forEach(function(p){ outDoc.addPage(p); });
-        var outBytes = await outDoc.save();
-        var blob = new Blob([outBytes], { type: "application/pdf" });
-        var url = URL.createObjectURL(blob);
-        var a = document.createElement("a");
-        a.href = url; a.download = baseName + "-pages.pdf";
-        document.body.appendChild(a); a.click(); a.remove();
-        setTimeout(function(){ URL.revokeObjectURL(url); }, 4000);
-        splitStatus.textContent = "Extracted " + pageIndices.length + " page(s) successfully.";
-
-      } else {
-        splitStatus.textContent = "Splitting every page\u2026";
-        var zip = new JSZip();
-        for(var i = 0; i < splitPageCount; i++){
-          var singleDoc = await PDFLib.PDFDocument.create();
-          var copied = await singleDoc.copyPages(srcDoc, [i]);
-          singleDoc.addPage(copied[0]);
-          var singleBytes = await singleDoc.save();
-          zip.file(baseName + "-page-" + (i+1) + ".pdf", singleBytes);
-          splitStatus.textContent = "Splitting\u2026 page " + (i+1) + " of " + splitPageCount;
-        }
-        var zipBlob = await zip.generateAsync({ type: "blob" });
-        var zurl = URL.createObjectURL(zipBlob);
-        var za = document.createElement("a");
-        za.href = zurl; za.download = baseName + "-split-pages.zip";
-        document.body.appendChild(za); za.click(); za.remove();
-        setTimeout(function(){ URL.revokeObjectURL(zurl); }, 4000);
-        splitStatus.textContent = "Split into " + splitPageCount + " separate PDFs successfully.";
-      }
-      splitBtn.disabled = false;
-
-    }catch(err){
-      console.error(err);
-      splitStatus.textContent = err.message || "Could not split this PDF. Please check your page range and try again.";
-      splitStatus.className = "status error";
-      splitBtn.disabled = false;
-    }
-  });
 })();
 </script>
 <script src="/shared/shared.js" defer></script>
