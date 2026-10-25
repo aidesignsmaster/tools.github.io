@@ -3,42 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free PDF Compressor Online | Working Tools Box</title>
-<meta name="description" content="Compress and reduce PDF file size online for free, right in your browser. Choose a compression level and download a smaller PDF, no upload, no sign-up.">
-<meta name="robots" content="index, follow">
+<title>PDF Compressor: Reduce PDF Size | Working Tools Box</title>
+<meta name="description" content="Reduce PDF file size in your browser. Pick an exact KB target, a level or custom quality, and compress up to 10 PDFs at once. Free and private, no upload.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/pdf-compressor/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free PDF Compressor Online | Working Tools Box">
-<meta property="og:description" content="Compress and reduce PDF file size online for free, entirely in your browser.">
+<meta property="og:title" content="PDF Compressor: Reduce PDF Size | Working Tools Box">
+<meta property="og:description" content="Reduce PDF file size in your browser. Pick an exact KB target, a level or custom quality, and compress up to 10 PDFs at once. Free and private, no upload.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/pdf-compressor/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free PDF Compressor Online | Working Tools Box">
-<meta name="twitter:description" content="Compress and reduce PDF file size online for free, entirely in your browser.">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/pdf-compressor-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="PDF Compressor banner showing a before and after PDF, an upload box and compression settings.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PDF Compressor: Reduce PDF Size | Working Tools Box">
+<meta name="twitter:description" content="Reduce PDF file size in your browser. Pick an exact KB target, a level or custom quality, and compress up to 10 PDFs at once. Free and private, no upload.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/pdf-compressor-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"PDF Compressor",
-  "url":"https://wtoolsbox.com/tools/pdf-compressor/",
-  "applicationCategory":"UtilitiesApplication",
-  "operatingSystem":"Any",
-  "description":"Reduces PDF file size by re-rendering each page at a chosen quality level and rebuilding a smaller PDF, directly in the browser.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "PDF Compressor",
+  "url": "https://wtoolsbox.com/tools/pdf-compressor/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "description": "Reduces PDF file size in the browser by redrawing pages at a chosen quality or target size, with batch support and ZIP download. Compressed pages no longer contain selectable text.",
+  "image": "https://wtoolsbox.com/images/tools/pdf-compressor-og.jpg",
+  "featureList": [
+    "Exact KB target size",
+    "Low, medium, high, extreme and maximum levels",
+    "Custom quality and resolution",
+    "Grayscale option",
+    "Lossless structure optimization",
+    "Up to 10 PDFs at once",
+    "ZIP download for batches",
+    "Runs in the browser with no upload"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Is my PDF uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF is opened, compressed and rebuilt entirely in your browser, and the file is never uploaded anywhere."}},
-    {"@type":"Question","name":"Will my PDF's text still be selectable after compressing?","acceptedAnswer":{"@type":"Answer","text":"No. Each page is redrawn as an image to shrink file size, so the compressed PDF will look the same but its text will no longer be selectable or searchable. If you need to keep selectable text, do not use this tool on that file."}},
-    {"@type":"Question","name":"What kind of PDF compresses best with this tool?","acceptedAnswer":{"@type":"Answer","text":"Scanned documents, photo-heavy PDFs, and exported PDFs with large embedded images typically shrink the most, since most of their size is in image data."}},
-    {"@type":"Question","name":"Can I open a password-protected PDF?","acceptedAnswer":{"@type":"Answer","text":"No. Password-protected or encrypted PDFs cannot be opened by this tool. Remove the password first using your PDF viewer, then try again."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my PDF uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The PDF is opened, compressed and rebuilt in your browser. The file never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will the text in my PDF still be selectable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Except in Lossless mode, each page is redrawn as an image, so the result looks the same but its text can no longer be selected or searched."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does compression reduce quality?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, in the image levels. Stronger levels make a smaller file with lower image quality. Lossless mode keeps everything but usually saves very little."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which PDFs compress best?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Scanned documents and PDFs with large photos shrink the most, because most of their size is image data. PDFs that are mostly text may even get larger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I set an exact file size?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose Exact KB Size and a target such as 50 KB or 200 KB. The tool tries different quality and resolution settings, and tells you if the target cannot be reached."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I open a password-protected PDF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Remove the password in your PDF viewer first, then try again. Files over 50 MB or with more than 300 pages are not supported."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Working Tools Box",
+      "item": "https://wtoolsbox.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "PDF Compressor",
+      "item": "https://wtoolsbox.com/tools/pdf-compressor/"
+    }
   ]
 }
 </script>
@@ -110,8 +197,6 @@
   .content{padding:0 0 55px}
   .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
   .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
   .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
@@ -134,6 +219,87 @@
   .opt-panel select,.opt-panel input[type=number]{width:100%;padding:11px 12px;border-radius:10px;border:1.5px solid var(--border);background:#fff;font-size:.95rem;font-weight:600;color:var(--text);font-family:inherit}
   .opt-panel .chk{display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer;margin:0}
   .opt-panel .chk input{width:18px;height:18px;accent-color:var(--purple)}
+  .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .tab{border:2px solid var(--border);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--text)}
+  .tab.on{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;border-color:transparent}
+  .tab:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.upload:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .grid2{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-child{margin-top:0}
+  .panel select,.panel input[type=text],.field-text{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text)}
+  .panel input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+  .panel input[type=range]{width:100%}
+  .check{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600}
+  .check input{width:18px;height:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .upload.drag{border-color:var(--purple);background:#f3edff}
+  .tip{font-size:12px;color:var(--muted);margin:8px 0 0}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .button[disabled]{opacity:.55;cursor:not-allowed}
+  .mini{border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;padding:3px 9px;margin-top:6px;cursor:pointer;color:#4c1d95;font-family:inherit}
+  .mini:hover{background:#f8f6ff}
+  .tabmock{display:inline-flex;align-items:center;gap:8px;background:#e8e6f2;border-radius:10px 10px 0 0;padding:8px 14px;font-size:13px;max-width:100%;margin-top:8px}
+  .tabmock img{width:16px;height:16px;display:block}
+  .tabmock span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .faq-list{border-top:1px solid var(--border)}
+  .faq{border-bottom:1px solid var(--border);padding:4px 2px}
+  .faq h3{font-size:1.02rem;font-weight:700;margin:14px 0 6px}
+  .faq p{margin:0 0 14px}
+  .steps{padding-left:20px}
+  .steps li{margin-bottom:8px}
+  .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .related a{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:#7209b7;font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;text-decoration:none}
+  .related a:hover{border-color:#7209b7}
+  .imgwrap{position:relative}
+  #imgCanvas{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block;cursor:crosshair;background:#f8fafc}
+  .hoverchip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-monospace,Consolas,monospace}
+  .hoverchip i{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.15);background:#fff}
+  .palette-item{position:relative}
+  .palette-item .x{position:absolute;top:4px;right:6px;border:0;background:transparent;font-size:16px;cursor:pointer;color:#6b6878;line-height:1}
+  .palette-item .nm{font-family:inherit;font-size:11px;color:var(--muted);display:block}
+  .palette-item .ct{font-family:inherit;font-size:11px;color:#3c3a46;display:block}
+  .export-box{width:100%;min-height:130px;background:#111827;color:#e5e7eb;border-radius:10px;padding:14px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;border:0;resize:vertical}
+  .harm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .harm-row b{font-size:12px;width:130px}
+  .harm-sw{display:flex;gap:6px;flex-wrap:wrap}
+  .harm-sw button{width:56px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.12);cursor:pointer;font-size:9px;font-weight:700;font-family:ui-monospace,monospace}
+  .sub{font-weight:700;margin:22px 0 8px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}.harm-row b{width:100%}}
+
+  .tool-figure{margin:20px 0}
+  .tool-figure img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+  .tool-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .related-grid a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:#fff;text-decoration:none;color:var(--text);min-height:64px}
+  .related-grid a:hover{border-color:#7209b7}
+  .related-grid a strong{color:#7209b7}
+  .related-grid a span{font-size:13px;color:var(--muted)}
+  button,.button,.tab,select,input[type=number]{touch-action:manipulation}
+  .button,.tab,.mini{min-height:44px}
+  .mini{padding:6px 14px}
+  .palette-item .x{width:40px;height:40px;top:0;right:0}
+  .check{min-height:40px}
+  .panel select,.panel input[type=text],.panel input[type=number],.field-text,select.field-text{min-height:42px;box-sizing:border-box}
+  #imgCanvas{touch-action:manipulation}
+  img,canvas,svg{max-width:100%}
+
+  .q-list{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .q-item{display:flex;align-items:center;gap:10px;border:1px solid var(--border);border-radius:12px;padding:6px 6px 6px 14px;background:#fff}
+  .q-item .name{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+  .q-item .size{color:var(--muted);font-size:13px;white-space:nowrap}
+  .q-x{width:40px;height:40px;border:0;background:transparent;font-size:20px;cursor:pointer;color:#6b6878}
+  .strip-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 6px}
+  .res-list{display:flex;flex-direction:column;gap:10px;margin:16px 0 0;text-align:left}
+  .res-row{display:flex;align-items:center;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:#fff;flex-wrap:wrap;justify-content:space-between}
+  .res-row b{word-break:break-word}
+  .res-sub{font-size:13px;color:var(--muted)}
+  .res-note{font-size:13px;color:#92400e;font-weight:600}
+  .res-err{font-size:13px;color:var(--error);font-weight:600}
+  #customBox label{display:block;font-size:13px;font-weight:700;margin:10px 0 6px}
+  .level-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+  .notice.warn{background:#eef2ff;border:1px solid #c7d2fe;border-left:5px solid #6366f1;color:#312e81;line-height:1.55}
+  .notice.warn b{color:#3730a3}
 </style>
 </head>
 <body>
@@ -143,48 +309,53 @@
 <main class="container">
   <section class="hero">
     <h1 class="grad-text">PDF Compressor</h1>
-    <p>Reduce the file size of your PDF, free, entirely in your browser.</p>
+    <p>Reduce the file size of one or more PDFs, free, entirely in your browser.</p>
   </section>
 
   <div class="notice">
     <b>100% free, no upload:</b> Your PDF is opened and compressed locally in your browser and never leaves your device.
   </div>
-  <div class="notice warn">
-    <b>Please note:</b> This tool redraws each page as an image to shrink file size. The result will <b>no longer have selectable or searchable text</b>. It works best on scanned documents and image-heavy PDFs. If you need to keep selectable text, this is not the right tool for that file.
+  <div class="notice warn" role="note">
+    <b>Please note:</b> This tool redraws each page as an image to shrink the file, so the result has <b>no selectable or searchable text</b>. It works best on scanned documents and image-heavy PDFs. If you need to keep text you can copy, use the Lossless option (it keeps text but saves little) or keep your original file.
   </div>
+
+  <noscript><div class="notice" style="background:#fef2f2;border-color:#fecaca;color:#991b1b">This tool needs JavaScript. Please enable it in your browser to compress PDFs.</div></noscript>
 
   <section class="tool" aria-label="PDF Compressor Tool">
 
     <div id="uploadView">
-      <div class="upload" id="dropZone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop your PDF here, or</p>
-        <input type="file" id="fileInput" accept="application/pdf">
+      <div class="upload" id="dropZone" tabindex="0" role="button" aria-label="Choose PDF files or drop them here">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your PDF files here, or</p>
+        <input type="file" id="fileInput" accept="application/pdf,.pdf" multiple>
         <button type="button" class="button primary" id="selectBtn">Select PDF</button>
+        <p class="tip">Up to 10 PDFs &middot; max 50 MB each</p>
       </div>
-      <div id="uploadStatus" class="status"></div>
+      <div id="uploadStatus" class="status" role="status"></div>
     </div>
 
     <div id="optionsView" class="hidden">
-      <div class="file-row">
-        <span class="name" id="fileName"></span>
-        <span class="size" id="fileSize"></span>
+      <div class="strip-head">
+        <b id="countLabel">0 files</b>
+        <button type="button" class="mini" id="addMoreBtn">+ Add more PDFs</button>
       </div>
+      <div id="queueList" class="q-list"></div>
 
-      <p style="font-weight:700;margin:0 0 4px">Compression level</p>
+      <p style="font-weight:700;margin:16px 0 4px">Compression level</p>
       <div class="level-grid" id="levelGrid">
         <button type="button" class="level-btn active" data-level="target"><b>Exact KB Size</b><span>Set 30 / 40 / 50 KB or any size</span></button>
-        <button type="button" class="level-btn" data-level="lossless"><b>Lossless</b><span>Keeps text, no quality loss</span></button>
+        <button type="button" class="level-btn" data-level="lossless"><b>Lossless</b><span>Keeps text, saves little</span></button>
         <button type="button" class="level-btn" data-level="low"><b>Low</b><span>Best quality, smaller savings</span></button>
         <button type="button" class="level-btn" data-level="medium"><b>Medium</b><span>Balanced (recommended)</span></button>
         <button type="button" class="level-btn" data-level="high"><b>High</b><span>Smaller file, lower quality</span></button>
         <button type="button" class="level-btn" data-level="extreme"><b>Extreme</b><span>Smallest file, lowest quality</span></button>
         <button type="button" class="level-btn" data-level="max"><b>Maximum</b><span>Tiniest possible file</span></button>
+        <button type="button" class="level-btn" data-level="custom"><b>Custom</b><span>Set quality and resolution</span></button>
       </div>
 
       <div id="targetBox" class="opt-panel">
         <div class="opt-grid2">
-          <div><label for="targetPreset">Target File Size</label>
+          <div><label for="targetPreset">Target File Size (per PDF)</label>
             <select id="targetPreset">
               <option value="10">10 KB</option><option value="20">20 KB</option><option value="30">30 KB</option>
               <option value="40">40 KB</option><option value="50" selected>50 KB</option><option value="60">60 KB</option>
@@ -209,90 +380,108 @@
         </div>
         <label class="chk"><input type="checkbox" id="padChk"> Make the file exactly the target size</label>
       </div>
+
+      <div id="customBox" class="opt-panel hidden">
+        <label for="custQ">Image quality: <span id="custQVal">60</span>%</label>
+        <input type="range" id="custQ" min="10" max="95" value="60">
+        <label for="custRes">Page resolution: <span id="custResVal">100</span>%</label>
+        <input type="range" id="custRes" min="40" max="200" value="100">
+        <p class="tip">Lower numbers make a smaller file. Resolution 100% is a medium-sized page image.</p>
+      </div>
+
       <div id="grayWrap" class="opt-panel" style="margin-top:10px">
         <label class="chk"><input type="checkbox" id="grayChk"> Convert to black &amp; white (grayscale) for an even smaller file</label>
       </div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
         <button type="button" class="button primary" id="compressBtn">Compress PDF</button>
-        <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different PDF</button>
+        <button type="button" class="button secondary" id="chooseAnotherBtn">Start Over</button>
       </div>
-      <div id="compressStatus" class="status error" style="display:none"></div>
+      <div id="compressStatus" class="status error" role="alert" style="display:none"></div>
     </div>
 
     <div id="processingView" class="hidden">
-      <p style="font-weight:700;margin:0 0 8px" id="processingLabel">Compressing your PDF…</p>
+      <p style="font-weight:700;margin:0 0 8px" id="processingLabel" role="status">Compressing your PDF…</p>
       <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
     </div>
 
     <div id="resultView" class="hidden">
       <div class="result-card">
         <div class="big grad-text" id="reductionPct">0%</div>
-        <p style="margin:4px 0 0;color:var(--muted)">smaller</p>
-        <p id="resultNote" style="display:none;margin:8px 0 0;color:#92400e;font-weight:600;font-size:.9rem"></p>
-        <div class="compare">
-          <div><div class="label">Original</div><div class="value" id="originalSizeLabel">-</div></div>
-          <div><div class="label">Compressed</div><div class="value" id="compressedSizeLabel">-</div></div>
+        <p style="margin:4px 0 0;color:var(--muted)" id="summaryLine">smaller</p>
+        <div id="resultList" class="res-list"></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:14px">
+          <button type="button" class="button primary" id="downloadAllBtn">Download All (ZIP)</button>
+          <button type="button" class="button secondary" id="startOverBtn">Compress Other PDFs</button>
         </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px">
-          <button type="button" class="button primary" id="downloadBtn">Download Compressed PDF</button>
-          <button type="button" class="button secondary" id="startOverBtn">Compress Another PDF</button>
-        </div>
+        <div id="resultStatus" class="status" role="status"></div>
       </div>
     </div>
 
   </section>
 
   <section class="content">
-    <h2 class="grad-text">Reduce PDF File Size, Free</h2>
-    <p>This free PDF compressor shrinks a PDF's file size by redrawing every page at a chosen quality level and rebuilding a new, smaller PDF, entirely in your browser. It works as an online PDF size reducer and file shrinker, and is especially effective on scanned documents, photo-heavy reports, and PDFs exported with large embedded images, since most of their size lives in that image data.</p>
-    <p>Use it to shrink a PDF before emailing it, fit a file under an upload size limit, or save storage space. Because each page is redrawn as an image, the compressed file will look the same but will no longer have selectable or searchable text &mdash; if you need to keep that, do not compress that particular file.</p>
+    <h2 class="grad-text">About This PDF Compressor</h2>
+    <p>Large PDFs are hard to email and slow to upload. This PDF compressor makes a smaller copy of your file right in your browser, so the document never leaves your device. It is honest about the trade-off: to save space it redraws every page as an image, which means the compressed file has no selectable text.</p>
+    <figure class="tool-figure"><img src="/images/tools/pdf-compressor.webp" width="1200" height="800" loading="lazy" decoding="async" alt="PDF Compressor banner showing a before and after PDF, an upload box and compression settings." title="PDF Compressor by Working Tools Box"><figcaption>Upload a PDF, choose a level or target size and download the smaller file.</figcaption></figure>
+    <p>You can ask for an exact size such as 50 KB, pick a ready-made level from Low to Maximum, or set image quality and resolution yourself. A grayscale option shrinks scans further, and you can compress up to 10 PDFs in one go and download them together as a ZIP file. A Lossless option rebuilds the file structure and keeps the text, but usually saves only a little.</p>
 
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>pdf compressor online free</span>
-      <span>reduce pdf file size online</span>
-      <span>compress pdf without losing quality</span>
-      <span>free pdf size reducer</span>
-      <span>online pdf compressor no upload</span>
-      <span>shrink pdf file online</span>
-      <span>compress pdf for email</span>
-      <span>pdf file size reducer free</span>
-      <span>compress scanned pdf online</span>
-      <span>reduce pdf size for upload limit</span>
-      <span>online pdf compression tool</span>
-      <span>make pdf smaller free</span>
-      <span>compress large pdf online</span>
-      <span>pdf compressor no sign up</span>
-      <span>free pdf shrinker</span>
-      <span>compress pdf to smaller size</span>
-      <span>online pdf optimizer</span>
-      <span>reduce pdf size free tool</span>
-      <span>compress pdf document online</span>
-      <span>pdf size reducer no watermark</span>
-    </div>
+    <h2 class="grad-text">How to Compress a PDF</h2>
+    <ol class="steps">
+      <li>Select one or more PDF files, or drop them on the page. Each file can be up to 50 MB.</li>
+      <li>Choose Exact KB Size and a target, or pick a level. Use Custom to set quality and resolution yourself.</li>
+      <li>Press Compress and wait while each page is processed. Large files take longer.</li>
+      <li>Check the new size, then download each PDF or press Download All for a ZIP file.</li>
+    </ol>
+
+    <h2 class="grad-text">Tips for Smaller PDFs</h2>
+    <ul>
+      <li>Start with Medium. If the file is still too large, move to High or set a target size.</li>
+      <li>Scanned pages in black and white shrink a lot with the grayscale option turned on.</li>
+      <li>Do not use this tool on a PDF whose text you need to copy or search. Keep the original file as a backup.</li>
+      <li>Very low targets make pages blurry. Check the result before you send it, and choose a slightly larger target if it is hard to read.</li>
+    </ul>
+
+    <h2 class="grad-text">When This Tool Helps</h2>
+    <p>Use it when an upload form has a size limit, when an email attachment is rejected, or when you want to archive scanned papers without using much storage. To join several documents first, use the <a href="/tools/pdf-merger-splitter/">PDF Merger &amp; Splitter</a>, or turn pictures into a PDF with the <a href="/tools/image-to-pdf/">Image to PDF</a> tool.</p>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Is my PDF uploaded to a server?</summary><p>No. The PDF is opened, compressed and rebuilt entirely in your browser, and the file is never uploaded anywhere.</p></details>
-    <details class="faq"><summary>Will my PDF's text still be selectable after compressing?</summary><p>No. Each page is redrawn as an image to shrink file size, so the compressed PDF will look the same but its text will no longer be selectable or searchable. If you need to keep selectable text, do not use this tool on that file.</p></details>
-    <details class="faq"><summary>What kind of PDF compresses best with this tool?</summary><p>Scanned documents, photo-heavy PDFs, and exported PDFs with large embedded images typically shrink the most, since most of their size is in image data.</p></details>
-    <details class="faq"><summary>Can I open a password-protected PDF?</summary><p>No. Password-protected or encrypted PDFs cannot be opened by this tool. Remove the password first using your PDF viewer, then try again.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></details>
+    <div class="faq-list">
+      <div class="faq"><h3>Is my PDF uploaded to a server?</h3><p>No. The PDF is opened, compressed and rebuilt in your browser. The file never leaves your device.</p></div>
+      <div class="faq"><h3>Will the text in my PDF still be selectable?</h3><p>No. Except in Lossless mode, each page is redrawn as an image, so the result looks the same but its text can no longer be selected or searched.</p></div>
+      <div class="faq"><h3>Does compression reduce quality?</h3><p>Yes, in the image levels. Stronger levels make a smaller file with lower image quality. Lossless mode keeps everything but usually saves very little.</p></div>
+      <div class="faq"><h3>Which PDFs compress best?</h3><p>Scanned documents and PDFs with large photos shrink the most, because most of their size is image data. PDFs that are mostly text may even get larger.</p></div>
+      <div class="faq"><h3>Can I set an exact file size?</h3><p>Yes. Choose Exact KB Size and a target such as 50 KB or 200 KB. The tool tries different quality and resolution settings, and tells you if the target cannot be reached.</p></div>
+      <div class="faq"><h3>Can I open a password-protected PDF?</h3><p>No. Remove the password in your PDF viewer first, then try again. Files over 50 MB or with more than 300 pages are not supported.</p></div>
+    </div>
+
+    <h2 class="grad-text">More Free Tools You May Need</h2>
+    <div class="related-grid">
+      <a href="/tools/pdf-merger-splitter/"><strong>PDF Merger &amp; Splitter</strong><span>Join PDFs together or split one into parts.</span></a>
+      <a href="/tools/pdf-editor/"><strong>PDF Editor</strong><span>Edit and annotate your PDF pages.</span></a>
+      <a href="/tools/pdf-to-image/"><strong>PDF to Image</strong><span>Save PDF pages as pictures.</span></a>
+      <a href="/tools/image-to-pdf/"><strong>Image to PDF</strong><span>Combine pictures into a single PDF file.</span></a>
+      <a href="/tools/image-compressor/"><strong>Image Compressor</strong><span>Make image files smaller for faster pages.</span></a>
+      <a href="/tools/video-compressor/"><strong>Video Compressor</strong><span>Make video files smaller to share or upload.</span></a>
+    </div>
   </section>
+
 </main>
 
 <div id="site-footer"></div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" defer></script>
 <script type="module">
 (function(){
   "use strict";
-
+  var _miss = {};
+  var $ = function(id){ var e = document.getElementById(id); if(e) return e; if(!_miss[id]) _miss[id] = document.createElement("div"); return _miss[id]; };
   var BASE = "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.10.38/";
-  var pdfjsLib = null;
+  var pdfjsLib = null, engineFailed = false;
 
-  // Load PDF.js and its worker in a way that works on every browser
-  // (a cross-origin CDN worker is blocked by browsers, so we wrap it in a blob URL).
+  // PDF.js and its worker are loaded from cdnjs. A cross-origin worker is blocked by browsers,
+  // so the worker file is wrapped in a blob URL.
   var enginePromise = (async function(){
     var mod = await import(BASE + "pdf.min.mjs");
     try{
@@ -310,7 +499,7 @@
     pdfjsLib = mod;
     return mod;
   })();
-  enginePromise.catch(function(err){ console.error("PDF.js load error:", err); });
+  enginePromise.catch(function(err){ engineFailed = true; console.warn("PDF.js could not be loaded:", err && err.message); });
 
   var LEVELS = {
     low:     { scale: 1.65, quality: 0.82 },
@@ -319,83 +508,26 @@
     extreme: { scale: 0.85, quality: 0.38 },
     max:     { scale: 0.65, quality: 0.25 }
   };
-  var MAX_PAGES = 300;
-  var $ = function(id){ return document.getElementById(id); };
+  var MAX_PAGES = 300, MAX_FILES = 10, MAX_BYTES = 50 * 1024 * 1024;
 
-  var uploadView=$("uploadView"), optionsView=$("optionsView"), processingView=$("processingView"), resultView=$("resultView");
-  var dropZone=$("dropZone"), fileInput=$("fileInput"), selectBtn=$("selectBtn"), uploadStatus=$("uploadStatus");
-  var fileName=$("fileName"), fileSize=$("fileSize"), levelGrid=$("levelGrid");
-  var compressBtn=$("compressBtn"), chooseAnotherBtn=$("chooseAnotherBtn"), compressStatus=$("compressStatus");
-  var progressBar=$("progressBar"), processingLabel=$("processingLabel");
-  var reductionPct=$("reductionPct"), originalSizeLabel=$("originalSizeLabel"), compressedSizeLabel=$("compressedSizeLabel");
-  var resultNote=$("resultNote"), downloadBtn=$("downloadBtn"), startOverBtn=$("startOverBtn");
-  var targetPreset=$("targetPreset"), targetCustom=$("targetCustom"), targetUnit=$("targetUnit");
-  var strategySel=$("strategySel"), grayChk=$("grayChk"), padChk=$("padChk");
-
-  var currentFile=null, selectedLevel="target", resultBlob=null, resultObjectUrl=null;
+  var uploadView = $("uploadView"), optionsView = $("optionsView"), processingView = $("processingView"), resultView = $("resultView");
+  var progressBar = $("progressBar"), processingLabel = $("processingLabel");
+  var progPrefix = "", fileIdx = 0, fileCount = 1;
 
   function fmtBytes(b){
     if(b < 1024) return b + " B";
     if(b < 1024*1024) return (b/1024).toFixed(1) + " KB";
     return (b/(1024*1024)).toFixed(2) + " MB";
   }
-  function revoke(u){ if(u) URL.revokeObjectURL(u); }
   function yieldUI(){ return new Promise(function(r){ setTimeout(r,0); }); }
-
-  function syncOptions(){
-    var isTarget = selectedLevel === "target";
-    var isLossless = selectedLevel === "lossless";
-    $("targetBox").classList.toggle("hidden", !isTarget);
-    $("customWrap").classList.toggle("hidden", !(isTarget && targetPreset.value === "custom"));
-    $("grayWrap").classList.toggle("hidden", isLossless);
+  function setProg(pct, label){
+    var overall = ((fileIdx + Math.max(0, Math.min(100, pct)) / 100) / fileCount) * 100;
+    progressBar.style.width = Math.round(overall) + "%";
+    if(label) processingLabel.textContent = progPrefix + label;
   }
-  targetPreset.addEventListener("change", syncOptions);
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
 
-  selectBtn.addEventListener("click", function(e){ e.stopPropagation(); fileInput.click(); });
-  dropZone.addEventListener("click", function(e){
-    if(e.target === dropZone || e.target.closest("svg") || (e.target.tagName === "P" && !e.target.closest("button"))) fileInput.click();
-  });
-  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); e.dataTransfer.dropEffect = "copy"; });
-  dropZone.addEventListener("drop", function(e){
-    e.preventDefault();
-    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
-  });
-  fileInput.addEventListener("change", function(){
-    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
-  });
-
-  function handleFile(file){
-    uploadStatus.textContent = ""; uploadStatus.className = "status";
-    if(file.type !== "application/pdf" && !/\.pdf$/i.test(file.name)){
-      uploadStatus.textContent = "Please choose a PDF file."; uploadStatus.className = "status error"; return;
-    }
-    if(file.size === 0){
-      uploadStatus.textContent = "The selected PDF is empty."; uploadStatus.className = "status error"; return;
-    }
-    currentFile = file; resultBlob = null; revoke(resultObjectUrl); resultObjectUrl = null;
-    fileName.textContent = file.name; fileSize.textContent = fmtBytes(file.size);
-    uploadView.classList.add("hidden"); resultView.classList.add("hidden");
-    optionsView.classList.remove("hidden"); compressStatus.style.display = "none";
-    syncOptions();
-  }
-
-  chooseAnotherBtn.addEventListener("click", function(){
-    currentFile = null; resultBlob = null; revoke(resultObjectUrl); resultObjectUrl = null;
-    fileInput.value = ""; optionsView.classList.add("hidden"); uploadView.classList.remove("hidden");
-  });
-
-  levelGrid.querySelectorAll(".level-btn").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      levelGrid.querySelectorAll(".level-btn").forEach(function(b){ b.classList.remove("active"); });
-      btn.classList.add("active");
-      selectedLevel = btn.getAttribute("data-level");
-      syncOptions();
-    });
-  });
-
-  function showError(msg){ compressStatus.textContent = msg; compressStatus.style.display = "block"; }
-
-  /* ---------- JPEG helpers ---------- */
+/* ---------- JPEG helpers ---------- */
   function toBlob(canvas, q){
     return new Promise(function(res, rej){ canvas.toBlob(function(b){ if(b) res(b); else rej(new Error("Page is too large for your browser to process.")); }, "image/jpeg", q); });
   }
@@ -489,10 +621,6 @@
     }
     return pdf;
   }
-  function setProg(pct, label){
-    progressBar.style.width = Math.round(pct) + "%";
-    if(label) processingLabel.textContent = label;
-  }
 
   async function runLossless(buffer){
     if(!window.PDFLib) throw new Error("The PDF engine is still loading. Please wait a moment and try again.");
@@ -503,8 +631,8 @@
     return { blob: new Blob([out], { type: "application/pdf" }), note: "Text stays selectable. Lossless mode only trims structure, so for big savings pick a stronger level or a target size." };
   }
 
-  async function runLevel(buffer, level, gray){
-    var pdf = await loadDoc(buffer), n = pdf.numPages, s = LEVELS[level], pages = [];
+  async function runLevel(buffer, s, gray){
+    var pdf = await loadDoc(buffer), n = pdf.numPages, pages = [];
     for(var i = 1; i <= n; i++){
       setProg(((i-1)/n)*100, "Compressing page " + i + " of " + n + "…");
       var r = await renderPage(pdf, i, s.scale, gray);
@@ -607,68 +735,180 @@
     return { blob: blob, note: fit ? "" : "Target could not be reached. This is the smallest possible size for this PDF." };
   }
 
+  
   function getTargetBytes(){
-    var kb = targetPreset.value === "custom" ? Number(targetCustom.value) : Number(targetPreset.value);
+    var kb = $("targetPreset").value === "custom" ? Number($("targetCustom").value) : Number($("targetPreset").value);
     if(!isFinite(kb) || kb < 1) kb = 50;
-    return Math.floor(kb * (Number(targetUnit.value) || 1000));
+    return Math.floor(kb * (Number($("targetUnit").value) || 1000));
   }
 
-  compressBtn.addEventListener("click", async function(){
-    if(!currentFile) return;
-    compressStatus.style.display = "none";
-    optionsView.classList.add("hidden");
-    processingView.classList.remove("hidden");
-    setProg(0, "Compressing your PDF…");
-    compressBtn.disabled = true;
-    try{
-      var buffer = await currentFile.arrayBuffer();
-      var out;
-      if(selectedLevel === "lossless") out = await runLossless(buffer);
-      else if(selectedLevel === "target") out = await runTarget(buffer, getTargetBytes(), strategySel.value, grayChk.checked, padChk.checked);
-      else out = await runLevel(buffer, selectedLevel, grayChk.checked);
+  /* ---------- queue ---------- */
+  var queue = [], results = [], selectedLevel = "target", qid = 0, busy = false;
+  var dropZone = $("dropZone"), fileInput = $("fileInput");
+  $("selectBtn").addEventListener("click", function(e){ e.stopPropagation(); fileInput.click(); });
+  $("addMoreBtn").addEventListener("click", function(){ fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target.id !== "selectBtn") fileInput.click(); });
+  dropZone.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); fileInput.click(); } });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); dropZone.classList.add("drag"); });
+  dropZone.addEventListener("dragleave", function(){ dropZone.classList.remove("drag"); });
+  dropZone.addEventListener("drop", function(e){ e.preventDefault(); dropZone.classList.remove("drag"); if(e.dataTransfer.files) addFiles(e.dataTransfer.files); });
+  fileInput.addEventListener("change", function(){ if(fileInput.files) addFiles(fileInput.files); fileInput.value = ""; });
 
-      resultBlob = out.blob;
-      var orig = currentFile.size, comp = resultBlob.size;
-      var pct = orig > 0 ? Math.round((1 - comp/orig) * 100) : 0;
-      originalSizeLabel.textContent = fmtBytes(orig);
-      compressedSizeLabel.textContent = fmtBytes(comp);
-      reductionPct.textContent = (pct > 0 ? pct : 0) + "%";
-      var note = out.note || "";
-      if(!note && comp >= orig) note = "This PDF is already small. Try a stronger level or a target size.";
-      resultNote.textContent = note;
-      resultNote.style.display = note ? "block" : "none";
-      processingView.classList.add("hidden");
-      resultView.classList.remove("hidden");
-    }catch(err){
-      console.error("PDF compression error:", err);
-      processingView.classList.add("hidden");
-      optionsView.classList.remove("hidden");
-      var msg = "Could not compress this PDF. ";
-      if(err && (err.name === "PasswordException" || /password|encrypted/i.test(err.message || ""))){
-        msg = "This PDF is password-protected. Please remove the password first, then try again.";
-      }else if(err && err.message){ msg += err.message; }
-      else{ msg += "Please try a different file."; }
-      showError(msg);
-    }finally{ compressBtn.disabled = false; }
+  function addFiles(list){
+    if(busy) return;
+    var files = Array.prototype.slice.call(list), errs = [];
+    var room = MAX_FILES - queue.length;
+    if(files.length > room){ errs.push("You can compress up to " + MAX_FILES + " PDFs at once. Extra files were skipped."); files = files.slice(0, Math.max(0, room)); }
+    files.forEach(function(f){
+      if(f.type !== "application/pdf" && !/\.pdf$/i.test(f.name)){ errs.push((f.name || "A file") + " is not a PDF."); return; }
+      if(!f.size){ errs.push(f.name + " is empty."); return; }
+      if(f.size > MAX_BYTES){ errs.push(f.name + " is larger than 50 MB."); return; }
+      queue.push({ id: ++qid, file: f });
+    });
+    var msg = errs.join(" ");
+    if(queue.length){
+      uploadView.classList.add("hidden"); resultView.classList.add("hidden"); optionsView.classList.remove("hidden");
+      renderQueue(); syncOptions();
+      $("compressStatus").style.display = msg ? "block" : "none"; $("compressStatus").textContent = msg;
+    } else { $("uploadStatus").textContent = msg || "No PDF was added."; $("uploadStatus").className = "status error"; }
+  }
+  function renderQueue(){
+    var box = $("queueList"); box.innerHTML = "";
+    queue.forEach(function(q){
+      var row = document.createElement("div"); row.className = "q-item";
+      row.innerHTML = '<span class="name">' + esc(q.file.name) + '</span><span class="size">' + fmtBytes(q.file.size) + '</span>';
+      var x = document.createElement("button"); x.type = "button"; x.className = "q-x"; x.textContent = "\u00d7"; x.setAttribute("aria-label", "Remove " + q.file.name);
+      x.addEventListener("click", function(){
+        queue = queue.filter(function(o){ return o !== q; });
+        if(!queue.length) resetAll(); else renderQueue();
+      });
+      row.appendChild(x); box.appendChild(row);
+    });
+    $("countLabel").textContent = queue.length + (queue.length === 1 ? " file" : " files");
+    $("compressBtn").textContent = queue.length > 1 ? "Compress " + queue.length + " PDFs" : "Compress PDF";
+  }
+  function resetAll(){
+    queue = []; results = []; fileInput.value = "";
+    $("compressStatus").style.display = "none"; $("uploadStatus").textContent = ""; $("uploadStatus").className = "status";
+    optionsView.classList.add("hidden"); resultView.classList.add("hidden"); processingView.classList.add("hidden"); uploadView.classList.remove("hidden");
+  }
+  $("chooseAnotherBtn").addEventListener("click", function(){ if(!busy) resetAll(); });
+  $("startOverBtn").addEventListener("click", resetAll);
+
+  /* ---------- options ---------- */
+  function syncOptions(){
+    var t = selectedLevel === "target", l = selectedLevel === "lossless", c = selectedLevel === "custom";
+    $("targetBox").classList.toggle("hidden", !t);
+    $("customBox").classList.toggle("hidden", !c);
+    $("customWrap").classList.toggle("hidden", !(t && $("targetPreset").value === "custom"));
+    $("grayWrap").classList.toggle("hidden", l);
+  }
+  $("targetPreset").addEventListener("change", syncOptions);
+  $("custQ").addEventListener("input", function(){ $("custQVal").textContent = $("custQ").value; });
+  $("custRes").addEventListener("input", function(){ $("custResVal").textContent = $("custRes").value; });
+  $("levelGrid").querySelectorAll(".level-btn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      $("levelGrid").querySelectorAll(".level-btn").forEach(function(b){ b.classList.remove("active"); });
+      btn.classList.add("active"); selectedLevel = btn.getAttribute("data-level"); syncOptions();
+    });
+  });
+  function showError(msg){ $("compressStatus").textContent = msg; $("compressStatus").style.display = "block"; }
+
+  /* ---------- run ---------- */
+  function friendly(err){
+    var m = (err && err.message) || "";
+    if(err && (err.name === "PasswordException" || /password|encrypted/i.test(m))) return "This PDF is password-protected. Remove the password first, then try again.";
+    if(engineFailed || /dynamically imported|Failed to fetch|NetworkError|Load failed/i.test(m)) return "The PDF engine could not be loaded. Check your internet connection and try again.";
+    if(/Invalid PDF|InvalidPDF|Missing PDF|header/i.test(m) || (err && err.name === "InvalidPDFException")) return "This file could not be read. It may be damaged or not a real PDF.";
+    return m ? "Could not compress this PDF. " + m : "Could not compress this PDF. Please try a different file.";
+  }
+  async function compressOne(buffer){
+    var gray = $("grayChk").checked;
+    if(selectedLevel === "lossless") return runLossless(buffer);
+    if(selectedLevel === "target") return runTarget(buffer, getTargetBytes(), $("strategySel").value, gray, $("padChk").checked);
+    var s;
+    if(selectedLevel === "custom") s = { scale: 1.3 * (Number($("custRes").value) || 100) / 100, quality: (Number($("custQ").value) || 60) / 100 };
+    else s = LEVELS[selectedLevel];
+    return runLevel(buffer, s, gray);
+  }
+  $("compressBtn").addEventListener("click", async function(){
+    if(!queue.length || busy) return;
+    busy = true; $("compressStatus").style.display = "none"; results = [];
+    optionsView.classList.add("hidden"); processingView.classList.remove("hidden");
+    fileCount = queue.length; $("compressBtn").disabled = true;
+    for(var i = 0; i < queue.length; i++){
+      fileIdx = i; progPrefix = queue.length > 1 ? "File " + (i + 1) + " of " + queue.length + ": " : "";
+      var q = queue[i];
+      try{
+        setProg(0, "Compressing " + q.file.name + "\u2026");
+        var buffer = await q.file.arrayBuffer();
+        var out = await compressOne(buffer);
+        var note = out.note || "";
+        if(!note && out.blob.size >= q.file.size) note = "This PDF is already small, so redrawing it did not make it smaller. Keep your original file, or try a stronger level.";
+        results.push({ name: q.file.name, orig: q.file.size, blob: out.blob, note: note });
+      }catch(err){
+        console.warn("PDF compression error:", err);
+        results.push({ name: q.file.name, orig: q.file.size, error: friendly(err) });
+      }
+      await yieldUI();
+    }
+    progressBar.style.width = "100%";
+    busy = false; $("compressBtn").disabled = false;
+    processingView.classList.add("hidden");
+    var okAny = results.some(function(r){ return !r.error; });
+    if(!okAny && results.length === 1){
+      optionsView.classList.remove("hidden"); showError(results[0].error); return;
+    }
+    renderResults(); resultView.classList.remove("hidden");
   });
 
-  downloadBtn.addEventListener("click", function(){
-    if(!resultBlob) return;
-    revoke(resultObjectUrl);
-    resultObjectUrl = URL.createObjectURL(resultBlob);
-    var a = document.createElement("a");
-    a.href = resultObjectUrl;
-    a.download = (currentFile ? currentFile.name.replace(/\.pdf$/i, "") : "document") + "-compressed.pdf";
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(function(){ revoke(resultObjectUrl); resultObjectUrl = null; }, 4000);
-  });
-
-  startOverBtn.addEventListener("click", function(){
-    resultBlob = null; revoke(resultObjectUrl); resultObjectUrl = null; currentFile = null;
-    fileInput.value = ""; resultView.classList.add("hidden"); uploadView.classList.remove("hidden");
+  function renderResults(){
+    var box = $("resultList"); box.innerHTML = "";
+    var o = 0, c = 0, okCount = 0;
+    results.forEach(function(r){
+      var row = document.createElement("div"); row.className = "res-row";
+      if(r.error){
+        row.innerHTML = '<div><b>' + esc(r.name) + '</b><div class="res-err">' + esc(r.error) + '</div></div>';
+      } else {
+        okCount++; o += r.orig; c += r.blob.size;
+        var pct = Math.max(0, Math.round((1 - r.blob.size / r.orig) * 100));
+        row.innerHTML = '<div><b>' + esc(r.name) + '</b><div class="res-sub">' + fmtBytes(r.orig) + ' \u2192 ' + fmtBytes(r.blob.size) + ' &middot; ' + pct + '% smaller</div>' +
+          (r.note ? '<div class="res-note">' + esc(r.note) + '</div>' : '') + '</div>';
+        var b = document.createElement("button"); b.type = "button"; b.className = "button primary"; b.textContent = "Download";
+        b.setAttribute("aria-label", "Download compressed " + r.name);
+        b.addEventListener("click", function(){ save(r.blob, outName(r.name, null)); });
+        row.appendChild(b);
+      }
+      box.appendChild(row);
+    });
+    var total = o > 0 ? Math.max(0, Math.round((1 - c / o) * 100)) : 0;
+    $("reductionPct").textContent = total + "%";
+    $("summaryLine").textContent = okCount ? "smaller \u00b7 " + fmtBytes(o) + " \u2192 " + fmtBytes(c) : "No file could be compressed";
+    $("downloadAllBtn").classList.toggle("hidden", okCount < 2);
+    $("resultStatus").textContent = ""; $("resultStatus").className = "status";
+  }
+  function outName(name, used){
+    var base = name.replace(/\.pdf$/i, "") || "document", n = base + "-compressed.pdf", i = 2;
+    while(used && used[n]){ n = base + "-compressed-" + i + ".pdf"; i++; }
+    if(used) used[n] = 1; return n;
+  }
+  function save(blob, name){
+    var u = URL.createObjectURL(blob), a = document.createElement("a");
+    a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(u); }, 4000);
+  }
+  $("downloadAllBtn").addEventListener("click", function(){
+    var st = $("resultStatus");
+    if(typeof JSZip === "undefined"){ st.textContent = "The ZIP library could not load (check your connection). You can still download each PDF with its own button."; st.className = "status error"; return; }
+    var zip = new JSZip(), used = {};
+    results.forEach(function(r){ if(!r.error) zip.file(outName(r.name, used), r.blob); });
+    st.textContent = "Building ZIP file\u2026"; st.className = "status";
+    zip.generateAsync({ type: "blob" }).then(function(b){ save(b, "compressed-pdfs.zip"); st.textContent = "Downloaded."; },
+      function(){ st.textContent = "Could not create the ZIP file. Download the PDFs one by one instead."; st.className = "status error"; });
   });
   syncOptions();
 })();
+
 </script>
 
 <script src="/shared/shared.js" defer></script>
