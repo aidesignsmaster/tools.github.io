@@ -3,42 +3,129 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Text Diff Checker Online | Working Tools Box</title>
-<meta name="description" content="Compare two texts online for free and see exactly what changed. Word, line or character-level diff with ignore-case and ignore-whitespace options, in your browser.">
-<meta name="robots" content="index, follow">
+<title>Text Diff Checker: Compare Two Texts | Working Tools Box</title>
+<meta name="description" content="Compare two texts online and see every added and removed word, line, sentence or character. Inline, side by side and unified diff export. Free, no upload.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/text-diff-checker/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Text Diff Checker Online | Working Tools Box">
-<meta property="og:description" content="Compare two texts online for free and see exactly what changed, entirely in your browser.">
+<meta property="og:title" content="Text Diff Checker: Compare Two Texts | Working Tools Box">
+<meta property="og:description" content="Compare two texts online and see every added and removed word, line, sentence or character. Inline, side by side and unified diff export. Free, no upload.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/text-diff-checker/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Text Diff Checker Online | Working Tools Box">
-<meta name="twitter:description" content="Compare two texts online for free, entirely in your browser.">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/text-diff-checker-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Text Diff Checker banner showing two text boxes, highlighted additions and removals and comparison options.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Text Diff Checker: Compare Two Texts | Working Tools Box">
+<meta name="twitter:description" content="Compare two texts online and see every added and removed word, line, sentence or character. Inline, side by side and unified diff export. Free, no upload.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/text-diff-checker-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Text Diff Checker",
-  "url":"https://wtoolsbox.com/tools/text-diff-checker/",
-  "applicationCategory":"UtilitiesApplication",
-  "operatingSystem":"Any",
-  "description":"Compares two blocks of text and highlights additions and deletions at the word, line or character level, directly in the browser.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Text Diff Checker",
+  "url": "https://wtoolsbox.com/tools/text-diff-checker/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "description": "Compares two texts by word, line, sentence or character with inline, side-by-side and list views, change navigation, ignore options and unified diff export, in the browser.",
+  "image": "https://wtoolsbox.com/images/tools/text-diff-checker-og.jpg",
+  "featureList": [
+    "Compare by word, line, sentence or character",
+    "Inline, side by side and changes list views",
+    "Jump between changes",
+    "Ignore case, whitespace and punctuation",
+    "Load text files",
+    "Copy or download a unified diff",
+    "Download an HTML report",
+    "Runs in the browser with no upload"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Is my text uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The comparison runs entirely in your browser using JavaScript, and neither text is ever sent anywhere."}},
-    {"@type":"Question","name":"What is the difference between word, line and character diff?","acceptedAnswer":{"@type":"Answer","text":"Line diff compares whole lines, word diff compares individual words, and character diff compares every single character. Word diff is usually the most readable for prose."}},
-    {"@type":"Question","name":"Can I ignore case or whitespace differences?","acceptedAnswer":{"@type":"Answer","text":"Yes. Turn on Ignore Case or Ignore Whitespace before comparing to skip differences that are only about capitalization or spacing."}},
-    {"@type":"Question","name":"Is there a text length limit?","acceptedAnswer":{"@type":"Answer","text":"Very long texts, especially with character-level diff, can be slow to compare in the browser, so this tool works best under about 20,000 characters per side."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no limit, since all processing happens on your own device."}}
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my text uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Both texts are compared in your browser with JavaScript. Nothing is sent anywhere, so it is safe for drafts, contracts and code."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the difference between word, line, sentence and character mode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Line mode compares whole lines, which suits code and lists. Word mode compares words and is easiest to read for prose. Sentence mode finds changed sentences, and character mode finds single-letter edits such as typos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I ignore case, spacing or punctuation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tick Ignore case, Ignore extra whitespace or Ignore punctuation, and differences that are only about those things are not shown."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How large can the texts be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Each side can hold up to 500,000 characters (50,000 in Character mode). You can also load text files up to 1 MB. Texts that are completely different may be too slow to compare, and the tool will tell you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I save or share the result?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Copy the result as text, copy or download it as a unified diff that works with developer tools, or download a standalone HTML report."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which files can I load?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Plain text files such as TXT, MD, CSV, JSON, HTML, CSS, JS, XML, YAML and LOG. Word and PDF files are not supported, so copy their text and paste it in."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Working Tools Box",
+      "item": "https://wtoolsbox.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Text Diff Checker",
+      "item": "https://wtoolsbox.com/tools/text-diff-checker/"
+    }
   ]
 }
 </script>
@@ -106,8 +193,6 @@
   .content{padding:0 0 55px}
   .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
   .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
   .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
@@ -123,20 +208,125 @@
 
   @media(max-width:800px){.input-grid{grid-template-columns:1fr}}
   @media(max-width:640px){.tool{padding:18px}}
+  .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .tab{border:2px solid var(--border);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--text)}
+  .tab.on{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;border-color:transparent}
+  .tab:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.upload:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .grid2{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-child{margin-top:0}
+  .panel select,.panel input[type=text],.field-text{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text)}
+  .panel input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+  .panel input[type=range]{width:100%}
+  .check{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600}
+  .check input{width:18px;height:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .upload.drag{border-color:var(--purple);background:#f3edff}
+  .tip{font-size:12px;color:var(--muted);margin:8px 0 0}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .button[disabled]{opacity:.55;cursor:not-allowed}
+  .mini{border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;padding:3px 9px;margin-top:6px;cursor:pointer;color:#4c1d95;font-family:inherit}
+  .mini:hover{background:#f8f6ff}
+  .tabmock{display:inline-flex;align-items:center;gap:8px;background:#e8e6f2;border-radius:10px 10px 0 0;padding:8px 14px;font-size:13px;max-width:100%;margin-top:8px}
+  .tabmock img{width:16px;height:16px;display:block}
+  .tabmock span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .faq-list{border-top:1px solid var(--border)}
+  .faq{border-bottom:1px solid var(--border);padding:4px 2px}
+  .faq h3{font-size:1.02rem;font-weight:700;margin:14px 0 6px}
+  .faq p{margin:0 0 14px}
+  .steps{padding-left:20px}
+  .steps li{margin-bottom:8px}
+  .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .related a{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:#7209b7;font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;text-decoration:none}
+  .related a:hover{border-color:#7209b7}
+  .imgwrap{position:relative}
+  #imgCanvas{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block;cursor:crosshair;background:#f8fafc}
+  .hoverchip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-monospace,Consolas,monospace}
+  .hoverchip i{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.15);background:#fff}
+  .palette-item{position:relative}
+  .palette-item .x{position:absolute;top:4px;right:6px;border:0;background:transparent;font-size:16px;cursor:pointer;color:#6b6878;line-height:1}
+  .palette-item .nm{font-family:inherit;font-size:11px;color:var(--muted);display:block}
+  .palette-item .ct{font-family:inherit;font-size:11px;color:#3c3a46;display:block}
+  .export-box{width:100%;min-height:130px;background:#111827;color:#e5e7eb;border-radius:10px;padding:14px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;border:0;resize:vertical}
+  .harm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .harm-row b{font-size:12px;width:130px}
+  .harm-sw{display:flex;gap:6px;flex-wrap:wrap}
+  .harm-sw button{width:56px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.12);cursor:pointer;font-size:9px;font-weight:700;font-family:ui-monospace,monospace}
+  .sub{font-weight:700;margin:22px 0 8px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}.harm-row b{width:100%}}
+
+  .tool-figure{margin:20px 0}
+  .tool-figure img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+  .tool-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .related-grid a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:#fff;text-decoration:none;color:var(--text);min-height:64px}
+  .related-grid a:hover{border-color:#7209b7}
+  .related-grid a strong{color:#7209b7}
+  .related-grid a span{font-size:13px;color:var(--muted)}
+  button,.button,.tab,select,input[type=number]{touch-action:manipulation}
+  .button,.tab,.mini{min-height:44px}
+  .mini{padding:6px 14px}
+  .palette-item .x{width:40px;height:40px;top:0;right:0}
+  .check{min-height:40px}
+  .panel select,.panel input[type=text],.panel input[type=number],.field-text,select.field-text{min-height:42px;box-sizing:border-box}
+  #imgCanvas{touch-action:manipulation}
+  img,canvas,svg{max-width:100%}
+
+  .options-row{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:center;margin-bottom:16px}
+  .options-row label{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600}
+  .options-row select{min-height:42px;padding:6px 10px;border:1px solid #d1d5db;border-radius:8px;font-family:inherit;font-size:14px;margin-left:6px;background:#fff;color:var(--text)}
+  .chk input{width:18px;height:18px}
+  .chk{min-height:40px}
+  .input-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .side{border-radius:12px;padding:2px}
+  .side.drag{outline:3px dashed var(--purple);outline-offset:2px}
+  .side-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:6px}
+  .side-head label{font-weight:700;font-size:14px}
+  .input-grid textarea{width:100%;min-height:230px;box-sizing:border-box;padding:12px;border:1px solid #d1d5db;border-radius:10px;font-family:ui-monospace,Consolas,monospace;font-size:14px;line-height:1.5;resize:vertical;color:var(--text);background:#fff}
+  .char-count{font-size:12px;color:var(--muted);margin-top:4px}
+  .toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin:6px 0 12px}
+  .toolbar .inl{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+  .toolbar select{min-height:42px;padding:6px 10px;border:1px solid #d1d5db;border-radius:8px;font-family:inherit;background:#fff;color:var(--text)}
+  .navbox{display:inline-flex;align-items:center;gap:8px}
+  .nav-label{font-size:13px;font-weight:700;min-width:96px;text-align:center}
+  .diff-wrap{max-height:640px;overflow:auto;border-radius:12px}
+  .diff-output .cur,.cur{outline:3px solid #7c3aed;outline-offset:1px;border-radius:3px}
+  .sbs-flow{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .sbs-flow .pane{max-height:520px;overflow:auto;min-height:120px}
+  .pane-title{font-family:inherit;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:6px;text-transform:uppercase;letter-spacing:.04em}
+  .sbs-table-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;background:#fff}
+  table.sbs{border-collapse:collapse;width:100%;font-family:ui-monospace,Consolas,monospace;font-size:13px;table-layout:fixed;min-width:560px}
+  table.sbs th{font-family:inherit;font-size:12px;text-align:left;padding:8px;background:#f8f6ff;position:sticky;top:0}
+  table.sbs td{padding:3px 8px;vertical-align:top;white-space:pre-wrap;word-break:break-word;border-top:1px solid #f1f1f5}
+  table.sbs th.ln,table.sbs td.ln{width:42px;text-align:right;color:#9ca3af;user-select:none}
+  .cell-del{background:var(--del-bg)}.cell-add{background:var(--add-bg)}
+  .w-del{background:#fca5a5;border-radius:3px}.w-add{background:#6ee7b7;border-radius:3px}
+  .chg-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .chg-list li{border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:#fff;font-family:ui-monospace,Consolas,monospace;font-size:13.5px;white-space:pre-wrap;word-break:break-word}
+  .chg-kind{display:inline-block;font-family:system-ui,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#6b6878;margin-bottom:6px}
+  .chg-del{background:var(--del-bg);color:var(--del-text);border-radius:6px;padding:4px 8px;margin-bottom:4px}
+  .chg-add{background:var(--add-bg);color:var(--add-text);border-radius:6px;padding:4px 8px}
+  .cb ins,.cb .cell-add,.cb .w-add,.cb .chg-add{background:#dbeafe !important;color:#1e3a8a !important}
+  .cb del,.cb .cell-del,.cb .w-del,.cb .chg-del{background:#ffedd5 !important;color:#9a3412 !important}
+  @media(max-width:800px){.input-grid,.sbs-flow{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div id="site-header"></div>
+
 <main class="container">
   <section class="hero">
     <h1 class="grad-text">Text Diff Checker</h1>
-    <p>Compare two texts and see exactly what was added, removed or changed &mdash; free, in your browser.</p>
+    <p>Compare two texts and see exactly what was added, removed or changed &mdash; inline, side by side or as a list. Free, in your browser.</p>
   </section>
 
   <div class="notice">
     <b>100% free, no upload:</b> Both texts are compared locally in your browser and never leave your device.
   </div>
+
+  <noscript><div class="notice" style="background:#fef2f2;border-color:#fecaca;color:#991b1b">This tool needs JavaScript. Please enable it in your browser to compare texts.</div></noscript>
 
   <section class="tool" aria-label="Text Diff Checker Tool">
 
@@ -145,274 +335,499 @@
         <select id="modeSelect">
           <option value="word" selected>Word</option>
           <option value="line">Line</option>
+          <option value="sentence">Sentence</option>
           <option value="char">Character</option>
         </select>
       </label>
-      <label><input type="checkbox" id="ignoreCase"> Ignore case</label>
-      <label><input type="checkbox" id="ignoreWhitespace"> Ignore extra whitespace</label>
+      <label class="chk"><input type="checkbox" id="ignoreCase"> Ignore case</label>
+      <label class="chk"><input type="checkbox" id="ignoreWhitespace"> Ignore extra whitespace</label>
+      <label class="chk"><input type="checkbox" id="ignorePunct"> Ignore punctuation</label>
+      <label class="chk"><input type="checkbox" id="liveChk"> Compare as I type</label>
     </div>
 
     <div class="input-grid">
-      <div>
-        <label for="textA">Original text</label>
-        <textarea id="textA" placeholder="Paste the original text here&hellip;"></textarea>
+      <div class="side" id="sideA">
+        <div class="side-head"><label for="textA">Original text</label>
+          <button type="button" class="mini" id="loadA">Load file</button><input type="file" id="fileA" class="hidden" accept=".txt,.md,.csv,.json,.js,.ts,.html,.css,.xml,.yml,.yaml,.log,.py,.java,.c,.cpp,.php,.sql,text/*"></div>
+        <textarea id="textA" placeholder="Paste the original text here, or drop a text file&hellip;" spellcheck="false"></textarea>
         <div class="char-count" id="countA">0 characters</div>
       </div>
-      <div>
-        <label for="textB">Changed text</label>
-        <textarea id="textB" placeholder="Paste the changed text here&hellip;"></textarea>
+      <div class="side" id="sideB">
+        <div class="side-head"><label for="textB">Changed text</label>
+          <button type="button" class="mini" id="loadB">Load file</button><input type="file" id="fileB" class="hidden" accept=".txt,.md,.csv,.json,.js,.ts,.html,.css,.xml,.yml,.yaml,.log,.py,.java,.c,.cpp,.php,.sql,text/*"></div>
+        <textarea id="textB" placeholder="Paste the changed text here, or drop a text file&hellip;" spellcheck="false"></textarea>
         <div class="char-count" id="countB">0 characters</div>
       </div>
     </div>
 
-    <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <div class="btn-row" style="margin:14px 0 0">
       <button type="button" class="button primary" id="compareBtn">Compare Texts</button>
       <button type="button" class="button secondary" id="swapBtn">Swap Texts</button>
+      <button type="button" class="button secondary" id="exampleBtn">Use Example</button>
       <button type="button" class="button secondary" id="clearBtn">Clear All</button>
     </div>
-    <div id="diffStatus" class="status error" style="display:none"></div>
+    <div id="diffStatus" class="status" role="status" aria-live="polite"></div>
 
     <div id="resultBlock" class="hidden" style="margin-top:22px">
       <div class="stats-row">
         <span class="stat-pill add" id="addCount">0 additions</span>
         <span class="stat-pill del" id="delCount">0 removals</span>
         <span class="stat-pill neutral" id="sameCount">0 unchanged</span>
+        <span class="stat-pill neutral" id="simPct">100% similar</span>
       </div>
-      <div class="diff-output" id="diffOutput"></div>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+
+      <div class="toolbar">
+        <label for="viewSelect" class="inl">View
+          <select id="viewSelect"><option value="inline">Inline</option><option value="side">Side by side</option><option value="list">Changes list</option></select></label>
+        <div class="navbox" role="group" aria-label="Jump between changes">
+          <button type="button" class="mini" id="prevBtn">&larr; Previous</button>
+          <span id="navLabel" class="nav-label">0 changes</span>
+          <button type="button" class="mini" id="nextBtn">Next &rarr;</button>
+        </div>
+        <label class="chk"><input type="checkbox" id="cbChk"> Colorblind-friendly colors</label>
+      </div>
+
+      <div class="diff-wrap" id="diffOutput" tabindex="0" aria-label="Comparison result"></div>
+
+      <div class="btn-row">
         <button type="button" class="button secondary" id="copyBtn">Copy Result as Text</button>
+        <button type="button" class="button secondary" id="copyPatchBtn">Copy as Unified Diff</button>
+        <button type="button" class="button secondary" id="dlPatchBtn">Download .diff</button>
+        <button type="button" class="button secondary" id="dlHtmlBtn">Download HTML Report</button>
       </div>
+      <div id="actionStatus" class="status" role="status" aria-live="polite"></div>
     </div>
 
   </section>
 
   <section class="content">
-    <h2 class="grad-text">Compare Two Texts and Spot Every Change</h2>
-    <p>This free text diff checker compares two blocks of text and highlights exactly what was added, removed or left unchanged, with green for additions and red strikethrough for removals. Choose whether to compare word by word, line by line, or character by character, and optionally ignore case or extra whitespace so only meaningful differences are shown.</p>
-    <p>Use it to review edits to an article, compare two versions of code or config, check changes between contract drafts, or spot differences between two lists. Everything runs locally in your browser using JavaScript, so neither text is ever uploaded anywhere.</p>
+    <h2 class="grad-text">About This Text Diff Checker</h2>
+    <p>A diff checker shows what changed between two versions of a text. Paste the original on the left and the changed text on the right, press Compare, and every added and removed piece is highlighted. The comparison runs inside your browser, so your drafts, contracts and code are never uploaded.</p>
+    <figure class="tool-figure"><img src="/images/tools/text-diff-checker.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Text Diff Checker banner showing two text boxes, highlighted additions and removals and comparison options." title="Text Diff Checker by Working Tools Box"><figcaption>Paste two versions, press Compare and see every change highlighted.</figcaption></figure>
+    <p>You can compare word by word, line by line, sentence by sentence or character by character, and ignore differences in case, spacing or punctuation. View the result inline, side by side with line numbers, or as a short list of changes, jump from one change to the next, and export it as a unified diff or an HTML report.</p>
 
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>text diff checker online free</span>
-      <span>compare two texts online</span>
-      <span>online text comparison tool</span>
-      <span>diff checker no upload</span>
-      <span>word diff tool online</span>
-      <span>line by line text compare</span>
-      <span>character diff checker free</span>
-      <span>compare paragraphs online</span>
-      <span>text difference highlighter</span>
-      <span>free diff tool no sign up</span>
-      <span>compare document versions online</span>
-      <span>online text compare tool free</span>
-      <span>find differences between texts</span>
-      <span>diff checker for writers</span>
-      <span>ignore case text compare</span>
-      <span>compare two paragraphs free</span>
-      <span>text version comparison online</span>
-      <span>highlight text changes online</span>
-      <span>online diff viewer free</span>
-      <span>compare edits between drafts</span>
-    </div>
+    <h2 class="grad-text">How to Compare Two Texts</h2>
+    <ol class="steps">
+      <li>Paste your original text on the left and the changed text on the right, or press Load file to open a text file.</li>
+      <li>Choose how to compare. Word is best for writing, Line for code and lists, and Character for spotting typos.</li>
+      <li>Press Compare Texts, or tick Compare as I type for instant results. Switch between Inline, Side by side and Changes list.</li>
+      <li>Use Previous and Next to jump between changes, then copy the result or download it as a diff or HTML report.</li>
+    </ol>
+
+    <h2 class="grad-text">Tips for Clear Results</h2>
+    <ul>
+      <li>Use Line mode for code, config files and lists. It keeps each line together and shows small edits inside changed lines in the side by side view.</li>
+      <li>Turn on Ignore extra whitespace when texts were copied from different programs and spacing does not match.</li>
+      <li>For long documents, compare by Line or Sentence first, then switch to Word mode on the part that changed.</li>
+      <li>Check the similarity score. A low percentage means the two texts are mostly different, so a diff may be less useful than reading them separately.</li>
+    </ul>
+
+    <h2 class="grad-text">When This Tool Helps</h2>
+    <p>Use it to check what an editor changed in your article, compare two drafts of a contract, find the difference between two versions of a config file, or spot what changed in a copied list. If your text is stuck inside a picture, get it out first with the <a href="/tools/image-to-text-ocr/">Image to Text (OCR)</a> tool.</p>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Is my text uploaded to a server?</summary><p>No. The comparison runs entirely in your browser using JavaScript, and neither text is ever sent anywhere.</p></details>
-    <details class="faq"><summary>What is the difference between word, line and character diff?</summary><p>Line diff compares whole lines, word diff compares individual words, and character diff compares every single character. Word diff is usually the most readable for prose.</p></details>
-    <details class="faq"><summary>Can I ignore case or whitespace differences?</summary><p>Yes. Turn on Ignore Case or Ignore Whitespace before comparing to skip differences that are only about capitalization or spacing.</p></details>
-    <details class="faq"><summary>Is there a text length limit?</summary><p>Very long texts, especially with character-level diff, can be slow to compare in the browser, so this tool works best under about 20,000 characters per side.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no limit, since all processing happens on your own device.</p></details>
+    <div class="faq-list">
+      <div class="faq"><h3>Is my text uploaded to a server?</h3><p>No. Both texts are compared in your browser with JavaScript. Nothing is sent anywhere, so it is safe for drafts, contracts and code.</p></div>
+      <div class="faq"><h3>What is the difference between word, line, sentence and character mode?</h3><p>Line mode compares whole lines, which suits code and lists. Word mode compares words and is easiest to read for prose. Sentence mode finds changed sentences, and character mode finds single-letter edits such as typos.</p></div>
+      <div class="faq"><h3>Can I ignore case, spacing or punctuation?</h3><p>Yes. Tick Ignore case, Ignore extra whitespace or Ignore punctuation, and differences that are only about those things are not shown.</p></div>
+      <div class="faq"><h3>How large can the texts be?</h3><p>Each side can hold up to 500,000 characters (50,000 in Character mode). You can also load text files up to 1 MB. Texts that are completely different may be too slow to compare, and the tool will tell you.</p></div>
+      <div class="faq"><h3>Can I save or share the result?</h3><p>Yes. Copy the result as text, copy or download it as a unified diff that works with developer tools, or download a standalone HTML report.</p></div>
+      <div class="faq"><h3>Which files can I load?</h3><p>Plain text files such as TXT, MD, CSV, JSON, HTML, CSS, JS, XML, YAML and LOG. Word and PDF files are not supported, so copy their text and paste it in.</p></div>
+    </div>
+
+    <h2 class="grad-text">More Free Tools You May Need</h2>
+    <div class="related-grid">
+      <a href="/tools/fancy-text-generator/"><strong>Fancy Text Generator</strong><span>Turn a name into stylish copy-and-paste text.</span></a>
+      <a href="/tools/image-to-text-ocr/"><strong>Image to Text (OCR)</strong><span>Read the text from a picture.</span></a>
+      <a href="/tools/qr-code-generator/"><strong>QR Code Generator</strong><span>Make QR codes with colors and a logo.</span></a>
+      <a href="/tools/pdf-editor/"><strong>PDF Editor</strong><span>Edit and annotate your PDF pages.</span></a>
+      <a href="/tools/meme-generator/"><strong>Meme Generator</strong><span>Add captions and filters to a photo.</span></a>
+      <a href="/tools/image-watermark-adder/"><strong>Image Watermark Adder</strong><span>Place a text or logo watermark on your pictures.</span></a>
+    </div>
   </section>
+
 </main>
 
 <div id="site-footer"></div>
+
 <script>
 (function(){
   "use strict";
+  var _miss = {};
+  var $ = function(id){ var e = document.getElementById(id); if(e) return e; if(!_miss[id]) _miss[id] = document.createElement("div"); return _miss[id]; };
+  var MAX_CHARS = 500000, MAX_CHARS_CHAR_MODE = 50000, MAX_FILE = 1024 * 1024, MAX_D = 3000, MAX_CELLS = 16000000;
 
-  var MAX_CHARS = 20000;
+  var ids = ["modeSelect","ignoreCase","ignoreWhitespace","ignorePunct","liveChk","textA","textB","countA","countB","compareBtn","swapBtn","exampleBtn","clearBtn","diffStatus","resultBlock","addCount","delCount","sameCount","simPct","viewSelect","prevBtn","nextBtn","navLabel","cbChk","diffOutput","copyBtn","copyPatchBtn","dlPatchBtn","dlHtmlBtn","actionStatus","loadA","loadB","fileA","fileB","sideA","sideB"];
+  var E = {}; ids.forEach(function(i){ E[i] = $(i); });
 
-  var modeSelect = document.getElementById("modeSelect");
-  var ignoreCase = document.getElementById("ignoreCase");
-  var ignoreWhitespace = document.getElementById("ignoreWhitespace");
-  var textA = document.getElementById("textA");
-  var textB = document.getElementById("textB");
-  var countA = document.getElementById("countA");
-  var countB = document.getElementById("countB");
-  var compareBtn = document.getElementById("compareBtn");
-  var swapBtn = document.getElementById("swapBtn");
-  var clearBtn = document.getElementById("clearBtn");
-  var diffStatus = document.getElementById("diffStatus");
-  var resultBlock = document.getElementById("resultBlock");
-  var addCount = document.getElementById("addCount");
-  var delCount = document.getElementById("delCount");
-  var sameCount = document.getElementById("sameCount");
-  var diffOutput = document.getElementById("diffOutput");
-  var copyBtn = document.getElementById("copyBtn");
+  var last = null, cur = -1, timer = null;
+  var HAS_UNICODE = true; try{ new RegExp("\\p{L}", "u"); }catch(e){ HAS_UNICODE = false; }
+  var WORD_RE = HAS_UNICODE ? /[\p{L}\p{N}_]+(?:['\u2019][\p{L}\p{N}_]+)*|\s+|[^\s]/gu : /\w+(?:['\u2019]\w+)*|\s+|[^\s]/g;
+  var PUNCT_RE = HAS_UNICODE ? /[\p{P}\p{S}]/gu : /[^\w\s]/g;
+  var SENT_RE = /[^.!?\u0964\n]+(?:[.!?\u0964]+["')\]\u201d]*|$)\s*|\n+/g;
 
+  function setMsg(el, m, err){ el.textContent = m || ""; el.className = "status" + (err ? " error" : ""); }
+  function esc(s){ return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function isWs(s){ return /^\s*$/.test(s); }
+
+  /* ---------- counts ---------- */
   function updateCounts(){
-    countA.textContent = textA.value.length + " characters";
-    countB.textContent = textB.value.length + " characters";
+    [["A", E.textA, E.countA], ["B", E.textB, E.countB]].forEach(function(p){
+      var v = p[1].value, w = (v.trim() ? v.trim().split(/\s+/).length : 0), l = v ? v.split(/\r\n|\r|\n/).length : 0;
+      p[2].textContent = v.length.toLocaleString() + " characters \u00b7 " + w.toLocaleString() + " words \u00b7 " + l.toLocaleString() + " lines";
+    });
   }
-  textA.addEventListener("input", updateCounts);
-  textB.addEventListener("input", updateCounts);
-  updateCounts();
 
+  /* ---------- tokenizing and comparing ---------- */
   function tokenize(str, mode){
-    if(mode === "char") return str.split("");
-    if(mode === "line") return str.split("\n");
-    // word mode: keep whitespace runs as their own tokens so spacing is preserved on render
-    return str.match(/\S+|\s+/g) || [];
+    if(mode === "char") return Array.from(str);
+    if(mode === "line") return str.split(/\r\n|\r|\n/);
+    if(mode === "sentence") return str.match(SENT_RE) || (str ? [str] : []);
+    return str.match(WORD_RE) || [];
   }
-
-  function normalize(tok, mode){
-    var t = tok;
-    if(ignoreCase.checked) t = t.toLowerCase();
-    if(ignoreWhitespace.checked && mode !== "char") t = t.replace(/\s+/g, " ").trim();
-    return t;
+  function normFn(mode){
+    var ic = E.ignoreCase.checked, iw = E.ignoreWhitespace.checked, ip = E.ignorePunct.checked;
+    return function(t){
+      if(ic) t = t.toLowerCase();
+      if(ip) t = t.replace(PUNCT_RE, "");
+      if(iw && mode !== "char") t = t.replace(/\s+/g, " ").trim();
+      return t;
+    };
   }
-
-  // Classic LCS-based diff: returns an array of {type:'equal'|'add'|'del', value}
-  function diffTokens(aTokens, bTokens, mode){
-    var aNorm = aTokens.map(function(t){ return normalize(t, mode); });
-    var bNorm = bTokens.map(function(t){ return normalize(t, mode); });
-    var n = aTokens.length, m = bTokens.length;
-
-    var dp = new Array(n + 1);
-    for(var i = 0; i <= n; i++){ dp[i] = new Uint32Array(m + 1); }
-    for(i = n - 1; i >= 0; i--){
-      for(var j = m - 1; j >= 0; j--){
-        dp[i][j] = aNorm[i] === bNorm[j] ? dp[i+1][j+1] + 1 : Math.max(dp[i+1][j], dp[i][j+1]);
+  function myers(a, b, maxD){
+    var n = a.length, m = b.length, max = Math.min(n + m, maxD), off = max + 1;
+    var v = new Int32Array(2 * max + 3), trace = [];
+    for(var d = 0; d <= max; d++){
+      trace.push(v.slice(off - d - 1, off + d + 2));
+      for(var k = -d; k <= d; k += 2){
+        var x;
+        if(k === -d || (k !== d && v[off + k - 1] < v[off + k + 1])) x = v[off + k + 1]; else x = v[off + k - 1] + 1;
+        var y = x - k;
+        while(x < n && y < m && a[x] === b[y]){ x++; y++; }
+        v[off + k] = x;
+        if(x >= n && y >= m) return backtrack(trace, n, m, d, off);
       }
     }
-
-    var result = [];
-    i = 0; var j = 0;
-    while(i < n && j < m){
-      if(aNorm[i] === bNorm[j]){
-        result.push({ type: "equal", value: aTokens[i] });
-        i++; j++;
-      } else if(dp[i+1][j] >= dp[i][j+1]){
-        result.push({ type: "del", value: aTokens[i] });
-        i++;
-      } else {
-        result.push({ type: "add", value: bTokens[j] });
-        j++;
+    return null;
+  }
+  function backtrack(trace, n, m, D, off){
+    var x = n, y = m, ops = [];
+    for(var d = D; d > 0; d--){
+      var vv = trace[d], base = off - d - 1;
+      var V = function(k){ return vv[off + k - base]; };
+      var k = x - y, prevK;
+      if(k === -d || (k !== d && V(k - 1) < V(k + 1))) prevK = k + 1; else prevK = k - 1;
+      var px = V(prevK), py = px - prevK;
+      while(x > px && y > py){ ops.push([0, x - 1, y - 1]); x--; y--; }
+      if(x === px){ ops.push([2, -1, y - 1]); y--; } else { ops.push([1, x - 1, -1]); x--; }
+    }
+    while(x > 0 && y > 0){ ops.push([0, x - 1, y - 1]); x--; y--; }
+    return ops.reverse();
+  }
+  function lcsDp(a, b){
+    var n = a.length, m = b.length, W = m + 1, dp = (Math.min(n, m) < 65535 ? new Uint16Array((n + 1) * W) : new Uint32Array((n + 1) * W));
+    for(var i = n - 1; i >= 0; i--) for(var j = m - 1; j >= 0; j--)
+      dp[i * W + j] = a[i] === b[j] ? dp[(i + 1) * W + j + 1] + 1 : Math.max(dp[(i + 1) * W + j], dp[i * W + j + 1]);
+    var ops = [], x = 0, y = 0;
+    while(x < n && y < m){
+      if(a[x] === b[y]){ ops.push([0, x, y]); x++; y++; }
+      else if(dp[(x + 1) * W + y] >= dp[x * W + y + 1]){ ops.push([1, x, -1]); x++; } else { ops.push([2, -1, y]); y++; }
+    }
+    while(x < n){ ops.push([1, x, -1]); x++; }
+    while(y < m){ ops.push([2, -1, y]); y++; }
+    return ops;
+  }
+  // returns array of {t:"eq"|"del"|"add", a:string, b:string} or throws {tooBig:true}
+  function diffTokens(A, B, mode){
+    var nf = normFn(mode), skip = E.ignorePunct.checked && mode !== "line";
+    var ia = [], ib = [], an = [], bn = [];
+    A.forEach(function(t, i){ var v = nf(t); if(skip && v === "" && !isWs(t)) return; ia.push(i); an.push(v); });
+    B.forEach(function(t, i){ var v = nf(t); if(skip && v === "" && !isWs(t)) return; ib.push(i); bn.push(v); });
+    var n = an.length, m = bn.length;
+    var p = 0; while(p < n && p < m && an[p] === bn[p]) p++;
+    var s = 0; while(s < n - p && s < m - p && an[n - 1 - s] === bn[m - 1 - s]) s++;
+    var am = an.slice(p, n - s), bm = bn.slice(p, m - s), mid;
+    if(!am.length && !bm.length) mid = [];
+    else if(!am.length) mid = bm.map(function(_, i){ return [2, -1, i]; });
+    else if(!bm.length) mid = am.map(function(_, i){ return [1, i, -1]; });
+    else {
+      mid = myers(am, bm, MAX_D);
+      if(!mid){
+        if(am.length * bm.length > MAX_CELLS) throw { tooBig: true };
+        mid = lcsDp(am, bm);
       }
     }
-    while(i < n){ result.push({ type: "del", value: aTokens[i] }); i++; }
-    while(j < m){ result.push({ type: "add", value: bTokens[j] }); j++; }
-    return result;
-  }
-
-  function escapeHtml(s){
-    return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
-  }
-
-  function render(diffOps, mode){
-    var html = "";
-    var additions = 0, deletions = 0, unchanged = 0;
-    var joiner = mode === "line" ? "\n" : "";
-
-    diffOps.forEach(function(op){
-      var text = escapeHtml(op.value) + (mode === "line" ? "\n" : "");
-      if(op.type === "equal"){ html += text; unchanged++; }
-      else if(op.type === "add"){ html += "<ins>" + text + "</ins>"; additions++; }
-      else { html += "<del>" + text + "</del>"; deletions++; }
+    var core = [], i;
+    for(i = 0; i < p; i++) core.push([0, i, i]);
+    mid.forEach(function(o){ core.push([o[0], o[1] < 0 ? -1 : p + o[1], o[2] < 0 ? -1 : p + o[2]]); });
+    for(i = s; i > 0; i--) core.push([0, n - i, m - i]);
+    // map back to the original tokens; ignored (punctuation-only) tokens are carried along as unchanged
+    var out = [], pa = 0, pb = 0;
+    function flushA(upto){ while(pa < upto){ out.push({ t: "eq", a: A[pa], b: "" }); pa++; } }
+    function flushB(upto){ while(pb < upto){ out.push({ t: "eq", a: "", b: B[pb] }); pb++; } }
+    core.forEach(function(o){
+      var ao = o[1] >= 0 ? ia[o[1]] : -1, bo = o[2] >= 0 ? ib[o[2]] : -1;
+      if(ao >= 0) flushA(ao);
+      if(bo >= 0) flushB(bo);
+      if(o[0] === 0){ out.push({ t: "eq", a: A[ao], b: B[bo] }); pa = ao + 1; pb = bo + 1; }
+      else if(o[0] === 1){ out.push({ t: "del", a: A[ao], b: "" }); pa = ao + 1; }
+      else { out.push({ t: "add", a: "", b: B[bo] }); pb = bo + 1; }
     });
-
-    return { html: html || '<span class="diff-empty">No differences to show.</span>', additions: additions, deletions: deletions, unchanged: unchanged };
+    flushA(A.length); flushB(B.length);
+    return out;
+  }
+  // group consecutive edits into numbered change blocks (whitespace-only equal runs do not split a block)
+  function assignBlocks(ops, mode){
+    var blk = -1, open = false, pending = [], i;
+    ops.forEach(function(o){ o.c = -1; });
+    for(i = 0; i < ops.length; i++){
+      var o = ops[i];
+      if(o.t !== "eq"){
+        if(!open){ blk++; open = true; }
+        pending.forEach(function(q){ q.c = -2; }); pending = [];
+        o.c = blk;
+      } else if(open && mode !== "line" && mode !== "sentence" && isWs(o.a) && isWs(o.b)){
+        pending.push(o);
+      } else { open = false; pending = []; }
+    }
+    // pending whitespace inside a block: attach to the block id of the following edit
+    for(i = 0; i < ops.length; i++){
+      if(ops[i].c === -2){ var j = i; while(j < ops.length && ops[j].c === -2) j++; var id = j < ops.length ? ops[j].c : -1; for(var q = i; q < j; q++) ops[q].c = -1; ops[i].gap = id; i = j - 1; }
+    }
+    return blk + 1;
   }
 
-  compareBtn.addEventListener("click", function(){
-    diffStatus.style.display = "none";
-    var a = textA.value, b = textB.value;
-
-    if(!a && !b){
-      diffStatus.textContent = "Please enter some text in at least one box.";
-      diffStatus.style.display = "block";
-      return;
-    }
-    if(a.length > MAX_CHARS || b.length > MAX_CHARS){
-      diffStatus.textContent = "Each text should be under " + MAX_CHARS.toLocaleString() + " characters for a smooth comparison in the browser.";
-      diffStatus.style.display = "block";
-      return;
-    }
-
-    var mode = modeSelect.value;
-    if(mode === "char" && (a.length > 6000 || b.length > 6000)){
-      diffStatus.textContent = "Character-level comparison works best under 6,000 characters per side. Try Word or Line mode for longer text.";
-      diffStatus.style.display = "block";
-      return;
-    }
-
-    var aTokens = tokenize(a, mode);
-    var bTokens = tokenize(b, mode);
-    var ops = diffTokens(aTokens, bTokens, mode);
-    var rendered = render(ops, mode);
-
-    diffOutput.innerHTML = rendered.html;
-    addCount.textContent = rendered.additions + " additions";
-    delCount.textContent = rendered.deletions + " removals";
-    sameCount.textContent = rendered.unchanged + " unchanged";
-    resultBlock.classList.remove("hidden");
-  });
-
-  swapBtn.addEventListener("click", function(){
-    var tmp = textA.value;
-    textA.value = textB.value;
-    textB.value = tmp;
-    updateCounts();
-  });
-
-  clearBtn.addEventListener("click", function(){
-    textA.value = "";
-    textB.value = "";
-    updateCounts();
-    resultBlock.classList.add("hidden");
-    diffStatus.style.display = "none";
-  });
-
-  // Robust copy-to-clipboard: tries the modern Clipboard API first, and
-  // falls back to a hidden-textarea + execCommand approach if that API
-  // is unavailable or blocked (some browsers restrict it based on
-  // permissions or focus state). Always gives visible feedback either
-  // way, instead of silently doing nothing on failure.
-  function copyToClipboard(text, onSuccess, onFailure){
-    function fallbackCopy(){
-      try{
-        var ta = document.createElement("textarea");
-        ta.value = text;
-        ta.style.position = "fixed";
-        ta.style.left = "-9999px";
-        document.body.appendChild(ta);
-        ta.focus();
-        ta.select();
-        var ok = document.execCommand("copy");
-        document.body.removeChild(ta);
-        if(ok){ if(onSuccess) onSuccess(); } else if(onFailure){ onFailure(); }
-      }catch(e){
-        if(onFailure) onFailure();
+  /* ---------- rendering ---------- */
+  function cAttr(o){ return o.c >= 0 ? ' data-c="' + o.c + '"' : ""; }
+  function renderInline(ops, mode){
+    var h = "", nl = mode === "line" ? "\n" : "";
+    ops.forEach(function(o){
+      if(o.t === "eq") h += esc(o.a) + nl;
+      else if(o.t === "add") h += "<ins" + cAttr(o) + ">" + esc(o.b) + nl + "</ins>";
+      else h += "<del" + cAttr(o) + ">" + esc(o.a) + nl + "</del>";
+    });
+    return '<div class="diff-output">' + (h || '<span class="diff-empty">No differences to show.</span>') + "</div>";
+  }
+  function renderSideFlow(ops, mode){
+    var l = "", r = "", nl = mode === "line" ? "\n" : "";
+    ops.forEach(function(o){
+      if(o.t === "eq"){ l += esc(o.a) + nl; r += esc(o.b) + nl; }
+      else if(o.t === "add") r += "<ins" + cAttr(o) + ">" + esc(o.b) + nl + "</ins>";
+      else l += "<del" + cAttr(o) + ">" + esc(o.a) + nl + "</del>";
+    });
+    return '<div class="sbs-flow"><div class="diff-output pane" data-pane="l"><div class="pane-title">Original</div>' + l + '</div><div class="diff-output pane" data-pane="r"><div class="pane-title">Changed</div>' + r + "</div></div>";
+  }
+  function wordPair(a, b){
+    var A = tokenize(a, "word"), B = tokenize(b, "word");
+    if(A.length * B.length > 250000) return { l: esc(a), r: esc(b) };
+    var ops; try{ ops = diffTokens(A, B, "word"); }catch(e){ return { l: esc(a), r: esc(b) }; }
+    var l = "", r = "";
+    ops.forEach(function(o){
+      if(o.t === "eq"){ l += esc(o.a); r += esc(o.b); }
+      else if(o.t === "del") l += '<span class="w-del">' + esc(o.a) + "</span>"; else r += '<span class="w-add">' + esc(o.b) + "</span>";
+    });
+    return { l: l, r: r };
+  }
+  function renderSideLines(ops){
+    var rows = "", la = 0, lb = 0, i = 0;
+    while(i < ops.length){
+      var o = ops[i];
+      if(o.t === "eq"){ la++; lb++; rows += '<tr><td class="ln">' + la + "</td><td>" + esc(o.a) + '</td><td class="ln">' + lb + "</td><td>" + esc(o.b) + "</td></tr>"; i++; continue; }
+      var dels = [], adds = [], c = o.c;
+      while(i < ops.length && ops[i].t !== "eq"){ (ops[i].t === "del" ? dels : adds).push(ops[i]); i++; }
+      var k = Math.max(dels.length, adds.length);
+      for(var q = 0; q < k; q++){
+        var d = dels[q], a = adds[q], lt = "", rt = "", lcls = "", rcls = "", lln = "", rln = "";
+        if(d && a){ var wp = wordPair(d.a, a.b); lt = wp.l; rt = wp.r; }
+        else if(d) lt = esc(d.a); else rt = esc(a.b);
+        if(d){ la++; lln = la; lcls = " class=\"cell-del\""; }
+        if(a){ lb++; rln = lb; rcls = " class=\"cell-add\""; }
+        rows += "<tr" + (q === 0 ? ' data-c="' + c + '"' : "") + '><td class="ln">' + lln + "</td><td" + lcls + ">" + lt + '</td><td class="ln">' + rln + "</td><td" + rcls + ">" + rt + "</td></tr>";
       }
     }
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(onSuccess).catch(fallbackCopy);
-    } else {
-      fallbackCopy();
+    return '<div class="sbs-table-wrap"><table class="sbs"><thead><tr><th class="ln">#</th><th>Original</th><th class="ln">#</th><th>Changed</th></tr></thead><tbody>' + rows + "</tbody></table></div>";
+  }
+  function renderList(ops, mode){
+    var blocks = {}, order = [];
+    ops.forEach(function(o){
+      if(o.t === "eq" || o.c < 0) return;
+      if(!blocks[o.c]){ blocks[o.c] = { d: [], a: [] }; order.push(o.c); }
+      (o.t === "del" ? blocks[o.c].d : blocks[o.c].a).push(o);
+    });
+    if(!order.length) return '<div class="diff-output"><span class="diff-empty">No differences found. The two texts are the same.</span></div>';
+    var j = mode === "line" ? "\n" : "";
+    function clip(s){ s = s.replace(/^\s+|\s+$/g, ""); return s.length > 400 ? s.slice(0, 400) + "\u2026" : s; }
+    return '<ol class="chg-list">' + order.map(function(id){
+      var b = blocks[id], dt = clip(b.d.map(function(x){ return x.a; }).join(j)), at = clip(b.a.map(function(x){ return x.b; }).join(j));
+      var kind = b.d.length && b.a.length ? "Changed" : (b.d.length ? "Removed" : "Added");
+      return '<li data-c="' + id + '"><span class="chg-kind">' + kind + '</span>' + (dt ? '<div class="chg-del"><b>\u2212</b> ' + esc(dt) + "</div>" : "") + (at ? '<div class="chg-add"><b>+</b> ' + esc(at) + "</div>" : "") + "</li>";
+    }).join("") + "</ol>";
+  }
+  function render(){
+    if(!last) return;
+    var v = E.viewSelect.value, h;
+    if(v === "list") h = renderList(last.ops, last.mode);
+    else if(v === "side") h = last.mode === "line" ? renderSideLines(last.ops) : renderSideFlow(last.ops, last.mode);
+    else h = renderInline(last.ops, last.mode);
+    E.diffOutput.innerHTML = h; E.diffOutput.classList.toggle("cb", E.cbChk.checked);
+    var panes = E.diffOutput.querySelectorAll(".pane");
+    if(panes.length === 2){
+      var lock = false;
+      [0, 1].forEach(function(i){ panes[i].addEventListener("scroll", function(){
+        if(lock) return; lock = true; var o = panes[1 - i], r = panes[i].scrollTop / Math.max(1, panes[i].scrollHeight - panes[i].clientHeight);
+        o.scrollTop = r * (o.scrollHeight - o.clientHeight); lock = false; }); });
+    }
+    cur = -1; updateNav();
+  }
+  function updateNav(){
+    var n = last ? last.blocks : 0;
+    E.navLabel.textContent = n ? (cur >= 0 ? (cur + 1) + " of " + n + " changes" : n + (n === 1 ? " change" : " changes")) : "No changes";
+    E.prevBtn.disabled = E.nextBtn.disabled = !n;
+    Array.prototype.forEach.call(E.diffOutput.querySelectorAll(".cur"), function(e){ e.classList.remove("cur"); });
+    if(cur >= 0){
+      var els = E.diffOutput.querySelectorAll('[data-c="' + cur + '"]');
+      Array.prototype.forEach.call(els, function(e){ e.classList.add("cur"); });
+      if(els[0]){
+        var host = els[0].closest(".pane") || null;
+        if(host){ host.scrollTop = Math.max(0, els[0].offsetTop - host.clientHeight / 2); }
+        else els[0].scrollIntoView({ block: "center", behavior: "smooth" });
+      }
     }
   }
+  E.nextBtn.addEventListener("click", function(){ if(!last || !last.blocks) return; cur = (cur + 1) % last.blocks; updateNav(); });
+  E.prevBtn.addEventListener("click", function(){ if(!last || !last.blocks) return; cur = cur <= 0 ? last.blocks - 1 : cur - 1; updateNav(); });
+  E.viewSelect.addEventListener("change", render);
+  E.cbChk.addEventListener("change", function(){ E.diffOutput.classList.toggle("cb", E.cbChk.checked); });
 
-  copyBtn.addEventListener("click", function(){
-    var plain = diffOutput.innerText;
-    copyToClipboard(plain, function(){
-      copyBtn.textContent = "Copied!";
-      setTimeout(function(){ copyBtn.textContent = "Copy Result as Text"; }, 1500);
-    }, function(){
-      copyBtn.textContent = "Copy failed \u2014 select text manually";
-      setTimeout(function(){ copyBtn.textContent = "Copy Result as Text"; }, 2000);
+  /* ---------- compare ---------- */
+  function compare(silent){
+    var a = E.textA.value, b = E.textB.value, mode = E.modeSelect.value;
+    setMsg(E.diffStatus, "");
+    if(!a && !b){ if(!silent) setMsg(E.diffStatus, "Please enter some text in at least one box.", true); E.resultBlock.classList.add("hidden"); return; }
+    var lim = mode === "char" ? MAX_CHARS_CHAR_MODE : MAX_CHARS;
+    if(a.length > lim || b.length > lim){
+      setMsg(E.diffStatus, "Each text should be under " + lim.toLocaleString() + " characters" + (mode === "char" ? " in Character mode. Try Word or Line mode for longer text." : "."), true); return;
+    }
+    var ops;
+    try{ ops = diffTokens(tokenize(a, mode), tokenize(b, mode), mode); }
+    catch(e){
+      setMsg(E.diffStatus, e && e.tooBig ? "These texts are too different to compare at this level. Try Line mode, or compare smaller parts." : "Something went wrong while comparing. Please try Line mode.", true); return;
+    }
+    var blocks = assignBlocks(ops, mode), add = 0, del = 0, same = 0;
+    ops.forEach(function(o){
+      var txt = o.t === "add" ? o.b : o.a, count = (mode === "line" || mode === "sentence") ? !isWs(txt) || mode === "line" : !isWs(txt);
+      if(!count) return;
+      if(o.t === "add") add++; else if(o.t === "del") del++; else same++;
     });
+    var unit = { word: "words", line: "lines", sentence: "sentences", char: "characters" }[mode];
+    var totalA = same + del, totalB = same + add, sim = (totalA + totalB) ? Math.round(2 * same / (totalA + totalB) * 100) : 100;
+    last = { ops: ops, mode: mode, blocks: blocks, a: a, b: b, add: add, del: del, same: same, unit: unit, sim: sim };
+    E.addCount.textContent = add.toLocaleString() + " " + unit + " added"; E.delCount.textContent = del.toLocaleString() + " " + unit + " removed";
+    E.sameCount.textContent = same.toLocaleString() + " unchanged"; E.simPct.textContent = sim + "% similar";
+    E.resultBlock.classList.remove("hidden"); render();
+    if(!blocks) setMsg(E.diffStatus, "No differences found. The two texts are the same" + (E.ignoreCase.checked || E.ignoreWhitespace.checked || E.ignorePunct.checked ? " with your current ignore settings." : "."));
+  }
+  E.compareBtn.addEventListener("click", function(){ compare(false); });
+  function live(){ if(E.liveChk.checked){ clearTimeout(timer); timer = setTimeout(function(){ compare(true); }, 400); } }
+  ["textA", "textB"].forEach(function(id){ E[id].addEventListener("input", function(){ updateCounts(); live(); }); });
+  ["modeSelect", "ignoreCase", "ignoreWhitespace", "ignorePunct"].forEach(function(id){ E[id].addEventListener("change", function(){ if(last || E.liveChk.checked) compare(true); }); });
+  E.liveChk.addEventListener("change", function(){ if(E.liveChk.checked) compare(true); });
+  E.swapBtn.addEventListener("click", function(){ var t = E.textA.value; E.textA.value = E.textB.value; E.textB.value = t; updateCounts(); if(last || E.liveChk.checked) compare(true); });
+  E.clearBtn.addEventListener("click", function(){
+    E.textA.value = ""; E.textB.value = ""; updateCounts(); last = null; E.resultBlock.classList.add("hidden"); setMsg(E.diffStatus, ""); setMsg(E.actionStatus, "");
   });
+  E.exampleBtn.addEventListener("click", function(){
+    E.textA.value = "Dear team,\nThe quick brown fox jumps over the lazy dog.\nOur meeting is on Monday at 10 AM.\nPlease send the report by Friday.\nThanks, Sam";
+    E.textB.value = "Dear team,\nThe quick red fox leaps over the lazy dog.\nOur meeting is on Tuesday at 11 AM.\nPlease send the final report by Friday.\nThanks and regards, Sam";
+    updateCounts(); compare(false);
+  });
+
+  /* ---------- files ---------- */
+  function loadFile(file, ta){
+    if(!file) return;
+    if(!file.size){ setMsg(E.diffStatus, file.name + " is empty.", true); return; }
+    if(file.size > MAX_FILE){ setMsg(E.diffStatus, file.name + " is larger than 1 MB.", true); return; }
+    var fr = new FileReader();
+    fr.onload = function(){
+      var t = String(fr.result || "");
+      if(t.indexOf("\u0000") !== -1){ setMsg(E.diffStatus, file.name + " does not look like a text file.", true); return; }
+      ta.value = t; updateCounts(); setMsg(E.diffStatus, "Loaded " + file.name + "."); live();
+    };
+    fr.onerror = function(){ setMsg(E.diffStatus, "Could not read " + file.name + ".", true); };
+    fr.readAsText(file);
+  }
+  [["A", "textA"], ["B", "textB"]].forEach(function(p){
+    E["load" + p[0]].addEventListener("click", function(){ E["file" + p[0]].click(); });
+    E["file" + p[0]].addEventListener("change", function(){ loadFile(E["file" + p[0]].files[0], E[p[1]]); E["file" + p[0]].value = ""; });
+    var side = E["side" + p[0]];
+    side.addEventListener("dragover", function(e){ e.preventDefault(); side.classList.add("drag"); });
+    side.addEventListener("dragleave", function(){ side.classList.remove("drag"); });
+    side.addEventListener("drop", function(e){ e.preventDefault(); side.classList.remove("drag"); if(e.dataTransfer.files && e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0], E[p[1]]); });
+  });
+
+  /* ---------- exports ---------- */
+  function lineOpsForPatch(){
+    var A = last.a.split(/\r\n|\r|\n/), B = last.b.split(/\r\n|\r|\n/);
+    return { A: A, B: B, ops: diffTokens(A, B, "line") };
+  }
+  function unified(){
+    var L = lineOpsForPatch(), ops = L.ops, ctx = 3, out = [], i;
+    var idx = []; ops.forEach(function(o, k){ if(o.t !== "eq") idx.push(k); });
+    if(!idx.length) return "";
+    out.push("--- original", "+++ changed");
+    var pos = []; var la = 0, lb = 0;
+    ops.forEach(function(o){ pos.push([la, lb]); if(o.t !== "add") la++; if(o.t !== "del") lb++; });
+    var s = 0;
+    while(s < idx.length){
+      var e = s; while(e + 1 < idx.length && idx[e + 1] - idx[e] <= ctx * 2 + 1) e++;
+      var from = Math.max(0, idx[s] - ctx), to = Math.min(ops.length - 1, idx[e] + ctx);
+      var aStart = pos[from][0], bStart = pos[from][1], aCnt = 0, bCnt = 0, body = [];
+      for(i = from; i <= to; i++){
+        var o = ops[i];
+        if(o.t === "eq"){ body.push(" " + o.a); aCnt++; bCnt++; }
+        else if(o.t === "del"){ body.push("-" + o.a); aCnt++; } else { body.push("+" + o.b); bCnt++; }
+      }
+      out.push("@@ -" + (aCnt ? aStart + 1 : aStart) + "," + aCnt + " +" + (bCnt ? bStart + 1 : bStart) + "," + bCnt + " @@");
+      out = out.concat(body); s = e + 1;
+    }
+    return out.join("\n") + "\n";
+  }
+  function plainResult(){
+    var j = last.mode === "line" ? "\n" : "";
+    return last.ops.map(function(o){
+      var t = (o.t === "add" ? o.b : o.a) + j;
+      return o.t === "eq" ? t : (o.t === "add" ? "[+" + t.replace(/\n$/, "") + "+]" + j : "[-" + t.replace(/\n$/, "") + "-]" + j);
+    }).join("");
+  }
+  function copy(text, ok){
+    function fb(){ try{ var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.left = "-9999px"; document.body.appendChild(ta); ta.select(); var s = document.execCommand("copy"); document.body.removeChild(ta); setMsg(E.actionStatus, s ? ok : "Could not copy automatically. Please select the text and copy it.", !s); }catch(e){ setMsg(E.actionStatus, "Could not copy automatically. Please select the text and copy it.", true); } }
+    if(navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ setMsg(E.actionStatus, ok); }, fb); else fb();
+  }
+  function save(text, name, type){
+    var u = URL.createObjectURL(new Blob([text], { type: type })), a = document.createElement("a");
+    a.href = u; a.download = name; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(u); }, 4000);
+  }
+  E.copyBtn.addEventListener("click", function(){ if(last) copy(plainResult(), "Copied. Removed text is shown as [-like this-] and added text as [+like this+]."); });
+  E.copyPatchBtn.addEventListener("click", function(){
+    if(!last) return; try{ var u = unified(); if(!u){ setMsg(E.actionStatus, "There are no differences to export."); return; } copy(u, "Copied as a unified diff (line by line)."); }catch(e){ setMsg(E.actionStatus, "These texts are too different to export as a diff.", true); }
+  });
+  E.dlPatchBtn.addEventListener("click", function(){
+    if(!last) return; try{ var u = unified(); if(!u){ setMsg(E.actionStatus, "There are no differences to export."); return; } save(u, "changes.diff", "text/plain"); setMsg(E.actionStatus, "Downloaded changes.diff"); }catch(e){ setMsg(E.actionStatus, "These texts are too different to export as a diff.", true); }
+  });
+  E.dlHtmlBtn.addEventListener("click", function(){
+    if(!last) return;
+    var css = "body{font-family:system-ui,sans-serif;margin:24px;color:#1c1b26}h1{font-size:20px}.s{margin:8px 0 16px;color:#555}.o{border:1px solid #ddd;border-radius:10px;padding:16px;font-family:ui-monospace,Consolas,monospace;white-space:pre-wrap;line-height:1.7;word-break:break-word}ins{background:#d1fae5;color:#065f46;text-decoration:none}del{background:#fee2e2;color:#991b1b}";
+    var html = '<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Text comparison</title><style>' + css + "</style></head><body><h1>Text comparison</h1><div class=\"s\">" +
+      esc(E.addCount.textContent + " \u00b7 " + E.delCount.textContent + " \u00b7 " + E.sameCount.textContent + " \u00b7 " + E.simPct.textContent) + "</div>" + renderInline(last.ops, last.mode).replace('class="diff-output"', 'class="o"') + "</body></html>";
+    save(html, "text-comparison.html", "text/html"); setMsg(E.actionStatus, "Downloaded text-comparison.html");
+  });
+
+  updateCounts();
+  
 })();
+
 </script>
+
 <script src="/shared/shared.js" defer></script>
 </body>
 </html>
