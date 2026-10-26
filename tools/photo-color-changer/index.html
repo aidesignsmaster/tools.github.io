@@ -3,42 +3,130 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Photo Color Change Tool Online | Working Tools Box</title>
-<meta name="description" content="Change the color of any object in a photo online for free \u2014 clothes, walls, cars or anything else. Click to pick a color and replace it, right in your browser.">
-<meta name="robots" content="index, follow">
+<title>Photo Color Changer: Recolor Any Object | Working Tools Box</title>
+<meta name="description" content="Click a color in your photo and change it to any other color. Soft edges, natural shading, a restore brush and up to 8 changes. Free and private, no upload.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/photo-color-changer/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Photo Color Change Tool Online | Working Tools Box">
-<meta property="og:description" content="Change the color of any object in a photo online for free, entirely in your browser.">
+<meta property="og:title" content="Photo Color Changer: Recolor Any Object | Working Tools Box">
+<meta property="og:description" content="Click a color in your photo and change it to any other color. Soft edges, natural shading, a restore brush and up to 8 changes. Free and private, no upload.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/photo-color-changer/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Photo Color Change Tool Online | Working Tools Box">
-<meta name="twitter:description" content="Change the color of any object in a photo online for free, entirely in your browser.">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/photo-color-changer-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Photo Color Changer banner showing a photo, a clicked color and recolor controls with swatches and sliders.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photo Color Changer: Recolor Any Object | Working Tools Box">
+<meta name="twitter:description" content="Click a color in your photo and change it to any other color. Soft edges, natural shading, a restore brush and up to 8 changes. Free and private, no upload.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/photo-color-changer-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Photo Color Changer",
-  "url":"https://wtoolsbox.com/tools/photo-color-changer/",
-  "applicationCategory":"PhotoApplication",
-  "operatingSystem":"Any",
-  "description":"Changes the color of any object in a photo by selecting similar colors and replacing them, while preserving shading and texture, directly in the browser.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Photo Color Changer",
+  "url": "https://wtoolsbox.com/tools/photo-color-changer/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "description": "Changes the colors of objects in a photo by clicking them, with similar-color or connected-area selection, soft edges, natural shading, hue shift, a restore brush and up to eight changes, in the browser.",
+  "image": "https://wtoolsbox.com/images/tools/photo-color-changer-og.jpg",
+  "featureList": [
+    "Click any color to change it",
+    "Similar colors or connected area only",
+    "Soft edges and natural shading",
+    "Hue shift method",
+    "Up to 8 separate changes",
+    "Restore brush for mistakes",
+    "Hold to compare with the original",
+    "Save as PNG, JPG or WebP",
+    "Runs in the browser with no upload"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"How does this tool know which object to recolor?","acceptedAnswer":{"@type":"Answer","text":"Click anywhere on the photo to pick a color. The tool then finds every pixel with a similar color, based on the tolerance you set, and replaces it while keeping the original shading and texture."}},
-    {"@type":"Question","name":"Will it only change the object I clicked on?","acceptedAnswer":{"@type":"Answer","text":"It changes every area of a similar color, not just the exact spot you clicked. If another object shares that color, it may change too \u2014 lower the tolerance for a more precise selection."}},
-    {"@type":"Question","name":"Is my photo uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The recoloring happens locally in your browser using the Canvas API, and your photo is never uploaded anywhere."}},
-    {"@type":"Question","name":"Will the shading and folds in clothing still look natural?","acceptedAnswer":{"@type":"Answer","text":"Yes. The tool replaces the hue and saturation of matched pixels but keeps their original brightness, so shadows, highlights and fabric folds are preserved."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is my photo uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The color change is done in your browser with the Canvas API, so your photo never leaves your device."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I change only one object?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Choose Only the connected area I clicked. The change then spreads only to touching pixels of a similar color, so a second object of the same color stays as it was."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why did other parts of my photo change too?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Those parts had similar colors. Lower the Selection range, switch to the connected area option, or paint over the mistake with the Restore Brush."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I change more than one color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Click another color to add a new change, up to 8 in total. Select any change in the list to edit its color, range or method, or remove it with the cross."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does Keep natural shading do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It keeps the light and dark detail of the original, so a red shirt turned blue still shows folds and highlights instead of becoming a flat blue shape."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What are the size limits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Photos can be JPG, PNG or WebP up to 10 MB. Larger pictures are scaled down to 2000 pixels on the long side for editing and saving."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Working Tools Box",
+      "item": "https://wtoolsbox.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Photo Color Changer",
+      "item": "https://wtoolsbox.com/tools/photo-color-changer/"
+    }
   ]
 }
 </script>
@@ -103,8 +191,6 @@
   .content{padding:0 0 55px}
   .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
   .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:6px 18px;margin-bottom:12px;background:#fff}
   .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
@@ -121,65 +207,185 @@
   .hidden{display:none!important}
   @media(max-width:800px){.grid2{grid-template-columns:1fr}}
   @media(max-width:640px){.tool{padding:18px}.upload{padding:26px 14px}}
+  .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .tab{border:2px solid var(--border);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--text)}
+  .tab.on{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;border-color:transparent}
+  .tab:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.upload:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .grid2{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-child{margin-top:0}
+  .panel select,.panel input[type=text],.field-text{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text)}
+  .panel input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+  .panel input[type=range]{width:100%}
+  .check{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600}
+  .check input{width:18px;height:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .upload.drag{border-color:var(--purple);background:#f3edff}
+  .tip{font-size:12px;color:var(--muted);margin:8px 0 0}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .button[disabled]{opacity:.55;cursor:not-allowed}
+  .mini{border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;padding:3px 9px;margin-top:6px;cursor:pointer;color:#4c1d95;font-family:inherit}
+  .mini:hover{background:#f8f6ff}
+  .tabmock{display:inline-flex;align-items:center;gap:8px;background:#e8e6f2;border-radius:10px 10px 0 0;padding:8px 14px;font-size:13px;max-width:100%;margin-top:8px}
+  .tabmock img{width:16px;height:16px;display:block}
+  .tabmock span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .faq-list{border-top:1px solid var(--border)}
+  .faq{border-bottom:1px solid var(--border);padding:4px 2px}
+  .faq h3{font-size:1.02rem;font-weight:700;margin:14px 0 6px}
+  .faq p{margin:0 0 14px}
+  .steps{padding-left:20px}
+  .steps li{margin-bottom:8px}
+  .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .related a{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:#7209b7;font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;text-decoration:none}
+  .related a:hover{border-color:#7209b7}
+  .imgwrap{position:relative}
+  #imgCanvas{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block;cursor:crosshair;background:#f8fafc}
+  .hoverchip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-monospace,Consolas,monospace}
+  .hoverchip i{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.15);background:#fff}
+  .palette-item{position:relative}
+  .palette-item .x{position:absolute;top:4px;right:6px;border:0;background:transparent;font-size:16px;cursor:pointer;color:#6b6878;line-height:1}
+  .palette-item .nm{font-family:inherit;font-size:11px;color:var(--muted);display:block}
+  .palette-item .ct{font-family:inherit;font-size:11px;color:#3c3a46;display:block}
+  .export-box{width:100%;min-height:130px;background:#111827;color:#e5e7eb;border-radius:10px;padding:14px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;border:0;resize:vertical}
+  .harm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .harm-row b{font-size:12px;width:130px}
+  .harm-sw{display:flex;gap:6px;flex-wrap:wrap}
+  .harm-sw button{width:56px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.12);cursor:pointer;font-size:9px;font-weight:700;font-family:ui-monospace,monospace}
+  .sub{font-weight:700;margin:22px 0 8px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}.harm-row b{width:100%}}
+
+  .tool-figure{margin:20px 0}
+  .tool-figure img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+  .tool-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .related-grid a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:#fff;text-decoration:none;color:var(--text);min-height:64px}
+  .related-grid a:hover{border-color:#7209b7}
+  .related-grid a strong{color:#7209b7}
+  .related-grid a span{font-size:13px;color:var(--muted)}
+  button,.button,.tab,select,input[type=number]{touch-action:manipulation}
+  .button,.tab,.mini{min-height:44px}
+  .mini{padding:6px 14px}
+  .palette-item .x{width:40px;height:40px;top:0;right:0}
+  .check{min-height:40px}
+  .panel select,.panel input[type=text],.panel input[type=number],.field-text,select.field-text{min-height:42px;box-sizing:border-box}
+  #imgCanvas{touch-action:manipulation}
+  img,canvas,svg{max-width:100%}
+
+  .editor{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:22px;align-items:start}
+  .canvas-wrap{background:#111827;border-radius:14px;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:10px}
+  #mainCanvas{max-width:100%;max-height:640px;width:auto;height:auto;display:block;cursor:crosshair}
+  .swatch-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  .sw{width:40px;height:40px;border-radius:50%;border:2px solid #d1d5db;cursor:pointer;padding:0}
+  .sw.on{outline:3px solid var(--purple);outline-offset:2px}
+  .ops-list{display:flex;flex-wrap:wrap;gap:8px;min-height:8px}
+  .op{display:inline-flex;align-items:center;border:2px solid var(--border);border-radius:999px;background:#fff}
+  .op.on{border-color:var(--purple);background:#f3edff}
+  .op-main{display:inline-flex;align-items:center;gap:6px;border:0;background:transparent;cursor:pointer;padding:6px 6px 6px 12px;min-height:44px;font-family:inherit}
+  .op-main i{display:inline-block;width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
+  .op-x{width:40px;height:44px;border:0;background:transparent;cursor:pointer;font-size:18px;color:#6b6878}
+  #opControls label,#brushBox label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+  #opControls label.check{display:flex}
+  #opControls input[type=range],#brushBox input[type=range]{width:100%}
+  .hoverchip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-monospace,Consolas,monospace}
+  .hoverchip i{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.15);background:#fff}
+  .panel select{min-height:42px}
+  .panel input[type=color]{height:42px}
+  @media(max-width:900px){.editor{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <div id="site-header"></div>
+
 <main class="container">
   <section class="hero">
     <h1 class="grad-text">Photo Color Changer</h1>
-    <p>Click any object in your photo &mdash; a dress, a wall, a car &mdash; and change its color while keeping natural shading. Free, in your browser.</p>
+    <p>Click any color in your photo and change it to a new one &mdash; with soft edges, natural shading and a restore brush. Free, in your browser.</p>
   </section>
 
   <div class="notice">
-    <b>100% free, no upload:</b> Your photo is recolored locally in your browser and never leaves your device.
+    <b>100% free, no upload:</b> Your photo is edited locally in your browser and never leaves your device.
   </div>
+
+  <noscript><div class="notice" style="background:#fef2f2;border-color:#fecaca;color:#991b1b">This tool needs JavaScript. Please enable it in your browser to change colors.</div></noscript>
 
   <section class="tool" aria-label="Photo Color Changer Tool">
 
     <div id="uploadView">
-      <div class="upload" id="dropZone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, or</p>
+      <div class="upload" id="dropZone" tabindex="0" role="button" aria-label="Choose a photo or drop it here">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop your photo here, paste it (Ctrl+V), or</p>
         <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp">
         <button type="button" class="button primary" id="selectBtn">Select Photo</button>
+        <p class="tip">JPG, PNG or WebP &middot; up to 10 MB</p>
       </div>
-      <div id="uploadStatus" class="status"></div>
+      <div id="uploadStatus" class="status" role="status"></div>
     </div>
 
     <div id="editorView" class="hidden">
-      <div class="grid2">
+      <div class="editor">
         <div>
-          <div class="canvas-wrap"><canvas id="workCanvas"></canvas></div>
-          <p class="hint">Click anywhere on the photo to pick the color you want to change.</p>
+          <div class="canvas-wrap"><canvas id="mainCanvas" aria-label="Your photo. Click a color to change it."></canvas></div>
+          <div class="hoverchip"><i id="hoverDot"></i><span id="hoverText">Click a color in the photo to change it.</span></div>
+          <div id="actionStatus" class="status" role="status" aria-live="polite"></div>
         </div>
 
         <div class="panel">
-          <label>Picked color</label>
-          <div class="swatch-row">
-            <div class="swatch" id="pickedSwatch" style="background:#e5e7eb"></div>
-            <span id="pickedLabel" style="font-size:13px;color:var(--muted)">Click the photo</span>
+          <div class="tabs" role="group" aria-label="Tool">
+            <button type="button" class="tab on" id="pickTab" aria-pressed="true">Pick &amp; Recolor</button>
+            <button type="button" class="tab" id="brushTab" aria-pressed="false">Restore Brush</button>
           </div>
 
-          <label for="newColor">New color</label>
-          <input type="color" id="newColor" value="#ec4899">
+          <div id="pickBox">
+            <p class="tip" style="margin:0 0 8px">Changes (up to 8):</p>
+            <div id="opsList" class="ops-list" role="list"></div>
+            <div class="row2" style="margin-top:8px">
+              <button type="button" class="button secondary" id="undoBtn" style="justify-content:center">Undo Last</button>
+              <button type="button" class="button secondary" id="clearBtn" style="justify-content:center">Clear All</button>
+            </div>
 
-          <label for="toleranceRange">Selection range: <span id="toleranceVal">45</span></label>
-          <input type="range" id="toleranceRange" min="5" max="120" value="45">
+            <div id="opControls" class="hidden">
+              <label>New color</label>
+              <div class="swatch-row" id="newSwatches" role="group" aria-label="New color"></div>
+              <input type="color" id="newColor" value="#2563eb" aria-label="Custom new color" style="margin-top:8px">
 
-          <label for="featherRange">Edge softness: <span id="featherVal">30</span></label>
-          <input type="range" id="featherRange" min="0" max="80" value="30">
+              <label for="methodSel">Method</label>
+              <select id="methodSel"><option value="replace">Replace with the new color</option><option value="shift">Shift the hue</option></select>
+              <div id="shiftBlock" class="hidden"><label for="shiftRange">Hue shift: <span id="shiftVal">120</span>&deg;</label><input type="range" id="shiftRange" min="0" max="360" value="120"></div>
 
-          <label class="checkbox-row">
-            <input type="checkbox" id="preserveShadeCheck" style="width:16px;height:16px" checked>
-            Preserve shading and texture
-          </label>
+              <label for="tolRange">Selection range: <span id="tolVal">22</span></label>
+              <input type="range" id="tolRange" min="3" max="70" value="22">
+              <label for="softRange">Edge softness: <span id="softVal">10</span></label>
+              <input type="range" id="softRange" min="0" max="40" value="10">
 
-          <div style="display:flex;flex-direction:column;gap:10px;margin-top:20px">
-            <button type="button" class="button primary" id="downloadBtn" disabled>Download Result</button>
-            <button type="button" class="button secondary" id="undoBtn" disabled>Reset Color Pick</button>
-            <button type="button" class="button secondary" id="chooseAnotherBtn">Choose Different Photo</button>
+              <label for="areaSel">Where to change</label>
+              <select id="areaSel"><option value="similar">All similar colors in the photo</option><option value="connected">Only the connected area I clicked</option></select>
+              <label class="check"><input type="checkbox" id="shadowChk" checked><span>Include shadows and highlights</span></label>
+              <label class="check"><input type="checkbox" id="keepChk" checked><span>Keep natural shading</span></label>
+            </div>
+            <p id="pickHint" class="tip">Click a color in the photo to start.</p>
+          </div>
+
+          <div id="brushBox" class="hidden">
+            <p class="tip" style="margin:0 0 8px">Paint over areas that changed by mistake to bring back the original photo.</p>
+            <label for="brushSize">Brush size: <span id="brushVal">40</span></label>
+            <input type="range" id="brushSize" min="5" max="200" value="40">
+            <label for="brushMode">Brush mode</label>
+            <select id="brushMode"><option value="restore">Restore original</option><option value="reapply">Re-apply the change</option></select>
+            <button type="button" class="button secondary" id="brushClear" style="width:100%;justify-content:center;margin-top:10px">Clear Brush Marks</button>
+          </div>
+
+          <button type="button" class="button secondary" id="compareBtn" style="width:100%;justify-content:center;margin-top:16px" aria-pressed="false">Hold to Compare with Original</button>
+
+          <div class="row2" style="margin-top:16px">
+            <div><label for="outFmt" style="margin-top:0">Save as</label>
+              <select id="outFmt"><option value="png">PNG</option><option value="jpeg">JPG</option><option value="webp">WebP</option></select></div>
+            <div id="qBlock" class="hidden"><label for="outQ" style="margin-top:0">Quality: <span id="outQVal">92</span>%</label><input type="range" id="outQ" min="40" max="100" value="92"></div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px;margin-top:14px">
+            <button type="button" class="button primary" id="downloadBtn" style="justify-content:center">Download Photo</button>
+            <button type="button" class="button secondary" id="chooseAnotherBtn" style="justify-content:center">Choose Different Photo</button>
           </div>
         </div>
       </div>
@@ -188,265 +394,310 @@
   </section>
 
   <section class="content">
-    <h2 class="grad-text">Change the Color of Anything in a Photo</h2>
-    <p>This free photo color changer lets you click on any object in a picture &mdash; a shirt, a dress, a car, a wall, a flower &mdash; and swap its color for a new one while keeping the original shading, shadows and fabric folds intact. It works as an online color replacement tool and a selective recolor filter, finding every pixel with a similar color to the one you clicked and blending in the new color smoothly at the edges.</p>
-    <p>Use it to preview a dress in a different color, change a car's paint color, try out a new wall color for a room, or restyle a product photo. Everything runs locally in your browser using the Canvas API, so your photo is never uploaded anywhere.</p>
+    <h2 class="grad-text">About This Photo Color Changer</h2>
+    <p>Changing the color of a car, a shirt, a wall or a flower usually needs a photo editor and a lot of patience. This photo color changer lets you click the color you want to change, pick a new one, and see the result at once. Your photo is edited inside your browser and is never uploaded.</p>
+    <figure class="tool-figure"><img src="/images/tools/photo-color-changer.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Photo Color Changer banner showing a photo, a clicked color and recolor controls with swatches and sliders." title="Photo Color Changer by Working Tools Box"><figcaption>Click a color in the photo, choose a new one and fine-tune the result.</figcaption></figure>
+    <p>The tool selects pixels by how close they are to the color you click, with soft edges so the change blends in. You can change every similar color in the photo or only the connected area you clicked, keep the natural shading, or shift the hue instead of replacing the color. Make up to eight changes, fix mistakes with the Restore Brush, hold a button to compare with the original, and save the result as PNG, JPG or WebP.</p>
 
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>change color of object in photo</span>
-      <span>photo color changer online free</span>
-      <span>change dress color online</span>
-      <span>change clothes color in photo</span>
-      <span>online color replacement tool</span>
-      <span>change car color online</span>
-      <span>recolor image online free</span>
-      <span>change wall color in photo</span>
-      <span>selective color change tool</span>
-      <span>photo object recolor online</span>
-      <span>change shirt color online</span>
-      <span>free color swap tool for photos</span>
-      <span>change hair color in photo online</span>
-      <span>image color replacement free</span>
-      <span>recolor clothing online</span>
-      <span>photo editor change color of item</span>
-      <span>change product color online</span>
-      <span>online paint color changer photo</span>
-      <span>swap color in image free</span>
-      <span>change color of any object online</span>
-    </div>
+    <h2 class="grad-text">How to Change a Color in a Photo</h2>
+    <ol class="steps">
+      <li>Choose a photo, drop it on the page or paste it with Ctrl+V.</li>
+      <li>Click the color you want to change. The tool selects similar colors and shows the change in your list.</li>
+      <li>Pick a new color. Adjust Selection range and Edge softness until the right area is covered, or choose Only the connected area I clicked.</li>
+      <li>Use the Restore Brush for any spots that changed by mistake, hold Compare to check the original, then press Download Photo.</li>
+    </ol>
+
+    <h2 class="grad-text">Tips for a Natural Result</h2>
+    <ul>
+      <li>Click in the middle of a flat part of the object. The tool averages a small area around your click to pick the color.</li>
+      <li>Keep Include shadows and highlights on for objects with folds or reflections. Turn it off if the change spreads to areas it should not.</li>
+      <li>Use a small Selection range and a little Edge softness for objects with a clear edge, and a larger range for blurry or shaded areas.</li>
+      <li>Changing to white, black or gray works best with natural shading on. For a bold color change, pick a color of a similar brightness.</li>
+    </ul>
+
+    <h2 class="grad-text">When This Tool Helps</h2>
+    <p>Use it to preview a new wall or car color, try another color of clothing for a product photo, match a flower or a prop to a brand color, or fix an object that has the wrong color. To read a color value from a picture, use the <a href="/tools/image-color-picker/">Image Color Picker</a>, and to cut an object out of its background, use the <a href="/tools/image-background-remover/">Image Background Remover</a>.</p>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>How does this tool know which object to recolor?</summary><p>Click anywhere on the photo to pick a color. The tool then finds every pixel with a similar color, based on the tolerance you set, and replaces it while keeping the original shading and texture.</p></details>
-    <details class="faq"><summary>Will it only change the object I clicked on?</summary><p>It changes every area of a similar color, not just the exact spot you clicked. If another object shares that color, it may change too &mdash; lower the tolerance for a more precise selection.</p></details>
-    <details class="faq"><summary>Is my photo uploaded to a server?</summary><p>No. The recoloring happens locally in your browser using the Canvas API, and your photo is never uploaded anywhere.</p></details>
-    <details class="faq"><summary>Will the shading and folds in clothing still look natural?</summary><p>Yes. The tool replaces the hue and saturation of matched pixels but keeps their original brightness, so shadows, highlights and fabric folds are preserved.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></details>
+    <div class="faq-list">
+      <div class="faq"><h3>Is my photo uploaded to a server?</h3><p>No. The color change is done in your browser with the Canvas API, so your photo never leaves your device.</p></div>
+      <div class="faq"><h3>How do I change only one object?</h3><p>Choose Only the connected area I clicked. The change then spreads only to touching pixels of a similar color, so a second object of the same color stays as it was.</p></div>
+      <div class="faq"><h3>Why did other parts of my photo change too?</h3><p>Those parts had similar colors. Lower the Selection range, switch to the connected area option, or paint over the mistake with the Restore Brush.</p></div>
+      <div class="faq"><h3>Can I change more than one color?</h3><p>Yes. Click another color to add a new change, up to 8 in total. Select any change in the list to edit its color, range or method, or remove it with the cross.</p></div>
+      <div class="faq"><h3>What does Keep natural shading do?</h3><p>It keeps the light and dark detail of the original, so a red shirt turned blue still shows folds and highlights instead of becoming a flat blue shape.</p></div>
+      <div class="faq"><h3>What are the size limits?</h3><p>Photos can be JPG, PNG or WebP up to 10 MB. Larger pictures are scaled down to 2000 pixels on the long side for editing and saving.</p></div>
+    </div>
+
+    <h2 class="grad-text">More Free Tools You May Need</h2>
+    <div class="related-grid">
+      <a href="/tools/image-color-picker/"><strong>Image Color Picker</strong><span>Pick the exact color of any spot in a picture.</span></a>
+      <a href="/tools/color-palette-extractor/"><strong>Color Palette Extractor</strong><span>Pull the main colors out of any image.</span></a>
+      <a href="/tools/image-background-remover/"><strong>Image Background Remover</strong><span>Cut the background out of a photo or logo.</span></a>
+      <a href="/tools/image-cropper/"><strong>Image Cropper</strong><span>Crop a picture to the area or size you need.</span></a>
+      <a href="/tools/image-resizer/"><strong>Image Resizer</strong><span>Change the width and height of an image.</span></a>
+      <a href="/tools/image-compressor/"><strong>Image Compressor</strong><span>Make image files smaller for faster pages.</span></a>
+    </div>
   </section>
+
 </main>
 
 <div id="site-footer"></div>
+
 <script>
 (function(){
   "use strict";
+  var _miss = {};
+  var $ = function(id){ var e = document.getElementById(id); if(e) return e; if(!_miss[id]) _miss[id] = document.createElement(/Canvas$/.test(id) ? "canvas" : "div"); return _miss[id]; };
+  var MAX_BYTES = 10 * 1024 * 1024, MAX_WORK = 2000, MAX_OPS = 8;
+  var canvas = $("mainCanvas"), ctx = canvas.getContext ? canvas.getContext("2d", { willReadFrequently: true }) : null;
+  var W = 0, H = 0, N = 0, orig = null, labL = null, labA = null, labB = null, restore = null;
+  var ops = [], active = -1, opId = 0, tool = "pick", showOrig = false, raf = 0, baseName = "photo", painting = false;
+  var SWATCHES = ["#ef4444", "#f97316", "#facc15", "#22c55e", "#14b8a6", "#3b82f6", "#8b5cf6", "#ec4899", "#ffffff", "#9ca3af", "#111111", "#7c2d12"];
 
-  var MAX_DIMENSION = 1600;
+  function setText(el, m, err){ el.textContent = m || ""; el.className = "status" + (err ? " error" : ""); }
+  function show(el, on){ el.classList.toggle("hidden", !on); }
 
-  var uploadView = document.getElementById("uploadView");
-  var editorView = document.getElementById("editorView");
-  var dropZone = document.getElementById("dropZone");
-  var fileInput = document.getElementById("fileInput");
-  var selectBtn = document.getElementById("selectBtn");
-  var uploadStatus = document.getElementById("uploadStatus");
-
-  var canvas = document.getElementById("workCanvas");
-  var ctx = canvas.getContext("2d");
-
-  var pickedSwatch = document.getElementById("pickedSwatch");
-  var pickedLabel = document.getElementById("pickedLabel");
-  var newColor = document.getElementById("newColor");
-  var toleranceRange = document.getElementById("toleranceRange");
-  var toleranceVal = document.getElementById("toleranceVal");
-  var featherRange = document.getElementById("featherRange");
-  var featherVal = document.getElementById("featherVal");
-  var preserveShadeCheck = document.getElementById("preserveShadeCheck");
-
-  var downloadBtn = document.getElementById("downloadBtn");
-  var undoBtn = document.getElementById("undoBtn");
-  var chooseAnotherBtn = document.getElementById("chooseAnotherBtn");
-
-  var baseImage = null;
-  var baseObjectUrl = null;
-  var originalImageData = null;
-  var pickedRGB = null;
-  var resultObjectUrl = null;
-
-  function revoke(url){ if(url) URL.revokeObjectURL(url); }
-
-  selectBtn.addEventListener("click", function(){ fileInput.click(); });
-  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
-  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
-  dropZone.addEventListener("drop", function(e){
-    e.preventDefault();
-    if(e.dataTransfer.files && e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]);
-  });
-  fileInput.addEventListener("change", function(){
-    if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]);
-  });
-
-  function clampDims(w, h){
-    if(Math.max(w, h) <= MAX_DIMENSION) return { w: w, h: h };
-    var ratio = MAX_DIMENSION / Math.max(w, h);
-    return { w: Math.round(w * ratio), h: Math.round(h * ratio) };
-  }
-
-  function handleFile(file){
-    var allowed = ["image/jpeg","image/png","image/webp"];
-    if(allowed.indexOf(file.type) === -1){
-      uploadStatus.textContent = "Please choose a JPG, PNG or WebP image.";
-      uploadStatus.className = "status error";
-      return;
-    }
-    revoke(baseObjectUrl);
-    baseObjectUrl = URL.createObjectURL(file);
-    var img = new Image();
-    img.onload = function(){
-      baseImage = img;
-      var dims = clampDims(img.naturalWidth, img.naturalHeight);
-      canvas.width = dims.w;
-      canvas.height = dims.h;
-      ctx.drawImage(img, 0, 0, dims.w, dims.h);
-      originalImageData = ctx.getImageData(0, 0, dims.w, dims.h);
-      pickedRGB = null;
-      pickedSwatch.style.background = "#e5e7eb";
-      pickedLabel.textContent = "Click the photo";
-      downloadBtn.disabled = true;
-      undoBtn.disabled = true;
-      uploadView.classList.add("hidden");
-      editorView.classList.remove("hidden");
-    };
-    img.onerror = function(){
-      uploadStatus.textContent = "Could not read that image. Please try another file.";
-      uploadStatus.className = "status error";
-    };
-    img.src = baseObjectUrl;
-  }
-
-  chooseAnotherBtn.addEventListener("click", function(){
-    baseImage = null;
-    fileInput.value = "";
-    editorView.classList.add("hidden");
-    uploadView.classList.remove("hidden");
-  });
-
+  /* ---------- colors ---------- */
+  function hexToRgb(h){ var n = parseInt(h.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+  function rgbHex(r, g, b){ return "#" + [r, g, b].map(function(v){ return Math.max(0, Math.min(255, Math.round(v))).toString(16).padStart(2, "0"); }).join(""); }
   function rgbToHsl(r, g, b){
     r /= 255; g /= 255; b /= 255;
-    var max = Math.max(r, g, b), min = Math.min(r, g, b);
-    var h, s, l = (max + min) / 2;
-    if(max === min){ h = s = 0; }
-    else{
-      var d = max - min;
-      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-      switch(max){
-        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-        case g: h = (b - r) / d + 2; break;
-        default: h = (r - g) / d + 4;
-      }
-      h /= 6;
+    var mx = Math.max(r, g, b), mn = Math.min(r, g, b), h = 0, s = 0, l = (mx + mn) / 2;
+    if(mx !== mn){
+      var d = mx - mn; s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+      if(mx === r) h = (g - b) / d + (g < b ? 6 : 0); else if(mx === g) h = (b - r) / d + 2; else h = (r - g) / d + 4; h /= 6;
     }
     return [h, s, l];
   }
+  function hue2rgb(p, q, t){ if(t < 0) t += 1; if(t > 1) t -= 1; if(t < 1 / 6) return p + (q - p) * 6 * t; if(t < 1 / 2) return q; if(t < 2 / 3) return p + (q - p) * (2 / 3 - t) * 6; return p; }
   function hslToRgb(h, s, l){
-    var r, g, b;
-    if(s === 0){ r = g = b = l; }
-    else{
-      var hue2rgb = function(p, q, t){
-        if(t < 0) t += 1;
-        if(t > 1) t -= 1;
-        if(t < 1/6) return p + (q - p) * 6 * t;
-        if(t < 1/2) return q;
-        if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-        return p;
-      };
-      var q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-      var p = 2 * l - q;
-      r = hue2rgb(p, q, h + 1/3);
-      g = hue2rgb(p, q, h);
-      b = hue2rgb(p, q, h - 1/3);
-    }
-    return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
+    if(s === 0){ var v = l * 255; return [v, v, v]; }
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+    return [hue2rgb(p, q, h + 1 / 3) * 255, hue2rgb(p, q, h) * 255, hue2rgb(p, q, h - 1 / 3) * 255];
+  }
+  function lin(c){ c /= 255; return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4); }
+  function fl(t){ return t > 0.008856 ? Math.cbrt(t) : 7.787 * t + 16 / 116; }
+  function rgbToLab(r, g, b){
+    var R = lin(r), G = lin(g), B = lin(b), x = (0.4124 * R + 0.3576 * G + 0.1805 * B) / 0.95047, y = 0.2126 * R + 0.7152 * G + 0.0722 * B, z = (0.0193 * R + 0.1192 * G + 0.9505 * B) / 1.08883;
+    var fx = fl(x), fy = fl(y), fz = fl(z); return [116 * fy - 16, 500 * (fx - fy), 200 * (fy - fz)];
   }
 
-  canvas.addEventListener("click", function(e){
-    if(!originalImageData) return;
-    var rect = canvas.getBoundingClientRect();
-    var scaleX = canvas.width / rect.width;
-    var scaleY = canvas.height / rect.height;
-    var x = Math.floor((e.clientX - rect.left) * scaleX);
-    var y = Math.floor((e.clientY - rect.top) * scaleY);
-    var i = (y * canvas.width + x) * 4;
-    var d = originalImageData.data;
-    pickedRGB = [d[i], d[i+1], d[i+2]];
-    pickedSwatch.style.background = "rgb(" + pickedRGB.join(",") + ")";
-    pickedLabel.textContent = "RGB(" + pickedRGB.join(", ") + ")";
-    downloadBtn.disabled = false;
-    undoBtn.disabled = false;
-    applyRecolor();
+  /* ---------- loading ---------- */
+  var dropZone = $("dropZone"), fileInput = $("fileInput");
+  $("selectBtn").addEventListener("click", function(e){ e.stopPropagation(); fileInput.click(); });
+  dropZone.addEventListener("click", function(e){ if(e.target.id !== "selectBtn") fileInput.click(); });
+  dropZone.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); fileInput.click(); } });
+  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); dropZone.classList.add("drag"); });
+  dropZone.addEventListener("dragleave", function(){ dropZone.classList.remove("drag"); });
+  dropZone.addEventListener("drop", function(e){ e.preventDefault(); dropZone.classList.remove("drag"); var fl = e.dataTransfer.files; if(fl && fl[0]){ handleFile(fl[0]); if(fl.length > 1) setText($("uploadStatus"), "Only the first photo was used."); } });
+  fileInput.addEventListener("change", function(){ if(fileInput.files && fileInput.files[0]) handleFile(fileInput.files[0]); fileInput.value = ""; });
+  document.addEventListener("paste", function(e){
+    if(!e.clipboardData || !e.clipboardData.items) return;
+    for(var i = 0; i < e.clipboardData.items.length; i++){ var it = e.clipboardData.items[i]; if(it.kind === "file" && it.type.indexOf("image/") === 0){ var f = it.getAsFile(); if(f){ e.preventDefault(); handleFile(f); return; } } }
   });
+  function handleFile(file){
+    var st = $("uploadStatus");
+    if(!file.size){ setText(st, "That file is empty. Please choose another photo.", true); return; }
+    if(!/^image\/(jpeg|png|webp)$/.test(file.type)){ setText(st, "Please choose a JPG, PNG or WebP photo.", true); return; }
+    if(file.size > MAX_BYTES){ setText(st, "That photo is larger than 10 MB. Please choose a smaller one.", true); return; }
+    var url = URL.createObjectURL(file), img = new Image();
+    img.onload = function(){
+      URL.revokeObjectURL(url);
+      if(!img.naturalWidth){ setText(st, "Could not read that photo.", true); return; }
+      try{ init(img, (file.name || "photo").replace(/\.[^.]+$/, "") || "photo"); }
+      catch(err){ setText(st, "This photo is too large for your device. Please try a smaller one.", true); return; }
+      setText(st, ""); show($("uploadView"), false); show($("editorView"), true);
+    };
+    img.onerror = function(){ URL.revokeObjectURL(url); setText(st, "Could not read that photo. Please try another file.", true); };
+    img.src = url;
+  }
+  function init(img, name){
+    var k = Math.min(1, MAX_WORK / Math.max(img.naturalWidth, img.naturalHeight));
+    var w = Math.max(1, Math.round(img.naturalWidth * k)), h = Math.max(1, Math.round(img.naturalHeight * k));
+    canvas.width = w; canvas.height = h;
+    ctx.drawImage(img, 0, 0, w, h);
+    var data = ctx.getImageData(0, 0, w, h);
+    W = w; H = h; N = w * h; orig = data; baseName = name;
+    labL = new Float32Array(N); labA = new Float32Array(N); labB = new Float32Array(N);
+    var d = data.data, i, lab;
+    for(i = 0; i < N; i++){ lab = rgbToLab(d[i * 4], d[i * 4 + 1], d[i * 4 + 2]); labL[i] = lab[0]; labA[i] = lab[1]; labB[i] = lab[2]; }
+    restore = new Uint8Array(N); ops = []; active = -1; showOrig = false;
+    renderOps(); syncControls(); setTool("pick"); paint();
+    setText($("actionStatus"), k < 1 ? "Large photo resized to " + w + "\u00d7" + h + " px for editing and saving." : "");
+  }
 
-  function applyRecolor(){
-    if(!pickedRGB || !originalImageData) return;
-    var tolerance = parseInt(toleranceRange.value, 10);
-    var feather = parseInt(featherRange.value, 10);
-    var preserveShade = preserveShadeCheck.checked;
-    var targetHex = newColor.value;
-    var tr = parseInt(targetHex.slice(1,3), 16);
-    var tg = parseInt(targetHex.slice(3,5), 16);
-    var tb = parseInt(targetHex.slice(5,7), 16);
-    var targetHsl = rgbToHsl(tr, tg, tb);
-
-    var src = originalImageData.data;
-    var out = ctx.createImageData(canvas.width, canvas.height);
-    var od = out.data;
-
-    for(var i = 0; i < src.length; i += 4){
-      var r = src[i], g = src[i+1], b = src[i+2];
-      var dist = Math.sqrt(
-        Math.pow(r - pickedRGB[0], 2) +
-        Math.pow(g - pickedRGB[1], 2) +
-        Math.pow(b - pickedRGB[2], 2)
-      );
-
-      if(dist <= tolerance + feather){
-        var blend = dist <= tolerance ? 1 : 1 - ((dist - tolerance) / Math.max(1, feather));
-        var hsl = rgbToHsl(r, g, b);
-        var newL = preserveShade ? hsl[2] : targetHsl[2];
-        var newRgb = hslToRgb(targetHsl[0], targetHsl[1], newL);
-
-        od[i]   = Math.round(r * (1 - blend) + newRgb[0] * blend);
-        od[i+1] = Math.round(g * (1 - blend) + newRgb[1] * blend);
-        od[i+2] = Math.round(b * (1 - blend) + newRgb[2] * blend);
-      } else {
-        od[i] = r; od[i+1] = g; od[i+2] = b;
+  /* ---------- masks ---------- */
+  function computeMask(op){
+    var mask = new Uint8Array(N), tol = op.tol, soft = Math.max(0.0001, op.soft), t1 = tol * tol, t2 = (tol + soft) * (tol + soft), lw = op.shadows ? 0.35 : 1;
+    var L0 = op.lab[0], A0 = op.lab[1], B0 = op.lab[2], i;
+    function weight(i){
+      var dl = (labL[i] - L0) * lw, da = labA[i] - A0, db = labB[i] - B0, d2 = dl * dl + da * da + db * db;
+      if(d2 <= t1) return 255; if(d2 >= t2 || op.soft === 0) return 0; return Math.round(255 * (1 - (Math.sqrt(d2) - tol) / soft));
+    }
+    if(op.area === "similar"){ for(i = 0; i < N; i++) mask[i] = weight(i); }
+    else {
+      var seen = new Uint8Array(N), q = new Int32Array(N), qh = 0, qt = 0, s = op.sy * W + op.sx;
+      q[qt++] = s; seen[s] = 1;
+      while(qh < qt){
+        var p = q[qh++], w = weight(p); if(!w) continue; mask[p] = w;
+        var x = p % W, y = (p - x) / W, nb;
+        if(x > 0 && !seen[nb = p - 1]){ seen[nb] = 1; q[qt++] = nb; }
+        if(x < W - 1 && !seen[nb = p + 1]){ seen[nb] = 1; q[qt++] = nb; }
+        if(y > 0 && !seen[nb = p - W]){ seen[nb] = 1; q[qt++] = nb; }
+        if(y < H - 1 && !seen[nb = p + W]){ seen[nb] = 1; q[qt++] = nb; }
       }
-      od[i+3] = src[i+3];
     }
-    ctx.putImageData(out, 0, 0);
+    op.mask = mask; op.mkey = op.tol + "|" + op.soft + "|" + op.area + "|" + op.shadows;
   }
+  function applyOp(op, data){
+    if(!op.mask || op.mkey !== op.tol + "|" + op.soft + "|" + op.area + "|" + op.shadows) computeMask(op);
+    var m = op.mask, t = rgbToHsl.apply(null, hexToRgb(op.color)), ph = op.pickedHsl, shift = op.shift / 360, i, w, r, g, b, hsl, h, s, l, out;
+    for(i = 0; i < N; i++){
+      w = m[i]; if(!w) continue;
+      r = data[i * 4]; g = data[i * 4 + 1]; b = data[i * 4 + 2]; hsl = rgbToHsl(r, g, b);
+      if(op.method === "shift"){ h = (hsl[0] + shift) % 1; s = hsl[1]; l = hsl[2]; }
+      else {
+        h = t[0];
+        if(ph[1] < 0.06) s = t[1]; else s = Math.min(1, t[1] * Math.min(1.4, hsl[1] / ph[1]));
+        l = op.keep ? Math.max(0, Math.min(1, hsl[2] + (t[2] - ph[2]) * 0.75)) : t[2];
+      }
+      out = hslToRgb(h, s, l); w /= 255;
+      data[i * 4] = r + (out[0] - r) * w; data[i * 4 + 1] = g + (out[1] - g) * w; data[i * 4 + 2] = b + (out[2] - b) * w;
+    }
+  }
+  function compose(){
+    var out = new ImageData(new Uint8ClampedArray(orig.data), W, H), d = out.data;
+    if(!showOrig){
+      ops.forEach(function(op){ applyOp(op, d); });
+      var o = orig.data;
+      for(var i = 0; i < N; i++){ var rv = restore[i]; if(!rv) continue; var f = rv / 255, k = i * 4; d[k] += (o[k] - d[k]) * f; d[k + 1] += (o[k + 1] - d[k + 1]) * f; d[k + 2] += (o[k + 2] - d[k + 2]) * f; }
+    }
+    return out;
+  }
+  function paint(){ if(raf) return; raf = requestAnimationFrame(function(){ raf = 0; if(!orig) return; try{ ctx.putImageData(compose(), 0, 0); }catch(e){ setText($("actionStatus"), "Could not update the photo. Try a smaller photo.", true); } }); }
 
-  [newColor, toleranceRange, featherRange, preserveShadeCheck].forEach(function(el){
-    el.addEventListener("input", function(){
-      toleranceVal.textContent = toleranceRange.value;
-      featherVal.textContent = featherRange.value;
-      if(pickedRGB) applyRecolor();
+  /* ---------- picking ---------- */
+  function pos(e){ var r = canvas.getBoundingClientRect(); return { x: Math.min(W - 1, Math.max(0, Math.floor((e.clientX - r.left) * W / r.width))), y: Math.min(H - 1, Math.max(0, Math.floor((e.clientY - r.top) * H / r.height))) }; }
+  function pixelAvg(x, y, rad){
+    var s = [0, 0, 0], c = 0, d = orig.data;
+    for(var yy = Math.max(0, y - rad); yy <= Math.min(H - 1, y + rad); yy++) for(var xx = Math.max(0, x - rad); xx <= Math.min(W - 1, x + rad); xx++){ var k = (yy * W + xx) * 4; s[0] += d[k]; s[1] += d[k + 1]; s[2] += d[k + 2]; c++; }
+    return [s[0] / c, s[1] / c, s[2] / c];
+  }
+  function addOp(x, y){
+    if(ops.length >= MAX_OPS){ setText($("actionStatus"), "You can make up to " + MAX_OPS + " changes. Remove one first.", true); return; }
+    var rgb = pixelAvg(x, y, 2), op = { id: ++opId, sx: x, sy: y, rgb: rgb, lab: rgbToLab(rgb[0], rgb[1], rgb[2]), pickedHsl: rgbToHsl(rgb[0], rgb[1], rgb[2]),
+      color: $("newColor").value || "#2563eb", method: "replace", shift: 120, tol: +$("tolRange").value || 22, soft: +$("softRange").value || 0, area: $("areaSel").value, shadows: $("shadowChk").checked, keep: $("keepChk").checked };
+    if(op.color.toLowerCase() === rgbHex(rgb[0], rgb[1], rgb[2])) op.color = "#2563eb";
+    ops.push(op); active = ops.length - 1; setText($("actionStatus"), ""); renderOps(); syncControls(); paint();
+  }
+  function renderOps(){
+    var box = $("opsList"); box.innerHTML = "";
+    ops.forEach(function(op, i){
+      var w = document.createElement("div"); w.className = "op" + (i === active ? " on" : ""); w.setAttribute("role", "listitem");
+      var b = document.createElement("button"); b.type = "button"; b.className = "op-main"; b.setAttribute("aria-label", "Edit change " + (i + 1));
+      b.innerHTML = '<i style="background:' + rgbHex(op.rgb[0], op.rgb[1], op.rgb[2]) + '"></i><span>\u2192</span><i style="background:' + (op.method === "shift" ? "conic-gradient(red,yellow,lime,cyan,blue,magenta,red)" : op.color) + '"></i>';
+      b.addEventListener("click", function(){ active = i; renderOps(); syncControls(); });
+      var x = document.createElement("button"); x.type = "button"; x.className = "op-x"; x.textContent = "\u00d7"; x.setAttribute("aria-label", "Remove change " + (i + 1));
+      x.addEventListener("click", function(){ ops.splice(i, 1); active = Math.min(active, ops.length - 1); if(i < active) active--; renderOps(); syncControls(); paint(); });
+      w.appendChild(b); w.appendChild(x); box.appendChild(w);
     });
+  }
+  function syncControls(){
+    var op = ops[active];
+    show($("opControls"), !!op); $("pickHint").style.display = op ? "none" : "block";
+    if(!op) return;
+    $("newColor").value = op.color; $("methodSel").value = op.method; $("shiftRange").value = op.shift; $("shiftVal").textContent = op.shift; show($("shiftBlock"), op.method === "shift");
+    $("tolRange").value = op.tol; $("tolVal").textContent = op.tol; $("softRange").value = op.soft; $("softVal").textContent = op.soft;
+    $("areaSel").value = op.area; $("shadowChk").checked = op.shadows; $("keepChk").checked = op.keep;
+    Array.prototype.forEach.call($("newSwatches").children, function(b){ b.classList.toggle("on", b.getAttribute("data-color") === op.color.toLowerCase()); });
+  }
+  function edit(fn){ var op = ops[active]; if(!op) return; fn(op); renderOps(); paint(); }
+  SWATCHES.forEach(function(c){
+    var b = document.createElement("button"); b.type = "button"; b.className = "sw"; b.style.background = c; b.setAttribute("data-color", c); b.setAttribute("aria-label", "Use color " + c);
+    b.addEventListener("click", function(){ edit(function(op){ op.color = c; op.method = op.method === "shift" ? "replace" : op.method; }); syncControls(); });
+    $("newSwatches").appendChild(b);
   });
+  $("newColor").addEventListener("input", function(){ edit(function(op){ op.color = $("newColor").value; if(op.method === "shift") op.method = "replace"; }); Array.prototype.forEach.call($("newSwatches").children, function(b){ b.classList.remove("on"); }); $("methodSel").value = ops[active] ? ops[active].method : "replace"; show($("shiftBlock"), !!ops[active] && ops[active].method === "shift"); });
+  $("methodSel").addEventListener("change", function(){ edit(function(op){ op.method = $("methodSel").value; }); show($("shiftBlock"), $("methodSel").value === "shift"); });
+  $("shiftRange").addEventListener("input", function(){ $("shiftVal").textContent = $("shiftRange").value; edit(function(op){ op.shift = +$("shiftRange").value; }); });
+  $("tolRange").addEventListener("input", function(){ $("tolVal").textContent = $("tolRange").value; edit(function(op){ op.tol = +$("tolRange").value; }); });
+  $("softRange").addEventListener("input", function(){ $("softVal").textContent = $("softRange").value; edit(function(op){ op.soft = +$("softRange").value; }); });
+  $("areaSel").addEventListener("change", function(){ edit(function(op){ op.area = $("areaSel").value; }); });
+  $("shadowChk").addEventListener("change", function(){ edit(function(op){ op.shadows = $("shadowChk").checked; }); });
+  $("keepChk").addEventListener("change", function(){ edit(function(op){ op.keep = $("keepChk").checked; }); });
+  $("undoBtn").addEventListener("click", function(){ if(!ops.length) return; ops.pop(); active = ops.length - 1; renderOps(); syncControls(); paint(); });
+  $("clearBtn").addEventListener("click", function(){ ops = []; active = -1; renderOps(); syncControls(); paint(); });
 
-  undoBtn.addEventListener("click", function(){
-    pickedRGB = null;
-    pickedSwatch.style.background = "#e5e7eb";
-    pickedLabel.textContent = "Click the photo";
-    downloadBtn.disabled = true;
-    undoBtn.disabled = true;
-    ctx.putImageData(originalImageData, 0, 0);
+  /* ---------- tools ---------- */
+  function setTool(t){
+    tool = t; $("pickTab").classList.toggle("on", t === "pick"); $("brushTab").classList.toggle("on", t === "brush");
+    $("pickTab").setAttribute("aria-pressed", t === "pick"); $("brushTab").setAttribute("aria-pressed", t === "brush");
+    show($("pickBox"), t === "pick"); show($("brushBox"), t === "brush");
+    canvas.style.touchAction = t === "brush" ? "none" : "manipulation"; canvas.style.cursor = t === "brush" ? "crosshair" : "crosshair";
+  }
+  $("pickTab").addEventListener("click", function(){ setTool("pick"); });
+  $("brushTab").addEventListener("click", function(){ setTool("brush"); });
+  $("brushSize").addEventListener("input", function(){ $("brushVal").textContent = $("brushSize").value; });
+  $("brushClear").addEventListener("click", function(){ if(restore) restore.fill(0); paint(); });
+  function stamp(cx, cy){
+    var scale = W / canvas.getBoundingClientRect().width, r = (+$("brushSize").value || 40) * scale / 2, mode = $("brushMode").value;
+    var x0 = Math.max(0, Math.floor(cx - r)), x1 = Math.min(W - 1, Math.ceil(cx + r)), y0 = Math.max(0, Math.floor(cy - r)), y1 = Math.min(H - 1, Math.ceil(cy + r));
+    for(var y = y0; y <= y1; y++) for(var x = x0; x <= x1; x++){
+      var d = Math.sqrt((x - cx) * (x - cx) + (y - cy) * (y - cy)); if(d > r) continue;
+      var a = Math.round(255 * Math.min(1, (1 - d / r) * 2.2)), i = y * W + x;
+      if(mode === "restore"){ if(a > restore[i]) restore[i] = a; } else { restore[i] = Math.max(0, restore[i] - a); }
+    }
+  }
+  function px(e){ var r = canvas.getBoundingClientRect(); return { x: (e.clientX - r.left) * W / r.width, y: (e.clientY - r.top) * H / r.height }; }
+  canvas.addEventListener("pointerdown", function(e){
+    if(!orig) return; if(e.pointerType === "mouse" && e.button !== 0) return;
+    if(tool === "brush"){ painting = true; try{ canvas.setPointerCapture(e.pointerId); }catch(err){} var p = px(e); stamp(p.x, p.y); paint(); e.preventDefault(); }
   });
+  canvas.addEventListener("pointermove", function(e){
+    if(!orig) return;
+    if(tool === "brush" && painting){ var p = px(e); stamp(p.x, p.y); paint(); e.preventDefault(); }
+    var q = pos(e), k = (q.y * W + q.x) * 4, d = orig.data, h = rgbHex(d[k], d[k + 1], d[k + 2]);
+    $("hoverDot").style.background = h; $("hoverText").textContent = tool === "pick" ? h + " \u2014 click to change this color" : "Painting with the restore brush";
+  });
+  function endPaint(e){ if(painting){ painting = false; try{ canvas.releasePointerCapture(e.pointerId); }catch(err){} } }
+  canvas.addEventListener("pointerup", endPaint); canvas.addEventListener("pointercancel", endPaint);
+  canvas.addEventListener("click", function(e){ if(tool === "pick" && orig){ var q = pos(e); addOp(q.x, q.y); } });
 
-  downloadBtn.addEventListener("click", function(){
-    canvas.toBlob(function(blob){
-      if(!blob) return;
-      revoke(resultObjectUrl);
-      resultObjectUrl = URL.createObjectURL(blob);
-      var a = document.createElement("a");
-      a.href = resultObjectUrl;
-      a.download = "color-changed-photo.png";
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      setTimeout(function(){ revoke(resultObjectUrl); resultObjectUrl = null; }, 4000);
-    }, "image/png");
+  /* ---------- compare ---------- */
+  var cmp = $("compareBtn");
+  function setCmp(on){ if(showOrig === on) return; showOrig = on; cmp.setAttribute("aria-pressed", on); cmp.textContent = on ? "Showing Original\u2026" : "Hold to Compare with Original"; paint(); }
+  cmp.addEventListener("pointerdown", function(e){ setCmp(true); try{ cmp.setPointerCapture(e.pointerId); }catch(err){} e.preventDefault(); });
+  cmp.addEventListener("pointerup", function(){ setCmp(false); }); cmp.addEventListener("pointercancel", function(){ setCmp(false); }); cmp.addEventListener("pointerleave", function(){ setCmp(false); });
+  cmp.addEventListener("keydown", function(e){ if(e.key === " " || e.key === "Enter"){ e.preventDefault(); setCmp(true); } }); cmp.addEventListener("keyup", function(e){ if(e.key === " " || e.key === "Enter") setCmp(false); });
+  cmp.addEventListener("contextmenu", function(e){ e.preventDefault(); });
+
+  /* ---------- export ---------- */
+  $("outFmt").addEventListener("change", function(){ show($("qBlock"), $("outFmt").value !== "png"); });
+  $("outQ").addEventListener("input", function(){ $("outQVal").textContent = $("outQ").value; });
+  var EXT = { png: "png", jpeg: "jpg", webp: "webp" };
+  $("downloadBtn").addEventListener("click", function(){
+    if(!orig) return; var fmt = $("outFmt").value, st = $("actionStatus");
+    try{
+      var was = showOrig; showOrig = false;
+      var c = document.createElement("canvas"); c.width = W; c.height = H; var x = c.getContext("2d");
+      if(fmt === "jpeg"){ x.fillStyle = "#fff"; x.fillRect(0, 0, W, H); }
+      var tmp = document.createElement("canvas"); tmp.width = W; tmp.height = H; tmp.getContext("2d").putImageData(compose(), 0, 0); x.drawImage(tmp, 0, 0); showOrig = was;
+      c.toBlob(function(b){
+        if(!b){ setText(st, "Could not create the file. Try a smaller photo.", true); return; }
+        var u = URL.createObjectURL(b), a = document.createElement("a"); a.href = u; a.download = baseName + "-recolored." + EXT[fmt]; document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(u); }, 4000);
+        setText(st, "Downloaded " + baseName + "-recolored." + EXT[fmt]);
+      }, "image/" + fmt, fmt === "png" ? undefined : (+$("outQ").value || 92) / 100);
+    }catch(e){ setText(st, "Could not create the file. Try a smaller photo.", true); }
   });
+  $("chooseAnotherBtn").addEventListener("click", function(){
+    orig = null; labL = labA = labB = restore = null; ops = []; active = -1; W = H = N = 0;
+    show($("editorView"), false); show($("uploadView"), true); setText($("actionStatus"), "");
+  });
+  renderOps(); syncControls();
 })();
+
 </script>
+
 <script src="/shared/shared.js" defer></script>
 </body>
 </html>
