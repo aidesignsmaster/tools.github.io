@@ -3,42 +3,131 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Free Photo to Video Animation Maker | 30 Effects | Working Tools Box</title>
-<meta name="description" content="Turn up to 30 photos into an animated video with 30 different transition and motion effects, a different effect per photo, plus crop framing. Free, in your browser.">
-<meta name="robots" content="index, follow">
+<title>Photo to Video Maker with Music | Working Tools Box</title>
+<meta name="description" content="Turn photos into an animated video with 30 effects, captions and background music. Choose the shape, save as MP4 or WebM. Free, no upload, no watermark.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/photo-slideshow-maker/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Free Photo to Video Animation Maker | 30 Effects | Working Tools Box">
-<meta property="og:description" content="Turn your photos into an animated video with 30 transition and motion effects, entirely in your browser.">
+<meta property="og:title" content="Photo to Video Maker with Music | Working Tools Box">
+<meta property="og:description" content="Turn photos into an animated video with 30 effects, captions and background music. Choose the shape, save as MP4 or WebM. Free, no upload, no watermark.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/photo-slideshow-maker/">
 <meta property="og:site_name" content="Working Tools Box">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Free Photo to Video Animation Maker | 30 Effects | Working Tools Box">
-<meta name="twitter:description" content="Turn your photos into an animated video with 30 transition and motion effects, entirely in your browser.">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/photo-slideshow-maker-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Photo to Video Animation Maker banner showing photo cards with effects, video shape options and a music upload.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Photo to Video Maker with Music | Working Tools Box">
+<meta name="twitter:description" content="Turn photos into an animated video with 30 effects, captions and background music. Choose the shape, save as MP4 or WebM. Free, no upload, no watermark.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/photo-slideshow-maker-og.jpg">
 
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"WebApplication",
-  "name":"Photo to Video Animation Maker",
-  "url":"https://wtoolsbox.com/tools/photo-slideshow-maker/",
-  "applicationCategory":"MultimediaApplication",
-  "operatingSystem":"Any",
-  "description":"Combines up to 30 photos into an animated slideshow video, with 30 selectable motion and transition effects assignable per photo, plus per-photo crop framing, directly in the browser.",
-  "offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Photo to Video Animation Maker",
+  "url": "https://wtoolsbox.com/tools/photo-slideshow-maker/",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Any",
+  "browserRequirements": "Requires JavaScript",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "description": "Turns photos into an animated video with 30 motion and transition effects, captions, background music, blurred backgrounds and MP4 or WebM output, recorded in the browser.",
+  "image": "https://wtoolsbox.com/images/tools/photo-slideshow-maker-og.jpg",
+  "featureList": [
+    "30 motion and transition effects",
+    "A different effect and crop for every photo",
+    "Captions on each photo",
+    "Background music with fade out",
+    "16:9, 9:16, 1:1, 4:5 and 4:3 shapes",
+    "720p and 1080p quality",
+    "Blurred, dark, black or white background",
+    "Preview before recording",
+    "MP4 or WebM download",
+    "Runs in the browser with no upload"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  }
 }
 </script>
 <script type="application/ld+json">
 {
-  "@context":"https://schema.org",
-  "@type":"FAQPage",
-  "mainEntity":[
-    {"@type":"Question","name":"Are my photos uploaded to a server?","acceptedAnswer":{"@type":"Answer","text":"No. The slideshow video is built and recorded locally in your browser, and your photos are never uploaded anywhere."}},
-    {"@type":"Question","name":"Can each photo have a different animation effect?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every photo has its own effect dropdown with 30 options, so you can mix zooms, pans, wipes, slides and more across a single slideshow."}},
-    {"@type":"Question","name":"What does the crop framing option do?","acceptedAnswer":{"@type":"Answer","text":"It controls how a photo that does not match the video's shape gets fitted into the frame \u2014 showing the whole photo with padding, or cropping it from the center, top, bottom, left or right edge to fill the frame completely."}},
-    {"@type":"Question","name":"What video format do I get?","acceptedAnswer":{"@type":"Answer","text":"The slideshow is saved as a WebM video file, since that is the format browsers can record directly without extra software."}},
-    {"@type":"Question","name":"Is this free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, completely free with no sign-up and no watermark, since all processing happens on your own device."}}
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Are my photos uploaded to a server?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your photos and music are combined into a video in your browser using the MediaRecorder API and are never uploaded."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does making the video take as long as the video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The browser records the animation as it plays, so a 30-second video takes about 30 seconds to make. Keep the tab open and visible, and use Preview to check the result first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add music?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Choose an MP3, WAV, OGG or M4A file up to 15 MB. It loops if the video is longer and fades out at the end. Use only music you have the right to use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Which video format should I choose?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Best available picks MP4 when your browser can record it, which works almost everywhere. WebM works in browsers and many players, but some phones and editors prefer MP4."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What size should the video be?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Use 16:9 for YouTube, 9:16 for Reels, Shorts and Stories, 1:1 or 4:5 for feed posts. Standard is 720p and HD is 1080p, which makes larger files."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many photos can I use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Up to 30 photos of up to 15 MB each, JPG, PNG or WebP. Large photos are scaled to fit the video, so very big pictures do not slow your device down."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Working Tools Box",
+      "item": "https://wtoolsbox.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Photo to Video Animation Maker",
+      "item": "https://wtoolsbox.com/tools/photo-slideshow-maker/"
+    }
   ]
 }
 </script>
@@ -112,8 +201,6 @@
   .content{padding:0 0 55px}
   .content h2{font-size:1.4rem;margin-top:34px;font-weight:800}
   .content p,.content li{color:#3c3a46}
-  .keyword-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .keyword-tags span{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:var(--muted);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
   .faq{border:1px solid var(--border);border-radius:12px;padding:4px 18px;margin-bottom:12px;background:#fff}
   .faq summary{font-size:1rem;font-weight:700;margin:14px 0;cursor:pointer;list-style:none}
   .faq summary::-webkit-details-marker{display:none}
@@ -130,88 +217,181 @@
   .hidden{display:none!important}
   @media(max-width:700px){.setup-row{grid-template-columns:1fr}}
   @media(max-width:640px){.tool{padding:18px}}
+  .tabs{display:flex;gap:8px;margin-bottom:18px;flex-wrap:wrap}
+  .tab{border:2px solid var(--border);background:#fff;border-radius:999px;padding:8px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:14px;color:var(--text)}
+  .tab.on{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;border-color:transparent}
+  .tab:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,.upload:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .grid2{display:grid;grid-template-columns:1fr 310px;gap:22px;align-items:start}
+  .panel{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .panel label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px}
+  .panel label:first-child{margin-top:0}
+  .panel select,.panel input[type=text],.field-text{width:100%;padding:9px;border:1px solid #d1d5db;border-radius:8px;font-size:14px;font-family:inherit;background:#fff;color:var(--text)}
+  .panel input[type=color]{width:100%;height:38px;border:1px solid #d1d5db;border-radius:8px;padding:2px;background:#fff;cursor:pointer}
+  .panel input[type=range]{width:100%}
+  .check{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:14px;font-weight:600}
+  .check input{width:18px;height:18px}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .upload.drag{border-color:var(--purple);background:#f3edff}
+  .tip{font-size:12px;color:var(--muted);margin:8px 0 0}
+  .btn-row{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+  .button[disabled]{opacity:.55;cursor:not-allowed}
+  .mini{border:1px solid var(--border);background:#fff;border-radius:8px;font-size:11px;font-weight:700;padding:3px 9px;margin-top:6px;cursor:pointer;color:#4c1d95;font-family:inherit}
+  .mini:hover{background:#f8f6ff}
+  .tabmock{display:inline-flex;align-items:center;gap:8px;background:#e8e6f2;border-radius:10px 10px 0 0;padding:8px 14px;font-size:13px;max-width:100%;margin-top:8px}
+  .tabmock img{width:16px;height:16px;display:block}
+  .tabmock span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:200px}
+  .faq-list{border-top:1px solid var(--border)}
+  .faq{border-bottom:1px solid var(--border);padding:4px 2px}
+  .faq h3{font-size:1.02rem;font-weight:700;margin:14px 0 6px}
+  .faq p{margin:0 0 14px}
+  .steps{padding-left:20px}
+  .steps li{margin-bottom:8px}
+  .related{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .related a{display:inline-block;background:#f8f6ff;border:1px solid var(--border);color:#7209b7;font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;text-decoration:none}
+  .related a:hover{border-color:#7209b7}
+  .imgwrap{position:relative}
+  #imgCanvas{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block;cursor:crosshair;background:#f8fafc}
+  .hoverchip{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-top:8px;font-family:ui-monospace,Consolas,monospace}
+  .hoverchip i{display:inline-block;width:18px;height:18px;border-radius:5px;border:1px solid rgba(0,0,0,.15);background:#fff}
+  .palette-item{position:relative}
+  .palette-item .x{position:absolute;top:4px;right:6px;border:0;background:transparent;font-size:16px;cursor:pointer;color:#6b6878;line-height:1}
+  .palette-item .nm{font-family:inherit;font-size:11px;color:var(--muted);display:block}
+  .palette-item .ct{font-family:inherit;font-size:11px;color:#3c3a46;display:block}
+  .export-box{width:100%;min-height:130px;background:#111827;color:#e5e7eb;border-radius:10px;padding:14px;font-family:ui-monospace,Consolas,monospace;font-size:12.5px;border:0;resize:vertical}
+  .harm-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0}
+  .harm-row b{font-size:12px;width:130px}
+  .harm-sw{display:flex;gap:6px;flex-wrap:wrap}
+  .harm-sw button{width:56px;height:40px;border-radius:8px;border:1px solid rgba(0,0,0,.12);cursor:pointer;font-size:9px;font-weight:700;font-family:ui-monospace,monospace}
+  .sub{font-weight:700;margin:22px 0 8px}
+  @media(max-width:800px){.grid2{grid-template-columns:1fr}.harm-row b{width:100%}}
+
+  .tool-figure{margin:20px 0}
+  .tool-figure img{width:100%;height:auto;border-radius:14px;border:1px solid var(--border);display:block}
+  .tool-figure figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-top:12px}
+  .related-grid a{display:flex;flex-direction:column;gap:4px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:#fff;text-decoration:none;color:var(--text);min-height:64px}
+  .related-grid a:hover{border-color:#7209b7}
+  .related-grid a strong{color:#7209b7}
+  .related-grid a span{font-size:13px;color:var(--muted)}
+  button,.button,.tab,select,input[type=number]{touch-action:manipulation}
+  .button,.tab,.mini{min-height:44px}
+  .mini{padding:6px 14px}
+  .palette-item .x{width:40px;height:40px;top:0;right:0}
+  .check{min-height:40px}
+  .panel select,.panel input[type=text],.panel input[type=number],.field-text,select.field-text{min-height:42px;box-sizing:border-box}
+  #imgCanvas{touch-action:manipulation}
+  img,canvas,svg{max-width:100%}
+
+  .setup-row{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-bottom:18px}
+  .setup-row label{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+  .setup-row select,.thumb-body select,.thumb-body input[type=text]{width:100%;min-height:42px;padding:8px;border:1px solid #d1d5db;border-radius:8px;font-family:inherit;font-size:14px;background:#fff;color:var(--text);box-sizing:border-box}
+  .music-box{margin:16px 0}
+  .music-box label.vol{display:block;font-size:13px;font-weight:700;margin:12px 0 6px}
+  .music-box input[type=range]{width:100%}
+  .apply-all{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0}
+  .apply-all select{min-height:42px;padding:6px 10px;border:1px solid #d1d5db;border-radius:8px;font-family:inherit;background:#fff;color:var(--text);max-width:100%}
+  .thumb-body label{display:block;font-size:12px;font-weight:700;margin:8px 0 4px}
+  .thumb-actions button{min-height:44px;cursor:pointer}
+  .preview-canvas{width:100%;max-width:640px;height:auto;display:block;border-radius:12px;background:#111827;margin:8px auto 10px}
+  #previewBox{text-align:center;margin-top:14px}
+  .result-video{width:100%;max-width:720px;border-radius:12px;display:block;background:#000}
 </style>
 </head>
 <body>
 
 <div id="site-header"></div>
+
 <main class="container">
   <section class="hero">
     <h1 class="grad-text">Photo to Video Animation Maker</h1>
-    <p>Turn your photos into an animated video with 30 motion and transition effects &mdash; a different effect for every photo &mdash; free, in your browser.</p>
+    <p>Turn your photos into an animated video with 30 motion and transition effects, captions and music &mdash; free, in your browser.</p>
   </section>
 
   <div class="notice">
-    <b>100% free, no upload:</b> Your photos are combined into a video locally in your browser and never leave your device.
+    <b>100% free, no upload, no watermark:</b> Your photos and music are combined into a video locally in your browser and never leave your device.
   </div>
   <div class="notice warn hidden" id="unsupportedNotice">
-    <b>Heads up:</b> your browser does not support in-browser video recording (it needs the MediaRecorder API). Please try the latest version of Chrome or Edge.
+    <b>Heads up:</b> your browser does not support in-browser video recording (it needs the MediaRecorder API). Please try the latest version of Chrome, Edge or Firefox.
   </div>
+
+  <noscript><div class="notice" style="background:#fef2f2;border-color:#fecaca;color:#991b1b">This tool needs JavaScript. Please enable it in your browser to make videos.</div></noscript>
 
   <section class="tool" aria-label="Photo to Video Animation Maker Tool">
 
     <div id="setupView">
       <div class="setup-row">
-        <div>
-          <label for="shapeSelect">Video shape</label>
-          <select id="shapeSelect">
-            <option value="16:9" selected>16:9 Landscape (YouTube)</option>
-            <option value="9:16">9:16 Portrait (Reels/Shorts/Stories)</option>
-            <option value="1:1">1:1 Square (Feed post)</option>
-            <option value="4:5">4:5 Portrait (Feed post)</option>
-            <option value="4:3">4:3 Classic</option>
-          </select>
-        </div>
-        <div>
-          <label for="maxPhotos">Maximum photos</label>
-          <select id="maxPhotos">
-            <option value="4">4 photos</option>
-            <option value="6">6 photos</option>
-            <option value="10" selected>10 photos</option>
-            <option value="20">20 photos</option>
-            <option value="30">30 photos</option>
-          </select>
-        </div>
-        <div>
-          <label for="durationSelect">Seconds per photo</label>
-          <select id="durationSelect">
-            <option value="1.2">1.2 seconds (Fast)</option>
-            <option value="1.8" selected>1.8 seconds</option>
-            <option value="2.5">2.5 seconds</option>
-            <option value="4">4 seconds</option>
-          </select>
-        </div>
+        <div><label for="shapeSelect">Video shape</label>
+          <select id="shapeSelect"><option value="16:9" selected>16:9 Landscape (YouTube)</option><option value="9:16">9:16 Portrait (Reels, Shorts, Stories)</option><option value="1:1">1:1 Square (Feed post)</option><option value="4:5">4:5 Portrait (Feed post)</option><option value="4:3">4:3 Classic</option></select></div>
+        <div><label for="qualitySel">Quality</label>
+          <select id="qualitySel"><option value="1" selected>Standard (720p)</option><option value="1.5">HD (1080p)</option></select></div>
+        <div><label for="maxPhotos">Maximum photos</label>
+          <select id="maxPhotos"><option value="4">4 photos</option><option value="6">6 photos</option><option value="10" selected>10 photos</option><option value="20">20 photos</option><option value="30">30 photos</option></select></div>
+        <div><label for="durationSelect">Seconds per photo</label>
+          <select id="durationSelect"><option value="1.2">1.2 seconds (Fast)</option><option value="1.8">1.8 seconds</option><option value="2.5" selected>2.5 seconds</option><option value="4">4 seconds</option><option value="6">6 seconds</option></select></div>
+        <div><label for="transSel">Transition length</label>
+          <select id="transSel"><option value="0.3">Quick (0.3 s)</option><option value="0.5" selected>Normal (0.5 s)</option><option value="0.8">Slow (0.8 s)</option></select></div>
+        <div><label for="bgSel">Background behind photos</label>
+          <select id="bgSel"><option value="blur" selected>Blurred photo</option><option value="dark">Dark</option><option value="black">Black</option><option value="white">White</option></select></div>
+        <div><label for="formatSel">Video format</label>
+          <select id="formatSel"><option value="auto" selected>Best available</option><option value="webm">WebM</option><option value="mp4">MP4 (if supported)</option></select></div>
+        <div><label for="capColorSel">Caption color</label>
+          <select id="capColorSel"><option value="#ffffff" selected>White</option><option value="#fde047">Yellow</option><option value="#111111">Black</option></select></div>
       </div>
 
-      <div class="upload" id="dropZone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
-        <p style="font-weight:700;margin:0 0 12px">Drop photos here, or</p>
+      <div class="upload" id="dropZone" tabindex="0" role="button" aria-label="Choose photos or drop them here">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 16l4.586-4.586a2 2 0 0 1 2.828 0L16 16m-2-2l1.586-1.586a2 2 0 0 1 2.828 0L20 14M14 8h.01M6 20h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2z"/></svg>
+        <p style="font-weight:700;margin:0 0 12px">Drop photos here, paste them (Ctrl+V), or</p>
         <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp" multiple>
         <button type="button" class="button primary" id="selectBtn">Add Photos</button>
-        <p id="countLabel" style="font-size:12px;color:var(--muted);margin-top:12px">0 of 10 photos added</p>
+        <p id="countLabel" class="tip" style="margin-top:12px">0 of 10 photos added &middot; JPG, PNG or WebP, up to 15 MB each</p>
       </div>
-      <div id="uploadStatus" class="status"></div>
+      <div id="uploadStatus" class="status" role="status"></div>
 
-      <p class="status" id="thumbHint" style="display:none">Each photo below has its own <b>Effect</b> and <b>Crop</b> dropdown &mdash; set them per photo before generating.</p>
+      <div class="panel music-box">
+        <p style="font-weight:700;margin:0 0 6px">Background music (optional)</p>
+        <input type="file" id="audioInput" accept="audio/*,.mp3,.wav,.ogg,.m4a,.aac" class="hidden">
+        <div class="btn-row" style="margin:0">
+          <button type="button" class="button secondary" id="audioBtn">Choose Music File</button>
+          <button type="button" class="button secondary hidden" id="removeAudioBtn">Remove Music</button>
+        </div>
+        <div id="audioStatus" class="status" role="status"></div>
+        <div id="volBlock" class="hidden"><label for="volumeRange" class="vol">Volume: <span id="volVal">80</span>%</label><input type="range" id="volumeRange" min="5" max="100" value="80"></div>
+        <p class="tip" style="margin:6px 0 0">MP3, WAV, OGG or M4A up to 15 MB. The music loops if it is shorter than the video and fades out at the end.</p>
+      </div>
+
+      <p class="status" id="thumbHint" style="display:none">Each photo has its own <b>Effect</b>, <b>Crop</b> and optional <b>Caption</b>. Use the arrows to change the order.</p>
+      <div class="apply-all hidden" id="applyAllRow">
+        <label for="allEffectSel" style="margin:0">Same effect for all photos:</label>
+        <select id="allEffectSel"></select>
+        <button type="button" class="button secondary" id="applyAllBtn">Apply</button>
+      </div>
       <div id="thumbGrid" class="thumb-grid"></div>
 
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px">
-        <button type="button" class="button primary" id="autoGenerateBtn" disabled>\u2728 Auto-Style &amp; Generate (No Setup Needed)</button>
-        <button type="button" class="button secondary" id="generateBtn" disabled>Generate With My Settings</button>
-        <button type="button" class="button secondary" id="randomizeBtn" hidden>Randomize All Effects</button>
-        <button type="button" class="button secondary" id="clearBtn" hidden>Clear All Photos</button>
+      <div class="btn-row">
+        <button type="button" class="button primary" id="autoGenerateBtn" disabled>Auto-Style &amp; Make Video</button>
+        <button type="button" class="button secondary" id="generateBtn" disabled>Make Video With My Settings</button>
+        <button type="button" class="button secondary" id="previewBtn" disabled>Preview</button>
+        <button type="button" class="button secondary hidden" id="randomizeBtn">Randomize Effects</button>
+        <button type="button" class="button secondary hidden" id="clearBtn">Clear All Photos</button>
+      </div>
+      <div id="previewBox" class="hidden">
+        <canvas id="previewCanvas" class="preview-canvas" aria-label="Video preview"></canvas>
+        <button type="button" class="button secondary" id="stopPreviewBtn">Stop Preview</button>
       </div>
     </div>
 
     <div id="generatingView" class="hidden">
-      <p style="font-weight:700;margin:0 0 8px" id="generatingLabel">Building your video&hellip;</p>
+      <p style="font-weight:700;margin:0 0 8px" id="generatingLabel" role="status">Building your video&hellip;</p>
       <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+      <p class="tip" id="timeLabel" style="margin:8px 0 12px"></p>
+      <button type="button" class="button secondary" id="cancelBtn">Cancel</button>
     </div>
 
     <div id="resultView" class="hidden">
       <p style="font-weight:700;margin:0 0 10px">Your Video</p>
       <video id="resultVideo" class="result-video" controls playsinline></video>
-      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+      <div id="resultInfo" class="tip"></div>
+      <div class="btn-row">
         <button type="button" class="button primary" id="downloadBtn">Download Video</button>
         <button type="button" class="button secondary" id="startOverBtn">Make Another Video</button>
       </div>
@@ -220,64 +400,62 @@
   </section>
 
   <section class="content">
-    <h2 class="grad-text">Photo to Video With 30 Animation Effects, Free</h2>
-    <p>This free photo to video animation maker combines up to 30 of your photos into a single video, with 30 different motion and transition effects to choose from &mdash; zooms, pans, slides, wipes, blinds, iris reveals, cross-zooms and more &mdash; and a different effect can be set for every single photo in the sequence. A crop framing option on each photo controls whether it is shown in full or filled edge-to-edge from a chosen side, so photos of any shape fit the video cleanly.</p>
-    <p>Use it to build a dynamic highlight reel, turn a photoshoot into a showreel-style video, or create a varied, professional-looking slideshow instead of one repeated transition throughout. Everything is recorded directly in your browser using the same technology built into modern browsers for live video capture, so no software installation or upload is needed.</p>
+    <h2 class="grad-text">About This Photo to Video Animation Maker</h2>
+    <p>A photo video turns a set of pictures into one short film that is easy to post and share. This photo to video maker combines up to 30 photos into an animated video with 30 motion and transition effects, optional captions and background music. Everything happens in your browser, so your photos and music are never uploaded.</p>
+    <figure class="tool-figure"><img src="/images/tools/photo-slideshow-maker.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Photo to Video Animation Maker banner showing photo cards with effects, video shape options and a music upload." title="Photo to Video Animation Maker by Working Tools Box"><figcaption>Add your photos, choose effects, captions and music, then make the video.</figcaption></figure>
+    <p>Every photo gets its own effect, such as zooms, pans, slides, wipes, an iris reveal or a cross zoom, and its own crop. Choose the video shape for YouTube, Reels or a feed post, pick blurred, dark, black or white behind photos that do not fill the frame, add captions, preview the result and save it as MP4 or WebM. Auto-Style picks good effects for you in one click.</p>
 
-    <h2 class="grad-text">Popular Searches</h2>
-    <div class="keyword-tags">
-      <span>photo to video maker online free</span>
-      <span>photo animation maker with effects</span>
-      <span>slideshow maker with 30 effects</span>
-      <span>photos to video converter online</span>
-      <span>video maker with transitions free</span>
-      <span>ken burns effect video maker</span>
-      <span>photo slideshow different effects per photo</span>
-      <span>online video maker with zoom pan effects</span>
-      <span>free slideshow video generator</span>
-      <span>photo to video with wipe transitions</span>
-      <span>make a video from pictures online</span>
-      <span>animated slideshow maker free</span>
-      <span>photo montage video maker online</span>
-      <span>slideshow video with crop options</span>
-      <span>online photo animation tool no upload</span>
-      <span>cross zoom slideshow effect</span>
-      <span>photo video maker no watermark</span>
-      <span>combine photos into animated video</span>
-      <span>free photo to video with custom effects</span>
-      <span>online highlight reel maker</span>
-    </div>
+    <h2 class="grad-text">How to Make a Video from Photos</h2>
+    <ol class="steps">
+      <li>Press Add Photos, drop your pictures on the page, or paste them. Choose the video shape and seconds per photo first.</li>
+      <li>Press Auto-Style for instant results, or set the Effect, Crop and Caption for each photo yourself and change their order with the arrows.</li>
+      <li>Optionally add a music file, then press Preview to check how the video will look.</li>
+      <li>Press Make Video and keep the tab open until it finishes. Then play it and press Download Video.</li>
+    </ol>
+
+    <h2 class="grad-text">Tips for a Better Video</h2>
+    <ul>
+      <li>Use photos with the same orientation as the video shape for the cleanest result, or keep Crop on Fit with a blurred background so nothing is cut off.</li>
+      <li>Give each photo 2 to 3 seconds. Shorter photos feel fast and energetic, longer ones suit captions.</li>
+      <li>Keep captions short, and use black text on bright photos and white text on dark ones.</li>
+      <li>Large videos take time to record. For a quick test, make a short video with 3 or 4 photos first, then add the rest.</li>
+    </ul>
+
+    <h2 class="grad-text">When This Tool Helps</h2>
+    <p>Use it for birthday and wedding slideshows, travel highlights, product showcases, Reels and Stories, and quick presentations for school or work. To shrink the finished file for sharing, use the <a href="/tools/video-compressor/">Video Compressor</a>, or join it with other clips using the <a href="/tools/video-merger/">Video Merger</a>.</p>
 
     <h2 class="grad-text">Frequently Asked Questions</h2>
-    <details class="faq"><summary>Are my photos uploaded to a server?</summary><p>No. The slideshow video is built and recorded locally in your browser, and your photos are never uploaded anywhere.</p></details>
-    <details class="faq"><summary>Can each photo have a different animation effect?</summary><p>Yes. Every photo has its own effect dropdown with 30 options, so you can mix zooms, pans, wipes, slides and more across a single slideshow.</p></details>
-    <details class="faq"><summary>What does the crop framing option do?</summary><p>It controls how a photo that does not match the video's shape gets fitted into the frame &mdash; showing the whole photo with padding, or cropping it from the center, top, bottom, left or right edge to fill the frame completely.</p></details>
-    <details class="faq"><summary>What video shapes can I choose?</summary><p>Pick from 16:9 landscape, 9:16 portrait for Reels and Stories, 1:1 square, 4:5 portrait feed, or 4:3 classic, before generating your video.</p></details>
-    <details class="faq"><summary>What video format do I get?</summary><p>The slideshow is saved as a WebM video file, since that is the format browsers can record directly without extra software.</p></details>
-    <details class="faq"><summary>Is this free to use?</summary><p>Yes, completely free with no sign-up and no watermark, since all processing happens on your own device.</p></details>
+    <div class="faq-list">
+      <div class="faq"><h3>Are my photos uploaded to a server?</h3><p>No. Your photos and music are combined into a video in your browser using the MediaRecorder API and are never uploaded.</p></div>
+      <div class="faq"><h3>Why does making the video take as long as the video?</h3><p>The browser records the animation as it plays, so a 30-second video takes about 30 seconds to make. Keep the tab open and visible, and use Preview to check the result first.</p></div>
+      <div class="faq"><h3>Can I add music?</h3><p>Yes. Choose an MP3, WAV, OGG or M4A file up to 15 MB. It loops if the video is longer and fades out at the end. Use only music you have the right to use.</p></div>
+      <div class="faq"><h3>Which video format should I choose?</h3><p>Best available picks MP4 when your browser can record it, which works almost everywhere. WebM works in browsers and many players, but some phones and editors prefer MP4.</p></div>
+      <div class="faq"><h3>What size should the video be?</h3><p>Use 16:9 for YouTube, 9:16 for Reels, Shorts and Stories, 1:1 or 4:5 for feed posts. Standard is 720p and HD is 1080p, which makes larger files.</p></div>
+      <div class="faq"><h3>How many photos can I use?</h3><p>Up to 30 photos of up to 15 MB each, JPG, PNG or WebP. Large photos are scaled to fit the video, so very big pictures do not slow your device down.</p></div>
+    </div>
+
+    <h2 class="grad-text">More Free Tools You May Need</h2>
+    <div class="related-grid">
+      <a href="/tools/video-trimmer/"><strong>Video Trimmer</strong><span>Cut a video to the part you need.</span></a>
+      <a href="/tools/video-merger/"><strong>Video Merger</strong><span>Join several video clips into one.</span></a>
+      <a href="/tools/video-to-gif-converter/"><strong>Video to GIF Converter</strong><span>Turn a short video clip into a GIF.</span></a>
+      <a href="/tools/video-compressor/"><strong>Video Compressor</strong><span>Make video files smaller to share or upload.</span></a>
+      <a href="/tools/image-compressor/"><strong>Image Compressor</strong><span>Make image files smaller for faster pages.</span></a>
+      <a href="/tools/image-collage-maker/"><strong>Image Collage Maker</strong><span>Combine several photos into one collage.</span></a>
+    </div>
   </section>
+
 </main>
 
 <div id="site-footer"></div>
+
 <script>
 (function(){
   "use strict";
-
-  var SHAPE_DIMENSIONS = {
-    "16:9": [1280, 720],
-    "9:16": [720, 1280],
-    "1:1":  [1000, 1000],
-    "4:5":  [864, 1080],
-    "4:3":  [960, 720]
-  };
-
-  // ---------------------------------------------------------------------
-  // 30 effects: 13 "motion" effects (camera movement sustained across the
-  // whole photo duration, then a quick plain fade into the next photo)
-  // and 17 "transition" effects (photo sits with a very gentle default
-  // zoom, then that specific transition plays during the final portion
-  // of its duration to reveal the next photo).
-  // ---------------------------------------------------------------------
+  var _miss = {};
+  var $ = function(id){ var e = document.getElementById(id); if(e) return e; if(!_miss[id]) _miss[id] = document.createElement(/Canvas$/.test(id) ? "canvas" : "div"); return _miss[id]; };
+  var SHAPE_DIMENSIONS = { "16:9": [1280, 720], "9:16": [720, 1280], "1:1": [1000, 1000], "4:5": [864, 1080], "4:3": [960, 720] };
+  var MAX_BYTES = 15 * 1024 * 1024, MAX_AUDIO = 15 * 1024 * 1024, STORE_MAX = 1920;
   var MOTION_EFFECTS = {
     "none":            { label: "None (Static)",              zoomFrom: 1,    zoomTo: 1,    panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: 0 },
     "zoom-in":         { label: "Zoom In",                     zoomFrom: 1,    zoomTo: 1.18, panFromX: 0,  panFromY: 0,  panToX: 0,  panToY: 0 },
@@ -334,214 +512,29 @@
   }
   var ALL_EFFECT_KEYS = Object.keys(MOTION_EFFECTS).concat(TRANSITION_KEYS);
 
-  // ---------------------------------------------------------------------
-
-  var unsupportedNotice = document.getElementById("unsupportedNotice");
-  var setupView = document.getElementById("setupView");
-  var generatingView = document.getElementById("generatingView");
-  var resultView = document.getElementById("resultView");
-
-  var shapeSelect = document.getElementById("shapeSelect");
-  var maxPhotosSelect = document.getElementById("maxPhotos");
-  var durationSelect = document.getElementById("durationSelect");
-
-  var dropZone = document.getElementById("dropZone");
-  var fileInput = document.getElementById("fileInput");
-  var selectBtn = document.getElementById("selectBtn");
-  var uploadStatus = document.getElementById("uploadStatus");
-  var countLabel = document.getElementById("countLabel");
-  var thumbHint = document.getElementById("thumbHint");
-  var thumbGrid = document.getElementById("thumbGrid");
-  var generateBtn = document.getElementById("generateBtn");
-  var autoGenerateBtn = document.getElementById("autoGenerateBtn");
-  var randomizeBtn = document.getElementById("randomizeBtn");
-  var clearBtn = document.getElementById("clearBtn");
-
-  var progressBar = document.getElementById("progressBar");
-  var generatingLabel = document.getElementById("generatingLabel");
-
-  var resultVideo = document.getElementById("resultVideo");
-  var downloadBtn = document.getElementById("downloadBtn");
-  var startOverBtn = document.getElementById("startOverBtn");
-
-  var photos = []; // { img, objectUrl, effect, crop }
-  var resultObjectUrl = null;
-
-  function supportsRecording(){
-    return !!(window.MediaRecorder && HTMLCanvasElement.prototype.captureStream);
+  function buildEffectOptionsHtml(selected){
+    var html = "";
+    Object.keys(MOTION_EFFECTS).forEach(function(key){ html += '<option value="' + key + '"' + (key === selected ? " selected" : "") + '>' + MOTION_EFFECTS[key].label + '</option>'; });
+    TRANSITION_KEYS.forEach(function(key){ html += '<option value="' + key + '"' + (key === selected ? " selected" : "") + '>' + TRANSITION_LABELS[key] + '</option>'; });
+    return html;
   }
-  if(!supportsRecording()){
-    unsupportedNotice.classList.remove("hidden");
-    selectBtn.disabled = true;
-  }
-
-  function revoke(url){ if(url) URL.revokeObjectURL(url); }
-  function maxPhotos(){ return parseInt(maxPhotosSelect.value, 10); }
-
-  function updateCountLabel(){
-    countLabel.textContent = photos.length + " of " + maxPhotos() + " photos added";
-    generateBtn.disabled = photos.length < 2;
-    autoGenerateBtn.disabled = photos.length < 2;
-    clearBtn.hidden = photos.length === 0;
-    randomizeBtn.hidden = photos.length === 0;
-    thumbHint.style.display = photos.length > 0 ? "block" : "none";
-  }
-  maxPhotosSelect.addEventListener("change", updateCountLabel);
-
-  selectBtn.addEventListener("click", function(){ fileInput.click(); });
-  dropZone.addEventListener("click", function(e){ if(e.target === dropZone || e.target.closest("svg") || e.target.tagName === "P") fileInput.click(); });
-  dropZone.addEventListener("dragover", function(e){ e.preventDefault(); });
-  dropZone.addEventListener("drop", function(e){
-    e.preventDefault();
-    if(e.dataTransfer.files) handleFiles(e.dataTransfer.files);
-  });
-  fileInput.addEventListener("change", function(){
-    if(fileInput.files) handleFiles(fileInput.files);
-    fileInput.value = "";
-  });
-
-  var effectCycle = Object.keys(MOTION_EFFECTS).concat(TRANSITION_KEYS);
-  var effectCycleIndex = 0;
-
-  function handleFiles(fileList){
-    uploadStatus.textContent = "";
-    var allowed = ["image/jpeg","image/png","image/webp"];
-    var files = Array.prototype.slice.call(fileList);
-    var room = maxPhotos() - photos.length;
-
-    if(files.length > room){
-      uploadStatus.textContent = "Only " + room + " more photo(s) can be added (limit is " + maxPhotos() + ").";
-      uploadStatus.className = "status error";
-      files = files.slice(0, room);
-    }
-
-    files.forEach(function(file){
-      if(allowed.indexOf(file.type) === -1) return;
-      var url = URL.createObjectURL(file);
-      var img = new Image();
-      img.onload = function(){
-        var defaultEffect = effectCycle[effectCycleIndex % effectCycle.length];
-        effectCycleIndex++;
-        photos.push({ img: img, objectUrl: url, effect: defaultEffect, crop: "fit" });
-        renderThumbs();
-        updateCountLabel();
-      };
-      img.onerror = function(){ revoke(url); };
-      img.src = url;
-    });
-  }
-
-  function renderThumbs(){
-    thumbGrid.innerHTML = "";
-    photos.forEach(function(p, idx){
-      var card = document.createElement("div");
-      card.className = "thumb-card";
-
-      var imgWrap = document.createElement("div");
-      imgWrap.className = "thumb-img-wrap";
-      var img = document.createElement("img");
-      img.src = p.objectUrl;
-      img.alt = "Photo " + (idx + 1);
-      imgWrap.appendChild(img);
-      var order = document.createElement("span");
-      order.className = "thumb-order";
-      order.textContent = "#" + (idx + 1);
-      imgWrap.appendChild(order);
-      card.appendChild(imgWrap);
-
-      var body = document.createElement("div");
-      body.className = "thumb-body";
-
-      var effLabel = document.createElement("label");
-      effLabel.textContent = "Effect";
-      body.appendChild(effLabel);
-      var effSelect = document.createElement("select");
-      effSelect.innerHTML = buildEffectOptionsHtml(p.effect);
-      effSelect.addEventListener("change", function(){ p.effect = effSelect.value; });
-      body.appendChild(effSelect);
-
-      var cropLabel = document.createElement("label");
-      cropLabel.textContent = "Crop";
-      body.appendChild(cropLabel);
-      var cropSelect = document.createElement("select");
-      cropSelect.innerHTML = buildCropOptionsHtml(p.crop);
-      cropSelect.addEventListener("change", function(){ p.crop = cropSelect.value; });
-      body.appendChild(cropSelect);
-
-      card.appendChild(body);
-
-      var actions = document.createElement("div");
-      actions.className = "thumb-actions";
-
-      var upBtn = document.createElement("button");
-      upBtn.type = "button";
-      upBtn.textContent = "\u2191 Up";
-      upBtn.disabled = idx === 0;
-      upBtn.addEventListener("click", function(){
-        var tmp = photos[idx - 1]; photos[idx - 1] = photos[idx]; photos[idx] = tmp;
-        renderThumbs();
-      });
-      actions.appendChild(upBtn);
-
-      var downBtn = document.createElement("button");
-      downBtn.type = "button";
-      downBtn.textContent = "\u2193 Down";
-      downBtn.disabled = idx === photos.length - 1;
-      downBtn.addEventListener("click", function(){
-        var tmp = photos[idx + 1]; photos[idx + 1] = photos[idx]; photos[idx] = tmp;
-        renderThumbs();
-      });
-      actions.appendChild(downBtn);
-
-      var removeBtn = document.createElement("button");
-      removeBtn.type = "button";
-      removeBtn.textContent = "\u2715 Remove";
-      removeBtn.addEventListener("click", function(){
-        revoke(photos[idx].objectUrl);
-        photos.splice(idx, 1);
-        renderThumbs();
-        updateCountLabel();
-      });
-      actions.appendChild(removeBtn);
-
-      card.appendChild(actions);
-      thumbGrid.appendChild(card);
-    });
-  }
-
-  clearBtn.addEventListener("click", function(){
-    photos.forEach(function(p){ revoke(p.objectUrl); });
-    photos = [];
-    renderThumbs();
-    updateCountLabel();
-  });
-
-  randomizeBtn.addEventListener("click", function(){
-    photos.forEach(function(p){
-      p.effect = ALL_EFFECT_KEYS[Math.floor(Math.random() * ALL_EFFECT_KEYS.length)];
-    });
-    renderThumbs();
-  });
-
-  // Draws `img` into the w x h frame according to cropMode, with an extra
-  // zoom multiplier and a pan offset (panX/panY in -1..1, relative to the
-  // overscan room created by the zoom). Used for both the static crop
-  // preview logic and the per-frame animated rendering.
+  function buildCropOptionsHtml(selected){ return CROP_MODES.map(function(c){ return '<option value="' + c.value + '"' + (c.value === selected ? " selected" : "") + '>' + c.label + '</option>'; }).join(""); }
   function drawFramed(ctx, img, w, h, cropMode, zoom, panX, panY){
     zoom = zoom || 1;
     panX = panX || 0;
     panY = panY || 0;
 
     if(cropMode === "fit"){
-      var scale = Math.min(w / img.naturalWidth, h / img.naturalHeight) * zoom;
-      var dw = img.naturalWidth * scale, dh = img.naturalHeight * scale;
+      if(img._bg && img._bgKey === w + "x" + h) ctx.drawImage(img._bg, 0, 0, w, h);
+      var scale = Math.min(w / (img.naturalWidth || img.width), h / (img.naturalHeight || img.height)) * zoom;
+      var dw = (img.naturalWidth || img.width) * scale, dh = (img.naturalHeight || img.height) * scale;
       var dx = (w - dw) / 2 + panX * (w - dw) * 0.5;
       var dy = (h - dh) / 2 + panY * (h - dh) * 0.5;
       ctx.drawImage(img, dx, dy, dw, dh);
       return;
     }
 
-    var imgRatio = img.naturalWidth / img.naturalHeight;
+    var imgRatio = (img.naturalWidth || img.width) / (img.naturalHeight || img.height);
     var frameRatio = w / h;
     var baseW, baseH;
     if(imgRatio > frameRatio){ baseH = h; baseW = baseH * imgRatio; }
@@ -569,46 +562,8 @@
   function lerp(a, b, t){ return a + (b - a) * t; }
   function easeInOut(t){ return t < 0.5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2; }
 
-  function startGeneration(){
-    if(photos.length < 2 || !supportsRecording()) return;
 
-    var dims = SHAPE_DIMENSIONS[shapeSelect.value] || SHAPE_DIMENSIONS["16:9"];
-    var CANVAS_W = dims[0], CANVAS_H = dims[1];
-
-    setupView.classList.add("hidden");
-    generatingView.classList.remove("hidden");
-    progressBar.style.width = "0%";
-    var totalSeconds = Math.round((parseFloat(durationSelect.value) * photos.length) * 10) / 10;
-    generatingLabel.textContent = "Building your " + totalSeconds + "s video\u2026 this takes about as long as the video itself.";
-
-    var canvas = document.createElement("canvas");
-    canvas.width = CANVAS_W;
-    canvas.height = CANVAS_H;
-    var ctx = canvas.getContext("2d");
-
-    var perPhotoMs = parseFloat(durationSelect.value) * 1000;
-    var transitionMs = Math.min(500, perPhotoMs * 0.3);
-    var totalMs = perPhotoMs * photos.length;
-
-    var stream = canvas.captureStream(30);
-    var mimeType = MediaRecorder.isTypeSupported("video/webm;codecs=vp9") ? "video/webm;codecs=vp9" : "video/webm";
-    var recorder = new MediaRecorder(stream, { mimeType: mimeType });
-    var chunks = [];
-    recorder.ondataavailable = function(e){ if(e.data && e.data.size > 0) chunks.push(e.data); };
-
-    recorder.onstop = function(){
-      var blob = new Blob(chunks, { type: "video/webm" });
-      revoke(resultObjectUrl);
-      resultObjectUrl = URL.createObjectURL(blob);
-      resultVideo.src = resultObjectUrl;
-      generatingView.classList.add("hidden");
-      resultView.classList.remove("hidden");
-    };
-
-    recorder.start();
-    var startTime = performance.now();
-
-    function renderTransition(key, curP, nextP, w, h, progress){
+    function renderTransition(ctx, key, curP, nextP, w, h, progress){
       var t = easeInOut(progress);
       switch(key){
         case "fade":
@@ -732,107 +687,289 @@
       }
     }
 
-    function renderFrame(){
-      var elapsed = performance.now() - startTime;
-      if(elapsed >= totalMs){
-        ctx.fillStyle = "#111827";
-        ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
-        var lastP = photos[photos.length - 1];
-        drawFramed(ctx, lastP.img, CANVAS_W, CANVAS_H, lastP.crop, 1, 0, 0);
-        setTimeout(function(){ if(recorder.state === "recording") recorder.stop(); }, 60);
-        return;
-      }
 
-      var index = Math.min(photos.length - 1, Math.floor(elapsed / perPhotoMs));
-      var localT = elapsed - index * perPhotoMs;
-      var curP = photos[index];
-      var nextP = photos[index + 1] || null;
+  var E = {};
+  ["unsupportedNotice","setupView","generatingView","resultView","shapeSelect","qualitySel","maxPhotos","durationSelect","transSel","bgSel","formatSel","capColorSel","dropZone","fileInput","selectBtn","countLabel","uploadStatus","audioInput","audioBtn","removeAudioBtn","audioStatus","volBlock","volumeRange","volVal","thumbHint","applyAllRow","allEffectSel","applyAllBtn","thumbGrid","autoGenerateBtn","generateBtn","previewBtn","randomizeBtn","clearBtn","previewBox","previewCanvas","stopPreviewBtn","progressBar","generatingLabel","timeLabel","cancelBtn","resultVideo","resultInfo","downloadBtn","startOverBtn"].forEach(function(i){ E[i] = $(i); });
 
-      ctx.fillStyle = "#111827";
-      ctx.fillRect(0, 0, CANVAS_W, CANVAS_H);
+  var photos = [], resultUrl = null, resultExt = "webm", effectCycleIndex = 0, audio = null, actx = null, loadingCount = 0;
+  var gen = null, previewRun = null, wakeLock = null;
 
-      var motion = MOTION_EFFECTS[curP.effect];
+  function setText(el, m, err){ el.textContent = m || ""; el.className = "status" + (err ? " error" : ""); }
+  function show(el, on){ el.classList.toggle("hidden", !on); }
+  function revoke(u){ if(u) URL.revokeObjectURL(u); }
+  function maxPhotos(){ return parseInt(E.maxPhotos.value, 10) || 10; }
+  function supportsRecording(){ return !!(window.MediaRecorder && HTMLCanvasElement.prototype.captureStream); }
+  if(!supportsRecording()){ show(E.unsupportedNotice, true); E.selectBtn.disabled = true; }
 
-      if(motion){
-        var progress = perPhotoMs > 0 ? localT / perPhotoMs : 0;
-        var eased = easeInOut(progress);
-        var zoom = lerp(motion.zoomFrom, motion.zoomTo, eased);
-        var panX = lerp(motion.panFromX, motion.panToX, eased);
-        var panY = lerp(motion.panFromY, motion.panToY, eased);
-        drawFramed(ctx, curP.img, CANVAS_W, CANVAS_H, curP.crop, zoom, panX, panY);
-
-        // plain quick fade at the very end, into the next photo
-        if(nextP && localT > perPhotoMs - transitionMs){
-          var fadeT = (localT - (perPhotoMs - transitionMs)) / transitionMs;
-          ctx.globalAlpha = fadeT;
-          drawFramed(ctx, nextP.img, CANVAS_W, CANVAS_H, nextP.crop, 1, 0, 0);
-          ctx.globalAlpha = 1;
-        }
-      } else if(nextP && localT > perPhotoMs - transitionMs){
-        var tProgress = (localT - (perPhotoMs - transitionMs)) / transitionMs;
-        renderTransition(curP.effect, curP, nextP, CANVAS_W, CANVAS_H, tProgress);
-      } else {
-        // gentle default life while waiting for the transition window
-        var idleZoom = lerp(1, 1.05, localT / Math.max(1, perPhotoMs - transitionMs));
-        drawFramed(ctx, curP.img, CANVAS_W, CANVAS_H, curP.crop, idleZoom, 0, 0);
-      }
-
-      progressBar.style.width = Math.round((elapsed / totalMs) * 100) + "%";
-      generatingLabel.textContent = "Building your video\u2026 photo " + (index + 1) + " of " + photos.length;
-
-      requestAnimationFrame(renderFrame);
-    }
-    requestAnimationFrame(renderFrame);
+  /* ---------- format support ---------- */
+  var MP4_TYPES = ["video/mp4;codecs=avc1.42E01E,mp4a.40.2", "video/mp4;codecs=avc1", "video/mp4"];
+  var WEBM_TYPES = ["video/webm;codecs=vp9,opus", "video/webm;codecs=vp8,opus", "video/webm;codecs=vp9", "video/webm;codecs=vp8", "video/webm"];
+  function firstSupported(list){ if(!window.MediaRecorder) return ""; for(var i = 0; i < list.length; i++){ try{ if(MediaRecorder.isTypeSupported(list[i])) return list[i]; }catch(e){} } return ""; }
+  var MP4_OK = firstSupported(MP4_TYPES), WEBM_OK = firstSupported(WEBM_TYPES);
+  if(!MP4_OK){ var o = E.formatSel.querySelector('option[value="mp4"]'); if(o){ o.disabled = true; o.textContent = "MP4 (not supported by this browser)"; } }
+  function pickFormat(){
+    var f = E.formatSel.value;
+    if(f === "mp4" && MP4_OK) return { mime: MP4_OK, ext: "mp4" };
+    if(f === "webm" && WEBM_OK) return { mime: WEBM_OK, ext: "webm" };
+    if(MP4_OK && f === "auto") return { mime: MP4_OK, ext: "mp4" };
+    if(WEBM_OK) return { mime: WEBM_OK, ext: "webm" };
+    return { mime: "", ext: "webm" };
   }
 
-  generateBtn.addEventListener("click", startGeneration);
+  /* ---------- counts / buttons ---------- */
+  function updateCountLabel(){
+    E.countLabel.textContent = photos.length + " of " + maxPhotos() + " photos added \u00b7 JPG, PNG or WebP, up to 15 MB each";
+    var ready = photos.length >= 2 && !loadingCount;
+    E.generateBtn.disabled = !ready || !supportsRecording(); E.autoGenerateBtn.disabled = E.generateBtn.disabled; E.previewBtn.disabled = !ready;
+    show(E.clearBtn, photos.length > 0); show(E.randomizeBtn, photos.length > 0); show(E.applyAllRow, photos.length > 0);
+    E.thumbHint.style.display = photos.length > 0 ? "block" : "none";
+  }
+  E.maxPhotos.addEventListener("change", updateCountLabel);
+  E.allEffectSel.innerHTML = buildEffectOptionsHtml("zoom-in");
 
-  // Curated subset used for Auto mode - smooth, reliably good-looking
-  // effects (skips the busier blinds/diagonal wipes so the automatic
-  // result always looks clean without any manual tweaking).
-  var AUTO_EFFECT_POOL = [
-    "zoom-in","zoom-out","pan-left","pan-right","pan-up","pan-down",
-    "zoomin-panleft","zoomin-panright","zoomin-panup","zoomin-pandown",
-    "zoomout-panleft","zoomout-panright",
-    "fade","slide-left","slide-right","cross-zoom","iris"
-  ];
-
-  autoGenerateBtn.addEventListener("click", function(){
-    photos.forEach(function(p, idx){
-      // Smart crop: photos close to the video's own 16:9 shape fill the
-      // frame cleanly; taller/squarer photos use Fit so nothing is ever
-      // cropped out of view.
-      var imgRatio = p.img.naturalWidth / p.img.naturalHeight;
-      p.crop = imgRatio >= 1.3 ? "fill-center" : "fit";
-      p.effect = AUTO_EFFECT_POOL[idx % AUTO_EFFECT_POOL.length];
+  /* ---------- adding photos ---------- */
+  E.selectBtn.addEventListener("click", function(e){ e.stopPropagation(); E.fileInput.click(); });
+  E.dropZone.addEventListener("click", function(e){ if(e.target.id !== "selectBtn") E.fileInput.click(); });
+  E.dropZone.addEventListener("keydown", function(e){ if(e.key === "Enter" || e.key === " "){ e.preventDefault(); E.fileInput.click(); } });
+  E.dropZone.addEventListener("dragover", function(e){ e.preventDefault(); E.dropZone.classList.add("drag"); });
+  E.dropZone.addEventListener("dragleave", function(){ E.dropZone.classList.remove("drag"); });
+  E.dropZone.addEventListener("drop", function(e){ e.preventDefault(); E.dropZone.classList.remove("drag"); if(e.dataTransfer.files) handleFiles(e.dataTransfer.files); });
+  E.fileInput.addEventListener("change", function(){ if(E.fileInput.files) handleFiles(E.fileInput.files); E.fileInput.value = ""; });
+  document.addEventListener("paste", function(e){
+    if(!e.clipboardData || !e.clipboardData.items || E.setupView.classList.contains("hidden")) return;
+    var got = []; for(var i = 0; i < e.clipboardData.items.length; i++){ var it = e.clipboardData.items[i]; if(it.kind === "file" && it.type.indexOf("image/") === 0){ var f = it.getAsFile(); if(f) got.push(f); } }
+    if(got.length){ e.preventDefault(); handleFiles(got); }
+  });
+  function loadPhoto(file){
+    return new Promise(function(res, rej){
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function(){
+        try{
+          var k = Math.min(1, STORE_MAX / Math.max(img.naturalWidth, img.naturalHeight)), c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(img.naturalWidth * k)); c.height = Math.max(1, Math.round(img.naturalHeight * k));
+          var x = c.getContext("2d"); x.imageSmoothingQuality = "high"; x.drawImage(img, 0, 0, c.width, c.height);
+          URL.revokeObjectURL(url); res({ cv: c, thumb: (function(){ var t = document.createElement("canvas"), s = 160 / Math.max(c.width, c.height); t.width = Math.max(1, Math.round(c.width * s)); t.height = Math.max(1, Math.round(c.height * s)); t.getContext("2d").drawImage(c, 0, 0, t.width, t.height); return t.toDataURL("image/jpeg", 0.7); })() });
+        }catch(e){ URL.revokeObjectURL(url); rej(e); }
+      };
+      img.onerror = function(){ URL.revokeObjectURL(url); rej(new Error("decode")); };
+      img.src = url;
     });
-    renderThumbs();
-    startGeneration();
+  }
+  function handleFiles(list){
+    var files = Array.prototype.slice.call(list), errs = [], room = maxPhotos() - photos.length - loadingCount;
+    if(!files.length) return;
+    var ok = files.filter(function(f){
+      if(!f.size){ errs.push((f.name || "A file") + " is empty."); return false; }
+      if(!/^image\/(jpeg|png|webp)$/.test(f.type)){ errs.push((f.name || "A file") + " is not a JPG, PNG or WebP photo."); return false; }
+      if(f.size > MAX_BYTES){ errs.push(f.name + " is larger than 15 MB."); return false; }
+      return true;
+    });
+    if(ok.length > room){ errs.push("Only " + Math.max(0, room) + " more photo(s) can be added (the limit is " + maxPhotos() + "). Raise Maximum photos to add more."); ok = ok.slice(0, Math.max(0, room)); }
+    loadingCount += ok.length; updateCountLabel();
+    var p = Promise.resolve();
+    ok.forEach(function(f, i){
+      p = p.then(function(){
+        setText(E.uploadStatus, "Adding photo " + (i + 1) + " of " + ok.length + "\u2026");
+        return loadPhoto(f).then(function(r){
+          var eff = effectCycle[effectCycleIndex % effectCycle.length]; effectCycleIndex++;
+          photos.push({ cv: r.cv, thumb: r.thumb, name: f.name, effect: eff, crop: "fit", caption: "" });
+        }, function(){ errs.push(f.name + " could not be read (it may be damaged)."); }).then(function(){ loadingCount--; });
+      });
+    });
+    p.then(function(){ setText(E.uploadStatus, errs.join(" "), errs.length > 0); renderThumbs(); updateCountLabel(); });
+    if(!ok.length){ setText(E.uploadStatus, errs.join(" "), true); updateCountLabel(); }
+  }
+  var effectCycle = Object.keys(MOTION_EFFECTS).concat(TRANSITION_KEYS);
+
+  function renderThumbs(){
+    E.thumbGrid.innerHTML = "";
+    photos.forEach(function(p, idx){
+      var card = document.createElement("div"); card.className = "thumb-card";
+      var wrap = document.createElement("div"); wrap.className = "thumb-img-wrap";
+      var im = document.createElement("img"); im.src = p.thumb; im.alt = "Photo " + (idx + 1); wrap.appendChild(im);
+      var ord = document.createElement("span"); ord.className = "thumb-order"; ord.textContent = "#" + (idx + 1); wrap.appendChild(ord); card.appendChild(wrap);
+      var body = document.createElement("div"); body.className = "thumb-body";
+      function lab(t, f){ var l = document.createElement("label"); l.textContent = t; l.setAttribute("for", f); body.appendChild(l); }
+      lab("Effect", "eff" + idx); var es = document.createElement("select"); es.id = "eff" + idx; es.innerHTML = buildEffectOptionsHtml(p.effect); es.addEventListener("change", function(){ p.effect = es.value; }); body.appendChild(es);
+      lab("Crop", "crop" + idx); var cs = document.createElement("select"); cs.id = "crop" + idx; cs.innerHTML = buildCropOptionsHtml(p.crop); cs.addEventListener("change", function(){ p.crop = cs.value; }); body.appendChild(cs);
+      lab("Caption (optional)", "cap" + idx); var ci = document.createElement("input"); ci.type = "text"; ci.id = "cap" + idx; ci.maxLength = 60; ci.value = p.caption; ci.placeholder = "Text on this photo"; ci.autocomplete = "off"; ci.addEventListener("input", function(){ p.caption = ci.value; }); body.appendChild(ci);
+      card.appendChild(body);
+      var act = document.createElement("div"); act.className = "thumb-actions";
+      function btn(t, label, dis, fn){ var b = document.createElement("button"); b.type = "button"; b.textContent = t; b.setAttribute("aria-label", label + " photo " + (idx + 1)); b.disabled = dis; b.addEventListener("click", fn); act.appendChild(b); }
+      btn("\u2191 Up", "Move up", idx === 0, function(){ var t = photos[idx - 1]; photos[idx - 1] = photos[idx]; photos[idx] = t; renderThumbs(); });
+      btn("\u2193 Down", "Move down", idx === photos.length - 1, function(){ var t = photos[idx + 1]; photos[idx + 1] = photos[idx]; photos[idx] = t; renderThumbs(); });
+      btn("\u2715 Remove", "Remove", false, function(){ photos.splice(idx, 1); renderThumbs(); updateCountLabel(); });
+      card.appendChild(act); E.thumbGrid.appendChild(card);
+    });
+  }
+  E.clearBtn.addEventListener("click", function(){ stopPreview(); photos = []; renderThumbs(); updateCountLabel(); setText(E.uploadStatus, ""); });
+  E.randomizeBtn.addEventListener("click", function(){ photos.forEach(function(p){ p.effect = ALL_EFFECT_KEYS[Math.floor(Math.random() * ALL_EFFECT_KEYS.length)]; }); renderThumbs(); });
+  E.applyAllBtn.addEventListener("click", function(){ photos.forEach(function(p){ p.effect = E.allEffectSel.value; }); renderThumbs(); });
+
+  /* ---------- music ---------- */
+  function getCtx(){ if(!actx){ var C = window.AudioContext || window.webkitAudioContext; if(!C) return null; actx = new C(); } return actx; }
+  E.audioBtn.addEventListener("click", function(){ E.audioInput.click(); });
+  E.audioInput.addEventListener("change", function(){
+    var f = E.audioInput.files && E.audioInput.files[0]; E.audioInput.value = ""; if(!f) return;
+    if(!f.size){ setText(E.audioStatus, "That audio file is empty.", true); return; }
+    if(f.size > MAX_AUDIO){ setText(E.audioStatus, "That audio file is larger than 15 MB.", true); return; }
+    if(!(f.type.indexOf("audio/") === 0 || /\.(mp3|wav|ogg|m4a|aac)$/i.test(f.name))){ setText(E.audioStatus, "Please choose an MP3, WAV, OGG or M4A audio file.", true); return; }
+    var c = getCtx(); if(!c){ setText(E.audioStatus, "Your browser cannot add music to videos.", true); return; }
+    setText(E.audioStatus, "Reading the audio\u2026");
+    var fr = new FileReader();
+    fr.onload = function(){
+      var done = false;
+      function ok(buf){ if(done) return; done = true; audio = { buf: buf, name: f.name }; show(E.removeAudioBtn, true); show(E.volBlock, true); setText(E.audioStatus, "Music added: " + f.name + " (" + Math.round(buf.duration) + " s)"); }
+      function bad(){ if(done) return; done = true; setText(E.audioStatus, "Could not read that audio file. Try an MP3 or WAV file.", true); }
+      try{ var pr = c.decodeAudioData(fr.result, ok, bad); if(pr && pr.then) pr.then(ok, bad); }catch(e){ bad(); }
+    };
+    fr.onerror = function(){ setText(E.audioStatus, "Could not read that audio file.", true); };
+    fr.readAsArrayBuffer(f);
+  });
+  E.removeAudioBtn.addEventListener("click", function(){ audio = null; show(E.removeAudioBtn, false); show(E.volBlock, false); setText(E.audioStatus, ""); });
+  E.volumeRange.addEventListener("input", function(){ E.volVal.textContent = E.volumeRange.value; });
+
+  /* ---------- drawing a frame at a given time ---------- */
+  function cfgNow(){
+    var d = SHAPE_DIMENSIONS[E.shapeSelect.value] || SHAPE_DIMENSIONS["16:9"], q = parseFloat(E.qualitySel.value) || 1, per = (parseFloat(E.durationSelect.value) || 2.5) * 1000;
+    var tr = Math.min((parseFloat(E.transSel.value) || 0.5) * 1000, per * 0.45), bg = E.bgSel.value;
+    return { W: Math.round(d[0] * q / 2) * 2, H: Math.round(d[1] * q / 2) * 2, per: per, tr: tr, total: per * photos.length, bgMode: bg, fillColor: bg === "white" ? "#ffffff" : (bg === "black" ? "#000000" : "#111827"), capColor: E.capColorSel.value };
+  }
+  function prepareBackgrounds(cfg){
+    photos.forEach(function(p){
+      p.cv._bg = null; p.cv._bgKey = "";
+      if(cfg.bgMode !== "blur") return;
+      var s = document.createElement("canvas"); s.width = Math.max(2, Math.round(cfg.W / 24)); s.height = Math.max(2, Math.round(cfg.H / 24));
+      var sx = s.getContext("2d"), r = Math.max(s.width / p.cv.width, s.height / p.cv.height), w = p.cv.width * r, h = p.cv.height * r;
+      sx.drawImage(p.cv, (s.width - w) / 2, (s.height - h) / 2, w, h);
+      var b = document.createElement("canvas"); b.width = cfg.W; b.height = cfg.H; var bx = b.getContext("2d"); bx.imageSmoothingEnabled = true; bx.imageSmoothingQuality = "high"; bx.drawImage(s, 0, 0, cfg.W, cfg.H);
+      bx.fillStyle = "rgba(0,0,0,0.28)"; bx.fillRect(0, 0, cfg.W, cfg.H);
+      p.cv._bg = b; p.cv._bgKey = cfg.W + "x" + cfg.H;
+    });
+  }
+  function drawCaption(ctx, text, W, H, alpha, color){
+    if(!text || alpha <= 0.01) return;
+    var fs = Math.round(Math.min(W, H) * 0.06), maxW = W * 0.88;
+    ctx.save(); ctx.globalAlpha = Math.min(1, alpha); ctx.font = "700 " + fs + 'px -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif'; ctx.textAlign = "center"; ctx.textBaseline = "alphabetic"; ctx.lineJoin = "round";
+    var words = text.split(/\s+/), lines = [], cur = "";
+    words.forEach(function(w){ var t = cur ? cur + " " + w : w; if(ctx.measureText(t).width > maxW && cur){ lines.push(cur); cur = w; } else cur = t; }); if(cur) lines.push(cur); lines = lines.slice(0, 3);
+    var lh = fs * 1.2, y0 = H - H * 0.07 - (lines.length - 1) * lh;
+    lines.forEach(function(l, i){ ctx.lineWidth = fs * 0.2; ctx.strokeStyle = color === "#111111" ? "#ffffff" : "#000000"; ctx.strokeText(l, W / 2, y0 + i * lh); ctx.fillStyle = color; ctx.fillText(l, W / 2, y0 + i * lh); });
+    ctx.restore();
+  }
+  function drawAt(ctx, cfg, elapsed){
+    var W = cfg.W, H = cfg.H, n = photos.length;
+    ctx.globalAlpha = 1; ctx.fillStyle = cfg.fillColor; ctx.fillRect(0, 0, W, H);
+    if(elapsed >= cfg.total){ var lp = photos[n - 1]; drawFramed(ctx, lp.cv, W, H, lp.crop, 1, 0, 0); drawCaption(ctx, lp.caption, W, H, 1, cfg.capColor); return; }
+    var index = Math.min(n - 1, Math.floor(elapsed / cfg.per)), localT = elapsed - index * cfg.per, curP = photos[index], nextP = photos[index + 1] || null;
+    var motion = MOTION_EFFECTS[curP.effect], inTr = nextP && localT > cfg.per - cfg.tr, trT = inTr ? (localT - (cfg.per - cfg.tr)) / cfg.tr : 0;
+    if(motion){
+      var eased = easeInOut(cfg.per > 0 ? localT / cfg.per : 0);
+      drawFramed(ctx, curP.cv, W, H, curP.crop, lerp(motion.zoomFrom, motion.zoomTo, eased), lerp(motion.panFromX, motion.panToX, eased), lerp(motion.panFromY, motion.panToY, eased));
+      if(inTr){ ctx.globalAlpha = trT; drawFramed(ctx, nextP.cv, W, H, nextP.crop, 1, 0, 0); ctx.globalAlpha = 1; }
+    } else if(inTr){ renderTransition(ctx, curP.effect, { img: curP.cv, crop: curP.crop }, { img: nextP.cv, crop: nextP.crop }, W, H, trT); }
+    else { drawFramed(ctx, curP.cv, W, H, curP.crop, lerp(1, 1.05, localT / Math.max(1, cfg.per - cfg.tr)), 0, 0); }
+    drawCaption(ctx, curP.caption, W, H, Math.min(1, localT / 300) * (inTr ? 1 - trT : 1), cfg.capColor);
+    if(inTr) drawCaption(ctx, nextP.caption, W, H, trT, cfg.capColor);
+  }
+
+  /* ---------- preview ---------- */
+  function stopPreview(){ if(previewRun){ previewRun.stop = true; previewRun = null; } show(E.previewBox, false); }
+  E.stopPreviewBtn.addEventListener("click", stopPreview);
+  E.previewBtn.addEventListener("click", function(){
+    if(photos.length < 2) return; stopPreview();
+    var cfg = cfgNow(), cv = E.previewCanvas, x = cv.getContext("2d"); cv.width = cfg.W; cv.height = cfg.H; prepareBackgrounds(cfg);
+    show(E.previewBox, true); var run = { stop: false }; previewRun = run; var t0 = performance.now();
+    (function loop(){
+      if(run.stop) return; var el = performance.now() - t0;
+      try{ drawAt(x, cfg, el % (cfg.total + 600)); }catch(e){ stopPreview(); return; }
+      requestAnimationFrame(loop);
+    })();
+    E.previewBox.scrollIntoView({ block: "nearest", behavior: "smooth" });
   });
 
-  downloadBtn.addEventListener("click", function(){
-    if(!resultObjectUrl) return;
-    var a = document.createElement("a");
-    a.href = resultObjectUrl;
-    a.download = "photo-animation-video.webm";
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
+  /* ---------- generate ---------- */
+  var AUTO_POOL = ["zoom-in", "zoom-out", "pan-left", "pan-right", "pan-up", "pan-down", "zoomin-panleft", "zoomin-panright", "zoomin-panup", "zoomin-pandown", "zoomout-panleft", "zoomout-panright", "fade", "slide-left", "slide-right", "cross-zoom", "iris"];
+  E.autoGenerateBtn.addEventListener("click", function(){
+    photos.forEach(function(p, idx){ var r = p.cv.width / p.cv.height; p.crop = r >= 1.3 && E.shapeSelect.value === "16:9" ? "fill-center" : "fit"; p.effect = AUTO_POOL[idx % AUTO_POOL.length]; });
+    renderThumbs(); startGeneration();
   });
-
-  startOverBtn.addEventListener("click", function(){
-    revoke(resultObjectUrl); resultObjectUrl = null;
-    photos.forEach(function(p){ revoke(p.objectUrl); });
-    photos = [];
-    renderThumbs();
-    updateCountLabel();
-    resultView.classList.add("hidden");
-    setupView.classList.remove("hidden");
+  E.generateBtn.addEventListener("click", startGeneration);
+  function fmtT(ms){ var s = Math.max(0, Math.round(ms / 1000)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); }
+  function releaseWake(){ try{ if(wakeLock){ wakeLock.release(); wakeLock = null; } }catch(e){} }
+  function finishGen(){ document.removeEventListener("visibilitychange", onVis); releaseWake(); }
+  function onVis(){
+    if(!gen || !gen.rec) return;
+    if(document.hidden){ if(gen.rec.state === "recording"){ try{ gen.rec.pause(); }catch(e){} } if(actx && actx.state === "running") actx.suspend(); gen.pausedAt = performance.now(); E.generatingLabel.textContent = "Paused. Return to this tab to continue."; }
+    else if(gen.pausedAt){ gen.start += performance.now() - gen.pausedAt; gen.pausedAt = 0; try{ if(gen.rec.state === "paused") gen.rec.resume(); }catch(e){} if(actx && actx.state === "suspended") actx.resume(); }
+  }
+  function startGeneration(){
+    if(photos.length < 2 || !supportsRecording() || gen) return;
+    stopPreview();
+    var fmt = pickFormat(), cfg = cfgNow(), cv = document.createElement("canvas"), x; cv.width = cfg.W; cv.height = cfg.H; x = cv.getContext("2d");
+    var stream, rec, chunks = [], g = { cancelled: false, start: 0, pausedAt: 0, rec: null };
+    try{
+      prepareBackgrounds(cfg); stream = cv.captureStream(30);
+      var withAudio = false;
+      if(audio && getCtx()){
+        try{
+          var c = actx; if(c.state === "suspended") c.resume();
+          var dest = c.createMediaStreamDestination(), src = c.createBufferSource(), gain = c.createGain(), vol = (+E.volumeRange.value || 80) / 100;
+          src.buffer = audio.buf; src.loop = true; gain.gain.value = vol; src.connect(gain); gain.connect(dest);
+          var tEnd = c.currentTime + cfg.total / 1000; gain.gain.setValueAtTime(vol, Math.max(c.currentTime, tEnd - 1.2)); gain.gain.linearRampToValueAtTime(0.0001, tEnd);
+          dest.stream.getAudioTracks().forEach(function(t){ stream.addTrack(t); }); g.src = src; withAudio = true;
+        }catch(e){ withAudio = false; }
+      }
+      var opts = { videoBitsPerSecond: cfg.H > 800 ? 8000000 : 5000000 }; if(fmt.mime) opts.mimeType = fmt.mime; if(withAudio) opts.audioBitsPerSecond = 128000;
+      try{ rec = new MediaRecorder(stream, opts); }catch(e){ rec = new MediaRecorder(stream); }
+    }catch(e){ setText(E.uploadStatus, "Could not start video recording in this browser. Try the latest Chrome, Edge or Firefox.", true); return; }
+    gen = g; g.rec = rec; g.fmt = fmt;
+    rec.ondataavailable = function(e){ if(e.data && e.data.size > 0) chunks.push(e.data); };
+    rec.onerror = function(){ if(!g.cancelled){ g.cancelled = true; try{ rec.stop(); }catch(e){} setText(E.uploadStatus, "The browser stopped recording. Please try again with fewer or smaller photos.", true); } };
+    rec.onstop = function(){
+      try{ if(g.src) g.src.stop(); }catch(e){}
+      finishGen(); gen = null; show(E.generatingView, false);
+      if(g.cancelled){ show(E.setupView, true); return; }
+      var type = (rec.mimeType || fmt.mime || "video/webm").split(";")[0], ext = /mp4/.test(type) ? "mp4" : "webm";
+      var blob = new Blob(chunks, { type: type });
+      if(!blob.size){ show(E.setupView, true); setText(E.uploadStatus, "The video came out empty. Please try again.", true); return; }
+      revoke(resultUrl); resultUrl = URL.createObjectURL(blob); resultExt = ext; E.resultVideo.src = resultUrl;
+      E.resultInfo.textContent = ext.toUpperCase() + " \u00b7 " + (blob.size / 1048576).toFixed(1) + " MB \u00b7 " + cfg.W + "\u00d7" + cfg.H + (audio ? " \u00b7 with music" : "");
+      show(E.resultView, true);
+    };
+    show(E.setupView, false); show(E.resultView, false); show(E.generatingView, true); E.progressBar.style.width = "0%";
+    try{ if(navigator.wakeLock) navigator.wakeLock.request("screen").then(function(w){ wakeLock = w; }, function(){}); }catch(e){}
+    document.addEventListener("visibilitychange", onVis);
+    rec.start(250); if(g.src) { try{ g.src.start(); }catch(e){} }
+    g.start = performance.now();
+    (function loop(){
+      if(g.cancelled || gen !== g) return;
+      if(document.hidden){ requestAnimationFrame(loop); return; }
+      var el = performance.now() - g.start;
+      if(el >= cfg.total){
+        drawAt(x, cfg, cfg.total); E.progressBar.style.width = "100%";
+        setTimeout(function(){ if(rec.state !== "inactive"){ try{ rec.requestData(); }catch(e){} rec.stop(); } }, 150); return;
+      }
+      drawAt(x, cfg, el);
+      E.progressBar.style.width = Math.round(el / cfg.total * 100) + "%";
+      E.generatingLabel.textContent = "Building your video\u2026 photo " + Math.min(photos.length, Math.floor(el / cfg.per) + 1) + " of " + photos.length;
+      E.timeLabel.textContent = fmtT(el) + " of " + fmtT(cfg.total) + " \u00b7 keep this tab open and visible";
+      requestAnimationFrame(loop);
+    })();
+  }
+  E.cancelBtn.addEventListener("click", function(){ if(!gen) return; gen.cancelled = true; try{ if(gen.rec.state !== "inactive") gen.rec.stop(); }catch(e){ show(E.generatingView, false); show(E.setupView, true); gen = null; finishGen(); } });
+  E.downloadBtn.addEventListener("click", function(){
+    if(!resultUrl) return; var a = document.createElement("a"); a.href = resultUrl; a.download = "photo-video." + resultExt; document.body.appendChild(a); a.click(); a.remove();
   });
-
+  E.startOverBtn.addEventListener("click", function(){
+    revoke(resultUrl); resultUrl = null; E.resultVideo.removeAttribute("src"); try{ E.resultVideo.load(); }catch(e){}
+    photos = []; renderThumbs(); updateCountLabel(); setText(E.uploadStatus, ""); show(E.resultView, false); show(E.setupView, true);
+  });
   updateCountLabel();
 })();
+
 </script>
+
 <script src="/shared/shared.js" defer></script>
 </body>
 </html>
