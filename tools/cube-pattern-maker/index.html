@@ -1,1 +1,739 @@
-x
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rubik's Cube Patterns – 10 Designs with Moves | Working Tools Box</title>
+<meta name="description" content="Make 10 cool patterns on your 3x3 Rubik&#x27;s Cube. Pick a design, watch each turn on a smooth 3D cube and copy the moves. Free, no sign-up, works on phone.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#7c3aed">
+<link rel="canonical" href="https://wtoolsbox.com/tools/cube-pattern-maker/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rubik&#x27;s Cube Patterns – 10 Designs with Moves | Working Tools Box">
+<meta property="og:description" content="Pick one of 10 Rubik&#x27;s Cube patterns, watch every turn on a 3D cube and copy the moves. Free and private.">
+<meta property="og:url" content="https://wtoolsbox.com/tools/cube-pattern-maker/">
+<meta property="og:site_name" content="Working Tools Box">
+<meta property="og:image" content="https://wtoolsbox.com/images/tools/cube-pattern-maker-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:alt" content="Banner of a 3D Rubik&#x27;s Cube pattern maker with a row of pattern previews, previous and next arrows and a Play button">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rubik&#x27;s Cube Patterns – 10 Designs with Moves | Working Tools Box">
+<meta name="twitter:description" content="Pick one of 10 Rubik&#x27;s Cube patterns, watch every turn on a 3D cube and copy the moves. Free and private.">
+<meta name="twitter:image" content="https://wtoolsbox.com/images/tools/cube-pattern-maker-og.jpg">
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Cube Pattern Maker",
+ "url": "https://wtoolsbox.com/tools/cube-pattern-maker/",
+ "applicationCategory": "UtilitiesApplication",
+ "operatingSystem": "Any",
+ "image": "https://wtoolsbox.com/images/tools/cube-pattern-maker-og.jpg",
+ "description": "Shows 10 Rubik's Cube patterns for the 3x3 cube with the moves to make each one. A smooth 3D cube plays every turn, and previous and next arrows let you go one move at a time. Runs in your browser.",
+ "featureList": [
+  "10 Rubik's Cube patterns for the 3x3 cube",
+  "Smooth 3D cube that plays each move",
+  "Previous and next arrows to go one move at a time",
+  "Undo moves for every pattern",
+  "Drag the cube to look at every side",
+  "Free, no sign-up and no upload"
+ ],
+ "isAccessibleForFree": true,
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "USD"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "What is a Rubik's Cube pattern?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "It is a colorful, symmetric design that you make by turning a solved cube with a short list of moves, such as a checkerboard or a plus sign on every face."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I make a pattern on my cube?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Solve your cube, hold it with white on top and green in front, choose a pattern and copy the moves in order. Press Play to watch the moves on the 3D cube first, or use the arrows to go one move at a time."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Does my cube need to be solved first?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. Every pattern here starts from a solved cube, so scrambled cubes will not show the design. If your cube is scrambled, solve it first, for example with our Cube Solver."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "How do I go back to a solved cube?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Do the same moves in reverse order, turning each one the other way. The page lists these undo moves under every pattern, and the status line shows them when a pattern is finished."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Which pattern is the easiest?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Checkerboard is the easiest because it is only six half turns. Six Spots and Tetris need eight moves, and Crosses needs eleven."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Why do my colors look different from the picture?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cubes use different color schemes, and you may hold yours another way. The shapes still come out the same, only in your own colors. For the same colors as the 3D cube, hold white on top and green in front."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What do the letters U, D, L, R, F and B mean?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "They are the six faces: Up, Down, Left, Right, Front and Back. A letter alone is a clockwise quarter turn, an apostrophe means counter-clockwise, and a 2 means a half turn."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "What is the Superflip?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "The Superflip flips all twelve edges in place and leaves the corners and centers solved. It needs 20 face turns at the minimum, which is the proven maximum for any cube position."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Can I make patterns on a 2x2 or 4x4 cube?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "No. The patterns and the 3D cube here are made for the standard 3x3 Rubik's Cube only."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "Is this tool free and does it work on a phone?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Yes. It is free, needs no sign-up, and fits on a phone screen. You can drag the cube with one finger to look at every side."
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Working Tools Box",
+   "item": "https://wtoolsbox.com/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Cube Pattern Maker",
+   "item": "https://wtoolsbox.com/tools/cube-pattern-maker/"
+  }
+ ]
+}
+</script>
+
+<style>
+  *{box-sizing:border-box}
+  :root{
+    --purple:#7c3aed;--pink:#ec4899;--blue:#2563eb;
+    --white:#ffffff;--bg:#fbfbfd;--border:#e6e4ee;--text:#1c1b26;--muted:#5f5c6e;
+    --soft:#fbf9ff;--success:#0f9d58;--error:#c0392b;--focus:#4338ca;
+    --radius:16px;--shadow:0 4px 24px rgba(40,20,80,0.06);
+  }
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,"Noto Sans Devanagari",sans-serif;line-height:1.6}
+  .container{width:min(1100px,calc(100% - 32px));margin:auto}
+  .grad-text{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+  .site-header{border-bottom:1px solid var(--border);background:#fff;position:sticky;top:0;z-index:10}
+  .nav{height:64px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  .brand{font-weight:800;text-decoration:none;font-size:19px}
+  .nav nav{display:flex;gap:20px;flex-wrap:wrap}
+  .nav nav a{color:var(--text);text-decoration:none;font-weight:600;font-size:14px}
+  .nav nav a:hover{color:var(--purple)}
+
+  .hero{text-align:center;padding:28px 0 6px}
+  .hero h1{font-size:clamp(26px,5vw,40px);margin:0 0 6px;font-weight:800;line-height:1.15}
+  .hero p{color:var(--muted);max-width:640px;margin:auto;font-size:.95rem}
+
+  .tool{margin:12px auto 28px;max-width:640px;border:1px solid var(--border);border-radius:20px;padding:18px;background:#fff;box-shadow:var(--shadow)}
+
+  .stage{position:relative;margin-bottom:16px}
+  .scene{--S:180px;position:relative;z-index:1;perspective:1000px;display:flex;align-items:center;justify-content:center;height:calc(var(--S)*1.55);touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+  .scene:active{cursor:grabbing}
+  .scene::before{content:"";position:absolute;left:10%;right:10%;top:6%;bottom:6%;background:radial-gradient(closest-side,rgba(124,58,237,.13),rgba(124,58,237,0));pointer-events:none}
+  .cube3d{position:relative;width:var(--S);height:var(--S);transform-style:preserve-3d;will-change:transform}
+  .cubie{position:absolute;left:50%;top:50%;width:var(--s);height:var(--s);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);transform-style:preserve-3d}
+  .cf{position:absolute;left:0;top:0;width:100%;height:100%;background:#16141f;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  .cf.f0{transform:rotateX(90deg) translateZ(calc(var(--s)/2))}
+  .cf.f1{transform:rotateY(90deg) translateZ(calc(var(--s)/2))}
+  .cf.f2{transform:translateZ(calc(var(--s)/2))}
+  .cf.f3{transform:rotateX(-90deg) translateZ(calc(var(--s)/2))}
+  .cf.f4{transform:rotateY(-90deg) translateZ(calc(var(--s)/2))}
+  .cf.f5{transform:rotateY(180deg) translateZ(calc(var(--s)/2))}
+  .stk{position:absolute;left:7%;top:7%;width:86%;height:86%;border-radius:16%;pointer-events:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.2);-webkit-tap-highlight-color:transparent}
+
+  .navb{position:absolute;top:50%;margin-top:-22px;z-index:3;width:44px;height:44px;border-radius:50%;border:0;background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 12px rgba(80,40,160,.28);padding:0}
+  .navb svg{width:22px;height:22px}
+  .navb.prev{left:0}.navb.next{right:0}
+  .navb:disabled{opacity:.35;cursor:not-allowed;box-shadow:none}
+
+
+  .button{border:2px solid transparent;border-radius:12px;padding:12px 18px;font-weight:700;cursor:pointer;font-size:16px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;line-height:1.2;min-height:48px}
+  .primary{background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff}
+  .primary:hover{opacity:.92}
+  .secondary{background:#fff;color:#3b1a85;border-color:#cabdf7}
+  .secondary:hover:not(:disabled){background:#f8f6ff}
+  .button:disabled{opacity:.5;cursor:not-allowed}
+  .button:focus-visible,.navb:focus-visible,.pat:focus-visible,a:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+  .actions{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}
+  .button svg{width:18px;height:18px;flex:none}
+  #play-btn .i-pause{display:none}
+  #play-btn[data-playing="true"] .i-pause{display:block}
+  #play-btn[data-playing="true"] .i-play{display:none}
+
+  .progress-wrap{background:#f1eefb;border-radius:999px;height:6px;overflow:hidden;margin-top:12px}
+  .progress-bar{height:100%;background:linear-gradient(90deg,var(--blue),var(--purple));width:0%;transition:width .25s ease}
+  .status{margin:10px 0 0;min-height:2.9em;font-size:14px;font-weight:600;color:var(--text);text-align:center;line-height:1.4;display:flex;align-items:center;justify-content:center}
+  .status.error{color:var(--error)}
+  .status.ok{color:var(--success)}
+  .status.loading::before{content:"";width:16px;height:16px;border-radius:50%;border:3px solid #e6e0f7;border-top-color:var(--purple);animation:spin .8s linear infinite;margin-right:8px;flex:none}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .sol-line{margin:4px 0 0;text-align:center;font-size:14px;line-height:2;color:var(--muted);word-spacing:2px}
+  .sol-line span{display:inline-block;padding:0 7px;border-radius:8px;font-weight:700}
+  .sol-line span.done{color:#b9b4cc}
+  .sol-line span.next{background:#efe8ff;color:#3b1a85}
+
+
+  .tool-note{margin:0 0 8px;font-size:12.5px;color:var(--muted);text-align:center}
+  .picker{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 8px;margin:0 -2px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .pat{flex:none;width:86px;scroll-snap-align:center;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 4px 5px;border:1.5px solid var(--border);border-radius:14px;background:#fff;color:#3b1a85;font:inherit;font-size:11px;font-weight:700;line-height:1.15;cursor:pointer;text-align:center}
+  .pat svg{width:58px;height:60px;display:block}
+  .pat span{display:block;min-height:2.3em;display:flex;align-items:center}
+  .pat:hover{border-color:#cabdf7;background:#faf7ff}
+  .pat[aria-pressed="true"]{border-color:var(--purple);background:#f3edff;box-shadow:0 0 0 2px rgba(124,58,237,.25)}
+  .pat-info{margin:2px 0 0;text-align:center;font-size:13.5px;line-height:1.4;color:var(--muted);min-height:2.8em}
+  .pat-info b{color:var(--text);font-size:15px}
+  .pattern-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+  .pattern-card{border:1px solid var(--border);border-radius:14px;padding:16px;background:#fff}
+  .pattern-card h3{margin:0 0 4px;font-size:1.08rem;font-weight:800;color:#3b1a85}
+  .pattern-card p{margin:0 0 8px;font-size:.93rem}
+  .pattern-card .meta{font-size:.78rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--purple);margin:6px 0 2px}
+  .pattern-card code{display:block;background:#f6f3ff;border:1px solid #e6e0f7;border-radius:10px;padding:8px 10px;font:600 .9rem/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;color:#2a1760;word-spacing:.15em;overflow-wrap:anywhere}
+  .notice{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534;border-radius:12px;padding:12px 18px;font-size:.9rem;margin:0 auto 24px;max-width:640px}
+
+  .content{padding:0 0 55px}
+  .content h2{font-size:1.4rem;margin:34px 0 10px;font-weight:800}
+  .content h3{font-size:1.02rem;margin:0 0 4px;color:var(--text)}
+  .content p,.content li{color:#3c3a46}
+  .steps{counter-reset:s;list-style:none;padding:0;margin:14px 0 0;display:grid;gap:12px}
+  .steps li{counter-increment:s;position:relative;padding:12px 14px 12px 54px;border:1px solid var(--border);border-radius:14px;background:#fff}
+  .steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:28px;height:28px;border-radius:50%;background:linear-gradient(90deg,var(--blue),var(--purple));color:#fff;font-weight:800;font-size:.85rem;display:flex;align-items:center;justify-content:center}
+  .notation{list-style:none;padding:0;margin:12px 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+  .notation li{border:1px solid var(--border);border-radius:12px;padding:10px 14px;background:#fff}
+  .faq-list{display:grid;gap:12px;margin-top:12px}
+  .faq-item{border:1px solid var(--border);border-radius:12px;padding:14px 18px;background:#fff}
+  .faq-item h3{margin:0 0 6px;font-size:1rem;font-weight:700}
+  .faq-item p{margin:0}
+  .tool-figure{margin:22px 0;text-align:center}
+  .tool-figure img{max-width:100%;height:auto;border-radius:16px;border:1px solid var(--border);box-shadow:var(--shadow)}
+  .tool-figure figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+  .related-section{padding-bottom:55px}
+  .related-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-top:12px}
+  .related-grid a{display:flex;flex-direction:column;gap:2px;padding:14px 16px;border:1px solid var(--border);border-radius:14px;background:#fff;color:var(--text);text-decoration:none;min-height:64px}
+  .related-grid a:hover{border-color:var(--purple);background:#faf7ff}
+  .related-grid strong{color:#3b1a85}
+  .related-grid span{font-size:.88rem;color:var(--muted)}
+  img,canvas,video{max-width:100%}
+  html,body{overflow-x:hidden}
+
+  .site-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:14px}
+  .footer-inner{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+  .footer-inner nav{display:flex;gap:20px}
+  .footer-inner nav a{color:var(--muted);text-decoration:none;font-weight:600}
+  .footer-inner nav a:hover{color:var(--purple)}
+  .hidden,[hidden]{display:none!important}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+  @media(max-width:640px){
+    .hero{padding:16px 0 2px}.hero p{font-size:.88rem}
+    .tool{padding:12px;margin:10px auto 22px;border-radius:18px}
+    .button{font-size:15px}
+  }
+  @media (prefers-reduced-motion:reduce){.progress-bar{transition:none}.status.loading::before{animation-duration:2s}}
+
+</style>
+</head>
+<body>
+<a class="sr-only" href="#tool">Skip to the pattern maker</a>
+<div id="site-header"></div>
+
+<main class="container">
+
+  <section class="hero">
+    <h1 class="grad-text">Cube Pattern Maker</h1>
+    <p>Pick one of 10 cool designs for your 3x3 Rubik's Cube, watch every turn on a smooth 3D cube, then copy the moves.</p>
+  </section>
+
+  <section class="tool" id="tool" aria-label="Cube pattern maker tool">
+    <noscript><p class="status error">This tool needs JavaScript. Please turn JavaScript on in your browser.</p></noscript>
+    <p class="tool-note">Start with a <b>solved</b> cube: white on top, green in front.</p>
+    <div class="picker" id="picker" role="group" aria-label="Choose a pattern"></div>
+    <p class="pat-info" aria-live="polite"><b id="pat-name"></b> <span id="pat-desc"></span></p>
+
+    <div class="stage">
+      <button type="button" class="navb prev" id="back-btn" aria-label="Previous move" title="Previous move" disabled><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="scene" id="scene"><div class="cube3d" id="net"></div></div>
+      <button type="button" class="navb next" id="fwd-btn" aria-label="Next move" title="Next move"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="button primary" id="play-btn" data-playing="false">
+        <svg class="i-play" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></svg>
+        <svg class="i-pause" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 4h4v16H6zM14 4h4v16h-4z" fill="currentColor"/></svg>
+        <span id="play-txt">Play</span>
+      </button>
+      <button type="button" class="button secondary" id="reset-btn">Start Over</button>
+    </div>
+
+    <div class="progress-wrap" aria-hidden="true"><div class="progress-bar" id="prog"></div></div>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+    <p class="sol-line" id="sol-line"></p>
+  </section>
+
+  <div class="notice"><b>Free and private:</b> everything runs in your browser. Nothing is uploaded.</div>
+
+  <section class="content" aria-labelledby="about-heading">
+    <h2 class="grad-text" id="about-heading">Turn a Solved Cube Into a Pattern</h2>
+    <p>A Rubik's Cube pattern is a pretty, symmetric design you make by turning a solved cube with a short list of moves. This tool shows ten of the best known ones for the 3x3 cube. Choose a design, press Play, and the cube on screen makes every turn for you. Then copy the same moves on your own cube and the design appears in your hands.</p>
+    <figure class="tool-figure"><img src="/images/tools/cube-pattern-maker.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Banner of a 3D Rubik&#x27;s Cube pattern maker with a row of pattern previews, previous and next arrows and a Play button" title="Cube Pattern Maker by Working Tools Box"><figcaption>Choose a design, press Play and follow each turn on the 3D cube.</figcaption></figure>
+    <p>Patterns are a fun way to show off a cube, to practise reading cube notation, and to see how a few turns can change every face at once.</p>
+
+    <h2 class="grad-text">How to Use the Pattern Maker</h2>
+    <ol class="steps"><li>Hold your cube with white on top and green in front, and make sure it is solved.</li><li>Tap a pattern in the row at the top. A small picture shows how it will look.</li><li>Press <strong>Play</strong> to watch the whole pattern, or use the <strong>left and right arrows</strong> beside the cube to go one move at a time. Press <strong>Start Over</strong> to go back to the solved cube.</li><li>Copy each move on your own cube. When the last move is done, your cube shows the pattern. The status line then gives the moves to undo it.</li></ol>
+
+    <h2 class="grad-text">The 10 Patterns and Their Moves</h2>
+    <p>Every list below starts from a solved cube held with white on top and green in front. The undo line is the same moves backwards, and it brings a finished pattern back to a solved cube.</p>
+    <div class="pattern-grid"><div class="pattern-card"><h3>Checkerboard</h3><p>Every face becomes a checkerboard: the center and the four corners show one color and the four edge stickers show its opposite. It needs only six half turns, so it is the best pattern to try first.</p><div class="meta">Moves (6)</div><code>R2 L2 U2 D2 F2 B2</code><div class="meta">Undo</div><code>B2 F2 D2 U2 L2 R2</code></div><div class="pattern-card"><h3>Six Spots</h3><p>Each face keeps its center color as a single spot inside a ring of one other color, so you get six clean spots, one on every face. It takes eight moves.</p><div class="meta">Moves (8)</div><code>U D' R L' F B' U D'</code><div class="meta">Undo</div><code>D U' B F' L R' D U'</code></div><div class="pattern-card"><h3>Tetris</h3><p>Every face splits into three colors in chunky block shapes that many people compare to Tetris pieces. A short, eight-move pattern with a bold look.</p><div class="meta">Moves (8)</div><code>L R F B U' D' L' R'</code><div class="meta">Undo</div><code>R L D U B' F' R' L'</code></div><div class="pattern-card"><h3>Crosses</h3><p>Each face shows a plus sign in its own center color, with the four corners in another color. It needs eleven moves.</p><div class="meta">Moves (11)</div><code>U F B' L2 U2 L2 F' B U2 L2 U</code><div class="meta">Undo</div><code>U' L2 U2 B' F L2 U2 L2 B F' U'</code></div><div class="pattern-card"><h3>Anaconda</h3><p>Each face uses only two colors, arranged in a winding shape that gives the pattern its snake name. Fourteen moves.</p><div class="meta">Moves (14)</div><code>L U B' U' R L' B R' F B' D R D' F'</code><div class="meta">Undo</div><code>F D R' D' B F' R B' L R' U B U' L'</code></div><div class="pattern-card"><h3>Python</h3><p>Each face uses only two colors, and the top and bottom faces show bold stripes. Fourteen moves, and a good one for practising longer move lists.</p><div class="meta">Moves (14)</div><code>F2 R' B' U R' L F' L F' B D' R B L2</code><div class="meta">Undo</div><code>L2 B' R' D B' F L' F L' R U' B R F2</code></div><div class="pattern-card"><h3>Cube in a Cube</h3><p>Each face shows a 2x2 block of one color wrapped in an L-shaped border of another color, so a smaller cube seems to sit in the corner of the big one. Fifteen moves.</p><div class="meta">Moves (15)</div><code>F L F U' R U F2 L2 U' L' B D' B' L2 U</code><div class="meta">Undo</div><code>U' L2 B D B' L U L2 F2 U' R' U F' L' F'</code></div><div class="pattern-card"><h3>Stripes</h3><p>The top and bottom faces stay one solid color, and each of the four side faces turns into three vertical stripes. Seventeen moves.</p><div class="meta">Moves (17)</div><code>F U F R L2 B D' R D2 L D' B R2 L F U F</code><div class="meta">Undo</div><code>F' U' F' L' R2 B' D L' D2 R' D B' L2 R' F' U' F'</code></div><div class="pattern-card"><h3>Cube in a Cube in a Cube</h3><p>Every face shows one corner sticker, an L of three stickers and an outer L of five stickers, which makes three cubes look nested inside each other. Eighteen moves.</p><div class="meta">Moves (18)</div><code>U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'</code><div class="meta">Undo</div><code>F R' U' F' U L' B U' B2 U' F' R' B R2 F U L U</code></div><div class="pattern-card"><h3>Superflip</h3><p>All twelve edge pieces are flipped in place while the corners and centers stay solved. It needs 20 face turns at the very least, which is the largest number of turns any cube position is proven to need.</p><div class="meta">Moves (20)</div><code>U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2</code><div class="meta">Undo</div><code>F2 U2 B2 L' R F' R2 D U R' B2 L' U2 R' B2 R' B' F' R2 U'</code></div></div>
+
+    <h2 class="grad-text">How to Read the Moves</h2>
+    <p>Each letter is a face of the cube: U is Up, D is Down, L is Left, R is Right, F is Front and B is Back. A letter on its own, such as R, is a clockwise quarter turn when you look straight at that face. A letter with an apostrophe, such as R', is a counter-clockwise quarter turn. A letter with a 2, such as F2, is a half turn. While the cube plays, the line under the buttons also names the face by its color, so you always know which side to turn.</p>
+
+    <h2 class="grad-text">Tips for Getting a Clean Pattern</h2>
+    <p><strong>Start from a solved cube</strong> with the same orientation every time. <strong>Go slowly</strong> and use the arrows beside the cube to check each move, because one wrong turn changes the whole result. <strong>If you slip,</strong> turn your cube back to solved using the undo line, or paint it into the <a href="/tools/cube-solver/">Cube Solver</a> and follow the solution. A cube with different sticker colors still makes the same shapes, only in your own colors.</p>
+  </section>
+
+  <section class="content" aria-labelledby="faq-heading">
+    <h2 class="grad-text" id="faq-heading">Frequently Asked Questions</h2>
+    <div class="faq-list"><div class="faq-item"><h3>What is a Rubik's Cube pattern?</h3><p>It is a colorful, symmetric design that you make by turning a solved cube with a short list of moves, such as a checkerboard or a plus sign on every face.</p></div><div class="faq-item"><h3>How do I make a pattern on my cube?</h3><p>Solve your cube, hold it with white on top and green in front, choose a pattern and copy the moves in order. Press Play to watch the moves on the 3D cube first, or use the arrows to go one move at a time.</p></div><div class="faq-item"><h3>Does my cube need to be solved first?</h3><p>Yes. Every pattern here starts from a solved cube, so scrambled cubes will not show the design. If your cube is scrambled, solve it first, for example with our Cube Solver.</p></div><div class="faq-item"><h3>How do I go back to a solved cube?</h3><p>Do the same moves in reverse order, turning each one the other way. The page lists these undo moves under every pattern, and the status line shows them when a pattern is finished.</p></div><div class="faq-item"><h3>Which pattern is the easiest?</h3><p>Checkerboard is the easiest because it is only six half turns. Six Spots and Tetris need eight moves, and Crosses needs eleven.</p></div><div class="faq-item"><h3>Why do my colors look different from the picture?</h3><p>Cubes use different color schemes, and you may hold yours another way. The shapes still come out the same, only in your own colors. For the same colors as the 3D cube, hold white on top and green in front.</p></div><div class="faq-item"><h3>What do the letters U, D, L, R, F and B mean?</h3><p>They are the six faces: Up, Down, Left, Right, Front and Back. A letter alone is a clockwise quarter turn, an apostrophe means counter-clockwise, and a 2 means a half turn.</p></div><div class="faq-item"><h3>What is the Superflip?</h3><p>The Superflip flips all twelve edges in place and leaves the corners and centers solved. It needs 20 face turns at the minimum, which is the proven maximum for any cube position.</p></div><div class="faq-item"><h3>Can I make patterns on a 2x2 or 4x4 cube?</h3><p>No. The patterns and the 3D cube here are made for the standard 3x3 Rubik's Cube only.</p></div><div class="faq-item"><h3>Is this tool free and does it work on a phone?</h3><p>Yes. It is free, needs no sign-up, and fits on a phone screen. You can drag the cube with one finger to look at every side.</p></div></div>
+  </section>
+
+  <section class="content related-section" aria-labelledby="related-heading">
+    <h2 class="grad-text" id="related-heading">More Free Tools You May Need</h2>
+    <div class="related-grid"><a href="/tools/cube-solver/"><strong>Cube Solver</strong><span>Solve any scrambled 3x3 or 2x2 cube.</span></a><a href="/tools/image-color-picker/"><strong>Image Color Picker</strong><span>Pick exact colors from a photo of your cube.</span></a><a href="/tools/color-palette-extractor/"><strong>Color Palette Extractor</strong><span>Pull the main colors out of a picture.</span></a><a href="/tools/qr-code-generator/"><strong>QR Code Generator</strong><span>Share this page with a QR code.</span></a><a href="/games/"><strong>Free Browser Games</strong><span>More puzzle and board games to play.</span></a><a href="/games/chess/"><strong>Chess</strong><span>Play a quick game of chess online.</span></a></div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+
+<script>
+(function () {
+  "use strict";
+  var $ = function (i) { return document.getElementById(i); };
+  var FL = "URFDLB";
+  var FNAME = ["Up", "Right", "Front", "Down", "Left", "Back"];
+  var COL = [
+    { n: "White", c: "#ffffff", l: "W" }, { n: "Red", c: "#e63946", l: "R" }, { n: "Green", c: "#2a9d4b", l: "G" },
+    { n: "Yellow", c: "#ffd60a", l: "Y" }, { n: "Orange", c: "#fb8500", l: "O" }, { n: "Blue", c: "#2f6fed", l: "B" },
+    { n: "Blank", c: "#d9d4e6", l: "-" }
+  ];
+  var NORM = [[0, 1, 0], [1, 0, 0], [0, 0, 1], [0, -1, 0], [-1, 0, 0], [0, 0, -1]];
+    var CF = [[8, 9, 20], [6, 18, 38], [0, 36, 47], [2, 45, 11], [29, 26, 15], [27, 44, 24], [33, 53, 42], [35, 17, 51]];
+  var CC = ["URF", "UFL", "ULB", "UBR", "DFR", "DLF", "DBL", "DRB"];
+  var EF = [[5, 10], [7, 19], [3, 37], [1, 46], [32, 16], [28, 25], [30, 43], [34, 52], [23, 12], [21, 41], [50, 39], [48, 14]];
+  var EC = ["UR", "UF", "UL", "UB", "DR", "DF", "DL", "DB", "FR", "FL", "BL", "BR"];
+  var SCRLEN = { 2: 11, 3: 20, 4: 40, 5: 60, 6: 80, 7: 100, 8: 120, 9: 140 };
+
+  var N = 3, st = [], brush = 0, cells = [], geoCache = {};
+  var sol = null, base = null, step = 0, timer = null, playing = false, busy = false;
+  var worker = null, workerP = null, initRes = null, initRej = null, pend = null;
+
+  /* ---------- geometry and moves ---------- */
+  function getGeo(n) {
+    if (geoCache[n]) return geoCache[n];
+    var m = n - 1, pos = [], nor = [], idx = {}, f, r, c, a, b, p;
+    for (f = 0; f < 6; f++) for (r = 0; r < n; r++) for (c = 0; c < n; c++) {
+      a = 2 * c - m; b = 2 * r - m;
+      switch (f) {
+        case 0: p = [a, m, b]; break;
+        case 1: p = [m, -b, -a]; break;
+        case 2: p = [a, -b, m]; break;
+        case 3: p = [a, -m, -b]; break;
+        case 4: p = [-m, -b, a]; break;
+        default: p = [-a, -b, -m];
+      }
+      pos.push(p); nor.push(NORM[f]);
+      idx[p.join() + "|" + NORM[f].join()] = f * n * n + r * n + c;
+    }
+    geoCache[n] = { pos: pos, nor: nor, idx: idx, perm: {} };
+    return geoCache[n];
+  }
+  function rot(n, v) {
+    var d = n[0] * v[0] + n[1] * v[1] + n[2] * v[2];
+    return [n[0] * d - (n[1] * v[2] - n[2] * v[1]), n[1] * d - (n[2] * v[0] - n[0] * v[2]), n[2] * d - (n[0] * v[1] - n[1] * v[0])];
+  }
+  function layerPerm(n, f, depth) {
+    var g = getGeo(n), key = f * 100 + depth;
+    if (g.perm[key]) return g.perm[key];
+    var L = n - 1 - 2 * depth, to = [], i, nf = NORM[f], p;
+    for (i = 0; i < g.pos.length; i++) {
+      p = g.pos[i];
+      if (nf[0] * p[0] + nf[1] * p[1] + nf[2] * p[2] === L) to[i] = g.idx[rot(nf, p).join() + "|" + rot(nf, g.nor[i]).join()];
+      else to[i] = i;
+    }
+    g.perm[key] = to;
+    return to;
+  }
+  function turn(s, n, mv) {
+    var t = ((mv.q % 4) + 4) % 4, k, i, to, ns;
+    for (; t > 0; t--) for (k = 0; k < mv.depths.length; k++) {
+      to = layerPerm(n, mv.f, mv.depths[k]); ns = s.slice();
+      for (i = 0; i < to.length; i++) ns[to[i]] = s[i];
+      s = ns;
+    }
+    return s;
+  }
+  function parse(text, n) {
+    var toks = text.replace(/[’‘`]/g, "'").trim().split(/\s+/).filter(Boolean), out = [], i, m, num, wide, f, q, depths, k, w;
+    for (i = 0; i < toks.length; i++) {
+      m = /^(\d*)([URFDLBurfdlb])(w?)(2'|'2|2|')?$/.exec(toks[i]);
+      if (!m) return { err: "Unknown move \"" + toks[i] + "\". Use the letters U R F D L B with ' or 2, for example R U' F2 or 2R." };
+      num = m[1] ? parseInt(m[1], 10) : 0;
+      wide = m[3] === "w" || m[2] === m[2].toLowerCase();
+      f = FL.indexOf(m[2].toUpperCase());
+      q = 1; if (m[4]) q = m[4] === "'" ? 3 : 2;
+      depths = [];
+      if (wide) {
+        w = num || 2;
+        if (w < 1 || w > n - 1) return { err: "The move \"" + toks[i] + "\" does not fit a " + n + "x" + n + " cube." };
+        for (k = 0; k < w; k++) depths.push(k);
+      } else if (num) {
+        if (num > n) return { err: "The move \"" + toks[i] + "\" does not fit a " + n + "x" + n + " cube." };
+        depths.push(num - 1);
+      } else depths.push(0);
+      out.push({ f: f, depths: depths, q: q, txt: toks[i] });
+    }
+    return { moves: out };
+  }
+  function inv(mv) { return { f: mv.f, depths: mv.depths, q: 4 - mv.q, txt: mv.txt }; }
+  function genScramble(n, len) {
+    var out = [], last = -1, f, d, q;
+    while (out.length < len) {
+      f = Math.floor(Math.random() * 6);
+      if (f === last) continue;
+      d = n <= 3 ? 0 : Math.floor(Math.random() * n);
+      q = 1 + Math.floor(Math.random() * 3);
+      out.push((d ? String(d + 1) : "") + FL[f] + (q === 2 ? "2" : q === 3 ? "'" : ""));
+      last = f;
+    }
+    return out;
+  }
+
+  /* ---------- state ---------- */
+  function solvedState(n) {
+    var s = [], f, i;
+    for (f = 0; f < 6; f++) for (i = 0; i < n * n; i++) s.push(f);
+    return s;
+  }
+  function isSolved(s, n) {
+    var n2 = n * n, f, i, c;
+    for (f = 0; f < 6; f++) {
+      c = s[f * n2]; if (c === 6) return false;
+      for (i = 1; i < n2; i++) if (s[f * n2 + i] !== c) return false;
+    }
+    return true;
+  }
+  function hasBlank(s) { return s.indexOf(6) >= 0; }
+
+  /* ---------- patterns ---------- */
+  var PATTERNS = [{"name": "Checkerboard", "moves": "R2 L2 U2 D2 F2 B2", "short": "A checkerboard on every face."}, {"name": "Six Spots", "moves": "U D' R L' F B' U D'", "short": "One single spot on every face."}, {"name": "Tetris", "moves": "L R F B U' D' L' R'", "short": "Chunky blocks like Tetris pieces."}, {"name": "Crosses", "moves": "U F B' L2 U2 L2 F' B U2 L2 U", "short": "A plus sign on every face."}, {"name": "Anaconda", "moves": "L U B' U' R L' B R' F B' D R D' F'", "short": "Two colors per face in a winding shape."}, {"name": "Python", "moves": "F2 R' B' U R' L F' L F' B D' R B L2", "short": "Two colors per face, bold stripes on top."}, {"name": "Cube in a Cube", "moves": "F L F U' R U F2 L2 U' L' B D' B' L2 U", "short": "A small cube seems to sit inside the cube."}, {"name": "Stripes", "moves": "F U F R L2 B D' R D2 L D' B R2 L F U F", "short": "Solid top and bottom, striped sides."}, {"name": "Cube in a Cube in a Cube", "moves": "U' L' U' F' R2 B' R F U B2 U B' L U' F U R F'", "short": "Three cubes nested inside each other."}, {"name": "Superflip", "moves": "U R2 F B R B2 R U2 L B2 R U' D' R2 F R' L B2 U2 F2", "short": "Every edge flipped in place."}];
+  var POS = ["top", "right", "front", "bottom", "left", "back"];
+  var CNAME = ["White", "Red", "Green", "Yellow", "Orange", "Blue"];
+  var cur = 0, stk = [], cubies = [], shown = [], solEls = [], anim = null, VM = null;
+  var REDUCE = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var DUR_Q = REDUCE ? 1 : 520, DUR_H = REDUCE ? 1 : 700, PLAY_GAP = REDUCE ? 600 : 90;
+
+  function invertAlg(toks) {
+    return toks.slice().reverse().map(function (t) { return t.length === 1 ? t + "'" : t.charAt(1) === "2" ? t : t.charAt(0); });
+  }
+  function applyAlg(toks) {
+    var s = solvedState(N), i;
+    for (i = 0; i < toks.length; i++) s = turn(s, N, parse(toks[i], N).moves[0]);
+    return s;
+  }
+
+  /* ---------- small previews drawn from the real cube state ---------- */
+  function mm(A, B) { var R = [], i, j, k, t; for (i = 0; i < 3; i++) for (j = 0; j < 3; j++) { t = 0; for (k = 0; k < 3; k++) t += A[i * 3 + k] * B[k * 3 + j]; R[i * 3 + j] = t; } return R; }
+  function RX(a) { var c = Math.cos(a), t = Math.sin(a); return [1, 0, 0, 0, c, -t, 0, t, c]; }
+  function RY(a) { var c = Math.cos(a), t = Math.sin(a); return [c, 0, t, 0, 1, 0, -t, 0, c]; }
+  var VM0 = mm(RX(-0.45), RY(-0.62));
+  function proj(v) { var m = VM0; return [m[0] * v[0] + m[1] * v[1] + m[2] * v[2], m[3] * v[0] + m[4] * v[1] + m[5] * v[2], m[6] * v[0] + m[7] * v[1] + m[8] * v[2]]; }
+  function previewSVG(s) {
+    var g = getGeo(3), out = "", f, i, n, q, p0, e1, e2, c, k, pts, sx, sy, cs = [[-1, -1], [1, -1], [1, 1], [-1, 1]], body = "";
+    for (f = 0; f < 6; f++) {
+      n = NORM[f]; q = proj([n[0], -n[1], n[2]]);
+      if (q[2] <= 0.05) continue;
+      p0 = g.pos[f * 9]; e1 = [(g.pos[f * 9 + 1][0] - p0[0]) / 2, (g.pos[f * 9 + 1][1] - p0[1]) / 2, (g.pos[f * 9 + 1][2] - p0[2]) / 2];
+      e2 = [(g.pos[f * 9 + 3][0] - p0[0]) / 2, (g.pos[f * 9 + 3][1] - p0[1]) / 2, (g.pos[f * 9 + 3][2] - p0[2]) / 2];
+      for (i = 0; i < 9; i++) {
+        c = g.pos[f * 9 + i]; pts = [];
+        for (k = 0; k < 4; k++) {
+          sx = c[0] + n[0] + cs[k][0] * 0.86 * e1[0] + cs[k][1] * 0.86 * e2[0];
+          sy = c[1] + n[1] + cs[k][0] * 0.86 * e1[1] + cs[k][1] * 0.86 * e2[1];
+          q = proj([sx, -sy, c[2] + n[2] + cs[k][0] * 0.86 * e1[2] + cs[k][1] * 0.86 * e2[2]]);
+          pts.push(q[0].toFixed(2) + "," + q[1].toFixed(2));
+        }
+        body += '<polygon points="' + pts.join(" ") + '" fill="' + COL[s[f * 9 + i]].c + '"/>';
+      }
+    }
+    /* dark body behind the stickers: the three visible faces as full squares */
+    var base = "";
+    for (f = 0; f < 6; f++) {
+      n = NORM[f]; q = proj([n[0], -n[1], n[2]]);
+      if (q[2] <= 0.05) continue;
+      p0 = g.pos[f * 9 + 4]; e1 = [(g.pos[f * 9 + 5][0] - p0[0]) / 2, (g.pos[f * 9 + 5][1] - p0[1]) / 2, (g.pos[f * 9 + 5][2] - p0[2]) / 2];
+      e2 = [(g.pos[f * 9 + 7][0] - p0[0]) / 2, (g.pos[f * 9 + 7][1] - p0[1]) / 2, (g.pos[f * 9 + 7][2] - p0[2]) / 2];
+      pts = [];
+      for (k = 0; k < 4; k++) {
+        q = proj([p0[0] + n[0] + cs[k][0] * 3 * e1[0] + cs[k][1] * 3 * e2[0], -(p0[1] + n[1] + cs[k][0] * 3 * e1[1] + cs[k][1] * 3 * e2[1]), p0[2] + n[2] + cs[k][0] * 3 * e1[2] + cs[k][1] * 3 * e2[2]]);
+        pts.push(q[0].toFixed(2) + "," + q[1].toFixed(2));
+      }
+      base += '<polygon points="' + pts.join(" ") + '" fill="#16141f"/>';
+    }
+    return '<svg viewBox="-5.6 -5.8 11.2 11.6" aria-hidden="true" focusable="false">' + base + body + '</svg>';
+  }
+
+  /* ---------- status text ---------- */
+  function moveHintText() {
+    var t, f, how;
+    if (step >= sol.length) return "Pattern ready! To go back to a solved cube: " + invertAlg(sol).join(" ");
+    t = sol[step]; f = FL.indexOf(t.charAt(0));
+    how = t.length === 1 ? "clockwise" : t.charAt(1) === "2" ? "a half turn" : "counter-clockwise";
+    return "Move " + (step + 1) + " of " + sol.length + " \u00B7 " + t + " \u2014 turn the " + CNAME[f] + " (" + POS[f] + ") face " + how + ".";
+  }
+  function showStatus() {
+    $("status").textContent = step === 0 && !playing ? "Press Play, or tap the right arrow to go one move at a time." : moveHintText();
+  }
+  function renderSol() {
+    var box = $("sol-line"), i, sp;
+    box.innerHTML = ""; solEls = [];
+    for (i = 0; i < sol.length; i++) {
+      sp = document.createElement("span"); sp.textContent = sol[i];
+      box.appendChild(sp); box.appendChild(document.createTextNode(" ")); solEls.push(sp);
+    }
+    updateSol();
+  }
+  function updateSol() {
+    var i;
+    for (i = 0; i < solEls.length; i++) solEls[i].className = i < step ? "done" : i === step ? "next" : "";
+    $("back-btn").disabled = step <= 0;
+    $("fwd-btn").disabled = step >= sol.length;
+    $("prog").style.width = (step / sol.length * 100) + "%";
+    showStatus();
+  }
+
+  /* ---------- 3D cube (real cubies, so turns look solid) ---------- */
+  function applyView() {
+    if (!VM) VM = VM0.slice();
+    var m = VM;
+    $("net").style.transform = "matrix3d(" + [m[0], m[3], m[6], 0, m[1], m[4], m[7], 0, m[2], m[5], m[8], 0, 0, 0, 0, 1].join(",") + ")";
+  }
+  function placeCubies() {
+    var u = parseFloat($("net").dataset.s) / 2, i, c;
+    for (i = 0; i < cubies.length; i++) {
+      c = cubies[i];
+      c.base = "translate3d(" + (c.p[0] * u) + "px," + (-c.p[1] * u) + "px," + (c.p[2] * u) + "px)";
+      c.el.style.transform = c.base;
+    }
+  }
+  function sizeCube() {
+    var sc = $("scene"), w = sc.clientWidth || 320, byW = Math.floor(w / 1.95), byH = Math.floor((window.innerHeight || 700) * 0.27);
+    var S = Math.max(110, Math.min(210, byW, byH)), s = S / N, net = $("net");
+    sc.style.setProperty("--S", S + "px");
+    net.style.setProperty("--s", s + "px");
+    net.dataset.s = String(s);
+    placeCubies();
+  }
+  function render() {
+    var i;
+    for (i = 0; i < st.length; i++) {
+      if (shown[i] === st[i]) continue;
+      shown[i] = st[i]; stk[i].style.background = COL[st[i]].c;
+    }
+  }
+  function buildCube() {
+    var net = $("net"), g = getGeo(N), map = {}, i, f, p, key, c, k, b, n2 = N * N;
+    net.innerHTML = ""; cubies = []; stk = []; shown = [];
+    for (i = 0; i < g.pos.length; i++) {
+      p = g.pos[i]; key = p.join(",");
+      if (!map[key]) {
+        c = { p: p, base: "", faces: [], el: document.createElement("div") };
+        c.el.className = "cubie";
+        for (k = 0; k < 6; k++) { f = document.createElement("div"); f.className = "cf f" + k; c.el.appendChild(f); c.faces.push(f); }
+        map[key] = c; cubies.push(c); net.appendChild(c.el);
+      }
+      c = map[key]; f = Math.floor(i / n2);
+      b = document.createElement("div"); b.className = "stk";
+      c.faces[f].appendChild(b); stk[i] = b;
+    }
+    net.dataset.s = "60"; sizeCube(); applyView();
+  }
+  var drag = null;
+  $("scene").addEventListener("pointerdown", function (e) { drag = { id: e.pointerId, x: e.clientX, y: e.clientY }; });
+  window.addEventListener("pointermove", function (e) {
+    if (!drag || e.pointerId !== drag.id) return;
+    var dx = e.clientX - drag.x, dy = e.clientY - drag.y;
+    drag.x = e.clientX; drag.y = e.clientY;
+    VM = mm(mm(RX(-dy * 0.01), RY(dx * 0.01)), VM); applyView();
+  });
+  window.addEventListener("pointerup", function () { drag = null; });
+  window.addEventListener("pointercancel", function () { drag = null; });
+  window.addEventListener("resize", sizeCube);
+
+  /* ---------- playback (requestAnimationFrame, one smooth turn per move) ---------- */
+  function setPlayLabel() {
+    $("play-btn").setAttribute("data-playing", playing ? "true" : "false");
+    $("play-txt").textContent = playing ? "Pause" : "Play";
+  }
+  function stopPlay() { playing = false; if (timer) { clearTimeout(timer); timer = null; } setPlayLabel(); }
+  function stateAt(k) {
+    var s = base.slice(), i;
+    for (i = 0; i < k; i++) s = turn(s, N, parse(sol[i], N).moves[0]);
+    return s;
+  }
+  function layerCubies(mv) {
+    var nf = NORM[mv.f], L = N - 1 - 2 * mv.depths[0];
+    return cubies.filter(function (c) { return nf[0] * c.p[0] + nf[1] * c.p[1] + nf[2] * c.p[2] === L; });
+  }
+  function abortAnim() {
+    var i;
+    if (!anim) return;
+    cancelAnimationFrame(anim.raf);
+    for (i = 0; i < anim.mem.length; i++) anim.mem[i].el.style.transform = anim.mem[i].base;
+    anim = null;
+  }
+  function finishAnim() {
+    if (!anim) return;
+    var a = anim;
+    abortAnim(); step = a.k; st = a.target; render(); updateSol();
+  }
+  function ease(t) { return 0.5 - 0.5 * Math.cos(Math.PI * t); }
+  function frame(now) {
+    var a = anim, t, tr, i, cb;
+    if (!a) return;
+    if (!a.t0) a.t0 = now;
+    t = Math.min(1, (now - a.t0) / a.dur);
+    tr = "rotate3d(" + a.ax + "," + a.ay + "," + a.az + "," + (a.ang * ease(t)).toFixed(2) + "deg) ";
+    for (i = 0; i < a.mem.length; i++) a.mem[i].el.style.transform = tr + a.mem[i].base;
+    if (t < 1) { a.raf = requestAnimationFrame(frame); return; }
+    cb = a.cb; finishAnim(); if (cb) cb();
+  }
+  function animStep(dir, cb) {
+    if (anim) return;
+    var k = step + dir, mv, nf;
+    if (k < 0 || k > sol.length) return;
+    mv = parse(sol[dir > 0 ? step : k], N).moves[0];
+    if (dir < 0) mv = inv(mv);
+    nf = NORM[mv.f];
+    anim = { k: k, target: stateAt(k), mem: layerCubies(mv), ax: nf[0], ay: -nf[1], az: nf[2], ang: mv.q === 3 ? -90 : mv.q * 90, dur: mv.q === 2 ? DUR_H : DUR_Q, t0: 0, cb: cb, raf: 0 };
+    anim.raf = requestAnimationFrame(frame);
+  }
+  function goTo(k) {
+    abortAnim();
+    step = Math.max(0, Math.min(sol.length, k)); st = stateAt(step); render(); updateSol();
+  }
+  function tick() {
+    if (!playing) return;
+    if (step >= sol.length) { stopPlay(); showStatus(); return; }
+    animStep(1, function () {
+      if (!playing) return;
+      if (step >= sol.length) { stopPlay(); showStatus(); return; }
+      timer = setTimeout(tick, PLAY_GAP);
+    });
+  }
+  function play() {
+    if (playing) { stopPlay(); showStatus(); return; }
+    finishAnim();
+    if (step >= sol.length) goTo(0);
+    playing = true; setPlayLabel(); showStatus();
+    timer = setTimeout(tick, 150);
+  }
+  function stepBy(d) { stopPlay(); finishAnim(); animStep(d); }
+
+  /* ---------- picker ---------- */
+  function buildPicker() {
+    var box = $("picker"), i, b;
+    box.innerHTML = "";
+    for (i = 0; i < PATTERNS.length; i++) {
+      b = document.createElement("button");
+      b.type = "button"; b.className = "pat"; b.dataset.i = i;
+      b.setAttribute("aria-pressed", "false");
+      b.innerHTML = previewSVG(applyAlg(PATTERNS[i].moves.split(" "))) + "<span>" + PATTERNS[i].name + "</span>";
+      box.appendChild(b);
+    }
+  }
+  function setPattern(i, user) {
+    var all = $("picker").children, k, p = PATTERNS[i];
+    stopPlay(); abortAnim(); cur = i;
+    sol = p.moves.split(" "); base = solvedState(N); step = 0; st = base.slice();
+    for (k = 0; k < all.length; k++) all[k].setAttribute("aria-pressed", k === i ? "true" : "false");
+    $("pat-name").textContent = p.name; $("pat-desc").textContent = p.short;
+    render(); renderSol();
+    if (user && all[i].scrollIntoView) { try { all[i].scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" }); } catch (e) {} }
+  }
+
+  $("picker").addEventListener("click", function (e) {
+    var b = e.target.closest(".pat"); if (!b) return;
+    setPattern(parseInt(b.dataset.i, 10), true);
+  });
+  $("play-btn").addEventListener("click", play);
+  $("reset-btn").addEventListener("click", function () { stopPlay(); goTo(0); });
+  $("back-btn").addEventListener("click", function () { stepBy(-1); });
+  $("fwd-btn").addEventListener("click", function () { stepBy(1); });
+  document.addEventListener("keydown", function (e) {
+    if (e.altKey || e.ctrlKey || e.metaKey) return;
+    if (e.key === "ArrowRight") stepBy(1); else if (e.key === "ArrowLeft") stepBy(-1);
+  });
+
+  buildCube();
+  buildPicker();
+  setPattern(0, false);
+})();
+</script>
+<script src="/shared/shared.js" defer></script>
+</body>
+</html>
