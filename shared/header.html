@@ -11,7 +11,7 @@
 .wtbh-name em{font-style:normal;background:linear-gradient(90deg,#7c3aed,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
 .wtbh-tag{font-size:12px;font-weight:500;color:var(--wtbh-soft)}
 .wtbh-nav{display:flex;align-items:center;gap:4px}
-.wtbh-link{display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--wtbh-soft);border:1px solid transparent;transition:background .18s,color .18s,border-color .18s,box-shadow .18s}
+.wtbh-link{white-space:nowrap;display:inline-flex;align-items:center;gap:8px;padding:10px 15px;border-radius:999px;font-size:14.5px;font-weight:600;color:var(--wtbh-soft);border:1px solid transparent;transition:background .18s,color .18s,border-color .18s,box-shadow .18s}
 .wtbh-link svg{width:18px;height:18px;flex:0 0 auto}
 .wtbh-link:hover{background:#fff;border-color:var(--wtbh-line);color:#6d28d9}
 .wtbh-link[aria-current]{color:#fff;background:linear-gradient(120deg,#7c3aed 0%,#5b5bf0 55%,#2563eb 100%);box-shadow:0 8px 18px rgba(99,70,240,.34)}
@@ -34,6 +34,7 @@
 }
 @media (max-width:420px){.wtbh-tag{display:none}.wtbh-name{font-size:17px}}
 @media (min-width:1101px){.wtbh-panel{display:flex;align-items:center;gap:14px}}
+@media (min-width:1101px) and (max-width:1279px){.wtbh-tag{display:none}.wtbh-link{padding:10px 11px;gap:6px}.wtbh-cta{padding:12px 16px}.wtbh-bar{gap:10px}}
 @media (prefers-reduced-motion:reduce){.wtbh-link,.wtbh-cta{transition:none}.wtbh-cta:hover{transform:none}}
 </style>
 <header class="wtbh" id="wtbh">
