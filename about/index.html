@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWC5NCFGBL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-QWC5NCFGBL');
+  (function(){
+    var done = false;
+    function loadTags(){
+      if (done) return; done = true;
+      var t = document.createElement("script"); t.async = true;
+      t.src = "https://www.googletagmanager.com/gtag/js?id=G-QWC5NCFGBL";
+      document.head.appendChild(t);
+    }
+    function later(){ if (window.requestIdleCallback) requestIdleCallback(loadTags, { timeout: 3000 }); else setTimeout(loadTags, 1500); }
+    if (document.readyState === "complete") later(); else window.addEventListener("load", later);
+  })();
 </script>
 <meta name="p:domain_verify" content="58051de39b9d3361d7c2f279741308d7"/>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us | Working Tools Box</title>
-<meta name="description" content="Learn about Working Tools Box, a growing collection of free online tools for images, PDFs and video, founded by Somnath Mahato in India.">
+<meta name="description" content="Learn about Working Tools Box, a growing collection of free online tools and games made in Kolkata, India. See who runs the site, how it works and how to reach us.">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#f6edff">
 <link rel="canonical" href="https://wtoolsbox.com/about/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="About Us | Working Tools Box">
-<meta property="og:description" content="Learn about Working Tools Box, a growing collection of free online tools for images, PDFs and video, founded by Somnath Mahato in India.">
+<meta property="og:description" content="Learn about Working Tools Box, a growing collection of free online tools and games made in Kolkata, India. See who runs the site, how it works and how to reach us.">
 <meta property="og:url" content="https://wtoolsbox.com/about/">
 <meta property="og:site_name" content="Working Tools Box">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="About Us | Working Tools Box">
-<meta name="twitter:description" content="Learn about Working Tools Box, a growing collection of free online tools for images, PDFs and video, founded by Somnath Mahato in India.">
+<meta name="twitter:description" content="Learn about Working Tools Box, a growing collection of free online tools and games made in Kolkata, India. See who runs the site, how it works and how to reach us.">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "AboutPage",
   "name": "About Working Tools Box",
   "url": "https://wtoolsbox.com/about/",
-  "description": "Working Tools Box is a growing collection of free online tools for images, PDFs, video and more, founded by Somnath Mahato in India.",
+  "description": "Working Tools Box is a growing collection of free online tools and games for images, PDFs, video and more. It is an independent project based in Kolkata, India.",
   "mainEntity": {
     "@type": "Organization",
     "name": "Working Tools Box",
     "url": "https://wtoolsbox.com/",
     "foundingDate": "2026-08",
-    "founder": { "@type": "Person", "name": "Somnath Mahato", "image": "https://wtoolsbox.com/images/about/founder.webp" },
-    "email": "muma90748@gmail.com"
+    "email": "contactwtoolsbox@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "addressCountry": "IN"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "contactwtoolsbox@gmail.com",
+      "availableLanguage": [
+        "English",
+        "Hindi"
+      ],
+      "url": "https://wtoolsbox.com/sprout/"
+    },
+    "sameAs": [
+      "https://www.facebook.com/share/1DMmdLpsZq/",
+      "https://www.youtube.com/@creativeaidesigner"
+    ]
   }
 }
 </script>
+<style>#site-header{min-height:78px}@media (min-width:1101px){#site-header{min-height:77px}}#site-footer{min-height:160px}</style>
 <style id="pg-base">
 /* Working Tools Box - info pages (About, Contact, policies). Prefix: pg- */
 :root{--pg-ink:#2a1f6b;--pg-soft:#5b4fa3;--pg-line:rgba(139,92,246,.18);--pg-purple:#8b5cf6;--pg-pink:#d946ef;--pg-blue:#60a5fa;--pg-grad:linear-gradient(120deg,#d946ef 0%,#8b5cf6 55%,#60a5fa 100%)}
@@ -218,6 +248,8 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
 .pg-btn{background:linear-gradient(120deg,#a855f7 0%,#d946ef 100%);box-shadow:0 10px 22px rgba(192,38,211,.28)}
 .pg-btn-ghost{background:#fff;border:2px solid #e0b3f1;color:#7e1fa3!important;box-shadow:0 8px 18px rgba(169,76,196,.12)}
 .pg-ico{background:linear-gradient(135deg,#d946ef 0%,#a855f7 60%,#8b5cf6 100%)}
+.pg-doc .pg-sec+.pg-sec{margin-top:28px}
+.pg-avatar svg{display:block;width:100%;height:100%;border-radius:50%;border:6px solid #fff;box-shadow:0 14px 34px rgba(139,92,246,.35),0 0 0 4px rgba(217,70,239,.35)}
 .pg-avatar img{display:block;width:100%;height:100%;padding:0;object-fit:cover;border-radius:50%;border:6px solid #fff;box-shadow:0 14px 34px rgba(139,92,246,.35),0 0 0 4px rgba(217,70,239,.35)}
 </style>
 </head>
@@ -228,18 +260,18 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
 
     <section class="pg-hero" aria-labelledby="about-title">
       <div class="pg-art pg-float">
-        <div class="pg-avatar"><img src="/images/about/founder.webp" width="600" height="600" decoding="async" fetchpriority="high" alt="Illustrated avatar of a cheerful boy with headphones and a thumbs-up, representing founder Somnath Mahato" title="Somnath Mahato, founder of Working Tools Box"></div>
-        <div class="pg-who"><strong>Somnath Mahato</strong><span>Founder</span></div>
+        <div class="pg-avatar"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Working Tools Box logo, a gradient cube"><defs><linearGradient id="abLg" x1="3" y1="2" x2="21" y2="22" gradientUnits="userSpaceOnUse"><stop stop-color="#2563eb"/><stop offset=".5" stop-color="#8b5cf6"/><stop offset="1" stop-color="#ec4899"/></linearGradient></defs><rect width="200" height="200" fill="#fff"/><g transform="translate(100 104) scale(5.3) translate(-12 -12)"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5z" fill="url(#abLg)"/><path d="M12 2v20M3 7l9 5 9-5" stroke="#fff" stroke-width="1.2" stroke-linejoin="round" fill="none"/></g></svg></div>
+        <div class="pg-who"><strong>Working Tools Box Team</strong><span>Kolkata, India</span></div>
       </div>
       <div class="pg-blob">
         <h1 id="about-title">About Us</h1>
         <p>Working Tools Box is a growing collection of <span class="pg-hl">free online tools</span> that help you finish everyday tasks quickly, right in your browser.</p>
-        <p class="pg-small">Made in India, for everyone.</p>
+        <p class="pg-small">Made in Kolkata, India, for everyone.</p>
       </div>
     </section>
 
     <ul class="pg-feats">
-      <li class="pg-feat"><span class="pg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><h2>Who we are</h2><p>An independent project from India, started in August 2026.</p></li>
+      <li class="pg-feat"><span class="pg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></svg></span><h2>Who we are</h2><p>An independent project based in Kolkata, India, started in August 2026.</p></li>
       <li class="pg-feat"><span class="pg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.6"/><path d="M3 20c0-3.6 2.7-6 6-6s6 2.4 6 6"/><path d="M15.5 14.4c3 0 5.5 1.8 5.5 5"/></svg></span><h2>Who it's for</h2><p>Students, creators and small businesses.</p></li>
       <li class="pg-feat"><span class="pg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></span><h2>How it works</h2><p>Open a tool, use it and download your result.</p></li>
       <li class="pg-feat"><span class="pg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.4 1.1 2.2h5c0-.8.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></svg></span><h2>What's next</h2><p>More tools and fun small games, added step by step.</p></li>
@@ -275,6 +307,7 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
           <div class="pg-actions">
             <a class="pg-btn" href="/#tools">Explore Tools</a>
             <a class="pg-btn pg-btn-ghost" href="/contact/">Contact Us</a>
+            <a class="pg-btn pg-btn-ghost" href="/sprout/">Sprout</a>
           </div>
         </div>
       </section>
@@ -285,7 +318,9 @@ select.pg-input{padding-right:44px;background-image:url("data:image/svg+xml,%3Cs
 <section class="pg-sec" id="offer"><h2>What you can do here</h2><p>Working Tools Box brings everyday online tools together in one place, and you do not need an account to use them. You can work with images, PDFs and video, and use handy extras such as colour, QR code and text tools. A few simple games are also available. New tools are added step by step.</p><p>Good places to start are the <a href="/tools/image-compressor/">Image Compressor</a>, the <a href="/tools/image-converter/">Image Converter</a> and the <a href="/tools/image-cropper/">Image Cropper</a>.</p></section>
 <section class="pg-sec" id="files"><h2>How your files are handled</h2><p>Our tools run in your browser, so your images, PDFs and videos are processed on your own device and are not uploaded to our servers. Some tools load code libraries or model files from a content delivery network so that they can work, and these requests do not include your files. You can read the details in our <a href="/privacy-policy/">Privacy Policy</a>.</p></section>
 <section class="pg-sec" id="principles"><h2>What we care about</h2><ul><li><strong>Free and simple:</strong> open a tool, use it and download your result.</li><li><strong>Honest results:</strong> no tool is perfect on every file, so we explain the limits in our <a href="/disclaimer/">Disclaimer</a>.</li><li><strong>Fair advertising:</strong> to keep the tools free we may show ads in the future. If we do, they will be clearly separate from the tools.</li><li><strong>Listening to users:</strong> bug reports and tool ideas help decide what we improve next.</li></ul></section>
-<section class="pg-sec" id="who"><h2>Who runs the site</h2><p>Working Tools Box is an independent project run by Somnath Mahato from India. It started in August 2026. If something does not work or you have an idea, please write to us on the <a href="/contact/">Contact page</a>.</p></section>
+<section class="pg-sec" id="who"><h2>Who runs the site</h2><p>Working Tools Box is an independent project based in Kolkata, West Bengal, India. It is made and maintained by the Working Tools Box team and started in August 2026. We build each tool to be simple, fast and free to use, and we fix problems as quickly as we can.</p><p>You can reach us at <a href="mailto:contactwtoolsbox@gmail.com">contactwtoolsbox@gmail.com</a>, on the <a href="/contact/">Contact page</a>, or on <a href="/sprout/">Sprout</a>, where you can report a problem or suggest an idea.</p></section>
+<section class="pg-sec" id="money"><h2>How the site is paid for</h2><p>The tools are free and you never need to sign up or pay. To cover hosting and the time we spend improving the site, we plan to show ads, such as Google AdSense, in the future. Ads will be clearly separate from the tools and will never change your results. You can read more in our <a href="/privacy-policy/">Privacy Policy</a>.</p></section>
+<section class="pg-sec" id="sprout-about"><h2>Help us grow: Sprout</h2><p>Every tool starts as a small seed and grows with feedback from real people. If a tool did not work for you, or you wish we had a new one, open <a href="/sprout/">Sprout</a> and tell us. It takes about a minute and no account is needed.</p></section>
       </div>
     </article>
 
