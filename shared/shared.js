@@ -5,7 +5,7 @@
 
   // Reserve space so the page does not jump when the header loads.
   var s = document.createElement("style");
-  s.textContent = "#site-header{min-height:84px}#site-footer{min-height:200px}";
+  s.textContent = "#site-header{min-height:78px}@media (min-width:1101px){#site-header{min-height:77px}}#site-footer{min-height:160px}";
   document.head.appendChild(s);
 
   // ---- tiny session cache: header/footer appear instantly on the next page ----
