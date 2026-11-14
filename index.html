@@ -1,22 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Clarity tracking code for https://wtoolsbox.com/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "z8sxpicy70");
-</script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWC5NCFGBL"></script>
+  <!-- Analytics (Clarity + Google tag): loaded after the page has finished loading so they do not slow down the first view -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-QWC5NCFGBL');
+  (function(){
+    var done = false;
+    function addScript(src){ var t = document.createElement("script"); t.async = true; t.src = src; document.head.appendChild(t); }
+    function loadTags(){
+      if (done) return; done = true;
+      addScript("https://www.googletagmanager.com/gtag/js?id=G-QWC5NCFGBL");
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "z8sxpicy70");
+    }
+    function later(){ if (window.requestIdleCallback) requestIdleCallback(loadTags, { timeout: 3000 }); else setTimeout(loadTags, 1500); }
+    if (document.readyState === "complete") later(); else window.addEventListener("load", later);
+  })();
 </script>
     <meta name="p:domain_verify" content="58051de39b9d3361d7c2f279741308d7"/>
   <meta charset="utf-8">
@@ -47,6 +52,8 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Are the tools on Working Tools Box really free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every tool and game is free to use. There are no accounts, no payments and no watermarks added to your results."}}, {"@type": "Question", "name": "Are my files uploaded to a server?", "acceptedAnswer": {"@type": "Answer", "text": "The tools are built to run in your browser, so your pictures, PDFs and videos are processed on your own device instead of being sent away for editing. A few features download small helper files the first time you use them, for example the language data for text recognition. Each tool page explains what it does."}}, {"@type": "Question", "name": "Do I need to install anything or sign up?", "acceptedAnswer": {"@type": "Answer", "text": "No. Open a tool, add your file and download the result. Everything works in a modern browser such as Chrome, Edge, Firefox or Safari on a phone, tablet or computer."}}, {"@type": "Question", "name": "Which tools can I use for images?", "acceptedAnswer": {"@type": "Answer", "text": "You can compress, resize, crop, convert, sharpen and upscale images, remove backgrounds, add watermarks, split pictures into a grid, recolor objects, make memes and collages, pick colors, extract palettes, read EXIF details and extract text with OCR."}}, {"@type": "Question", "name": "Can I work with PDF files and videos too?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can turn images into a PDF, turn PDF pages into pictures, compress, merge, split and edit PDFs. For video you can trim, merge and compress clips, make GIFs, and turn photos into an animated video with music."}}, {"@type": "Question", "name": "Why do some video tools take as long as the video?", "acceptedAnswer": {"@type": "Answer", "text": "Browsers cannot change most video formats directly, so the video tools play your clip and record the result in real time. A one-minute clip takes about a minute. Keep the tab open and in front until the progress bar finishes."}}, {"@type": "Question", "name": "Is there a limit on file size or how many files I can use?", "acceptedAnswer": {"@type": "Answer", "text": "Limits depend on the tool and on your device. Many tools accept several files at once, for example up to 50 images in the sharpener and image to PDF tools. Very large files can need a lot of memory, so the page tells you if a file is too big."}}]}</script>
   <link rel="stylesheet" href="/assets/css/style.css">
   <style>
+#site-header{min-height:84px}
+#site-footer{min-height:200px}
 .stat-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
 .stat-row li{font-size:13px;font-weight:800;color:#4a3a73;background:#fff;border:1px solid var(--border);padding:8px 14px;border-radius:999px;box-shadow:var(--shadow-sm)}
 .gh-collage{position:relative;width:100%;aspect-ratio:1.15/1;min-height:300px}
@@ -61,10 +68,10 @@
 .gh-filters button:focus-visible,.gh-card a:focus-visible{outline:3px solid rgba(124,58,237,.45);outline-offset:2px}
 .game-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:26px}
 .gh-card{display:flex;flex-direction:column;border:1px solid var(--border);border-radius:var(--radius-lg,20px);background:var(--surface,#fff);overflow:hidden;box-shadow:var(--shadow-sm);transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease}
-.gh-card:hover{box-shadow:var(--shadow-lg);border-color:#e6b1f3;transform:translateY(-4px)}
+@media (hover:hover){.gh-card:hover{box-shadow:var(--shadow-lg);border-color:#e6b1f3;transform:translateY(-4px)}}
 .gh-media{display:block;position:relative;overflow:hidden;aspect-ratio:4/3;background:#1b1330}
 .gh-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
-.gh-card:hover .gh-media img{transform:scale(1.06)}
+@media (hover:hover){.gh-card:hover .gh-media img{transform:scale(1.06)}}
 .gh-media::after{content:"";position:absolute;inset:auto 0 0 0;height:38%;background:linear-gradient(to top,rgba(20,10,40,.45),transparent);pointer-events:none}
 .game-body{display:flex;flex-direction:column;gap:10px;padding:18px 22px 22px;flex:1}
 .game-body .tool-title-row{margin:0}
@@ -120,12 +127,12 @@
 .tl-sub{margin:6px 0 0;color:var(--muted);font-size:15px}
 .tl-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:18px}
 .tl-card{display:flex;flex-direction:column;gap:14px;border:1px solid var(--border);border-radius:var(--radius-lg,20px);background:var(--surface,#fff);padding:20px;box-shadow:var(--shadow-sm);transition:box-shadow .2s ease,border-color .2s ease,transform .2s ease}
-.tl-card:hover{box-shadow:var(--shadow-lg);border-color:#e6b1f3;transform:translateY(-4px)}
+@media (hover:hover){.tl-card:hover{box-shadow:var(--shadow-lg);border-color:#e6b1f3;transform:translateY(-4px)}}
 .tl-card[hidden],.tl-cat[hidden]{display:none}
 .tl-top{display:flex;gap:14px;align-items:flex-start}
 .tl-logo-link{flex:none;display:block}
 .tl-logo{display:block;width:72px;height:72px;border-radius:18px;background:#fff;border:1px solid var(--border);object-fit:contain;transition:transform .25s ease}
-.tl-card:hover .tl-logo{transform:scale(1.06) rotate(-2deg)}
+@media (hover:hover){.tl-card:hover .tl-logo{transform:scale(1.06) rotate(-2deg)}}
 .tl-info{min-width:0;flex:1}
 .tl-info .tool-title-row{margin:0 0 6px;gap:8px;flex-wrap:wrap}
 .tl-info h4{margin:0;font-size:17px;line-height:1.25}
@@ -140,6 +147,7 @@
 @media (max-width:980px){.tl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:700px){.tl-grid{grid-template-columns:1fr}.tl-search{max-width:none}}
 @media (prefers-reduced-motion:reduce){.tl-card,.tl-logo{transition:none}.tl-card:hover{transform:none}.tl-card:hover .tl-logo{transform:none}}
+@media (max-width:900px){.tl-hero img{filter:none}}
 </style>
 </head>
 <body>
@@ -602,7 +610,7 @@
   </main>
 
   <div id="site-footer"></div>
-  <script src="/assets/js/main.js" defer></script>
+  <script src="/shared/shared.js" defer></script>
   <script>
 (function(){
   var input=document.getElementById("tool-search"),status=document.getElementById("tl-status"),empty=document.getElementById("tl-empty");
