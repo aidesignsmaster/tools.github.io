@@ -17,7 +17,7 @@
   var LINK = "color:#5b4fa3;text-decoration:none;font-weight:600;font-size:14px";
   var FALLBACK = {
     "site-header": '<nav aria-label="Main navigation" style="display:flex;flex-wrap:wrap;gap:6px 18px;padding:14px 16px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif">' +
-      '<a style="' + LINK + '" href="/">Home</a><a style="' + LINK + '" href="/#tools">Tools</a><a style="' + LINK + '" href="/games/">Games</a></nav>',
+      '<a style="' + LINK + '" href="/">Home</a><a style="' + LINK + '" href="/#tools">Tools</a><a style="' + LINK + '" href="/games/">Games</a><a style="' + LINK + '" href="/articles/">Articles</a></nav>',
     "site-footer": '<nav aria-label="Site pages" style="display:flex;flex-wrap:wrap;gap:6px 18px;padding:20px 16px;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif">' +
       '<a style="' + LINK + '" href="/about/">About Us</a><a style="' + LINK + '" href="/contact/">Contact Us</a><a style="' + LINK + '" href="/privacy-policy/">Privacy Policy</a>' +
       '<a style="' + LINK + '" href="/terms/">Terms of Use</a><a style="' + LINK + '" href="/disclaimer/">Disclaimer</a><a style="' + LINK + '" href="/cookie-policy/">Cookie Policy</a></nav>'
@@ -59,6 +59,7 @@
     var sel = null, page = "true";
     if (path === "/" || path === "") { sel = "[data-wtb-home]"; page = "page"; }
     else if (path.indexOf("/games") === 0) sel = 'a[href="/games/"]';
+    else if (path.indexOf("/articles") === 0) sel = 'a[href="/articles/"]';
     else if (/^\/tools\/(pdf-|image-to-pdf|image-to-text|qr-|fancy-|text-)/.test(path)) sel = 'a[href="/#utility-tools"]';
     else if (/^\/tools\/video-/.test(path)) sel = 'a[href="/#video-tools"]';
     else if (/^\/tools\/(image-|photo-|favicon|color-|meme)/.test(path)) sel = 'a[href="/#image-tools"]';
