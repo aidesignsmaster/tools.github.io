@@ -3,7 +3,7 @@
 .wtbf-wrap{padding:0 16px 20px;margin-top:48px}
 .wtbf{--wtbf-ink:#2a1f6b;--wtbf-soft:#5b4fa3;--wtbf-line:rgba(124,58,237,.16);position:relative;overflow:hidden;max-width:1180px;margin:0 auto;padding:40px 40px 22px;border-radius:30px;border:1px solid var(--wtbf-line);background:radial-gradient(520px 260px at 0% 100%,rgba(96,165,250,.28),transparent 70%),radial-gradient(520px 260px at 100% 100%,rgba(244,114,182,.26),transparent 70%),linear-gradient(135deg,#fff 0%,#f7f2ff 55%,#fdf1fa 100%);box-shadow:0 14px 40px rgba(124,58,237,.12);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;line-height:1.5;color:var(--wtbf-soft)}
 .wtbf a{text-decoration:none}
-.wtbf-grid{position:relative;display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr;gap:30px}
+.wtbf-grid{position:relative;display:grid;grid-template-columns:1.25fr 4fr;gap:30px}
 .wtbf-brand{display:inline-flex;align-items:center;gap:11px;color:var(--wtbf-ink)}
 .wtbf-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:#fff;border:1px solid var(--wtbf-line);box-shadow:0 4px 12px rgba(124,58,237,.14)}
 .wtbf-text{display:flex;flex-direction:column;gap:2px}
@@ -19,20 +19,39 @@
 .wtbf-list a{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--wtbf-soft);transition:color .18s,transform .18s}
 .wtbf-list a::before{content:"";width:6px;height:6px;border-top:2px solid #a855f7;border-right:2px solid #a855f7;transform:rotate(45deg);flex:0 0 auto}
 .wtbf-list a:hover{color:#6d28d9;transform:translateX(3px)}
+.wtbf-main{min-width:0}
+.wtbf-radio{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.wtbf-tablist{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 22px}
+.wtbf-tab{display:inline-flex;align-items:center;gap:8px;padding:10px 20px;border-radius:999px;font-size:14.5px;font-weight:800;color:#6d28d9;cursor:pointer;background:linear-gradient(120deg,#f1e6ff 0%,#fde3f2 100%);border:1.5px solid #e4c9f7;user-select:none;-webkit-tap-highlight-color:transparent}
+.wtbf-tab:hover{border-color:#c026d3}
+.wtbf-tcount{padding:1px 8px;border-radius:999px;font-size:12px;font-weight:800;color:#a21caf;background:#fff}
+.wtbf-panel{display:none}
+.wtbf-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 30px}
+.wtbf-multi{display:block;columns:3;column-gap:30px}
+.wtbf-multi li{break-inside:avoid;margin-bottom:9px}
 .wtbf-bottom{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin-top:30px;padding-top:18px;border-top:1px solid var(--wtbf-line);font-size:13.5px}
 .wtbf-bottom p{margin:0}
-.wtbf-mini{display:flex;gap:10px;flex-wrap:wrap}
-.wtbf-legal{display:flex;flex-wrap:wrap;gap:8px 20px;order:3;width:100%}
+.wtbf-legal{display:flex;flex-wrap:wrap;gap:8px 20px}
 .wtbf-legal a{font-size:13.5px;font-weight:600;color:var(--wtbf-soft);transition:color .18s}
 .wtbf-legal a:hover{color:#6d28d9;text-decoration:underline}
-.wtbf-pill{display:inline-flex;align-items:center;padding:8px 16px;border-radius:999px;font-size:13.5px;font-weight:700;color:#fff!important;background:linear-gradient(120deg,#d946ef 0%,#8b5cf6 52%,#2563eb 100%);box-shadow:0 8px 18px rgba(139,92,246,.3)}
 .wtbf a:focus-visible{outline:3px solid #8b5cf6;outline-offset:3px;border-radius:8px}
-@media (max-width:1060px){.wtbf-grid{grid-template-columns:1fr 1fr 1fr;gap:28px}.wtbf-col-brand{grid-column:1 / -1}}
-@media (max-width:760px){.wtbf-grid{grid-template-columns:1fr 1fr;gap:26px}.wtbf-col-brand{grid-column:1 / -1}.wtbf{padding:32px 26px 20px}}
-@media (max-width:560px){.wtbf-grid{grid-template-columns:1fr}.wtbf{padding:28px 20px 18px;border-radius:24px}.wtbf-bottom{flex-direction:column;align-items:flex-start}}
+@media (max-width:1060px){.wtbf-grid{grid-template-columns:1fr;gap:26px}}
+@media (max-width:760px){.wtbf{padding:32px 26px 20px}.wtbf-cols{grid-template-columns:1fr 1fr}.wtbf-multi{columns:2}}
+@media (max-width:560px){.wtbf{padding:28px 18px 18px;border-radius:24px}.wtbf-cols{gap:22px 16px}.wtbf-list a{font-size:14px}.wtbf-tablist{flex-wrap:nowrap;gap:8px}.wtbf-tab{flex:1 1 0;justify-content:center;gap:5px;padding:9px 6px;font-size:13.5px}.wtbf-tcount{padding:1px 6px;font-size:11px}.wtbf-bottom{flex-direction:column;align-items:flex-start}}
 @media (prefers-reduced-motion:reduce){.wtbf-list a{transition:none}.wtbf-list a:hover{transform:none}}
-</style>
-<div class="wtbf-wrap">
+#wtbf-t-tools:checked~.wtbf-tablist label[for="wtbf-t-tools"]{background:linear-gradient(120deg,#8b5cf6 0%,#d946ef 55%,#ec4899 100%);color:#fff;border-color:transparent;box-shadow:0 0 0 4px rgba(217,70,239,.22),0 8px 20px rgba(217,70,239,.42)}
+#wtbf-t-tools:checked~.wtbf-tablist label[for="wtbf-t-tools"] .wtbf-tcount{background:rgba(255,255,255,.3);color:#fff}
+#wtbf-t-tools:focus-visible~.wtbf-tablist label[for="wtbf-t-tools"]{outline:3px solid #8b5cf6;outline-offset:3px}
+#wtbf-t-tools:checked~.wtbf-panels .wtbf-p-tools{display:block}
+#wtbf-t-games:checked~.wtbf-tablist label[for="wtbf-t-games"]{background:linear-gradient(120deg,#8b5cf6 0%,#d946ef 55%,#ec4899 100%);color:#fff;border-color:transparent;box-shadow:0 0 0 4px rgba(217,70,239,.22),0 8px 20px rgba(217,70,239,.42)}
+#wtbf-t-games:checked~.wtbf-tablist label[for="wtbf-t-games"] .wtbf-tcount{background:rgba(255,255,255,.3);color:#fff}
+#wtbf-t-games:focus-visible~.wtbf-tablist label[for="wtbf-t-games"]{outline:3px solid #8b5cf6;outline-offset:3px}
+#wtbf-t-games:checked~.wtbf-panels .wtbf-p-games{display:block}
+#wtbf-t-articles:checked~.wtbf-tablist label[for="wtbf-t-articles"]{background:linear-gradient(120deg,#8b5cf6 0%,#d946ef 55%,#ec4899 100%);color:#fff;border-color:transparent;box-shadow:0 0 0 4px rgba(217,70,239,.22),0 8px 20px rgba(217,70,239,.42)}
+#wtbf-t-articles:checked~.wtbf-tablist label[for="wtbf-t-articles"] .wtbf-tcount{background:rgba(255,255,255,.3);color:#fff}
+#wtbf-t-articles:focus-visible~.wtbf-tablist label[for="wtbf-t-articles"]{outline:3px solid #8b5cf6;outline-offset:3px}
+#wtbf-t-articles:checked~.wtbf-panels .wtbf-p-articles{display:block}
+</style><div class="wtbf-wrap">
 <footer class="wtbf">
   <div class="wtbf-grid">
     <div class="wtbf-col-brand">
@@ -56,6 +75,18 @@
       </div>
     </div>
 
+    <div class="wtbf-main">
+      <input class="wtbf-radio" type="radio" name="wtbf-tab" id="wtbf-t-tools" checked>
+      <input class="wtbf-radio" type="radio" name="wtbf-tab" id="wtbf-t-games">
+      <input class="wtbf-radio" type="radio" name="wtbf-tab" id="wtbf-t-articles">
+      <div class="wtbf-tablist">
+        <label class="wtbf-tab" for="wtbf-t-tools">Tools<span class="wtbf-tcount">33</span></label>
+        <label class="wtbf-tab" for="wtbf-t-games">Games<span class="wtbf-tcount">10</span></label>
+        <label class="wtbf-tab" for="wtbf-t-articles">Articles<span class="wtbf-tcount">11</span></label>
+      </div>
+      <div class="wtbf-panels">
+        <div class="wtbf-panel wtbf-p-tools">
+          <div class="wtbf-cols">
     <nav aria-label="Image tools">
       <p class="wtbf-title">Image Tools</p>
       <ul class="wtbf-list">
@@ -104,19 +135,47 @@
         <li><a href="/tools/emoji-copy-paste/">Emoji Copy Paste</a></li>
       </ul>
     </nav>
-    <nav aria-label="Games">
-      <p class="wtbf-title">Play Games</p>
-      <ul class="wtbf-list">
+          </div>
+        </div>
+        <div class="wtbf-panel wtbf-p-games">
+        <nav aria-label="Games">
+          <p class="wtbf-title">Play Games</p>
+          <ul class="wtbf-list wtbf-multi">
+        <li><a href="/games/">All Games</a></li>
         <li><a href="/games/ludo/">Ludo</a></li>
         <li><a href="/games/chess/">Chess</a></li>
         <li><a href="/games/carrom/">Carrom</a></li>
         <li><a href="/games/checkers/">Checkers</a></li>
         <li><a href="/games/connect-four/">Connect Four</a></li>
-        <li><a href="/games/snakes-and-ladders/">Snakes &amp; Ladders</a></li>
         <li><a href="/games/tic-tac-toe/">Tic Tac Toe</a></li>
-        <li><a href="/games/">All Games</a></li>
-      </ul>
-    </nav>
+        <li><a href="/games/reversi/">Reversi</a></li>
+        <li><a href="/games/gomoku/">Gomoku</a></li>
+        <li><a href="/games/mancala/">Mancala</a></li>
+        <li><a href="/games/snakes-and-ladders/">Snakes &amp; Ladders</a></li>
+          </ul>
+        </nav>
+        </div>
+        <div class="wtbf-panel wtbf-p-articles">
+        <nav aria-label="Articles">
+          <p class="wtbf-title">Articles</p>
+          <ul class="wtbf-list wtbf-multi">
+        <li><a href="/articles/">All Articles</a></li>
+        <li><a href="/articles/jumptask/">JumpTask</a></li>
+        <li><a href="/articles/cointiply/">Cointiply</a></li>
+        <li><a href="/articles/sproutgigs/">SproutGigs</a></li>
+        <li><a href="/articles/rewardjoy/">RewardJoy</a></li>
+        <li><a href="/articles/earnlab/">EarnLab</a></li>
+        <li><a href="/articles/timebucks/">TimeBucks</a></li>
+        <li><a href="/articles/microworker/">Microworker</a></li>
+        <li><a href="/articles/gemsloot/">GemsLoot</a></li>
+        <li><a href="/articles/gaingg/">Gain.gg</a></li>
+        <li><a href="/articles/swagbucks/">Swagbucks</a></li>
+        <li><a href="/articles/ysense/">YSense</a></li>
+          </ul>
+        </nav>
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="wtbf-bottom">
@@ -131,11 +190,6 @@
       <a href="/disclaimer/">Disclaimer</a>
       <a href="/cookie-policy/">Cookie Policy</a>
     </nav>
-    <div class="wtbf-mini">
-      <a class="wtbf-pill" href="/#tools">Browse all tools</a>
-      <a class="wtbf-pill" href="/games/">Play free games</a>
-      <a class="wtbf-pill" href="/sprout/">Report a problem</a>
-    </div>
   </div>
 </footer>
 </div>
