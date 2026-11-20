@@ -149,6 +149,10 @@
 @media (prefers-reduced-motion:reduce){.tl-card,.tl-logo{transition:none}.tl-card:hover{transform:none}.tl-card:hover .tl-logo{transform:none}}
 @media (max-width:900px){.tl-hero img{filter:none}}
 </style>
+  <style>
+/* speed: skip rendering work for sections far below the first screen */
+#games-promo,.block{content-visibility:auto;contain-intrinsic-size:auto 560px}
+</style>
 </head>
 <body>
   <div id="site-header"></div>
@@ -638,7 +642,7 @@
   var input=document.getElementById("tool-search"),status=document.getElementById("tl-status"),empty=document.getElementById("tl-empty");
   var btns=[].slice.call(document.querySelectorAll("#tool-filters button")),cards=[].slice.call(document.querySelectorAll(".tl-card")),blocks=[].slice.call(document.querySelectorAll(".tl-cat"));
   if(!input||!cards.length)return;
-  var cat="all";
+  var cat="all",pending=0;
   function run(){
     var q=input.value.trim().toLowerCase(),words=q?q.split(/\s+/):[],shown=0;
     cards.forEach(function(c){
@@ -649,9 +653,15 @@
     status.textContent=shown===cards.length?"Showing all "+shown+" tools":"Showing "+shown+" of "+cards.length+" tools";
     empty.style.display=shown?"none":"block";
   }
-  btns.forEach(function(b){b.addEventListener("click",function(){cat=b.getAttribute("data-filter");btns.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});run();});});
-  input.addEventListener("input",run);
-  run();
+  /* do the list work after the browser has painted the click/typing, and only once per frame */
+  function schedule(){
+    if(pending)return;
+    pending=requestAnimationFrame(function(){pending=0;setTimeout(run,0);});
+  }
+  btns.forEach(function(b){b.addEventListener("click",function(){cat=b.getAttribute("data-filter");btns.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false");});schedule();});});
+  input.addEventListener("input",schedule,{passive:true});
+  /* first status text is filled in when the browser is idle, not during loading */
+  if(window.requestIdleCallback)requestIdleCallback(run,{timeout:2000});else setTimeout(run,800);
 })();
 </script>
 </body>
