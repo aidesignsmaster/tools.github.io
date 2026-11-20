@@ -1,22 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <!-- Clarity tracking code for https://wtoolsbox.com/ -->
-<script>
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "z8sxpicy70");
-</script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-QWC5NCFGBL"></script>
+  <!-- Analytics (Clarity + Google tag): loaded after the page has finished loading so they do not slow down the first view -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-QWC5NCFGBL');
+  (function(){
+    var done = false;
+    function addScript(src){ var t = document.createElement("script"); t.async = true; t.src = src; document.head.appendChild(t); }
+    function loadTags(){
+      if (done) return; done = true;
+      addScript("https://www.googletagmanager.com/gtag/js?id=G-QWC5NCFGBL");
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i+"?ref=bwt";
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "z8sxpicy70");
+    }
+    function later(){ if (window.requestIdleCallback) requestIdleCallback(loadTags, { timeout: 3000 }); else setTimeout(loadTags, 1500); }
+    if (document.readyState === "complete") later(); else window.addEventListener("load", later);
+  })();
 </script>
       <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,6 +43,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://wtoolsbox.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://wtoolsbox.com/articles/"}]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type": "Question", "name": "Can I really earn money from these platforms?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, many pay real money, but most are side income. Earnings depend on your country, your time and the tasks available. Be careful with any site that promises fast or guaranteed income."}},{"@type": "Question", "name": "Do I have to pay to join?", "acceptedAnswer": {"@type": "Answer", "text": "A genuine platform never asks you to pay to start working. If a site asks for a deposit or a joining fee, treat it as a warning sign."}},{"@type": "Question", "name": "How long does it take to get paid?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the platform. Most have a minimum payout, and some review each withdrawal first. Each guide explains the payout method and the usual wait."}},{"@type": "Question", "name": "Are the links in these guides referral links?", "acceptedAnswer": {"@type": "Answer", "text": "Some links may be referral links. If you sign up through them, we may receive a small bonus at no extra cost to you. This never changes what we write about a platform."}},{"@type": "Question", "name": "Is my personal data safe?", "acceptedAnswer": {"@type": "Answer", "text": "Only share what a platform truly needs. Use a strong, unique password, turn on two-step login where it is offered and never share your password or wallet seed phrase with anyone."}},{"@type": "Question", "name": "Which platform should I start with?", "acceptedAnswer": {"@type": "Answer", "text": "Start with one or two. Microtask sites like JumpTask or SproutGigs suit people who like short jobs, while reward sites like Swagbucks suit people who prefer surveys and shopping offers."}}]}</script>
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>#site-header{min-height:84px}#site-footer{min-height:200px}</style>
   <style>
 .ar-hero{text-align:center;padding-top:34px;padding-bottom:10px}
 .ar-hero h1{margin:0 0 14px;font-size:clamp(30px,5.4vw,50px);line-height:1.12;letter-spacing:-.02em;color:#2a1f6b}
@@ -71,6 +77,10 @@
 @media (max-width:760px){.ar-feat{grid-template-columns:1fr;padding:22px}}
 @media (prefers-reduced-motion:reduce){.ar-card{transition:none}.ar-card:hover{transform:none}}
   </style>
+  <style>
+/* speed: skip rendering work for sections far below the first screen */
+#games-promo,.block{content-visibility:auto;contain-intrinsic-size:auto 560px}
+</style>
 </head>
 <body>
   <div id="site-header"></div>
@@ -148,12 +158,18 @@
 (function(){
   var wrap=document.getElementById("ar-filters"),cards=[].slice.call(document.querySelectorAll(".ar-card")),st=document.getElementById("ar-status");
   if(!wrap)return;
-  wrap.addEventListener("click",function(e){
-    var b=e.target.closest("button");if(!b)return;
-    var f=b.getAttribute("data-filter"),n=0;
-    [].forEach.call(wrap.querySelectorAll("button"),function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+  var btns=[].slice.call(wrap.querySelectorAll("button"));
+  function apply(f){
+    var n=0;
     cards.forEach(function(c){var show=f==="All"||c.getAttribute("data-cat")===f;c.hidden=!show;if(show)n++});
     st.textContent=f==="All"?"":"Showing "+n+" "+(n===1?"guide":"guides")+" in "+f+".";
+  }
+  wrap.addEventListener("click",function(e){
+    var b=e.target.closest("button");if(!b)return;
+    var f=b.getAttribute("data-filter");
+    btns.forEach(function(x){x.setAttribute("aria-pressed",x===b?"true":"false")});
+    /* let the browser paint the pressed button first, then do the list work */
+    requestAnimationFrame(function(){setTimeout(function(){apply(f)},0)});
   });
 })();
   </script>
