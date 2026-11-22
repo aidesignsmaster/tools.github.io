@@ -156,8 +156,8 @@
 })();
   </script>
   <script>
-  /* Analytics (Google tag + Clarity): started only after the page has loaded and the browser is idle,
-     so it never competes with first paint or the first taps */
+  /* Analytics (Google tag + Clarity): started only after the page has loaded, a few seconds have passed
+     and the browser is idle, so it never competes with first paint or the first taps */
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   (function(){
@@ -175,7 +175,7 @@
       })(window, document, "clarity", "script", "z8sxpicy70");
     }
     function idle(){ if (window.requestIdleCallback) requestIdleCallback(loadTags, { timeout: 3000 }); else setTimeout(loadTags, 1500); }
-    function later(){ setTimeout(idle, 2000); }
+    function later(){ setTimeout(idle, 3000); }
     if (document.readyState === "complete") later(); else window.addEventListener("load", later);
   })();
   </script>
