@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Color Palette Extractor from Image | Working Tools Box</title>
-<meta name="description" content="Extract a color palette from any image in your browser. Pick exact colors, check contrast and export CSS, SCSS, Tailwind or JSON. Free, private, no upload.">
+<title>Extract Color Palette from Image Online | Working Tools Box</title>
+<meta name="description" content="Extract a color palette from any image online for free. Get HEX codes, find dominant colors and export CSS, Tailwind or JSON. No upload, in your browser.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#7c3aed">
 <link rel="canonical" href="https://wtoolsbox.com/tools/color-palette-extractor/">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Color Palette Extractor from Image | Working Tools Box">
-<meta property="og:description" content="Extract a color palette from any image in your browser. Pick exact colors, check contrast and export CSS, SCSS, Tailwind or JSON. Free, private, no upload.">
+<meta property="og:title" content="Extract Color Palette from Image Online | Working Tools Box">
+<meta property="og:description" content="Extract a color palette from any image online for free. Get HEX codes, find dominant colors and export CSS, Tailwind or JSON. No upload, in your browser.">
 <meta property="og:url" content="https://wtoolsbox.com/tools/color-palette-extractor/">
 <meta property="og:site_name" content="Working Tools Box">
 <meta property="og:image" content="https://wtoolsbox.com/images/tools/color-palette-extractor-og.jpg">
@@ -19,8 +19,8 @@
 <meta property="og:image:height" content="800">
 <meta property="og:image:alt" content="Color Palette Extractor banner showing an uploaded landscape photo and its extracted color swatches.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Color Palette Extractor from Image | Working Tools Box">
-<meta name="twitter:description" content="Extract a color palette from any image in your browser. Pick exact colors, check contrast and export CSS, SCSS, Tailwind or JSON. Free, private, no upload.">
+<meta name="twitter:title" content="Extract Color Palette from Image Online | Working Tools Box">
+<meta name="twitter:description" content="Extract a color palette from any image online for free. Get HEX codes, find dominant colors and export CSS, Tailwind or JSON. No upload, in your browser.">
 <meta name="twitter:image" content="https://wtoolsbox.com/images/tools/color-palette-extractor-og.jpg">
 
 <script type="application/ld+json">
@@ -34,7 +34,7 @@
   "browserRequirements": "Requires JavaScript",
   "isAccessibleForFree": true,
   "inLanguage": "en",
-  "description": "Extracts a color palette from an uploaded image with median-cut quantization, with color picking, contrast checks, harmonies and export options, directly in the browser.",
+  "description": "Extracts a color palette and the dominant colors from an uploaded image with median-cut quantization, gives HEX, RGB and HSL codes, checks contrast, suggests harmonies and exports CSS, SCSS, Tailwind or JSON, directly in the browser.",
   "image": "https://wtoolsbox.com/images/tools/color-palette-extractor-og.jpg",
   "featureList": [
     "2 to 16 colors using median-cut quantization",
@@ -76,10 +76,10 @@
     },
     {
       "@type": "Question",
-      "name": "Can I pick an exact color from my image?",
+      "name": "How do I get the HEX code of a color in my image?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Yes. Click any spot on the image and that exact color is added to the palette. Remove it again with its close button or Remove Colors I Picked."
+        "text": "Click the exact spot on the image, or click a swatch in the palette. The code is copied in the format chosen in the Copy a color as menu: HEX, RGB or HSL. Remove a picked color again with its close button or Remove Colors I Picked."
       }
     },
     {
@@ -104,6 +104,14 @@
       "acceptedAnswer": {
         "@type": "Answer",
         "text": "For each color the tool shows whether white or black text is easier to read and the WCAG contrast ratio. A ratio of 4.5:1 or higher passes AA for normal text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use the palette for my website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Export it as CSS variables, SCSS variables, a Tailwind config, JSON or a HEX list, then paste it into your project. Check the contrast rating first so your text stays readable."
       }
     }
   ]
@@ -285,7 +293,7 @@
 <main class="container">
   <section class="hero">
     <h1 class="grad-text">Color Palette Extractor</h1>
-    <p>Pull a clean color palette out of any photo or design, pick exact colors by clicking, check contrast, and export for CSS, SCSS or Tailwind &mdash; free, in your browser.</p>
+    <p>Extract colors from any image online: get HEX, RGB and HSL codes, find the dominant colors and export the palette for your website &mdash; free, in your browser.</p>
   </section>
 
   <div class="notice">
@@ -375,7 +383,7 @@
 
   <section class="content">
     <h2 class="grad-text">About This Color Palette Extractor</h2>
-    <p>A color palette is a short list of colors that sums up an image. This color palette extractor reads the picture you choose, finds its main colors and shows each one with HEX, RGB and HSL codes, so you can reuse them in a design, a website or a presentation. The image is analyzed inside your browser and is never uploaded.</p>
+    <p>A color palette is a short list of colors that sums up an image. With this free color palette extractor you can extract colors from an image online: it reads the picture you choose, finds its main colors and shows each one with HEX, RGB and HSL codes, so you can reuse them in a design, a website or a presentation. The image is analyzed inside your browser and is never uploaded.</p>
     <figure class="tool-figure"><img src="/images/tools/color-palette-extractor.webp" width="1200" height="800" loading="lazy" decoding="async" alt="Color Palette Extractor banner showing an uploaded landscape photo and its extracted color swatches." title="Color Palette Extractor by Working Tools Box"><figcaption>Upload an image and get its main colors with HEX, RGB and HSL codes.</figcaption></figure>
     <p>Choose between 2 and 16 colors and sort them by frequency, hue or brightness. Click anywhere on the image to add the exact color of that spot, ignore white or black backgrounds, and check whether white or black text is readable on each color. You can export the result as CSS variables, SCSS variables, a Tailwind config, JSON or a plain HEX list, or save a PNG swatch strip.</p>
 
@@ -387,12 +395,23 @@
       <li>Pick an export format and copy the code or download it as a file. The Color Harmonies section suggests matching colors for any palette color.</li>
     </ol>
 
+    <h2 class="grad-text">Get the HEX Code from an Image</h2>
+    <p>Need the HEX code of a color you see in a picture? Add your image, then click the exact spot on it. That color is added to the palette with its HEX, RGB and HSL codes. You can also click any swatch to copy its code. Use the <em>Copy a color as</em> menu to switch between HEX (such as #7c3aed), RGB and HSL, so the code is ready to paste into CSS or a design app. Every color also gets a plain-language name, which helps when you describe a shade to someone else.</p>
+
+    <h2 class="grad-text">Find the Dominant Colors in a Photo</h2>
+    <p>The dominant colors are the shades that cover the most of a picture. The tool groups similar pixels together with median-cut quantization, averages each group into one color and lists them, most used first by default. Use the slider to ask for anything from 2 to 16 colors: a few colors give you the big picture, while more colors reveal smaller accents. If a white sky or a black background takes up a slot, tick <em>Ignore white</em> or <em>Ignore black</em> and the next most common colors appear instead. You can also sort by hue or brightness to see the palette as a smooth run of shades.</p>
+
+    <h2 class="grad-text">Make a Color Palette for Your Website</h2>
+    <p>To build a website palette from a photo, start with the image you plan to use as a hero or banner. Extract five or six colors, pick one main color for buttons and links, one supporting color for highlights, and keep a light and a dark neutral for backgrounds and text. Then open the Export box, choose CSS variables, SCSS variables or a Tailwind config, copy the code and paste it into your project. Check the contrast rating before you commit: normal text needs a ratio of at least 4.5:1 to pass WCAG AA, and the tool shows whether white or black text reads better on each color. If the photo gives you only one strong shade, the Color Harmonies section suggests matching colors for it.</p>
+
     <h2 class="grad-text">Tips for Better Palettes</h2>
     <ul>
       <li>Flat logos give accurate colors because they contain only a few real ones. Photos with soft gradients give blended colors, so raise the color count or click the exact tones you need.</li>
       <li>Check contrast before using a color for text or buttons. A ratio of 4.5:1 or higher passes the WCAG AA level for normal text.</li>
       <li>Screens and printers show color differently, so confirm the final values with your printer for print work.</li>
       <li>Keep a design to five or six colors: one main color, one or two supporting colors and a neutral.</li>
+      <li>If only part of a picture matters, crop it first with the <a href="/tools/image-cropper/">Image Cropper</a> so the background does not change the palette.</li>
+      <li>Start from the largest, least compressed version of the image you have. Heavy JPEG compression adds blotchy shades that can slip into the palette.</li>
     </ul>
 
     <h2 class="grad-text">When This Tool Helps</h2>
@@ -402,10 +421,11 @@
     <div class="faq-list">
       <div class="faq"><h3>Is my image uploaded to a server?</h3><p>No. The colors are read in your browser with the Canvas API, so your image never leaves your device.</p></div>
       <div class="faq"><h3>How many colors can I extract?</h3><p>Choose 2 to 16 colors with the slider and sort them by frequency, hue or brightness. The palette updates as you change the setting.</p></div>
-      <div class="faq"><h3>Can I pick an exact color from my image?</h3><p>Yes. Click any spot on the image and that exact color is added to the palette. Remove it again with its close button or Remove Colors I Picked.</p></div>
+      <div class="faq"><h3>How do I get the HEX code of a color in my image?</h3><p>Click the exact spot on the image, or click a swatch in the palette. The code is copied in the format chosen in the Copy a color as menu: HEX, RGB or HSL. Remove a picked color again with its close button or Remove Colors I Picked.</p></div>
       <div class="faq"><h3>Which export formats are available?</h3><p>CSS variables, SCSS variables, a Tailwind config, JSON and a plain HEX list, each with Copy and Download File buttons. You can also save a PNG swatch strip.</p></div>
       <div class="faq"><h3>How are the colors chosen?</h3><p>The tool uses median-cut quantization. It groups similar pixels together and averages each group into one color, which works well for logos and photos.</p></div>
       <div class="faq"><h3>What does the contrast rating mean?</h3><p>For each color the tool shows whether white or black text is easier to read and the WCAG contrast ratio. A ratio of 4.5:1 or higher passes AA for normal text.</p></div>
+      <div class="faq"><h3>Can I use the palette for my website?</h3><p>Yes. Export it as CSS variables, SCSS variables, a Tailwind config, JSON or a HEX list, then paste it into your project. Check the contrast rating first so your text stays readable.</p></div>
     </div>
 
     <h2 class="grad-text">More Free Tools You May Need</h2>
